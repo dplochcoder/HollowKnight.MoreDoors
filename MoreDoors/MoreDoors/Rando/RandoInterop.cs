@@ -29,7 +29,7 @@ namespace MoreDoors.Rando
             var mod = ItemChangerMod.Modules.GetOrAdd<MoreDoorsModule>();
             foreach (var doorName in LS.EnabledDoorNames)
             {
-                mod.ObtainedKeys[doorName] = false;
+                mod.DoorStates[doorName] = new();
             }
         }
 
