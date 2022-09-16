@@ -4,7 +4,7 @@
     {
         Doors,
         MoreDoors,
-        MostDoors
+        AllDoors
     }
 
     public class MoreDoorsSettings
