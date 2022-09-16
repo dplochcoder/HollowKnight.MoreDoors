@@ -33,15 +33,18 @@ namespace MoreDoors.IC
             public string TransitionName => $"{SceneName}[{GateName}]";
         }
 
+        public string VarName;
+        public string LogicName;
         public DoorLocation LeftDoorLocation;
         public DoorLocation RighttDoorLocation;
         // TODO: Custom door sprites and colors
 
         public record KeyInfo
         {
-            public string Name;       // Human-readable name
+            public string ItemName;
+            public string UIItemName;
             public string ShopDesc;
-            public string LogicTerm;  // Used for logic and PlayerData tests
+            public string LogicName;  // Used for logic and PlayerData tests
             public string SpriteKey;
             public AbstractLocation VanillaLocation;
             public string VanillaLogic;
@@ -49,12 +52,15 @@ namespace MoreDoors.IC
         public KeyInfo Key;
 
         [JsonIgnore]
-        public string DoorOpenedName => $"{MoreDoorsModule.PlayerDataDoorPrefix}{Key.LogicTerm}";
+        public string PDDoorOpenedName => MoreDoorsModule.PlayerDataDoorOpenedName(VarName);
 
         [JsonIgnore]
-        public string KeyName => $"{MoreDoorsModule.PlayerDataKeyPrefix}{Key.LogicTerm}";
+        public string PDKeyName => MoreDoorsModule.PlayerDataKeyName(VarName);
 
         [JsonIgnore]
-        public string LocName => Key.VanillaLocation.name;
+        public string KeyTerm => MoreDoorsModule.LogicKeyName(Key.LogicName);
+
+        [JsonIgnore]
+        public string KeyLocName => Key.VanillaLocation.name;
     }
 }

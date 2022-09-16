@@ -12,7 +12,7 @@ namespace MoreDoors.IC
         }
 
         private GameObject doorTemplate;
-        public GameObject NewDoor => Object.Instantiate(doorTemplate);
+        public GameObject NewDoor() => Object.Instantiate(doorTemplate);
 
         public override void SavePreloads(Dictionary<string, Dictionary<string, GameObject>> objectsByScene)
         {

@@ -28,14 +28,14 @@ namespace MoreDoors.Rando
                 LS.EnabledDoorNames.Add(doorName);
 
                 // Modify transition logic for this door.
-                var term = lmb.GetOrAddTerm(data.Key.LogicTerm);
-                lmb.DoLogicEdit(new(data.LeftDoorLocation.TransitionName, $"ORIG + {data.Key.LogicTerm}"));
-                lmb.DoLogicEdit(new(data.RighttDoorLocation.TransitionName, $"ORIG + {data.Key.LogicTerm}"));
+                var term = lmb.GetOrAddTerm(data.KeyTerm);
+                lmb.DoLogicEdit(new(data.LeftDoorLocation.TransitionName, $"ORIG + {data.KeyTerm}"));
+                lmb.DoLogicEdit(new(data.RighttDoorLocation.TransitionName, $"ORIG + {data.KeyTerm}"));
 
                 // Add vanilla key logic defs.
                 if (LS.Settings.AddKeyLocations)
                 {
-                    lmb.AddLogicDef(new(data.LocName, data.Key.VanillaLogic));
+                    lmb.AddLogicDef(new(data.KeyLocName, data.Key.VanillaLogic));
                 }
             }
 

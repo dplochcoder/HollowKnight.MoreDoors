@@ -28,8 +28,8 @@ namespace MoreDoors.IC
             foreach (var doorName in DoorStates.Keys)
             {
                 var data = DoorData.Get(doorName);
-                DoorNameByKey[data.KeyName] = doorName;
-                DoorNameByDoor[data.DoorOpenedName] = doorName;
+                DoorNameByKey[data.PDKeyName] = doorName;
+                DoorNameByDoor[data.PDDoorOpenedName] = doorName;
 
                 DoorNamesByScene.GetOrAdd(data.LeftDoorLocation.SceneName, new()).Add(doorName);
                 DoorNamesByScene.GetOrAdd(data.RighttDoorLocation.SceneName, new()).Add(doorName);
@@ -45,8 +45,12 @@ namespace MoreDoors.IC
             Events.OnSceneChange -= OnSceneChange;
         }
 
-        public const string PlayerDataKeyPrefix = "MOREDOORS_";
-        public const string PlayerDataDoorPrefix = "MOREDOORS_DOOR_";
+        public static string PlayerDataKeyName(string doorNameVar) => $"moreDoors{doorNameVar}Key";
+        public static string PlayerDataDoorOpenedName(string doorNameVar) => $"moreDoors{doorNameVar}DoorOpened";
+        public static string LogicKeyName(string doorNameLogic) => $"MOREDOORS_{doorNameLogic}";
+
+        public static string NoKeyConvoId(string doorNameLogic) => $"MOREDOORS_DOOR_{doorNameLogic}_NOKEY";
+        public static string YesKeyConvoId(string doorNameLogic) => $"MOREDOORS_DOOR_{doorNameLogic}_YESKEY";
 
         private bool OverrideGetBool(string name, bool orig)
         {
