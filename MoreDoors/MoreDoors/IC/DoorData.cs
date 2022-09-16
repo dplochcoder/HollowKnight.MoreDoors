@@ -45,6 +45,9 @@ namespace MoreDoors.IC
         public KeyInfo Key;
 
         [JsonIgnore]
+        public string DoorOpenedName => $"{MoreDoorsModule.PlayerDataDoorPrefix}{Key.LogicTerm}";
+
+        [JsonIgnore]
         public string KeyName => $"{MoreDoorsModule.PlayerDataKeyPrefix}{Key.LogicTerm}";
 
         [JsonIgnore]
