@@ -11,5 +11,6 @@
     {
         public bool AddMoreDoors = false;
         public DoorsLevel DoorsLevel = DoorsLevel.MoreDoors;
+        public bool AddKeyLocations = false;
     }
 }

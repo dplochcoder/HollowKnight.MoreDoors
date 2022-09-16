@@ -5,7 +5,7 @@
 
         public static void Setup()
         {
-            // FIXME
+            ConnectionMenu.Setup();
         }
 
     }

@@ -8,12 +8,15 @@ namespace MoreDoors.IC
 
         public override IEnumerable<(string, string)> GetPreloadNames()
         {
-            // FIXME
-            yield break;
+            yield return ("Ruins_2_11b", "Love Door");
         }
+
+        private GameObject doorTemplate;
+        public GameObject NewDoor => Object.Instantiate(doorTemplate);
 
         public override void SavePreloads(Dictionary<string, Dictionary<string, GameObject>> objectsByScene)
         {
+            doorTemplate = objectsByScene["Ruins_2_11b"]["Love Door"];
         }
     }
 }
