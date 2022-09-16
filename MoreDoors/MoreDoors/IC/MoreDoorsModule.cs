@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using ItemChanger;
+using ItemChanger.Extensions;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 namespace MoreDoors.IC
 {
@@ -15,6 +18,7 @@ namespace MoreDoors.IC
 
         private readonly Dictionary<string, string> DoorNameByKey = new();
         private readonly Dictionary<string, string> DoorNameByDoor = new();
+        private readonly Dictionary<string, HashSet<string>> DoorNamesByScene = new();
 
         public override void Initialize()
         {
@@ -26,28 +30,69 @@ namespace MoreDoors.IC
                 var data = DoorData.Get(doorName);
                 DoorNameByKey[data.KeyName] = doorName;
                 DoorNameByDoor[data.DoorOpenedName] = doorName;
+
+                DoorNamesByScene.GetOrAdd(data.LeftDoorLocation.SceneName, new()).Add(doorName);
+                DoorNamesByScene.GetOrAdd(data.RighttDoorLocation.SceneName, new()).Add(doorName);
             }
+
+            Events.OnSceneChange += OnSceneChange;
         }
 
         public override void Unload()
         {
             Modding.ModHooks.GetPlayerBoolHook -= OverrideGetBool;
             Modding.ModHooks.SetPlayerBoolHook -= OverrideSetBool;
+            Events.OnSceneChange -= OnSceneChange;
         }
 
         public const string PlayerDataKeyPrefix = "MOREDOORS_";
         public const string PlayerDataDoorPrefix = "MOREDOORS_DOOR_";
 
-        private bool OverrideGetBool(string name, bool orig) => DoorStates.TryGetValue(name, out DoorState doorState) ? doorState.KeyObtained : orig;
+        private bool OverrideGetBool(string name, bool orig)
+        {
+            if (DoorNameByKey.TryGetValue(name, out string doorName))
+            {
+                return DoorStates[doorName].KeyObtained;
+            }
+            else if (DoorNameByDoor.TryGetValue(name, out doorName))
+            {
+                return DoorStates[doorName].DoorOpened;
+            }
+            return orig;
+        }
 
         private bool OverrideSetBool(string name, bool orig)
         {
-            if (DoorStates.TryGetValue(name, out DoorState doorState))
+            if (DoorNameByKey.TryGetValue(name, out string doorName))
             {
-                doorState.KeyObtained = orig;
+                DoorStates[doorName].KeyObtained = orig;
             }
-
+            else if (DoorNameByDoor.TryGetValue(name, out doorName))
+            {
+                DoorStates[doorName].DoorOpened = orig;
+            }
             return orig;
+        }
+
+        private static readonly HashSet<string> emptySet = new();
+
+        private void OnSceneChange(Scene scene)
+        {
+            foreach (var doorName in DoorNamesByScene.GetOrDefault(scene.name, emptySet))
+            {
+                // If the door is already opened, skip.
+                if (DoorStates[doorName].DoorOpened) continue;
+
+                var data = DoorData.Get(doorName);
+                if (scene.name == data.LeftDoorLocation.SceneName)
+                {
+                    DoorSpawner.SpawnDoor(doorName, true);
+                }
+                if (scene.name == data.RighttDoorLocation.SceneName)
+                {
+                    DoorSpawner.SpawnDoor(doorName, false);
+                }
+            }
         }
     }
 }

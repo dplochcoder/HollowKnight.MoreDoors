@@ -24,9 +24,13 @@ namespace MoreDoors.IC
 
         public record DoorLocation
         {
-            public string TransitionName;
+            public string SceneName;
+            public string GateName;
             public float X;
             public float Y;
+
+            [JsonIgnore]
+            public string TransitionName => $"{SceneName}[{GateName}]";
         }
 
         public DoorLocation LeftDoorLocation;
