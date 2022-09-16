@@ -3,13 +3,13 @@
     public enum DoorsLevel
     {
         Doors,
-        Doorser,
-        Doorsest
+        MoreDoors,
+        MostDoors
     }
 
     public class MoreDoorsSettings
     {
         public bool AddMoreDoors = false;
-        public DoorsLevel DoorsLevel = DoorsLevel.Doorser;
+        public DoorsLevel DoorsLevel = DoorsLevel.MoreDoors;
     }
 }
