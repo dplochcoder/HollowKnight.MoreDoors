@@ -1,4 +1,5 @@
 ﻿using Modding;
+using MoreDoors.IC;
 using MoreDoors.Rando;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,7 @@ namespace MoreDoors
         public override void Initialize(Dictionary<string, Dictionary<string, GameObject>> preloadedObjects)
         {
             IC.Preloader.Instance.SavePreloads(preloadedObjects);
+            DoorData.Load();
 
             if (ModHooks.GetMod("Randomizer 4") is Mod)
             {

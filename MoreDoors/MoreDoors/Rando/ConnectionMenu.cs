@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using System;
-using UnityEngine.UIElements;
 using MenuChanger;
 using RandomizerMod.Menu;
 using MenuChanger.MenuElements;
-using MenuChanger.MenuPanels;
 using static RandomizerMod.Localization;
 using MenuChanger.Extensions;
 
