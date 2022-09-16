@@ -14,6 +14,11 @@ Read at your own risk!  There's no taking it back.
 * Blocks access to Broken Vessel
 * Key is at the mini-Mawlek right of Cloth in Basin
 
+## Canyon Door
+
+* Blocks access to Queen's Station from Fog Canyon
+* Key is at the spore husk below Cornifer
+
 ## Core Door
 
 * Blocks access to Fungal Core
@@ -23,6 +28,11 @@ Read at your own risk!  There's no taking it back.
 
 * Blocks access to Hallownest's Crown
 * Key is at the Husk Miner by the Deep Focus entrance
+
+## Darknest Door
+
+* Blocks access to the Deepnest whispering root, from the first devout
+* Key is at the last Dirtcarver spawner in the failed tramway
 
 ## False Door
 
@@ -74,6 +84,16 @@ Read at your own risk!  There's no taking it back.
 * Blocks access to Blue Lake from Salubra
 * Key is at the Infected Vengefly by crossroads well
 
+## Lurker's Door
+
+* Blocks access to Pale Lurker from Colosseum
+* Key is at Great Hopper by the King's Idol
+
+## Mantis Door
+
+* Blocks access to Mantis Village core from Bretta Bench
+* Key is at the mantis warrior just above Bretta Bench
+
 ## Moss Door
 
 * Blocks access to MMC
@@ -97,12 +117,12 @@ Read at your own risk!  There's no taking it back.
 ## Pain Door
 
 * Blocks access to Path of Pain
-* Key is at the Aluba after Traitor Lord
+* Key is at the Kingsmould guarding the entrance orb
 
 ## Sanctum Door
 
 * Blocks the entrance to Soul Sanctum
-* Key is at the husk entry directly above Lemm
+* Key is at the husk sentry directly above Lemm
 
 ## Shade Door
 
