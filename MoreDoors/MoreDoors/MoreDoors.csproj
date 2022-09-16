@@ -44,6 +44,12 @@
   <ItemGroup>
     <None Remove="build.yml" />
     <None Remove="README.md" />
+    <None Remove="Resources\**\*.json" />
+    <None Remove="Resources\**\*.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\**\*.json" />
+    <EmbeddedResource Include="Resources\**\*.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
