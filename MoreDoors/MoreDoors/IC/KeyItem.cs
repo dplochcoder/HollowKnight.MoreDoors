@@ -10,9 +10,9 @@ namespace MoreDoors.IC
 
         public KeyItem(string doorName)
         {
-            this.name = DoorData.KeyName(doorName);
-
             var data = DoorData.Get(doorName);
+            this.name = data.KeyName;
+
             this.DoorName = doorName;
             this.UIDef = new MsgUIDef()
             {
@@ -29,8 +29,8 @@ namespace MoreDoors.IC
 
         public override AbstractItem Clone() => new KeyItem(DoorName);
 
-        public override void GiveImmediate(GiveInfo info) => PlayerData.instance.GetKeyForDoor(DoorName);
+        public override void GiveImmediate(GiveInfo info) => PlayerData.instance.SetBool(DoorData.Get(DoorName).KeyName, true);
 
-        public override bool Redundant() => PlayerData.instance.HasKeyForDoor(DoorName);
+        public override bool Redundant() => PlayerData.instance.GetBool(DoorData.Get(DoorName).KeyName);
     }
 }

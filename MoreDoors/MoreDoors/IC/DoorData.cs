@@ -1,4 +1,5 @@
 ﻿using ItemChanger;
+using Newtonsoft.Json;
 using RandomizerMod.RandomizerData;
 using System.Collections.Generic;
 
@@ -11,8 +12,6 @@ namespace MoreDoors.IC
         public static DoorData Get(string doorName) => data[doorName];
 
         public static IEnumerable<string> DoorNames => data.Keys;
-
-        public static string KeyName(string doorName) => MoreDoorsModule.PlayerDataKeyPrefix + Get(doorName).Key.LogicTerm;
 
         public static void Load() {
             foreach (var doorName in DoorNames)
@@ -44,5 +43,11 @@ namespace MoreDoors.IC
             public string VanillaLogic;
         }
         public KeyInfo Key;
+
+        [JsonIgnore]
+        public string KeyName => $"{MoreDoorsModule.PlayerDataKeyPrefix}{Key.LogicTerm}";
+
+        [JsonIgnore]
+        public string LocName => Key.VanillaLocation.name;
     }
 }

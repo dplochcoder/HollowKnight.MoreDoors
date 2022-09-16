@@ -19,13 +19,12 @@ namespace MoreDoors.Rando
 
             foreach (var doorName in RandoInterop.LS.EnabledDoorNames)
             {
-                var itemName = DoorData.KeyName(doorName);
                 var data = DoorData.Get(doorName);
-                rb.EditItemRequest(itemName, info =>
+                rb.EditItemRequest(data.KeyName, info =>
                 {
                     info.getItemDef = () => new()
                     {
-                        Name = itemName,
+                        Name = data.KeyName,
                         Pool = PoolNames.Key,
                         MajorItem = false,
                         PriceCap = 400
@@ -34,11 +33,11 @@ namespace MoreDoors.Rando
 
                 if (RandoInterop.LS.Settings.AddKeyLocations)
                 {
-                    rb.EditLocationRequest(data.Key.VanillaLocation.name, info =>
+                    rb.EditLocationRequest(data.LocName, info =>
                     {
                         info.getLocationDef = () => new()
                         {
-                            Name = data.Key.VanillaLocation.name,
+                            Name = data.LocName,
                             SceneName = data.Key.VanillaLocation.sceneName
                         };
                     });
@@ -57,24 +56,23 @@ namespace MoreDoors.Rando
 
             foreach (var doorName in RandoInterop.LS.EnabledDoorNames)
             {
-                var itemName = DoorData.KeyName(doorName);
                 var data = DoorData.Get(doorName);
                 if (rb.gs.PoolSettings.Keys)
                 {
-                    rb.AddItemByName(itemName);
+                    rb.AddItemByName(data.KeyName);
                     if (rb.gs.DuplicateItemSettings.DuplicateUniqueKeys)
                     {
-                        rb.AddItemByName($"{PlaceholderItem.Prefix}{itemName}");
+                        rb.AddItemByName($"{PlaceholderItem.Prefix}{data.KeyName}");
                     }
 
                     if (RandoInterop.LS.Settings.AddKeyLocations)
                     {
-                        rb.AddLocationByName(data.Key.VanillaLocation.name);
+                        rb.AddLocationByName(data.LocName);
                     }
                 }
                 else if (RandoInterop.LS.Settings.AddKeyLocations)
                 {
-                    rb.AddToVanilla(new(itemName, data.Key.VanillaLocation.name));
+                    rb.AddToVanilla(new(data.KeyName, data.LocName));
                 }
             }
         }

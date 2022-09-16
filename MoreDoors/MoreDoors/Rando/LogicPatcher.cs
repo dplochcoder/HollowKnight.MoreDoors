@@ -35,7 +35,7 @@ namespace MoreDoors.Rando
                 // Add vanilla key logic defs.
                 if (LS.Settings.AddKeyLocations)
                 {
-                    lmb.AddLogicDef(new(data.Key.VanillaLocation.name, data.Key.VanillaLogic));
+                    lmb.AddLogicDef(new(data.LocName, data.Key.VanillaLogic));
                 }
             }
 
