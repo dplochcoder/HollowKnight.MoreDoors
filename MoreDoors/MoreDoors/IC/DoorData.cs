@@ -1,5 +1,4 @@
 ﻿using ItemChanger;
-using Newtonsoft.Json;
 using RandomizerMod.RandomizerData;
 using System.Collections.Generic;
 
