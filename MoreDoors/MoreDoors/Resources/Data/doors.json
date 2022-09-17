@@ -20,16 +20,34 @@
       "ItemName": "Mothwing_Key",
       "UIItemName": "Mothwing Key",
       "ShopDesc": "You too can unlock your inner SHAAAW",
-      "SpriteKey": "key.png",
+      "SpriteKey": "DefaultKey.png",
       "VanillaLocation": {
-        "$type": "MoreDoors.IC.EphemeralEnemyLocation, MoreDoors",
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Battle Scene v2",
+          "sceneName": "Fungus1_32"
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Moss Knight B",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Moss_Knight-Greenpath_Life_Blood",
+          "sceneName": "Fungus1_32"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 32.5,
+          "y": 4.5,
+          "forceShiny": false,
+          "name": "Moss_Knight-Greenpath_Life_Blood",
+          "sceneName": "Fungus1_32"
+        },
         "name": "Moss_Knight-Greenpath_Life_Blood",
-        "EnemyId": "Moss Knight B",
-        "sceneName": "Fungus1_32",
-        "X": 32.5,
-        "Y": 4.5
+        "sceneName": "Fungus1_32"
       },
-      "VanillaLogic": "Fungus1_32"
+      "VanillaLogic": "Fungus1_32[bot1]"
     }
   }
 }
