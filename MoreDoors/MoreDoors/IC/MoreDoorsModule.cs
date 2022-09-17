@@ -47,7 +47,7 @@ namespace MoreDoors.IC
 
         public static string PlayerDataKeyName(string doorNameVar) => $"moreDoors{doorNameVar}Key";
         public static string PlayerDataDoorOpenedName(string doorNameVar) => $"moreDoors{doorNameVar}DoorOpened";
-        public static string LogicKeyName(string doorNameLogic) => $"MOREDOORS_{doorNameLogic}";
+        public static string LogicKeyName(string doorNameLogic) => $"MOREDOORS_{doorNameLogic}_KEY";
 
         public static string NoKeyConvoId(string doorNameLogic) => $"MOREDOORS_DOOR_{doorNameLogic}_NOKEY";
         public static string YesKeyConvoId(string doorNameLogic) => $"MOREDOORS_DOOR_{doorNameLogic}_YESKEY";

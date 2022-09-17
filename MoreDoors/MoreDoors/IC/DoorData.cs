@@ -43,7 +43,6 @@ namespace MoreDoors.IC
             public string ItemName;
             public string UIItemName;
             public string ShopDesc;
-            public string LogicName;  // Used for logic and PlayerData tests
             public string SpriteKey;
             public AbstractLocation VanillaLocation;
             public string VanillaLogic;
@@ -57,7 +56,7 @@ namespace MoreDoors.IC
         public string PDKeyName => MoreDoorsModule.PlayerDataKeyName(VarName);
 
         [JsonIgnore]
-        public string KeyTerm => MoreDoorsModule.LogicKeyName(Key.LogicName);
+        public string KeyTerm => MoreDoorsModule.LogicKeyName(LogicName);
 
         [JsonIgnore]
         public string KeyLocName => Key.VanillaLocation.name;

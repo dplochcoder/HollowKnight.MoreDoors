@@ -1,2 +1,26 @@
 ﻿{
+  "Mothwing": {
+    "VarName": "Mothwing",
+    "LogicName": "MOTHWING",
+    "LeftDoorLocation": {
+      "SceneName": "Fungus1_21",
+      "GateName": "left1",
+      "X": 1.9,
+      "Y": 14.4
+    },
+    "RightDoorLocation": {
+      "SceneName": "Fungus1_04",
+      "GateName": "right1",
+      "X": 93.2,
+      "Y": 33.4
+    },
+    "Key": {
+      "ItemName": "Mothwing_Key",
+      "UIItemName": "Mothwing Key",
+      "ShopDesc": "You too can unlock your inner SHAAAW",
+      "SpriteKey": "key.png",
+      "VanillaLocation": null,
+      "VanillaLogic": "ANY"
+    }
+  }
 }
