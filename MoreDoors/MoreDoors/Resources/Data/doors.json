@@ -2,25 +2,33 @@
   "Mothwing": {
     "VarName": "Mothwing",
     "LogicName": "MOTHWING",
+    "Desc": "It looks like you can't get any closer, ghost.",
     "LeftDoorLocation": {
       "SceneName": "Fungus1_21",
       "GateName": "left1",
-      "X": 1.9,
-      "Y": 14.4
+      "X": 1.1,
+      "Y": 15.95
     },
     "RightDoorLocation": {
       "SceneName": "Fungus1_04",
       "GateName": "right1",
-      "X": 93.2,
-      "Y": 33.4
+      "X": 93.9,
+      "Y": 35
     },
     "Key": {
       "ItemName": "Mothwing_Key",
       "UIItemName": "Mothwing Key",
       "ShopDesc": "You too can unlock your inner SHAAAW",
       "SpriteKey": "key.png",
-      "VanillaLocation": null,
-      "VanillaLogic": "ANY"
+      "VanillaLocation": {
+        "$type": "MoreDoors.IC.EphemeralEnemyLocation, MoreDoors",
+        "name": "Moss_Knight-Greenpath_Life_Blood",
+        "EnemyId": "Moss Knight B",
+        "sceneName": "Fungus1_32",
+        "X": 32.5,
+        "Y": 4.5
+      },
+      "VanillaLogic": "Fungus1_32"
     }
   }
 }

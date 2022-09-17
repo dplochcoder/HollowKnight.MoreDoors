@@ -16,6 +16,7 @@ namespace MoreDoors.IC
             foreach (var doorName in DoorNames)
             {
                 Finder.DefineCustomItem(new KeyItem(doorName));
+                Finder.DefineCustomLocation(Get(doorName).Key.VanillaLocation);
             }
 
             MoreDoors.Log("Loaded Doors");
@@ -34,8 +35,9 @@ namespace MoreDoors.IC
 
         public string VarName;
         public string LogicName;
+        public string Desc;
         public DoorLocation LeftDoorLocation;
-        public DoorLocation RighttDoorLocation;
+        public DoorLocation RightDoorLocation;
         // TODO: Custom door sprites and colors
 
         public record KeyInfo
@@ -60,5 +62,11 @@ namespace MoreDoors.IC
 
         [JsonIgnore]
         public string KeyLocName => Key.VanillaLocation.name;
+
+        [JsonIgnore]
+        public string NoKeyPromptId => MoreDoorsModule.NoKeyPromptId(LogicName);
+
+        [JsonIgnore]
+        public string YesKeyPromptId => MoreDoorsModule.YesKeyPromptId(LogicName);
     }
 }

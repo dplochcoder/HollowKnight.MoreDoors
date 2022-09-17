@@ -17,7 +17,7 @@ namespace MoreDoors
 
         public override void Initialize(Dictionary<string, Dictionary<string, GameObject>> preloadedObjects)
         {
-            IC.Preloader.Instance.SavePreloads(preloadedObjects);
+            Preloader.Instance.SavePreloads(preloadedObjects);
             DoorData.Load();
 
             if (ModHooks.GetMod("Randomizer 4") is Mod)
@@ -26,7 +26,7 @@ namespace MoreDoors
             }
         }
 
-        public override List<(string, string)> GetPreloadNames() => new(IC.Preloader.Instance.GetPreloadNames());
+        public override List<(string, string)> GetPreloadNames() => new(Preloader.Instance.GetPreloadNames());
 
         public void OnLoadGlobal(GlobalSettings s) => GS = s ?? new();
 

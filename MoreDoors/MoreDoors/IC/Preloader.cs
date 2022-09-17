@@ -28,6 +28,7 @@ namespace MoreDoors.IC
             parent.transform.position = dst - src;
             parent.transform.rotation = new(0, left ? 0 : 180, 0, 0);
             obj.transform.parent = parent.transform;
+            obj.transform.localPosition = src;
         }
     }
 }

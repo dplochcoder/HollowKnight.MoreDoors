@@ -1,5 +1,6 @@
 ﻿using ItemChanger;
 using ItemChanger.Extensions;
+using Modding;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
@@ -19,11 +20,13 @@ namespace MoreDoors.IC
         private readonly Dictionary<string, string> DoorNameByKey = new();
         private readonly Dictionary<string, string> DoorNameByDoor = new();
         private readonly Dictionary<string, HashSet<string>> DoorNamesByScene = new();
+        private readonly Dictionary<string, string> PromptStrings = new();
 
         public override void Initialize()
         {
-            Modding.ModHooks.GetPlayerBoolHook += OverrideGetBool;
-            Modding.ModHooks.SetPlayerBoolHook += OverrideSetBool;
+            ModHooks.GetPlayerBoolHook += OverrideGetBool;
+            ModHooks.SetPlayerBoolHook += OverrideSetBool;
+            ModHooks.LanguageGetHook += OverrideLanguageGet;
 
             foreach (var doorName in DoorStates.Keys)
             {
@@ -32,7 +35,9 @@ namespace MoreDoors.IC
                 DoorNameByDoor[data.PDDoorOpenedName] = doorName;
 
                 DoorNamesByScene.GetOrAdd(data.LeftDoorLocation.SceneName, new()).Add(doorName);
-                DoorNamesByScene.GetOrAdd(data.RighttDoorLocation.SceneName, new()).Add(doorName);
+                DoorNamesByScene.GetOrAdd(data.RightDoorLocation.SceneName, new()).Add(doorName);
+                PromptStrings[data.NoKeyPromptId] = data.Desc;
+                PromptStrings[data.YesKeyPromptId] = $"{data.Desc} Insert the {data.Key.UIItemName}?";
             }
 
             Events.OnSceneChange += OnSceneChange;
@@ -40,8 +45,8 @@ namespace MoreDoors.IC
 
         public override void Unload()
         {
-            Modding.ModHooks.GetPlayerBoolHook -= OverrideGetBool;
-            Modding.ModHooks.SetPlayerBoolHook -= OverrideSetBool;
+            ModHooks.GetPlayerBoolHook -= OverrideGetBool;
+            ModHooks.SetPlayerBoolHook -= OverrideSetBool;
             Events.OnSceneChange -= OnSceneChange;
         }
 
@@ -49,8 +54,8 @@ namespace MoreDoors.IC
         public static string PlayerDataDoorOpenedName(string doorNameVar) => $"moreDoors{doorNameVar}DoorOpened";
         public static string LogicKeyName(string doorNameLogic) => $"MOREDOORS_{doorNameLogic}_KEY";
 
-        public static string NoKeyConvoId(string doorNameLogic) => $"MOREDOORS_DOOR_{doorNameLogic}_NOKEY";
-        public static string YesKeyConvoId(string doorNameLogic) => $"MOREDOORS_DOOR_{doorNameLogic}_YESKEY";
+        public static string NoKeyPromptId(string doorNameLogic) => $"MOREDOORS_DOOR_{doorNameLogic}_NOKEY";
+        public static string YesKeyPromptId(string doorNameLogic) => $"MOREDOORS_DOOR_{doorNameLogic}_YESKEY";
 
         private bool OverrideGetBool(string name, bool orig)
         {
@@ -78,6 +83,16 @@ namespace MoreDoors.IC
             return orig;
         }
 
+        private string OverrideLanguageGet(string key, string sheetTitle, string orig)
+        {
+            if ((sheetTitle ?? "") == "Prompts" && PromptStrings.TryGetValue(key, out string value))
+            {
+                return value;
+            }
+
+            return orig;
+        }
+
         private static readonly HashSet<string> emptySet = new();
 
         private void OnSceneChange(Scene scene)
@@ -92,7 +107,7 @@ namespace MoreDoors.IC
                 {
                     DoorSpawner.SpawnDoor(doorName, true);
                 }
-                if (scene.name == data.RighttDoorLocation.SceneName)
+                if (scene.name == data.RightDoorLocation.SceneName)
                 {
                     DoorSpawner.SpawnDoor(doorName, false);
                 }

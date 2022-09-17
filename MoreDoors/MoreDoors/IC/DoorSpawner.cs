@@ -18,18 +18,13 @@ namespace MoreDoors.IC
         private static void SetupConversationControl(PlayMakerFSM fsm, DoorData data, bool left)
         {
             fsm.GetState("Check Key").GetFirstActionOfType<PlayerDataBoolTest>().boolName = data.PDKeyName;
-
-            fsm.GetState("Send Text").GetFirstActionOfType<CallMethodProper>().parameters[0] =
-                NewStringVar(MoreDoorsModule.YesKeyConvoId(data.LogicName));
-
-            fsm.GetState("No Key").GetFirstActionOfType<CallMethodProper>().parameters[0] =
-                NewStringVar(MoreDoorsModule.NoKeyConvoId(data.LogicName));
+            fsm.GetState("Send Text").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(data.YesKeyPromptId);
+            fsm.GetState("No Key").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(data.NoKeyPromptId);
+            fsm.GetState("Open").AddFirstAction(new Lambda(() => Preloader.Instance.ReparentDoor(fsm.gameObject, left)));
 
             var setters = fsm.GetState("Yes").GetActionsOfType<SetPlayerDataBool>();
             setters[0].boolName = data.PDKeyName;
             setters[1].boolName = data.PDDoorOpenedName;
-
-            fsm.GetState("Open").AddFirstAction(new Lambda(() => Preloader.Instance.ReparentDoor(fsm.gameObject, left)));
         }
 
         private static void SetupNpcControlOnRight(PlayMakerFSM fsm)
@@ -45,7 +40,7 @@ namespace MoreDoors.IC
 
             SetupConversationControl(gameObj.LocateMyFSM("Conversation Control"), data, left);
 
-            var loc = left ? data.LeftDoorLocation : data.RighttDoorLocation;
+            var loc = left ? data.LeftDoorLocation : data.RightDoorLocation;
             gameObj.transform.position = new(loc.X, loc.Y, gameObj.transform.position.z);
             if (!left)
             {
