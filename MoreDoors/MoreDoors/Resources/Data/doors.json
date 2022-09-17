@@ -3,7 +3,7 @@
     "VarName": "Mothwing",
     "LogicName": "MOTHWING",
     "NoKeyDesc": "It looks like you can't get any closer, ghost.",
-    "KeyDesc": "It looks like you've found a way to get closer.",
+    "KeyDesc": "It looks like you found a way to get closer.",
     "LeftDoorLocation": {
       "SceneName": "Fungus1_21",
       "GateName": "left1",
@@ -20,7 +20,7 @@
       "ItemName": "Mothwing_Key",
       "UIItemName": "Mothwing Key",
       "ShopDesc": "You too can unlock your inner SHAAAW",
-      "SpriteKey": "DefaultKey.png",
+      "SpriteKey": "DefaultKey",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {

@@ -12,7 +12,8 @@ namespace MoreDoors.IC
 
         public static IEnumerable<string> DoorNames => data.Keys;
 
-        public static void Load() {
+        public static void Load()
+        {
             foreach (var doorName in DoorNames)
             {
                 Finder.DefineCustomItem(new KeyItem(doorName));
@@ -53,21 +54,24 @@ namespace MoreDoors.IC
         public KeyInfo Key;
 
         [JsonIgnore]
-        public string PDDoorOpenedName => MoreDoorsModule.PlayerDataDoorOpenedName(VarName);
+        public string PDDoorOpenedName => MoreDoorsModule.PlayerDataDoorOpenedName(this);
 
         [JsonIgnore]
-        public string PDKeyName => MoreDoorsModule.PlayerDataKeyName(VarName);
+        public string PDKeyName => MoreDoorsModule.PlayerDataKeyName(this);
 
         [JsonIgnore]
-        public string KeyTerm => MoreDoorsModule.LogicKeyName(LogicName);
+        public string KeyLogicName => MoreDoorsModule.KeyLogicName(this);
+
+        [JsonIgnore]
+        public string DoorForcedOpenLogicName => MoreDoorsModule.DoorForcedOpenLogicName(this);
 
         [JsonIgnore]
         public string KeyLocName => Key.VanillaLocation.name;
 
         [JsonIgnore]
-        public string NoKeyPromptId => MoreDoorsModule.NoKeyPromptId(LogicName);
+        public string NoKeyPromptId => MoreDoorsModule.NoKeyPromptId(this);
 
         [JsonIgnore]
-        public string KeyPromptId => MoreDoorsModule.KeyPromptId(LogicName);
+        public string KeyPromptId => MoreDoorsModule.KeyPromptId(this);
     }
 }

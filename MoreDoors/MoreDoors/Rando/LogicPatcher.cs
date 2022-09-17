@@ -30,10 +30,11 @@ namespace MoreDoors.Rando
                 LS.EnabledDoorNames.Add(doorName);
 
                 // Modify transition logic for this door.
-                var term = lmb.GetOrAddTerm(data.KeyTerm);
-                lmb.DoLogicEdit(new(data.LeftDoorLocation.TransitionName, $"ORIG + {data.KeyTerm} | {data.LeftDoorLocation.TransitionName}"));
-                lmb.DoLogicEdit(new(data.RightDoorLocation.TransitionName, $"ORIG + {data.KeyTerm} | {data.RightDoorLocation.TransitionName}"));
-                lmb.AddItem(new CappedItem(data.Key.ItemName, new TermValue[]  { new(term, 1) }, new(term, 1)));
+                var keyTerm = lmb.GetOrAddTerm(data.KeyLogicName);
+                lmb.AddWaypoint(new(data.DoorForcedOpenLogicName, $"{data.LeftDoorLocation.TransitionName} | {data.RightDoorLocation.TransitionName}"));
+                lmb.DoLogicEdit(new(data.LeftDoorLocation.TransitionName, $"ORIG + ({data.KeyLogicName} | {data.DoorForcedOpenLogicName})"));
+                lmb.DoLogicEdit(new(data.RightDoorLocation.TransitionName, $"ORIG + ({data.KeyLogicName} | {data.DoorForcedOpenLogicName})"));
+                lmb.AddItem(new CappedItem(data.Key.ItemName, new TermValue[]  { new(keyTerm, 1) }, new(keyTerm, 1)));
 
                 // Add vanilla key logic defs.
                 if (LS.Settings.AddKeyLocations)

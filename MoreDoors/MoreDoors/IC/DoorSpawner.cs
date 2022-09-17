@@ -2,9 +2,15 @@
 using HutongGames.PlayMaker.Actions;
 using ItemChanger.Extensions;
 using ItemChanger.FsmStateActions;
+using UnityEngine;
 
 namespace MoreDoors.IC
 {
+    public class DoorNameMarker : MonoBehaviour
+    {
+        public string DoorName;
+    }
+
     public static class DoorSpawner
     {
 
@@ -48,6 +54,8 @@ namespace MoreDoors.IC
                 SetupNpcControlOnRight(gameObj.LocateMyFSM("npc_control"));
             }
 
+            gameObj.name = $"{data.VarName} Door";
+            gameObj.AddComponent<DoorNameMarker>().DoorName = doorName;
             gameObj.SetActive(true);
         }
 

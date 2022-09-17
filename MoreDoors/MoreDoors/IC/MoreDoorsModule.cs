@@ -2,6 +2,8 @@
 using ItemChanger.Extensions;
 using Modding;
 using System.Collections.Generic;
+using System.Data;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace MoreDoors.IC
@@ -17,9 +19,10 @@ namespace MoreDoors.IC
         // Indexed by door name.
         public SortedDictionary<string, DoorState> DoorStates = new();
 
-        private readonly Dictionary<string, string> DoorNameByKey = new();
-        private readonly Dictionary<string, string> DoorNameByDoor = new();
+        private readonly Dictionary<string, string> DoorNamesByKey = new();
+        private readonly Dictionary<string, string> DoorNamesByDoor = new();
         private readonly Dictionary<string, HashSet<string>> DoorNamesByScene = new();
+        private readonly Dictionary<string, string> DoorNamesByTransition = new();
         private readonly Dictionary<string, string> PromptStrings = new();
 
         public override void Initialize()
@@ -31,16 +34,20 @@ namespace MoreDoors.IC
             foreach (var doorName in DoorStates.Keys)
             {
                 var data = DoorData.Get(doorName);
-                DoorNameByKey[data.PDKeyName] = doorName;
-                DoorNameByDoor[data.PDDoorOpenedName] = doorName;
+                DoorNamesByKey[data.PDKeyName] = doorName;
+                DoorNamesByDoor[data.PDDoorOpenedName] = doorName;
 
                 DoorNamesByScene.GetOrAdd(data.LeftDoorLocation.SceneName, new()).Add(doorName);
                 DoorNamesByScene.GetOrAdd(data.RightDoorLocation.SceneName, new()).Add(doorName);
+                DoorNamesByTransition[data.LeftDoorLocation.TransitionName] = doorName;
+                DoorNamesByTransition[data.RightDoorLocation.TransitionName] = doorName;
+
                 PromptStrings[data.NoKeyPromptId] = data.NoKeyDesc;
                 PromptStrings[data.KeyPromptId] = $"{data.KeyDesc}<br>Insert the {data.Key.UIItemName}?";
             }
 
             Events.OnSceneChange += OnSceneChange;
+            Events.OnBeginSceneTransition += OnBeginSceneTransition;
         }
 
         public override void Unload()
@@ -51,20 +58,21 @@ namespace MoreDoors.IC
             Events.OnSceneChange -= OnSceneChange;
         }
 
-        public static string PlayerDataKeyName(string doorNameVar) => $"moreDoors{doorNameVar}Key";
-        public static string PlayerDataDoorOpenedName(string doorNameVar) => $"moreDoors{doorNameVar}DoorOpened";
-        public static string LogicKeyName(string doorNameLogic) => $"MOREDOORS_{doorNameLogic}_KEY";
+        public static string PlayerDataKeyName(DoorData data) => $"moreDoors{data.VarName}Key";
+        public static string PlayerDataDoorOpenedName(DoorData data) => $"moreDoors{data.VarName}DoorOpened";
+        public static string KeyLogicName(DoorData data) => $"{data.LogicName}_KEY";
+        public static string DoorForcedOpenLogicName(DoorData data) => $"{data.VarName}Door_ForcedOpen";
 
-        public static string NoKeyPromptId(string doorNameLogic) => $"MOREDOORS_DOOR_{doorNameLogic}_NOKEY";
-        public static string KeyPromptId(string doorNameLogic) => $"MOREDOORS_DOOR_{doorNameLogic}_KEY";
+        public static string NoKeyPromptId(DoorData data) => $"MOREDOORS_{data.LogicName}_DOOR_NOKEY";
+        public static string KeyPromptId(DoorData data) => $"MOREDOORS_{data.LogicName}_DOOR_KEY";
 
         private bool OverrideGetBool(string name, bool orig)
         {
-            if (DoorNameByKey.TryGetValue(name, out string doorName))
+            if (DoorNamesByKey.TryGetValue(name, out string doorName))
             {
                 return DoorStates[doorName].KeyObtained;
             }
-            else if (DoorNameByDoor.TryGetValue(name, out doorName))
+            else if (DoorNamesByDoor.TryGetValue(name, out doorName))
             {
                 return DoorStates[doorName].DoorOpened;
             }
@@ -73,11 +81,11 @@ namespace MoreDoors.IC
 
         private bool OverrideSetBool(string name, bool orig)
         {
-            if (DoorNameByKey.TryGetValue(name, out string doorName))
+            if (DoorNamesByKey.TryGetValue(name, out string doorName))
             {
                 DoorStates[doorName].KeyObtained = orig;
             }
-            else if (DoorNameByDoor.TryGetValue(name, out doorName))
+            else if (DoorNamesByDoor.TryGetValue(name, out doorName))
             {
                 DoorStates[doorName].DoorOpened = orig;
             }
@@ -103,6 +111,23 @@ namespace MoreDoors.IC
                 if (scene.name == data.RightDoorLocation.SceneName)
                 {
                     DoorSpawner.SpawnDoor(doorName, false);
+                }
+            }
+        }
+
+        private void OnBeginSceneTransition(Transition t)
+        {
+            // If we went through a door via RoomRando, force it open.
+            var tname = $"{t.SceneName}[{t.GateName}]";
+            if (DoorNamesByTransition.TryGetValue(tname, out string doorName) && !DoorStates[doorName].DoorOpened)
+            {
+                DoorStates[doorName].DoorOpened = true;
+                foreach (var obj in Object.FindObjectsOfType<DoorNameMarker>())
+                {
+                    if (obj.DoorName == doorName)
+                    {
+                        obj.gameObject.SetActive(false);
+                    }
                 }
             }
         }
