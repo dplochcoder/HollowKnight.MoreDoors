@@ -1,6 +1,7 @@
 ﻿using HutongGames.PlayMaker;
 using HutongGames.PlayMaker.Actions;
 using ItemChanger.Extensions;
+using ItemChanger.FsmStateActions;
 
 namespace MoreDoors.IC
 {
@@ -14,26 +15,42 @@ namespace MoreDoors.IC
             return ret;
         }
 
+        private static void SetupConversationControl(PlayMakerFSM fsm, DoorData data, bool left)
+        {
+            fsm.GetState("Check Key").GetFirstActionOfType<PlayerDataBoolTest>().boolName = data.PDKeyName;
+
+            fsm.GetState("Send Text").GetFirstActionOfType<CallMethodProper>().parameters[0] =
+                NewStringVar(MoreDoorsModule.YesKeyConvoId(data.LogicName));
+
+            fsm.GetState("No Key").GetFirstActionOfType<CallMethodProper>().parameters[0] =
+                NewStringVar(MoreDoorsModule.NoKeyConvoId(data.LogicName));
+
+            var setters = fsm.GetState("Yes").GetActionsOfType<SetPlayerDataBool>();
+            setters[0].boolName = data.PDKeyName;
+            setters[1].boolName = data.PDDoorOpenedName;
+
+            fsm.GetState("Open").AddFirstAction(new Lambda(() => Preloader.Instance.ReparentDoor(fsm.gameObject, left)));
+        }
+
+        private static void SetupNpcControlOnRight(PlayMakerFSM fsm)
+        {
+            fsm.FsmVariables.FindFsmBool("Hero Always Left").Value = true;
+            fsm.FsmVariables.FindFsmBool("Hero Always Right").Value = false;
+        }
+
         public static void SpawnDoor(string doorName, bool left)
         {
             var data = DoorData.Get(doorName);
             var gameObj = Preloader.Instance.NewDoor();
 
-            var fsm = gameObj.LocateMyFSM("Conversation Control");
-            fsm.GetState("Check Key").GetFirstActionOfType<PlayerDataBoolTest>().boolName = data.PDKeyName;
-            fsm.GetState("Send Text").GetFirstActionOfType<CallMethodProper>().parameters[0] =
-                NewStringVar(MoreDoorsModule.YesKeyConvoId(data.LogicName));
-            fsm.GetState("No Key").GetFirstActionOfType<CallMethodProper>().parameters[0] =
-                NewStringVar(MoreDoorsModule.NoKeyConvoId(data.LogicName));
-            var setters = fsm.GetState("Yes").GetActionsOfType<SetPlayerDataBool>();
-            setters[0].boolName = data.PDKeyName;
-            setters[1].boolName = data.PDDoorOpenedName;
+            SetupConversationControl(gameObj.LocateMyFSM("Conversation Control"), data, left);
 
             var loc = left ? data.LeftDoorLocation : data.RighttDoorLocation;
             gameObj.transform.position = new(loc.X, loc.Y, gameObj.transform.position.z);
             if (!left)
             {
                 gameObj.transform.rotation = new(0, 180, 0, 0);
+                SetupNpcControlOnRight(gameObj.LocateMyFSM("npc_control"));
             }
 
             gameObj.SetActive(true);

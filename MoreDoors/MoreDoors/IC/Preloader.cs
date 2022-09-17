@@ -18,5 +18,16 @@ namespace MoreDoors.IC
         {
             doorTemplate = objectsByScene["Ruins2_11_b"]["Love Door"];
         }
+
+        public void ReparentDoor(GameObject obj, bool left)
+        {
+            Vector3 dst = obj.transform.position;
+            Vector3 src = doorTemplate.transform.position;
+
+            GameObject parent = new();
+            parent.transform.position = dst - src;
+            parent.transform.rotation = new(0, left ? 0 : 180, 0, 0);
+            obj.transform.parent = parent.transform;
+        }
     }
 }

@@ -84,7 +84,7 @@ namespace MoreDoors.IC
         {
             foreach (var doorName in DoorNamesByScene.GetOrDefault(scene.name, emptySet))
             {
-                // If the door is already opened, skip.
+                // If the door is already opened, skip, even though it's not strictly necessary.
                 if (DoorStates[doorName].DoorOpened) continue;
 
                 var data = DoorData.Get(doorName);
