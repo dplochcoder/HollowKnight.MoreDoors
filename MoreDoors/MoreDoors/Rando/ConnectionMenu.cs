@@ -5,6 +5,7 @@ using RandomizerMod.Menu;
 using MenuChanger.MenuElements;
 using static RandomizerMod.Localization;
 using MenuChanger.Extensions;
+using MenuChanger.MenuPanels;
 
 namespace MoreDoors.Rando
 {
@@ -29,6 +30,7 @@ namespace MoreDoors.Rando
         public SmallButton entryButton;
         public MenuPage mainPage;
         public MenuElementFactory<MoreDoorsSettings> factory;
+        public VerticalItemPanel panel;
 
         private static T Lookup<T>(MenuElementFactory<MoreDoorsSettings> factory, string name) where T : MenuItem => factory.ElementLookup[name] as T ?? throw new ArgumentException("Menu error");
 
@@ -55,11 +57,15 @@ namespace MoreDoors.Rando
 
             var settings = MoreDoors.GS.MoreDoorsSettings;
             factory = new(mainPage, settings);
+            Localize(factory);
+
             var addMoreDoors = Lookup<MenuItem<bool>>(factory, nameof(settings.AddMoreDoors));
             var doorsLevel = Lookup<MenuItem>(factory, nameof(settings.DoorsLevel));
             var addKeyLocations = Lookup<MenuItem>(factory, nameof(settings.AddKeyLocations));
 
             LockIfFalse(addMoreDoors, new() { doorsLevel, addKeyLocations });
+
+            panel = new(mainPage, SpaceParameters.TOP_CENTER_UNDER_TITLE, SpaceParameters.VSPACE_MEDIUM, true, factory.Elements);
         }
     }
 }
