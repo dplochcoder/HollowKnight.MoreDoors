@@ -8,7 +8,7 @@ namespace MoreDoors.IC
 
         public override IEnumerable<(string, string)> GetPreloadNames()
         {
-            yield return ("Ruins_2_11_b", "Love Door");
+            yield return ("Ruins2_11_b", "Love Door");
         }
 
         private GameObject doorTemplate;
@@ -16,7 +16,7 @@ namespace MoreDoors.IC
 
         public override void SavePreloads(Dictionary<string, Dictionary<string, GameObject>> objectsByScene)
         {
-            doorTemplate = objectsByScene["Ruins_2_11_b"]["Love Door"];
+            doorTemplate = objectsByScene["Ruins2_11_b"]["Love Door"];
         }
     }
 }

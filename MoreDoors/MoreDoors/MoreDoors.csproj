@@ -46,10 +46,12 @@
     <None Remove="README.md" />
     <None Remove="Resources\**\*.json" />
     <None Remove="Resources\**\*.png" />
+    <None Remove="Resources\**\*.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\**\*.json" />
     <EmbeddedResource Include="Resources\**\*.png" />
+    <EmbeddedResource Include="Resources\**\*.xml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">

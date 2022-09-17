@@ -35,6 +35,8 @@ namespace MoreDoors.IC
             {
                 gameObj.transform.rotation = new(0, 180, 0, 0);
             }
+
+            gameObj.SetActive(true);
         }
 
     }
