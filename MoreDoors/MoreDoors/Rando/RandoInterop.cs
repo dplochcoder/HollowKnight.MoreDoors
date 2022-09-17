@@ -16,7 +16,7 @@ namespace MoreDoors.Rando
         {
             ConnectionMenu.Setup();
             LogicPatcher.Setup();
-            RandoInterop.Setup();
+            RequestModifier.Setup();
 
             RandoController.OnExportCompleted += OnExportCompleted;
             RandomizerMod.Logging.SettingsLog.AfterLogSettings += LogSettings;
