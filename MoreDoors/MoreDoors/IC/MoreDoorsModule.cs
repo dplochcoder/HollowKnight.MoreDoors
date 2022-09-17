@@ -36,8 +36,8 @@ namespace MoreDoors.IC
 
                 DoorNamesByScene.GetOrAdd(data.LeftDoorLocation.SceneName, new()).Add(doorName);
                 DoorNamesByScene.GetOrAdd(data.RightDoorLocation.SceneName, new()).Add(doorName);
-                PromptStrings[data.NoKeyPromptId] = data.Desc;
-                PromptStrings[data.YesKeyPromptId] = $"{data.Desc} Insert the {data.Key.UIItemName}?";
+                PromptStrings[data.NoKeyPromptId] = data.NoKeyDesc;
+                PromptStrings[data.KeyPromptId] = $"{data.KeyDesc}<br>Insert the {data.Key.UIItemName}?";
             }
 
             Events.OnSceneChange += OnSceneChange;
@@ -47,6 +47,7 @@ namespace MoreDoors.IC
         {
             ModHooks.GetPlayerBoolHook -= OverrideGetBool;
             ModHooks.SetPlayerBoolHook -= OverrideSetBool;
+            ModHooks.LanguageGetHook -= OverrideLanguageGet;
             Events.OnSceneChange -= OnSceneChange;
         }
 
@@ -55,7 +56,7 @@ namespace MoreDoors.IC
         public static string LogicKeyName(string doorNameLogic) => $"MOREDOORS_{doorNameLogic}_KEY";
 
         public static string NoKeyPromptId(string doorNameLogic) => $"MOREDOORS_DOOR_{doorNameLogic}_NOKEY";
-        public static string YesKeyPromptId(string doorNameLogic) => $"MOREDOORS_DOOR_{doorNameLogic}_YESKEY";
+        public static string KeyPromptId(string doorNameLogic) => $"MOREDOORS_DOOR_{doorNameLogic}_KEY";
 
         private bool OverrideGetBool(string name, bool orig)
         {
@@ -83,15 +84,7 @@ namespace MoreDoors.IC
             return orig;
         }
 
-        private string OverrideLanguageGet(string key, string sheetTitle, string orig)
-        {
-            if ((sheetTitle ?? "") == "Prompts" && PromptStrings.TryGetValue(key, out string value))
-            {
-                return value;
-            }
-
-            return orig;
-        }
+        private string OverrideLanguageGet(string key, string sheetTitle, string orig) => PromptStrings.TryGetValue(key, out string value) ? value : orig;
 
         private static readonly HashSet<string> emptySet = new();
 

@@ -10,15 +10,15 @@ namespace MoreDoors.IC
 
         private static FsmVar NewStringVar(string text)
         {
-            FsmVar ret = new();
-            ret.SetValue(text);
+            FsmVar ret = new(typeof(string));
+            ret.stringValue = text;
             return ret;
         }
 
         private static void SetupConversationControl(PlayMakerFSM fsm, DoorData data, bool left)
         {
             fsm.GetState("Check Key").GetFirstActionOfType<PlayerDataBoolTest>().boolName = data.PDKeyName;
-            fsm.GetState("Send Text").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(data.YesKeyPromptId);
+            fsm.GetState("Send Text").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(data.KeyPromptId);
             fsm.GetState("No Key").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(data.NoKeyPromptId);
             fsm.GetState("Open").AddFirstAction(new Lambda(() => Preloader.Instance.ReparentDoor(fsm.gameObject, left)));
 

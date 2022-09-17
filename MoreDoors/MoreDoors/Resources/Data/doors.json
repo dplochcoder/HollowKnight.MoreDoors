@@ -2,7 +2,8 @@
   "Mothwing": {
     "VarName": "Mothwing",
     "LogicName": "MOTHWING",
-    "Desc": "It looks like you can't get any closer, ghost.",
+    "NoKeyDesc": "It looks like you can't get any closer, ghost.",
+    "KeyDesc": "It looks like you've found a way to get closer.",
     "LeftDoorLocation": {
       "SceneName": "Fungus1_21",
       "GateName": "left1",

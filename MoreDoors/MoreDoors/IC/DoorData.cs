@@ -35,7 +35,8 @@ namespace MoreDoors.IC
 
         public string VarName;
         public string LogicName;
-        public string Desc;
+        public string NoKeyDesc;
+        public string KeyDesc;
         public DoorLocation LeftDoorLocation;
         public DoorLocation RightDoorLocation;
         // TODO: Custom door sprites and colors
@@ -67,6 +68,6 @@ namespace MoreDoors.IC
         public string NoKeyPromptId => MoreDoorsModule.NoKeyPromptId(LogicName);
 
         [JsonIgnore]
-        public string YesKeyPromptId => MoreDoorsModule.YesKeyPromptId(LogicName);
+        public string KeyPromptId => MoreDoorsModule.KeyPromptId(LogicName);
     }
 }
