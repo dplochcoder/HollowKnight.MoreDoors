@@ -26,7 +26,8 @@
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
           "id": "Giant Hopper (2)",
-          "sceneName": "Deepnest_East_06"
+          "sceneName": "Deepnest_East_06",
+          "semiPersistent": true
         },
         "falseLocation": {
           "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
@@ -48,6 +49,58 @@
         "sceneName": "Deepnest_East_06"
       },
       "VanillaLogic": "Deepnest_East_06[right1]"
+    }
+  },
+  "Broken": {
+    "CamelCaseName": "Broken",
+    "UpperCaseName": "BROKEN",
+    "NoKeyDesc": "A decaying door haunted by the lost.",
+    "KeyDesc": "A kindred spirit's cries for help echo from within.<br>Insert the Broken Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Abyss_04",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 9.5
+    },
+    "RightDoorLocation": {
+      "SceneName": "Abyss_18",
+      "GateName": "right1",
+      "X": 198.9,
+      "Y": 12.7
+    },
+    "Key": {
+      "ItemName": "Broken_Key",
+      "UIItemName": "Broken Key",
+      "ShopDesc": "Broken? It looks completely functional to me.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Lesser Mawlek (2)",
+          "sceneName": "Abyss_17",
+          "semiPersistent": true
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Lesser Mawlek (2)",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Lesser_Mawlek-Basin_Cloth_by_Tram_Door",
+          "sceneName": "Abyss_17"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 101.5,
+          "y": 40,
+          "forceShiny": false,
+          "name": "Lesser_Mawlek-Basin_Cloth_by_Tram_Door",
+          "sceneName": "Abyss_17"
+        },
+        "name": "Lesser_Mawlek-Basin_Cloth_by_Tram_Door",
+        "sceneName": "Abyss_17"
+      },
+      "VanillaLogic": "Abyss_17[top1] + (DAMAGEBOOSTS | LEFTCLAW | WINGS | RIGHTCLAW + PRECISEMOVEMENT)"
     }
   },
   "Mothwing": {
