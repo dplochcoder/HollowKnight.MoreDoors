@@ -37,8 +37,8 @@ namespace MoreDoors.IC
             public string TransitionProxyName => $"{SceneName}_Proxy[{GateName}]";
         }
 
-        public string VarName;
-        public string LogicName;
+        public string CamelCaseName;
+        public string UpperCaseName;
         public string NoKeyDesc;
         public string KeyDesc;
         public DoorLocation LeftDoorLocation;
@@ -57,24 +57,24 @@ namespace MoreDoors.IC
         public KeyInfo Key;
 
         [JsonIgnore]
-        public string PDDoorOpenedName => MoreDoorsModule.PlayerDataDoorOpenedName(this);
+        public string PDDoorOpenedName => $"moreDoors{CamelCaseName}Key";
 
         [JsonIgnore]
-        public string PDKeyName => MoreDoorsModule.PlayerDataKeyName(this);
+        public string PDKeyName => $"moreDoors{CamelCaseName}DoorOpened";
 
         [JsonIgnore]
-        public string KeyLogicName => MoreDoorsModule.KeyLogicName(this);
+        public string KeyTermName => $"MOREDOORS_{UpperCaseName}_KEY";
 
         [JsonIgnore]
-        public string DoorForcedOpenLogicName => MoreDoorsModule.DoorForcedOpenLogicName(this);
+        public string DoorForcedOpenLogicName => $"{CamelCaseName}Door_ForcedOpen";
 
         [JsonIgnore]
-        public string KeyLocName => Key.VanillaLocation.name;
+        public string KeyLocationName => Key.VanillaLocation.name;
 
         [JsonIgnore]
-        public string NoKeyPromptId => MoreDoorsModule.NoKeyPromptId(this);
+        public string NoKeyPromptId => $"MOREDOORS_{UpperCaseName}_DOOR_NOKEY";
 
         [JsonIgnore]
-        public string KeyPromptId => MoreDoorsModule.KeyPromptId(this);
+        public string KeyPromptId => $"MOREDOORS_{UpperCaseName}_DOOR_KEY";
     }
 }

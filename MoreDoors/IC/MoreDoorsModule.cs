@@ -58,14 +58,6 @@ namespace MoreDoors.IC
             Events.OnSceneChange -= OnSceneChange;
         }
 
-        public static string PlayerDataKeyName(DoorData data) => $"moreDoors{data.VarName}Key";
-        public static string PlayerDataDoorOpenedName(DoorData data) => $"moreDoors{data.VarName}DoorOpened";
-        public static string KeyLogicName(DoorData data) => $"{data.LogicName}_KEY";
-        public static string DoorForcedOpenLogicName(DoorData data) => $"{data.VarName}Door_ForcedOpen";
-
-        public static string NoKeyPromptId(DoorData data) => $"MOREDOORS_{data.LogicName}_DOOR_NOKEY";
-        public static string KeyPromptId(DoorData data) => $"MOREDOORS_{data.LogicName}_DOOR_KEY";
-
         private bool OverrideGetBool(string name, bool orig)
         {
             if (DoorNamesByKey.TryGetValue(name, out string doorName))

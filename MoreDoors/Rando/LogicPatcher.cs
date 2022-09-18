@@ -22,7 +22,7 @@ namespace MoreDoors.Rando
 
             lmb.AddWaypoint(new(doorLoc.TransitionProxyName, lmb.LogicLookup[doorLoc.TransitionName].ToInfix()));
             lmb.DoLogicEdit(new(doorLoc.TransitionProxyName, $"ORIG | {doorLoc.TransitionName}"));
-            lmb.AddLogicDef(new(doorLoc.TransitionName, $"{doorLoc.TransitionName} | {doorLoc.TransitionProxyName} + ({data.KeyLogicName} | {data.DoorForcedOpenLogicName})"));
+            lmb.AddLogicDef(new(doorLoc.TransitionName, $"{doorLoc.TransitionName} | {doorLoc.TransitionProxyName} + ({data.KeyTermName} | {data.DoorForcedOpenLogicName})"));
         }
 
         private static LogicClause SubstituteSimpleTokens(IDictionary<string, string> replMap, LogicClause lc)
@@ -66,7 +66,7 @@ namespace MoreDoors.Rando
                 LS.EnabledDoorNames.Add(doorName);
 
                 // Modify transition logic for this door.
-                var keyTerm = lmb.GetOrAddTerm(data.KeyLogicName);
+                var keyTerm = lmb.GetOrAddTerm(data.KeyTermName);
                 lmb.AddWaypoint(new(data.DoorForcedOpenLogicName, $"{data.LeftDoorLocation.TransitionName} | {data.RightDoorLocation.TransitionName}"));
 
                 // Replace the transition waypoints with proxies.
@@ -78,7 +78,7 @@ namespace MoreDoors.Rando
                 // Add vanilla key logic defs.
                 if (LS.Settings.AddKeyLocations)
                 {
-                    lmb.AddLogicDef(new(data.KeyLocName, data.Key.VanillaLogic));
+                    lmb.AddLogicDef(new(data.KeyLocationName, data.Key.VanillaLogic));
                 }
             }
 

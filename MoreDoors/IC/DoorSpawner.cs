@@ -54,7 +54,7 @@ namespace MoreDoors.IC
                 SetupNpcControlOnRight(gameObj.LocateMyFSM("npc_control"));
             }
 
-            gameObj.name = $"{data.VarName} Door";
+            gameObj.name = $"{data.CamelCaseName} Door";
             gameObj.AddComponent<DoorNameMarker>().DoorName = doorName;
             gameObj.SetActive(true);
         }
