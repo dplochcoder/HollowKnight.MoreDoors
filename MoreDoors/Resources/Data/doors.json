@@ -8,13 +8,13 @@
       "SceneName": "Deepnest_East_04",
       "GateName": "left1",
       "X": 1.1,
-      "Y": 94.5
+      "Y": 96
     },
     "RightDoorLocation": {
       "SceneName": "Deepnest_East_07",
       "GateName": "right1",
       "X": 88.9,
-      "Y": 65.9
+      "Y": 67
     },
     "Key": {
       "ItemName": "Bardoon's_Key",
@@ -60,13 +60,13 @@
       "SceneName": "Abyss_04",
       "GateName": "left1",
       "X": 1.1,
-      "Y": 9.5
+      "Y": 11
     },
     "RightDoorLocation": {
       "SceneName": "Abyss_18",
       "GateName": "right1",
       "X": 198.9,
-      "Y": 12.7
+      "Y": 14
     },
     "Key": {
       "ItemName": "Broken_Key",
@@ -91,7 +91,7 @@
         },
         "trueLocation": {
           "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
-          "x": 101.5,
+          "x": 104.5,
           "y": 40,
           "forceShiny": false,
           "name": "Lesser_Mawlek-Basin_Cloth_by_Tram_Door",
