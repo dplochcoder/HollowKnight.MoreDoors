@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MoreDoors.IC;
+using System;
 
 namespace MoreDoors.Rando
 {
@@ -17,25 +18,27 @@ namespace MoreDoors.Rando
 
         public int ComputeNumDoors(Random r)
         {
-            int min, max;
+            int dividend, range;
             switch (DoorsLevel)
             {
                 case DoorsLevel.SomeDoors:
-                    min = 6;
-                    max = 8;
+                    dividend = 4;
+                    range = 1;
                     break;
                 case DoorsLevel.MoreDoors:
-                    min = 12;
-                    max = 16;
+                    dividend = 2;
+                    range = 2;
                     break;
                 case DoorsLevel.AllDoors:
-                    min = 28;
-                    max = 28;
+                    dividend = 1;
+                    range = 0;
                     break;
                 default:
                     throw new ArgumentException($"Unknown DoorsLevel: {DoorsLevel}");
             }
 
+            int min = Math.Max(1, (DoorData.Count / dividend) - range);
+            int max = Math.Min(DoorData.Count, (DoorData.Count / dividend) + range);
             return min + r.Next(0, max - min + 1);
         }
     }

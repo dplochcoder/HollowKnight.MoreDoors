@@ -12,6 +12,8 @@ namespace MoreDoors.IC
 
         public static IEnumerable<string> DoorNames => data.Keys;
 
+        public static int Count => data.Count;
+
         public static void Load()
         {
             foreach (var doorName in DoorNames)
