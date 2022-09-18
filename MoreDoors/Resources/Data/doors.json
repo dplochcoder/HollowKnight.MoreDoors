@@ -1,9 +1,60 @@
 ﻿{
+  "Bardoon": {
+    "CamelCaseName": "Bardoon",
+    "UpperCaseName": "BARDOON",
+    "NoKeyDesc": "An ashen door glazed with primal acid.",
+    "KeyDesc": "The gateway to more primal aspids creaks open.<br>Insert Bardoon's Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Deepnest_East_04",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 94.5
+    },
+    "RightDoorLocation": {
+      "SceneName": "Deepnest_East_07",
+      "GateName": "right1",
+      "X": 88.9,
+      "Y": 65.9
+    },
+    "Key": {
+      "ItemName": "Bardoon's_Key",
+      "UIItemName": "Bardoon's Key",
+      "ShopDesc": "He seems nice but his neighbors are just the worst.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Giant Hopper (2)",
+          "sceneName": "Deepnest_East_06"
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Giant Hopper (2)",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Great_Hopper-Left_of_Nailmaster_Oro",
+          "sceneName": "Deepnest_East_06"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 292.5,
+          "y": 9.5,
+          "forceShiny": false,
+          "name": "Great_Hopper-Left_of_Nailmaster_Oro",
+          "sceneName": "Deepnest_East_06"
+        },
+        "name": "Great_Hopper-Left_of_Nailmaster_Oro",
+        "sceneName": "Deepnest_East_06"
+      },
+      "VanillaLogic": "Deepnest_East_06[right1]"
+    }
+  },
   "Mothwing": {
-    "VarName": "Mothwing",
-    "LogicName": "MOTHWING",
+    "CamelCaseName": "Mothwing",
+    "UpperCaseName": "MOTHWING",
     "NoKeyDesc": "It looks like you can't get any closer, ghost.",
-    "KeyDesc": "It looks like you found a way to get closer.",
+    "KeyDesc": "It looks like you found a way to get closer.<br>Insert the Mothwing Key?",
     "LeftDoorLocation": {
       "SceneName": "Fungus1_21",
       "GateName": "left1",

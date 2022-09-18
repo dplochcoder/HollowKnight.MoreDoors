@@ -43,7 +43,7 @@ namespace MoreDoors.IC
                 DoorNamesByTransition[data.RightDoorLocation.TransitionName] = doorName;
 
                 PromptStrings[data.NoKeyPromptId] = data.NoKeyDesc;
-                PromptStrings[data.KeyPromptId] = $"{data.KeyDesc}<br>Insert the {data.Key.UIItemName}?";
+                PromptStrings[data.KeyPromptId] = data.KeyDesc;
             }
 
             Events.OnSceneChange += OnSceneChange;
