@@ -32,6 +32,9 @@ namespace MoreDoors.IC
 
             [JsonIgnore]
             public string TransitionName => $"{SceneName}[{GateName}]";
+
+            [JsonIgnore]
+            public string TransitionProxyName => $"{SceneName}_Proxy[{GateName}]";
         }
 
         public string VarName;
