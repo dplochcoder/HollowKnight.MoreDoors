@@ -14,10 +14,14 @@ namespace MoreDoors.Rando
     {
         public static void Setup() => RCData.RuntimeLogicOverride.Subscribe(55f, ModifyLMB);
 
-        private static void HandleTransition(LogicManagerBuilder lmb, DoorData data, DoorData.DoorLocation doorLoc, Dictionary<string, string> replacementMap)
+        private static void HandleTransition(LogicManagerBuilder lmb, DoorData data, DoorData.DoorLocation doorLoc, HashSet<string> fixedTerms, Dictionary<string, string> replacementMap)
         {
+            fixedTerms.Add(doorLoc.TransitionName);
+            fixedTerms.Add(doorLoc.TransitionProxyName);
             replacementMap[doorLoc.TransitionName] = doorLoc.TransitionProxyName;
-            lmb.LogicLookup[doorLoc.TransitionProxyName] = lmb.LogicLookup[doorLoc.TransitionName];
+
+            lmb.AddWaypoint(new(doorLoc.TransitionProxyName, lmb.LogicLookup[doorLoc.TransitionName].ToInfix()));
+            lmb.DoLogicEdit(new(doorLoc.TransitionProxyName, $"ORIG | {doorLoc.TransitionName}"));
             lmb.AddLogicDef(new(doorLoc.TransitionName, $"{doorLoc.TransitionName} | {doorLoc.TransitionProxyName} + ({data.KeyLogicName} | {data.DoorForcedOpenLogicName})"));
         }
 
@@ -53,6 +57,7 @@ namespace MoreDoors.Rando
 
             List<string> doors = new(DoorData.DoorNames);
             doors.Shuffle(r);
+            HashSet<string> fixedTerms = new();
             Dictionary<string, string> replacementMap = new();
             for (int i = 0; i < numDoors && i < doors.Count; i++)
             {
@@ -65,8 +70,8 @@ namespace MoreDoors.Rando
                 lmb.AddWaypoint(new(data.DoorForcedOpenLogicName, $"{data.LeftDoorLocation.TransitionName} | {data.RightDoorLocation.TransitionName}"));
 
                 // Replace the transition waypoints with proxies.
-                HandleTransition(lmb, data, data.LeftDoorLocation, replacementMap);
-                HandleTransition(lmb, data, data.RightDoorLocation, replacementMap);
+                HandleTransition(lmb, data, data.LeftDoorLocation, fixedTerms, replacementMap);
+                HandleTransition(lmb, data, data.RightDoorLocation, fixedTerms, replacementMap);
 
                 lmb.AddItem(new CappedItem(data.Key.ItemName, new TermValue[]  { new(keyTerm, 1) }, new(keyTerm, 1)));
 
@@ -86,7 +91,7 @@ namespace MoreDoors.Rando
             List<string> names = new(lmb.LogicLookup.Keys);
             foreach (var name in names)
             {
-                if (replacementMap.ContainsKey(name)) continue;
+                if (fixedTerms.Contains(name)) continue;
                 lmb.LogicLookup[name] = SubstituteSimpleTokens(replacementMap, lmb.LogicLookup[name]);
             }
 
