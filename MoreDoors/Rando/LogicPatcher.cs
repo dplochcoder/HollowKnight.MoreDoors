@@ -53,6 +53,11 @@ namespace MoreDoors.Rando
         {
             if (!RandoInterop.IsEnabled) return;
 
+            // TODO: Define this upstream.
+            lmb.LP.SetMacro(
+                "COMBAT[Shrumal_Ogre]",
+                "SIDESLASH | UPSLASH | CYCLONE | GREATSLASH | FULLDASHSLASH | ANYDASHSLASH + DASHMASTER + OBSCURESKIPS | SPICYCOMBATSKIPS");
+
             LocalSettings LS = new();
             Random r = new(gs.Seed + 13);
             int numDoors = LS.Settings.ComputeNumDoors(r);
