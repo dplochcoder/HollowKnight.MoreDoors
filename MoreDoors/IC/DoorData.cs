@@ -29,6 +29,7 @@ namespace MoreDoors.IC
         {
             public string SceneName;
             public string GateName;
+            public bool RequiresLantern;
             public float X;
             public float Y;
 

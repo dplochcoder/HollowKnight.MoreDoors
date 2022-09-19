@@ -22,7 +22,9 @@ namespace MoreDoors.Rando
 
             lmb.AddWaypoint(new(doorLoc.TransitionProxyName, lmb.LogicLookup[doorLoc.TransitionName].ToInfix()));
             lmb.DoLogicEdit(new(doorLoc.TransitionProxyName, $"ORIG | {doorLoc.TransitionName}"));
-            lmb.AddLogicDef(new(doorLoc.TransitionName, $"{doorLoc.TransitionName} | {doorLoc.TransitionProxyName} + ({data.KeyTermName} | {data.DoorForcedOpenLogicName})"));
+
+            string lanternClause = doorLoc.RequiresLantern ? " + LANTERN" : "";
+            lmb.AddLogicDef(new(doorLoc.TransitionName, $"{doorLoc.TransitionName} | {doorLoc.TransitionProxyName}{lanternClause} + ({data.KeyTermName} | {data.DoorForcedOpenLogicName})"));
         }
 
         private static LogicClause SubstituteSimpleTokens(IDictionary<string, string> replMap, LogicClause lc)

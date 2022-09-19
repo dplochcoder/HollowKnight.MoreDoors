@@ -8,13 +8,13 @@
       "SceneName": "Deepnest_East_04",
       "GateName": "left1",
       "X": 1.1,
-      "Y": 96
+      "Y": 95.6
     },
     "RightDoorLocation": {
       "SceneName": "Deepnest_East_07",
       "GateName": "right1",
       "X": 88.9,
-      "Y": 67
+      "Y": 66.6
     },
     "Key": {
       "ItemName": "Bardoon's_Key",
@@ -60,13 +60,13 @@
       "SceneName": "Abyss_04",
       "GateName": "left1",
       "X": 1.1,
-      "Y": 11
+      "Y": 10.6
     },
     "RightDoorLocation": {
       "SceneName": "Abyss_18",
       "GateName": "right1",
       "X": 198.9,
-      "Y": 14
+      "Y": 13.6
     },
     "Key": {
       "ItemName": "Broken_Key",
@@ -112,13 +112,13 @@
       "SceneName": "Fungus2_01",
       "GateName": "left1",
       "X": 1.1,
-      "Y": 44
+      "Y": 43.6
     },
     "RightDoorLocation": {
       "SceneName": "Fungus3_02",
       "GateName": "right2",
       "X": 29.9,
-      "Y": 6
+      "Y": 5.6
     },
     "Key": {
       "ItemName": "Canyon_Key",
@@ -164,13 +164,13 @@
       "SceneName": "Fungus2_17",
       "GateName": "left1",
       "X": 1.1,
-      "Y": 36
+      "Y": 35.6
     },
     "RightDoorLocation": {
       "SceneName": "Fungus2_29",
       "GateName": "right1",
       "X": 92.9,
-      "Y": 34
+      "Y": 33.6
     },
     "Key": {
       "ItemName": "Core_Key",
@@ -216,13 +216,13 @@
       "SceneName": "Mines_23",
       "GateName": "left1",
       "X": 1.1,
-      "Y": 15
+      "Y": 14.6
     },
     "RightDoorLocation": {
       "SceneName": "Mines_20",
       "GateName": "right1",
       "X": 73.9,
-      "Y": 198
+      "Y": 197.6
     },
     "Key": {
       "ItemName": "Crown_Key",
@@ -268,14 +268,16 @@
     "LeftDoorLocation": {
       "SceneName": "Deepnest_34",
       "GateName": "left1",
+      "RequiresLantern": true,
       "X": 1.1,
-      "Y": 18
+      "Y": 17.6
     },
     "RightDoorLocation": {
       "SceneName": "Deepnest_39",
       "GateName": "right1",
+      "RequiresLantern": true,
       "X": 208.9,
-      "Y": 10
+      "Y": 9.6
     },
     "Key": {
       "ItemName": "Dark_Key",
@@ -321,13 +323,13 @@
       "SceneName": "Mines_31",
       "GateName": "left1",
       "X": 1.1,
-      "Y": 22
+      "Y": 21.6
     },
     "RightDoorLocation": {
       "SceneName": "Mines_20",
       "GateName": "right2",
       "X": 73.9,
-      "Y": 66
+      "Y": 65.6
     },
     "Key": {
       "ItemName": "Heart_Key",
@@ -383,13 +385,13 @@
       "SceneName": "Fungus1_21",
       "GateName": "left1",
       "X": 1.1,
-      "Y": 15.95
+      "Y": 15.6
     },
     "RightDoorLocation": {
       "SceneName": "Fungus1_04",
       "GateName": "right1",
       "X": 93.9,
-      "Y": 35
+      "Y": 34.6
     },
     "Key": {
       "ItemName": "Mothwing_Key",
@@ -434,13 +436,13 @@
       "SceneName": "Deepnest_30",
       "GateName": "left1",
       "X": 1.1,
-      "Y": 8
+      "Y": 7.6
     },
     "RightDoorLocation": {
       "SceneName": "Deepnest_03",
       "GateName": "right1",
       "X": 58.9,
-      "Y": 6
+      "Y": 5.6
     },
     "Key": {
       "ItemName": "Nest_Key",
@@ -476,10 +478,10 @@
           "x": 82,
           "y": 5,
           "forceShiny": false,
-          "name": "Moss_Knight-Greenpath_Life_Blood",
+          "name": "Mossy_Vagabond-Fungal_Prophet",
           "sceneName": "Fungus3_39"
         },
-        "name": "Moss_Knight-Greenpath_Life_Blood",
+        "name": "Mossy_Vagabond-Fungal_Prophet",
         "sceneName": "Fungus3_39"
       },
       "VanillaLogic": "Fungus3_39[right1]"

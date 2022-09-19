@@ -56,7 +56,13 @@ namespace MoreDoors.IC
 
             gameObj.name = $"{data.CamelCaseName} Door";
             gameObj.AddComponent<DoorNameMarker>().DoorName = doorName;
+
+            var promptMarker = gameObj.FindChild("Prompt Marker");
+            promptMarker.transform.localPosition = new(0.7f, 0.77f, 0.206f);
+            promptMarker.AddComponent<DeactivateInDarknessWithoutLantern>();
+
             gameObj.SetActive(true);
+            // FIXME: Clear Conversation control FSM in the dark
         }
 
     }
