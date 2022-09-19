@@ -940,7 +940,7 @@
     },
     "RightDoorLocation": {
       "SceneName": "Abyss_06_Core",
-      "GateName": "right1",
+      "GateName": "right2",
       "X": 98.9,
       "Y": 5.6
     },
