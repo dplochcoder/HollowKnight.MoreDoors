@@ -470,7 +470,7 @@
     "Key": {
       "ItemName": "Fragile_Key",
       "UIItemName": "Fragile Key",
-      "ShopDesc": "Don't let the Better Bugsiness Bureau know about this.",
+      "ShopDesc": "Don't let the Better Bugsness Bureau know about this.",
       "SpriteKey": "DefaultKey",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -588,7 +588,7 @@
   "Heart": {
     "CamelCaseName": "Heart",
     "UpperCaseName": "HEART",
-    "NoKeyDesc": "A dense, deeply crystallized door. It seems to have a hearbeat?",
+    "NoKeyDesc": "A dense, deeply crystallized door. It seems to have a hearbeat.",
     "KeyDesc": "The heart of the mountain beckons.<br>Insert the Heart Key?",
     "LeftDoorLocation": {
       "SceneName": "Mines_31",
@@ -605,7 +605,7 @@
     "Key": {
       "ItemName": "Heart_Key",
       "UIItemName": "Heart Key",
-      "ShopDesc": "If you hold this up to your ear, you'll realize you don't have ears dumbdumb.",
+      "ShopDesc": "If you hold this up to your ear, you'll realize you don't HAVE ears, dumbdumb.",
       "SpriteKey": "DefaultKey",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -947,7 +947,7 @@
     "Key": {
       "ItemName": "Shade_Key",
       "UIItemName": "Shade Key",
-      "ShopDesc": "It smells of darkness, please take it away?",
+      "ShopDesc": "It smells of darkness, please take it away.",
       "SpriteKey": "DefaultKey",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
