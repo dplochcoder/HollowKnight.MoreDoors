@@ -729,7 +729,7 @@
         "name": "Left_Elder_Baldur-Baldur_Shell",
         "sceneName": "Fungus1_28"
       },
-      "VanillaLogic": "(Fungus1_28[left1] | Fungus1_28[left2] + (RIGHTDASH | RIGHTSUPERDASH | WINGS | SHADESKIPS | LEFTCLAW + RIGHTCLAW + OBSCURESKIPS) + LEFTBALDURS"
+      "VanillaLogic": "(Fungus1_28[left1] | Fungus1_28[left2] + (RIGHTDASH | RIGHTSUPERDASH | WINGS | SHADESKIPS | LEFTCLAW + RIGHTCLAW + OBSCURESKIPS)) + LEFTBALDURS"
     }
   },
   "Junk": {
@@ -781,7 +781,7 @@
         "name": "Belfly-Above_Flukemarm_Totem",
         "sceneName": "Waterways_08"
       },
-      "VanillaLogic": "(Fungus1_28[left1] | Fungus1_28[left2] + (RIGHTDASH | RIGHTSUPERDASH | WINGS | SHADESKIPS | LEFTCLAW + RIGHTCLAW + OBSCURESKIPS) + LEFTBALDURS"
+      "VanillaLogic": "Waterways_08[top1] + (ANYCLAW | WINGS | ENEMYPOGOS + RIGHTDASH)"
     }
   },
   "Lake": {
@@ -833,7 +833,7 @@
         "name": "Infected_Vengefly-Crossroads_Well",
         "sceneName": "Crossroads_01"
       },
-      "VanillaLogic": "Crossroads_01[left1] + INFECTED"
+      "VanillaLogic": "Crossroads_01[left1] + DREAMER"
     }
   },
   "Mantis": {
@@ -843,7 +843,7 @@
     "KeyDesc": "Your challengers await.<br>Insert the Mantis Key?",
     "LeftDoorLocation": {
       "SceneName": "Fungus2_13",
-      "GateName": "left1",
+      "GateName": "left2",
       "X": 2.5,
       "Y": 60.6
     },
@@ -935,7 +935,7 @@
           "name": "Moss_Knight-Lake_of_Unn",
           "sceneName": "Fungus1_26"
         },
-        "name": "Mantis_Warrior-Above_Bretta_Bench",
+        "name": "Moss_Knight-Lake_of_Unn",
         "sceneName": "Fungus1_26"
       },
       "VanillaLogic": "Fungus1_26[right1]"
