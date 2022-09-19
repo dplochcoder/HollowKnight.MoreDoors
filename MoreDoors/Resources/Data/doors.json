@@ -680,6 +680,267 @@
       "VanillaLogic": "Hive_03[top1]"
     }
   },
+  "Joni": {
+    "CamelCaseName": "Joni",
+    "UpperCaseName": "JONI",
+    "NoKeyDesc": "A robust door overgrown with lifeblood.",
+    "KeyDesc": "You weren't invited, but you're here anyway.<br>Insert Joni's Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Cliffs_04",
+      "GateName": "left1",
+      "RequiresLantern": true,
+      "X": 1.1,
+      "Y": 45.6
+    },
+    "RightDoorLocation": {
+      "SceneName": "Cliffs_01",
+      "GateName": "right2",
+      "X": 138.9,
+      "Y": 93.6
+    },
+    "Key": {
+      "ItemName": "Joni's_Key'",
+      "UIItemName": "Joni's Key",
+      "ShopDesc": "I feel like I shouldn't have this, so it's at a discount.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Blocker 1",
+          "sceneName": "Fungus1_28"
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Blocker 1",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Left_Elder_Baldur-Baldur_Shell",
+          "sceneName": "Fungus1_28"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 67,
+          "y": 3.5,
+          "forceShiny": false,
+          "name": "Left_Elder_Baldur-Baldur_Shell",
+          "sceneName": "Fungus1_28"
+        },
+        "name": "Left_Elder_Baldur-Baldur_Shell",
+        "sceneName": "Fungus1_28"
+      },
+      "VanillaLogic": "(Fungus1_28[left1] | Fungus1_28[left2] + (RIGHTDASH | RIGHTSUPERDASH | WINGS | SHADESKIPS | LEFTCLAW + RIGHTCLAW + OBSCURESKIPS) + LEFTBALDURS"
+    }
+  },
+  "Junk": {
+    "CamelCaseName": "Junk",
+    "UpperCaseName": "JUNK",
+    "NoKeyDesc": "A wet, pasty door. You can see larvae growing.",
+    "KeyDesc": "The larvae have grown larger.<br>Insert the Junk Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Waterways_08",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 56.6
+    },
+    "RightDoorLocation": {
+      "SceneName": "GG_Pipeway",
+      "GateName": "right1",
+      "X": 147.9,
+      "Y": 6.6
+    },
+    "Key": {
+      "ItemName": "Junk_Key'",
+      "UIItemName": "Junk Key",
+      "ShopDesc": "It comes with complimentary worthless Lumaflies.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Ceiling Dropper (3)",
+          "sceneName": "Waterways_08",
+          "semiPersistent": true
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Ceiling Dropper (3)",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Belfly-Above_Flukemarm_Totem",
+          "sceneName": "Waterways_08"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 130,
+          "y": 19.5,
+          "forceShiny": false,
+          "name": "Belfly-Above_Flukemarm_Totem",
+          "sceneName": "Waterways_08"
+        },
+        "name": "Belfly-Above_Flukemarm_Totem",
+        "sceneName": "Waterways_08"
+      },
+      "VanillaLogic": "(Fungus1_28[left1] | Fungus1_28[left2] + (RIGHTDASH | RIGHTSUPERDASH | WINGS | SHADESKIPS | LEFTCLAW + RIGHTCLAW + OBSCURESKIPS) + LEFTBALDURS"
+    }
+  },
+  "Lake": {
+    "CamelCaseName": "Lake",
+    "UpperCaseName": "LAKE",
+    "NoKeyDesc": "A wet, quiet door. There is a certain shadow about it.",
+    "KeyDesc": "You sense the sadness of a journey completed.<br>Insert the Lake Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Crossroads_50",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 46.6
+    },
+    "RightDoorLocation": {
+      "SceneName": "Crossroads_04",
+      "GateName": "right1",
+      "X": 158.9,
+      "Y": 26.6
+    },
+    "Key": {
+      "ItemName": "Lake_Key'",
+      "UIItemName": "Lake Key",
+      "ShopDesc": "Many souls died to use this key, I assume that makes it worth this price.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Angry Buzzer",
+          "sceneName": "Crossroads_01",
+          "semiPersistent": true
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Angry Buzzer",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Infected_Vengefly-Crossroads_Well",
+          "sceneName": "Crossroads_01"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 29,
+          "y": 10.5,
+          "forceShiny": false,
+          "name": "Infected_Vengefly-Crossroads_Well",
+          "sceneName": "Crossroads_01"
+        },
+        "name": "Infected_Vengefly-Crossroads_Well",
+        "sceneName": "Crossroads_01"
+      },
+      "VanillaLogic": "Crossroads_01[left1] + INFECTED"
+    }
+  },
+  "Mantis": {
+    "CamelCaseName": "Mantis",
+    "UpperCaseName": "MANTIS",
+    "NoKeyDesc": "A sharp, carefully sculpted door. It smells of honor.",
+    "KeyDesc": "Your challengers await.<br>Insert the Mantis Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Fungus2_13",
+      "GateName": "left1",
+      "X": 2.5,
+      "Y": 60.6
+    },
+    "RightDoorLocation": {
+      "SceneName": "Fungus2_14",
+      "GateName": "right1",
+      "X": 173.9,
+      "Y": 11.6
+    },
+    "Key": {
+      "ItemName": "Mantis_Key'",
+      "UIItemName": "Mantis Key",
+      "ShopDesc": "It unlocks one of the most guarded places in the kingdom.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Mantis (3)",
+          "sceneName": "Fungus2_13",
+          "semiPersistent": true
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Mantis (3)",
+          "removeGeo": false,
+          "managed": false,
+          "flingType": "StraightUp",
+          "name": "Mantis_Warrior-Above_Bretta_Bench",
+          "sceneName": "Fungus2_13"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 23.5,
+          "y": 22.5,
+          "forceShiny": false,
+          "name": "Mantis_Warrior-Above_Bretta_Bench",
+          "sceneName": "Fungus2_13"
+        },
+        "name": "Mantis_Warrior-Above_Bretta_Bench",
+        "sceneName": "Fungus2_13"
+      },
+      "VanillaLogic": "Fungus2_13 | Fungus2_13[left3] + (RIGHTDASH | ACID | WINGS | LEFTCLAW | RIGHTCLAW + PRECISEMOVEMENT | AIRSTALL + ROOMSOUL | TERMINALSHADESKIPS)"
+    }
+  },
+  "Moss": {
+    "CamelCaseName": "Moss",
+    "UpperCaseName": "MOSS",
+    "NoKeyDesc": "A bright stone door overgrown with moss.",
+    "KeyDesc": "The power of leftslash compels you.<br>Insert the Moss Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Fungus1_11",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 34.6
+    },
+    "RightDoorLocation": {
+      "SceneName": "Fungus1_29",
+      "GateName": "right1",
+      "X": 83.9,
+      "Y": 16.6
+    },
+    "Key": {
+      "ItemName": "Moss_Key'",
+      "UIItemName": "Moss Key",
+      "ShopDesc": "If you look carefully it's actually four little keys pretending to be a big key.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Moss Knight",
+          "sceneName": "Fungus1_26"
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Moss Knight",
+          "removeGeo": false,
+          "managed": false,
+          "flingType": "StraightUp",
+          "name": "Moss_Knight-Lake_of_Unn",
+          "sceneName": "Fungus1_26"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 60.5,
+          "y": 15.5,
+          "forceShiny": false,
+          "name": "Moss_Knight-Lake_of_Unn",
+          "sceneName": "Fungus1_26"
+        },
+        "name": "Mantis_Warrior-Above_Bretta_Bench",
+        "sceneName": "Fungus1_26"
+      },
+      "VanillaLogic": "Fungus1_26[right1]"
+    }
+  },
   "Mothwing": {
     "CamelCaseName": "Mothwing",
     "UpperCaseName": "MOTHWING",

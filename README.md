@@ -2,7 +2,7 @@
 
 A rando 4 connection mod which adds more locked doors to Hallownest with unique keys.
 
-Twenty-eight unique doors, each with their own unique key, are added to the game by this mod.
+Twenty-seven unique doors, each with their own unique key, are added to the game by this mod.
 The keys also have vanilla locations, which can optionally be added to the locations pool.
 See SPOILER.md for the full list of doors and vanilla key locations if you wish.
 

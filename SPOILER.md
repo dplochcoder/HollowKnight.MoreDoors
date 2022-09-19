@@ -84,11 +84,6 @@ Read at your own risk!  There's no taking it back.
 * Blocks access to Blue Lake from Salubra
 * Key is at the Infected Vengefly by crossroads well
 
-## Lurker's Door
-
-* Blocks access to Pale Lurker from Colosseum
-* Key is at Great Hopper by the King's Idol
-
 ## Mantis Door
 
 * Blocks access to Mantis Village core from Bretta Bench
