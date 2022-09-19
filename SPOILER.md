@@ -27,12 +27,12 @@ Read at your own risk!  There's no taking it back.
 ## Crown Door
 
 * Blocks access to Hallownest's Crown
-* Key is at the crystal flier inside Crystallized Mound
+* Key is at the last Crystal Hunter inside Crystallized Mound
 
-## Darknest Door
+## Dark Door
 
 * Blocks access to the Deepnest whispering root, from the first devout
-* Key is at the last Dirtcarver spawner in the failed tramway
+* Key is at the last Carver Hatcher in the failed tramway
 
 ## False Door
 

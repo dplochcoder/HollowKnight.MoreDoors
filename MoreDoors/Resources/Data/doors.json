@@ -260,6 +260,58 @@
       "VanillaLogic": "Mines_35[left1] + QUAKE + (ANYCLAW | WINGS)"
     }
   },
+  "Dark": {
+    "CamelCaseName": "Dark",
+    "UpperCaseName": "DARK",
+    "NoKeyDesc": "A shell-encrusted door infested with spiders.",
+    "KeyDesc": "The skittering never stops.<br>Insert the Dark Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Deepnest_34",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 18
+    },
+    "RightDoorLocation": {
+      "SceneName": "Deepnest_39",
+      "GateName": "right1",
+      "X": 208.9,
+      "Y": 10
+    },
+    "Key": {
+      "ItemName": "Dark_Key",
+      "UIItemName": "Dark Key",
+      "ShopDesc": "I swear I can't even see this thing without my Lumaflies, it's so black.'",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Centipede Hatcher (7)",
+          "sceneName": "Deepnest_26b",
+          "semiPersistent": true
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Centipede Hatcher (7)",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Carver_Hatcher-Next_to_Tram_Pass",
+          "sceneName": "Deepnest_26b"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 40.5,
+          "y": 4.5,
+          "forceShiny": false,
+          "name": "Carver_Hatcher-Next_to_Tram_Pass",
+          "sceneName": "Deepnest_26b"
+        },
+        "name": "Carver_Hatcher-Next_to_Tram_Pass",
+        "sceneName": "Deepnest_26b"
+      },
+      "VanillaLogic": "Deepnest_26b[right2] + (ANYCLAW | WINGS)"
+    }
+  },
   "Heart": {
     "CamelCaseName": "Heart",
     "UpperCaseName": "HEART",
@@ -371,6 +423,66 @@
         "sceneName": "Fungus1_32"
       },
       "VanillaLogic": "Fungus1_32[bot1]"
+    }
+  },
+  "Nest": {
+    "CamelCaseName": "Nest",
+    "UpperCaseName": "NEST",
+    "NoKeyDesc": "A crunchy door laced with spider webs.",
+    "KeyDesc": "You can feel your skin crawling.<br>Insert the Nest Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Deepnest_30",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 8
+    },
+    "RightDoorLocation": {
+      "SceneName": "Deepnest_03",
+      "GateName": "right1",
+      "X": 58.9,
+      "Y": 6
+    },
+    "Key": {
+      "ItemName": "Nest_Key",
+      "UIItemName": "Nest Key",
+      "ShopDesc": "I tried cleaning it but it always seems to have more webs.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.Disjunction, ItemChanger",
+          "bools": [
+            {
+              "$type": "ItemChanger.SDBool, ItemChanger",
+              "id": "Moss Knight Fat (2)",
+              "sceneName": "Fungus3_39"
+            },
+            {
+              "$type": "ItemChanger.PDBool, ItemChanger",
+              "boolName": "crossroadsInfected"
+            }
+          ]
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Moss Knight Fat (2)",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Mossy_Vagabond-Fungal_Prophet",
+          "sceneName": "Fungus3_39"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 82,
+          "y": 5,
+          "forceShiny": false,
+          "name": "Moss_Knight-Greenpath_Life_Blood",
+          "sceneName": "Fungus3_39"
+        },
+        "name": "Moss_Knight-Greenpath_Life_Blood",
+        "sceneName": "Fungus3_39"
+      },
+      "VanillaLogic": "Fungus3_39[right1]"
     }
   }
 }
