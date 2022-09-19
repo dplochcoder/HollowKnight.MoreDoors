@@ -63,6 +63,7 @@ namespace MoreDoors.Rando
         {
             fixedTerms.Add(doorLoc.TransitionName);
             fixedTerms.Add(doorLoc.TransitionProxyName);
+            fixedTerms.Add(data.DoorForcedOpenLogicName);
             replacementMap[doorLoc.TransitionName] = doorLoc.TransitionProxyName;
 
             lmb.AddWaypoint(new(doorLoc.TransitionProxyName, lmb.LogicLookup[doorLoc.TransitionName].ToInfix()));
