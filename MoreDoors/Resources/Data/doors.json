@@ -1091,7 +1091,7 @@
         "name": "Stalking_Devout-Dark_Deepnest_Rancid_Egg",
         "sceneName": "Deepnest_39"
       },
-      "VanillaLogic": "Deepnest_39[right1] + LANTERN + COMBAT[Stalking_Devout]"
+      "VanillaLogic": "(LANTERN | DARKROOMS) + (Deepnest_39[right1] + COMBAT[Left_Devout] | Deepnest_39[left1] + COMBAT[Right_Devout])"
     }
   }
 }
