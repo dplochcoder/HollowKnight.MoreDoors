@@ -1,8 +1,10 @@
-﻿using MoreDoors.IC;
+﻿using ItemChanger;
+using MoreDoors.IC;
 using RandomizerCore;
 using RandomizerCore.Logic;
 using RandomizerCore.LogicItems;
 using RandomizerCore.StringLogic;
+using RandomizerMod.Menu;
 using RandomizerMod.RC;
 using RandomizerMod.Settings;
 using System;
@@ -12,7 +14,50 @@ namespace MoreDoors.Rando
 {
     public static class LogicPatcher
     {
-        public static void Setup() => RCData.RuntimeLogicOverride.Subscribe(55f, ModifyLMB);
+        private const string MoreDoorsRando = "MOREDOORSRANDO";
+
+        public static void Setup()
+        {
+            RandomizerMenuAPI.OnGenerateStartLocationDict += PatchStartLocations;
+            SettingsPM.OnResolveIntTerm += ResolveMoreDoorsRando;
+            RCData.RuntimeLogicOverride.Subscribe(55f, ModifyLMB);
+        }
+
+        private static bool ResolveMoreDoorsRando(string term, out int result)
+        {
+            if (term == MoreDoorsRando)
+            {
+                result = RandoInterop.IsEnabled ? 1 : 0;
+                return true;
+            }
+
+            result = default;
+            return false;
+        }
+
+        private static readonly HashSet<string> ForbiddenStarts = new() {
+            "Hallownest's Crown",
+            "Hive",
+            "Mantis Village",
+            "Queen's Gardens",
+            "Queen's Station",
+            "West Blue Lake",
+            "West Fog Canyon"};
+
+        private static void PatchStartLocations(Dictionary<string, RandomizerMod.RandomizerData.StartDef> startDefs)
+        {
+            foreach (var start in startDefs.Keys)
+            {
+                if (ForbiddenStarts.Contains(start))
+                {
+                    var sd = startDefs[start];
+                    startDefs[start] = sd with
+                    {
+                        RandoLogic = $"({sd.RandoLogic ?? sd.Logic}) + {MoreDoorsRando}=0"
+                    };
+                }
+            }
+        }
 
         private static void HandleTransition(LogicManagerBuilder lmb, DoorData data, DoorData.DoorLocation doorLoc, HashSet<string> fixedTerms, Dictionary<string, string> replacementMap)
         {
