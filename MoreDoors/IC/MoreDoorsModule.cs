@@ -3,6 +3,7 @@ using ItemChanger.Extensions;
 using Modding;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -90,6 +91,7 @@ namespace MoreDoors.IC
 
         private void OnSceneChange(Scene scene)
         {
+            SceneManager sm = scene.GetRootGameObjects().First(g => g.GetComponent<SceneManager>() != null).GetComponent<SceneManager>();
             foreach (var doorName in DoorNamesByScene.GetOrDefault(scene.name, emptySet))
             {
                 // If the door is already opened, skip, even though it's not strictly necessary.
@@ -98,11 +100,11 @@ namespace MoreDoors.IC
                 var data = DoorData.Get(doorName);
                 if (scene.name == data.LeftDoorLocation.SceneName)
                 {
-                    DoorSpawner.SpawnDoor(doorName, true);
+                    DoorSpawner.SpawnDoor(sm, doorName, true);
                 }
                 if (scene.name == data.RightDoorLocation.SceneName)
                 {
-                    DoorSpawner.SpawnDoor(doorName, false);
+                    DoorSpawner.SpawnDoor(sm, doorName, false);
                 }
             }
         }

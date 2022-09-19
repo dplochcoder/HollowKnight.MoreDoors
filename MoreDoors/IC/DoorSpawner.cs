@@ -39,7 +39,7 @@ namespace MoreDoors.IC
             fsm.FsmVariables.FindFsmBool("Hero Always Right").Value = false;
         }
 
-        public static void SpawnDoor(string doorName, bool left)
+        public static void SpawnDoor(SceneManager sm, string doorName, bool left)
         {
             var data = DoorData.Get(doorName);
             var gameObj = Preloader.Instance.NewDoor();
@@ -59,10 +59,18 @@ namespace MoreDoors.IC
 
             var promptMarker = gameObj.FindChild("Prompt Marker");
             promptMarker.transform.localPosition = new(0.7f, 0.77f, 0.206f);
-            promptMarker.AddComponent<DeactivateInDarknessWithoutLantern>();
+            promptMarker.AddComponent<DeactivateInDarknessWithoutLantern>().enabled = true;
+
+            // TODO: Establish an ordering between mod initializations on scene load.
+            // Implement a constraints mod that supports this without the need for linking.
+            if (sm.darknessLevel == 2 && !PlayerData.instance.GetBool(nameof(PlayerData.instance.hasLantern)))
+            {
+                // Why is this so finicky
+                GameObject.Destroy(promptMarker);
+                GameObject.Destroy(gameObj.LocateMyFSM("npc_control"));
+            }
 
             gameObj.SetActive(true);
-            // FIXME: Clear Conversation control FSM in the dark
         }
 
     }
