@@ -314,6 +314,277 @@
       "VanillaLogic": "Deepnest_26b[right2] + (ANYCLAW | WINGS)"
     }
   },
+  "False": {
+    "CamelCaseName": "False",
+    "UpperCaseName": "FALSE",
+    "NoKeyDesc": "It's a locked door, here?",
+    "KeyDesc": "The hardest challenge in the game awaits you.<br>Insert the False Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Crossroads_03",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 33.6
+    },
+    "RightDoorLocation": {
+      "SceneName": "Crossroads_21",
+      "GateName": "right1",
+      "X": 98.9,
+      "Y": 16.6
+    },
+    "Key": {
+      "ItemName": "False_Key",
+      "UIItemName": "False Key",
+      "ShopDesc": "I think this is to protect him, not you.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Zombie Guard",
+          "sceneName": "Crossroads_48",
+          "semiPersistent": true
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Zombie Guard",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Husk_Guard-Crossroads_Guarded_Grub",
+          "sceneName": "Crossroads_48"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 33.5,
+          "y": 3.5,
+          "forceShiny": false,
+          "name": "Husk_Guard-Crossroads_Guarded_Grub",
+          "sceneName": "Crossroads_48"
+        },
+        "name": "Husk_Guard-Crossroads_Guarded_Grub",
+        "sceneName": "Crossroads_48"
+      },
+      "VanillaLogic": "Crossroads_48[left1]"
+    }
+  },
+  "Flooded Stag": {
+    "CamelCaseName": "FloodedStag",
+    "UpperCaseName": "FLOODED_STAG",
+    "NoKeyDesc": "A cold stone door, dripping with water.",
+    "KeyDesc": "You can feel the power of buoyancy calling out to you.<br>Insert the Flooded Stag Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Ruins2_07",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 8.6
+    },
+    "RightDoorLocation": {
+      "SceneName": "Ruins2_06",
+      "GateName": "right2",
+      "X": 54.9,
+      "Y": 7.6
+    },
+    "Key": {
+      "ItemName": "Flooded_Stag_Key",
+      "UIItemName": "Flooded Stag Key",
+      "ShopDesc": "I don't think this protects anything, just a bunch of water?",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Battle Scene",
+          "sceneName": "Ruins_House_01"
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Great Shield Zombie",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Greater_Husk_Sentry-City_Guarded_Grub",
+          "sceneName": "Ruins_House_01"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 27,
+          "y": 6.5,
+          "forceShiny": false,
+          "name": "Greater_Husk_Sentry-City_Guarded_Grub",
+          "sceneName": "Ruins_House_01"
+        },
+        "name": "Greater_Husk_Sentry-City_Guarded_Grub",
+        "sceneName": "Ruins_House_01"
+      },
+      "VanillaLogic": "Ruins_House_01[left1]"
+    }
+  },
+  "Fountain": {
+    "CamelCaseName": "Fountain",
+    "UpperCaseName": "FOUNTAIN",
+    "NoKeyDesc": "An ornate door, bespeckled in expensive relics.",
+    "KeyDesc": "Rain flows intricately between the carvings.<br>Insert the Fountain Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Ruins1_27",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 7.6
+    },
+    "RightDoorLocation": {
+      "SceneName": "Ruins1_05b",
+      "GateName": "right1",
+      "X": 63.9,
+      "Y": 8.6
+    },
+    "Key": {
+      "ItemName": "Fountain_Key",
+      "UIItemName": "Fountain Key",
+      "ShopDesc": "Is it destiny you seek, or geo?  Are they different?",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+        "objectName": "Mage Blob 2 (3)",
+        "removeGeo": false,
+        "managed": false,
+        "name": "Mistake-Soul_Master_Return",
+        "sceneName": "Ruins1_30"
+      },
+      "VanillaLogic": "Ruins1_30[left2]"
+    }
+  },
+  "Fragile": {
+    "CamelCaseName": "Fragile",
+    "UpperCaseName": "FRAGILE",
+    "NoKeyDesc": "A spongy door reinforced with shards of old charms.",
+    "KeyDesc": "Mind your legs.<br>Insert the Fragile Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Fungus2_26",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 9.6
+    },
+    "RightDoorLocation": {
+      "SceneName": "Fungus2_06",
+      "GateName": "right1",
+      "X": 34.9,
+      "Y": 60.6
+    },
+    "Key": {
+      "ItemName": "Fragile_Key",
+      "UIItemName": "Fragile Key",
+      "ShopDesc": "Don't let the Better Bugsiness Bureau know about this.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Battle Scene v2",
+          "sceneName": "Fungus2_05"
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Mushroom Brawler 1",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Shrumal_Ogre_1-Fungal_Charm_Notch",
+          "sceneName": "Fungus2_05"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 45,
+          "y": 13.5,
+          "forceShiny": false,
+          "name": "Shrumal_Ogre_1-Fungal_Charm_Notch",
+          "sceneName": "Fungus2_05"
+        },
+        "name": "Shrumal_Ogre_1-Fungal_Charm_Notch",
+        "sceneName": "Fungus2_05"
+      },
+      "VanillaLogic": "Fungus2_05[right1] + COMBAT[Shrumal_Ogre]"
+    }
+  },
+  "Fungal": {
+    "CamelCaseName": "Fungal",
+    "UpperCaseName": "FUNGAL",
+    "NoKeyDesc": "This door has, like, so many mushrooms on it.",
+    "KeyDesc": "The pilgrim's way expands.<br>Insert the Fungal Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Fungus2_07",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 15.6
+    },
+    "RightDoorLocation": {
+      "SceneName": "Fungus2_06",
+      "GateName": "right2",
+      "X": 34.9,
+      "Y": 11.6
+    },
+    "Key": {
+      "ItemName": "Fungal_Key",
+      "UIItemName": "Fungal Key",
+      "ShopDesc": "Chop 'em, sautee 'em, stick 'em in a stew.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Battle Scene v2",
+          "sceneName": "Fungus2_05"
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Mushroom Brawler 2",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Shrumal_Ogre_2-Fungal_Charm_Notch",
+          "sceneName": "Fungus2_05"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 20,
+          "y": 13.5,
+          "forceShiny": false,
+          "name": "Shrumal_Ogre_2-Fungal_Charm_Notch",
+          "sceneName": "Fungus2_05"
+        },
+        "name": "Shrumal_Ogre_2-Fungal_Charm_Notch",
+        "sceneName": "Fungus2_05"
+      },
+      "VanillaLogic": "Fungus2_05[right1] + COMBAT[Shrumal_Ogre]"
+    }
+  },
+  "Garden": {
+    "CamelCaseName": "Garden",
+    "UpperCaseName": "GARDEN",
+    "NoKeyDesc": "A richly green door with just a spritz of acid.",
+    "KeyDesc": "The queen awaits her boy.<br>Insert the Garden Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Fungus3_34",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 13.6
+    },
+    "RightDoorLocation": {
+      "SceneName": "Fungus3_04",
+      "GateName": "right1",
+      "X": 38.9,
+      "Y": 58.6
+    },
+    "Key": {
+      "ItemName": "Garden_Key",
+      "UIItemName": "Garden Key",
+      "ShopDesc": "Interesting to see things so cared for in a kingdom forgotten.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+        "objectName": "Moss Flyer (4)",
+        "removeGeo": false,
+        "managed": false,
+        "name": "Mossfly-Outside_Overgrown_Mound",
+        "sceneName": "Fungus3_44"
+      },
+      "VanillaLogic": "Fungus3_44[door1]"
+    }
+  },
   "Heart": {
     "CamelCaseName": "Heart",
     "UpperCaseName": "HEART",
@@ -374,6 +645,39 @@
         "sceneName": "Mines_05"
       },
       "VanillaLogic": "Mines_05[left2]"
+    }
+  },
+  "Hive": {
+    "CamelCaseName": "Hive",
+    "UpperCaseName": "HIVE",
+    "NoKeyDesc": "It's made of honeycombs, sturdy as stone.",
+    "KeyDesc": "The buzzing resonates with your soul.<br>Insert the Hive Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Hive_02",
+      "GateName": "left2",
+      "X": 95.1,
+      "Y": 52.6
+    },
+    "RightDoorLocation": {
+      "SceneName": "Hive_01",
+      "GateName": "right1",
+      "X": 118.9,
+      "Y": 52.6
+    },
+    "Key": {
+      "ItemName": "Hive_Key",
+      "UIItemName": "Hive Key",
+      "ShopDesc": "It's technically edible, I wouldn't recommend that though.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+        "objectName": "Bee Hatchling Ambient (29)",
+        "removeGeo": false,
+        "managed": false,
+        "name": "Hiveling-Hive_Outside_Grub",
+        "sceneName": "Hive_03"
+      },
+      "VanillaLogic": "Hive_03[top1]"
     }
   },
   "Mothwing": {
@@ -485,6 +789,309 @@
         "sceneName": "Fungus3_39"
       },
       "VanillaLogic": "Fungus3_39[right1]"
+    }
+  },
+  "Overgrown": {
+    "CamelCaseName": "Overgrown",
+    "UpperCaseName": "OVERGROWN",
+    "NoKeyDesc": "A bubbly door decorated with green.",
+    "KeyDesc": "It's okay, you have an excuse this time.<br>Insert the Overgrown Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Fungus3_01",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 39.6
+    },
+    "RightDoorLocation": {
+      "SceneName": "Fungus3_24",
+      "GateName": "right1",
+      "X": 98.9,
+      "Y": 14.6
+    },
+    "Key": {
+      "ItemName": "Overgrown_Key",
+      "UIItemName": "Overgrown Key",
+      "ShopDesc": "Strange... this key seems like it's been forgotten more times than anyone can remember.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+        "objectName": "Plant Turret (3)",
+        "removeGeo": false,
+        "managed": false,
+        "name": "Gulka-MMC_Corridor",
+        "sceneName": "Fungus1_12"
+      },
+      "VanillaLogic": "Fungus1_12[right1] + (UPSLASH | SCREAM)"
+    }
+  },
+  "Pain": {
+    "CamelCaseName": "Pain",
+    "UpperCaseName": "PAIN",
+    "NoKeyDesc": "An ornate door with saw blades instead of gears for a lock mechanism.",
+    "KeyDesc": "The screech of saw blades permeates all.<br>Insert the Pain Key?",
+    "LeftDoorLocation": {
+      "SceneName": "White_Palace_06",
+      "GateName": "left1",
+      "X": 14.8,
+      "Y": 5.6
+    },
+    "RightDoorLocation": {
+      "SceneName": "White_Palace_18",
+      "GateName": "right1",
+      "X": 298.9,
+      "Y": 14.6
+    },
+    "Key": {
+      "ItemName": "Pain_Key",
+      "UIItemName": "Pain Key",
+      "ShopDesc": "This looks like it's been beaten to hell by blades, does it even work?",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Battle Scene",
+          "sceneName": "White_Palace_02"
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Royal Guard",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Kingsmould-Palace_Entrance_Lever",
+          "sceneName": "White_Palace_02"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 101.5,
+          "y": 42.5,
+          "forceShiny": false,
+          "name": "Kingsmould-Palace_Entrance_Lever",
+          "sceneName": "White_Palace_02"
+        },
+        "name": "Kingsmould-Palace_Entrance_Lever",
+        "sceneName": "Ruins1_05c"
+      },
+      "VanillaLogic": "White_Palace_02[left1] + (RIGHTDASH | PRECISEMOVEMENT) + (RIGHTDASH | RIGHTCLAW | WINGS) + COMBAT[Kingsmould]"
+    }
+  },
+  "Sanctum": {
+    "CamelCaseName": "Sanctum",
+    "UpperCaseName": "SANCTUM",
+    "NoKeyDesc": "A door forged of empty shells and broken glass.",
+    "KeyDesc": "A pure focus awaits.<br>Insert the Sanctum Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Ruins1_09",
+      "GateName": "left1",
+      "X": 2.1,
+      "Y": 18.6
+    },
+    "RightDoorLocation": {
+      "SceneName": "Ruins1_05",
+      "GateName": "right1",
+      "X": 61.9,
+      "Y": 153.6
+    },
+    "Key": {
+      "ItemName": "Sanctum_Key",
+      "UIItemName": "Sanctum Key",
+      "ShopDesc": "It's brimming with soul, too much of it.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Ruins Sentry Fat",
+          "sceneName": "Ruins1_05c",
+          "semiPersistent": true
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Ruins Sentry Fat",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Heavy_Sentry-Above_Lemm",
+          "sceneName": "Ruins1_05c"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 13.5,
+          "y": 36.5,
+          "forceShiny": false,
+          "name": "Heavy_Sentry-Above_Lemm",
+          "sceneName": "Ruins1_05c"
+        },
+        "name": "Heavy_Sentry-Above_Lemm",
+        "sceneName": "Ruins1_05c"
+      },
+      "VanillaLogic": "Ruins1_05c[bot1]"
+    }
+  },
+  "Shade": {
+    "CamelCaseName": "Shade",
+    "UpperCaseName": "SHADE",
+    "NoKeyDesc": "A dark door forged of bones and abandoned souls.",
+    "KeyDesc": "The destiny of darkness awaits.<br>Insert the Shade Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Abyss_16",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 7.6
+    },
+    "RightDoorLocation": {
+      "SceneName": "Abyss_06_Core",
+      "GateName": "right1",
+      "X": 98.9,
+      "Y": 5.6
+    },
+    "Key": {
+      "ItemName": "Shade_Key",
+      "UIItemName": "Shade Key",
+      "ShopDesc": "It smells of darkness, please take it away?",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Mawlek Turret (3)",
+          "sceneName": "Abyss_20",
+          "semiPersistent": true
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Mawlek Turret (3)",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Mawlurk-Broken_Vessel_Ascent",
+          "sceneName": "Abyss_20"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 56.5,
+          "y": 57,
+          "forceShiny": false,
+          "name": "Mawlurk-Broken_Vessel_Ascent",
+          "sceneName": "Abyss_20"
+        },
+        "name": "Mawlurk-Broken_Vessel_Ascent",
+        "sceneName": "Abyss_20"
+      },
+      "VanillaLogic": "Abyss_20[top1]"
+    }
+  },
+  "Traitor": {
+    "CamelCaseName": "Traitor",
+    "UpperCaseName": "TRAITOR",
+    "NoKeyDesc": "An ornate metal door embellished with thorns.",
+    "KeyDesc": "The path of the warrior ends here.<br>Insert the Traitor's Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Fungus3_04",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 85.6
+    },
+    "RightDoorLocation": {
+      "SceneName": "Fungus3_21",
+      "GateName": "right1",
+      "X": 73.9,
+      "Y": 8.6
+    },
+    "Key": {
+      "ItemName": "Traitor's_Key'",
+      "UIItemName": "Traitor's Key",
+      "ShopDesc": "I found this on some lady drilling in the wastes, doesn't seem too important.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.Disjunction, ItemChanger",
+          "bools": [
+            {
+              "$type": "ItemChanger.SDBool, ItemChanger",
+              "id": "Mantis Heavy",
+              "sceneName": "Fungus3_39",
+              "semiPersistent": true
+            },
+            {
+              "$type": "ItemChanger.SDBool, ItemChanger",
+              "id": "Battle Scene",
+              "sceneName": "Fungus3_39"
+            }
+          ]
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Mantis Heavy",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Mantis_Traitor-Love_Key",
+          "sceneName": "Fungus3_39"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 91,
+          "y": 36.5,
+          "forceShiny": false,
+          "name": "Mantis_Traitor-Love_Key",
+          "sceneName": "Fungus3_39"
+        },
+        "name": "Mantis_Traitor-Love_Key",
+        "sceneName": "Fungus3_39"
+      },
+      "VanillaLogic": "*Love_Key"
+    }
+  },
+  "Village": {
+    "CamelCaseName": "Village",
+    "UpperCaseName": "VILLAGE",
+    "NoKeyDesc": "A solid door reinforced with silk weaves.",
+    "KeyDesc": "Even the King's influence does not reach here.<br>Insert the Village Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Deepnest_41",
+      "GateName": "left1",
+      "RequiresLantern": true,
+      "X": 1.1,
+      "Y": 91.6
+    },
+    "RightDoorLocation": {
+      "SceneName": "Deepnest_10",
+      "GateName": "right2",
+      "X": 73.9,
+      "Y": 89.6
+    },
+    "Key": {
+      "ItemName": "Village_Key",
+      "UIItemName": "Village Key",
+      "ShopDesc": "I think this is technically an heirloom? I should probably charge more for it.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Slash Spider",
+          "sceneName": "Deepnest_39",
+          "semiPersistent": true
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Slash Spider",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Stalking_Devout-Dark_Deepnest_Rancid_Egg",
+          "sceneName": "Deepnest_39"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 77.5,
+          "y": 5.5,
+          "forceShiny": false,
+          "name": "Stalking_Devout-Dark_Deepnest_Rancid_Egg",
+          "sceneName": "Deepnest_39"
+        },
+        "name": "Stalking_Devout-Dark_Deepnest_Rancid_Egg",
+        "sceneName": "Deepnest_39"
+      },
+      "VanillaLogic": "Deepnest_39[right1] + LANTERN + COMBAT[Stalking_Devout]"
     }
   }
 }
