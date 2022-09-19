@@ -8,8 +8,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{D54698D6-E795-4975-AD4E-555EDCE1567F}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\build.yml = .github\workflows\build.yml
-		..\README.md = ..\README.md
-		..\SPOILER.md = ..\SPOILER.md
+		README.md = README.md
+		SPOILER.md = SPOILER.md
 	EndProjectSection
 EndProject
 Global

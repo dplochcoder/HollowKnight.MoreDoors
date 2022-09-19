@@ -103,6 +103,225 @@
       "VanillaLogic": "Abyss_17[top1] + (DAMAGEBOOSTS | LEFTCLAW | WINGS | RIGHTCLAW + PRECISEMOVEMENT)"
     }
   },
+  "Canyon": {
+    "CamelCaseName": "Canyon",
+    "UpperCaseName": "CANYON",
+    "NoKeyDesc": "A quiet door of forgotten peace. It tingles a little.",
+    "KeyDesc": "The pilgrim's way begins to open.<br>Insert the Canyon Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Fungus2_01",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 44
+    },
+    "RightDoorLocation": {
+      "SceneName": "Fungus3_02",
+      "GateName": "right2",
+      "X": 29.9,
+      "Y": 6
+    },
+    "Key": {
+      "ItemName": "Canyon_Key",
+      "UIItemName": "Canyon Key",
+      "ShopDesc": "Ow! Why is this so receptive to static?",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Zombie Fungus A",
+          "sceneName": "Fungus2_18",
+          "semiPersistent": true
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Zombie Fungus A",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Fungified_Husk-Fungal_Below_Cornifer",
+          "sceneName": "Fungus2_18"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 37.5,
+          "y": 6,
+          "forceShiny": false,
+          "name": "Fungified_Husk-Fungal_Below_Cornifer",
+          "sceneName": "Fungus2_18"
+        },
+        "name": "Fungified_Husk-Fungal_Below_Cornifer",
+        "sceneName": "Fungus2_18"
+      },
+      "VanillaLogic": "Fungus2_18[top1]"
+    }
+  },
+  "Core": {
+    "CamelCaseName": "Core",
+    "UpperCaseName": "CORE",
+    "NoKeyDesc": "A spongy door overgrown with rich fungus.",
+    "KeyDesc": "The depths of the wastes cry WAH.<br>Insert the Core Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Fungus2_17",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 36
+    },
+    "RightDoorLocation": {
+      "SceneName": "Fungus2_29",
+      "GateName": "right1",
+      "X": 92.9,
+      "Y": 34
+    },
+    "Key": {
+      "ItemName": "Core_Key",
+      "UIItemName": "Core Key",
+      "ShopDesc": "Please get rid of this, it's got something growing on it.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Mantis",
+          "sceneName": "Fungus2_31",
+          "semiPersistent": true
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Mantis",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Mantis_Vault_Guardian",
+          "sceneName": "Fungus2_31"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 14.5,
+          "y": 9.6,
+          "forceShiny": false,
+          "name": "Mantis_Vault_Guardian",
+          "sceneName": "Fungus2_31"
+        },
+        "name": "Mantis_Vault_Guardian",
+        "sceneName": "Fungus2_31"
+      },
+      "VanillaLogic": "Fungus2_31[left1] + Defeated_Mantis_Lords + (ANYCLAW | WINGS | DAMAGEBOOSTS + OBSCURESKIPS)"
+    }
+  },
+  "Crown": {
+    "CamelCaseName": "Crown",
+    "UpperCaseName": "CROWN",
+    "NoKeyDesc": "A crystalline door shining with a forgotten light.",
+    "KeyDesc": "This is as high as you'll go.<br>Insert the Crown Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Mines_23",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 15
+    },
+    "RightDoorLocation": {
+      "SceneName": "Mines_20",
+      "GateName": "right1",
+      "X": 73.9,
+      "Y": 198
+    },
+    "Key": {
+      "ItemName": "Crown_Key",
+      "UIItemName": "Crown Key",
+      "ShopDesc": "Goodness, this one is shiny. Where could it have come from?",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Crystal Flier (2)",
+          "sceneName": "Mines_35",
+          "semiPersistent": true
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Crystal Flier (2)",
+          "removeGeo": false,
+          "managed": false,
+          "flingType": "DirectDeposit",
+          "name": "Crystal_Hunter-Crystallized_Mound",
+          "sceneName": "Mines_35"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 85,
+          "y": 23,
+          "forceShiny": false,
+          "name": "Crystal_Hunter-Crystallized_Mound",
+          "sceneName": "Mines_35"
+        },
+        "name": "Crystal_Hunter-Crystallized_Mound",
+        "sceneName": "Mines_35"
+      },
+      "VanillaLogic": "Mines_35[left1] + QUAKE + (ANYCLAW | WINGS)"
+    }
+  },
+  "Heart": {
+    "CamelCaseName": "Heart",
+    "UpperCaseName": "HEART",
+    "NoKeyDesc": "A dense, deeply crystallized door. It seems to have a hearbeat?",
+    "KeyDesc": "The heart of the mountain beckons.<br>Insert the Heart Key?",
+    "LeftDoorLocation": {
+      "SceneName": "Mines_31",
+      "GateName": "left1",
+      "X": 1.1,
+      "Y": 22
+    },
+    "RightDoorLocation": {
+      "SceneName": "Mines_20",
+      "GateName": "right2",
+      "X": 73.9,
+      "Y": 66
+    },
+    "Key": {
+      "ItemName": "Heart_Key",
+      "UIItemName": "Heart Key",
+      "ShopDesc": "If you hold this up to your ear, you'll realize you don't have ears dumbdumb.",
+      "SpriteKey": "DefaultKey",
+      "VanillaLocation": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.Disjunction, ItemChanger",
+          "bools": [
+            {
+              "$type": "ItemChanger.SDBool, ItemChanger",
+              "id": "Zombie Miner 1",
+              "sceneName": "Mines_05",
+              "semiPersistent": true
+            },
+            {
+              "$type": "ItemChanger.SDBool, ItemChanger",
+              "id": "Breakable Wall",
+              "sceneName": "Mines_05"
+            }
+          ]
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Zombie Miner 1",
+          "removeGeo": false,
+          "managed": false,
+          "name": "Husk_Miner-Deep_Focus_Breakable_Wall",
+          "sceneName": "Mines_05"
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 5.5,
+          "y": 22,
+          "forceShiny": false,
+          "name": "Husk_Miner-Deep_Focus_Breakable_Wall",
+          "sceneName": "Mines_05"
+        },
+        "name": "Husk_Miner-Deep_Focus_Breakable_Wall",
+        "sceneName": "Mines_05"
+      },
+      "VanillaLogic": "Mines_05[left2]"
+    }
+  },
   "Mothwing": {
     "CamelCaseName": "Mothwing",
     "UpperCaseName": "MOTHWING",

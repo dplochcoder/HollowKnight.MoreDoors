@@ -12,22 +12,22 @@ Read at your own risk!  There's no taking it back.
 ## Broken Door
 
 * Blocks access to Broken Vessel
-* Key is at the mini-Mawlek right of Cloth in Basin
+* Key is at the Lesser Mawlek right of Cloth in Basin
 
 ## Canyon Door
 
 * Blocks access to Queen's Station from Fog Canyon
-* Key is at the spore husk below Cornifer
+* Key is at the Fungified Husk below Cornifer
 
 ## Core Door
 
 * Blocks access to Fungal Core
-* Key is at the mantis guarding the Mantis Vault
+* Key is at the Mantis guarding the Mantis Vault
 
 ## Crown Door
 
 * Blocks access to Hallownest's Crown
-* Key is at the Husk Miner by the Deep Focus entrance
+* Key is at the crystal flier inside Crystallized Mound
 
 ## Darknest Door
 
@@ -62,7 +62,7 @@ Read at your own risk!  There's no taking it back.
 ## Heart Door
 
 * Blocks access to Crystal Heart
-* Key is at the last crystal flier on the crown ascent
+* Key is at the Husk Miner by the Deep Focus entrance
 
 ## Hive Door
 
