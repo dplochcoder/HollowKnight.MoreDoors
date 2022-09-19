@@ -872,7 +872,7 @@
         "name": "Kingsmould-Palace_Entrance_Lever",
         "sceneName": "Ruins1_05c"
       },
-      "VanillaLogic": "White_Palace_02[left1] + (RIGHTDASH | PRECISEMOVEMENT) + (RIGHTDASH | RIGHTCLAW | WINGS) + COMBAT[Kingsmould]"
+      "VanillaLogic": "White_Palace_02[left1] + (RIGHTDASH | RIGHTCLAW | WINGS) + COMBAT[Kingsmould]"
     }
   },
   "Sanctum": {
