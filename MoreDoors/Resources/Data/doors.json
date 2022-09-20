@@ -522,7 +522,7 @@
       "ItemName": "Fungal_Key",
       "UIItemName": "Fungal Key",
       "ShopDesc": "Chop 'em, sautee 'em, stick 'em in a stew.",
-      "SpriteKey": "DefaultKey",
+      "SpriteKey": "FungalKey",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -702,7 +702,7 @@
       "ItemName": "Joni's_Key'",
       "UIItemName": "Joni's Key",
       "ShopDesc": "I feel like I shouldn't have this, so it's at a discount.",
-      "SpriteKey": "DefaultKey",
+      "SpriteKey": "JoniKey",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1209,7 +1209,7 @@
       "ItemName": "Shade_Key",
       "UIItemName": "Shade Key",
       "ShopDesc": "It smells of darkness, please take it away.",
-      "SpriteKey": "DefaultKey",
+      "SpriteKey": "ShadeKey",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
