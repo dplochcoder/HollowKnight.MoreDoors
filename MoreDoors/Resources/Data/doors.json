@@ -322,7 +322,7 @@
     "LeftDoorLocation": {
       "SceneName": "Crossroads_03",
       "GateName": "left1",
-      "X": 1.1,
+      "X": 2.1,
       "Y": 33.6
     },
     "RightDoorLocation": {
