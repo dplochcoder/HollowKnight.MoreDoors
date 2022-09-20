@@ -21,7 +21,9 @@ namespace MoreDoors.Rando
         {
             RandomizerMenuAPI.OnGenerateStartLocationDict += PatchStartLocations;
             SettingsPM.OnResolveIntTerm += ResolveMoreDoorsRando;
-            RCData.RuntimeLogicOverride.Subscribe(55f, ModifyLMB);
+
+            // This should run before DarknessRandomizer and/or RandoPlus
+            RCData.RuntimeLogicOverride.Subscribe(35f, ModifyLMB);
         }
 
         private static bool ResolveMoreDoorsRando(string term, out int result)
