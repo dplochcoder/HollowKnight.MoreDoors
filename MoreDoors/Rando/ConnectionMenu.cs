@@ -27,45 +27,18 @@ namespace MoreDoors.Rando
             return true;
         }
 
-        public SmallButton entryButton;
-        public MenuPage mainPage;
-        public MenuElementFactory<MoreDoorsSettings> factory;
-        public VerticalItemPanel panel;
-
-        private static T Lookup<T>(MenuElementFactory<MoreDoorsSettings> factory, string name) where T : MenuItem => factory.ElementLookup[name] as T ?? throw new ArgumentException("Menu error");
-
-        private static void LockIfFalse(MenuItem<bool> src, List<ILockable> dest)
-        {
-            void onChange(bool value)
-            {
-                foreach (var lockable in dest)
-                {
-                    if (value) lockable.Unlock();
-                    else lockable.Lock();
-                }
-            }
-
-            src.ValueChanged += onChange;
-            onChange(src.Value);
-        }
+        private SmallButton entryButton;
 
         private ConnectionMenu(MenuPage landingPage)
         {
-            mainPage = new("MoreDoors Main Page", landingPage);
+            MenuPage mainPage = new("MoreDoors Main Page", landingPage);
             entryButton = new(landingPage, Localize("More Doors"));
             entryButton.AddHideAndShowEvent(mainPage);
 
-            var settings = MoreDoors.GS.MoreDoorsSettings;
-            factory = new(mainPage, settings);
+            MenuElementFactory<MoreDoorsSettings> factory = new(mainPage, MoreDoors.GS.MoreDoorsSettings);
             Localize(factory);
 
-            var addMoreDoors = Lookup<MenuItem<bool>>(factory, nameof(settings.AddMoreDoors));
-            var doorsLevel = Lookup<MenuItem>(factory, nameof(settings.DoorsLevel));
-            var addKeyLocations = Lookup<MenuItem>(factory, nameof(settings.AddKeyLocations));
-
-            LockIfFalse(addMoreDoors, new() { doorsLevel, addKeyLocations });
-
-            panel = new(mainPage, SpaceParameters.TOP_CENTER_UNDER_TITLE, SpaceParameters.VSPACE_MEDIUM, true, factory.Elements);
+            VerticalItemPanel panel = new(mainPage, SpaceParameters.TOP_CENTER_UNDER_TITLE, SpaceParameters.VSPACE_MEDIUM, true, factory.Elements);
         }
     }
 }

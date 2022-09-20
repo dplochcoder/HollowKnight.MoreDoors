@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace MoreDoors.Rando
 {
@@ -6,5 +7,18 @@ namespace MoreDoors.Rando
     {
         public MoreDoorsSettings Settings = MoreDoors.GS.MoreDoorsSettings;
         public HashSet<string> EnabledDoorNames = new();
+
+        public bool IncludeDoor(string doorName) => EnabledDoorNames.Contains(doorName);
+
+        public bool IncludeKeyLocation(string doorName)
+        {
+            return Settings.AddKeyLocations switch
+            {
+                AddKeyLocations.None => false,
+                AddKeyLocations.MatchingDoors => IncludeDoor(doorName),
+                AddKeyLocations.AllDoors => true,
+                _ => throw new ArgumentException($"Unknown AddKeyLocations: {Settings.AddKeyLocations}"),
+            };
+        }
     }
 }

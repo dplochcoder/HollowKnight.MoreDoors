@@ -10,7 +10,7 @@ namespace MoreDoors.Rando
     {
         public static LocalSettings LS { get; set; }
 
-        public static bool IsEnabled => MoreDoors.GS.MoreDoorsSettings.AddMoreDoors;
+        public static bool IsEnabled => MoreDoors.GS.MoreDoorsSettings.DoorsLevel != DoorsLevel.NoDoors || MoreDoors.GS.MoreDoorsSettings.AddKeyLocations != AddKeyLocations.None;
 
         public static void Setup()
         {

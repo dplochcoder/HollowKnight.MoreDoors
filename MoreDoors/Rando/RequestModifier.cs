@@ -17,21 +17,24 @@ namespace MoreDoors.Rando
         {
             if (!RandoInterop.IsEnabled) return;
 
-            foreach (var doorName in RandoInterop.LS.EnabledDoorNames)
+            foreach (var doorName in DoorData.DoorNames)
             {
                 var data = DoorData.Get(doorName);
-                rb.EditItemRequest(data.Key.ItemName, info =>
+                if (RandoInterop.LS.IncludeDoor(doorName))
                 {
-                    info.getItemDef = () => new()
+                    rb.EditItemRequest(data.Key.ItemName, info =>
                     {
-                        Name = data.Key.ItemName,
-                        Pool = PoolNames.Key,
-                        MajorItem = false,
-                        PriceCap = 400
-                    };
-                });
+                        info.getItemDef = () => new()
+                        {
+                            Name = data.Key.ItemName,
+                            Pool = PoolNames.Key,
+                            MajorItem = false,
+                            PriceCap = 400
+                        };
+                    });
+                }
 
-                if (RandoInterop.LS.Settings.AddKeyLocations)
+                if (RandoInterop.LS.IncludeKeyLocation(doorName))
                 {
                     rb.EditLocationRequest(data.KeyLocationName, info =>
                     {
@@ -49,30 +52,37 @@ namespace MoreDoors.Rando
         {
             if (!RandoInterop.IsEnabled) return;
 
-            if (!rb.gs.PoolSettings.Keys && !RandoInterop.LS.Settings.AddKeyLocations)
+            if (!rb.gs.PoolSettings.Keys && RandoInterop.LS.Settings.AddKeyLocations == AddKeyLocations.None)
             {
-                throw new ArgumentException($"Nowhere to place MoreDoors Keys; Either randomize Keys or set 'Add Key Locations'");
+                throw new ArgumentException($"Nowhere to place MoreDoors Keys; Either randomize Keys or enable 'Add Key Locations'");
             }
 
-            foreach (var doorName in RandoInterop.LS.EnabledDoorNames)
+            foreach (var doorName in DoorData.DoorNames)
             {
                 var data = DoorData.Get(doorName);
-                if (rb.gs.PoolSettings.Keys)
+                if (RandoInterop.LS.IncludeDoor(doorName))
                 {
-                    rb.AddItemByName(data.Key.ItemName);
-                    if (rb.gs.DuplicateItemSettings.DuplicateUniqueKeys)
+                    if (rb.gs.PoolSettings.Keys)
                     {
-                        rb.AddItemByName($"{PlaceholderItem.Prefix}{data.Key.ItemName}");
-                    }
+                        rb.AddItemByName(data.Key.ItemName);
+                        if (rb.gs.DuplicateItemSettings.DuplicateUniqueKeys)
+                        {
+                            rb.AddItemByName($"{PlaceholderItem.Prefix}{data.Key.ItemName}");
+                        }
 
-                    if (RandoInterop.LS.Settings.AddKeyLocations)
+                        if (RandoInterop.LS.IncludeKeyLocation(doorName))
+                        {
+                            rb.AddLocationByName(data.KeyLocationName);
+                        }
+                    }
+                    else if (RandoInterop.LS.IncludeKeyLocation(doorName))
                     {
-                        rb.AddLocationByName(data.KeyLocationName);
+                        rb.AddToVanilla(new(data.Key.ItemName, data.KeyLocationName));
                     }
                 }
-                else if (RandoInterop.LS.Settings.AddKeyLocations)
+                else if (RandoInterop.LS.IncludeKeyLocation(doorName))
                 {
-                    rb.AddToVanilla(new(data.Key.ItemName, data.KeyLocationName));
+                    rb.AddLocationByName(data.KeyLocationName);
                 }
             }
         }

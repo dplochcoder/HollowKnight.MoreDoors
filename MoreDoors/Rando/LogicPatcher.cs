@@ -1,6 +1,7 @@
 ﻿using ItemChanger;
 using MoreDoors.IC;
 using RandomizerCore;
+using RandomizerCore.Extensions;
 using RandomizerCore.Logic;
 using RandomizerCore.LogicItems;
 using RandomizerCore.StringLogic;
@@ -42,7 +43,8 @@ namespace MoreDoors.Rando
             "Queen's Gardens",
             "Queen's Station",
             "West Blue Lake",
-            "West Fog Canyon"};
+            "West Fog Canyon"
+        };
 
         private static void PatchStartLocations(Dictionary<string, RandomizerMod.RandomizerData.StartDef> startDefs)
         {
@@ -110,26 +112,29 @@ namespace MoreDoors.Rando
 
             List<string> doors = new(DoorData.DoorNames);
             doors.Shuffle(r);
+            foreach (var doorName in doors.Slice(0, numDoors)) LS.EnabledDoorNames.Add(doorName);
+
             HashSet<string> fixedTerms = new();
             Dictionary<string, string> replacementMap = new();
-            for (int i = 0; i < numDoors && i < doors.Count; i++)
+            foreach (var doorName in DoorData.DoorNames)
             {
-                var doorName = doors[i];
                 var data = DoorData.Get(doorName);
-                LS.EnabledDoorNames.Add(doorName);
 
-                // Modify transition logic for this door.
-                var keyTerm = lmb.GetOrAddTerm(data.KeyTermName);
-                lmb.AddWaypoint(new(data.DoorForcedOpenLogicName, $"{data.LeftDoorLocation.TransitionName} | {data.RightDoorLocation.TransitionName}"));
+                if (LS.IncludeDoor(doorName))
+                {
+                    // Modify transition logic for this door.
+                    var keyTerm = lmb.GetOrAddTerm(data.KeyTermName);
+                    lmb.AddWaypoint(new(data.DoorForcedOpenLogicName, $"{data.LeftDoorLocation.TransitionName} | {data.RightDoorLocation.TransitionName}"));
 
-                // Replace the transition waypoints with proxies.
-                HandleTransition(lmb, data, data.LeftDoorLocation, fixedTerms, replacementMap);
-                HandleTransition(lmb, data, data.RightDoorLocation, fixedTerms, replacementMap);
+                    // Replace the transition waypoints with proxies.
+                    HandleTransition(lmb, data, data.LeftDoorLocation, fixedTerms, replacementMap);
+                    HandleTransition(lmb, data, data.RightDoorLocation, fixedTerms, replacementMap);
 
-                lmb.AddItem(new CappedItem(data.Key.ItemName, new TermValue[]  { new(keyTerm, 1) }, new(keyTerm, 1)));
+                    lmb.AddItem(new CappedItem(data.Key.ItemName, new TermValue[] { new(keyTerm, 1) }, new(keyTerm, 1)));
+                }
 
                 // Add vanilla key logic defs.
-                if (LS.Settings.AddKeyLocations)
+                if (LS.IncludeKeyLocation(doorName))
                 {
                     lmb.AddLogicDef(new(data.KeyLocationName, data.Key.VanillaLogic));
                 }
