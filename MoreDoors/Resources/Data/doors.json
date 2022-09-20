@@ -228,7 +228,7 @@
       "ItemName": "Crown_Key",
       "UIItemName": "Crown Key",
       "ShopDesc": "Goodness, this one is shiny. Where could it have come from?",
-      "SpriteKey": "DefaultKey",
+      "SpriteKey": "CrownKey",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -335,7 +335,7 @@
       "ItemName": "False_Key",
       "UIItemName": "False Key",
       "ShopDesc": "I think this is to protect him, not you.",
-      "SpriteKey": "DefaultKey",
+      "SpriteKey": "FalseKey",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
