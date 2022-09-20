@@ -1,8 +1,11 @@
 ﻿using ItemChanger;
+using Modding;
 using MoreDoors.IC;
 using Newtonsoft.Json;
 using RandomizerMod.RC;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace MoreDoors.Rando
 {
@@ -17,6 +20,12 @@ namespace MoreDoors.Rando
             ConnectionMenu.Setup();
             LogicPatcher.Setup();
             RequestModifier.Setup();
+
+            if (ModHooks.GetMod("CondensedSpoilerLogger") is Mod)
+            {
+                List<string> keyNames = new(DoorData.DoorNames.Select(d => DoorData.Get(d).Key.ItemName));
+                CondensedSpoilerLogger.API.AddCategory("MoreDoors Keys", _ => IsEnabled, keyNames);
+            }
 
             RandoController.OnExportCompleted += OnExportCompleted;
             RandomizerMod.Logging.SettingsLog.AfterLogSettings += LogSettings;
