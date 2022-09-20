@@ -32,9 +32,10 @@ namespace MoreDoors.IC
             {
                 delta.x = dst.x + src.x;
                 delta.z = 0.5129f;
-                parent.transform.position = delta;
                 parent.transform.rotation = new(0, 180, 0, 1);
             }
+            parent.transform.position = delta;
+
             obj.transform.parent = parent.transform;
             obj.transform.localPosition = src;
         }
