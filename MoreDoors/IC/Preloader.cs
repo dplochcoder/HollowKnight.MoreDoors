@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 using UnityEngine;
 
 namespace MoreDoors.IC
@@ -25,8 +26,15 @@ namespace MoreDoors.IC
             Vector3 src = doorTemplate.transform.position;
 
             GameObject parent = new();
-            parent.transform.position = dst - src;
-            parent.transform.rotation = new(0, left ? 0 : 180, 0, 0);
+            parent.name = $"{obj.name} Animation Parent";
+            var delta = dst - src;
+            if (!left)
+            {
+                delta.x = dst.x + src.x;
+                delta.z = 0.5129f;
+                parent.transform.position = delta;
+                parent.transform.rotation = new(0, 180, 0, 1);
+            }
             obj.transform.parent = parent.transform;
             obj.transform.localPosition = src;
         }
