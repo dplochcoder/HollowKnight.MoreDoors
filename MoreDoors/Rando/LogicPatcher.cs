@@ -48,7 +48,8 @@ namespace MoreDoors.Rando
 
         private static void PatchStartLocations(Dictionary<string, RandomizerMod.RandomizerData.StartDef> startDefs)
         {
-            foreach (var start in startDefs.Keys)
+            List<string> keys = new(startDefs.Keys);
+            foreach (var start in keys)
             {
                 if (ForbiddenStarts.Contains(start))
                 {
