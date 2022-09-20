@@ -260,9 +260,9 @@
       "VanillaLogic": "Mines_35[left1] + QUAKE + (ANYCLAW | WINGS)"
     }
   },
-  "Dark": {
-    "CamelCaseName": "Dark",
-    "UpperCaseName": "DARK",
+  "Darknest": {
+    "CamelCaseName": "Dark Nest",
+    "UpperCaseName": "DARKNEST",
     "NoKeyDesc": "A shell-encrusted door infested with spiders.",
     "KeyDesc": "The skittering never stops.<br>Insert the Dark Key?",
     "LeftDoorLocation": {
@@ -280,8 +280,8 @@
       "Y": 9.6
     },
     "Key": {
-      "ItemName": "Dark_Key",
-      "UIItemName": "Dark Key",
+      "ItemName": "Dark_Nest_Key",
+      "UIItemName": "Dark Nest Key",
       "ShopDesc": "I swear I can't even see this thing without my Lumaflies, it's so black.'",
       "SpriteKey": "DefaultKey",
       "VanillaLocation": {
@@ -317,7 +317,7 @@
   "False": {
     "CamelCaseName": "False",
     "UpperCaseName": "FALSE",
-    "NoKeyDesc": "It's a locked door, here?",
+    "NoKeyDesc": "It looks like it's a locked door but you're not so sure.",
     "KeyDesc": "The hardest challenge in the game awaits you.<br>Insert the False Key?",
     "LeftDoorLocation": {
       "SceneName": "Crossroads_03",
