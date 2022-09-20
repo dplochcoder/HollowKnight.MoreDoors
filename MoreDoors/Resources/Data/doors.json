@@ -186,8 +186,9 @@
           "semiPersistent": true
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
-          "objectName": "Mantis",
+          "$type": "ItemChanger.Locations.EnemyFsmLocation, ItemChanger",
+          "enemyFsm": "Mantis",
+          "enemyObject": "Mantis",
           "removeGeo": false,
           "managed": false,
           "name": "Mantis_Vault_Guardian",
@@ -233,13 +234,13 @@
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
-          "id": "Crystal Flier (2)",
+          "id": "Crystal Flyer (2)",
           "sceneName": "Mines_35",
           "semiPersistent": true
         },
         "falseLocation": {
           "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
-          "objectName": "Crystal Flier (2)",
+          "objectName": "Crystal Flyer (2)",
           "removeGeo": false,
           "managed": false,
           "flingType": "DirectDeposit",
@@ -489,7 +490,7 @@
         },
         "trueLocation": {
           "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
-          "x": 45,
+          "x": 40,
           "y": 13.5,
           "forceShiny": false,
           "name": "Shrumal_Ogre_1-Fungal_Charm_Notch",
