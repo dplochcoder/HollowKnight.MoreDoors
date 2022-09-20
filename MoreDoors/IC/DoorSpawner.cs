@@ -29,7 +29,7 @@ namespace MoreDoors.IC
             fsm.GetState("Open").AddFirstAction(new Lambda(() => Preloader.Instance.ReparentDoor(fsm.gameObject, left)));
 
             var setters = fsm.GetState("Yes").GetActionsOfType<SetPlayerDataBool>();
-            setters[0].boolName = data.PDKeyName;
+            setters[0].boolName = MoreDoorsModule.EmptyBoolName;
             setters[1].boolName = data.PDDoorOpenedName;
         }
 

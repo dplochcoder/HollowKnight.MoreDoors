@@ -11,10 +11,14 @@ namespace MoreDoors.IC
 {
     public class MoreDoorsModule : ItemChanger.Modules.Module
     {
+        // Fake bool with no value, used only in setters.
+        public const string EmptyBoolName = "moreDoorsNothing";
+
         public class DoorState
         {
             public bool KeyObtained = false;
             public bool DoorOpened = false;
+            public bool DoorForceOpened = false;
         }
 
         // Indexed by door name.
@@ -95,7 +99,8 @@ namespace MoreDoors.IC
             foreach (var doorName in DoorNamesByScene.GetOrDefault(scene.name, emptySet))
             {
                 // If the door is already opened, skip, even though it's not strictly necessary.
-                if (DoorStates[doorName].DoorOpened) continue;
+                var state = DoorStates[doorName];
+                if (state.DoorOpened || state.DoorForceOpened) continue;
 
                 var data = DoorData.Get(doorName);
                 if (scene.name == data.LeftDoorLocation.SceneName)
@@ -115,7 +120,7 @@ namespace MoreDoors.IC
             var tname = $"{t.SceneName}[{t.GateName}]";
             if (DoorNamesByTransition.TryGetValue(tname, out string doorName) && !DoorStates[doorName].DoorOpened)
             {
-                DoorStates[doorName].DoorOpened = true;
+                DoorStates[doorName].DoorForceOpened = true;
                 foreach (var obj in Object.FindObjectsOfType<DoorNameMarker>())
                 {
                     if (obj.DoorName == doorName)
