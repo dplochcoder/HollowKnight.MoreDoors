@@ -44,6 +44,7 @@ namespace MoreDoors.IC
         {
             var data = DoorData.Get(doorName);
             var gameObj = Preloader.Instance.NewDoor();
+            gameObj.GetComponent<SpriteRenderer>().sprite = new EmbeddedSprite(data.Sprite).Value;
 
             SetupConversationControl(gameObj.LocateMyFSM("Conversation Control"), data, left);
 
