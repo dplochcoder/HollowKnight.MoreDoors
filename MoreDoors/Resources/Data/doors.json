@@ -471,7 +471,7 @@
       "ItemName": "Flooded_Stag_Key",
       "UIItemName": "Flooded Stag Key",
       "ShopDesc": "I don't think this protects anything, just a bunch of water?",
-      "Sprite": "Default",
+      "Sprite": "Lake",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -677,7 +677,7 @@
   "Garden": {
     "CamelCaseName": "Garden",
     "UpperCaseName": "GARDEN",
-    "Sprite": "Default",
+    "Sprite": "Garden",
     "NoKeyDesc": "A richly green door with just a spritz of acid.",
     "KeyDesc": "The queen awaits her boy.<br>Insert the Garden Key?",
     "LeftDoorLocation": {
@@ -698,7 +698,7 @@
       "ItemName": "Garden_Key",
       "UIItemName": "Garden Key",
       "ShopDesc": "Interesting to see things so cared for in a kingdom forgotten.",
-      "Sprite": "Default",
+      "Sprite": "Garden",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
         "objectName": "Moss Flyer (4)",
@@ -911,7 +911,7 @@
       "ItemName": "Junk_Key'",
       "UIItemName": "Junk Key",
       "ShopDesc": "It comes with complimentary worthless Lumaflies.",
-      "Sprite": "Default",
+      "Sprite": "Junk",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1106,7 +1106,7 @@
       "ItemName": "Moss_Key'",
       "UIItemName": "Moss Key",
       "ShopDesc": "If you look carefully it's actually four little keys pretending to be a big key.",
-      "Sprite": "Default",
+      "Sprite": "Moss",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1348,7 +1348,7 @@
       "ItemName": "Pain_Key",
       "UIItemName": "Pain Key",
       "ShopDesc": "This looks like it's been beaten to hell by blades, does it even work?",
-      "Sprite": "Default",
+      "Sprite": "Pain",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1537,7 +1537,7 @@
       "ItemName": "Traitor's_Key'",
       "UIItemName": "Traitor's Key",
       "ShopDesc": "I found this on some lady drilling in the wastes, doesn't seem too important.",
-      "Sprite": "Default",
+      "Sprite": "Traitor",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
