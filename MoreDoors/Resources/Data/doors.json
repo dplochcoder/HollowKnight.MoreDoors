@@ -86,7 +86,7 @@
       "ItemName": "Broken_Key",
       "UIItemName": "Broken Key",
       "ShopDesc": "Broken? It looks completely functional to me.",
-      "Sprite": "Default",
+      "Sprite": "Broken",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -566,7 +566,7 @@
       "ItemName": "Fragile_Key",
       "UIItemName": "Fragile Key",
       "ShopDesc": "Don't let the Better Bugsness Bureau know about this.",
-      "Sprite": "Default",
+      "Sprite": "Fragile",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -730,7 +730,7 @@
       "ItemName": "Heart_Key",
       "UIItemName": "Heart Key",
       "ShopDesc": "If you hold this up to your ear, you'll realize you don't HAVE ears, dumbdumb.",
-      "Sprite": "Default",
+      "Sprite": "Heart",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
