@@ -1,5 +1,4 @@
-﻿using ItemChanger;
-using MoreDoors.IC;
+﻿using MoreDoors.Data;
 using RandomizerCore;
 using RandomizerCore.Extensions;
 using RandomizerCore.Logic;

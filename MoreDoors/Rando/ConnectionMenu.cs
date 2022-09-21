@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System;
-using MenuChanger;
+﻿using MenuChanger;
 using RandomizerMod.Menu;
 using MenuChanger.MenuElements;
 using static RandomizerMod.Localization;

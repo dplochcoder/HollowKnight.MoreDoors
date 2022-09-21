@@ -1,4 +1,4 @@
-﻿using MoreDoors.IC;
+﻿using MoreDoors.Data;
 using RandomizerMod.RandomizerData;
 using RandomizerMod.RC;
 using System;

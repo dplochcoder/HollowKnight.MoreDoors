@@ -1,4 +1,4 @@
-﻿using MoreDoors.IC;
+﻿using MoreDoors.Data;
 using System;
 
 namespace MoreDoors.Rando

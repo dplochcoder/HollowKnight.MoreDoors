@@ -1,4 +1,5 @@
 ﻿using Modding;
+using MoreDoors.Data;
 using MoreDoors.IC;
 using MoreDoors.Rando;
 using System.Collections.Generic;

@@ -1,8 +1,9 @@
 ﻿using ItemChanger;
+using MoreDoors.IC;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace MoreDoors.IC
+namespace MoreDoors.Data
 {
     public record DoorData
     {
