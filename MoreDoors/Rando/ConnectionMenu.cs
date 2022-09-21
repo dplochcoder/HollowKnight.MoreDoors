@@ -27,13 +27,16 @@ namespace MoreDoors.Rando
             return true;
         }
 
+        private static void SetColor<T>(MenuItem<T> item, T value, T none)
+        {
+            item.Text.color = EqualityComparer<T>.Default.Equals(value, none) ? Colors.FALSE_COLOR : Colors.TRUE_COLOR;
+        }
+
         private void ModifyColors<T>(MenuElementFactory<MoreDoorsSettings> factory, string fieldName, T none)
         {
             MenuItem<T> item = (MenuItem<T>)factory.ElementLookup[fieldName];
-            item.ValueChanged += value =>
-            {
-                item.Text.color = EqualityComparer<T>.Default.Equals(value, none) ? Colors.FALSE_COLOR : Colors.TRUE_COLOR;
-            };
+            item.ValueChanged += value => SetColor(item, value, none);
+            SetColor(item, item.Value, none);
         }
 
         private SmallButton entryButton;
