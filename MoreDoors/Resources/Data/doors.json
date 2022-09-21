@@ -23,7 +23,7 @@
       "ItemName": "Bardoon's_Key",
       "UIItemName": "Bardoon's Key",
       "ShopDesc": "He seems nice but his neighbors are just the worst.",
-      "Sprite": "Default",
+      "Sprite": "Bardoon",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -545,7 +545,7 @@
   "Fragile": {
     "CamelCaseName": "Fragile",
     "UpperCaseName": "FRAGILE",
-    "Sprite": "Default",
+    "Sprite": "Fragile",
     "NoKeyDesc": "A spongy door reinforced with shards of old charms.",
     "KeyDesc": "Mind your legs.<br>Insert the Fragile Key?",
     "LeftDoorLocation": {
@@ -804,7 +804,7 @@
       "ItemName": "Hive_Key",
       "UIItemName": "Hive Key",
       "ShopDesc": "It's technically edible, I wouldn't recommend that though.",
-      "Sprite": "Default",
+      "Sprite": "Hive",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
         "objectName": "Bee Hatchling Ambient (29)",
@@ -1031,7 +1031,7 @@
       "ItemName": "Mantis_Key'",
       "UIItemName": "Mantis Key",
       "ShopDesc": "It unlocks one of the most guarded places in the kingdom.",
-      "Sprite": "Default",
+      "Sprite": "Mantis",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1079,7 +1079,7 @@
   "Moss": {
     "CamelCaseName": "Moss",
     "UpperCaseName": "MOSS",
-    "Sprite": "Default",
+    "Sprite": "Moss",
     "NoKeyDesc": "A bright stone door overgrown with moss.",
     "KeyDesc": "The power of leftslash compels you.<br>Insert the Moss Key?",
     "LeftDoorLocation": {
@@ -1304,7 +1304,7 @@
       "ItemName": "Overgrown_Key",
       "UIItemName": "Overgrown Key",
       "ShopDesc": "Strange... this key seems like it's been forgotten more times than anyone can remember.",
-      "Sprite": "Default",
+      "Sprite": "Overgrown",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
         "objectName": "Plant Turret (3)",
