@@ -2,7 +2,7 @@
   "Bardoon": {
     "CamelCaseName": "Bardoon",
     "UpperCaseName": "BARDOON",
-    "Sprite": "Default",
+    "Sprite": "City",
     "NoKeyDesc": "An ashen door glazed with primal acid.",
     "KeyDesc": "The gateway to more primal aspids creaks open.<br>Insert Bardoon's Key?",
     "LeftDoorLocation": {
@@ -65,7 +65,7 @@
   "Broken": {
     "CamelCaseName": "Broken",
     "UpperCaseName": "BROKEN",
-    "Sprite": "Default",
+    "Sprite": "Abyssal",
     "NoKeyDesc": "A decaying door haunted by the lost.",
     "KeyDesc": "A kindred spirit's cries for help echo from within.<br>Insert the Broken Key?",
     "LeftDoorLocation": {
@@ -128,7 +128,7 @@
   "Canyon": {
     "CamelCaseName": "Canyon",
     "UpperCaseName": "CANYON",
-    "Sprite": "Default",
+    "Sprite": "Canyon",
     "NoKeyDesc": "A quiet door of forgotten peace. It tingles a little.",
     "KeyDesc": "The pilgrim's way begins to open.<br>Insert the Canyon Key?",
     "LeftDoorLocation": {
@@ -149,7 +149,7 @@
       "ItemName": "Canyon_Key",
       "UIItemName": "Canyon Key",
       "ShopDesc": "Ow! Why is this so receptive to static?",
-      "Sprite": "Default",
+      "Sprite": "Canyon",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -191,7 +191,7 @@
   "Core": {
     "CamelCaseName": "Core",
     "UpperCaseName": "CORE",
-    "Sprite": "Default",
+    "Sprite": "Mushroom",
     "NoKeyDesc": "A spongy door overgrown with rich fungus.",
     "KeyDesc": "The depths of the wastes cry WAH.<br>Insert the Core Key?",
     "LeftDoorLocation": {
@@ -255,7 +255,7 @@
   "Crown": {
     "CamelCaseName": "Crown",
     "UpperCaseName": "CROWN",
-    "Sprite": "Default",
+    "Sprite": "Crystal",
     "NoKeyDesc": "A crystalline door shining with a forgotten light.",
     "KeyDesc": "This is as high as you'll go.<br>Insert the Crown Key?",
     "LeftDoorLocation": {
@@ -324,7 +324,7 @@
   "Darknest": {
     "CamelCaseName": "Dark Nest",
     "UpperCaseName": "DARKNEST",
-    "Sprite": "Default",
+    "Sprite": "Deepnest",
     "NoKeyDesc": "A shell-encrusted door infested with spiders.",
     "KeyDesc": "The skittering never stops.<br>Insert the Dark Key?",
     "LeftDoorLocation": {
@@ -387,7 +387,7 @@
   "False": {
     "CamelCaseName": "False",
     "UpperCaseName": "FALSE",
-    "Sprite": "Default",
+    "Sprite": "False",
     "NoKeyDesc": "It looks like it's a locked door but you're not so sure.",
     "KeyDesc": "The hardest challenge in the game awaits you.<br>Insert the False Key?",
     "LeftDoorLocation": {
@@ -450,7 +450,7 @@
   "Flooded Stag": {
     "CamelCaseName": "FloodedStag",
     "UpperCaseName": "FLOODED_STAG",
-    "Sprite": "Default",
+    "Sprite": "Water",
     "NoKeyDesc": "A cold stone door, dripping with water.",
     "KeyDesc": "You can feel the power of buoyancy calling out to you.<br>Insert the Flooded Stag Key?",
     "LeftDoorLocation": {
@@ -471,7 +471,7 @@
       "ItemName": "Flooded_Stag_Key",
       "UIItemName": "Flooded Stag Key",
       "ShopDesc": "I don't think this protects anything, just a bunch of water?",
-      "Sprite": "Lake",
+      "Sprite": "Water",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -513,7 +513,7 @@
   "Fountain": {
     "CamelCaseName": "Fountain",
     "UpperCaseName": "FOUNTAIN",
-    "Sprite": "Default",
+    "Sprite": "City",
     "NoKeyDesc": "An ornate door, bespeckled in expensive relics.",
     "KeyDesc": "Rain flows intricately between the carvings.<br>Insert the Fountain Key?",
     "LeftDoorLocation": {
@@ -551,7 +551,7 @@
   "Fragile": {
     "CamelCaseName": "Fragile",
     "UpperCaseName": "FRAGILE",
-    "Sprite": "Fragile",
+    "Sprite": "Mushroom",
     "NoKeyDesc": "A spongy door reinforced with shards of old charms.",
     "KeyDesc": "Mind your legs.<br>Insert the Fragile Key?",
     "LeftDoorLocation": {
@@ -614,7 +614,7 @@
   "Fungal": {
     "CamelCaseName": "Fungal",
     "UpperCaseName": "FUNGAL",
-    "Sprite": "Default",
+    "Sprite": "Mushroom",
     "NoKeyDesc": "This door has, like, so many mushrooms on it.",
     "KeyDesc": "The pilgrim's way expands.<br>Insert the Fungal Key?",
     "LeftDoorLocation": {
@@ -677,7 +677,7 @@
   "Garden": {
     "CamelCaseName": "Garden",
     "UpperCaseName": "GARDEN",
-    "Sprite": "Garden",
+    "Sprite": "Green",
     "NoKeyDesc": "A richly green door with just a spritz of acid.",
     "KeyDesc": "The queen awaits her boy.<br>Insert the Garden Key?",
     "LeftDoorLocation": {
@@ -715,7 +715,7 @@
   "Heart": {
     "CamelCaseName": "Heart",
     "UpperCaseName": "HEART",
-    "Sprite": "Default",
+    "Sprite": "Crystal",
     "NoKeyDesc": "A dense, deeply crystallized door. It seems to have a hearbeat.",
     "KeyDesc": "The heart of the mountain beckons.<br>Insert the Heart Key?",
     "LeftDoorLocation": {
@@ -789,7 +789,7 @@
   "Hive": {
     "CamelCaseName": "Hive",
     "UpperCaseName": "HIVE",
-    "Sprite": "Default",
+    "Sprite": "Hive",
     "NoKeyDesc": "It's made of honeycombs, sturdy as stone.",
     "KeyDesc": "The buzzing resonates with your soul.<br>Insert the Hive Key?",
     "LeftDoorLocation": {
@@ -827,7 +827,7 @@
   "Joni": {
     "CamelCaseName": "Joni",
     "UpperCaseName": "JONI",
-    "Sprite": "Default",
+    "Sprite": "Joni",
     "NoKeyDesc": "A robust door overgrown with lifeblood.",
     "KeyDesc": "You weren't invited, but you're here anyway.<br>Insert Joni's Key?",
     "LeftDoorLocation": {
@@ -890,7 +890,7 @@
   "Junk": {
     "CamelCaseName": "Junk",
     "UpperCaseName": "JUNK",
-    "Sprite": "Default",
+    "Sprite": "Water",
     "NoKeyDesc": "A wet, pasty door. You can see larvae growing.",
     "KeyDesc": "The larvae have grown larger.<br>Insert the Junk Key?",
     "LeftDoorLocation": {
@@ -953,7 +953,7 @@
   "Lake": {
     "CamelCaseName": "Lake",
     "UpperCaseName": "LAKE",
-    "Sprite": "Default",
+    "Sprite": "Water",
     "NoKeyDesc": "A wet, quiet door. There is a certain shadow about it.",
     "KeyDesc": "You sense the sadness of a journey completed.<br>Insert the Lake Key?",
     "LeftDoorLocation": {
@@ -974,7 +974,7 @@
       "ItemName": "Lake_Key'",
       "UIItemName": "Lake Key",
       "ShopDesc": "Many souls died to use this key, I assume that makes it worth this price.",
-      "Sprite": "Lake",
+      "Sprite": "Water",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1016,7 +1016,7 @@
   "Mantis": {
     "CamelCaseName": "Mantis",
     "UpperCaseName": "MANTIS",
-    "Sprite": "Default",
+    "Sprite": "Mantis",
     "NoKeyDesc": "A sharp, carefully sculpted door. It smells of honor.",
     "KeyDesc": "Your challengers await.<br>Insert the Mantis Key?",
     "LeftDoorLocation": {
@@ -1085,7 +1085,7 @@
   "Moss": {
     "CamelCaseName": "Moss",
     "UpperCaseName": "MOSS",
-    "Sprite": "Moss",
+    "Sprite": "Green",
     "NoKeyDesc": "A bright stone door overgrown with moss.",
     "KeyDesc": "The power of leftslash compels you.<br>Insert the Moss Key?",
     "LeftDoorLocation": {
@@ -1154,7 +1154,7 @@
   "Mothwing": {
     "CamelCaseName": "Mothwing",
     "UpperCaseName": "MOTHWING",
-    "Sprite": "Default",
+    "Sprite": "Green",
     "NoKeyDesc": "It looks like you can't get any closer, ghost.",
     "KeyDesc": "It looks like you found a way to get closer.<br>Insert the Mothwing Key?",
     "LeftDoorLocation": {
@@ -1217,7 +1217,7 @@
   "Nest": {
     "CamelCaseName": "Nest",
     "UpperCaseName": "NEST",
-    "Sprite": "Default",
+    "Sprite": "Deepnest",
     "NoKeyDesc": "A crunchy door laced with spider webs.",
     "KeyDesc": "You can feel your skin crawling.<br>Insert the Nest Key?",
     "LeftDoorLocation": {
@@ -1289,7 +1289,7 @@
   "Overgrown": {
     "CamelCaseName": "Overgrown",
     "UpperCaseName": "OVERGROWN",
-    "Sprite": "Default",
+    "Sprite": "Green",
     "NoKeyDesc": "A bubbly door decorated with green.",
     "KeyDesc": "It's okay, you have an excuse this time.<br>Insert the Overgrown Key?",
     "LeftDoorLocation": {
@@ -1327,7 +1327,7 @@
   "Pain": {
     "CamelCaseName": "Pain",
     "UpperCaseName": "PAIN",
-    "Sprite": "Default",
+    "Sprite": "Pain",
     "NoKeyDesc": "An ornate door with saw blades instead of gears for a lock mechanism.",
     "KeyDesc": "The screech of saw blades permeates all.<br>Insert the Pain Key?",
     "LeftDoorLocation": {
@@ -1390,7 +1390,7 @@
   "Sanctum": {
     "CamelCaseName": "Sanctum",
     "UpperCaseName": "SANCTUM",
-    "Sprite": "Default",
+    "Sprite": "City",
     "NoKeyDesc": "A door forged of empty shells and broken glass.",
     "KeyDesc": "A pure focus awaits.<br>Insert the Sanctum Key?",
     "LeftDoorLocation": {
@@ -1453,7 +1453,7 @@
   "Shade": {
     "CamelCaseName": "Shade",
     "UpperCaseName": "SHADE",
-    "Sprite": "Default",
+    "Sprite": "Abyssal",
     "NoKeyDesc": "A dark door forged of bones and abandoned souls.",
     "KeyDesc": "The destiny of darkness awaits.<br>Insert the Shade Key?",
     "LeftDoorLocation": {
@@ -1516,7 +1516,7 @@
   "Traitor": {
     "CamelCaseName": "Traitor",
     "UpperCaseName": "TRAITOR",
-    "Sprite": "Default",
+    "Sprite": "Green",
     "NoKeyDesc": "An ornate metal door embellished with thorns.",
     "KeyDesc": "The path of the warrior ends here.<br>Insert the Traitor's Key?",
     "LeftDoorLocation": {
@@ -1590,7 +1590,7 @@
   "Village": {
     "CamelCaseName": "Village",
     "UpperCaseName": "VILLAGE",
-    "Sprite": "Default",
+    "Sprite": "Deepnest",
     "NoKeyDesc": "A solid door reinforced with silk weaves.",
     "KeyDesc": "Even the King's influence does not reach here.<br>Insert the Village Key?",
     "LeftDoorLocation": {
