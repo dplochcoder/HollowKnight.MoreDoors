@@ -69,18 +69,18 @@
     "NoKeyDesc": "A decaying door haunted by the lost.",
     "KeyDesc": "A kindred spirit's cries for help echo from within.<br>Insert the Broken Key?",
     "LeftDoorLocation": {
-      "SceneName": "Abyss_04",
+      "SceneName": "Abyss_18",
       "GateName": "left1",
       "RequiresLantern": false,
       "X": 1.1,
-      "Y": 10.6
+      "Y": 19.6
     },
     "RightDoorLocation": {
-      "SceneName": "Abyss_18",
+      "SceneName": "Abyss_19",
       "GateName": "right1",
       "RequiresLantern": false,
-      "X": 198.9,
-      "Y": 13.6
+      "X": 158.9,
+      "Y": 33.6
     },
     "Key": {
       "ItemName": "Broken_Key",
