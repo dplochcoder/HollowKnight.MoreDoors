@@ -22,7 +22,10 @@ namespace MoreDoors.Rando
             SettingsPM.OnResolveIntTerm += ResolveMoreDoorsRando;
 
             // This should run before DarknessRandomizer and/or RandoPlus
-            RCData.RuntimeLogicOverride.Subscribe(35f, ModifyLMB);
+            RCData.RuntimeLogicOverride.Subscribe(35f, ModifyCoreDefinitions);
+
+            // Updating everything to use proxies should run after.
+            RCData.RuntimeLogicOverride.Subscribe(100f, SubstituteProxies);
         }
 
         private static bool ResolveMoreDoorsRando(string term, out int result)
@@ -99,7 +102,7 @@ namespace MoreDoors.Rando
             return lcb == null ? lc : new(lcb);
         }
 
-        public static void ModifyLMB(GenerationSettings gs, LogicManagerBuilder lmb)
+        public static void ModifyCoreDefinitions(GenerationSettings gs, LogicManagerBuilder lmb)
         {
             if (!RandoInterop.IsEnabled) return;
 
@@ -116,8 +119,6 @@ namespace MoreDoors.Rando
             doors.Shuffle(r);
             foreach (var doorName in doors.Slice(0, numDoors)) LS.EnabledDoorNames.Add(doorName);
 
-            HashSet<string> fixedTerms = new();
-            Dictionary<string, string> replacementMap = new();
             foreach (var doorName in DoorData.DoorNames)
             {
                 var data = DoorData.Get(doorName);
@@ -129,8 +130,8 @@ namespace MoreDoors.Rando
                     lmb.AddWaypoint(new(data.DoorForcedOpenLogicName, $"{data.LeftDoorLocation.TransitionName} | {data.RightDoorLocation.TransitionName}"));
 
                     // Replace the transition waypoints with proxies.
-                    HandleTransition(lmb, data, data.LeftDoorLocation, fixedTerms, replacementMap);
-                    HandleTransition(lmb, data, data.RightDoorLocation, fixedTerms, replacementMap);
+                    HandleTransition(lmb, data, data.LeftDoorLocation, LS.ModifiedLogicNames, LS.LogicSubstitutions);
+                    HandleTransition(lmb, data, data.RightDoorLocation, LS.ModifiedLogicNames, LS.LogicSubstitutions);
 
                     lmb.AddItem(new CappedItem(data.Key.ItemName, new TermValue[] { new(keyTerm, 1) }, new(keyTerm, 1)));
                 }
@@ -142,6 +143,13 @@ namespace MoreDoors.Rando
                 }
             }
 
+            RandoInterop.LS = LS;
+        }
+
+        public static void SubstituteProxies(GenerationSettings gs, LogicManagerBuilder lmb)
+        {
+            if (!RandoInterop.IsEnabled) return;
+
             // Substitute proxies.
             //
             // Some logic is lazy and will list a single transition for access even when multiple transitions grant access, because it
@@ -151,11 +159,13 @@ namespace MoreDoors.Rando
             List<string> names = new(lmb.LogicLookup.Keys);
             foreach (var name in names)
             {
-                if (fixedTerms.Contains(name)) continue;
-                lmb.LogicLookup[name] = SubstituteSimpleTokens(replacementMap, lmb.LogicLookup[name]);
+                if (RandoInterop.LS.ModifiedLogicNames.Contains(name)) continue;
+                lmb.LogicLookup[name] = SubstituteSimpleTokens(RandoInterop.LS.LogicSubstitutions, lmb.LogicLookup[name]);
             }
 
-            RandoInterop.LS = LS;
+            // We don't need this data any more, get rid of it.
+            RandoInterop.LS.ModifiedLogicNames = null;
+            RandoInterop.LS.LogicSubstitutions = null;
         }
     }
 }
