@@ -4,6 +4,8 @@ using MenuChanger.MenuElements;
 using static RandomizerMod.Localization;
 using MenuChanger.Extensions;
 using MenuChanger.MenuPanels;
+using System;
+using System.Collections.Generic;
 
 namespace MoreDoors.Rando
 {
@@ -25,6 +27,15 @@ namespace MoreDoors.Rando
             return true;
         }
 
+        private void ModifyColors<T>(MenuElementFactory<MoreDoorsSettings> factory, string fieldName, T none)
+        {
+            MenuItem<T> item = (MenuItem<T>)factory.ElementLookup[fieldName];
+            item.ValueChanged += value =>
+            {
+                item.Text.color = EqualityComparer<T>.Default.Equals(value, none) ? Colors.FALSE_COLOR : Colors.TRUE_COLOR;
+            };
+        }
+
         private SmallButton entryButton;
 
         private ConnectionMenu(MenuPage landingPage)
@@ -33,8 +44,12 @@ namespace MoreDoors.Rando
             entryButton = new(landingPage, Localize("More Doors"));
             entryButton.AddHideAndShowEvent(mainPage);
 
-            MenuElementFactory<MoreDoorsSettings> factory = new(mainPage, MoreDoors.GS.MoreDoorsSettings);
+            var settings = MoreDoors.GS.MoreDoorsSettings;
+            MenuElementFactory<MoreDoorsSettings> factory = new(mainPage, settings);
             Localize(factory);
+
+            ModifyColors(factory, nameof(settings.DoorsLevel), DoorsLevel.NoDoors);
+            ModifyColors(factory, nameof(settings.AddKeyLocations), AddKeyLocations.None);
 
             VerticalItemPanel panel = new(mainPage, SpaceParameters.TOP_CENTER_UNDER_TITLE, SpaceParameters.VSPACE_MEDIUM, true, factory.Elements);
         }
