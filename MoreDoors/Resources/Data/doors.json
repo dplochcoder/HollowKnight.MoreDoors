@@ -293,7 +293,7 @@
           "name": "Crystal_Hunter-Crystallized_Mound",
           "sceneName": "Mines_35",
           "flingType": "DirectDeposit",
-          "tags": [  // Remove this when ItemChanger supports DirectDeposit
+          "tags": [
             {
               "$type": "ItemChanger.Tags.ShinyFlingTag, ItemChanger",
               "fling": "Down",
