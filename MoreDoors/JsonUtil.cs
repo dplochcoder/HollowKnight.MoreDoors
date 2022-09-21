@@ -17,6 +17,12 @@ namespace MoreDoors
             }
         }
 
+        public static void Serialize(object o, string fileName)
+        {
+            using StreamWriter sw = new(File.OpenWrite(fileName));
+            _js.Serialize(sw, o);
+        }
+
         static JsonUtil()
         {
             _js = new JsonSerializer

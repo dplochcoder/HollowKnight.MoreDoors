@@ -7,10 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoreDoors", "MoreDoors\More
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{D54698D6-E795-4975-AD4E-555EDCE1567F}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
 		.github\workflows\build.yml = .github\workflows\build.yml
 		README.md = README.md
 		SPOILER.md = SPOILER.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataUpdater", "DataUpdater\DataUpdater.csproj", "{A90C4B92-AD1C-4CF6-A073-34874AD71528}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,6 +25,10 @@ Global
 		{2B252F66-CD72-4473-B715-089D1379AA22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B252F66-CD72-4473-B715-089D1379AA22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B252F66-CD72-4473-B715-089D1379AA22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A90C4B92-AD1C-4CF6-A073-34874AD71528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A90C4B92-AD1C-4CF6-A073-34874AD71528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A90C4B92-AD1C-4CF6-A073-34874AD71528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A90C4B92-AD1C-4CF6-A073-34874AD71528}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

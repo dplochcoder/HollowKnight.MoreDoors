@@ -6,13 +6,13 @@ namespace MoreDoors.IC
 {
     public record DoorData
     {
-        private static readonly SortedDictionary<string, DoorData> data = JsonUtil.Deserialize<SortedDictionary<string, DoorData>>("MoreDoors.Resources.Data.doors.json");
+        public static readonly SortedDictionary<string, DoorData> Data = JsonUtil.Deserialize<SortedDictionary<string, DoorData>>("MoreDoors.Resources.Data.doors.json");
 
-        public static DoorData Get(string doorName) => data[doorName];
+        public static DoorData Get(string doorName) => Data[doorName];
 
-        public static IEnumerable<string> DoorNames => data.Keys;
+        public static IEnumerable<string> DoorNames => Data.Keys;
 
-        public static int Count => data.Count;
+        public static int Count => Data.Count;
 
         public static void Load()
         {
@@ -42,6 +42,7 @@ namespace MoreDoors.IC
 
         public string CamelCaseName;
         public string UpperCaseName;
+        public string Sprite;
         public string NoKeyDesc;
         public string KeyDesc;
         public DoorLocation LeftDoorLocation;
@@ -53,7 +54,7 @@ namespace MoreDoors.IC
             public string ItemName;
             public string UIItemName;
             public string ShopDesc;
-            public string SpriteKey;
+            public string Sprite;
             public AbstractLocation VanillaLocation;
             public string VanillaLogic;
         }

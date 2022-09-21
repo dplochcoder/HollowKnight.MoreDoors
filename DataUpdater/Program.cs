@@ -1,0 +1,1 @@
+﻿MoreDoors.IC.DataUpdater.Run();
