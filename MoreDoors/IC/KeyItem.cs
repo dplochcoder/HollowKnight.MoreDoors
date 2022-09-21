@@ -19,7 +19,7 @@ namespace MoreDoors.IC
             {
                 name = new BoxedString(data.Key.UIItemName),
                 shopDesc = new BoxedString(data.Key.ShopDesc),
-                sprite = new EmbeddedSprite(data.Key.Sprite)
+                sprite = new EmbeddedSprite($"Keys.{data.Key.Sprite}")
             };
 
             var interop = AddTag<InteropTag>();

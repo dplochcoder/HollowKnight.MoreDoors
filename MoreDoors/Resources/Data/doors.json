@@ -2,7 +2,7 @@
   "Bardoon": {
     "CamelCaseName": "Bardoon",
     "UpperCaseName": "BARDOON",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "An ashen door glazed with primal acid.",
     "KeyDesc": "The gateway to more primal aspids creaks open.<br>Insert Bardoon's Key?",
     "LeftDoorLocation": {
@@ -23,7 +23,7 @@
       "ItemName": "Bardoon's_Key",
       "UIItemName": "Bardoon's Key",
       "ShopDesc": "He seems nice but his neighbors are just the worst.",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -65,7 +65,7 @@
   "Broken": {
     "CamelCaseName": "Broken",
     "UpperCaseName": "BROKEN",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A decaying door haunted by the lost.",
     "KeyDesc": "A kindred spirit's cries for help echo from within.<br>Insert the Broken Key?",
     "LeftDoorLocation": {
@@ -86,7 +86,7 @@
       "ItemName": "Broken_Key",
       "UIItemName": "Broken Key",
       "ShopDesc": "Broken? It looks completely functional to me.",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -128,7 +128,7 @@
   "Canyon": {
     "CamelCaseName": "Canyon",
     "UpperCaseName": "CANYON",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A quiet door of forgotten peace. It tingles a little.",
     "KeyDesc": "The pilgrim's way begins to open.<br>Insert the Canyon Key?",
     "LeftDoorLocation": {
@@ -149,7 +149,7 @@
       "ItemName": "Canyon_Key",
       "UIItemName": "Canyon Key",
       "ShopDesc": "Ow! Why is this so receptive to static?",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -191,7 +191,7 @@
   "Core": {
     "CamelCaseName": "Core",
     "UpperCaseName": "CORE",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A spongy door overgrown with rich fungus.",
     "KeyDesc": "The depths of the wastes cry WAH.<br>Insert the Core Key?",
     "LeftDoorLocation": {
@@ -212,7 +212,7 @@
       "ItemName": "Core_Key",
       "UIItemName": "Core Key",
       "ShopDesc": "Please get rid of this, it's got something growing on it.",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -255,7 +255,7 @@
   "Crown": {
     "CamelCaseName": "Crown",
     "UpperCaseName": "CROWN",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A crystalline door shining with a forgotten light.",
     "KeyDesc": "This is as high as you'll go.<br>Insert the Crown Key?",
     "LeftDoorLocation": {
@@ -276,7 +276,7 @@
       "ItemName": "Crown_Key",
       "UIItemName": "Crown Key",
       "ShopDesc": "Goodness, this one is shiny. Where could it have come from?",
-      "Sprite": "CrownKey",
+      "Sprite": "Crown",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -318,7 +318,7 @@
   "Darknest": {
     "CamelCaseName": "Dark Nest",
     "UpperCaseName": "DARKNEST",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A shell-encrusted door infested with spiders.",
     "KeyDesc": "The skittering never stops.<br>Insert the Dark Key?",
     "LeftDoorLocation": {
@@ -339,7 +339,7 @@
       "ItemName": "Dark_Nest_Key",
       "UIItemName": "Dark Nest Key",
       "ShopDesc": "I swear I can't even see this thing without my Lumaflies, it's so black.'",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -381,7 +381,7 @@
   "False": {
     "CamelCaseName": "False",
     "UpperCaseName": "FALSE",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "It looks like it's a locked door but you're not so sure.",
     "KeyDesc": "The hardest challenge in the game awaits you.<br>Insert the False Key?",
     "LeftDoorLocation": {
@@ -402,7 +402,7 @@
       "ItemName": "False_Key",
       "UIItemName": "False Key",
       "ShopDesc": "I think this is to protect him, not you.",
-      "Sprite": "FalseKey",
+      "Sprite": "False",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -444,7 +444,7 @@
   "Flooded Stag": {
     "CamelCaseName": "FloodedStag",
     "UpperCaseName": "FLOODED_STAG",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A cold stone door, dripping with water.",
     "KeyDesc": "You can feel the power of buoyancy calling out to you.<br>Insert the Flooded Stag Key?",
     "LeftDoorLocation": {
@@ -465,7 +465,7 @@
       "ItemName": "Flooded_Stag_Key",
       "UIItemName": "Flooded Stag Key",
       "ShopDesc": "I don't think this protects anything, just a bunch of water?",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -507,7 +507,7 @@
   "Fountain": {
     "CamelCaseName": "Fountain",
     "UpperCaseName": "FOUNTAIN",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "An ornate door, bespeckled in expensive relics.",
     "KeyDesc": "Rain flows intricately between the carvings.<br>Insert the Fountain Key?",
     "LeftDoorLocation": {
@@ -528,7 +528,7 @@
       "ItemName": "Fountain_Key",
       "UIItemName": "Fountain Key",
       "ShopDesc": "Is it destiny you seek, or geo?  Are they different?",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
         "objectName": "Mage Blob 2 (3)",
@@ -545,7 +545,7 @@
   "Fragile": {
     "CamelCaseName": "Fragile",
     "UpperCaseName": "FRAGILE",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A spongy door reinforced with shards of old charms.",
     "KeyDesc": "Mind your legs.<br>Insert the Fragile Key?",
     "LeftDoorLocation": {
@@ -566,7 +566,7 @@
       "ItemName": "Fragile_Key",
       "UIItemName": "Fragile Key",
       "ShopDesc": "Don't let the Better Bugsness Bureau know about this.",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -608,7 +608,7 @@
   "Fungal": {
     "CamelCaseName": "Fungal",
     "UpperCaseName": "FUNGAL",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "This door has, like, so many mushrooms on it.",
     "KeyDesc": "The pilgrim's way expands.<br>Insert the Fungal Key?",
     "LeftDoorLocation": {
@@ -629,7 +629,7 @@
       "ItemName": "Fungal_Key",
       "UIItemName": "Fungal Key",
       "ShopDesc": "Chop 'em, sautee 'em, stick 'em in a stew.",
-      "Sprite": "FungalKey",
+      "Sprite": "Fungal",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -671,7 +671,7 @@
   "Garden": {
     "CamelCaseName": "Garden",
     "UpperCaseName": "GARDEN",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A richly green door with just a spritz of acid.",
     "KeyDesc": "The queen awaits her boy.<br>Insert the Garden Key?",
     "LeftDoorLocation": {
@@ -692,7 +692,7 @@
       "ItemName": "Garden_Key",
       "UIItemName": "Garden Key",
       "ShopDesc": "Interesting to see things so cared for in a kingdom forgotten.",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
         "objectName": "Moss Flyer (4)",
@@ -709,7 +709,7 @@
   "Heart": {
     "CamelCaseName": "Heart",
     "UpperCaseName": "HEART",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A dense, deeply crystallized door. It seems to have a hearbeat.",
     "KeyDesc": "The heart of the mountain beckons.<br>Insert the Heart Key?",
     "LeftDoorLocation": {
@@ -730,7 +730,7 @@
       "ItemName": "Heart_Key",
       "UIItemName": "Heart Key",
       "ShopDesc": "If you hold this up to your ear, you'll realize you don't HAVE ears, dumbdumb.",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -783,7 +783,7 @@
   "Hive": {
     "CamelCaseName": "Hive",
     "UpperCaseName": "HIVE",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "It's made of honeycombs, sturdy as stone.",
     "KeyDesc": "The buzzing resonates with your soul.<br>Insert the Hive Key?",
     "LeftDoorLocation": {
@@ -804,7 +804,7 @@
       "ItemName": "Hive_Key",
       "UIItemName": "Hive Key",
       "ShopDesc": "It's technically edible, I wouldn't recommend that though.",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
         "objectName": "Bee Hatchling Ambient (29)",
@@ -821,7 +821,7 @@
   "Joni": {
     "CamelCaseName": "Joni",
     "UpperCaseName": "JONI",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A robust door overgrown with lifeblood.",
     "KeyDesc": "You weren't invited, but you're here anyway.<br>Insert Joni's Key?",
     "LeftDoorLocation": {
@@ -842,7 +842,7 @@
       "ItemName": "Joni's_Key'",
       "UIItemName": "Joni's Key",
       "ShopDesc": "I feel like I shouldn't have this, so it's at a discount.",
-      "Sprite": "JoniKey",
+      "Sprite": "Joni",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -884,7 +884,7 @@
   "Junk": {
     "CamelCaseName": "Junk",
     "UpperCaseName": "JUNK",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A wet, pasty door. You can see larvae growing.",
     "KeyDesc": "The larvae have grown larger.<br>Insert the Junk Key?",
     "LeftDoorLocation": {
@@ -905,7 +905,7 @@
       "ItemName": "Junk_Key'",
       "UIItemName": "Junk Key",
       "ShopDesc": "It comes with complimentary worthless Lumaflies.",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -947,7 +947,7 @@
   "Lake": {
     "CamelCaseName": "Lake",
     "UpperCaseName": "LAKE",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A wet, quiet door. There is a certain shadow about it.",
     "KeyDesc": "You sense the sadness of a journey completed.<br>Insert the Lake Key?",
     "LeftDoorLocation": {
@@ -968,7 +968,7 @@
       "ItemName": "Lake_Key'",
       "UIItemName": "Lake Key",
       "ShopDesc": "Many souls died to use this key, I assume that makes it worth this price.",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1010,7 +1010,7 @@
   "Mantis": {
     "CamelCaseName": "Mantis",
     "UpperCaseName": "MANTIS",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A sharp, carefully sculpted door. It smells of honor.",
     "KeyDesc": "Your challengers await.<br>Insert the Mantis Key?",
     "LeftDoorLocation": {
@@ -1031,7 +1031,7 @@
       "ItemName": "Mantis_Key'",
       "UIItemName": "Mantis Key",
       "ShopDesc": "It unlocks one of the most guarded places in the kingdom.",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1079,7 +1079,7 @@
   "Moss": {
     "CamelCaseName": "Moss",
     "UpperCaseName": "MOSS",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A bright stone door overgrown with moss.",
     "KeyDesc": "The power of leftslash compels you.<br>Insert the Moss Key?",
     "LeftDoorLocation": {
@@ -1100,7 +1100,7 @@
       "ItemName": "Moss_Key'",
       "UIItemName": "Moss Key",
       "ShopDesc": "If you look carefully it's actually four little keys pretending to be a big key.",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1148,7 +1148,7 @@
   "Mothwing": {
     "CamelCaseName": "Mothwing",
     "UpperCaseName": "MOTHWING",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "It looks like you can't get any closer, ghost.",
     "KeyDesc": "It looks like you found a way to get closer.<br>Insert the Mothwing Key?",
     "LeftDoorLocation": {
@@ -1169,7 +1169,7 @@
       "ItemName": "Mothwing_Key",
       "UIItemName": "Mothwing Key",
       "ShopDesc": "You too can unlock your inner SHAAAW",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1211,7 +1211,7 @@
   "Nest": {
     "CamelCaseName": "Nest",
     "UpperCaseName": "NEST",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A crunchy door laced with spider webs.",
     "KeyDesc": "You can feel your skin crawling.<br>Insert the Nest Key?",
     "LeftDoorLocation": {
@@ -1232,7 +1232,7 @@
       "ItemName": "Nest_Key",
       "UIItemName": "Nest Key",
       "ShopDesc": "I tried cleaning it but it always seems to have more webs.",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1283,7 +1283,7 @@
   "Overgrown": {
     "CamelCaseName": "Overgrown",
     "UpperCaseName": "OVERGROWN",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A bubbly door decorated with green.",
     "KeyDesc": "It's okay, you have an excuse this time.<br>Insert the Overgrown Key?",
     "LeftDoorLocation": {
@@ -1304,7 +1304,7 @@
       "ItemName": "Overgrown_Key",
       "UIItemName": "Overgrown Key",
       "ShopDesc": "Strange... this key seems like it's been forgotten more times than anyone can remember.",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
         "objectName": "Plant Turret (3)",
@@ -1321,7 +1321,7 @@
   "Pain": {
     "CamelCaseName": "Pain",
     "UpperCaseName": "PAIN",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "An ornate door with saw blades instead of gears for a lock mechanism.",
     "KeyDesc": "The screech of saw blades permeates all.<br>Insert the Pain Key?",
     "LeftDoorLocation": {
@@ -1342,7 +1342,7 @@
       "ItemName": "Pain_Key",
       "UIItemName": "Pain Key",
       "ShopDesc": "This looks like it's been beaten to hell by blades, does it even work?",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1384,7 +1384,7 @@
   "Sanctum": {
     "CamelCaseName": "Sanctum",
     "UpperCaseName": "SANCTUM",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A door forged of empty shells and broken glass.",
     "KeyDesc": "A pure focus awaits.<br>Insert the Sanctum Key?",
     "LeftDoorLocation": {
@@ -1405,7 +1405,7 @@
       "ItemName": "Sanctum_Key",
       "UIItemName": "Sanctum Key",
       "ShopDesc": "It's brimming with soul, too much of it.",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1447,7 +1447,7 @@
   "Shade": {
     "CamelCaseName": "Shade",
     "UpperCaseName": "SHADE",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A dark door forged of bones and abandoned souls.",
     "KeyDesc": "The destiny of darkness awaits.<br>Insert the Shade Key?",
     "LeftDoorLocation": {
@@ -1468,7 +1468,7 @@
       "ItemName": "Shade_Key",
       "UIItemName": "Shade Key",
       "ShopDesc": "It smells of darkness, please take it away.",
-      "Sprite": "ShadeKey",
+      "Sprite": "Shade",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1510,7 +1510,7 @@
   "Traitor": {
     "CamelCaseName": "Traitor",
     "UpperCaseName": "TRAITOR",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "An ornate metal door embellished with thorns.",
     "KeyDesc": "The path of the warrior ends here.<br>Insert the Traitor's Key?",
     "LeftDoorLocation": {
@@ -1531,7 +1531,7 @@
       "ItemName": "Traitor's_Key'",
       "UIItemName": "Traitor's Key",
       "ShopDesc": "I found this on some lady drilling in the wastes, doesn't seem too important.",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1584,7 +1584,7 @@
   "Village": {
     "CamelCaseName": "Village",
     "UpperCaseName": "VILLAGE",
-    "Sprite": "DefaultDoor",
+    "Sprite": "Default",
     "NoKeyDesc": "A solid door reinforced with silk weaves.",
     "KeyDesc": "Even the King's influence does not reach here.<br>Insert the Village Key?",
     "LeftDoorLocation": {
@@ -1605,7 +1605,7 @@
       "ItemName": "Village_Key",
       "UIItemName": "Village Key",
       "ShopDesc": "I think this is technically an heirloom? I should probably charge more for it.",
-      "Sprite": "DefaultKey",
+      "Sprite": "Default",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
