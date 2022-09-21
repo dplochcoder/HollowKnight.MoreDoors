@@ -345,7 +345,7 @@
       "ItemName": "Dark_Nest_Key",
       "UIItemName": "Dark Nest Key",
       "ShopDesc": "I swear I can't even see this thing without my Lumaflies, it's so black.'",
-      "Sprite": "Default",
+      "Sprite": "Darknest",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -534,7 +534,7 @@
       "ItemName": "Fountain_Key",
       "UIItemName": "Fountain Key",
       "ShopDesc": "Is it destiny you seek, or geo?  Are they different?",
-      "Sprite": "Default",
+      "Sprite": "Fountain",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
         "objectName": "Mage Blob 2 (3)",
@@ -974,7 +974,7 @@
       "ItemName": "Lake_Key'",
       "UIItemName": "Lake Key",
       "ShopDesc": "Many souls died to use this key, I assume that makes it worth this price.",
-      "Sprite": "Default",
+      "Sprite": "Lake",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1238,7 +1238,7 @@
       "ItemName": "Nest_Key",
       "UIItemName": "Nest Key",
       "ShopDesc": "I tried cleaning it but it always seems to have more webs.",
-      "Sprite": "Default",
+      "Sprite": "Nest",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1411,7 +1411,7 @@
       "ItemName": "Sanctum_Key",
       "UIItemName": "Sanctum Key",
       "ShopDesc": "It's brimming with soul, too much of it.",
-      "Sprite": "Default",
+      "Sprite": "Sanctum",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1611,7 +1611,7 @@
       "ItemName": "Village_Key",
       "UIItemName": "Village Key",
       "ShopDesc": "I think this is technically an heirloom? I should probably charge more for it.",
-      "Sprite": "Default",
+      "Sprite": "Village",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
