@@ -212,7 +212,7 @@
       "ItemName": "Core_Key",
       "UIItemName": "Core Key",
       "ShopDesc": "Please get rid of this, it's got something growing on it.",
-      "Sprite": "Default",
+      "Sprite": "Core",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
