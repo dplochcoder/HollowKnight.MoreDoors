@@ -29,7 +29,7 @@ namespace MoreDoors.Rando
 
         private static void SetColor<T>(MenuItem<T> item, T value, T none)
         {
-            item.Text.color = EqualityComparer<T>.Default.Equals(value, none) ? Colors.FALSE_COLOR : Colors.TRUE_COLOR;
+            item.Text.color = EqualityComparer<T>.Default.Equals(value, none) ? Colors.FALSE_COLOR : Colors.DEFAULT_COLOR;
         }
 
         private void ModifyColors<T>(MenuElementFactory<MoreDoorsSettings> factory, string fieldName, T none)
