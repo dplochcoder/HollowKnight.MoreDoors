@@ -1169,7 +1169,7 @@
       "ItemName": "Mothwing_Key",
       "UIItemName": "Mothwing Key",
       "ShopDesc": "You too can unlock your inner SHAAAW",
-      "Sprite": "Default",
+      "Sprite": "Mothwing",
       "VanillaLocation": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
