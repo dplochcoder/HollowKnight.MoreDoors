@@ -6,7 +6,7 @@
     "KeyDesc": "The gateway to more primal aspids creaks open.<br>Insert Bardoon's Key?",
     "LeftDoorLocation": {
       "SceneName": "Deepnest_East_04",
-      "GateName": "left1",
+      "GateName": "left2",
       "X": 1.1,
       "Y": 95.6
     },
@@ -188,7 +188,7 @@
         "falseLocation": {
           "$type": "ItemChanger.Locations.EnemyFsmLocation, ItemChanger",
           "enemyFsm": "Mantis",
-          "enemyObject": "Mantis",
+          "enemyObject": null,
           "removeGeo": false,
           "managed": false,
           "name": "Mantis_Vault_Guardian",
@@ -740,7 +740,7 @@
     "KeyDesc": "The larvae have grown larger.<br>Insert the Junk Key?",
     "LeftDoorLocation": {
       "SceneName": "Waterways_08",
-      "GateName": "left1",
+      "GateName": "left2",
       "X": 1.1,
       "Y": 56.6
     },
@@ -872,9 +872,14 @@
           "objectName": "Mantis (3)",
           "removeGeo": false,
           "managed": false,
-          "flingType": "StraightUp",
           "name": "Mantis_Warrior-Above_Bretta_Bench",
-          "sceneName": "Fungus2_13"
+          "sceneName": "Fungus2_13",
+          "tags": [
+            {
+              "$type": "ItemChanger.Tags.ShinyFlingTag, ItemChanger",
+              "fling": "Down"
+            }
+          ]
         },
         "trueLocation": {
           "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
@@ -924,9 +929,14 @@
           "objectName": "Moss Knight",
           "removeGeo": false,
           "managed": false,
-          "flingType": "StraightUp",
           "name": "Moss_Knight-Lake_of_Unn",
-          "sceneName": "Fungus1_26"
+          "sceneName": "Fungus1_26",
+          "tags": [
+            {
+              "$type": "ItemChanger.Tags.ShinyFlingTag, ItemChanger",
+              "fling": "Down"
+            }
+          ]
         },
         "trueLocation": {
           "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",

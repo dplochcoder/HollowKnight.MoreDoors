@@ -95,7 +95,7 @@ namespace MoreDoors.IC
 
         private void OnSceneChange(Scene scene)
         {
-            SceneManager sm = scene.GetRootGameObjects().First(g => g.GetComponent<SceneManager>() != null).GetComponent<SceneManager>();
+            SceneManager? sm = scene.GetRootGameObjects().FirstOrDefault(g => g.GetComponent<SceneManager>() != null)?.GetComponent<SceneManager>();
             foreach (var doorName in DoorNamesByScene.GetOrDefault(scene.name, emptySet))
             {
                 // If the door is already opened, skip, even though it's not strictly necessary.

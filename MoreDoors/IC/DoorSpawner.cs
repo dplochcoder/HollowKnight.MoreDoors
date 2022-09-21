@@ -1,5 +1,6 @@
 ﻿using HutongGames.PlayMaker;
 using HutongGames.PlayMaker.Actions;
+using ItemChanger;
 using ItemChanger.Extensions;
 using ItemChanger.FsmStateActions;
 using UnityEngine;
@@ -39,7 +40,7 @@ namespace MoreDoors.IC
             fsm.FsmVariables.FindFsmBool("Hero Always Right").Value = false;
         }
 
-        public static void SpawnDoor(SceneManager sm, string doorName, bool left)
+        public static void SpawnDoor(SceneManager? sm, string doorName, bool left)
         {
             var data = DoorData.Get(doorName);
             var gameObj = Preloader.Instance.NewDoor();
@@ -63,7 +64,7 @@ namespace MoreDoors.IC
 
             // TODO: Establish an ordering between mod initializations on scene load.
             // Implement a constraints mod that supports this without the need for linking.
-            if (sm.darknessLevel == 2 && !PlayerData.instance.GetBool(nameof(PlayerData.instance.hasLantern)))
+            if ((sm?.darknessLevel ?? 0) == 2 && !PlayerData.instance.GetBool(nameof(PlayerData.instance.hasLantern)))
             {
                 // Why is this so finicky
                 GameObject.Destroy(promptMarker);
