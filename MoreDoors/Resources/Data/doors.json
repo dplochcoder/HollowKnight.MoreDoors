@@ -1360,7 +1360,9 @@
         "falseLocation": {
           "$type": "ItemChanger.Locations.EnemyFsmLocation, ItemChanger",
           "enemyFsm": "Guard",
-          "enemyObject": null,
+          "enemyObj": null,
+          "removeGeo": false,
+          "forceShiny": false,
           "name": "Kingsmould-Palace_Entrance_Lever",
           "sceneName": "White_Palace_02",
           "flingType": "Everywhere",
