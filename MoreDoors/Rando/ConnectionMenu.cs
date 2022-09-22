@@ -32,10 +32,16 @@ namespace MoreDoors.Rando
             item.Text.color = EqualityComparer<T>.Default.Equals(value, none) ? Colors.FALSE_COLOR : Colors.DEFAULT_COLOR;
         }
 
+        private void SetEnabledColor() => entryButton.Text.color = MoreDoors.GS.MoreDoorsSettings.IsEnabled ? Colors.TRUE_COLOR : Colors.DEFAULT_COLOR;
+
         private void ModifyColors<T>(MenuElementFactory<MoreDoorsSettings> factory, string fieldName, T none)
         {
             MenuItem<T> item = (MenuItem<T>)factory.ElementLookup[fieldName];
-            item.ValueChanged += value => SetColor(item, value, none);
+            item.ValueChanged += value =>
+            {
+                SetColor(item, value, none);
+                SetEnabledColor();
+            };
             SetColor(item, item.Value, none);
         }
 
@@ -53,6 +59,7 @@ namespace MoreDoors.Rando
 
             ModifyColors(factory, nameof(settings.DoorsLevel), DoorsLevel.NoDoors);
             ModifyColors(factory, nameof(settings.AddKeyLocations), AddKeyLocations.None);
+            SetEnabledColor();
 
             VerticalItemPanel panel = new(mainPage, SpaceParameters.TOP_CENTER_UNDER_TITLE, SpaceParameters.VSPACE_MEDIUM, true, factory.Elements);
         }

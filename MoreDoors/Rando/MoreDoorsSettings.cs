@@ -1,4 +1,5 @@
 ﻿using MoreDoors.Data;
+using Newtonsoft.Json;
 using System;
 
 namespace MoreDoors.Rando
@@ -22,6 +23,9 @@ namespace MoreDoors.Rando
     {
         public DoorsLevel DoorsLevel = DoorsLevel.NoDoors;
         public AddKeyLocations AddKeyLocations = AddKeyLocations.None;
+
+        [JsonIgnore]
+        public bool IsEnabled => DoorsLevel != DoorsLevel.NoDoors || AddKeyLocations != AddKeyLocations.None;
 
         public int ComputeNumDoors(Random r)
         {
