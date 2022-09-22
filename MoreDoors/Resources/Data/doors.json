@@ -1358,10 +1358,9 @@
           "semiPersistent": false
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
-          "objectName": "Royal Guard",
-          "removeGeo": false,
-          "forceShiny": false,
+          "$type": "ItemChanger.Locations.EnemyFsmLocation, ItemChanger",
+          "enemyFsm": "Guard",
+          "enemyObject": null,
           "name": "Kingsmould-Palace_Entrance_Lever",
           "sceneName": "White_Palace_02",
           "flingType": "Everywhere",
