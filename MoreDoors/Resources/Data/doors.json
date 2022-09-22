@@ -322,7 +322,7 @@
     }
   },
   "Darknest": {
-    "CamelCaseName": "Dark Nest",
+    "CamelCaseName": "DarkNest",
     "UpperCaseName": "DARKNEST",
     "Sprite": "Deepnest",
     "NoKeyDesc": "A shell-encrusted door infested with spiders.",
