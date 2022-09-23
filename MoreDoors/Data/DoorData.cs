@@ -62,7 +62,7 @@ namespace MoreDoors.Data
             public AbstractLocation VanillaLocation;
             public string VanillaLogic;
 
-            public record MapCoords
+            public class MapCoords
             {
                 public float X;
                 public float Y;

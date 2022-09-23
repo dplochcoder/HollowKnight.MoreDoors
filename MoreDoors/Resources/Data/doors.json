@@ -554,7 +554,10 @@
         "tags": null
       },
       "VanillaLogic": "Ruins1_30[left2]",
-      "VanillaMapCoordsOverride": null
+      "VanillaMapCoordsOverride": {
+        "X": 11,
+        "Y": 4
+      }
     }
   },
   "Fragile": {
@@ -721,7 +724,10 @@
         "tags": null
       },
       "VanillaLogic": "Fungus3_44[door1]",
-      "VanillaMapCoordsOverride": null
+      "VanillaMapCoordsOverride": {
+        "X": 17,
+        "Y": 47.5
+      }
     }
   },
   "Heart": {
@@ -835,7 +841,10 @@
         "tags": null
       },
       "VanillaLogic": "Hive_03[top1]",
-      "VanillaMapCoordsOverride": null
+      "VanillaMapCoordsOverride": {
+        "X": 31,
+        "Y": 128.5
+      }
     }
   },
   "Joni": {
@@ -947,8 +956,8 @@
         },
         "trueLocation": {
           "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
-          "x": 130.0,
-          "y": 19.5,
+          "x": 129.5,
+          "y": 32.5,
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
@@ -964,7 +973,6 @@
       },
       "VanillaLogic": "Waterways_08[top1] + (ANYCLAW | WINGS | ENEMYPOGOS + RIGHTDASH)",
       "VanillaMapCoordsOverride": null
-    }
   },
   "Lake": {
     "CamelCaseName": "Lake",
@@ -1343,7 +1351,10 @@
         "tags": null
       },
       "VanillaLogic": "Fungus1_12[right1] + (UPSLASH | SCREAM)",
-      "VanillaMapCoordsOverride": null
+      "VanillaMapCoordsOverride": {
+        "X": 15,
+        "Y": 55
+      }
     }
   },
   "Pain": {
