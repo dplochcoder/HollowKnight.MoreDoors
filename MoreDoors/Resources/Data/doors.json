@@ -329,8 +329,8 @@
       "Logic": "Mines_35[left1] + QUAKE + (ANYCLAW | WINGS)",
       "WorldMapLocationOverride": {
         "SceneName": "Mines_28",
-        "X": 78,
-        "Y": 55
+        "X": 78.0,
+        "Y": 55.0
       },
       "ExtraWorldMapLocations": null
     }
@@ -567,6 +567,7 @@
       },
       "Logic": "Ruins1_30[left2]",
       "WorldMapLocationOverride": {
+        "SceneName": null,
         "X": 11.0,
         "Y": 4.0
       },
@@ -740,6 +741,7 @@
       },
       "Logic": "Fungus3_44[door1]",
       "WorldMapLocationOverride": {
+        "SceneName": null,
         "X": 17.0,
         "Y": 47.5
       },
@@ -859,6 +861,7 @@
       },
       "Logic": "Hive_03[top1]",
       "WorldMapLocationOverride": {
+        "SceneName": null,
         "X": 31.0,
         "Y": 128.5
       },
@@ -1378,6 +1381,7 @@
       },
       "Logic": "Fungus1_12[right1] + (UPSLASH | SCREAM)",
       "WorldMapLocationOverride": {
+        "SceneName": null,
         "X": 15.0,
         "Y": 55.0
       },
