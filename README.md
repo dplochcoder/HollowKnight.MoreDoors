@@ -14,6 +14,8 @@ See SPOILER.md for the full list of doors and vanilla key locations if you wish.
     * More Doors: About half the doors are added
     * All Doors: All of the doors are added
   * Add Key Locations: Adds the vanilla key locations for the added doors to the locations pool
+    * Matching Doors: Only adds the key locations for the doors that were actually added
+    * All Doors: Add all key locations, even for doors that weren't added
 
 ### Interop
 
