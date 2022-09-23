@@ -30,7 +30,7 @@ namespace MoreDoors.Rando
                 var data = DoorData.Get(door);
                 if (RandoInterop.LS.IncludeDoor(door))
                 {
-                    placements.Add(data.Key.VanillaLocation.Wrap().Add(Finder.GetItem(data.Key.ItemName)));
+                    placements.Add(data.Key.Location.Wrap().Add(Finder.GetItem(data.Key.ItemName)));
                 }
             }
             ItemChangerMod.AddPlacements(placements);

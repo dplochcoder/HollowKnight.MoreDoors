@@ -4,6 +4,8 @@ using ItemChanger.Locations;
 using ItemChanger.Tags;
 using ItemChanger.UIDefs;
 using MoreDoors.Data;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MoreDoors.IC
 {
@@ -29,7 +31,7 @@ namespace MoreDoors.IC
             interop.Properties["PoolGroup"] = "Keys";
             interop.Properties["ModSource"] = nameof(MoreDoors);
 
-            var loc = data.Key.VanillaLocation;
+            var loc = data.Key.Location;
 
             // TODO: This seems like a bug in ItemChanger that we have to do this.
             // DualPlacement concatenates tags from both delegate locations, but it ignores any tags set on the DualLocation itself.
@@ -40,8 +42,10 @@ namespace MoreDoors.IC
             locInterop.Properties["PoolGroup"] = "Keys";
             locInterop.Properties["ModSource"] = nameof(MoreDoors);
 
-            (float x, float y) = data.Key.Coords;
-            locInterop.Properties["WorldMapLocations"] = new (string, float, float)[] { (loc.sceneName, x, y) };
+            List<(string, float, float)> positions = new();
+            positions.Add(data.Key.GetWorldMapLocation().AsTuple);
+            data.Key.ExtraWorldMapLocations?.ForEach(eLoc => positions.Add(eLoc.AsTuple));
+            locInterop.Properties["WorldMapLocations"] = positions.ToArray();
         }
 
         public override AbstractItem Clone() => new KeyItem(DoorName);

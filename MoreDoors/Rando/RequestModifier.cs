@@ -41,7 +41,7 @@ namespace MoreDoors.Rando
                         info.getLocationDef = () => new()
                         {
                             Name = data.KeyLocationName,
-                            SceneName = data.Key.VanillaLocation.sceneName
+                            SceneName = data.Key.Location.sceneName
                         };
                     });
                 }

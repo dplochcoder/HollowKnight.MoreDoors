@@ -24,7 +24,7 @@
       "UIItemName": "Bardoon's Key",
       "ShopDesc": "He seems nice but his neighbors are just the worst.",
       "Sprite": "Bardoon",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -59,8 +59,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Deepnest_East_06[right1]",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Deepnest_East_06[right1]",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Broken": {
@@ -88,7 +89,7 @@
       "UIItemName": "Broken Key",
       "ShopDesc": "Broken? It looks completely functional to me.",
       "Sprite": "Broken",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -123,8 +124,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Abyss_17[top1] + (DAMAGEBOOSTS | LEFTCLAW | WINGS | RIGHTCLAW + PRECISEMOVEMENT)",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Abyss_17[top1] + (DAMAGEBOOSTS | LEFTCLAW | WINGS | RIGHTCLAW + PRECISEMOVEMENT)",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Canyon": {
@@ -152,7 +154,7 @@
       "UIItemName": "Canyon Key",
       "ShopDesc": "Ow! Why is this so receptive to static?",
       "Sprite": "Canyon",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -187,8 +189,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus2_18[top1]",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Fungus2_18[top1]",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Core": {
@@ -216,7 +219,7 @@
       "UIItemName": "Core Key",
       "ShopDesc": "Please get rid of this, it's got something growing on it.",
       "Sprite": "Core",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -252,8 +255,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus2_31[left1] + Defeated_Mantis_Lords + (ANYCLAW | WINGS | DAMAGEBOOSTS + OBSCURESKIPS)",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Fungus2_31[left1] + Defeated_Mantis_Lords + (ANYCLAW | WINGS | DAMAGEBOOSTS + OBSCURESKIPS)",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Crown": {
@@ -281,7 +285,7 @@
       "UIItemName": "Crown Key",
       "ShopDesc": "Goodness, this one is shiny. Where could it have come from?",
       "Sprite": "Crown",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -322,8 +326,13 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Mines_35[left1] + QUAKE + (ANYCLAW | WINGS)",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Mines_35[left1] + QUAKE + (ANYCLAW | WINGS)",
+      "WorldMapLocationOverride": {
+        "SceneName": "Mines_28",
+        "X": 78,
+        "Y": 55
+      },
+      "ExtraWorldMapLocations": null
     }
   },
   "Darknest": {
@@ -351,7 +360,7 @@
       "UIItemName": "Dark Nest Key",
       "ShopDesc": "I swear I can't even see this thing without my Lumaflies, it's so black.'",
       "Sprite": "Darknest",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -386,8 +395,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Deepnest_26b[right2] + (ANYCLAW | WINGS)",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Deepnest_26b[right2] + (ANYCLAW | WINGS)",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "False": {
@@ -415,7 +425,7 @@
       "UIItemName": "False Key",
       "ShopDesc": "I think this is to protect him, not you.",
       "Sprite": "False",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -450,8 +460,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Crossroads_48[left1]",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Crossroads_48[left1]",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Flooded Stag": {
@@ -479,7 +490,7 @@
       "UIItemName": "Flooded Stag Key",
       "ShopDesc": "I don't think this protects anything, just a bunch of water?",
       "Sprite": "Water",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -514,8 +525,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Ruins_House_01[left1]",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Ruins_House_01[left1]",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Fountain": {
@@ -543,7 +555,7 @@
       "UIItemName": "Fountain Key",
       "ShopDesc": "Is it destiny you seek, or geo?  Are they different?",
       "Sprite": "Fountain",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
         "objectName": "Mage Blob 2 (3)",
         "removeGeo": false,
@@ -553,11 +565,12 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Ruins1_30[left2]",
-      "VanillaMapCoordsOverride": {
+      "Logic": "Ruins1_30[left2]",
+      "WorldMapLocationOverride": {
         "X": 11.0,
         "Y": 4.0
-      }
+      },
+      "ExtraWorldMapLocations": null
     }
   },
   "Fragile": {
@@ -585,7 +598,7 @@
       "UIItemName": "Fragile Key",
       "ShopDesc": "Don't let the Better Bugsness Bureau know about this.",
       "Sprite": "Fragile",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -620,8 +633,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus2_05[right1] + COMBAT[Shrumal_Ogre]",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Fungus2_05[right1] + COMBAT[Shrumal_Ogre]",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Fungal": {
@@ -649,7 +663,7 @@
       "UIItemName": "Fungal Key",
       "ShopDesc": "Chop 'em, sautee 'em, stick 'em in a stew.",
       "Sprite": "Fungal",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -684,8 +698,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus2_05[right1] + COMBAT[Shrumal_Ogre]",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Fungus2_05[right1] + COMBAT[Shrumal_Ogre]",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Garden": {
@@ -713,7 +728,7 @@
       "UIItemName": "Garden Key",
       "ShopDesc": "Interesting to see things so cared for in a kingdom forgotten.",
       "Sprite": "Garden",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
         "objectName": "Moss Flyer (4)",
         "removeGeo": false,
@@ -723,11 +738,12 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus3_44[door1]",
-      "VanillaMapCoordsOverride": {
+      "Logic": "Fungus3_44[door1]",
+      "WorldMapLocationOverride": {
         "X": 17.0,
         "Y": 47.5
-      }
+      },
+      "ExtraWorldMapLocations": null
     }
   },
   "Heart": {
@@ -755,7 +771,7 @@
       "UIItemName": "Heart Key",
       "ShopDesc": "If you hold this up to your ear, you'll realize you don't HAVE ears, dumbdumb.",
       "Sprite": "Heart",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.Disjunction, ItemChanger",
@@ -801,8 +817,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Mines_05[left2]",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Mines_05[left2]",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Hive": {
@@ -830,7 +847,7 @@
       "UIItemName": "Hive Key",
       "ShopDesc": "It's technically edible, I wouldn't recommend that though.",
       "Sprite": "Hive",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
         "objectName": "Bee Hatchling Ambient (29)",
         "removeGeo": false,
@@ -840,11 +857,12 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Hive_03[top1]",
-      "VanillaMapCoordsOverride": {
+      "Logic": "Hive_03[top1]",
+      "WorldMapLocationOverride": {
         "X": 31.0,
         "Y": 128.5
-      }
+      },
+      "ExtraWorldMapLocations": null
     }
   },
   "Joni": {
@@ -872,7 +890,7 @@
       "UIItemName": "Joni's Key",
       "ShopDesc": "I feel like I shouldn't have this, so it's at a discount.",
       "Sprite": "Joni",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -907,8 +925,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "(Fungus1_28[left1] | Fungus1_28[left2] + (RIGHTDASH | RIGHTSUPERDASH | WINGS | SHADESKIPS | LEFTCLAW + RIGHTCLAW + OBSCURESKIPS)) + LEFTBALDURS",
-      "VanillaMapCoordsOverride": null
+      "Logic": "(Fungus1_28[left1] | Fungus1_28[left2] + (RIGHTDASH | RIGHTSUPERDASH | WINGS | SHADESKIPS | LEFTCLAW + RIGHTCLAW + OBSCURESKIPS)) + LEFTBALDURS",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Junk": {
@@ -936,7 +955,7 @@
       "UIItemName": "Junk Key",
       "ShopDesc": "It comes with complimentary worthless Lumaflies.",
       "Sprite": "Junk",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -971,8 +990,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Waterways_08[top1] + (ANYCLAW | WINGS | ENEMYPOGOS + RIGHTDASH)",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Waterways_08[top1] + (ANYCLAW | WINGS | ENEMYPOGOS + RIGHTDASH)",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Lake": {
@@ -1000,7 +1020,7 @@
       "UIItemName": "Lake Key",
       "ShopDesc": "Many souls died to use this key, I assume that makes it worth this price.",
       "Sprite": "Water",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -1035,8 +1055,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Crossroads_01[left1] + DREAMER",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Crossroads_01[left1] + DREAMER",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Mantis": {
@@ -1064,7 +1085,7 @@
       "UIItemName": "Mantis Key",
       "ShopDesc": "It unlocks one of the most guarded places in the kingdom.",
       "Sprite": "Mantis",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -1105,8 +1126,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus2_13 | Fungus2_13[left3] + (RIGHTDASH | ACID | WINGS | LEFTCLAW | RIGHTCLAW + PRECISEMOVEMENT | AIRSTALL + ROOMSOUL | TERMINALSHADESKIPS)",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Fungus2_13 | Fungus2_13[left3] + (RIGHTDASH | ACID | WINGS | LEFTCLAW | RIGHTCLAW + PRECISEMOVEMENT | AIRSTALL + ROOMSOUL | TERMINALSHADESKIPS)",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Moss": {
@@ -1134,7 +1156,7 @@
       "UIItemName": "Moss Key",
       "ShopDesc": "If you look carefully it's actually four little keys pretending to be a big key.",
       "Sprite": "Moss",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -1175,8 +1197,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus1_26[right1]",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Fungus1_26[right1]",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Mothwing": {
@@ -1204,7 +1227,7 @@
       "UIItemName": "Mothwing Key",
       "ShopDesc": "You too can unlock your inner SHAAAW",
       "Sprite": "Mothwing",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -1239,8 +1262,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus1_32[bot1]",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Fungus1_32[bot1]",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Nest": {
@@ -1268,7 +1292,7 @@
       "UIItemName": "Nest Key",
       "ShopDesc": "I tried cleaning it but it always seems to have more webs.",
       "Sprite": "Nest",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.Disjunction, ItemChanger",
@@ -1312,8 +1336,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus3_39[right1]",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Fungus3_39[right1]",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Overgrown": {
@@ -1341,7 +1366,7 @@
       "UIItemName": "Overgrown Key",
       "ShopDesc": "Strange... this key seems like it's been forgotten more times than anyone can remember.",
       "Sprite": "Overgrown",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
         "objectName": "Plant Turret (3)",
         "removeGeo": false,
@@ -1351,11 +1376,12 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus1_12[right1] + (UPSLASH | SCREAM)",
-      "VanillaMapCoordsOverride": {
+      "Logic": "Fungus1_12[right1] + (UPSLASH | SCREAM)",
+      "WorldMapLocationOverride": {
         "X": 15.0,
         "Y": 55.0
-      }
+      },
+      "ExtraWorldMapLocations": null
     }
   },
   "Pain": {
@@ -1383,7 +1409,7 @@
       "UIItemName": "Pain Key",
       "ShopDesc": "This looks like it's been beaten to hell by blades, does it even work?",
       "Sprite": "Pain",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -1419,8 +1445,15 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "White_Palace_02[left1] + (RIGHTDASH | RIGHTCLAW | WINGS) + COMBAT[White_Palace_Arenas]",
-      "VanillaMapCoordsOverride": null
+      "Logic": "White_Palace_02[left1] + (RIGHTDASH | RIGHTCLAW | WINGS) + COMBAT[White_Palace_Arenas]",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": [
+        {
+          "SceneName": "Abyss_05",
+          "X": 150.0,
+          "Y": 65.0
+        }
+      ]
     }
   },
   "Sanctum": {
@@ -1448,7 +1481,7 @@
       "UIItemName": "Sanctum Key",
       "ShopDesc": "It's brimming with soul, too much of it.",
       "Sprite": "Sanctum",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -1483,8 +1516,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Ruins1_05c[bot1]",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Ruins1_05c[bot1]",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Shade": {
@@ -1512,7 +1546,7 @@
       "UIItemName": "Shade Key",
       "ShopDesc": "It smells of darkness, please take it away.",
       "Sprite": "Shade",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -1547,8 +1581,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Abyss_20[top1]",
-      "VanillaMapCoordsOverride": null
+      "Logic": "Abyss_20[top1]",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Traitor": {
@@ -1576,7 +1611,7 @@
       "UIItemName": "Traitor's Key",
       "ShopDesc": "I found this on some lady drilling in the wastes, doesn't seem too important.",
       "Sprite": "Traitor",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.Disjunction, ItemChanger",
@@ -1622,8 +1657,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "*Love_Key",
-      "VanillaMapCoordsOverride": null
+      "Logic": "*Love_Key",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   },
   "Village": {
@@ -1651,7 +1687,7 @@
       "UIItemName": "Village Key",
       "ShopDesc": "I think this is technically an heirloom? I should probably charge more for it.",
       "Sprite": "Village",
-      "VanillaLocation": {
+      "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
           "$type": "ItemChanger.SDBool, ItemChanger",
@@ -1686,8 +1722,9 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "(LANTERN | DARKROOMS) + (Deepnest_39[right1] + COMBAT[Left_Devout] | Deepnest_39[left1] + COMBAT[Right_Devout])",
-      "VanillaMapCoordsOverride": null
+      "Logic": "(LANTERN | DARKROOMS) + (Deepnest_39[right1] + COMBAT[Left_Devout] | Deepnest_39[left1] + COMBAT[Right_Devout])",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
     }
   }
 }

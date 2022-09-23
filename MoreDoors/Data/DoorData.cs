@@ -22,7 +22,7 @@ namespace MoreDoors.Data
             foreach (var doorName in DoorNames)
             {
                 Finder.DefineCustomItem(new KeyItem(doorName));
-                Finder.DefineCustomLocation(Get(doorName).Key.VanillaLocation);
+                Finder.DefineCustomLocation(Get(doorName).Key.Location);
             }
 
             MoreDoors.Log("Loaded Doors");
@@ -50,34 +50,49 @@ namespace MoreDoors.Data
         public string KeyDesc;
         public DoorLocation LeftDoorLocation;
         public DoorLocation RightDoorLocation;
-        // TODO: Custom door sprites and colors
 
         public record KeyInfo
         {
-
             public string ItemName;
             public string UIItemName;
             public string ShopDesc;
             public string Sprite;
-            public AbstractLocation VanillaLocation;
-            public string VanillaLogic;
+            public AbstractLocation Location;
+            public string Logic;
 
-            public class MapCoords
+            public record WorldMapLocation
             {
+                public string? SceneName;
                 public float X;
                 public float Y;
-            }
-            public MapCoords? VanillaMapCoordsOverride;
 
-            [JsonIgnore]
-            public (float x, float y) Coords
+                [JsonIgnore]
+                public (string, float, float) AsTuple => (SceneName, X, Y);
+            }
+            public WorldMapLocation? WorldMapLocationOverride;
+
+            public List<WorldMapLocation>? ExtraWorldMapLocations = null;
+
+            public WorldMapLocation GetWorldMapLocation()
             {
-                get
+                if (WorldMapLocationOverride != null)
                 {
-                    if (VanillaMapCoordsOverride != null) return (VanillaMapCoordsOverride.X, VanillaMapCoordsOverride.Y);
-                    if (VanillaLocation is DualLocation dl && dl.trueLocation is CoordinateLocation cl) return (cl.x, cl.y);
-                    throw new ArgumentException($"Key {ItemName} is missing map coords");
+                    WorldMapLocation ret = WorldMapLocationOverride;
+                    ret.SceneName ??= Location.sceneName;
+                    return ret;
                 }
+
+                if (Location is DualLocation dl && dl.trueLocation is CoordinateLocation cl)
+                {
+                    return new()
+                    {
+                        SceneName = Location.sceneName,
+                        X = cl.x,
+                        Y = cl.y
+                    };
+                }
+
+                throw new ArgumentException($"Key {ItemName} is missing world map location");
             }
         }
         public KeyInfo Key;
@@ -95,7 +110,7 @@ namespace MoreDoors.Data
         public string DoorForcedOpenLogicName => $"{CamelCaseName}Door_ForcedOpen";
 
         [JsonIgnore]
-        public string KeyLocationName => Key.VanillaLocation.name;
+        public string KeyLocationName => Key.Location.name;
 
         [JsonIgnore]
         public string NoKeyPromptId => $"MOREDOORS_{UpperCaseName}_DOOR_NOKEY";
