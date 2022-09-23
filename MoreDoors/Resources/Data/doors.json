@@ -555,8 +555,8 @@
       },
       "VanillaLogic": "Ruins1_30[left2]",
       "VanillaMapCoordsOverride": {
-        "X": 11,
-        "Y": 4
+        "X": 11.0,
+        "Y": 4.0
       }
     }
   },
@@ -725,7 +725,7 @@
       },
       "VanillaLogic": "Fungus3_44[door1]",
       "VanillaMapCoordsOverride": {
-        "X": 17,
+        "X": 17.0,
         "Y": 47.5
       }
     }
@@ -842,7 +842,7 @@
       },
       "VanillaLogic": "Hive_03[top1]",
       "VanillaMapCoordsOverride": {
-        "X": 31,
+        "X": 31.0,
         "Y": 128.5
       }
     }
@@ -973,6 +973,7 @@
       },
       "VanillaLogic": "Waterways_08[top1] + (ANYCLAW | WINGS | ENEMYPOGOS + RIGHTDASH)",
       "VanillaMapCoordsOverride": null
+    }
   },
   "Lake": {
     "CamelCaseName": "Lake",
@@ -1352,8 +1353,8 @@
       },
       "VanillaLogic": "Fungus1_12[right1] + (UPSLASH | SCREAM)",
       "VanillaMapCoordsOverride": {
-        "X": 15,
-        "Y": 55
+        "X": 15.0,
+        "Y": 55.0
       }
     }
   },
