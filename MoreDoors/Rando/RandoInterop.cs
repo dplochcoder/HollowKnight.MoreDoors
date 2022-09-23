@@ -19,6 +19,7 @@ namespace MoreDoors.Rando
         {
             ConnectionMenu.Setup();
             LogicPatcher.Setup();
+            Vanilla.Setup();
             RequestModifier.Setup();
             CondensedSpoilerLogger.AddCategory("MoreDoors Keys", _ => IsEnabled,
                 new(DoorData.DoorNames.Select(d => DoorData.Get(d).Key.ItemName)));
