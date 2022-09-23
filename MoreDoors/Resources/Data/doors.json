@@ -845,7 +845,7 @@
       "Y": 93.6
     },
     "Key": {
-      "ItemName": "Joni's_Key'",
+      "ItemName": "Joni's_Key",
       "UIItemName": "Joni's Key",
       "ShopDesc": "I feel like I shouldn't have this, so it's at a discount.",
       "Sprite": "Joni",
@@ -908,7 +908,7 @@
       "Y": 6.6
     },
     "Key": {
-      "ItemName": "Junk_Key'",
+      "ItemName": "Junk_Key",
       "UIItemName": "Junk Key",
       "ShopDesc": "It comes with complimentary worthless Lumaflies.",
       "Sprite": "Junk",
@@ -971,7 +971,7 @@
       "Y": 26.6
     },
     "Key": {
-      "ItemName": "Lake_Key'",
+      "ItemName": "Lake_Key",
       "UIItemName": "Lake Key",
       "ShopDesc": "Many souls died to use this key, I assume that makes it worth this price.",
       "Sprite": "Water",
@@ -1034,7 +1034,7 @@
       "Y": 11.6
     },
     "Key": {
-      "ItemName": "Mantis_Key'",
+      "ItemName": "Mantis_Key",
       "UIItemName": "Mantis Key",
       "ShopDesc": "It unlocks one of the most guarded places in the kingdom.",
       "Sprite": "Mantis",
@@ -1103,7 +1103,7 @@
       "Y": 16.6
     },
     "Key": {
-      "ItemName": "Moss_Key'",
+      "ItemName": "Moss_Key",
       "UIItemName": "Moss Key",
       "ShopDesc": "If you look carefully it's actually four little keys pretending to be a big key.",
       "Sprite": "Moss",
@@ -1535,7 +1535,7 @@
       "Y": 8.6
     },
     "Key": {
-      "ItemName": "Traitor's_Key'",
+      "ItemName": "Traitor's_Key",
       "UIItemName": "Traitor's Key",
       "ShopDesc": "I found this on some lady drilling in the wastes, doesn't seem too important.",
       "Sprite": "Traitor",
