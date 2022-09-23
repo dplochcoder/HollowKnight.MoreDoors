@@ -40,6 +40,7 @@ namespace MoreDoors.IC
             locInterop.Properties["PoolGroup"] = "Keys";
             locInterop.Properties["ModSource"] = nameof(MoreDoors);
 
+            // FIXME: This doesn't work, why?
             (float x, float y) = data.Key.Coords;
             locInterop.Properties["WorldMapLocations"] = new (string, float, float)[] { (loc.sceneName, x, y) };
         }
