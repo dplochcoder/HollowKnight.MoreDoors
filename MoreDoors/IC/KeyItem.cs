@@ -1,5 +1,6 @@
 ﻿using IL.TMPro;
 using ItemChanger;
+using ItemChanger.Locations;
 using ItemChanger.Tags;
 using ItemChanger.UIDefs;
 using MoreDoors.Data;
@@ -26,11 +27,21 @@ namespace MoreDoors.IC
             var interop = AddTag<InteropTag>();
             interop.Message = "RandoSupplementalMetadata";
             interop.Properties["PoolGroup"] = "Keys";
-            interop.Properties["ModSource"] = MoreDoors.Instance.GetName();
+            interop.Properties["ModSource"] = nameof(MoreDoors);
 
             var loc = data.Key.VanillaLocation;
+
+            // TODO: This seems like a bug in ItemChanger that we have to do this.
+            // DualPlacement concatenates tags from both delegate locations, but it ignores any tags set on the DualLocation itself.
+            if (loc is DualLocation dl) loc = dl.falseLocation;
+
+            var locInterop = loc.AddTag<InteropTag>();
+            locInterop.Message = "RandoSupplementalMetadata";
+            locInterop.Properties["PoolGroup"] = "Keys";
+            locInterop.Properties["ModSource"] = nameof(MoreDoors);
+
             (float x, float y) = data.Key.Coords;
-            interop.Properties["WorldMapLocations"] = new (string, float, float)[] { (loc.sceneName, x, y) };
+            locInterop.Properties["WorldMapLocations"] = new (string, float, float)[] { (loc.sceneName, x, y) };
         }
 
         public override AbstractItem Clone() => new KeyItem(DoorName);
