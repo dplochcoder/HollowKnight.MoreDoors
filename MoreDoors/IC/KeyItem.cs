@@ -1,4 +1,5 @@
-﻿using ItemChanger;
+﻿using IL.TMPro;
+using ItemChanger;
 using ItemChanger.Tags;
 using ItemChanger.UIDefs;
 using MoreDoors.Data;
@@ -26,6 +27,10 @@ namespace MoreDoors.IC
             interop.Message = "RandoSupplementalMetadata";
             interop.Properties["PoolGroup"] = "Keys";
             interop.Properties["ModSource"] = MoreDoors.Instance.GetName();
+
+            var loc = data.Key.VanillaLocation;
+            (float x, float y) = data.Key.Coords;
+            interop.Properties["WorldMapLocations"] = new (string, float, float)[] { (loc.sceneName, x, y) };
         }
 
         public override AbstractItem Clone() => new KeyItem(DoorName);

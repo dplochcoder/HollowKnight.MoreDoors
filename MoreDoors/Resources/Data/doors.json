@@ -59,7 +59,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Deepnest_East_06[right1]"
+      "VanillaLogic": "Deepnest_East_06[right1]",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Broken": {
@@ -122,7 +123,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Abyss_17[top1] + (DAMAGEBOOSTS | LEFTCLAW | WINGS | RIGHTCLAW + PRECISEMOVEMENT)"
+      "VanillaLogic": "Abyss_17[top1] + (DAMAGEBOOSTS | LEFTCLAW | WINGS | RIGHTCLAW + PRECISEMOVEMENT)",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Canyon": {
@@ -185,7 +187,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus2_18[top1]"
+      "VanillaLogic": "Fungus2_18[top1]",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Core": {
@@ -249,7 +252,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus2_31[left1] + Defeated_Mantis_Lords + (ANYCLAW | WINGS | DAMAGEBOOSTS + OBSCURESKIPS)"
+      "VanillaLogic": "Fungus2_31[left1] + Defeated_Mantis_Lords + (ANYCLAW | WINGS | DAMAGEBOOSTS + OBSCURESKIPS)",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Crown": {
@@ -318,7 +322,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Mines_35[left1] + QUAKE + (ANYCLAW | WINGS)"
+      "VanillaLogic": "Mines_35[left1] + QUAKE + (ANYCLAW | WINGS)",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Darknest": {
@@ -381,7 +386,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Deepnest_26b[right2] + (ANYCLAW | WINGS)"
+      "VanillaLogic": "Deepnest_26b[right2] + (ANYCLAW | WINGS)",
+      "VanillaMapCoordsOverride": null
     }
   },
   "False": {
@@ -444,7 +450,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Crossroads_48[left1]"
+      "VanillaLogic": "Crossroads_48[left1]",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Flooded Stag": {
@@ -507,7 +514,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Ruins_House_01[left1]"
+      "VanillaLogic": "Ruins_House_01[left1]",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Fountain": {
@@ -545,7 +553,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Ruins1_30[left2]"
+      "VanillaLogic": "Ruins1_30[left2]",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Fragile": {
@@ -608,7 +617,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus2_05[right1] + COMBAT[Shrumal_Ogre]"
+      "VanillaLogic": "Fungus2_05[right1] + COMBAT[Shrumal_Ogre]",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Fungal": {
@@ -671,7 +681,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus2_05[right1] + COMBAT[Shrumal_Ogre]"
+      "VanillaLogic": "Fungus2_05[right1] + COMBAT[Shrumal_Ogre]",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Garden": {
@@ -709,7 +720,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus3_44[door1]"
+      "VanillaLogic": "Fungus3_44[door1]",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Heart": {
@@ -783,7 +795,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Mines_05[left2]"
+      "VanillaLogic": "Mines_05[left2]",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Hive": {
@@ -821,7 +834,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Hive_03[top1]"
+      "VanillaLogic": "Hive_03[top1]",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Joni": {
@@ -884,7 +898,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "(Fungus1_28[left1] | Fungus1_28[left2] + (RIGHTDASH | RIGHTSUPERDASH | WINGS | SHADESKIPS | LEFTCLAW + RIGHTCLAW + OBSCURESKIPS)) + LEFTBALDURS"
+      "VanillaLogic": "(Fungus1_28[left1] | Fungus1_28[left2] + (RIGHTDASH | RIGHTSUPERDASH | WINGS | SHADESKIPS | LEFTCLAW + RIGHTCLAW + OBSCURESKIPS)) + LEFTBALDURS",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Junk": {
@@ -947,7 +962,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Waterways_08[top1] + (ANYCLAW | WINGS | ENEMYPOGOS + RIGHTDASH)"
+      "VanillaLogic": "Waterways_08[top1] + (ANYCLAW | WINGS | ENEMYPOGOS + RIGHTDASH)",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Lake": {
@@ -1010,7 +1026,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Crossroads_01[left1] + DREAMER"
+      "VanillaLogic": "Crossroads_01[left1] + DREAMER",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Mantis": {
@@ -1079,7 +1096,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus2_13 | Fungus2_13[left3] + (RIGHTDASH | ACID | WINGS | LEFTCLAW | RIGHTCLAW + PRECISEMOVEMENT | AIRSTALL + ROOMSOUL | TERMINALSHADESKIPS)"
+      "VanillaLogic": "Fungus2_13 | Fungus2_13[left3] + (RIGHTDASH | ACID | WINGS | LEFTCLAW | RIGHTCLAW + PRECISEMOVEMENT | AIRSTALL + ROOMSOUL | TERMINALSHADESKIPS)",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Moss": {
@@ -1148,7 +1166,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus1_26[right1]"
+      "VanillaLogic": "Fungus1_26[right1]",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Mothwing": {
@@ -1211,7 +1230,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus1_32[bot1]"
+      "VanillaLogic": "Fungus1_32[bot1]",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Nest": {
@@ -1283,7 +1303,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus3_39[right1]"
+      "VanillaLogic": "Fungus3_39[right1]",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Overgrown": {
@@ -1321,7 +1342,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Fungus1_12[right1] + (UPSLASH | SCREAM)"
+      "VanillaLogic": "Fungus1_12[right1] + (UPSLASH | SCREAM)",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Pain": {
@@ -1385,7 +1407,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "White_Palace_02[left1] + (RIGHTDASH | RIGHTCLAW | WINGS) + COMBAT[White_Palace_Arenas]"
+      "VanillaLogic": "White_Palace_02[left1] + (RIGHTDASH | RIGHTCLAW | WINGS) + COMBAT[White_Palace_Arenas]",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Sanctum": {
@@ -1448,7 +1471,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Ruins1_05c[bot1]"
+      "VanillaLogic": "Ruins1_05c[bot1]",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Shade": {
@@ -1511,7 +1535,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "Abyss_20[top1]"
+      "VanillaLogic": "Abyss_20[top1]",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Traitor": {
@@ -1585,7 +1610,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "*Love_Key"
+      "VanillaLogic": "*Love_Key",
+      "VanillaMapCoordsOverride": null
     }
   },
   "Village": {
@@ -1648,7 +1674,8 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "VanillaLogic": "(LANTERN | DARKROOMS) + (Deepnest_39[right1] + COMBAT[Left_Devout] | Deepnest_39[left1] + COMBAT[Right_Devout])"
+      "VanillaLogic": "(LANTERN | DARKROOMS) + (Deepnest_39[right1] + COMBAT[Left_Devout] | Deepnest_39[left1] + COMBAT[Right_Devout])",
+      "VanillaMapCoordsOverride": null
     }
   }
 }

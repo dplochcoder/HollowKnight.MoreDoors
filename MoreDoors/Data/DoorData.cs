@@ -1,6 +1,8 @@
 ﻿using ItemChanger;
+using ItemChanger.Locations;
 using MoreDoors.IC;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace MoreDoors.Data
@@ -52,12 +54,31 @@ namespace MoreDoors.Data
 
         public record KeyInfo
         {
+
             public string ItemName;
             public string UIItemName;
             public string ShopDesc;
             public string Sprite;
             public AbstractLocation VanillaLocation;
             public string VanillaLogic;
+
+            public record MapCoords
+            {
+                public float X;
+                public float Y;
+            }
+            public MapCoords? VanillaMapCoordsOverride;
+
+            [JsonIgnore]
+            public (float x, float y) Coords
+            {
+                get
+                {
+                    if (VanillaMapCoordsOverride != null) return (VanillaMapCoordsOverride.X, VanillaMapCoordsOverride.Y);
+                    if (VanillaLocation is DualLocation dl && dl.trueLocation is CoordinateLocation cl) return (cl.x, cl.y);
+                    throw new ArgumentException($"Key {ItemName} is missing map coords");
+                }
+            }
         }
         public KeyInfo Key;
 
