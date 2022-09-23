@@ -20,7 +20,7 @@
       "Y": 66.6
     },
     "Key": {
-      "ItemName": "Bardoon's_Key",
+      "ItemName": "MoreDoors-Bardoon's_Key",
       "UIItemName": "Bardoon's Key",
       "ShopDesc": "He seems nice but his neighbors are just the worst.",
       "Sprite": "Bardoon",
@@ -83,7 +83,7 @@
       "Y": 33.6
     },
     "Key": {
-      "ItemName": "Broken_Key",
+      "ItemName": "MoreDoors-Broken_Key",
       "UIItemName": "Broken Key",
       "ShopDesc": "Broken? It looks completely functional to me.",
       "Sprite": "Broken",
@@ -146,7 +146,7 @@
       "Y": 5.6
     },
     "Key": {
-      "ItemName": "Canyon_Key",
+      "ItemName": "MoreDoors-Canyon_Key",
       "UIItemName": "Canyon Key",
       "ShopDesc": "Ow! Why is this so receptive to static?",
       "Sprite": "Canyon",
@@ -209,7 +209,7 @@
       "Y": 33.6
     },
     "Key": {
-      "ItemName": "Core_Key",
+      "ItemName": "MoreDoors-Core_Key",
       "UIItemName": "Core Key",
       "ShopDesc": "Please get rid of this, it's got something growing on it.",
       "Sprite": "Core",
@@ -273,7 +273,7 @@
       "Y": 197.6
     },
     "Key": {
-      "ItemName": "Crown_Key",
+      "ItemName": "MoreDoors-Crown_Key",
       "UIItemName": "Crown Key",
       "ShopDesc": "Goodness, this one is shiny. Where could it have come from?",
       "Sprite": "Crown",
@@ -342,7 +342,7 @@
       "Y": 9.6
     },
     "Key": {
-      "ItemName": "Dark_Nest_Key",
+      "ItemName": "MoreDoors-Dark_Nest_Key",
       "UIItemName": "Dark Nest Key",
       "ShopDesc": "I swear I can't even see this thing without my Lumaflies, it's so black.'",
       "Sprite": "Darknest",
@@ -405,7 +405,7 @@
       "Y": 16.6
     },
     "Key": {
-      "ItemName": "False_Key",
+      "ItemName": "MoreDoors-False_Key",
       "UIItemName": "False Key",
       "ShopDesc": "I think this is to protect him, not you.",
       "Sprite": "False",
@@ -468,7 +468,7 @@
       "Y": 7.6
     },
     "Key": {
-      "ItemName": "Flooded_Stag_Key",
+      "ItemName": "MoreDoors-Flooded_Stag_Key",
       "UIItemName": "Flooded Stag Key",
       "ShopDesc": "I don't think this protects anything, just a bunch of water?",
       "Sprite": "Water",
@@ -531,7 +531,7 @@
       "Y": 8.6
     },
     "Key": {
-      "ItemName": "Fountain_Key",
+      "ItemName": "MoreDoors-Fountain_Key",
       "UIItemName": "Fountain Key",
       "ShopDesc": "Is it destiny you seek, or geo?  Are they different?",
       "Sprite": "Fountain",
@@ -569,7 +569,7 @@
       "Y": 60.6
     },
     "Key": {
-      "ItemName": "Fragile_Key",
+      "ItemName": "MoreDoors-Fragile_Key",
       "UIItemName": "Fragile Key",
       "ShopDesc": "Don't let the Better Bugsness Bureau know about this.",
       "Sprite": "Fragile",
@@ -632,7 +632,7 @@
       "Y": 11.6
     },
     "Key": {
-      "ItemName": "Fungal_Key",
+      "ItemName": "MoreDoors-Fungal_Key",
       "UIItemName": "Fungal Key",
       "ShopDesc": "Chop 'em, sautee 'em, stick 'em in a stew.",
       "Sprite": "Fungal",
@@ -695,7 +695,7 @@
       "Y": 58.6
     },
     "Key": {
-      "ItemName": "Garden_Key",
+      "ItemName": "MoreDoors-Garden_Key",
       "UIItemName": "Garden Key",
       "ShopDesc": "Interesting to see things so cared for in a kingdom forgotten.",
       "Sprite": "Garden",
@@ -733,7 +733,7 @@
       "Y": 65.6
     },
     "Key": {
-      "ItemName": "Heart_Key",
+      "ItemName": "MoreDoors-Heart_Key",
       "UIItemName": "Heart Key",
       "ShopDesc": "If you hold this up to your ear, you'll realize you don't HAVE ears, dumbdumb.",
       "Sprite": "Heart",
@@ -807,7 +807,7 @@
       "Y": 52.6
     },
     "Key": {
-      "ItemName": "Hive_Key",
+      "ItemName": "MoreDoors-Hive_Key",
       "UIItemName": "Hive Key",
       "ShopDesc": "It's technically edible, I wouldn't recommend that though.",
       "Sprite": "Hive",
@@ -845,7 +845,7 @@
       "Y": 93.6
     },
     "Key": {
-      "ItemName": "Joni's_Key",
+      "ItemName": "MoreDoors-Joni's_Key",
       "UIItemName": "Joni's Key",
       "ShopDesc": "I feel like I shouldn't have this, so it's at a discount.",
       "Sprite": "Joni",
@@ -908,7 +908,7 @@
       "Y": 6.6
     },
     "Key": {
-      "ItemName": "Junk_Key",
+      "ItemName": "MoreDoors-Junk_Key",
       "UIItemName": "Junk Key",
       "ShopDesc": "It comes with complimentary worthless Lumaflies.",
       "Sprite": "Junk",
@@ -971,7 +971,7 @@
       "Y": 26.6
     },
     "Key": {
-      "ItemName": "Lake_Key",
+      "ItemName": "MoreDoors-Lake_Key",
       "UIItemName": "Lake Key",
       "ShopDesc": "Many souls died to use this key, I assume that makes it worth this price.",
       "Sprite": "Water",
@@ -1034,7 +1034,7 @@
       "Y": 11.6
     },
     "Key": {
-      "ItemName": "Mantis_Key",
+      "ItemName": "MoreDoors-Mantis_Key",
       "UIItemName": "Mantis Key",
       "ShopDesc": "It unlocks one of the most guarded places in the kingdom.",
       "Sprite": "Mantis",
@@ -1103,7 +1103,7 @@
       "Y": 16.6
     },
     "Key": {
-      "ItemName": "Moss_Key",
+      "ItemName": "MoreDoors-Moss_Key",
       "UIItemName": "Moss Key",
       "ShopDesc": "If you look carefully it's actually four little keys pretending to be a big key.",
       "Sprite": "Moss",
@@ -1172,7 +1172,7 @@
       "Y": 34.6
     },
     "Key": {
-      "ItemName": "Mothwing_Key",
+      "ItemName": "MoreDoors-Mothwing_Key",
       "UIItemName": "Mothwing Key",
       "ShopDesc": "You too can unlock your inner SHAAAW",
       "Sprite": "Mothwing",
@@ -1235,7 +1235,7 @@
       "Y": 5.6
     },
     "Key": {
-      "ItemName": "Nest_Key",
+      "ItemName": "MoreDoors-Nest_Key",
       "UIItemName": "Nest Key",
       "ShopDesc": "I tried cleaning it but it always seems to have more webs.",
       "Sprite": "Nest",
@@ -1307,7 +1307,7 @@
       "Y": 14.6
     },
     "Key": {
-      "ItemName": "Overgrown_Key",
+      "ItemName": "MoreDoors-Overgrown_Key",
       "UIItemName": "Overgrown Key",
       "ShopDesc": "Strange... this key seems like it's been forgotten more times than anyone can remember.",
       "Sprite": "Overgrown",
@@ -1345,7 +1345,7 @@
       "Y": 14.6
     },
     "Key": {
-      "ItemName": "Pain_Key",
+      "ItemName": "MoreDoors-Pain_Key",
       "UIItemName": "Pain Key",
       "ShopDesc": "This looks like it's been beaten to hell by blades, does it even work?",
       "Sprite": "Pain",
@@ -1409,7 +1409,7 @@
       "Y": 153.6
     },
     "Key": {
-      "ItemName": "Sanctum_Key",
+      "ItemName": "MoreDoors-Sanctum_Key",
       "UIItemName": "Sanctum Key",
       "ShopDesc": "It's brimming with soul, too much of it.",
       "Sprite": "Sanctum",
@@ -1472,7 +1472,7 @@
       "Y": 5.6
     },
     "Key": {
-      "ItemName": "Shade_Key",
+      "ItemName": "MoreDoors-Shade_Key",
       "UIItemName": "Shade Key",
       "ShopDesc": "It smells of darkness, please take it away.",
       "Sprite": "Shade",
@@ -1535,7 +1535,7 @@
       "Y": 8.6
     },
     "Key": {
-      "ItemName": "Traitor's_Key",
+      "ItemName": "MoreDoors-Traitor's_Key",
       "UIItemName": "Traitor's Key",
       "ShopDesc": "I found this on some lady drilling in the wastes, doesn't seem too important.",
       "Sprite": "Traitor",
@@ -1609,7 +1609,7 @@
       "Y": 89.6
     },
     "Key": {
-      "ItemName": "Village_Key",
+      "ItemName": "MoreDoors-Village_Key",
       "UIItemName": "Village Key",
       "ShopDesc": "I think this is technically an heirloom? I should probably charge more for it.",
       "Sprite": "Village",
