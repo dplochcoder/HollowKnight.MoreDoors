@@ -1,4 +1,5 @@
-﻿using MoreDoors.Data;
+﻿using ItemChanger;
+using MoreDoors.Data;
 using RandomizerCore;
 using RandomizerCore.Extensions;
 using RandomizerCore.Logic;
@@ -40,15 +41,23 @@ namespace MoreDoors.Rando
             return false;
         }
 
-        private static readonly HashSet<string> ForbiddenStarts = new() {
-            "Abyss",
-            "Hallownest's Crown",
-            "Hive",
-            "Mantis Village",
-            "Queen's Gardens",
-            "Queen's Station",
-            "West Blue Lake",
-            "West Fog Canyon"
+        private delegate RandomizerMod.RandomizerData.StartDef ModifyStart(RandomizerMod.RandomizerData.StartDef startDef);
+
+        private static ModifyStart ForbidWithMoreDoors(string unless = "FALSE") => sd => sd with
+        {
+            RandoLogic = $"({sd.RandoLogic ?? sd.Logic}) + ({MoreDoorsRando}=0 | {unless})"
+        };
+
+        private static readonly Dictionary<string, ModifyStart> StartModifiers = new()
+        {
+            {"Abyss", sd => sd with { Transition = "Abyss_06_Core[left3]" } },
+            {"Hallownest's Crown", ForbidWithMoreDoors("ROOMRANDO") },
+            {"Hive", ForbidWithMoreDoors("ROOMRANDO") },
+            {"Mantis Village", ForbidWithMoreDoors() },
+            {"Queens's Gardens", ForbidWithMoreDoors("ROOMRANDO") },
+            {"Queen's Station", ForbidWithMoreDoors("ROOMRANDO") },
+            {"West Blue Lake", ForbidWithMoreDoors() },
+            {"West Fog Canyon", ForbidWithMoreDoors("ROOMRANDO") }
         };
 
         private static void PatchStartLocations(Dictionary<string, RandomizerMod.RandomizerData.StartDef> startDefs)
@@ -56,13 +65,10 @@ namespace MoreDoors.Rando
             List<string> keys = new(startDefs.Keys);
             foreach (var start in keys)
             {
-                if (ForbiddenStarts.Contains(start))
+                if (StartModifiers.TryGetValue(start, out ModifyStart ms))
                 {
                     var sd = startDefs[start];
-                    startDefs[start] = sd with
-                    {
-                        RandoLogic = $"({sd.RandoLogic ?? sd.Logic}) + {MoreDoorsRando}=0"
-                    };
+                    startDefs[start] = ms(sd);
                 }
             }
         }
