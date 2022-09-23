@@ -41,6 +41,7 @@ namespace MoreDoors.Rando
         }
 
         private static readonly HashSet<string> ForbiddenStarts = new() {
+            "Abyss",
             "Hallownest's Crown",
             "Hive",
             "Mantis Village",
