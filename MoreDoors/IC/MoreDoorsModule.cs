@@ -52,7 +52,8 @@ namespace MoreDoors.IC
             }
 
             Events.OnSceneChange += OnSceneChange;
-            Events.OnBeginSceneTransition += OnBeginSceneTransition;
+            Events.OnBeginSceneTransition += t => OnUseTransition(t);
+            Events.OnTransitionOverride += OnTransitionOverride;
         }
 
         public override void Unload()
@@ -114,7 +115,13 @@ namespace MoreDoors.IC
             }
         }
 
-        private void OnBeginSceneTransition(Transition t)
+        private void OnTransitionOverride(Transition src, Transition origDst, ITransition newDst)
+        {
+            OnUseTransition(src);
+            OnUseTransition(newDst);
+        }
+
+        private void OnUseTransition(ITransition t)
         {
             // If we went through a door via RoomRando, force it open.
             var tname = $"{t.SceneName}[{t.GateName}]";
