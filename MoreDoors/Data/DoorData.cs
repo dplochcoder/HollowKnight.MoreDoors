@@ -2,6 +2,7 @@
 using ItemChanger.Locations;
 using MoreDoors.IC;
 using Newtonsoft.Json;
+using RandomizerCore.Logic;
 using System;
 using System.Collections.Generic;
 
@@ -53,6 +54,7 @@ namespace MoreDoors.Data
             public string KeyDesc;
             public DoorLocation LeftLocation;
             public DoorLocation RightLocation;
+            public List<RawLogicDef>? LogicOverrides;
         }
         public DoorInfo Door;
 
