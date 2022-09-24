@@ -11,10 +11,9 @@ namespace MoreDoors.Data
     public record DoorData
     {
         public static readonly SortedDictionary<string, DoorData> Data = JsonUtil.Deserialize<SortedDictionary<string, DoorData>>("MoreDoors.Resources.Data.doors.json");
+        public static readonly IReadOnlyList<string> DoorNames = new List<string>(Data.Keys);
 
         public static DoorData Get(string doorName) => Data[doorName];
-
-        public static IEnumerable<string> DoorNames => Data.Keys;
 
         public static int Count => Data.Count;
 

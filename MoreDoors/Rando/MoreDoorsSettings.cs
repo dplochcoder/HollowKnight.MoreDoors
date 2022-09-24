@@ -1,6 +1,8 @@
 ﻿using MoreDoors.Data;
 using Newtonsoft.Json;
+using RandomizerCore.Extensions;
 using System;
+using System.Collections.Generic;
 
 namespace MoreDoors.Rando
 {
@@ -27,33 +29,34 @@ namespace MoreDoors.Rando
         [JsonIgnore]
         public bool IsEnabled => DoorsLevel != DoorsLevel.NoDoors || AddKeyLocations == AddKeyLocations.AllDoors;
 
-        public int ComputeNumDoors(Random r)
+        public HashSet<string> ComputeActiveDoors(Random r)
         {
-            int num, denom, range;
+            List<string> potentialDoors = new(DoorData.DoorNames);
+            HashSet<string> doors = new();
+            int modifier;
             switch (DoorsLevel)
             {
                 case DoorsLevel.NoDoors:
-                    return 0;
+                    return doors;
                 case DoorsLevel.SomeDoors:
-                    num = 1;
-                    denom = 3;
-                    range = 1;
+                    modifier = 1;
                     break;
                 case DoorsLevel.MoreDoors:
-                    num = 2;
-                    denom = 3;
-                    range = 2;
+                    modifier = 2;
                     break;
                 case DoorsLevel.AllDoors:
-                    return DoorData.Count;
+                    potentialDoors.ForEach(d => doors.Add(d));
+                    return doors;
                 default:
                     throw new ArgumentException($"Unknown DoorsLevel: {DoorsLevel}");
             }
 
-            int mid = DoorData.Count * num / denom;
-            int min = Math.Max(1, mid - range);
-            int max = Math.Min(DoorData.Count, mid + range);
-            return min + r.Next(0, max - min + 1);
+            int mid = potentialDoors.Count * modifier / 3;
+            int numDoors = mid - modifier + r.Next(0, modifier * 2 + 1);
+            potentialDoors.Shuffle(r);
+            for (int i = 0; i < numDoors; i++) doors.Add(potentialDoors[i]);
+
+            return doors;
         }
     }
 }

@@ -121,11 +121,7 @@ namespace MoreDoors.Rando
 
             LocalSettings LS = new();
             Random r = new(gs.Seed + 13);
-            int numDoors = LS.Settings.ComputeNumDoors(r);
-
-            List<string> doors = new(DoorData.DoorNames);
-            doors.Shuffle(r);
-            foreach (var doorName in doors.Slice(0, numDoors)) LS.EnabledDoorNames.Add(doorName);
+            LS.EnabledDoorNames = LS.Settings.ComputeActiveDoors(r);
 
             foreach (var doorName in DoorData.DoorNames)
             {
