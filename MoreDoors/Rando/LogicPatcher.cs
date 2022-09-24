@@ -74,7 +74,7 @@ namespace MoreDoors.Rando
             }
         }
 
-        private static void HandleTransition(LogicManagerBuilder lmb, DoorData data, DoorData.DoorLocation doorLoc, HashSet<string> fixedTerms, Dictionary<string, string> replacementMap)
+        private static void HandleTransition(LogicManagerBuilder lmb, DoorData data, DoorData.DoorInfo.Location doorLoc, HashSet<string> fixedTerms, Dictionary<string, string> replacementMap)
         {
             fixedTerms.Add(doorLoc.TransitionName);
             fixedTerms.Add(doorLoc.TransitionProxyName);

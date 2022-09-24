@@ -29,31 +29,31 @@ namespace MoreDoors.Data
             MoreDoors.Log("Loaded Doors");
         }
 
-        public record DoorLocation
-        {
-            public string SceneName;
-            public string GateName;
-            public bool RequiresLantern;
-            public float X;
-            public float Y;
-
-            [JsonIgnore]
-            public string TransitionName => $"{SceneName}[{GateName}]";
-
-            [JsonIgnore]
-            public string TransitionProxyName => $"{SceneName}_Proxy[{GateName}]";
-        }
-
         public string CamelCaseName;
         public string UpperCaseName;
 
         public record DoorInfo
         {
+            public record Location
+            {
+                public string SceneName;
+                public string GateName;
+                public bool RequiresLantern;
+                public float X;
+                public float Y;
+
+                [JsonIgnore]
+                public string TransitionName => $"{SceneName}[{GateName}]";
+
+                [JsonIgnore]
+                public string TransitionProxyName => $"{SceneName}_Proxy[{GateName}]";
+            }
+
             public string Sprite;
             public string NoKeyDesc;
             public string KeyDesc;
-            public DoorLocation LeftLocation;
-            public DoorLocation RightLocation;
+            public Location LeftLocation;
+            public Location RightLocation;
             public List<RawLogicDef>? LogicOverrides;
         }
         public DoorInfo Door;
