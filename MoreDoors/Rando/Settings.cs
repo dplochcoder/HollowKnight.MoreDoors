@@ -1,8 +1,10 @@
-﻿using MoreDoors.Data;
+﻿using MenuChanger.Attributes;
+using MoreDoors.Data;
 using Newtonsoft.Json;
 using RandomizerCore.Extensions;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MoreDoors.Rando
 {
@@ -26,12 +28,28 @@ namespace MoreDoors.Rando
         public DoorsLevel DoorsLevel = DoorsLevel.NoDoors;
         public AddKeyLocations AddKeyLocations = AddKeyLocations.None;
 
+        [MenuIgnore]
+        public int DoorsMask = FullMask(DoorData.Count);
+
         [JsonIgnore]
         public bool IsEnabled => DoorsLevel != DoorsLevel.NoDoors || AddKeyLocations == AddKeyLocations.AllDoors;
 
+        public bool IsDoorAllowed(int index) => (DoorsMask & (1 << index)) != 0;
+
+        private static int FullMask(int n)
+        {
+            if (n > 31) throw new ArgumentException("Too many doors =<");
+
+            int o = 0;
+            for (int i = 0; i < n; i++) o |= (1 << i);
+            return o;
+        }
+
         public HashSet<string> ComputeActiveDoors(Random r)
         {
-            List<string> potentialDoors = new(DoorData.DoorNames);
+            List<string> potentialDoors = Enumerable.Range(0, DoorData.Count)
+                .Where(i => IsDoorAllowed(i))
+                .Select(i => DoorData.DoorNames[i]).ToList();
             HashSet<string> doors = new();
             int modifier;
             switch (DoorsLevel)
