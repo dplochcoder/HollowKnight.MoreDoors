@@ -442,7 +442,7 @@
       "LogicOverrides": [
         {
           "name": "Crossroads_06[right1]",
-          "logic": "Crossroads_06 + ROOMRANDO"
+          "logic": "(Crossroads_06[left1] | Crossroads_06[door1]) + ROOMRANDO"
         }
       ]
     },
