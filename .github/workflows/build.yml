@@ -1,17 +1,12 @@
 ﻿name: Build
 
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
   workflow_dispatch:
     inputs:
       should_release:
         description: "Create release?"
         required: true
-        default: false
+        default: true
         type: boolean
 
 jobs:
