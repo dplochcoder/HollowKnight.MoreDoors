@@ -10,8 +10,8 @@ See SPOILER.md for the full list of doors and vanilla key locations if you wish.
 
 * Add More Doors: Adds more doors to Hallownest if enabled
   * Doors Level: The number of doors to add
-    * Some Doors: About a quarter of the doors are added
-    * More Doors: About half the doors are added
+    * Some Doors: About a third of the doors are added
+    * More Doors: About two-thirds of the doors are added
     * All Doors: All of the doors are added
   * Add Key Locations: Adds the vanilla key locations for the added doors to the locations pool
     * Matching Doors: Only adds the key locations for the doors that were actually added

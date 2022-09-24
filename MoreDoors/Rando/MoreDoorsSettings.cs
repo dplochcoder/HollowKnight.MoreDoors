@@ -29,17 +29,19 @@ namespace MoreDoors.Rando
 
         public int ComputeNumDoors(Random r)
         {
-            int dividend, range;
+            int num, denom, range;
             switch (DoorsLevel)
             {
                 case DoorsLevel.NoDoors:
                     return 0;
                 case DoorsLevel.SomeDoors:
-                    dividend = 4;
+                    num = 1;
+                    denom = 3;
                     range = 1;
                     break;
                 case DoorsLevel.MoreDoors:
-                    dividend = 2;
+                    num = 2;
+                    denom = 3;
                     range = 2;
                     break;
                 case DoorsLevel.AllDoors:
@@ -48,8 +50,9 @@ namespace MoreDoors.Rando
                     throw new ArgumentException($"Unknown DoorsLevel: {DoorsLevel}");
             }
 
-            int min = Math.Max(1, (DoorData.Count / dividend) - range);
-            int max = Math.Min(DoorData.Count, (DoorData.Count / dividend) + range);
+            int mid = DoorData.Count * num / denom;
+            int min = Math.Max(1, mid - range);
+            int max = Math.Min(DoorData.Count, mid + range);
             return min + r.Next(0, max - min + 1);
         }
     }
