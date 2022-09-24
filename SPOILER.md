@@ -49,6 +49,11 @@ Read at your own risk!  There's no taking it back.
 * Blocks access to the fountain in City of Tears from the left
 * Key is at the Mistake after the final Soul Totem in Sanctum
 
+## Fragile Door
+
+* Blocks access to Leg Eater
+* Key is at the first Shrumal Ogre by the charm notch
+
 ## Fungal Door
 
 * Blocks access to right Fungal
@@ -128,11 +133,6 @@ Read at your own risk!  There's no taking it back.
 
 * Blocks access to Traitor Lord and the upper QG grub
 * Key is at the second Mantis Traitor by Love Key
-
-## Vendor's Door
-
-* Blocks access to Leg Eater
-* Key is at the first Shrumal Ogre by the charm notch
 
 ## Village Door
 
