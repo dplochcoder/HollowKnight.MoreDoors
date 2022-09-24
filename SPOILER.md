@@ -12,7 +12,7 @@ Read at your own risk!  There's no taking it back.
 ## Broken Door
 
 * Blocks access to Broken Vessel
-* Key is at the Lesser Mawlek right of Cloth in Basin
+* Key is at the Lesser Mawlek far right of Cloth in Basin
 
 ## Canyon Door
 
@@ -37,7 +37,7 @@ Read at your own risk!  There's no taking it back.
 ## False Door
 
 * Blocks access to False Knight
-* Key is at the guarded-grub husk in Crossroads
+* Key is at the Husk Guard guarding the grub in Crossroads
 
 ## Flooded Stag Door
 
@@ -57,7 +57,7 @@ Read at your own risk!  There's no taking it back.
 ## Garden Door
 
 * Blocks access to QG after Overgrown Mound
-* Key is at the center moss flier above Overgrown Mound
+* Key is at the center Mossfly by Overgrown Mound
 
 ## Heart Door
 
@@ -67,7 +67,7 @@ Read at your own risk!  There's no taking it back.
 ## Hive Door
 
 * Blocks access to Hive
-* Key is at one of the small bees in the outside-grub room in Hive
+* Key is at the lowest Hiveling in the outside-grub room in Hive
 
 ## Joni's Door
 
@@ -77,7 +77,7 @@ Read at your own risk!  There's no taking it back.
 ## Junk Door
 
 * Blocks access to Junk Pit
-* Key is at the rightmost explodey-bird in the fluke chamber
+* Key is at the rightmost Belfly in the chamber before Flukemarm
 
 ## Lake Door
 
@@ -87,7 +87,7 @@ Read at your own risk!  There's no taking it back.
 ## Mantis Door
 
 * Blocks access to Mantis Village core from Bretta Bench
-* Key is at the mantis warrior just above Bretta Bench
+* Key is at the Mantis directly above Bretta Bench
 
 ## Moss Door
 
@@ -102,12 +102,12 @@ Read at your own risk!  There's no taking it back.
 ## Nest Door
 
 * Blocks access to light Deepnest, left of the hot springs bench
-* Key is at the mossy vagabonds by the Fungal drop
+* Key is at the center Mossy Vagabond by the Fungal drop into Deepnest
 
 ## Overgrown Door
 
 * Blocks access to autopilot and overgrown mound
-* Key is at the topmost Gulka after MMC
+* Key is at the topmost Gulka in the corridor after MMC
 
 ## Pain Door
 
@@ -117,17 +117,17 @@ Read at your own risk!  There's no taking it back.
 ## Sanctum Door
 
 * Blocks the entrance to Soul Sanctum
-* Key is at the husk sentry directly above Lemm
+* Key is at the Heavy Sentry directly above Lemm
 
 ## Shade Door
 
 * Blocks the shade-cloak wing of Abyss
-* Key is at the last Mawlek creature on the way to Broken Vessel
+* Key is at the last Mawlurk on the way to Broken Vessel
 
 ## Traitor's Door
 
 * Blocks access to Traitor Lord and the upper QG grub
-* Key is at the second mantis traitor by Love Key
+* Key is at the second Mantis Traitor by Love Key
 
 ## Vendor's Door
 
