@@ -77,29 +77,34 @@ namespace MoreDoors.Data
                 public (string, float, float) AsTuple => (SceneName, X, Y);
             }
             public WorldMapLocation? WorldMapLocationOverride;
-
             public List<WorldMapLocation>? ExtraWorldMapLocations = null;
 
-            public WorldMapLocation GetWorldMapLocation()
+            public List<WorldMapLocation> GetWorldMapLocations()
             {
+                List<WorldMapLocation> locations = new();
+
                 if (WorldMapLocationOverride != null)
                 {
-                    WorldMapLocation ret = WorldMapLocationOverride;
-                    ret.SceneName ??= Location.sceneName;
-                    return ret;
+                    WorldMapLocation first = WorldMapLocationOverride;
+                    first.SceneName ??= Location.sceneName;
+                    locations.Add(first);
                 }
-
-                if (Location is DualLocation dl && dl.trueLocation is CoordinateLocation cl)
+                else if (Location is DualLocation dl && dl.trueLocation is CoordinateLocation cl)
                 {
-                    return new()
+                    locations.Add(new()
                     {
                         SceneName = Location.sceneName,
                         X = cl.x,
                         Y = cl.y
-                    };
+                    });
+                }
+                else
+                {
+                    throw new ArgumentException($"Key {ItemName} is missing world map location");
                 }
 
-                throw new ArgumentException($"Key {ItemName} is missing world map location");
+                ExtraWorldMapLocations?.ForEach(l => locations.Add(l));
+                return locations;
             }
         }
         public KeyInfo Key;

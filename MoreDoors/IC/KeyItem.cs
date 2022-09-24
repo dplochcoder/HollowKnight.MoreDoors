@@ -42,12 +42,7 @@ namespace MoreDoors.IC
             // DualPlacement concatenates tags from both delegate locations, but it ignores any tags set on the DualLocation itself.
             if (loc is DualLocation dl) loc = dl.falseLocation;
 
-            var interop = AddInterop(loc);
-
-            List<(string, float, float)> positions = new();
-            positions.Add(data.Key.GetWorldMapLocation().AsTuple);
-            data.Key.ExtraWorldMapLocations?.ForEach(eLoc => positions.Add(eLoc.AsTuple));
-            interop.Properties["WorldMapLocations"] = positions.ToArray();
+            AddInterop(loc).Properties["WorldMapLocations"] = data.Key.GetWorldMapLocations().Select(l => l.AsTuple).ToArray();
         }
 
         public override AbstractItem Clone() => new KeyItem(DoorName);
