@@ -4,6 +4,6 @@ namespace MoreDoors
 {
     public class GlobalSettings
     {
-        public MoreDoorsSettings MoreDoorsSettings = new();
+        public RandomizationSettings RandoSettings = new();
     }
 }

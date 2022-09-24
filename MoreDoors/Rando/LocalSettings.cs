@@ -6,7 +6,7 @@ namespace MoreDoors.Rando
 {
     public class LocalSettings
     {
-        public MoreDoorsSettings Settings = MoreDoors.GS.MoreDoorsSettings;
+        public RandomizationSettings Settings = MoreDoors.GS.RandoSettings;
         public HashSet<string> EnabledDoorNames = new();
 
         [JsonIgnore]

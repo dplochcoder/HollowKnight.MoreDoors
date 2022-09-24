@@ -32,9 +32,9 @@ namespace MoreDoors.Rando
             item.Text.color = EqualityComparer<T>.Default.Equals(value, none) ? Colors.FALSE_COLOR : Colors.DEFAULT_COLOR;
         }
 
-        private void SetEnabledColor() => entryButton.Text.color = MoreDoors.GS.MoreDoorsSettings.IsEnabled ? Colors.TRUE_COLOR : Colors.DEFAULT_COLOR;
+        private void SetEnabledColor() => entryButton.Text.color = MoreDoors.GS.RandoSettings.IsEnabled ? Colors.TRUE_COLOR : Colors.DEFAULT_COLOR;
 
-        private void ModifyColors<T>(MenuElementFactory<MoreDoorsSettings> factory, string fieldName, T none)
+        private void ModifyColors<T>(MenuElementFactory<RandomizationSettings> factory, string fieldName, T none)
         {
             MenuItem<T> item = (MenuItem<T>)factory.ElementLookup[fieldName];
             item.ValueChanged += value =>
@@ -53,8 +53,8 @@ namespace MoreDoors.Rando
             entryButton = new(landingPage, Localize("More Doors"));
             entryButton.AddHideAndShowEvent(mainPage);
 
-            var settings = MoreDoors.GS.MoreDoorsSettings;
-            MenuElementFactory<MoreDoorsSettings> factory = new(mainPage, settings);
+            var settings = MoreDoors.GS.RandoSettings;
+            MenuElementFactory<RandomizationSettings> factory = new(mainPage, settings);
             Localize(factory);
 
             ModifyColors(factory, nameof(settings.DoorsLevel), DoorsLevel.NoDoors);

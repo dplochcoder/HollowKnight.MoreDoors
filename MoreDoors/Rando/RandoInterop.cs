@@ -13,7 +13,7 @@ namespace MoreDoors.Rando
     {
         public static LocalSettings LS { get; set; }
 
-        public static bool IsEnabled => MoreDoors.GS.MoreDoorsSettings.IsEnabled;
+        public static bool IsEnabled => MoreDoors.GS.RandoSettings.IsEnabled;
 
         public static void Setup()
         {

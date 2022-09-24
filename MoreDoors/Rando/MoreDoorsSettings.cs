@@ -21,7 +21,7 @@ namespace MoreDoors.Rando
         AllDoors
     }
 
-    public class MoreDoorsSettings
+    public class RandomizationSettings
     {
         public DoorsLevel DoorsLevel = DoorsLevel.NoDoors;
         public AddKeyLocations AddKeyLocations = AddKeyLocations.None;
