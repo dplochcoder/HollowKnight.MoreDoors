@@ -3,3 +3,4 @@ MenuChanger
 Randomizer 4
 RandomizerCore
 CondensedSpoilerLogger
+ConnectionSettingsCode

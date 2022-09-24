@@ -6,6 +6,7 @@ using MenuChanger.Extensions;
 using MenuChanger.MenuPanels;
 using System;
 using System.Collections.Generic;
+using ConnectionSettingsCode;
 
 namespace MoreDoors.Rando
 {
@@ -61,7 +62,8 @@ namespace MoreDoors.Rando
             ModifyColors(factory, nameof(settings.AddKeyLocations), AddKeyLocations.None);
             SetEnabledColor();
 
-            VerticalItemPanel panel = new(mainPage, SpaceParameters.TOP_CENTER_UNDER_TITLE, SpaceParameters.VSPACE_MEDIUM, true, factory.Elements);
+            new VerticalItemPanel(mainPage, SpaceParameters.TOP_CENTER_UNDER_TITLE, SpaceParameters.VSPACE_MEDIUM, true, factory.Elements);
+            new SettingsCode(mainPage, MoreDoors.Instance, factory.Elements);
         }
     }
 }
