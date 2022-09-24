@@ -25,7 +25,7 @@ namespace MoreDoors.Rando
         public AddKeyLocations AddKeyLocations = AddKeyLocations.None;
 
         [JsonIgnore]
-        public bool IsEnabled => DoorsLevel != DoorsLevel.NoDoors || AddKeyLocations != AddKeyLocations.None;
+        public bool IsEnabled => DoorsLevel != DoorsLevel.NoDoors || AddKeyLocations == AddKeyLocations.AllDoors;
 
         public int ComputeNumDoors(Random r)
         {
