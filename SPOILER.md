@@ -17,7 +17,7 @@ Read at your own risk!  There's no taking it back.
 ## Canyon Door
 
 * Blocks access to Queen's Station from Fog Canyon
-* Key is at the Fungified Husk below Cornifer
+* Key is at the Fungified Husk below Cornifer in Fungal
 
 ## Core Door
 
