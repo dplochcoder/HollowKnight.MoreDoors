@@ -1,5 +1,4 @@
-﻿using ItemChanger;
-using MoreDoors.Data;
+﻿using MoreDoors.Data;
 using RandomizerCore;
 using RandomizerCore.Extensions;
 using RandomizerCore.Logic;
@@ -10,6 +9,7 @@ using RandomizerMod.RC;
 using RandomizerMod.Settings;
 using System;
 using System.Collections.Generic;
+using StartDef = RandomizerMod.RandomizerData.StartDef;
 
 namespace MoreDoors.Rando
 {
@@ -41,14 +41,14 @@ namespace MoreDoors.Rando
             return false;
         }
 
-        private delegate RandomizerMod.RandomizerData.StartDef ModifyStart(RandomizerMod.RandomizerData.StartDef startDef);
+        private delegate StartDef StartModifier(StartDef startDef);
 
-        private static ModifyStart ForbidWithMoreDoors(string unless = "FALSE") => sd => sd with
+        private static StartModifier ForbidWithMoreDoors(string unless = "FALSE") => sd => sd with
         {
             RandoLogic = $"({sd.RandoLogic ?? sd.Logic}) + ({MoreDoorsRando}=0 | {unless})"
         };
 
-        private static readonly Dictionary<string, ModifyStart> StartModifiers = new()
+        private static readonly Dictionary<string, StartModifier> StartModifiers = new()
         {
             { "Abyss", sd => sd with { Transition = "Abyss_06_Core[left3]" } },
             { "Hallownest's Crown", ForbidWithMoreDoors("ROOMRANDO") },
@@ -61,12 +61,12 @@ namespace MoreDoors.Rando
             { "West Fog Canyon", ForbidWithMoreDoors("ROOMRANDO") }
         };
 
-        private static void PatchStartLocations(Dictionary<string, RandomizerMod.RandomizerData.StartDef> startDefs)
+        private static void PatchStartLocations(Dictionary<string, StartDef> startDefs)
         {
             List<string> keys = new(startDefs.Keys);
             foreach (var start in keys)
             {
-                if (StartModifiers.TryGetValue(start, out ModifyStart ms))
+                if (StartModifiers.TryGetValue(start, out StartModifier ms))
                 {
                     var sd = startDefs[start];
                     startDefs[start] = ms(sd);
