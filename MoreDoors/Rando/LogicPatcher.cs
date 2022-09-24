@@ -50,14 +50,15 @@ namespace MoreDoors.Rando
 
         private static readonly Dictionary<string, ModifyStart> StartModifiers = new()
         {
-            {"Abyss", sd => sd with { Transition = "Abyss_06_Core[left3]" } },
-            {"Hallownest's Crown", ForbidWithMoreDoors("ROOMRANDO") },
-            {"Hive", ForbidWithMoreDoors("ROOMRANDO") },
-            {"Mantis Village", ForbidWithMoreDoors() },
-            {"Queens's Gardens", ForbidWithMoreDoors("ROOMRANDO") },
-            {"Queen's Station", ForbidWithMoreDoors("ROOMRANDO") },
-            {"West Blue Lake", ForbidWithMoreDoors() },
-            {"West Fog Canyon", ForbidWithMoreDoors("ROOMRANDO") }
+            { "Abyss", sd => sd with { Transition = "Abyss_06_Core[left3]" } },
+            { "Hallownest's Crown", ForbidWithMoreDoors("ROOMRANDO") },
+            { "Hive", ForbidWithMoreDoors("ROOMRANDO") },
+            { "Lower Greenpath", ForbidWithMoreDoors("ROOMRANDO") },
+            { "Mantis Village", ForbidWithMoreDoors() },
+            { "Queens's Gardens", ForbidWithMoreDoors("ROOMRANDO") },
+            { "Queen's Station", ForbidWithMoreDoors("ROOMRANDO") },
+            { "West Blue Lake", ForbidWithMoreDoors() },
+            { "West Fog Canyon", ForbidWithMoreDoors("ROOMRANDO") }
         };
 
         private static void PatchStartLocations(Dictionary<string, RandomizerMod.RandomizerData.StartDef> startDefs)
