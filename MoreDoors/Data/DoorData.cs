@@ -30,6 +30,7 @@ namespace MoreDoors.Data
 
         public string CamelCaseName;
         public string UpperCaseName;
+        public string UIName;
 
         public record DoorInfo
         {
