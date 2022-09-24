@@ -36,11 +36,11 @@ namespace MoreDoors.Rando
 
                 if (RandoInterop.LS.IncludeKeyLocation(doorName))
                 {
-                    rb.EditLocationRequest(data.KeyLocationName, info =>
+                    rb.EditLocationRequest(data.Key.Location.name, info =>
                     {
                         info.getLocationDef = () => new()
                         {
-                            Name = data.KeyLocationName,
+                            Name = data.Key.Location.name,
                             SceneName = data.Key.Location.sceneName
                         };
                     });
@@ -72,17 +72,17 @@ namespace MoreDoors.Rando
 
                         if (RandoInterop.LS.IncludeKeyLocation(doorName))
                         {
-                            rb.AddLocationByName(data.KeyLocationName);
+                            rb.AddLocationByName(data.Key.Location.name);
                         }
                     }
                     else if (RandoInterop.LS.IncludeKeyLocation(doorName))
                     {
-                        rb.AddToVanilla(new(data.Key.ItemName, data.KeyLocationName));
+                        rb.AddToVanilla(new(data.Key.ItemName, data.Key.Location.name));
                     }
                 }
                 else if (RandoInterop.LS.IncludeKeyLocation(doorName))
                 {
-                    rb.AddLocationByName(data.KeyLocationName);
+                    rb.AddLocationByName(data.Key.Location.name);
                 }
             }
         }

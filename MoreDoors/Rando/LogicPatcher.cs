@@ -146,7 +146,7 @@ namespace MoreDoors.Rando
                 // Add vanilla key logic defs.
                 if (LS.IncludeKeyLocation(doorName))
                 {
-                    lmb.AddLogicDef(new(data.KeyLocationName, data.Key.Logic));
+                    lmb.AddLogicDef(new(data.Key.Location.name, data.Key.Logic));
                 }
             }
 

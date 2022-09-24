@@ -115,9 +115,6 @@ namespace MoreDoors.Data
         public string DoorForcedOpenLogicName => $"{CamelCaseName}Door_ForcedOpen";
 
         [JsonIgnore]
-        public string KeyLocationName => Key.Location.name;
-
-        [JsonIgnore]
         public string NoKeyPromptId => $"MOREDOORS_{UpperCaseName}_DOOR_NOKEY";
 
         [JsonIgnore]
