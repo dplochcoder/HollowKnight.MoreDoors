@@ -42,13 +42,13 @@ namespace MoreDoors.IC
                 DoorNamesByKey[data.PDKeyName] = doorName;
                 DoorNamesByDoor[data.PDDoorOpenedName] = doorName;
 
-                DoorNamesByScene.GetOrAdd(data.LeftDoorLocation.SceneName, new()).Add(doorName);
-                DoorNamesByScene.GetOrAdd(data.RightDoorLocation.SceneName, new()).Add(doorName);
-                DoorNamesByTransition[data.LeftDoorLocation.TransitionName] = doorName;
-                DoorNamesByTransition[data.RightDoorLocation.TransitionName] = doorName;
+                DoorNamesByScene.GetOrAdd(data.Door.LeftLocation.SceneName, new()).Add(doorName);
+                DoorNamesByScene.GetOrAdd(data.Door.RightLocation.SceneName, new()).Add(doorName);
+                DoorNamesByTransition[data.Door.LeftLocation.TransitionName] = doorName;
+                DoorNamesByTransition[data.Door.RightLocation.TransitionName] = doorName;
 
-                PromptStrings[data.NoKeyPromptId] = data.NoKeyDesc;
-                PromptStrings[data.KeyPromptId] = data.KeyDesc;
+                PromptStrings[data.NoKeyPromptId] = data.Door.NoKeyDesc;
+                PromptStrings[data.KeyPromptId] = data.Door.KeyDesc;
             }
 
             Events.OnSceneChange += OnSceneChange;
@@ -103,11 +103,11 @@ namespace MoreDoors.IC
                 if (state.DoorOpened || state.DoorForceOpened) continue;
 
                 var data = DoorData.Get(doorName);
-                if (scene.name == data.LeftDoorLocation.SceneName)
+                if (scene.name == data.Door.LeftLocation.SceneName)
                 {
                     DoorSpawner.SpawnDoor(sm, doorName, true);
                 }
-                if (scene.name == data.RightDoorLocation.SceneName)
+                if (scene.name == data.Door.RightLocation.SceneName)
                 {
                     DoorSpawner.SpawnDoor(sm, doorName, false);
                 }

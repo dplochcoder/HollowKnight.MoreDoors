@@ -44,11 +44,11 @@ namespace MoreDoors.IC
         {
             var data = DoorData.Get(doorName);
             var gameObj = Preloader.Instance.NewDoor();
-            gameObj.GetComponent<SpriteRenderer>().sprite = new EmbeddedSprite($"Doors.{data.Sprite}").Value;
+            gameObj.GetComponent<SpriteRenderer>().sprite = new EmbeddedSprite($"Doors.{data.Door.Sprite}").Value;
 
             SetupConversationControl(gameObj.LocateMyFSM("Conversation Control"), data, left);
 
-            var loc = left ? data.LeftDoorLocation : data.RightDoorLocation;
+            var loc = left ? data.Door.LeftLocation : data.Door.RightLocation;
             gameObj.transform.position = new(loc.X, loc.Y, gameObj.transform.position.z);
             if (!left)
             {

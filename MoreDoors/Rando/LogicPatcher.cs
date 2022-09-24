@@ -134,11 +134,11 @@ namespace MoreDoors.Rando
                 {
                     // Modify transition logic for this door.
                     var keyTerm = lmb.GetOrAddTerm(data.KeyTermName);
-                    lmb.AddWaypoint(new(data.DoorForcedOpenLogicName, $"{data.LeftDoorLocation.TransitionName} | {data.RightDoorLocation.TransitionName}"));
+                    lmb.AddWaypoint(new(data.DoorForcedOpenLogicName, $"{data.Door.LeftLocation.TransitionName} | {data.Door.RightLocation.TransitionName}"));
 
                     // Replace the transition waypoints with proxies.
-                    HandleTransition(lmb, data, data.LeftDoorLocation, LS.ModifiedLogicNames, LS.LogicSubstitutions);
-                    HandleTransition(lmb, data, data.RightDoorLocation, LS.ModifiedLogicNames, LS.LogicSubstitutions);
+                    HandleTransition(lmb, data, data.Door.LeftLocation, LS.ModifiedLogicNames, LS.LogicSubstitutions);
+                    HandleTransition(lmb, data, data.Door.RightLocation, LS.ModifiedLogicNames, LS.LogicSubstitutions);
 
                     lmb.AddItem(new CappedItem(data.Key.ItemName, new TermValue[] { new(keyTerm, 1) }, new(keyTerm, 1)));
                 }

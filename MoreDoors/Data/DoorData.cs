@@ -45,11 +45,16 @@ namespace MoreDoors.Data
 
         public string CamelCaseName;
         public string UpperCaseName;
-        public string Sprite;
-        public string NoKeyDesc;
-        public string KeyDesc;
-        public DoorLocation LeftDoorLocation;
-        public DoorLocation RightDoorLocation;
+
+        public record DoorInfo
+        {
+            public string Sprite;
+            public string NoKeyDesc;
+            public string KeyDesc;
+            public DoorLocation LeftLocation;
+            public DoorLocation RightLocation;
+        }
+        public DoorInfo Door;
 
         public record KeyInfo
         {

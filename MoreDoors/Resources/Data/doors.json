@@ -2,22 +2,24 @@
   "Bardoon": {
     "CamelCaseName": "Bardoon",
     "UpperCaseName": "BARDOON",
-    "Sprite": "City",
-    "NoKeyDesc": "An ashen door glazed with primal acid.",
-    "KeyDesc": "The gateway to more primal aspids creaks open.<br>Insert Bardoon's Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Deepnest_East_04",
-      "GateName": "left2",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 95.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Deepnest_East_07",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 88.9,
-      "Y": 66.6
+    "Door": {
+      "Sprite": "City",
+      "NoKeyDesc": "An ashen door glazed with primal acid.",
+      "KeyDesc": "The gateway to more primal aspids creaks open.<br>Insert Bardoon's Key?",
+      "LeftLocation": {
+        "SceneName": "Deepnest_East_04",
+        "GateName": "left2",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 95.6
+      },
+      "RightLocation": {
+        "SceneName": "Deepnest_East_07",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 88.9,
+        "Y": 66.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Bardoon's_Key",
@@ -67,22 +69,24 @@
   "Broken": {
     "CamelCaseName": "Broken",
     "UpperCaseName": "BROKEN",
-    "Sprite": "Abyssal",
-    "NoKeyDesc": "A decaying door haunted by the lost.",
-    "KeyDesc": "A kindred spirit's cries for help echo from within.<br>Insert the Broken Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Abyss_18",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 19.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Abyss_19",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 158.9,
-      "Y": 33.6
+    "Door": {
+      "Sprite": "Abyssal",
+      "NoKeyDesc": "A decaying door haunted by the lost.",
+      "KeyDesc": "A kindred spirit's cries for help echo from within.<br>Insert the Broken Key?",
+      "LeftLocation": {
+        "SceneName": "Abyss_18",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 19.6
+      },
+      "RightLocation": {
+        "SceneName": "Abyss_19",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 158.9,
+        "Y": 33.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Broken_Key",
@@ -132,22 +136,24 @@
   "Canyon": {
     "CamelCaseName": "Canyon",
     "UpperCaseName": "CANYON",
-    "Sprite": "Canyon",
-    "NoKeyDesc": "A quiet door of forgotten peace. It tingles a little.",
-    "KeyDesc": "The pilgrim's way begins to open.<br>Insert the Canyon Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Fungus2_01",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 43.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Fungus3_02",
-      "GateName": "right2",
-      "RequiresLantern": false,
-      "X": 29.9,
-      "Y": 5.6
+    "Door": {
+      "Sprite": "Canyon",
+      "NoKeyDesc": "A quiet door of forgotten peace. It tingles a little.",
+      "KeyDesc": "The pilgrim's way begins to open.<br>Insert the Canyon Key?",
+      "LeftLocation": {
+        "SceneName": "Fungus2_01",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 43.6
+      },
+      "RightLocation": {
+        "SceneName": "Fungus3_02",
+        "GateName": "right2",
+        "RequiresLantern": false,
+        "X": 29.9,
+        "Y": 5.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Canyon_Key",
@@ -197,22 +203,24 @@
   "Core": {
     "CamelCaseName": "Core",
     "UpperCaseName": "CORE",
-    "Sprite": "Mushroom",
-    "NoKeyDesc": "A spongy door overgrown with rich fungus.",
-    "KeyDesc": "The depths of the wastes cry WAH.<br>Insert the Core Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Fungus2_17",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 35.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Fungus2_29",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 92.9,
-      "Y": 33.6
+    "Door": {
+      "Sprite": "Mushroom",
+      "NoKeyDesc": "A spongy door overgrown with rich fungus.",
+      "KeyDesc": "The depths of the wastes cry WAH.<br>Insert the Core Key?",
+      "LeftLocation": {
+        "SceneName": "Fungus2_17",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 35.6
+      },
+      "RightLocation": {
+        "SceneName": "Fungus2_29",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 92.9,
+        "Y": 33.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Core_Key",
@@ -263,22 +271,24 @@
   "Crown": {
     "CamelCaseName": "Crown",
     "UpperCaseName": "CROWN",
-    "Sprite": "Crystal",
-    "NoKeyDesc": "A crystalline door shining with a forgotten light.",
-    "KeyDesc": "This is as high as you'll go.<br>Insert the Crown Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Mines_23",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 14.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Mines_20",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 73.9,
-      "Y": 197.6
+    "Door": {
+      "Sprite": "Crystal",
+      "NoKeyDesc": "A crystalline door shining with a forgotten light.",
+      "KeyDesc": "This is as high as you'll go.<br>Insert the Crown Key?",
+      "LeftLocation": {
+        "SceneName": "Mines_23",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 14.6
+      },
+      "RightLocation": {
+        "SceneName": "Mines_20",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 73.9,
+        "Y": 197.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Crown_Key",
@@ -338,22 +348,24 @@
   "Darknest": {
     "CamelCaseName": "DarkNest",
     "UpperCaseName": "DARKNEST",
-    "Sprite": "Deepnest",
-    "NoKeyDesc": "A shell-encrusted door infested with spiders.",
-    "KeyDesc": "The skittering never stops.<br>Insert the Dark Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Deepnest_34",
-      "GateName": "left1",
-      "RequiresLantern": true,
-      "X": 1.1,
-      "Y": 17.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Deepnest_39",
-      "GateName": "right1",
-      "RequiresLantern": true,
-      "X": 208.9,
-      "Y": 9.6
+    "Door": {
+      "Sprite": "Deepnest",
+      "NoKeyDesc": "A shell-encrusted door infested with spiders.",
+      "KeyDesc": "The skittering never stops.<br>Insert the Dark Key?",
+      "LeftLocation": {
+        "SceneName": "Deepnest_34",
+        "GateName": "left1",
+        "RequiresLantern": true,
+        "X": 1.1,
+        "Y": 17.6
+      },
+      "RightLocation": {
+        "SceneName": "Deepnest_39",
+        "GateName": "right1",
+        "RequiresLantern": true,
+        "X": 208.9,
+        "Y": 9.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Dark_Nest_Key",
@@ -403,22 +415,24 @@
   "False": {
     "CamelCaseName": "False",
     "UpperCaseName": "FALSE",
-    "Sprite": "False",
-    "NoKeyDesc": "It looks like it's a locked door but you're not so sure.",
-    "KeyDesc": "The hardest challenge in the game awaits you.<br>Insert the False Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Crossroads_03",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 2.1,
-      "Y": 33.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Crossroads_21",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 98.9,
-      "Y": 16.6
+    "Door": {
+      "Sprite": "False",
+      "NoKeyDesc": "It looks like it's a locked door but you're not so sure.",
+      "KeyDesc": "The hardest challenge in the game awaits you.<br>Insert the False Key?",
+      "LeftLocation": {
+        "SceneName": "Crossroads_03",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 2.1,
+        "Y": 33.6
+      },
+      "RightLocation": {
+        "SceneName": "Crossroads_21",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 98.9,
+        "Y": 16.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-False_Key",
@@ -468,22 +482,24 @@
   "Flooded Stag": {
     "CamelCaseName": "FloodedStag",
     "UpperCaseName": "FLOODED_STAG",
-    "Sprite": "Water",
-    "NoKeyDesc": "A cold stone door, dripping with water.",
-    "KeyDesc": "You can feel the power of buoyancy calling out to you.<br>Insert the Flooded Stag Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Ruins2_07",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 8.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Ruins2_06",
-      "GateName": "right2",
-      "RequiresLantern": false,
-      "X": 53.9,
-      "Y": 7.6
+    "Door": {
+      "Sprite": "Water",
+      "NoKeyDesc": "A cold stone door, dripping with water.",
+      "KeyDesc": "You can feel the power of buoyancy calling out to you.<br>Insert the Flooded Stag Key?",
+      "LeftLocation": {
+        "SceneName": "Ruins2_07",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 8.6
+      },
+      "RightLocation": {
+        "SceneName": "Ruins2_06",
+        "GateName": "right2",
+        "RequiresLantern": false,
+        "X": 53.9,
+        "Y": 7.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Flooded_Stag_Key",
@@ -533,22 +549,24 @@
   "Fountain": {
     "CamelCaseName": "Fountain",
     "UpperCaseName": "FOUNTAIN",
-    "Sprite": "City",
-    "NoKeyDesc": "An ornate door, bespeckled in expensive relics.",
-    "KeyDesc": "Rain flows intricately between the carvings.<br>Insert the Fountain Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Ruins1_27",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 7.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Ruins1_05b",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 63.9,
-      "Y": 8.6
+    "Door": {
+      "Sprite": "City",
+      "NoKeyDesc": "An ornate door, bespeckled in expensive relics.",
+      "KeyDesc": "Rain flows intricately between the carvings.<br>Insert the Fountain Key?",
+      "LeftLocation": {
+        "SceneName": "Ruins1_27",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 7.6
+      },
+      "RightLocation": {
+        "SceneName": "Ruins1_05b",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 63.9,
+        "Y": 8.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Fountain_Key",
@@ -577,22 +595,24 @@
   "Fragile": {
     "CamelCaseName": "Fragile",
     "UpperCaseName": "FRAGILE",
-    "Sprite": "Mushroom",
-    "NoKeyDesc": "A spongy door reinforced with shards of old charms.",
-    "KeyDesc": "Mind your legs.<br>Insert the Fragile Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Fungus2_26",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 9.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Fungus2_06",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 34.9,
-      "Y": 60.6
+    "Door": {
+      "Sprite": "Mushroom",
+      "NoKeyDesc": "A spongy door reinforced with shards of old charms.",
+      "KeyDesc": "Mind your legs.<br>Insert the Fragile Key?",
+      "LeftLocation": {
+        "SceneName": "Fungus2_26",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 9.6
+      },
+      "RightLocation": {
+        "SceneName": "Fungus2_06",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 34.9,
+        "Y": 60.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Fragile_Key",
@@ -642,22 +662,24 @@
   "Fungal": {
     "CamelCaseName": "Fungal",
     "UpperCaseName": "FUNGAL",
-    "Sprite": "Mushroom",
-    "NoKeyDesc": "This door has, like, so many mushrooms on it.",
-    "KeyDesc": "The pilgrim's way expands.<br>Insert the Fungal Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Fungus2_07",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 15.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Fungus2_06",
-      "GateName": "right2",
-      "RequiresLantern": false,
-      "X": 34.9,
-      "Y": 11.6
+    "Door": {
+      "Sprite": "Mushroom",
+      "NoKeyDesc": "This door has, like, so many mushrooms on it.",
+      "KeyDesc": "The pilgrim's way expands.<br>Insert the Fungal Key?",
+      "LeftLocation": {
+        "SceneName": "Fungus2_07",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 15.6
+      },
+      "RightLocation": {
+        "SceneName": "Fungus2_06",
+        "GateName": "right2",
+        "RequiresLantern": false,
+        "X": 34.9,
+        "Y": 11.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Fungal_Key",
@@ -707,22 +729,24 @@
   "Garden": {
     "CamelCaseName": "Garden",
     "UpperCaseName": "GARDEN",
-    "Sprite": "Green",
-    "NoKeyDesc": "A richly green door with just a spritz of acid.",
-    "KeyDesc": "The queen awaits her boy.<br>Insert the Garden Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Fungus3_34",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 13.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Fungus3_04",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 38.9,
-      "Y": 58.6
+    "Door": {
+      "Sprite": "Green",
+      "NoKeyDesc": "A richly green door with just a spritz of acid.",
+      "KeyDesc": "The queen awaits her boy.<br>Insert the Garden Key?",
+      "LeftLocation": {
+        "SceneName": "Fungus3_34",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 13.6
+      },
+      "RightLocation": {
+        "SceneName": "Fungus3_04",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 38.9,
+        "Y": 58.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Garden_Key",
@@ -751,22 +775,24 @@
   "Heart": {
     "CamelCaseName": "Heart",
     "UpperCaseName": "HEART",
-    "Sprite": "Crystal",
-    "NoKeyDesc": "A dense, deeply crystallized door. It seems to have a hearbeat.",
-    "KeyDesc": "The heart of the mountain beckons.<br>Insert the Heart Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Mines_31",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 21.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Mines_20",
-      "GateName": "right2",
-      "RequiresLantern": false,
-      "X": 73.9,
-      "Y": 65.6
+    "Door": {
+      "Sprite": "Crystal",
+      "NoKeyDesc": "A dense, deeply crystallized door. It seems to have a hearbeat.",
+      "KeyDesc": "The heart of the mountain beckons.<br>Insert the Heart Key?",
+      "LeftLocation": {
+        "SceneName": "Mines_31",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 21.6
+      },
+      "RightLocation": {
+        "SceneName": "Mines_20",
+        "GateName": "right2",
+        "RequiresLantern": false,
+        "X": 73.9,
+        "Y": 65.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Heart_Key",
@@ -827,22 +853,24 @@
   "Hive": {
     "CamelCaseName": "Hive",
     "UpperCaseName": "HIVE",
-    "Sprite": "Hive",
-    "NoKeyDesc": "It's made of honeycombs, sturdy as stone.",
-    "KeyDesc": "The buzzing resonates with your soul.<br>Insert the Hive Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Hive_02",
-      "GateName": "left2",
-      "RequiresLantern": false,
-      "X": 95.1,
-      "Y": 52.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Hive_01",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 118.9,
-      "Y": 52.6
+    "Door": {
+      "Sprite": "Hive",
+      "NoKeyDesc": "It's made of honeycombs, sturdy as stone.",
+      "KeyDesc": "The buzzing resonates with your soul.<br>Insert the Hive Key?",
+      "LeftLocation": {
+        "SceneName": "Hive_02",
+        "GateName": "left2",
+        "RequiresLantern": false,
+        "X": 95.1,
+        "Y": 52.6
+      },
+      "RightLocation": {
+        "SceneName": "Hive_01",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 118.9,
+        "Y": 52.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Hive_Key",
@@ -871,22 +899,24 @@
   "Joni": {
     "CamelCaseName": "Joni",
     "UpperCaseName": "JONI",
-    "Sprite": "Joni",
-    "NoKeyDesc": "A robust door overgrown with lifeblood.",
-    "KeyDesc": "You weren't invited, but you're here anyway.<br>Insert Joni's Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Cliffs_04",
-      "GateName": "left1",
-      "RequiresLantern": true,
-      "X": 1.1,
-      "Y": 45.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Cliffs_01",
-      "GateName": "right2",
-      "RequiresLantern": false,
-      "X": 138.9,
-      "Y": 93.6
+    "Door": {
+      "Sprite": "Joni",
+      "NoKeyDesc": "A robust door overgrown with lifeblood.",
+      "KeyDesc": "You weren't invited, but you're here anyway.<br>Insert Joni's Key?",
+      "LeftLocation": {
+        "SceneName": "Cliffs_04",
+        "GateName": "left1",
+        "RequiresLantern": true,
+        "X": 1.1,
+        "Y": 45.6
+      },
+      "RightLocation": {
+        "SceneName": "Cliffs_01",
+        "GateName": "right2",
+        "RequiresLantern": false,
+        "X": 138.9,
+        "Y": 93.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Joni's_Key",
@@ -936,22 +966,24 @@
   "Junk": {
     "CamelCaseName": "Junk",
     "UpperCaseName": "JUNK",
-    "Sprite": "Water",
-    "NoKeyDesc": "A wet, pasty door. You can see larvae growing.",
-    "KeyDesc": "The larvae have grown larger.<br>Insert the Junk Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Waterways_08",
-      "GateName": "left2",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 56.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "GG_Pipeway",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 147.9,
-      "Y": 6.6
+    "Door": {
+      "Sprite": "Water",
+      "NoKeyDesc": "A wet, pasty door. You can see larvae growing.",
+      "KeyDesc": "The larvae have grown larger.<br>Insert the Junk Key?",
+      "LeftLocation": {
+        "SceneName": "Waterways_08",
+        "GateName": "left2",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 56.6
+      },
+      "RightLocation": {
+        "SceneName": "GG_Pipeway",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 147.9,
+        "Y": 6.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Junk_Key",
@@ -1001,22 +1033,24 @@
   "Lake": {
     "CamelCaseName": "Lake",
     "UpperCaseName": "LAKE",
-    "Sprite": "Water",
-    "NoKeyDesc": "A wet, quiet door. There is a certain shadow about it.",
-    "KeyDesc": "You sense the sadness of a journey completed.<br>Insert the Lake Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Crossroads_50",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 46.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Crossroads_04",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 158.9,
-      "Y": 26.6
+    "Door": {
+      "Sprite": "Water",
+      "NoKeyDesc": "A wet, quiet door. There is a certain shadow about it.",
+      "KeyDesc": "You sense the sadness of a journey completed.<br>Insert the Lake Key?",
+      "LeftLocation": {
+        "SceneName": "Crossroads_50",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 46.6
+      },
+      "RightLocation": {
+        "SceneName": "Crossroads_04",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 158.9,
+        "Y": 26.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Lake_Key",
@@ -1066,22 +1100,24 @@
   "Mantis": {
     "CamelCaseName": "Mantis",
     "UpperCaseName": "MANTIS",
-    "Sprite": "Mantis",
-    "NoKeyDesc": "A sharp, carefully sculpted door. It smells of honor.",
-    "KeyDesc": "Your challengers await.<br>Insert the Mantis Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Fungus2_13",
-      "GateName": "left2",
-      "RequiresLantern": false,
-      "X": 2.5,
-      "Y": 60.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Fungus2_14",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 173.9,
-      "Y": 11.6
+    "Door": {
+      "Sprite": "Mantis",
+      "NoKeyDesc": "A sharp, carefully sculpted door. It smells of honor.",
+      "KeyDesc": "Your challengers await.<br>Insert the Mantis Key?",
+      "LeftLocation": {
+        "SceneName": "Fungus2_13",
+        "GateName": "left2",
+        "RequiresLantern": false,
+        "X": 2.5,
+        "Y": 60.6
+      },
+      "RightLocation": {
+        "SceneName": "Fungus2_14",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 173.9,
+        "Y": 11.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Mantis_Key",
@@ -1137,22 +1173,24 @@
   "Moss": {
     "CamelCaseName": "Moss",
     "UpperCaseName": "MOSS",
-    "Sprite": "Green",
-    "NoKeyDesc": "A bright stone door overgrown with moss.",
-    "KeyDesc": "The power of leftslash compels you.<br>Insert the Moss Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Fungus1_11",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 34.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Fungus1_29",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 83.9,
-      "Y": 16.6
+    "Door": {
+      "Sprite": "Green",
+      "NoKeyDesc": "A bright stone door overgrown with moss.",
+      "KeyDesc": "The power of leftslash compels you.<br>Insert the Moss Key?",
+      "LeftLocation": {
+        "SceneName": "Fungus1_11",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 34.6
+      },
+      "RightLocation": {
+        "SceneName": "Fungus1_29",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 83.9,
+        "Y": 16.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Moss_Key",
@@ -1208,22 +1246,24 @@
   "Mothwing": {
     "CamelCaseName": "Mothwing",
     "UpperCaseName": "MOTHWING",
-    "Sprite": "Green",
-    "NoKeyDesc": "It looks like you can't get any closer, ghost.",
-    "KeyDesc": "It looks like you found a way to get closer.<br>Insert the Mothwing Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Fungus1_21",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 15.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Fungus1_04",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 93.9,
-      "Y": 34.6
+    "Door": {
+      "Sprite": "Green",
+      "NoKeyDesc": "It looks like you can't get any closer, ghost.",
+      "KeyDesc": "It looks like you found a way to get closer.<br>Insert the Mothwing Key?",
+      "LeftLocation": {
+        "SceneName": "Fungus1_21",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 15.6
+      },
+      "RightLocation": {
+        "SceneName": "Fungus1_04",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 93.9,
+        "Y": 34.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Mothwing_Key",
@@ -1273,22 +1313,24 @@
   "Nest": {
     "CamelCaseName": "Nest",
     "UpperCaseName": "NEST",
-    "Sprite": "Deepnest",
-    "NoKeyDesc": "A crunchy door laced with spider webs.",
-    "KeyDesc": "You can feel your skin crawling.<br>Insert the Nest Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Deepnest_30",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 7.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Deepnest_03",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 58.9,
-      "Y": 5.6
+    "Door": {
+      "Sprite": "Deepnest",
+      "NoKeyDesc": "A crunchy door laced with spider webs.",
+      "KeyDesc": "You can feel your skin crawling.<br>Insert the Nest Key?",
+      "LeftLocation": {
+        "SceneName": "Deepnest_30",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 7.6
+      },
+      "RightLocation": {
+        "SceneName": "Deepnest_03",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 58.9,
+        "Y": 5.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Nest_Key",
@@ -1347,22 +1389,24 @@
   "Overgrown": {
     "CamelCaseName": "Overgrown",
     "UpperCaseName": "OVERGROWN",
-    "Sprite": "Green",
-    "NoKeyDesc": "A bubbly door decorated with green.",
-    "KeyDesc": "It's okay, you have an excuse this time.<br>Insert the Overgrown Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Fungus3_01",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 39.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Fungus3_24",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 98.9,
-      "Y": 14.6
+    "Door": {
+      "Sprite": "Green",
+      "NoKeyDesc": "A bubbly door decorated with green.",
+      "KeyDesc": "It's okay, you have an excuse this time.<br>Insert the Overgrown Key?",
+      "LeftLocation": {
+        "SceneName": "Fungus3_01",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 39.6
+      },
+      "RightLocation": {
+        "SceneName": "Fungus3_24",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 98.9,
+        "Y": 14.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Overgrown_Key",
@@ -1391,22 +1435,24 @@
   "Pain": {
     "CamelCaseName": "Pain",
     "UpperCaseName": "PAIN",
-    "Sprite": "Pain",
-    "NoKeyDesc": "An ornate door with saw blades instead of gears for a lock mechanism.",
-    "KeyDesc": "The screech of saw blades permeates all.<br>Insert the Pain Key?",
-    "LeftDoorLocation": {
-      "SceneName": "White_Palace_06",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 14.8,
-      "Y": 5.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "White_Palace_18",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 298.9,
-      "Y": 14.6
+    "Door": {
+      "Sprite": "Pain",
+      "NoKeyDesc": "An ornate door with saw blades instead of gears for a lock mechanism.",
+      "KeyDesc": "The screech of saw blades permeates all.<br>Insert the Pain Key?",
+      "LeftLocation": {
+        "SceneName": "White_Palace_06",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 14.8,
+        "Y": 5.6
+      },
+      "RightLocation": {
+        "SceneName": "White_Palace_18",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 298.9,
+        "Y": 14.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Pain_Key",
@@ -1463,22 +1509,24 @@
   "Sanctum": {
     "CamelCaseName": "Sanctum",
     "UpperCaseName": "SANCTUM",
-    "Sprite": "City",
-    "NoKeyDesc": "A door forged of empty shells and broken glass.",
-    "KeyDesc": "A pure focus awaits.<br>Insert the Sanctum Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Ruins1_09",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 2.1,
-      "Y": 18.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Ruins1_05",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 61.9,
-      "Y": 153.6
+    "Door": {
+      "Sprite": "City",
+      "NoKeyDesc": "A door forged of empty shells and broken glass.",
+      "KeyDesc": "A pure focus awaits.<br>Insert the Sanctum Key?",
+      "LeftLocation": {
+        "SceneName": "Ruins1_09",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 2.1,
+        "Y": 18.6
+      },
+      "RightLocation": {
+        "SceneName": "Ruins1_05",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 61.9,
+        "Y": 153.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Sanctum_Key",
@@ -1528,22 +1576,24 @@
   "Shade": {
     "CamelCaseName": "Shade",
     "UpperCaseName": "SHADE",
-    "Sprite": "Abyssal",
-    "NoKeyDesc": "A dark door forged of bones and abandoned souls.",
-    "KeyDesc": "The destiny of darkness awaits.<br>Insert the Shade Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Abyss_16",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 7.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Abyss_06_Core",
-      "GateName": "right2",
-      "RequiresLantern": false,
-      "X": 98.9,
-      "Y": 5.6
+    "Door": {
+      "Sprite": "Abyssal",
+      "NoKeyDesc": "A dark door forged of bones and abandoned souls.",
+      "KeyDesc": "The destiny of darkness awaits.<br>Insert the Shade Key?",
+      "LeftLocation": {
+        "SceneName": "Abyss_16",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 7.6
+      },
+      "RightLocation": {
+        "SceneName": "Abyss_06_Core",
+        "GateName": "right2",
+        "RequiresLantern": false,
+        "X": 98.9,
+        "Y": 5.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Shade_Key",
@@ -1593,22 +1643,24 @@
   "Traitor": {
     "CamelCaseName": "Traitor",
     "UpperCaseName": "TRAITOR",
-    "Sprite": "Green",
-    "NoKeyDesc": "An ornate metal door embellished with thorns.",
-    "KeyDesc": "The path of the warrior ends here.<br>Insert the Traitor's Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Fungus3_04",
-      "GateName": "left1",
-      "RequiresLantern": false,
-      "X": 1.1,
-      "Y": 85.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Fungus3_21",
-      "GateName": "right1",
-      "RequiresLantern": false,
-      "X": 73.9,
-      "Y": 8.6
+    "Door": {
+      "Sprite": "Green",
+      "NoKeyDesc": "An ornate metal door embellished with thorns.",
+      "KeyDesc": "The path of the warrior ends here.<br>Insert the Traitor's Key?",
+      "LeftLocation": {
+        "SceneName": "Fungus3_04",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 85.6
+      },
+      "RightLocation": {
+        "SceneName": "Fungus3_21",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 73.9,
+        "Y": 8.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Traitor's_Key",
@@ -1669,22 +1721,24 @@
   "Village": {
     "CamelCaseName": "Village",
     "UpperCaseName": "VILLAGE",
-    "Sprite": "Deepnest",
-    "NoKeyDesc": "A solid door reinforced with silk weaves.",
-    "KeyDesc": "Even the King's influence does not reach here.<br>Insert the Village Key?",
-    "LeftDoorLocation": {
-      "SceneName": "Deepnest_41",
-      "GateName": "left1",
-      "RequiresLantern": true,
-      "X": 1.1,
-      "Y": 91.6
-    },
-    "RightDoorLocation": {
-      "SceneName": "Deepnest_10",
-      "GateName": "right2",
-      "RequiresLantern": false,
-      "X": 73.9,
-      "Y": 89.6
+    "Door": {
+      "Sprite": "Deepnest",
+      "NoKeyDesc": "A solid door reinforced with silk weaves.",
+      "KeyDesc": "Even the King's influence does not reach here.<br>Insert the Village Key?",
+      "LeftLocation": {
+        "SceneName": "Deepnest_41",
+        "GateName": "left1",
+        "RequiresLantern": true,
+        "X": 1.1,
+        "Y": 91.6
+      },
+      "RightLocation": {
+        "SceneName": "Deepnest_10",
+        "GateName": "right2",
+        "RequiresLantern": false,
+        "X": 73.9,
+        "Y": 89.6
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Village_Key",
