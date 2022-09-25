@@ -36,6 +36,8 @@ namespace MoreDoors.Rando
 
         public bool IsDoorAllowed(int index) => (DoorsMask & (1 << index)) != 0;
 
+        public void SetDoorAllowed(int index, bool value) => DoorsMask = (DoorsMask & ~(1 << index)) | (value ? (1 << index) : 0);
+
         private static int FullMask(int n)
         {
             if (n > 31) throw new ArgumentException("Too many doors =<");
