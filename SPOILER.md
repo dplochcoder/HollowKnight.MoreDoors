@@ -64,6 +64,11 @@ Read at your own risk!  There's no taking it back.
 * Blocks access to QG after Overgrown Mound
 * Key is at the center Mossfly by Overgrown Mound
 
+## Geo Door
+
+* Blocks access to Oro dive rooms
+* Key is at the highest Primal Aspid in the Edge Whispering Root room
+
 ## Heart Door
 
 * Blocks access to Crystal Heart
@@ -73,6 +78,11 @@ Read at your own risk!  There's no taking it back.
 
 * Blocks access to Hive
 * Key is at the lowest Hiveling in the outside-grub room in Hive
+
+## Isma's Door
+
+* Blocks access to Isma's grove from Broken Elevator
+* Key is at the Pilflip leading up to the spike tunnel
 
 ## Joni's Door
 
