@@ -27,8 +27,9 @@ namespace MoreDoors.Rando
         public DoorsLevel DoorsLevel = DoorsLevel.NoDoors;
         public AddKeyLocations AddKeyLocations = AddKeyLocations.None;
 
+        public static readonly int FullDoorsMask = FullMask(DoorData.Count);
         [MenuIgnore]
-        public int DoorsMask = FullMask(DoorData.Count);
+        public int DoorsMask = FullDoorsMask;
 
         [JsonIgnore]
         public bool IsEnabled => DoorsMask != 0 && (DoorsLevel != DoorsLevel.NoDoors || AddKeyLocations == AddKeyLocations.AllDoors);

@@ -67,11 +67,11 @@ namespace MoreDoors.Rando
             var addKeyLocations = ModifyColors(factory, nameof(settings.AddKeyLocations), AddKeyLocations.None);
             SetEnabledColor();
 
-            DoorsMaskElement dme = new();
+            SmallButton customizeButton = new(moreDoorsPage, Localize("Customize Doors"));
+            DoorsMaskElement dme = new(customizeButton);
+
             MenuPage customPage = new("MoreDoors Customize Doors", moreDoorsPage);
             FillCustomDoorsPage(customPage, dme);
-
-            SmallButton customizeButton = new(moreDoorsPage, Localize("Customize Doors"));
             customizeButton.AddHideAndShowEvent(customPage);
 
             new VerticalItemPanel(moreDoorsPage, SpaceParameters.TOP_CENTER_UNDER_TITLE, SpaceParameters.VSPACE_MEDIUM, true,
@@ -107,6 +107,13 @@ namespace MoreDoors.Rando
 
     internal class DoorsMaskElement : IValueElement<int>
     {
+        private SmallButton customPageButton;
+
+        public DoorsMaskElement(SmallButton customPageButton)
+        {
+            this.customPageButton = customPageButton;
+        }
+
         public int Value => MoreDoors.GS.RandoSettings.DoorsMask;
 
         public Type ValueType => typeof(int);
@@ -128,6 +135,7 @@ namespace MoreDoors.Rando
             MoreDoors.GS.RandoSettings.DoorsMask = t;
             ValueChanged?.Invoke(t);
             SelfChanged?.Invoke(this);
+            customPageButton.Text.color = t == RandomizationSettings.FullDoorsMask ? Colors.DEFAULT_COLOR : Colors.TRUE_COLOR;
         }
 
         private const string NULL = "null";
