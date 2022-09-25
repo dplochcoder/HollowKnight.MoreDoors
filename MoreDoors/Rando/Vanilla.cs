@@ -34,8 +34,8 @@ namespace MoreDoors.Rando
                 var data = DoorData.Get(door);
                 placements.Add(data.Key.Location.Wrap().Add(Finder.GetItem(data.Key.ItemName)));
             }
-
             ItemChangerMod.AddPlacements(placements);
+
             if (!rando && doorNames.Count > 0)
             {
                 var mod = ItemChangerMod.Modules.Add<MoreDoorsModule>();
