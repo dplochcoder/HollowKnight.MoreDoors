@@ -50,5 +50,5 @@ You can also play with MoreDoors without using Randomizer (though the mod must r
 All the keys are placed such that the base game is completable without any skips.
 
 To enable MoreDoors in non-rando, go to the MoreDoors Options menu in Mod options, and set "Enable in Vanilla" to "Yes".
-The setting takes effect when you start a new non-rando save; it cannot effect existing saves.
+The setting takes effect when you start a new non-rando save; it cannot affect existing saves.
 
