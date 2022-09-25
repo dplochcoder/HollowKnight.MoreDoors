@@ -801,6 +801,75 @@
       "ExtraWorldMapLocations": null
     }
   },
+  "Geo": {
+    "CamelCaseName": "Geo",
+    "UpperCaseName": "GEO",
+    "UIName": "Geo",
+    "Door": {
+      "Sprite": "Abyssal",
+      "NoKeyDesc": "An old, stone vestibule. It smells of ancient treasure.",
+      "KeyDesc": "The treasure is both far and near.<br>Insert the Geo Key?",
+      "LeftLocation": {
+        "SceneName": "Deepnest_East_16",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 6.6
+      },
+      "RightLocation": {
+        "SceneName": "Deepnest_East_06",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 349.9,
+        "Y": 17.6
+      },
+      "LogicOverrides": null
+    },
+    "Key": {
+      "ItemName": "MoreDoors-Geo_Key",
+      "UIItemName": "Geo Key",
+      "ShopDesc": "I better be charging more than 420 for this.",
+      "Sprite": "Geo",
+      "Location": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Super Spitter (4)",
+          "sceneName": "Deepnest_East_07",
+          "semiPersistent": true
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Super Spitter (4)",
+          "removeGeo": false,
+          "forceShiny": false,
+          "name": "MoreDoors-Geo_Key-Primal_Aspid-Outside_Great_Hopper_Relic",
+          "sceneName": "Deepnest_East_07",
+          "flingType": "Everywhere",
+          "tags": null
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 34.0,
+          "y": 173.0,
+          "elevation": 0.0,
+          "managed": false,
+          "forceShiny": false,
+          "name": "MoreDoors-Geo_Key-Primal_Aspid-Outside_Great_Hopper_Relic",
+          "sceneName": "Deepnest_East_07",
+          "flingType": "Everywhere",
+          "tags": null
+        },
+        "name": "MoreDoors-Geo_Key-Primal_Aspid-Outside_Great_Hopper_Relic",
+        "sceneName": "Deepnest_East_07",
+        "flingType": "Everywhere",
+        "tags": null
+      },
+      "Logic": "Deepnest_East_07[left1]",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
+    }
+  },
   "Heart": {
     "CamelCaseName": "Heart",
     "UpperCaseName": "HEART",
@@ -926,6 +995,75 @@
         "X": 31.0,
         "Y": 128.5
       },
+      "ExtraWorldMapLocations": null
+    }
+  },
+  "Isma's": {
+    "CamelCaseName": "Isma",
+    "UpperCaseName": "ISMA",
+    "UIName": "Isma's'",
+    "Door": {
+      "Sprite": "Acid",
+      "NoKeyDesc": "A bright green door, bubbling with life. Don't touch it, though.",
+      "KeyDesc": "It sizzles with a forgotten life.<br>Insert Isma's Key?",
+      "LeftLocation": {
+        "SceneName": "Waterways_07",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 22.6
+      },
+      "RightLocation": {
+        "SceneName": "Abyss_01",
+        "GateName": "right2",
+        "RequiresLantern": false,
+        "X": 28.9,
+        "Y": 52.6
+      },
+      "LogicOverrides": null
+    },
+    "Key": {
+      "ItemName": "MoreDoors-Isma's_Key",
+      "UIItemName": "Isma's Key",
+      "ShopDesc": "Why does this smell like beetle dung?",
+      "Sprite": "Isma",
+      "Location": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Flip Hopper",
+          "sceneName": "Waterways_06",
+          "semiPersistent": true
+        },
+        "falseLocation": {
+          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "objectName": "Flip Hopper",
+          "removeGeo": false,
+          "forceShiny": false,
+          "name": "MoreDoors-Isma's_Key-Pilflip-By_Isma's_Spike_Tunnel",
+          "sceneName": "Waterways_06",
+          "flingType": "Everywhere",
+          "tags": null
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 73.5,
+          "y": 14.5,
+          "elevation": 0.0,
+          "managed": false,
+          "forceShiny": false,
+          "name": "MoreDoors-Isma's_Key-Pilflip-By_Isma's_Spike_Tunnel",
+          "sceneName": "Waterways_06",
+          "flingType": "Everywhere",
+          "tags": null
+        },
+        "name": "MoreDoors-Isma's_Key-Pilflip-By_Isma's_Spike_Tunnel",
+        "sceneName": "Waterways_06",
+        "flingType": "Everywhere",
+        "tags": null
+      },
+      "Logic": "Waterways_06[top1] | Waterways_06[right1] + (LEFTSUPERDASH | ACID)",
+      "WorldMapLocationOverride": null,
       "ExtraWorldMapLocations": null
     }
   },
