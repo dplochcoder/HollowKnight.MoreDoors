@@ -53,6 +53,8 @@ namespace MoreDoors.Rando
                 .Where(i => IsDoorAllowed(i))
                 .Select(i => DoorData.DoorNames[i]).ToList();
             HashSet<string> doors = new();
+            if (potentialDoors.Count == 0) return doors;
+
             int modifier;
             switch (DoorsLevel)
             {
@@ -73,6 +75,11 @@ namespace MoreDoors.Rando
 
             int mid = potentialDoors.Count * modifier / 3;
             int numDoors = mid - modifier + r.Next(0, modifier * 2 + 1);
+
+            // Clamp to at least one door.
+            if (numDoors > potentialDoors.Count - 1) numDoors = potentialDoors.Count - 1;
+            if (numDoors < 1) numDoors = 1;
+
             potentialDoors.Shuffle(r);
             for (int i = 0; i < numDoors; i++) doors.Add(potentialDoors[i]);
 
