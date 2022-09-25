@@ -40,7 +40,7 @@ namespace MoreDoors.IC
             }
             parent.transform.position = delta;
 
-            obj.transform.parent = parent.transform;
+            obj.transform.SetParent(parent.transform, false);
             obj.transform.localPosition = src;
         }
     }
