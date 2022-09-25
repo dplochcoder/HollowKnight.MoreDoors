@@ -8,14 +8,20 @@ See SPOILER.md for the full list of doors and vanilla key locations if you wish.
 
 ## Settings
 
-* Add More Doors: Adds more doors to Hallownest if enabled
-  * Doors Level: The number of doors to add
-    * Some Doors: About a third of the doors are added
-    * More Doors: About two-thirds of the doors are added
-    * All Doors: All of the doors are added
-  * Add Key Locations: Adds the vanilla key locations for the added doors to the locations pool
-    * Matching Doors: Only adds the key locations for the doors that were actually added
-    * All Doors: Add all key locations, even for doors that weren't added
+* Doors Level: The number of doors to add
+  * Some Doors: About a third of the doors are added
+  * More Doors: About two-thirds of the doors are added
+  * All Doors: All of the doors are added
+* Add Key Locations: Adds the vanilla key locations for the added doors to the locations pool
+  * Matching Doors: Only adds the key locations for the doors that were actually added
+  * All Doors: Add all key locations, even for doors that weren't added
+
+### Customize Doors
+
+You can customize the set of doors you want to allow on the 'Customize Doors' page.
+Simply deselect a door to exclude it from randomization, even under 'All Doors'. This also removes its key location.
+
+MoreDoors integrates with ConnectionSettingsCode, allowing you to easily share your custom settings with other players.
 
 ### Interop
 
