@@ -32,7 +32,7 @@ namespace MoreDoors.Rando
         public int DoorsMask = FullMask(DoorData.Count);
 
         [JsonIgnore]
-        public bool IsEnabled => DoorsLevel != DoorsLevel.NoDoors || AddKeyLocations == AddKeyLocations.AllDoors;
+        public bool IsEnabled => DoorsMask != 0 && (DoorsLevel != DoorsLevel.NoDoors || AddKeyLocations == AddKeyLocations.AllDoors);
 
         public bool IsDoorAllowed(int index) => (DoorsMask & (1 << index)) != 0;
 
