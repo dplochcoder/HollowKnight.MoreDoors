@@ -2,11 +2,8 @@
 using Modding;
 using MoreDoors.Data;
 using MoreDoors.IC;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MoreDoors.Rando
 {

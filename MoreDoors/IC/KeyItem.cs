@@ -1,10 +1,8 @@
-﻿using IL.TMPro;
-using ItemChanger;
+﻿using ItemChanger;
 using ItemChanger.Locations;
 using ItemChanger.Tags;
 using ItemChanger.UIDefs;
 using MoreDoors.Data;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace MoreDoors.IC

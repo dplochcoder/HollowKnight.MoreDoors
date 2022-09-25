@@ -345,4 +345,5 @@
     <None Include=".gitignore" />
     <None Include="LocalOverrides.targets" />
   </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties resources_4data_4doors_1json__JsonSchema="https://download.stackhawk.com/hawk/jsonconfig/hawkconfig.json" /></VisualStudio></ProjectExtensions>
 </Project>

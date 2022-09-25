@@ -37,7 +37,10 @@
           "semiPersistent": true
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": 0.0,
+          "OffY": 0.0,
           "objectName": "Giant Hopper (2)",
           "removeGeo": false,
           "forceShiny": false,
@@ -106,7 +109,10 @@
           "semiPersistent": true
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": 0.0,
+          "OffY": -0.75,
           "objectName": "Lesser Mawlek (2)",
           "removeGeo": false,
           "forceShiny": false,
@@ -175,7 +181,10 @@
           "semiPersistent": true
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": 0.0,
+          "OffY": -0.5,
           "objectName": "Zombie Fungus A",
           "removeGeo": false,
           "forceShiny": false,
@@ -244,7 +253,10 @@
           "semiPersistent": true
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyFsmLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyFsmLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": -0.75,
+          "OffY": -1.4,
           "enemyFsm": "Mantis",
           "enemyObj": null,
           "removeGeo": false,
@@ -314,7 +326,10 @@
           "semiPersistent": true
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.0,
+          "OffX": 0.0,
+          "OffY": 0.0,
           "objectName": "Crystal Flyer (2)",
           "removeGeo": false,
           "forceShiny": false,
@@ -393,7 +408,10 @@
           "semiPersistent": true
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": 0.0,
+          "OffY": 0.0,
           "objectName": "Centipede Hatcher (7)",
           "removeGeo": false,
           "forceShiny": false,
@@ -467,7 +485,10 @@
           "semiPersistent": true
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.0,
+          "OffX": -1.0,
+          "OffY": -1.0,
           "objectName": "Zombie Guard",
           "removeGeo": false,
           "forceShiny": false,
@@ -536,7 +557,10 @@
           "semiPersistent": false
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": 0.0,
+          "OffY": -1.0,
           "objectName": "Great Shield Zombie",
           "removeGeo": false,
           "forceShiny": false,
@@ -597,7 +621,10 @@
       "ShopDesc": "Is it destiny you seek, or geo?  Are they different?",
       "Sprite": "Fountain",
       "Location": {
-        "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+        "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+        "Scale": 1.5,
+        "OffX": 0.0,
+        "OffY": 0.0,
         "objectName": "Mage Blob 2 (3)",
         "removeGeo": false,
         "forceShiny": false,
@@ -653,7 +680,10 @@
           "semiPersistent": false
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": 0.0,
+          "OffY": -1.5,
           "objectName": "Mushroom Brawler 1",
           "removeGeo": false,
           "forceShiny": false,
@@ -722,7 +752,10 @@
           "semiPersistent": false
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": 0.0,
+          "OffY": -1.5,
           "objectName": "Mushroom Brawler 2",
           "removeGeo": false,
           "forceShiny": false,
@@ -783,7 +816,10 @@
       "ShopDesc": "Interesting to see things so cared for in a kingdom forgotten.",
       "Sprite": "Garden",
       "Location": {
-        "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+        "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+        "Scale": 1.0,
+        "OffX": 0.0,
+        "OffY": 0.0,
         "objectName": "Moss Flyer (4)",
         "removeGeo": false,
         "forceShiny": false,
@@ -839,7 +875,10 @@
           "semiPersistent": true
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.0,
+          "OffX": 0.0,
+          "OffY": 0.0,
           "objectName": "Super Spitter (4)",
           "removeGeo": false,
           "forceShiny": false,
@@ -919,7 +958,10 @@
           ]
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": 0.0,
+          "OffY": -0.4,
           "objectName": "Zombie Miner 1",
           "removeGeo": false,
           "forceShiny": false,
@@ -980,7 +1022,10 @@
       "ShopDesc": "It's technically edible, I wouldn't recommend that though.",
       "Sprite": "Hive",
       "Location": {
-        "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+        "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+        "Scale": 1.0,
+        "OffX": 0.0,
+        "OffY": -0.25,
         "objectName": "Bee Hatchling Ambient (29)",
         "removeGeo": false,
         "forceShiny": false,
@@ -1036,7 +1081,10 @@
           "semiPersistent": true
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": 0.0,
+          "OffY": -0.5,
           "objectName": "Flip Hopper",
           "removeGeo": false,
           "forceShiny": false,
@@ -1105,7 +1153,10 @@
           "semiPersistent": false
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": 1.0,
+          "OffY": -1.0,
           "objectName": "Blocker 1",
           "removeGeo": false,
           "forceShiny": false,
@@ -1174,7 +1225,10 @@
           "semiPersistent": true
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": 0.0,
+          "OffY": 0.0,
           "objectName": "Ceiling Dropper (3)",
           "removeGeo": false,
           "forceShiny": false,
@@ -1243,7 +1297,10 @@
           "semiPersistent": true
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": 0.0,
+          "OffY": 0.0,
           "objectName": "Angry Buzzer",
           "removeGeo": false,
           "forceShiny": false,
@@ -1312,7 +1369,10 @@
           "semiPersistent": true
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": -0.75,
+          "OffY": -1.4,
           "objectName": "Mantis (3)",
           "removeGeo": false,
           "forceShiny": false,
@@ -1387,7 +1447,10 @@
           "semiPersistent": false
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": 0.0,
+          "OffY": 0.0,
           "objectName": "Moss Knight",
           "removeGeo": false,
           "forceShiny": false,
@@ -1462,7 +1525,10 @@
           "semiPersistent": false
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": 0.0,
+          "OffY": 0.0,
           "objectName": "Moss Knight B",
           "removeGeo": false,
           "forceShiny": false,
@@ -1540,7 +1606,10 @@
           ]
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": 0.0,
+          "OffY": 0.0,
           "objectName": "Moss Knight Fat (2)",
           "removeGeo": false,
           "forceShiny": false,
@@ -1601,7 +1670,10 @@
       "ShopDesc": "Strange... this key seems like it's been forgotten more times than anyone can remember.",
       "Sprite": "Overgrown",
       "Location": {
-        "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+        "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+        "Scale": 1.0,
+        "OffX": 0.0,
+        "OffY": 0.0,
         "objectName": "Plant Turret (3)",
         "removeGeo": false,
         "forceShiny": false,
@@ -1657,7 +1729,10 @@
           "semiPersistent": false
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyFsmLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyFsmLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": 0.0,
+          "OffY": -1.0,
           "enemyFsm": "Guard",
           "enemyObj": null,
           "removeGeo": false,
@@ -1733,7 +1808,10 @@
           "semiPersistent": true
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": 0.0,
+          "OffY": -0.75,
           "objectName": "Ruins Sentry Fat",
           "removeGeo": false,
           "forceShiny": false,
@@ -1802,7 +1880,10 @@
           "semiPersistent": true
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 2.0,
+          "OffX": 0.0,
+          "OffY": 0.0,
           "objectName": "Mawlek Turret (3)",
           "removeGeo": false,
           "forceShiny": false,
@@ -1882,7 +1963,10 @@
           ]
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 1.5,
+          "OffX": -0.65,
+          "OffY": -0.65,
           "objectName": "Mantis Heavy",
           "removeGeo": false,
           "forceShiny": false,
@@ -1951,7 +2035,10 @@
           "semiPersistent": true
         },
         "falseLocation": {
-          "$type": "ItemChanger.Locations.EnemyLocation, ItemChanger",
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "Scale": 2.0,
+          "OffX": 0.0,
+          "OffY": 0.0,
           "objectName": "Slash Spider",
           "removeGeo": false,
           "forceShiny": false,

@@ -6,7 +6,6 @@ using MoreDoors.Rando;
 using static RandomizerMod.Localization;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 namespace MoreDoors
 {
@@ -51,6 +50,14 @@ namespace MoreDoors
                 Values = new string[] { "No", "Yes" },
                 Saver = i => GS.EnableInVanilla = i == 1,
                 Loader = () => GS.EnableInVanilla ? 1 : 0
+            });
+            builder.AddHorizontalOption(new()
+            {
+                Name = Localize("Show Key Shinies"),
+                Description = "If yes, enemies holding keys will be marked with a shiny as a hint.",
+                Values = new string[] { "No", "Yes" },
+                Saver = i => GS.ShowKeyShinies = i == 1,
+                Loader = () => GS.ShowKeyShinies ? 1 : 0
             });
             return builder.CreateMenuScreen();
         }

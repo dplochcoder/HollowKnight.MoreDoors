@@ -6,7 +6,23 @@ Twenty-seven unique doors, each with their own unique key, are added to the game
 The keys also have vanilla locations, which can optionally be added to the locations pool.
 See SPOILER.md for the full list of doors and vanilla key locations if you wish.
 
-## Settings
+## Global Settings
+
+MoreDoors has both randomization settings, and global settings. The latter are specific to your instance of Hollow Knight
+and have no impact on other players you are racing with or against. The global settings are accessible through `Options > Mods > MoreDoors Options`.
+
+### Enable in Vanilla
+
+Setting this to 'yes' (default: 'no') will add all MoreDoors doors to classic, non-rando save files.
+The keys are placed such that a normal save can be completed without doing any skips, though you may have to adapt your usual routes!
+
+### Show Key Shinies
+
+Setting this to 'yes' (default: 'yes') will put a shiny hint-marker on enemies that contain a MoreDoors key check, whether it's vanilla or randomized.
+The hint markers are meant as a guide for finding the checks and/or more easily remembering exactly where they are; because they are displaced at a fixed offset from the enemy's position, and not integrated into the animation, they are not the most pleasant to look at.
+Disabling the shiny hint has no effect on gameplay, vanilla or rando, so it is not a rando setting and it does not affect rando hashes.
+
+## Rando Settings
 
 * Doors Level: The number of doors to add
   * Some Doors: About a third of the doors are added
@@ -35,3 +51,4 @@ All the keys are placed such that the base game is completable without any skips
 
 To enable MoreDoors in non-rando, go to the MoreDoors Options menu in Mod options, and set "Enable in Vanilla" to "Yes".
 The setting takes effect when you start a new non-rando save; it cannot effect existing saves.
+

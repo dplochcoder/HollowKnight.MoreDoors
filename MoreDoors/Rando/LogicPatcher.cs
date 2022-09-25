@@ -1,6 +1,5 @@
 ﻿using MoreDoors.Data;
 using RandomizerCore;
-using RandomizerCore.Extensions;
 using RandomizerCore.Logic;
 using RandomizerCore.LogicItems;
 using RandomizerCore.StringLogic;

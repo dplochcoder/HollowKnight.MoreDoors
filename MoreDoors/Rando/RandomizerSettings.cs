@@ -1,7 +1,6 @@
 ﻿using MenuChanger.Attributes;
 using MoreDoors.Data;
 using Newtonsoft.Json;
-using RandomizerCore.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

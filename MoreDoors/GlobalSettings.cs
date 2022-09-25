@@ -6,5 +6,6 @@ namespace MoreDoors
     {
         public RandomizationSettings RandoSettings = new();
         public bool EnableInVanilla = false;
+        public bool ShowKeyShinies = true;
     }
 }

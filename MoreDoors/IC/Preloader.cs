@@ -9,14 +9,19 @@ namespace MoreDoors.IC
         public override IEnumerable<(string, string)> GetPreloadNames()
         {
             yield return ("Ruins2_11_b", "Love Door");
+            yield return ("Crossroads_ShamanTemple", "Shiny Item");
         }
 
         private GameObject doorTemplate;
         public GameObject NewDoor() => Object.Instantiate(doorTemplate);
 
+        private GameObject shinyTemplate;
+        public GameObject NewShiny() => Object.Instantiate(shinyTemplate);
+
         public override void SavePreloads(Dictionary<string, Dictionary<string, GameObject>> objectsByScene)
         {
             doorTemplate = objectsByScene["Ruins2_11_b"]["Love Door"];
+            shinyTemplate = objectsByScene["Crossroads_ShamanTemple"]["Shiny Item"];
         }
 
         public void ReparentDoor(GameObject obj, bool left)
