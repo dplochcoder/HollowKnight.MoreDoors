@@ -68,8 +68,6 @@ namespace MoreDoors.Rando
             SetEnabledColor();
 
             DoorsMaskElement dme = new();
-            moreDoorsPage.AfterShow += () => dme.Hide();
-
             MenuPage customPage = new("MoreDoors Customize Doors", moreDoorsPage);
             FillCustomDoorsPage(customPage, dme);
 
