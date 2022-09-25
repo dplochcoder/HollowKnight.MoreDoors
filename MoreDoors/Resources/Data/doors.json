@@ -998,7 +998,7 @@
       "ExtraWorldMapLocations": null
     }
   },
-  "Isma's": {
+  "Isma": {
     "CamelCaseName": "Isma",
     "UpperCaseName": "ISMA",
     "UIName": "Isma's'",
@@ -1017,7 +1017,7 @@
         "SceneName": "Abyss_01",
         "GateName": "right2",
         "RequiresLantern": false,
-        "X": 28.9,
+        "X": 29.2,
         "Y": 52.6
       },
       "LogicOverrides": null
