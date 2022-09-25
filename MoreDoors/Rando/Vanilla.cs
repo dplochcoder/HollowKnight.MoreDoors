@@ -19,7 +19,11 @@ namespace MoreDoors.Rando
 
         private static bool IsRandoSave() => RandomizerMod.RandomizerMod.RS?.GenerationSettings != null;
 
-        private static List<string> GetRandoVanillaKeys() => RandoInterop.LS?.EnabledDoorNames.ToList() ?? new();
+        private static List<string> GetRandoVanillaKeys()
+        {
+            if (RandomizerMod.RandomizerMod.RS.GenerationSettings.PoolSettings.Keys || MoreDoors.GS.RandoSettings.AddKeyLocations == AddKeyLocations.None) return new();
+            return RandoInterop.LS?.EnabledDoorNames.ToList() ?? new();
+        }
 
         private static void PlaceVanillaItems(On.UIManager.orig_StartNewGame orig, UIManager self, bool permaDeath, bool bossRush)
         {
@@ -35,7 +39,7 @@ namespace MoreDoors.Rando
             }
 
             ItemChangerMod.AddPlacements(placements);
-            if (!rando)
+            if (!rando && doorNames.Count > 0)
             {
                 var mod = ItemChangerMod.Modules.Add<MoreDoorsModule>();
                 doorNames.ForEach(d => mod.DoorStates[d] = new());
