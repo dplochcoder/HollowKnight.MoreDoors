@@ -130,9 +130,12 @@ namespace MoreDoors.Rando
             SelfChanged?.Invoke(this);
         }
 
+        private const string NULL = "null";
+
         public void SetValue(object o)
         {
             if (o is int i) SetValue(i);
+            else throw new ArgumentException($"Expected int, but got: {o?.GetType().ToString() ?? NULL}");
         }
 
         public void Show() { }
