@@ -9,9 +9,9 @@ namespace MoreDoors.IC
 {
     public class ShinyEnemyLocation : EnemyLocation
     {
-        public float Scale = 1.5f;
-        public float OffX = 0;
-        public float OffY = 0;
+        public float HintShinyScale = 1.5f;
+        public float HintShinyX = 0;
+        public float HintShinyY = 0;
 
         protected override void OnLoad()
         {
@@ -28,7 +28,7 @@ namespace MoreDoors.IC
         private void AddShiny(Scene to)
         {
             if (!MoreDoors.GS.ShowKeyShinies || Placement.AllObtained()) return;
-            AddShinyToGameObject(ObjectLocation.FindGameObject(objectName), Scale, OffX, OffY);
+            AddShinyToGameObject(ObjectLocation.FindGameObject(objectName), HintShinyScale, HintShinyX, HintShinyY);
         }
 
         public static void AddShinyToGameObject(GameObject obj, float scale, float offx, float offy)
@@ -52,9 +52,9 @@ namespace MoreDoors.IC
 
     public class ShinyEnemyFsmLocation : EnemyFsmLocation
     {
-        public float Scale = 1.5f;
-        public float OffX = 0;
-        public float OffY = 0;
+        public float HintShinyScale = 1.5f;
+        public float HintShinyX = 0;
+        public float HintShinyY = 0;
 
         protected override void OnLoad()
         {
@@ -71,7 +71,7 @@ namespace MoreDoors.IC
         private void AddShiny(PlayMakerFSM fsm)
         {
             if (!MoreDoors.GS.ShowKeyShinies || Placement.AllObtained()) return;
-            ShinyEnemyLocation.AddShinyToGameObject(fsm.gameObject, Scale, OffX, OffY);
+            ShinyEnemyLocation.AddShinyToGameObject(fsm.gameObject, HintShinyScale, HintShinyX, HintShinyY);
         }
     }
 }
