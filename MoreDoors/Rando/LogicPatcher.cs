@@ -30,7 +30,7 @@ namespace MoreDoors.Rando
             RCData.RuntimeLogicOverride.Subscribe(100f, SubstituteProxies);
 
             // Fix infection wall logic if the False door is enabled.
-            InfectionWallLogicFix.Setup(_ => RandoInterop.LS.EnabledDoorNames.Contains("False"), 101f);
+            InfectionWallLogicFix.Setup(_ => RandoInterop.IsEnabled && RandoInterop.LS.EnabledDoorNames.Contains("False"), 101f);
         }
 
         private static bool ResolveMoreDoorsRando(string term, out int result)
