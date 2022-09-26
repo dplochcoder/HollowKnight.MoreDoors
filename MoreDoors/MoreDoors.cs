@@ -6,6 +6,8 @@ using MoreDoors.Rando;
 using static RandomizerMod.Localization;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime.InteropServices;
+using PurenailCore.ModUtil;
 
 namespace MoreDoors
 {
@@ -38,7 +40,9 @@ namespace MoreDoors
 
         public GlobalSettings OnSaveGlobal() => GS ?? new();
 
-        public override string GetVersion() => Version.Instance;
+        private static readonly string Version = VersionUtil.ComputeVersion<MoreDoors>();
+
+        public override string GetVersion() => Version;
 
         public MenuScreen GetMenuScreen(MenuScreen modListMenu, ModToggleDelegates? toggleDelegates)
         {
