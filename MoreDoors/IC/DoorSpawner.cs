@@ -40,11 +40,14 @@ namespace MoreDoors.IC
             fsm.FsmVariables.FindFsmBool("Hero Always Right").Value = false;
         }
 
+        private static readonly Color darkDoorColor = new(0.2647f, 0.2647f, 0.2647f);
+
         public static void SpawnDoor(SceneManager sm, string doorName, bool left)
         {
             var data = DoorData.Get(doorName);
             var gameObj = Preloader.Instance.NewDoor();
-            gameObj.GetComponent<SpriteRenderer>().sprite = new EmbeddedSprite($"Doors.{data.Door.Sprite}").Value;
+            var renderer = gameObj.GetComponent<SpriteRenderer>();
+            renderer.sprite = new EmbeddedSprite($"Doors.{data.Door.Sprite}").Value;
 
             SetupConversationControl(gameObj.LocateMyFSM("Conversation Control"), data, left);
 
@@ -70,7 +73,8 @@ namespace MoreDoors.IC
                 // Why is this so finicky
                 GameObject.Destroy(promptMarker);
                 GameObject.Destroy(gameObj.LocateMyFSM("npc_control"));
-            }
+                renderer.color = darkDoorColor;
+    }
 
             gameObj.SetActive(true);
         }
