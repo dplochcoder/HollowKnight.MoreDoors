@@ -1,4 +1,5 @@
 ﻿using MoreDoors.Data;
+using PurenailCore.RandoUtil;
 using RandomizerCore;
 using RandomizerCore.Logic;
 using RandomizerCore.LogicItems;
@@ -8,6 +9,7 @@ using RandomizerMod.RC;
 using RandomizerMod.Settings;
 using System;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 using StartDef = RandomizerMod.RandomizerData.StartDef;
 
 namespace MoreDoors.Rando
@@ -73,40 +75,18 @@ namespace MoreDoors.Rando
             }
         }
 
-        private static void HandleTransition(LogicManagerBuilder lmb, DoorData data, DoorData.DoorInfo.Location doorLoc, HashSet<string> fixedTerms, Dictionary<string, string> replacementMap)
+        private static void HandleTransition(LogicManagerBuilder lmb, DoorData data, DoorData.DoorInfo.Location doorLoc, HashSet<string> fixedTerms, Dictionary<string, SimpleToken> replacementMap)
         {
             fixedTerms.Add(doorLoc.TransitionName);
             fixedTerms.Add(doorLoc.TransitionProxyName);
             fixedTerms.Add(data.DoorForcedOpenLogicName);
-            replacementMap[doorLoc.TransitionName] = doorLoc.TransitionProxyName;
+            replacementMap[doorLoc.TransitionName] = new(doorLoc.TransitionProxyName);
 
             lmb.AddWaypoint(new(doorLoc.TransitionProxyName, lmb.LogicLookup[doorLoc.TransitionName].ToInfix()));
             lmb.DoLogicEdit(new(doorLoc.TransitionProxyName, $"ORIG | {doorLoc.TransitionName}"));
 
             string lanternClause = doorLoc.RequiresLantern ? " + LANTERN" : "";
             lmb.AddLogicDef(new(doorLoc.TransitionName, $"{doorLoc.TransitionName} | {doorLoc.TransitionProxyName}{lanternClause} + ({data.KeyTermName} | {data.DoorForcedOpenLogicName})"));
-        }
-
-        private static LogicClause SubstituteSimpleTokens(IDictionary<string, string> replMap, LogicClause lc)
-        {
-            LogicClauseBuilder? lcb = null;
-            for (int i = 0; i < lc.Count; i++)
-            {
-                var token = lc.Tokens[i];
-                if (token is SimpleToken st && replMap.TryGetValue(st.Name, out string repl))
-                {
-                    if (lcb == null)
-                    {
-                        lcb = new();
-                        for (int j = 0; j < i; j++) lcb.Append(lc.Tokens[j]);
-                    }
-
-                    lcb.Append(new SimpleToken(repl));
-                }
-                else lcb?.Append(token);
-            }
-
-            return lcb == null ? lc : new(lcb);
         }
 
         public static void ModifyCoreDefinitions(GenerationSettings gs, LogicManagerBuilder lmb)
@@ -160,12 +140,10 @@ namespace MoreDoors.Rando
             // assumes that the listed transition implies access to the others. This is not true when said transitions are blocked off by
             // MoreDoors placements, so we introduce a separate proxy waypoint to mean 'access-to-the-door' as opposed to
             // 'access-to-the-transition'.
-            List<string> names = new(lmb.LogicLookup.Keys);
-            foreach (var name in names)
-            {
-                if (RandoInterop.LS.ModifiedLogicNames.Contains(name)) continue;
-                lmb.LogicLookup[name] = SubstituteSimpleTokens(RandoInterop.LS.LogicSubstitutions, lmb.LogicLookup[name]);
-            }
+            LogicReplacer replacer = new();
+            replacer.IgnoredNames = new(RandoInterop.LS.ModifiedLogicNames);
+            replacer.SimpleTokenReplacements = new(RandoInterop.LS.LogicSubstitutions);
+            replacer.Apply(lmb);
 
             // We don't need this data any more, get rid of it.
             RandoInterop.LS.ModifiedLogicNames = null;

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using RandomizerCore.StringLogic;
 using System;
 using System.Collections.Generic;
 
@@ -12,7 +13,7 @@ namespace MoreDoors.Rando
         [JsonIgnore]
         public HashSet<string> ModifiedLogicNames = new();
         [JsonIgnore]
-        public Dictionary<string, string> LogicSubstitutions = new();
+        public Dictionary<string, SimpleToken> LogicSubstitutions = new();
 
         public bool IncludeDoor(string doorName) => EnabledDoorNames.Contains(doorName);
 
