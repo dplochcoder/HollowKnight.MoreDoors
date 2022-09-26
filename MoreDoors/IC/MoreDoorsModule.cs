@@ -2,6 +2,7 @@
 using ItemChanger.Extensions;
 using Modding;
 using MoreDoors.Data;
+using PurenailCore.ICUtil;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -30,6 +31,9 @@ namespace MoreDoors.IC
         private readonly Dictionary<string, string> DoorNamesByTransition = new();
         private readonly Dictionary<string, string> PromptStrings = new();
 
+        // After DarknessRandomizer
+        private const float BeforeSceneManagerStartPriority = 110f;
+
         public override void Initialize()
         {
             ModHooks.GetPlayerBoolHook += OverrideGetBool;
@@ -51,7 +55,7 @@ namespace MoreDoors.IC
                 PromptStrings[data.KeyPromptId] = data.Door.KeyDesc;
             }
 
-            Events.OnSceneChange += OnSceneChange;
+            PriorityEvents.BeforeSceneManagerStart.Subscribe(BeforeSceneManagerStartPriority, OnSceneManagerStart);
             Events.OnBeginSceneTransition += OnUseTransition;
             Events.OnTransitionOverride += OnTransitionOverride;
         }
@@ -61,7 +65,7 @@ namespace MoreDoors.IC
             ModHooks.GetPlayerBoolHook -= OverrideGetBool;
             ModHooks.SetPlayerBoolHook -= OverrideSetBool;
             ModHooks.LanguageGetHook -= OverrideLanguageGet;
-            Events.OnSceneChange -= OnSceneChange;
+            PriorityEvents.BeforeSceneManagerStart.Unsubscribe(BeforeSceneManagerStartPriority, OnSceneManagerStart);
             Events.OnBeginSceneTransition -= OnUseTransition;
             Events.OnTransitionOverride -= OnTransitionOverride;
         }
@@ -96,21 +100,21 @@ namespace MoreDoors.IC
 
         private static readonly HashSet<string> emptySet = new();
 
-        private void OnSceneChange(Scene scene)
+        private void OnSceneManagerStart(SceneManager sm)
         {
-            SceneManager? sm = scene.GetRootGameObjects().FirstOrDefault(g => g.GetComponent<SceneManager>() != null)?.GetComponent<SceneManager>();
-            foreach (var doorName in DoorNamesByScene.GetOrDefault(scene.name, emptySet))
+            var sceneName = sm.gameObject.scene.name;
+            foreach (var doorName in DoorNamesByScene.GetOrDefault(sceneName, emptySet))
             {
                 // If the door is already opened, skip, even though it's not strictly necessary.
                 var state = DoorStates[doorName];
                 if (state.DoorOpened || state.DoorForceOpened) continue;
 
                 var data = DoorData.Get(doorName);
-                if (scene.name == data.Door.LeftLocation.SceneName)
+                if (sceneName == data.Door.LeftLocation.SceneName)
                 {
                     DoorSpawner.SpawnDoor(sm, doorName, true);
                 }
-                if (scene.name == data.Door.RightLocation.SceneName)
+                if (sceneName == data.Door.RightLocation.SceneName)
                 {
                     DoorSpawner.SpawnDoor(sm, doorName, false);
                 }
