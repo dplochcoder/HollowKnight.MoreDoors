@@ -28,6 +28,9 @@ namespace MoreDoors.Rando
 
             // Updating everything to use proxies should run after.
             RCData.RuntimeLogicOverride.Subscribe(100f, SubstituteProxies);
+
+            // Fix infection wall logic if the False door is enabled.
+            InfectionWallLogicFix.Setup(_ => RandoInterop.LS.EnabledDoorNames.Contains("False"), 101f);
         }
 
         private static bool ResolveMoreDoorsRando(string term, out int result)
