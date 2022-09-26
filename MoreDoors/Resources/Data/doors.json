@@ -1620,7 +1620,7 @@
         },
         "trueLocation": {
           "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
-          "x": 82.0,
+          "x": 93.5,
           "y": 5.0,
           "elevation": 0.0,
           "managed": false,
