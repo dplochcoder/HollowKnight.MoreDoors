@@ -69,6 +69,7 @@ namespace MoreDoors.Rando
 
             SmallButton customizeButton = new(moreDoorsPage, Localize("Customize Doors"));
             DoorsMaskElement dme = new(customizeButton);
+            dme.SetCustomButtonColor();
 
             MenuPage customPage = new("MoreDoors Customize Doors", moreDoorsPage);
             FillCustomDoorsPage(customPage, dme);
@@ -127,6 +128,11 @@ namespace MoreDoors.Rando
         public event Action<int> ValueChanged;
         public event Action<IValueElement> SelfChanged;
 
+        public void SetCustomButtonColor()
+        {
+            customPageButton.Text.color = Value == RandomizationSettings.FullDoorsMask ? Colors.DEFAULT_COLOR : Colors.TRUE_COLOR;
+        }
+
         public void SetValue(int t)
         {
             int old = MoreDoors.GS.RandoSettings.DoorsMask;
@@ -135,7 +141,7 @@ namespace MoreDoors.Rando
             MoreDoors.GS.RandoSettings.DoorsMask = t;
             ValueChanged?.Invoke(t);
             SelfChanged?.Invoke(this);
-            customPageButton.Text.color = t == RandomizationSettings.FullDoorsMask ? Colors.DEFAULT_COLOR : Colors.TRUE_COLOR;
+            SetCustomButtonColor();
         }
 
         private const string NULL = "null";
