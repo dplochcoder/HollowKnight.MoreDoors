@@ -36,12 +36,13 @@ namespace MoreDoors.IC
             {
                 delta.x = dst.x + src.x;
                 delta.z = 0.5129f;
-                obj.transform.rotation = new(0, 180, 0, 1);
+                parent.transform.rotation = new(0, 180, 0, 1);
             }
             parent.transform.position = delta;
 
             obj.transform.SetParent(parent.transform, false);
             obj.transform.localPosition = src;
+            obj.transform.rotation = new(0, left ? 0 : 180, 0, 1);
         }
     }
 }

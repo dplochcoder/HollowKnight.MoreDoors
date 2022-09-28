@@ -74,7 +74,7 @@ namespace MoreDoors.IC
                 GameObject.Destroy(promptMarker);
                 GameObject.Destroy(gameObj.LocateMyFSM("npc_control"));
                 renderer.color = darkDoorColor;
-    }
+            }
 
             gameObj.SetActive(true);
         }
