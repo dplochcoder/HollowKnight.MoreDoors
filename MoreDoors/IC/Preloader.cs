@@ -1,5 +1,6 @@
 ﻿using PurenailCore.ModUtil;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace MoreDoors.IC
@@ -8,13 +9,10 @@ namespace MoreDoors.IC
     {
         public static readonly Preloader Instance = new();
 
-        public PreloadedObject Door;
-        public PreloadedObject Shiny;
+        [Preload("Ruins2_11_b", "Love Door")]
+        public GameObject Door { get; private set; }
 
-        public Preloader()
-        {
-            Door = new(this, "Ruins2_11_b", "Love Door");
-            Shiny = new(this, "Crossroads_ShamanTemple", "Shiny Item");
-        }
+        [Preload("Crossroads_ShamanTemple", "Shiny Item")]
+        public GameObject Shiny { get; private set; }
     }
 }

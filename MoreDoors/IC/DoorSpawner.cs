@@ -67,7 +67,7 @@ namespace MoreDoors.IC
         public static void SpawnDoor(SceneManager sm, string doorName, bool left)
         {
             var data = DoorData.Get(doorName);
-            var gameObj = Preloader.Instance.Door.Instantiate();
+            var gameObj = Object.Instantiate(Preloader.Instance.Door);
             var renderer = gameObj.GetComponent<SpriteRenderer>();
             renderer.sprite = new EmbeddedSprite($"Doors.{data.Door.Sprite}").Value;
 
@@ -93,8 +93,8 @@ namespace MoreDoors.IC
             if (sm.darknessLevel == 2 && !PlayerData.instance.GetBool(nameof(PlayerData.instance.hasLantern)))
             {
                 // Why is this so finicky
-                GameObject.Destroy(promptMarker);
-                GameObject.Destroy(gameObj.LocateMyFSM("npc_control"));
+                Object.Destroy(promptMarker);
+                Object.Destroy(gameObj.LocateMyFSM("npc_control"));
                 renderer.color = darkDoorColor;
             }
 

@@ -33,14 +33,14 @@ namespace MoreDoors.IC
 
         public static void AddShinyToGameObject(GameObject obj, float scale, float offx, float offy)
         {
-            GameObject shiny = Preloader.Instance.Shiny.Instantiate();
+            GameObject shiny = Object.Instantiate(Preloader.Instance.Shiny);
             shiny.name = "Hint Shiny";
-            GameObject.Destroy(shiny.FindChild("Inspect Region"));
-            GameObject.Destroy(shiny.FindChild("White Wave"));
-            GameObject.Destroy(shiny.GetComponent<PersistentBoolItem>());
-            GameObject.Destroy(shiny.GetComponent<Rigidbody2D>());
-            GameObject.Destroy(shiny.LocateMyFSM("Shiny Control"));
-            GameObject.Destroy(shiny.LocateMyFSM("Generate Wave"));
+            Object.Destroy(shiny.FindChild("Inspect Region"));
+            Object.Destroy(shiny.FindChild("White Wave"));
+            Object.Destroy(shiny.GetComponent<PersistentBoolItem>());
+            Object.Destroy(shiny.GetComponent<Rigidbody2D>());
+            Object.Destroy(shiny.LocateMyFSM("Shiny Control"));
+            Object.Destroy(shiny.LocateMyFSM("Generate Wave"));
             shiny.GetComponent<Renderer>().sortingOrder = 1;
 
             shiny.transform.SetParent(obj.transform, false);
