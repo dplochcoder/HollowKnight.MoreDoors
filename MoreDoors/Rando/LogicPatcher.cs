@@ -1,4 +1,5 @@
-﻿using MoreDoors.Data;
+﻿using ItemChanger;
+using MoreDoors.Data;
 using PurenailCore.RandoUtil;
 using RandomizerCore;
 using RandomizerCore.Logic;
@@ -9,6 +10,7 @@ using RandomizerMod.RC;
 using RandomizerMod.Settings;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http.Headers;
 using StartDef = RandomizerMod.RandomizerData.StartDef;
 
@@ -126,6 +128,16 @@ namespace MoreDoors.Rando
                 {
                     lmb.AddLogicDef(new(data.Key.Location.name, data.Key.Logic));
                 }
+            }
+
+            // Ensure that flower quest is doable.
+            List<string> requiredKeys = new();
+            if (LS.IncludeDoor("Lake")) requiredKeys.Add(DoorData.Get("Lake").KeyTermName);
+            if (LS.IncludeDoor("Garden")) requiredKeys.Add(DoorData.Get("Garden").KeyTermName);
+            if (requiredKeys.Count > 0)
+            {
+                string clause = string.Join(" + ", requiredKeys);
+                lmb.DoLogicEdit(new(LocationNames.Mask_Shard_Grey_Mourner, $"ORIG + ({clause} | MAPAREARANDO | FULLAREARANDO | ROOMRANDO)"));
             }
 
             RandoInterop.LS = LS;
