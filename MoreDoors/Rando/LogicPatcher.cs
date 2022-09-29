@@ -64,7 +64,6 @@ namespace MoreDoors.Rando
             { "West Blue Lake", ForbidWithMoreDoors() },
             { "West Fog Canyon", ForbidWithMoreDoors("ROOMRANDO") }
         };
-
         private static void PatchStartLocations(Dictionary<string, StartDef> startDefs)
         {
             List<string> keys = new(startDefs.Keys);
@@ -120,7 +119,6 @@ namespace MoreDoors.Rando
                     HandleTransition(lmb, data, data.Door.RightLocation, LS.ModifiedLogicNames, LS.LogicSubstitutions);
 
                     lmb.AddItem(new CappedItem(data.Key.ItemName, new TermValue[] { new(keyTerm, 1) }, new(keyTerm, 1)));
-                    data.Door.LogicOverrides?.ForEach(o => lmb.DoLogicEdit(o));
                 }
 
                 // Add vanilla key logic defs.

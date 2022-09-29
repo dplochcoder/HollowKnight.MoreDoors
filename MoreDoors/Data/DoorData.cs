@@ -54,7 +54,6 @@ namespace MoreDoors.Data
             public string KeyDesc;
             public Location LeftLocation;
             public Location RightLocation;
-            public List<RawLogicDef>? LogicOverrides;
         }
         public DoorInfo Door;
 

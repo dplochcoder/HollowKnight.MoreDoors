@@ -463,13 +463,7 @@
         "RequiresLantern": false,
         "X": 98.9,
         "Y": 16.6
-      },
-      "LogicOverrides": [
-        {
-          "name": "Crossroads_06[right1]",
-          "logic": "(Crossroads_06[left1] | Crossroads_06[door1]) + ROOMRANDO"
-        }
-      ]
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-False_Key",
