@@ -33,7 +33,7 @@ namespace MoreDoors.IC
 
         public static void AddShinyToGameObject(GameObject obj, float scale, float offx, float offy)
         {
-            GameObject shiny = Preloader.Instance.NewShiny();
+            GameObject shiny = Preloader.Instance.Shiny.Instantiate();
             shiny.name = "Hint Shiny";
             GameObject.Destroy(shiny.FindChild("Inspect Region"));
             GameObject.Destroy(shiny.FindChild("White Wave"));

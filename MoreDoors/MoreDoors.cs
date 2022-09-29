@@ -24,7 +24,7 @@ namespace MoreDoors
 
         public override void Initialize(Dictionary<string, Dictionary<string, GameObject>> preloadedObjects)
         {
-            Preloader.Instance.SavePreloads(preloadedObjects);
+            IC.Preloader.Instance.Initialize(preloadedObjects);
             DoorData.Load();
 
             Vanilla.Setup();
@@ -34,7 +34,7 @@ namespace MoreDoors
             }
         }
 
-        public override List<(string, string)> GetPreloadNames() => new(Preloader.Instance.GetPreloadNames());
+        public override List<(string, string)> GetPreloadNames() => new(IC.Preloader.Instance.GetPreloadNames());
 
         public void OnLoadGlobal(GlobalSettings s) => GS = s ?? new();
 

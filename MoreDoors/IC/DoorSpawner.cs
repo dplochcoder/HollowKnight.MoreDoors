@@ -22,12 +22,34 @@ namespace MoreDoors.IC
             return ret;
         }
 
+        private static void ReparentDoor(GameObject obj, Vector3 src, bool left)
+        {
+            Vector3 dst = obj.transform.position;
+
+            GameObject parent = new();
+            parent.name = $"{obj.name} Animation Parent";
+            var delta = dst - src;
+            if (!left)
+            {
+                delta.x = dst.x + src.x;
+                delta.z = 0.5129f;
+                parent.transform.rotation = new(0, 180, 0, 1);
+            }
+            parent.transform.position = delta;
+
+            obj.transform.SetParent(parent.transform, false);
+            obj.transform.localPosition = src;
+            obj.transform.rotation = new(0, left ? 0 : 180, 0, 1);
+        }
+
         private static void SetupConversationControl(PlayMakerFSM fsm, DoorData data, bool left)
         {
             fsm.GetState("Check Key").GetFirstActionOfType<PlayerDataBoolTest>().boolName = data.PDKeyName;
             fsm.GetState("Send Text").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(data.KeyPromptId);
             fsm.GetState("No Key").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(data.NoKeyPromptId);
-            fsm.GetState("Open").AddFirstAction(new Lambda(() => Preloader.Instance.ReparentDoor(fsm.gameObject, left)));
+
+            var origPosition = fsm.gameObject.transform.position;
+            fsm.GetState("Open").AddFirstAction(new Lambda(() => ReparentDoor(fsm.gameObject, origPosition, left)));
 
             var setters = fsm.GetState("Yes").GetActionsOfType<SetPlayerDataBool>();
             setters[0].boolName = MoreDoorsModule.EmptyBoolName;
@@ -45,7 +67,7 @@ namespace MoreDoors.IC
         public static void SpawnDoor(SceneManager sm, string doorName, bool left)
         {
             var data = DoorData.Get(doorName);
-            var gameObj = Preloader.Instance.NewDoor();
+            var gameObj = Preloader.Instance.Door.Instantiate();
             var renderer = gameObj.GetComponent<SpriteRenderer>();
             renderer.sprite = new EmbeddedSprite($"Doors.{data.Door.Sprite}").Value;
 
