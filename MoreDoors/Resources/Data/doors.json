@@ -882,7 +882,7 @@
           "objectName": "Super Spitter (4)",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Geo_Key-Primal_Aspid-Outside_Great_Hopper_Relic",
+          "name": "MoreDoors-Geo_Key-Primal_Aspid-Edge_Whispering_Root-Top_Left",
           "sceneName": "Deepnest_East_07",
           "flingType": "Everywhere",
           "tags": null
@@ -894,12 +894,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Geo_Key-Primal_Aspid-Outside_Great_Hopper_Relic",
+          "name": "MoreDoors-Geo_Key-Primal_Aspid-Edge_Whispering_Root-Top_Left",
           "sceneName": "Deepnest_East_07",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Geo_Key-Primal_Aspid-Outside_Great_Hopper_Relic",
+        "name": "MoreDoors-Geo_Key-Primal_Aspid-Edge_Whispering_Root-Top_Left",
         "sceneName": "Deepnest_East_07",
         "flingType": "Everywhere",
         "tags": null
