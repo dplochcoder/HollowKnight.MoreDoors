@@ -2,6 +2,7 @@
 using ItemChanger.Extensions;
 using Modding;
 using MoreDoors.Data;
+using Newtonsoft.Json;
 using PurenailCore.ICUtil;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace MoreDoors.IC
     {
         // Fake bool with no value, used only in setters.
         public const string EmptyBoolName = "moreDoorsNothing";
+        public const string HaveUnusedKeysName = "moreDoorsHaveUnusedKeys";
 
         public class DoorState
         {
@@ -78,20 +80,26 @@ namespace MoreDoors.IC
             {
                 return DoorStates[doorName].DoorOpened;
             }
+            else if (name == HaveUnusedKeysName)
+            {
+                return DoorStates.Values.Any(s => s.KeyObtained && !s.DoorOpened);
+            }
             return orig;
         }
 
-        private bool OverrideSetBool(string name, bool orig)
+        private bool OverrideSetBool(string name, bool newValue)
         {
             if (DoorNamesByKey.TryGetValue(name, out string doorName))
             {
-                DoorStates[doorName].KeyObtained = orig;
+                var state = DoorStates[doorName];
+                state.KeyObtained = newValue;
             }
             else if (DoorNamesByDoor.TryGetValue(name, out doorName))
             {
-                DoorStates[doorName].DoorOpened = orig;
+                var state = DoorStates[doorName];
+                DoorStates[doorName].DoorOpened = newValue;
             }
-            return orig;
+            return newValue;
         }
 
         private string OverrideLanguageGet(string key, string sheetTitle, string orig) => PromptStrings.TryGetValue(key, out string value) ? value : orig;
