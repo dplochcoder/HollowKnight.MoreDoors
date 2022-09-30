@@ -15,7 +15,7 @@ namespace MoreDoors.IC
     {
         // Fake bool with no value, used only in setters.
         public const string EmptyBoolName = "moreDoorsNothing";
-        public const string HaveUnusedKeysName = "moreDoorsHaveUnusedKeys";
+        public const string MoreDoorsEnabledName = "moreDoorsEnabled";
 
         public class DoorState
         {
@@ -80,9 +80,9 @@ namespace MoreDoors.IC
             {
                 return DoorStates[doorName].DoorOpened;
             }
-            else if (name == HaveUnusedKeysName)
+            else if (name == MoreDoorsEnabledName)
             {
-                return DoorStates.Values.Any(s => s.KeyObtained && !s.DoorOpened);
+                return DoorStates.Count > 0;
             }
             return orig;
         }
