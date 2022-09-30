@@ -168,7 +168,7 @@
       "ItemName": "MoreDoors-Buried_Geo_Key",
       "UIItemName": "Buried Geo Key",
       "ShopDesc": "I better be charging more than 420 for this.",
-      "Sprite": "Geo",
+      "Sprite": "BuriedGeo",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
