@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using RandomizerCore.Logic;
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace MoreDoors.Data
 {
@@ -16,6 +17,13 @@ namespace MoreDoors.Data
         public static DoorData Get(string doorName) => Data[doorName];
 
         public static int Count => Data.Count;
+
+        public static int ComputeDoorNameHash()
+        {
+            var sha1 = System.Security.Cryptography.SHA1.Create();
+            var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(string.Join("|", DoorNames)));
+            return (hash[0] << 24) | (hash[1] << 16) | (hash[2] << 8) | hash[3];
+        }
 
         public static void Load()
         {
