@@ -1,6 +1,7 @@
 ﻿using MenuChanger.Attributes;
 using MoreDoors.Data;
 using Newtonsoft.Json;
+using RandomizerMod.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,11 +48,13 @@ namespace MoreDoors.Rando
             return o;
         }
 
-        public HashSet<string> ComputeActiveDoors(Random r)
+        public HashSet<string> ComputeActiveDoors(GenerationSettings gs, Random r)
         {
             List<string> potentialDoors = Enumerable.Range(0, DoorData.Count)
                 .Where(i => IsDoorAllowed(i))
                 .Select(i => DoorData.DoorNames[i]).ToList();
+            if (gs.LongLocationSettings.WhitePalaceRando != LongLocationSettings.WPSetting.Allowed) potentialDoors.Remove("Pain");
+
             HashSet<string> doors = new();
             if (potentialDoors.Count == 0) return doors;
 
