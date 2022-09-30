@@ -1,4 +1,5 @@
-﻿using MoreDoors.Data;
+﻿using ItemChanger.Internal.Menu;
+using MoreDoors.Data;
 using RandomizerCore.Randomization;
 using RandomizerMod.RandomizerData;
 using RandomizerMod.RC;
@@ -105,7 +106,12 @@ namespace MoreDoors.Rando
             {
                 if (gb.strategy is DefaultGroupPlacementStrategy dgps)
                 {
-                    dgps.Constraints += (item, loc) => !keyLoc.TryGetValue(item.Name, out string vLoc) || loc.Name != vLoc;
+                    dgps.Constraints += (item, loc) =>
+                    {
+                        string name = item.Name;
+                        if (item.Name.StartsWith(PlaceholderItem.Prefix)) name = item.Name.Substring(PlaceholderItem.Prefix.Length);
+                        return !keyLoc.TryGetValue(item.Name, out string vLoc) || loc.Name != vLoc;
+                    };
                 }
             }
         }
