@@ -1,7 +1,9 @@
 ﻿using MoreDoors.Data;
+using RandomizerCore.Randomization;
 using RandomizerMod.RandomizerData;
 using RandomizerMod.RC;
 using System;
+using System.Collections.Generic;
 
 namespace MoreDoors.Rando
 {
@@ -11,6 +13,7 @@ namespace MoreDoors.Rando
         {
             RequestBuilder.OnUpdate.Subscribe(-500f, SetupRefs);
             RequestBuilder.OnUpdate.Subscribe(40f, ModifyItems);
+            RequestBuilder.OnUpdate.Subscribe(102f, DerangeKeys);
         }
 
         private static void SetupRefs(RequestBuilder rb)
@@ -83,6 +86,26 @@ namespace MoreDoors.Rando
                 else if (RandoInterop.LS.IncludeKeyLocation(doorName))
                 {
                     rb.AddLocationByName(data.Key.Location.name);
+                }
+            }
+        }
+
+        private static void DerangeKeys(RequestBuilder rb)
+        {
+            if (!RandoInterop.IsEnabled || !rb.gs.PoolSettings.Keys || !rb.gs.CursedSettings.Deranged) return;
+
+            Dictionary<string, string> keyLoc = new();
+            foreach (var door in DoorData.DoorNames)
+            {
+                var data = DoorData.Get(door);
+                keyLoc[data.Key.ItemName] = data.Key.Location.name;
+            }
+
+            foreach (var gb in rb.EnumerateItemGroups())
+            {
+                if (gb.strategy is DefaultGroupPlacementStrategy dgps)
+                {
+                    dgps.Constraints += (item, loc) => !keyLoc.TryGetValue(item.Name, out string vLoc) || loc.Name != vLoc;
                 }
             }
         }

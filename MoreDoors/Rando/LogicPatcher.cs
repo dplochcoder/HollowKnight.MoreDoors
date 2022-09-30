@@ -104,7 +104,7 @@ namespace MoreDoors.Rando
 
             LocalSettings LS = new();
             Random r = new(gs.Seed + 13);
-            LS.EnabledDoorNames = LS.Settings.ComputeActiveDoors(r);
+            LS.EnabledDoorNames = LS.Settings.ComputeActiveDoors(gs, r);
 
             foreach (var doorName in DoorData.DoorNames)
             {
