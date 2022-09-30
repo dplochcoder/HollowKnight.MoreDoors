@@ -43,12 +43,13 @@ namespace MoreDoors.Rando
 
         public void SetDoorAllowed(int index, bool value) => DoorsMask = (DoorsMask & ~(1 << index)) | (value ? (1 << index) : 0);
 
-        public void UpdateDoorNameHash()
+        public void MaybeUpdateDoorsMask()
         {
             int hash = DoorData.ComputeDoorNameHash();
             if (DoorNameHash != hash)
             {
                 DoorsMask = FullDoorsMask;
+                DoorNameHash = hash;
             }
         }
 

@@ -36,7 +36,11 @@ namespace MoreDoors
 
         public override List<(string, string)> GetPreloadNames() => new(IC.Preloader.Instance.GetPreloadNames());
 
-        public void OnLoadGlobal(GlobalSettings s) => GS = s ?? new();
+        public void OnLoadGlobal(GlobalSettings s)
+        {
+            GS = s ?? new();
+            GS.RandoSettings.MaybeUpdateDoorsMask();
+        }
 
         public GlobalSettings OnSaveGlobal() => GS ?? new();
 
