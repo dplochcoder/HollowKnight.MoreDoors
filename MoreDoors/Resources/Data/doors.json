@@ -20,8 +20,7 @@
         "RequiresLantern": false,
         "X": 88.9,
         "Y": 66.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Bardoon's_Key",
@@ -92,8 +91,7 @@
         "RequiresLantern": false,
         "X": 158.9,
         "Y": 33.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Broken_Key",
@@ -143,6 +141,77 @@
       "ExtraWorldMapLocations": null
     }
   },
+  "Buried Geo": {
+    "CamelCaseName": "BuriedGeo",
+    "UpperCaseName": "BURIEDGEO",
+    "UIName": "Buried Geo",
+    "Door": {
+      "Sprite": "Abyssal",
+      "NoKeyDesc": "An old, stone vestibule. It smells of ancient treasure.",
+      "KeyDesc": "The treasure is both far and near.<br>Insert the Buried Geo Key?",
+      "LeftLocation": {
+        "SceneName": "Deepnest_East_16",
+        "GateName": "left1",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 6.6
+      },
+      "RightLocation": {
+        "SceneName": "Deepnest_East_06",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 349.9,
+        "Y": 17.6
+      }
+    },
+    "Key": {
+      "ItemName": "MoreDoors-Buried_Geo_Key",
+      "UIItemName": "Buried Geo Key",
+      "ShopDesc": "I better be charging more than 420 for this.",
+      "Sprite": "Geo",
+      "Location": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Super Spitter (4)",
+          "sceneName": "Deepnest_East_07",
+          "semiPersistent": true
+        },
+        "falseLocation": {
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "HintShinyScale": 1.0,
+          "HintShinyX": 0.0,
+          "HintShinyY": 0.0,
+          "objectName": "Super Spitter (4)",
+          "removeGeo": false,
+          "forceShiny": false,
+          "name": "MoreDoors-Buried_Geo_Key-Primal_Aspid-Edge_Whispering_Root-Top_Left",
+          "sceneName": "Deepnest_East_07",
+          "flingType": "Everywhere",
+          "tags": null
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 34.0,
+          "y": 173.0,
+          "elevation": 0.0,
+          "managed": false,
+          "forceShiny": false,
+          "name": "MoreDoors-Buried_Geo_Key-Primal_Aspid-Edge_Whispering_Root-Top_Left",
+          "sceneName": "Deepnest_East_07",
+          "flingType": "Everywhere",
+          "tags": null
+        },
+        "name": "MoreDoors-Buried_Geo_Key-Primal_Aspid-Edge_Whispering_Root-Top_Left",
+        "sceneName": "Deepnest_East_07",
+        "flingType": "Everywhere",
+        "tags": null
+      },
+      "Logic": "Deepnest_East_07[left1]",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
+    }
+  },
   "Canyon": {
     "CamelCaseName": "Canyon",
     "UpperCaseName": "CANYON",
@@ -164,8 +233,7 @@
         "RequiresLantern": false,
         "X": 29.9,
         "Y": 5.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Canyon_Key",
@@ -236,8 +304,7 @@
         "RequiresLantern": false,
         "X": 92.9,
         "Y": 33.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Core_Key",
@@ -309,8 +376,7 @@
         "RequiresLantern": false,
         "X": 73.9,
         "Y": 197.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Crown_Key",
@@ -391,8 +457,7 @@
         "RequiresLantern": true,
         "X": 208.9,
         "Y": 9.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Dark_Nest_Key",
@@ -534,8 +599,7 @@
         "RequiresLantern": false,
         "X": 53.9,
         "Y": 7.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Flooded_Stag_Key",
@@ -606,8 +670,7 @@
         "RequiresLantern": false,
         "X": 63.9,
         "Y": 8.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Fountain_Key",
@@ -657,8 +720,7 @@
         "RequiresLantern": false,
         "X": 34.9,
         "Y": 60.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Fragile_Key",
@@ -729,8 +791,7 @@
         "RequiresLantern": false,
         "X": 34.9,
         "Y": 11.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Fungal_Key",
@@ -801,8 +862,7 @@
         "RequiresLantern": false,
         "X": 38.9,
         "Y": 58.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Garden_Key",
@@ -831,78 +891,6 @@
       "ExtraWorldMapLocations": null
     }
   },
-  "Geo": {
-    "CamelCaseName": "Geo",
-    "UpperCaseName": "GEO",
-    "UIName": "Geo",
-    "Door": {
-      "Sprite": "Abyssal",
-      "NoKeyDesc": "An old, stone vestibule. It smells of ancient treasure.",
-      "KeyDesc": "The treasure is both far and near.<br>Insert the Geo Key?",
-      "LeftLocation": {
-        "SceneName": "Deepnest_East_16",
-        "GateName": "left1",
-        "RequiresLantern": false,
-        "X": 1.1,
-        "Y": 6.6
-      },
-      "RightLocation": {
-        "SceneName": "Deepnest_East_06",
-        "GateName": "right1",
-        "RequiresLantern": false,
-        "X": 349.9,
-        "Y": 17.6
-      },
-      "LogicOverrides": null
-    },
-    "Key": {
-      "ItemName": "MoreDoors-Geo_Key",
-      "UIItemName": "Geo Key",
-      "ShopDesc": "I better be charging more than 420 for this.",
-      "Sprite": "Geo",
-      "Location": {
-        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
-        "Test": {
-          "$type": "ItemChanger.SDBool, ItemChanger",
-          "id": "Super Spitter (4)",
-          "sceneName": "Deepnest_East_07",
-          "semiPersistent": true
-        },
-        "falseLocation": {
-          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
-          "HintShinyScale": 1.0,
-          "HintShinyX": 0.0,
-          "HintShinyY": 0.0,
-          "objectName": "Super Spitter (4)",
-          "removeGeo": false,
-          "forceShiny": false,
-          "name": "MoreDoors-Geo_Key-Primal_Aspid-Edge_Whispering_Root-Top_Left",
-          "sceneName": "Deepnest_East_07",
-          "flingType": "Everywhere",
-          "tags": null
-        },
-        "trueLocation": {
-          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
-          "x": 34.0,
-          "y": 173.0,
-          "elevation": 0.0,
-          "managed": false,
-          "forceShiny": false,
-          "name": "MoreDoors-Geo_Key-Primal_Aspid-Edge_Whispering_Root-Top_Left",
-          "sceneName": "Deepnest_East_07",
-          "flingType": "Everywhere",
-          "tags": null
-        },
-        "name": "MoreDoors-Geo_Key-Primal_Aspid-Edge_Whispering_Root-Top_Left",
-        "sceneName": "Deepnest_East_07",
-        "flingType": "Everywhere",
-        "tags": null
-      },
-      "Logic": "Deepnest_East_07[left1]",
-      "WorldMapLocationOverride": null,
-      "ExtraWorldMapLocations": null
-    }
-  },
   "Heart": {
     "CamelCaseName": "Heart",
     "UpperCaseName": "HEART",
@@ -924,8 +912,7 @@
         "RequiresLantern": false,
         "X": 73.9,
         "Y": 65.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Heart_Key",
@@ -1007,8 +994,7 @@
         "RequiresLantern": false,
         "X": 118.9,
         "Y": 52.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Hive_Key",
@@ -1058,8 +1044,7 @@
         "RequiresLantern": false,
         "X": 29.5,
         "Y": 52.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Isma's_Key",
@@ -1130,8 +1115,7 @@
         "RequiresLantern": false,
         "X": 138.9,
         "Y": 93.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Joni's_Key",
@@ -1202,8 +1186,7 @@
         "RequiresLantern": false,
         "X": 147.9,
         "Y": 6.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Junk_Key",
@@ -1274,8 +1257,7 @@
         "RequiresLantern": false,
         "X": 158.9,
         "Y": 26.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Lake_Key",
@@ -1346,8 +1328,7 @@
         "RequiresLantern": false,
         "X": 173.9,
         "Y": 11.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Mantis_Key",
@@ -1424,8 +1405,7 @@
         "RequiresLantern": false,
         "X": 83.9,
         "Y": 16.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Moss_Key",
@@ -1502,8 +1482,7 @@
         "RequiresLantern": false,
         "X": 93.9,
         "Y": 34.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Mothwing_Key",
@@ -1574,8 +1553,7 @@
         "RequiresLantern": false,
         "X": 58.9,
         "Y": 5.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Nest_Key",
@@ -1655,8 +1633,7 @@
         "RequiresLantern": false,
         "X": 98.9,
         "Y": 14.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Overgrown_Key",
@@ -1706,8 +1683,7 @@
         "RequiresLantern": false,
         "X": 298.9,
         "Y": 14.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Pain_Key",
@@ -1785,8 +1761,7 @@
         "RequiresLantern": false,
         "X": 61.9,
         "Y": 153.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Sanctum_Key",
@@ -1857,8 +1832,7 @@
         "RequiresLantern": false,
         "X": 98.9,
         "Y": 5.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Shade_Key",
@@ -1929,8 +1903,7 @@
         "RequiresLantern": false,
         "X": 73.9,
         "Y": 8.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Traitor's_Key",
@@ -2012,8 +1985,7 @@
         "RequiresLantern": false,
         "X": 73.9,
         "Y": 89.6
-      },
-      "LogicOverrides": null
+      }
     },
     "Key": {
       "ItemName": "MoreDoors-Village_Key",
