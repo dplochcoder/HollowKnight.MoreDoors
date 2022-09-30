@@ -14,6 +14,11 @@ Read at your own risk!  There's no taking it back.
 * Blocks access to Broken Vessel
 * Key is at the Lesser Mawlek far right of Cloth in Basin
 
+## Buried Geo Door
+
+* Blocks access to Oro dive rooms
+* Key is at the highest Primal Aspid in the Edge Whispering Root room
+
 ## Canyon Door
 
 * Blocks access to Queen's Station from Fog Canyon
@@ -63,11 +68,6 @@ Read at your own risk!  There's no taking it back.
 
 * Blocks access to QG after Overgrown Mound
 * Key is at the center Mossfly by Overgrown Mound
-
-## Geo Door
-
-* Blocks access to Oro dive rooms
-* Key is at the highest Primal Aspid in the Edge Whispering Root room
 
 ## Heart Door
 
