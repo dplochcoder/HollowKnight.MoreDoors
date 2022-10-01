@@ -26,6 +26,8 @@
       "ItemName": "MoreDoors-Bardoon's_Key",
       "UIItemName": "Bardoon's Key",
       "ShopDesc": "He seems nice but his neighbors are just the worst.",
+      "InvDesc": "A key of olden times, of ancient wisdom. It is peppered with ash.",
+      "UsedInvDesc": "The way of the fool has been opened.",
       "Sprite": "Bardoon",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -97,6 +99,8 @@
       "ItemName": "MoreDoors-Broken_Key",
       "UIItemName": "Broken Key",
       "ShopDesc": "Broken? It looks completely functional to me.",
+      "InvDesc": "A dark key dripping with infection. It looks like it's asking you for help.",
+      "UsedInvDesc": "Finally bested, a lost soul slumbers in peace.",
       "Sprite": "Broken",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -168,6 +172,8 @@
       "ItemName": "MoreDoors-Buried_Geo_Key",
       "UIItemName": "Buried Geo Key",
       "ShopDesc": "I better be charging more than 420 for this.",
+      "InvDesc": "A heavy key beset with an ornate rock. It smells of greed, and betrayal.",
+      "UsedInvDesc": "The treasure is yours now, may none blame you for it.",
       "Sprite": "BuriedGeo",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -239,6 +245,8 @@
       "ItemName": "MoreDoors-Canyon_Key",
       "UIItemName": "Canyon Key",
       "ShopDesc": "Ow! Why is this so receptive to static?",
+      "InvDesc": "A bright key with hints of green under a gelatinous coating.",
+      "UsedInvDesc": "The Pilgrim's Way has been opened.",
       "Sprite": "Canyon",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -310,6 +318,8 @@
       "ItemName": "MoreDoors-Core_Key",
       "UIItemName": "Core Key",
       "ShopDesc": "Please get rid of this, it's got something growing on it.",
+      "InvDesc": "It's overgrown with a rich fungus, and emits a powerful aroma.",
+      "UsedInvDesc": "The heart of the wastes has been opened, yet only darkness lies beneath.",
       "Sprite": "Core",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -382,6 +392,8 @@
       "ItemName": "MoreDoors-Crown_Key",
       "UIItemName": "Crown Key",
       "ShopDesc": "Goodness, this one is shiny. Where could it have come from?",
+      "InvDesc": "Crowned with sharp crystals, it gleams with a forgotten light.",
+      "UsedInvDesc": "Damned are those who forsake their creator.",
       "Sprite": "Crown",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -463,6 +475,8 @@
       "ItemName": "MoreDoors-Dark_Nest_Key",
       "UIItemName": "Dark Nest Key",
       "ShopDesc": "I swear I can't even see this thing without my Lumaflies, it's so black.'",
+      "InvDesc": "It's dark, thorny, and wrapped in webs. Something out there is angry it's been lost.",
+      "UsedInvDesc": "You can still hear the skitters, even this far away.",
       "Sprite": "Darknest",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -534,6 +548,8 @@
       "ItemName": "MoreDoors-False_Key",
       "UIItemName": "False Key",
       "ShopDesc": "I think this is to protect him, not you.",
+      "InvDesc": "It looks like a key at first, but you can see it's just a casing for a tiny key inside.",
+      "UsedInvDesc": "If only they possessed the strength they longed for.",
       "Sprite": "False",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -605,6 +621,8 @@
       "ItemName": "MoreDoors-Flooded_Stag_Key",
       "UIItemName": "Flooded Stag Key",
       "ShopDesc": "I don't think this protects anything, just a bunch of water?",
+      "InvDesc": "A wet, stone key, ever dripping. It rings of forgotten love.",
+      "UsedInvDesc": "The secret cellar of the city has been opened.",
       "Sprite": "FloodedStag",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -676,6 +694,8 @@
       "ItemName": "MoreDoors-Fountain_Key",
       "UIItemName": "Fountain Key",
       "ShopDesc": "Is it destiny you seek, or geo?  Are they different?",
+      "InvDesc": "A shiny, cast key adorned with a replica Hallownest Seal. Probably valuable to collectors.",
+      "UsedInvDesc": "May his sacrifice never be forgotten.",
       "Sprite": "Fountain",
       "Location": {
         "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
@@ -726,6 +746,8 @@
       "ItemName": "MoreDoors-Fragile_Key",
       "UIItemName": "Fragile Key",
       "ShopDesc": "Don't let the Better Bugsness Bureau know about this.",
+      "InvDesc": "It glistens with gold, brighter than it should be. Don't break it.",
+      "UsedInvDesc": "He is free now to fulfill his destiny. Was it worth it?",
       "Sprite": "Fragile",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -797,6 +819,8 @@
       "ItemName": "MoreDoors-Fungal_Key",
       "UIItemName": "Fungal Key",
       "ShopDesc": "Chop 'em, sautee 'em, stick 'em in a stew.",
+      "InvDesc": "It smells of mushrooms, and an arid air. The head is soft and spongy.",
+      "UsedInvDesc": "The wastes are opened, the Pilgrim's Way expands.",
       "Sprite": "Fungal",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -868,6 +892,8 @@
       "ItemName": "MoreDoors-Garden_Key",
       "UIItemName": "Garden Key",
       "ShopDesc": "Interesting to see things so cared for in a kingdom forgotten.",
+      "InvDesc": "A key draped in moss, tainted with infection. Beautiful, but tragic.",
+      "UsedInvDesc": "May the sanctity of her garden never be broken.",
       "Sprite": "Garden",
       "Location": {
         "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
@@ -918,6 +944,8 @@
       "ItemName": "MoreDoors-Heart_Key",
       "UIItemName": "Heart Key",
       "ShopDesc": "If you hold this up to your ear, you'll realize you don't HAVE ears, dumbdumb.",
+      "InvDesc": "It gleams of rich crystal, ornate and intricate. You can feel it beating in your hands.",
+      "UsedInvDesc": "The mountain seems less whole for it, but surely it was for good.",
       "Sprite": "Heart",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -1000,6 +1028,8 @@
       "ItemName": "MoreDoors-Hive_Key",
       "UIItemName": "Hive Key",
       "ShopDesc": "It's technically edible, I wouldn't recommend that though.",
+      "InvDesc": "A reflective key encased in honey, protected by stingers. It is difficult to hold.",
+      "UsedInvDesc": "They did not welcome you, but the queen understands.",
       "Sprite": "Hive",
       "Location": {
         "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
@@ -1050,6 +1080,8 @@
       "ItemName": "MoreDoors-Isma's_Key",
       "UIItemName": "Isma's Key",
       "ShopDesc": "Why does this smell like beetle dung?",
+      "InvDesc": "It looks like it should be wet, but it isn't. It glistens with an old life.",
+      "UsedInvDesc": "The grove sizzles on.",
       "Sprite": "Isma",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -1121,6 +1153,8 @@
       "ItemName": "MoreDoors-Joni's_Key",
       "UIItemName": "Joni's Key",
       "ShopDesc": "I feel like I shouldn't have this, so it's at a discount.",
+      "InvDesc": "A key adorned with lifeblood, large yet fragile. It guards something dangerous.",
+      "UsedInvDesc": "It was not yours to take, but it will be put to good use.",
       "Sprite": "Joni",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -1191,7 +1225,9 @@
     "Key": {
       "ItemName": "MoreDoors-Junk_Key",
       "UIItemName": "Junk Key",
-      "ShopDesc": "It comes with complimentary worthless Lumaflies.",
+      "ShopDesc": "It comes with complimentary uncaged Lumaflies.",
+      "InvDesc": "A dirty key embedded with geo, and a hint of larvae. You probably don't want to hang onto this.",
+      "UsedInvDesc": "The real treasure lies in the paths wandered.",
       "Sprite": "Junk",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -1263,6 +1299,8 @@
       "ItemName": "MoreDoors-Lake_Key",
       "UIItemName": "Lake Key",
       "ShopDesc": "Many souls died to use this key, I assume that makes it worth this price.",
+      "InvDesc": "It's a bright blue, always gleaming with some inexplicable light. A true mystery.",
+      "UsedInvDesc": "What will you do now, that the mystery is solved?",
       "Sprite": "Lake",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -1334,6 +1372,8 @@
       "ItemName": "MoreDoors-Mantis_Key",
       "UIItemName": "Mantis Key",
       "ShopDesc": "It unlocks one of the most guarded places in the kingdom.",
+      "InvDesc": "Polished, sharp, emblazoned with a proud insignia. A warrior's key.",
+      "UsedInvDesc": "Your respect is earned.",
       "Sprite": "Mantis",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -1411,6 +1451,8 @@
       "ItemName": "MoreDoors-Moss_Key",
       "UIItemName": "Moss Key",
       "ShopDesc": "If you look carefully it's actually four little keys pretending to be a big key.",
+      "InvDesc": "A soft green key overgrown with moss and attached leaves, as though camouflaged.",
+      "UsedInvDesc": "The way is opened, yet more awaits on the other side.",
       "Sprite": "Moss",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -1488,6 +1530,8 @@
       "ItemName": "MoreDoors-Mothwing_Key",
       "UIItemName": "Mothwing Key",
       "ShopDesc": "You too can unlock your inner SHAAAW",
+      "InvDesc": "A sleek key, with a wavy cloak bound to it by silk strands. It always billows away.",
+      "UsedInvDesc": "She will be stronger next time. Are you prepared?",
       "Sprite": "Mothwing",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -1559,6 +1603,8 @@
       "ItemName": "MoreDoors-Nest_Key",
       "UIItemName": "Nest Key",
       "ShopDesc": "I tried cleaning it but it always seems to have more webs.",
+      "InvDesc": "A dark, thorny key. It smells of the depths.",
+      "UsedInvDesc": "Greater thorns await within.",
       "Sprite": "Nest",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -1639,6 +1685,8 @@
       "ItemName": "MoreDoors-Overgrown_Key",
       "UIItemName": "Overgrown Key",
       "ShopDesc": "Strange... this key seems like it's been forgotten more times than anyone can remember.",
+      "InvDesc": "A key caked in a mixture of moss, leaves, and a tingly gelatin.",
+      "UsedInvDesc": "There was nothing here but a scream.",
       "Sprite": "Overgrown",
       "Location": {
         "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
@@ -1689,6 +1737,8 @@
       "ItemName": "MoreDoors-Pain_Key",
       "UIItemName": "Pain Key",
       "ShopDesc": "This looks like it's been beaten to hell by blades, does it even work?",
+      "InvDesc": "A marble-white key with saw blades for a stem. It buzzes constantly. Also it keeps scratching up the other keys.",
+      "UsedInvDesc": "To obtain that stupid Godtuner, one must endure the harshest punishment.",
       "Sprite": "Pain",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -1767,6 +1817,8 @@
       "ItemName": "MoreDoors-Sanctum_Key",
       "UIItemName": "Sanctum Key",
       "ShopDesc": "It's brimming with soul, too much of it.",
+      "InvDesc": "A glowing machination of soul. It whispers the forgotten words of hundreds of experiments.",
+      "UsedInvDesc": "So much was sacrificed in vain.",
       "Sprite": "Sanctum",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -1838,6 +1890,8 @@
       "ItemName": "MoreDoors-Shade_Key",
       "UIItemName": "Shade Key",
       "ShopDesc": "It smells of darkness, please take it away.",
+      "InvDesc": "It rejects all light, save for two pairs of eyes staring back at you. Were you one of them?",
+      "UsedInvDesc": "They beckon you to the void from whence you came.",
       "Sprite": "Shade",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -1909,6 +1963,8 @@
       "ItemName": "MoreDoors-Traitor's_Key",
       "UIItemName": "Traitor's Key",
       "ShopDesc": "I found this on some lady drilling in the wastes, doesn't seem too important.",
+      "InvDesc": "An overgrown key with two sharp pincers for a stem. Someone doesn't want you there.",
+      "UsedInvDesc": "She believes you can do it. Can you?",
       "Sprite": "Traitor",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
@@ -1991,6 +2047,8 @@
       "ItemName": "MoreDoors-Village_Key",
       "UIItemName": "Village Key",
       "ShopDesc": "I think this is technically an heirloom? I should probably charge more for it.",
+      "InvDesc": "A thorny key emblazoned with the sigil of the beast. You were not supposed to find this.",
+      "UsedInvDesc": "It was inevitable. She forgives you.",
       "Sprite": "Village",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",

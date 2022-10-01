@@ -70,6 +70,8 @@ namespace MoreDoors.Data
             public string ItemName;
             public string UIItemName;
             public string ShopDesc;
+            public string InvDesc;
+            public string UsedInvDesc;
             public string Sprite;
             public AbstractLocation Location;
             public string Logic;

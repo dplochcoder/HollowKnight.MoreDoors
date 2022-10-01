@@ -263,8 +263,10 @@ namespace MoreDoors
             {
                 string door = inventoryKeys[index];
                 var data = DoorData.Get(door);
+                var dState = ItemChangerMod.Modules.Get<MoreDoorsModule>().DoorStates[door];
+
                 keyTitle.GetComponent<TextMeshPro>().text = data.Key.UIItemName;
-                keyDesc.GetComponent<TextMeshPro>().text = "TODO: Inventory Descriptions";
+                keyDesc.GetComponent<TextMeshPro>().text = dState.DoorOpened ? data.Key.UsedInvDesc : data.Key.InvDesc;
             }
         }
 
