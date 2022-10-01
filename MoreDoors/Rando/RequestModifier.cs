@@ -1,5 +1,4 @@
-﻿using ItemChanger.Internal.Menu;
-using MoreDoors.Data;
+﻿using MoreDoors.Data;
 using RandomizerCore.Randomization;
 using RandomizerMod.RandomizerData;
 using RandomizerMod.RC;

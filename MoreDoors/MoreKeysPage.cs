@@ -7,13 +7,8 @@ using MoreDoors.Data;
 using MoreDoors.IC;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using EmbeddedSprite = MoreDoors.IC.EmbeddedSprite;
 
 namespace MoreDoors

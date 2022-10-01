@@ -2,7 +2,6 @@
 using ItemChanger.Locations;
 using MoreDoors.IC;
 using Newtonsoft.Json;
-using RandomizerCore.Logic;
 using System;
 using System.Collections.Generic;
 using System.Text;

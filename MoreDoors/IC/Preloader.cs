@@ -1,6 +1,4 @@
 ﻿using PurenailCore.ModUtil;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace MoreDoors.IC
