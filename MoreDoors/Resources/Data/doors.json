@@ -605,7 +605,7 @@
       "ItemName": "MoreDoors-Flooded_Stag_Key",
       "UIItemName": "Flooded Stag Key",
       "ShopDesc": "I don't think this protects anything, just a bunch of water?",
-      "Sprite": "Water",
+      "Sprite": "FloodedStag",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1263,7 +1263,7 @@
       "ItemName": "MoreDoors-Lake_Key",
       "UIItemName": "Lake Key",
       "ShopDesc": "Many souls died to use this key, I assume that makes it worth this price.",
-      "Sprite": "Water",
+      "Sprite": "Lake",
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
