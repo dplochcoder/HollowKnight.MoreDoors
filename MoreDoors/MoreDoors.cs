@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.InteropServices;
 using PurenailCore.ModUtil;
+using SFCore;
 
 namespace MoreDoors
 {
@@ -32,6 +33,8 @@ namespace MoreDoors
             {
                 RandoInterop.Setup();
             }
+
+            InventoryHelper.AddInventoryPage(InventoryPageType.Empty, "More Keys", "MoreKeys", "MoreKeys", MoreDoorsModule.MoreDoorsEnabledName, MoreKeysPage.Instance.GeneratePage);
         }
 
         public override List<(string, string)> GetPreloadNames() => new(IC.Preloader.Instance.GetPreloadNames());

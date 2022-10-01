@@ -93,11 +93,13 @@ namespace MoreDoors.IC
             {
                 var state = DoorStates[doorName];
                 state.KeyObtained = newValue;
+                MoreKeysPage.Instance.Update();
             }
             else if (DoorNamesByDoor.TryGetValue(name, out doorName))
             {
                 var state = DoorStates[doorName];
                 DoorStates[doorName].DoorOpened = newValue;
+                MoreKeysPage.Instance.Update();
             }
             return newValue;
         }

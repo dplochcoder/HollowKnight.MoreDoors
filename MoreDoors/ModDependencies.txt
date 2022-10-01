@@ -5,3 +5,4 @@ RandomizerCore
 CondensedSpoilerLogger
 ConnectionSettingsCode
 PurenailCore
+SFCore
