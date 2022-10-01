@@ -16,6 +16,7 @@ namespace MoreDoors.IC
         // Fake bool with no value, used only in setters.
         public const string EmptyBoolName = "moreDoorsNothing";
         public const string MoreDoorsEnabledName = "moreDoorsEnabled";
+        public const string MenuConvKey = "MORE_DOORS_MENU";
 
         public class DoorState
         {
@@ -56,7 +57,7 @@ namespace MoreDoors.IC
                 PromptStrings[data.NoKeyPromptId] = data.Door.NoKeyDesc;
                 PromptStrings[data.KeyPromptId] = data.Door.KeyDesc;
             }
-            PromptStrings["MORE_KEYS_MENU"] = "More Keys";
+            PromptStrings[MenuConvKey] = "More Keys";
 
             PriorityEvents.BeforeSceneManagerStart.Subscribe(BeforeSceneManagerStartPriority, OnSceneManagerStart);
             Events.OnTransitionOverride += OnTransitionOverride;

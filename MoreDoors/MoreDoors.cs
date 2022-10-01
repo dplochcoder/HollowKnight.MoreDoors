@@ -24,7 +24,7 @@ namespace MoreDoors
         public MoreDoors() : base("MoreDoors")
         {
             Instance = this;
-            InventoryHelper.AddInventoryPage(InventoryPageType.Empty, "More Keys", "MORE_KEYS_MENU", "MoreKeys",
+            InventoryHelper.AddInventoryPage(InventoryPageType.Empty, "More Keys", MoreDoorsModule.MenuConvKey, "MoreKeys",
                 MoreDoorsModule.MoreDoorsEnabledName, MoreKeysPage.Instance.GeneratePage);
         }
 
