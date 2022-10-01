@@ -25,15 +25,31 @@ namespace MoreDoors
         private class KeySlot
         {
             public GameObject obj;
+            public GameObject img;
             public SpriteRenderer spriteRenderer;
         }
         private readonly List<KeySlot> keySlots = new();
         private readonly List<string> inventoryKeys = new();
 
-        private static readonly Color DEFAULT_COLOR = new(1, 1, 1);
-        private static readonly Color USED_COLOR = new(0.4f, 0.4f, 0.4f);
+        private static readonly Color KEY_OBTAINED_COLOR = new(1, 1, 1);
+        private static readonly Color KEY_USED_COLOR = new(0.25f, 0.25f, 0.25f);
+
+        private static readonly Vector3 KEY_OBTAINED_SCALE = new(1.65f, 1.65f, 1.65f);
+        private static readonly Vector3 KEY_USED_SCALE = new(1.2f, 1.2f, 1.2f);
 
         public void Update()
+        {
+            try
+            {
+                UpdateImpl();
+            }
+            catch (Exception e)
+            {
+                MoreDoors.Log($"Error updating More Keys menu: {e}");
+            }
+        }
+
+        private void UpdateImpl()
         {
             var mod = ItemChangerMod.Modules.Get<MoreDoorsModule>();
 
@@ -53,7 +69,8 @@ namespace MoreDoors
                 {
                     var kSprite = new EmbeddedSprite($"Keys.{DoorData.Get(door).Key.Sprite}");
                     keySlots[i].spriteRenderer.sprite = kSprite.Value;
-                    keySlots[i].spriteRenderer.color = mod.DoorStates[door].DoorOpened ? USED_COLOR : DEFAULT_COLOR;
+                    keySlots[i].spriteRenderer.color = mod.DoorStates[door].DoorOpened ? KEY_USED_COLOR : KEY_OBTAINED_COLOR;
+                    keySlots[i].img.transform.localScale = mod.DoorStates[door].DoorOpened ? KEY_USED_SCALE : KEY_OBTAINED_SCALE;
                 }
                 else
                 {
@@ -66,37 +83,68 @@ namespace MoreDoors
         private GameObject keyTitle;
         private GameObject keyDesc;
 
+        private const int leftArrowIndex = -2;
+        private const int rightArrowIndex = -3;
         private int selectedIndex = -1;
 
-        private const float X_LEFT = -10;
-        private const float X_SPACE = 2;
-        private const float Y_TOP = 4;
-        private const float Y_SPACE = 2;
+        private const float X_LEFT = -11;
+        private const float X_SPACE = 2.44f;
+        private const float Y_TOP = 0;
+        private const float Y_SPACE = 2.44f;
 
-        private static float X(int i) => X_LEFT + X_SPACE * (i % 8);
-        private static float Y(int i) => Y_TOP - Y_SPACE * (i / 8);
+        private const int ROW_SIZE = 10;
+
+        private static float X(int i) => X_LEFT + X_SPACE * (i % ROW_SIZE);
+        private static float Y(int i) => Y_TOP - Y_SPACE * (i / ROW_SIZE);
 
         public void GeneratePage(GameObject moreKeysPage)
         {
-            keyTitle = GameObject.Instantiate(GameObject.Find("_GameCameras").transform.Find("HudCamera/Inventory/Charms/Text Name").gameObject);
+            try
+            {
+                GeneratePageImpl(moreKeysPage);
+            }
+            catch (Exception e)
+            {
+                MoreDoors.Log($"Error setting up More Keys menu: {e}");
+            }
+        }
+
+        private void GeneratePageImpl(GameObject moreKeysPage)
+        {
+            keySlots.Clear();
+            inventoryKeys.Clear();
+            selectedIndex = -1;
+
+            keyTitle = UnityEngine.Object.Instantiate(GameObject.Find("_GameCameras").transform.Find("HudCamera/Inventory/Charms/Text Name").gameObject);
+            keyTitle.name = "More Keys Title";
             keyTitle.transform.SetParent(moreKeysPage.transform);
-            keyTitle.transform.localPosition = new(13f, -7.5f, -2f);
+            keyTitle.transform.position = new(0, -1, 0.3f);
+            keyTitle.transform.localScale = new(1.2f, 1.2f, 1.2f);
             keyTitle.GetComponent<TextMeshPro>().text = "";
 
-            keyDesc = GameObject.Instantiate(GameObject.Find("_GameCameras").transform.Find("HudCamera/Inventory/Charms/Text Desc").gameObject);
+            keyDesc = UnityEngine.Object.Instantiate(GameObject.Find("_GameCameras").transform.Find("HudCamera/Inventory/Charms/Text Desc").gameObject);
+            keyDesc.name = "More Keys Desc";
             keyDesc.transform.SetParent(moreKeysPage.transform);
-            keyDesc.transform.localPosition = new(13f, -9f, 1f);
-            keyDesc.GetComponent<TextMeshPro>().text = "";
+            keyDesc.transform.position = new(0, -1.5f, 3.3f);
+            var mesh = keyDesc.GetComponent<TextMeshPro>();
+            mesh.text = "";
+            mesh.alignment = TextAlignmentOptions.Top;
+            keyDesc.GetComponent<TextContainer>().rect = new(0, 0, 22, 10);
 
             for (int i = 0; i < DoorData.Count; i++)
             {
                 GameObject obj = new($"MoreDoors Menu Parent {i}");
                 obj.transform.SetParent(moreKeysPage.transform);
-                obj.transform.localPosition = new(X(i), Y(i), 0);
-                obj.AddComponent<BoxCollider2D>().offset = new(0, 0);
+                obj.layer = moreKeysPage.layer;
+                obj.transform.position = new(X(i), Y(i), -3f);
+                var bc2d = obj.AddComponent<BoxCollider2D>();
+                bc2d.offset = new(0, 0);
+                bc2d.size = new(1.5f, 1.5f);
 
                 GameObject img = new($"MoreDoors Key Image {i}");
                 img.transform.SetParent(obj.transform);
+                img.transform.localPosition = new(0, 0, 0);
+                img.transform.localScale = new(1.65f, 1.65f, 1.65f);
                 img.layer = moreKeysPage.layer;
                 var sr = img.AddComponent<SpriteRenderer>();
                 sr.sprite = emptySprite.Value;
@@ -105,6 +153,7 @@ namespace MoreDoors
 
                 keySlots.Add(new() {
                     obj = obj,
+                    img = img,
                     spriteRenderer = sr
                 });
             }
@@ -114,15 +163,13 @@ namespace MoreDoors
             fsm.GetState("L Arrow").RemoveTransitionsTo("R Arrow");
             fsm.GetState("R Arrow").RemoveTransitionsTo("L Arrow");
 
-            FsmState state = fsm.GetState("Init Heart Piece");
-            state.Name = "Init More Keys";
-            state.RemoveTransitionsTo("L Arrow");
-            state.AddLastAction(new Lambda(() =>
+            FsmState initState = fsm.GetState("Init Heart Piece");
+            initState.Name = "Init More Keys";
+            initState.RemoveTransitionsTo("L Arrow");
+            initState.AddLastAction(new Lambda(() =>
             {
-                foreach (Transform child in moreKeysPage.transform)
-                {
-                    child.gameObject.SetActive(true);
-                }
+                keySlots.ForEach(ks => ks.obj.SetActive(true));
+                fsm.SendEvent("FINISHED");
             }));
 
             fsm.AddState(new FsmState(fsm.Fsm)
@@ -147,6 +194,8 @@ namespace MoreDoors
             });
 
             // Add states for each slot on the board.
+            var rArrow = fsm.GetState("R Arrow");
+            var uCursor = fsm.gameObject.LocateMyFSM("Update Cursor");
             for (int i = 0; i < DoorData.Count; i++)
             {
                 int index = i;
@@ -155,64 +204,79 @@ namespace MoreDoors
                     Name = $"Key {index}",
                     Actions = new FsmStateAction[]
                     {
-                        new Lambda(() => fsm.gameObject.LocateMyFSM("Update Cursor").FsmVariables.FindFsmGameObject("Item").Value = keySlots[index].obj),
+                        new Lambda(() => uCursor.FsmVariables.FindFsmGameObject("Item").Value = keySlots[index].obj),
                         new SetSpriteRendererOrder()
                         {
                             gameObject = new() { GameObject = fsm.FsmVariables.FindFsmGameObject("Cursor Glow")},
                             order = 0,
                             delay = 0
                         },
-                        new Lambda(() => fsm.gameObject.LocateMyFSM("Update Cursor").SendEvent("UPDATE CURSOR")),
-                        new Lambda(() => SetSelectedKeyIndex(i)),
+                        new Lambda(() => uCursor.SendEvent("UPDATE CURSOR")),
+                        new Lambda(() => SetSelectedKeyIndex(index)),
                     }
                 });
+                rArrow.AddTransition($"KEY_{index}", $"Key {index}");
             }
+            initState.AddTransition("FINISHED", "Key 0");
 
             // Allow generic transitions.
             foreach (string dir in new string[] { "Up", "Down", "Left", "Right" })
             {
-                var fState = fsm.GetState($"{dir} Press");
+                var dirState = fsm.GetState($"{dir} Press");
 
                 for (int i = 0; i < DoorData.Count; i++)
                 {
-                    fState.AddTransition($"KEY_{i}", $"Key {i}");
-                    var dState = fsm.GetState($"Key {i}");
-                    dState.AddTransition($"UI {dir.ToUpper()}", $"{dir} Press");
+                    dirState.AddTransition($"KEY_{i}", $"Key {i}");
+                    var keyState = fsm.GetState($"Key {i}");
+                    keyState.AddTransition($"UI {dir.ToUpper()}", $"{dir} Press");
                 }
-                fState.AddTransition("OUT LEFT", "L Arrow");
-                fState.AddTransition("OUT RIGHT", "R Arrow");
+                dirState.AddTransition("OUT LEFT", "L Arrow");
+                dirState.AddTransition("OUT RIGHT", "R Arrow");
             }
 
-            state.AddTransition("FINISHED", "Key 0");
+            var lArrow = fsm.GetState("L Arrow");
+            lArrow.AddLastAction(new Lambda(() => SetSelectedKeyIndex(leftArrowIndex)));
+            lArrow.AddTransition("UI RIGHT", "Key 0");
+            rArrow.AddLastAction(new Lambda(() => SetSelectedKeyIndex(rightArrowIndex)));
+            rArrow.AddTransition("UI LEFT", "Left Press");
 
             moreKeysPage.SetActive(false);
+            Update();
         }
 
         private void SetSelectedKeyIndex(int index)
         {
             selectedIndex = index;
-            if (inventoryKeys.Count == 0)
+            if (index == rightArrowIndex || index == leftArrowIndex)
             {
-                keyTitle.GetComponent<TextMeshPro>().text = "Nothing Key?";
+                keyTitle.GetComponent<TextMeshPro>().text = "";
+                keyDesc.GetComponent<TextMeshPro>().text = "";
+                return;
+            }
+            else if (inventoryKeys.Count == 0)
+            {
+                keyTitle.GetComponent<TextMeshPro>().text = "???";
                 keyDesc.GetComponent<TextMeshPro>().text = "Hallownest remains a sealed vault, for now.";
                 return;
             }
-
-            string door = inventoryKeys[index];
-            var data = DoorData.Get(door);
-            keyTitle.GetComponent<TextMeshPro>().text = data.Key.UIItemName;
-            keyDesc.GetComponent<TextMeshPro>().text = "TODO: Inventory Descriptions";
+            else
+            {
+                string door = inventoryKeys[index];
+                var data = DoorData.Get(door);
+                keyTitle.GetComponent<TextMeshPro>().text = data.Key.UIItemName;
+                keyDesc.GetComponent<TextMeshPro>().text = "TODO: Inventory Descriptions";
+            }
         }
 
         private void HandleUpPress(PlayMakerFSM fsm)
         {
-            if (selectedIndex > 0 && selectedIndex < 8)
+            if (selectedIndex > 0 && selectedIndex < ROW_SIZE)
             {
                 fsm.SendEvent("KEY_0");
             }
-            else if (selectedIndex >= 8)
+            else if (selectedIndex >= ROW_SIZE)
             {
-                fsm.SendEvent($"KEY_{selectedIndex - 8}");
+                fsm.SendEvent($"KEY_{selectedIndex - ROW_SIZE}");
             }
             else
             {
@@ -222,25 +286,41 @@ namespace MoreDoors
 
         private void HandleDownPress(PlayMakerFSM fsm)
         {
-            bool onBottom = (selectedIndex - (selectedIndex % 8)) + 8 > inventoryKeys.Count;
+            bool onBottom = (selectedIndex - (selectedIndex % ROW_SIZE)) + ROW_SIZE > inventoryKeys.Count;
             if (onBottom)
             {
                 fsm.SendEvent("OUT RIGHT");
             }
-            else if (selectedIndex + 8 > inventoryKeys.Count - 1)
+            else if (selectedIndex + ROW_SIZE > inventoryKeys.Count - 1)
             {
                 fsm.SendEvent($"KEY_{inventoryKeys.Count - 1}");
             }
             else
             {
-                fsm.SendEvent($"KEY_{selectedIndex + 8}");
+                fsm.SendEvent($"KEY_{selectedIndex + ROW_SIZE}");
             }
         }
 
         private void HandleLeftPress(PlayMakerFSM fsm)
         {
-            bool onLeft = selectedIndex % 8 == 0;
-            if (onLeft)
+            if (selectedIndex == rightArrowIndex)
+            {
+                if (inventoryKeys.Count > ROW_SIZE - 1)
+                {
+                    fsm.SendEvent($"KEY_{ROW_SIZE - 1}");
+                }
+                else if (inventoryKeys.Count > 0)
+                {
+                    fsm.SendEvent($"KEY_{inventoryKeys.Count - 1}");
+                }
+                else
+                {
+                    fsm.SendEvent("KEY_0");
+                }
+                return;
+            }
+
+            if (selectedIndex % ROW_SIZE == 0)
             {
                 fsm.SendEvent("OUT LEFT");
             }
@@ -252,8 +332,7 @@ namespace MoreDoors
 
         private void HandleRightPress(PlayMakerFSM fsm)
         {
-            bool onRight = selectedIndex % 8 == 7;
-            if (onRight)
+            if (selectedIndex % ROW_SIZE == ROW_SIZE - 1)
             {
                 fsm.SendEvent("OUT RIGHT");
             }

@@ -56,6 +56,7 @@ namespace MoreDoors.IC
                 PromptStrings[data.NoKeyPromptId] = data.Door.NoKeyDesc;
                 PromptStrings[data.KeyPromptId] = data.Door.KeyDesc;
             }
+            PromptStrings["MORE_KEYS_MENU"] = "More Keys";
 
             PriorityEvents.BeforeSceneManagerStart.Subscribe(BeforeSceneManagerStartPriority, OnSceneManagerStart);
             Events.OnTransitionOverride += OnTransitionOverride;
