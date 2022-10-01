@@ -1,12 +1,12 @@
 ﻿using ItemChanger.Internal.Menu;
 using Modding;
 using MoreDoors.Data;
+using MoreDoors.Debug;
 using MoreDoors.IC;
 using MoreDoors.Rando;
 using static RandomizerMod.Localization;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Runtime.InteropServices;
 using PurenailCore.ModUtil;
 using SFCore;
 
@@ -37,6 +37,10 @@ namespace MoreDoors
             if (ModHooks.GetMod("Randomizer 4") is Mod)
             {
                 RandoInterop.Setup();
+            }
+            if (ModHooks.GetMod("DebugMod") is Mod)
+            {
+                DebugInterop.Setup();
             }
         }
 

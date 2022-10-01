@@ -6,3 +6,4 @@ CondensedSpoilerLogger
 ConnectionSettingsCode
 PurenailCore
 SFCore
+DebugMod
