@@ -21,6 +21,7 @@ namespace MoreDoors
         {
             public GameObject obj;
             public GameObject img;
+            public GameObject check;
             public SpriteRenderer spriteRenderer;
         }
         private readonly List<KeySlot> keySlots = new();
@@ -47,7 +48,6 @@ namespace MoreDoors
         private void UpdateImpl()
         {
             var mod = ItemChangerMod.Modules.Get<MoreDoorsModule>();
-
             inventoryKeys.Clear();
 
             foreach (var e in mod.DoorStates)
@@ -59,21 +59,26 @@ namespace MoreDoors
 
             for (int i = 0; i < DoorData.Count; i++)
             {
+                var ks = keySlots[i];
                 string? door = i < inventoryKeys.Count ? inventoryKeys[i] : null;
                 if (door != null)
                 {
+                    var ds = mod.DoorStates[door];
                     var kSprite = new EmbeddedSprite($"Keys.{DoorData.Get(door).Key.Sprite}");
-                    keySlots[i].spriteRenderer.sprite = kSprite.Value;
-                    keySlots[i].spriteRenderer.color = mod.DoorStates[door].DoorOpened ? KEY_USED_COLOR : KEY_OBTAINED_COLOR;
-                    keySlots[i].img.transform.localScale = mod.DoorStates[door].DoorOpened ? KEY_USED_SCALE : KEY_OBTAINED_SCALE;
+                    ks.spriteRenderer.sprite = kSprite.Value;
+                    ks.spriteRenderer.color = ds.DoorOpened ? KEY_USED_COLOR : KEY_OBTAINED_COLOR;
+                    ks.img.transform.localScale = ds.DoorOpened ? KEY_USED_SCALE : KEY_OBTAINED_SCALE;
+                    ks.check.SetActive(ds.KeyObtained && ds.DoorOpened);
                 }
                 else
                 {
-                    keySlots[i].spriteRenderer.sprite = emptySprite.Value;
+                    ks.spriteRenderer.sprite = emptySprite.Value;
+                    ks.check.SetActive(false);
                 }
             }
         }
 
+        private ISprite checkSprite = new EmbeddedSprite("Menu.Checkmark");
         private ISprite emptySprite = new EmbeddedSprite("Menu.UnplacedKey");
         private GameObject keyTitle;
         private GameObject keyDesc;
@@ -146,9 +151,21 @@ namespace MoreDoors
                 sr.sortingLayerID = 629535577;
                 sr.sortingLayerName = "HUD";
 
+                GameObject check = new($"MoreDoors Key Used Image {i}");
+                check.transform.SetParent(img.transform);
+                check.layer = moreKeysPage.layer;
+                check.transform.localPosition = new(0.5f, 0.5f, 0);
+                check.transform.localScale = new(0.5f, 0.5f, 0.5f);
+                var sr2 = check.AddComponent<SpriteRenderer>();
+                sr2.sprite = checkSprite.Value;
+                sr2.sortingLayerID = 629535577;
+                sr2.sortingLayerName = "HUD";
+                check.SetActive(false);
+
                 keySlots.Add(new() {
                     obj = obj,
                     img = img,
+                    check = check,
                     spriteRenderer = sr
                 });
             }
@@ -236,7 +253,7 @@ namespace MoreDoors
             rArrow.AddTransition("UI LEFT", "Left Press");
 
             moreKeysPage.SetActive(false);
-            Update();
+            UpdateImpl();
         }
 
         private void SetSelectedKeyIndex(int index)
