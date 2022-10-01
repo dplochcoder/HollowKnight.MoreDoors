@@ -21,7 +21,12 @@ namespace MoreDoors
 
         public static new void Log(string msg) { ((Loggable)Instance).Log(msg); }
 
-        public MoreDoors() : base("MoreDoors") => Instance = this;
+        public MoreDoors() : base("MoreDoors")
+        {
+            Instance = this;
+            InventoryHelper.AddInventoryPage(InventoryPageType.Empty, "More Keys", "MoreKeys", "MoreKeys",
+                MoreDoorsModule.MoreDoorsEnabledName, MoreKeysPage.Instance.GeneratePage);
+        }
 
         public override void Initialize(Dictionary<string, Dictionary<string, GameObject>> preloadedObjects)
         {
@@ -33,8 +38,6 @@ namespace MoreDoors
             {
                 RandoInterop.Setup();
             }
-
-            InventoryHelper.AddInventoryPage(InventoryPageType.Empty, "More Keys", "MoreKeys", "MoreKeys", MoreDoorsModule.MoreDoorsEnabledName, MoreKeysPage.Instance.GeneratePage);
         }
 
         public override List<(string, string)> GetPreloadNames() => new(IC.Preloader.Instance.GetPreloadNames());
