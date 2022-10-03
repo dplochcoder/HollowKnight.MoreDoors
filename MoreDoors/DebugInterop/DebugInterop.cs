@@ -1,23 +1,11 @@
 ﻿using DebugMod;
 using MoreDoors.IC;
-using System.IO;
-using UnityEngine;
 
 namespace MoreDoors.Debug
 {
     public static class DebugInterop
     {
-        public static void Setup()
-        {
-            using Stream s = typeof(MoreDoors).Assembly.GetManifestResourceStream("MoreDoors.Resources.Sprites.Keys.Mantis.png");
-            using MemoryStream ms = new();
-            s.CopyTo(ms);
-
-            Texture2D t2d = new(1, 1);
-            t2d.LoadImage(ms.ToArray());
-
-            DebugMod.DebugMod.AddToKeyBindList(typeof(DebugInterop));
-        }
+        public static void Setup() => DebugMod.DebugMod.AddToKeyBindList(typeof(DebugInterop));
 
         private static bool MoreDoorsEnabled(out MoreDoorsModule mod)
         {
