@@ -11,6 +11,8 @@ using System.Reflection;
 using UnityEngine.UI;
 using UnityEngine;
 using MoreDoors.Data;
+using static System.TimeZoneInfo;
+using HutongGames.PlayMaker;
 
 namespace MoreDoors.Rando
 {
@@ -51,6 +53,31 @@ namespace MoreDoors.Rando
             return item;
         }
 
+        private void LockIf<T>(MenuItem<T> item, T value, params ILockable[] lockables)
+        {
+            item.ValueChanged += UpdateLocks;
+            UpdateLocks(item.Value);
+
+            void UpdateLocks(T t)
+            {
+                if (EqualityComparer<T>.Default.Equals(t, value))
+                {
+                    foreach (var lockable in lockables)
+                    {
+                        lockable.Lock();
+                    }
+                }
+                else
+                {
+                    foreach (var lockable in lockables)
+                    {
+                        lockable.Unlock();
+                    }
+                }
+            }
+
+        }
+
         private SmallButton entryButton;
 
         private ConnectionMenu(MenuPage connectionsPage)
@@ -71,14 +98,17 @@ namespace MoreDoors.Rando
             DoorsMaskElement dme = new(customizeButton);
             dme.SetCustomButtonColor();
 
+            var transitions = (MenuItem<bool>)factory.ElementLookup[nameof(settings.RandomizeDoorTransitions)];
+            LockIf(doorsLevel, DoorsLevel.NoDoors, transitions, customizeButton);
+
             MenuPage customPage = new("MoreDoors Customize Doors", moreDoorsPage);
             FillCustomDoorsPage(customPage, dme);
             customizeButton.AddHideAndShowEvent(customPage);
 
             new VerticalItemPanel(moreDoorsPage, SpaceParameters.TOP_CENTER_UNDER_TITLE, SpaceParameters.VSPACE_MEDIUM, true,
-                doorsLevel, customizeButton, addKeyLocations);
-            new SettingsCode(moreDoorsPage, MoreDoors.Instance, doorsLevel, dme, addKeyLocations);
-            new SettingsCode(customPage, MoreDoors.Instance, doorsLevel, dme, addKeyLocations);
+                doorsLevel, transitions, customizeButton, addKeyLocations);
+            new SettingsCode(moreDoorsPage, MoreDoors.Instance, doorsLevel, transitions, dme, addKeyLocations);
+            new SettingsCode(customPage, MoreDoors.Instance, doorsLevel, transitions, dme, addKeyLocations);
         }
 
         private void FillCustomDoorsPage(MenuPage page, IValueElement<int> mask)
@@ -144,22 +174,20 @@ namespace MoreDoors.Rando
             SetCustomButtonColor();
         }
 
-        private const string NULL = "null";
-
         public void SetValue(object o)
         {
             if (o is int i) SetValue(i);
-            else throw new ArgumentException($"Expected int, but got: {o?.GetType().ToString() ?? NULL}");
+            else throw new ArgumentException($@"Expected int, but got: {{o?.GetType().ToString() ?? ""NULL""}}");
         }
 
-        public void Show() { }
-        public void Translate(Vector2 delta) { }
+        public void Show() => throw new NotImplementedException();
+        public void Translate(Vector2 delta) => throw new NotImplementedException();
         public void Bind(object o, MemberInfo mi) => throw new NotImplementedException();
-        public void Destroy() { }
+        public void Destroy() => throw new NotImplementedException();
         public ISelectable GetISelectable(Neighbor neighbor) => throw new NotImplementedException();
         public Selectable GetSelectable(Neighbor neighbor) => throw new NotImplementedException();
-        public void Hide() { }
-        public void MoveTo(Vector2 pos) { }
+        public void Hide() => throw new NotImplementedException();
+        public void MoveTo(Vector2 pos) => throw new NotImplementedException();
         public void SetNeighbor(Neighbor neighbor, ISelectable selectable) => throw new NotImplementedException();
     }
 }

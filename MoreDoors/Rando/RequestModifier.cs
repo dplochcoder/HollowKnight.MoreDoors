@@ -1,9 +1,12 @@
-﻿using MoreDoors.Data;
+﻿using ItemChanger;
+using MoreDoors.Data;
 using RandomizerCore.Randomization;
 using RandomizerMod.RandomizerData;
 using RandomizerMod.RC;
+using RandomizerMod.Settings;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MoreDoors.Rando
 {
@@ -11,7 +14,8 @@ namespace MoreDoors.Rando
     {
         public static void Setup()
         {
-            RequestBuilder.OnUpdate.Subscribe(-500f, SetupRefs);
+            RequestBuilder.OnUpdate.Subscribe(-751f, SetupRefs);
+            RequestBuilder.OnUpdate.Subscribe(-750f, ApplyTransitionRando);
             RequestBuilder.OnUpdate.Subscribe(40f, ModifyItems);
             RequestBuilder.OnUpdate.Subscribe(102f, DerangeKeys);
         }
@@ -49,6 +53,66 @@ namespace MoreDoors.Rando
                     });
                 }
             }
+        }
+
+        private const string TRANSITION_STAGE_NAME = "More Doors Transition Stage";
+
+        private static IEnumerable<string> LeftTransitions() => RandoInterop.LS.EnabledDoorNames.Select(d => DoorData.Get(d).Door.LeftLocation.TransitionName);
+
+        private static IEnumerable<string> RightTransitions() => RandoInterop.LS.EnabledDoorNames.Select(d => DoorData.Get(d).Door.RightLocation.TransitionName);
+
+        private static void ApplyTransitionRando(RequestBuilder rb)
+        {
+            var ts = rb.gs.TransitionSettings;
+            if (!MoreDoors.GS.RandoSettings.RandomizeDoorTransitions || ts.Mode != TransitionSettings.TransitionMode.None)
+            {
+                return;
+            }
+
+            // Insert stage at the start because it's a lot more restricted than the item placements
+            StageBuilder sb = rb.InsertStage(0, TRANSITION_STAGE_NAME);
+
+            GroupBuilder builder = null;
+
+            if (ts.TransitionMatching == TransitionSettings.TransitionMatchingSetting.NonmatchingDirections)
+            {
+                SelfDualTransitionGroupBuilder b = new()
+                {
+                    label = "More Doors Transition Group",
+                    stageLabel = TRANSITION_STAGE_NAME,
+                    coupled = ts.Coupled,
+                };
+                b.Transitions.AddRange(LeftTransitions());
+                b.Transitions.AddRange(RightTransitions());
+                builder = b;
+            }
+            else
+            {
+                SymmetricTransitionGroupBuilder b = new()
+                {
+                    label = "More Doors Left Transition Group",
+                    reverseLabel = "More Doors Right Transition Group",
+                    coupled = ts.Coupled,
+                    stageLabel = TRANSITION_STAGE_NAME
+                };
+                b.Group1.AddRange(LeftTransitions());
+                b.Group2.AddRange(RightTransitions());
+                builder = b;
+            }
+
+            builder.strategy = rb.gs.ProgressionDepthSettings.GetTransitionPlacementStrategy();
+            sb.Add(builder);
+
+            HashSet<string> doorTransitions = new();
+            LeftTransitions().ToList().ForEach(t => doorTransitions.Add(t));
+            RightTransitions().ToList().ForEach(t => doorTransitions.Add(t));
+
+            bool MatchedTryResolveGroup(RequestBuilder rb, string item, RequestBuilder.ElementType type, out GroupBuilder gb)
+            {
+                gb = builder;
+                return doorTransitions.Contains(item);
+            }
+            rb.OnGetGroupFor.Subscribe(-1000f, MatchedTryResolveGroup);
         }
 
         private static void ModifyItems(RequestBuilder rb)

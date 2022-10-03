@@ -28,6 +28,11 @@ Disabling the shiny hint has no effect on gameplay, vanilla or rando, so it is n
   * Some Doors: About a third of the doors are added
   * More Doors: About two-thirds of the doors are added
   * All Doors: All of the doors are added
+* Randomize Door Transitions
+  * All enabled door transitions are randomized with each other
+  * Respects 'coupled' and 'matching' settings from transition rando settings, but requires 'None' settings otherwise
+    * If you enabled map area, full area, or room-rando, this setting will do nothing
+  * Exiting through a door you don't have a key for automatically opens the door, but only on that side. You still need the key to use the other side.
 * Add Key Locations: Adds the vanilla key locations for the added doors to the locations pool
   * Matching Doors: Only adds the key locations for the doors that were actually added
   * All Doors: Add all key locations, even for doors that weren't added

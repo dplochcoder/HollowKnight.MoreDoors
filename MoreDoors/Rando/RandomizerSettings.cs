@@ -26,6 +26,7 @@ namespace MoreDoors.Rando
     public class RandomizationSettings
     {
         public DoorsLevel DoorsLevel = DoorsLevel.NoDoors;
+        public bool RandomizeDoorTransitions = false;
         public AddKeyLocations AddKeyLocations = AddKeyLocations.None;
 
         public static readonly int FullDoorsMask = FullMask(DoorData.Count);
