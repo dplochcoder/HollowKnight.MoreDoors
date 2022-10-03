@@ -61,6 +61,7 @@ namespace MoreDoors.Data
             public string KeyDesc;
             public Location LeftLocation;
             public Location RightLocation;
+            public List<IDeployer>? Deployers;
         }
         public DoorInfo Door;
 

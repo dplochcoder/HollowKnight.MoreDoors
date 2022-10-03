@@ -36,6 +36,7 @@ namespace MoreDoors.Rando
             {
                 mod.DoorStates[doorName] = new();
             }
+            mod.AddDeployers();
         }
 
         private static void LogSettings(RandomizerMod.Logging.LogArguments args, TextWriter tw)

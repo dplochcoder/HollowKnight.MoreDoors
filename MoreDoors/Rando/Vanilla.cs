@@ -40,6 +40,7 @@ namespace MoreDoors.Rando
             {
                 var mod = ItemChangerMod.Modules.Add<MoreDoorsModule>();
                 doorNames.ForEach(d => mod.DoorStates[d] = new());
+                mod.AddDeployers();
             }
             orig(self, permaDeath, bossRush);
         }

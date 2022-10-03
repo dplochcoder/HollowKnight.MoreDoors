@@ -60,6 +60,15 @@ namespace MoreDoors.IC
             Events.OnTransitionOverride += OnTransitionOverride;
         }
 
+        public void AddDeployers()
+        {
+            foreach (var doorName in DoorStates.Keys)
+            {
+                var data = DoorData.Get(doorName);
+                data.Door.Deployers?.ForEach(ItemChangerMod.AddDeployer);
+            }
+        }
+
         public override void Unload()
         {
             ModHooks.GetPlayerBoolHook -= OverrideGetBool;
