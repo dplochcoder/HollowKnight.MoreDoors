@@ -196,7 +196,7 @@
           "forceShiny": false,
           "name": "MoreDoors-Buried_Geo_Key-Primal_Aspid-Edge_Whispering_Root-Top_Left",
           "sceneName": "Deepnest_East_07",
-          "flingType": "Everywhere",
+          "flingType": "DirectDeposit",
           "tags": null
         },
         "trueLocation": {
@@ -208,7 +208,7 @@
           "forceShiny": false,
           "name": "MoreDoors-Buried_Geo_Key-Primal_Aspid-Edge_Whispering_Root-Top_Left",
           "sceneName": "Deepnest_East_07",
-          "flingType": "Everywhere",
+          "flingType": "StraightUp",
           "tags": null
         },
         "name": "MoreDoors-Buried_Geo_Key-Primal_Aspid-Edge_Whispering_Root-Top_Left",
@@ -437,7 +437,7 @@
           "forceShiny": false,
           "name": "MoreDoors-Crown_Key-Crystal_Hunter-Crystallized_Mound",
           "sceneName": "Mines_35",
-          "flingType": "Everywhere",
+          "flingType": "StraightUp",
           "tags": null
         },
         "name": "MoreDoors-Crown_Key-Crystal_Hunter-Crystallized_Mound",
@@ -1413,7 +1413,7 @@
           "forceShiny": false,
           "name": "MoreDoors-Mantis_Key-Mantis_Warrior-Above_Bretta_Bench",
           "sceneName": "Fungus2_13",
-          "flingType": "Everywhere",
+          "flingType": "StraightUp",
           "tags": [
             {
               "$type": "ItemChanger.Tags.ShinyFlingTag, ItemChanger",
@@ -1431,7 +1431,7 @@
           "forceShiny": false,
           "name": "MoreDoors-Mantis_Key-Mantis_Warrior-Above_Bretta_Bench",
           "sceneName": "Fungus2_13",
-          "flingType": "Everywhere",
+          "flingType": "StraightUp",
           "tags": null
         },
         "name": "MoreDoors-Mantis_Key-Mantis_Warrior-Above_Bretta_Bench",
@@ -1493,7 +1493,7 @@
           "forceShiny": false,
           "name": "MoreDoors-Moss_Key-Moss_Knight-Lake_of_Unn",
           "sceneName": "Fungus1_26",
-          "flingType": "Everywhere",
+          "flingType": "StraightUp",
           "tags": [
             {
               "$type": "ItemChanger.Tags.ShinyFlingTag, ItemChanger",
@@ -1511,7 +1511,7 @@
           "forceShiny": false,
           "name": "MoreDoors-Moss_Key-Moss_Knight-Lake_of_Unn",
           "sceneName": "Fungus1_26",
-          "flingType": "Everywhere",
+          "flingType": "StraightUp",
           "tags": null
         },
         "name": "MoreDoors-Moss_Key-Moss_Knight-Lake_of_Unn",
