@@ -2,6 +2,7 @@
 using ItemChanger.Extensions;
 using Modding;
 using MoreDoors.Data;
+using Newtonsoft.Json;
 using PurenailCore.ICUtil;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,7 +20,21 @@ namespace MoreDoors.IC
         {
             public bool KeyObtained = false;
             public bool DoorOpened = false;
+
+            public bool LeftDoorForceOpened = false;
+            public bool RightDoorForceOpened = false;
+
+            // TODO: Remove in the next release
+            [JsonIgnore]
             public bool DoorForceOpened = false;
+            public void Migrate()
+            {
+                if (DoorForceOpened)
+                {
+                    LeftDoorForceOpened = true;
+                    RightDoorForceOpened = true;
+                }
+            }
         }
 
         // Indexed by door name.
@@ -58,6 +73,11 @@ namespace MoreDoors.IC
 
             PriorityEvents.BeforeSceneManagerStart.Subscribe(BeforeSceneManagerStartPriority, OnSceneManagerStart);
             Events.OnTransitionOverride += OnTransitionOverride;
+
+            foreach (var ds in DoorStates.Values)
+            {
+                ds.Migrate();
+            }
         }
 
         public void AddDeployers()
@@ -123,14 +143,14 @@ namespace MoreDoors.IC
             {
                 // If the door is already opened, skip, even though it's not strictly necessary.
                 var state = DoorStates[doorName];
-                if (state.DoorOpened || state.DoorForceOpened) continue;
+                if (state.DoorOpened) continue;
 
                 var data = DoorData.Get(doorName);
-                if (sceneName == data.Door.LeftLocation.SceneName)
+                if (sceneName == data.Door.LeftLocation.SceneName && !state.LeftDoorForceOpened)
                 {
                     DoorSpawner.SpawnDoor(sm, doorName, true);
                 }
-                if (sceneName == data.Door.RightLocation.SceneName)
+                if (sceneName == data.Door.RightLocation.SceneName && !state.RightDoorForceOpened)
                 {
                     DoorSpawner.SpawnDoor(sm, doorName, false);
                 }
@@ -143,7 +163,16 @@ namespace MoreDoors.IC
             var tname = $"{newDst.SceneName}[{newDst.GateName}]";
             if (DoorNamesByTransition.TryGetValue(tname, out string doorName) && !DoorStates[doorName].DoorOpened)
             {
-                DoorStates[doorName].DoorForceOpened = true;
+                var data = DoorData.Get(doorName);
+                if (data.Door.LeftLocation.TransitionName == tname)
+                {
+                    DoorStates[doorName].LeftDoorForceOpened = true;
+                }
+                else
+                {
+                    DoorStates[doorName].RightDoorForceOpened = true;
+                }
+
                 foreach (var obj in Object.FindObjectsOfType<DoorNameMarker>())
                 {
                     if (obj.DoorName == doorName)
