@@ -1756,7 +1756,14 @@
         "X": 298.9,
         "Y": 14.6
       },
-      "Deployers": null
+      "Deployers": [
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "White_Palace_06",
+          "ObjectName": "Breakable Wall Ruin Lift",
+          "MatchType": "FirstName"
+        }
+      ]
     },
     "Key": {
       "ItemName": "MoreDoors-Pain_Key",
