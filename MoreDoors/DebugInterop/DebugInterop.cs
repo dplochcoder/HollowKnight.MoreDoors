@@ -1,5 +1,6 @@
 ﻿using DebugMod;
 using MoreDoors.IC;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using UnityEngine;
@@ -17,39 +18,60 @@ namespace MoreDoors.Debug
             Texture2D t2d = new(1, 1);
             t2d.LoadImage(ms.ToArray());
 
-            // TODO: Enable this when DebugMod is fixed to avoid overlapping menus.
-            // DebugMod.DebugMod.AddTopMenuContent("MoreDoors", new() { new ImageButton(t2d, _ => ToggleMoreKeys()) });
+            DebugMod.DebugMod.AddToKeyBindList(typeof(DebugInterop));
         }
 
-        private static void ToggleMoreKeys()
+        private static bool MoreDoorsEnabled(out MoreDoorsModule mod)
         {
-            var mod = ItemChanger.ItemChangerMod.Modules.Get<MoreDoorsModule>();
+            mod = ItemChanger.ItemChangerMod.Modules.Get<MoreDoorsModule>();
             if (mod == null)
             {
-                Console.AddLine("MoreDoors mod is not active in this save; doing nothing");
-                return;
+                Console.AddLine("MoreDoors not enabled in this save; doing nothing");
+                return false;
             }
 
-            bool allKeys = mod.DoorStates.Values.All(ds => ds.KeyObtained);
-            if (allKeys)
+            return true;
+        }
+
+        [BindableMethod(name = "Give More Keys", category = "MoreDoors")]
+        public static void GiveMoreKeys()
+        {
+            if (!MoreDoorsEnabled(out var mod)) return;
+
+            Console.AddLine("Giving all MoreDoors Keys");
+            foreach (var ds in mod.DoorStates.Values)
             {
-                Console.AddLine("Removing all MoreDoors Keys and closing all doors");
-                foreach (var ds in mod.DoorStates.Values)
-                {
-                    ds.KeyObtained = false;
-                    ds.DoorOpened = false;
-                    ds.DoorForceOpened = false;
-                }
-            }
-            else
-            {
-                Console.AddLine("Giving all MoreDoors Keys");
-                foreach (var ds in mod.DoorStates.Values)
-                {
-                    ds.KeyObtained = true;
-                }
+                ds.KeyObtained = true;
             }
             MoreKeysPage.Instance.Update();
+        }
+
+        [BindableMethod(name = "Take More Keys", category = "MoreDoors")]
+        public static void TakeMoreKeys()
+        {
+            if (!MoreDoorsEnabled(out var mod)) return;
+
+            Console.AddLine("Removing all MoreDoors Keys and closing all doors");
+            foreach (var ds in mod.DoorStates.Values)
+            {
+                ds.KeyObtained = false;
+                ds.DoorOpened = false;
+                ds.DoorForceOpened = false;
+            }
+            MoreKeysPage.Instance.Update();
+        }
+
+        [BindableMethod(name = "Close Doors", category = "MoreDoors")]
+        public static void CloseDoors()
+        {
+            if (!MoreDoorsEnabled(out var mod)) return;
+
+            Console.AddLine("Closing all MoreDoors doors");
+            foreach (var ds in mod.DoorStates.Values)
+            {
+                ds.DoorOpened = false;
+                ds.DoorForceOpened = false;
+            }
         }
     }
 }
