@@ -74,7 +74,7 @@ namespace MoreDoors.Rando
             {
                 var data = DoorData.Get(door);
                 VanillaDef left = new(data.Door.LeftLocation.TransitionName, data.Door.RightLocation.TransitionName);
-                VanillaDef right = new(data.Door.LeftLocation.TransitionName, data.Door.RightLocation.TransitionName);
+                VanillaDef right = new(data.Door.RightLocation.TransitionName, data.Door.LeftLocation.TransitionName);
                 rb.RemoveFromVanilla(left);
                 rb.RemoveFromVanilla(right);
             }
