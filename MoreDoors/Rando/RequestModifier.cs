@@ -1,5 +1,6 @@
 ﻿using ItemChanger;
 using MoreDoors.Data;
+using MoreDoors.IC;
 using RandomizerCore.Randomization;
 using RandomizerMod.RandomizerData;
 using RandomizerMod.RC;
@@ -67,6 +68,15 @@ namespace MoreDoors.Rando
             if (!MoreDoors.GS.RandoSettings.RandomizeDoorTransitions || ts.Mode != TransitionSettings.TransitionMode.None)
             {
                 return;
+            }
+
+            foreach (var door in RandoInterop.LS.EnabledDoorNames)
+            {
+                var data = DoorData.Get(door);
+                VanillaDef left = new(data.Door.LeftLocation.TransitionName, data.Door.RightLocation.TransitionName);
+                VanillaDef right = new(data.Door.LeftLocation.TransitionName, data.Door.RightLocation.TransitionName);
+                rb.RemoveFromVanilla(left);
+                rb.RemoveFromVanilla(right);
             }
 
             // Insert stage at the start because it's a lot more restricted than the item placements
