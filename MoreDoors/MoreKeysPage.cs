@@ -47,8 +47,9 @@ namespace MoreDoors
 
         private void UpdateImpl()
         {
-            var mod = ItemChangerMod.Modules.Get<MoreDoorsModule>();
+            var mod = ItemChangerMod.Modules?.Get<MoreDoorsModule>();
             inventoryKeys.Clear();
+            if (mod == null) return;
 
             foreach (var e in mod.DoorStates)
             {
@@ -263,13 +264,11 @@ namespace MoreDoors
             {
                 keyTitle.GetComponent<TextMeshPro>().text = "";
                 keyDesc.GetComponent<TextMeshPro>().text = "";
-                return;
             }
             else if (inventoryKeys.Count == 0)
             {
                 keyTitle.GetComponent<TextMeshPro>().text = "???";
                 keyDesc.GetComponent<TextMeshPro>().text = "Hallownest remains a sealed vault, for now.";
-                return;
             }
             else
             {
