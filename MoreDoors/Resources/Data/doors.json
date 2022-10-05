@@ -1497,7 +1497,7 @@
           "tags": [
             {
               "$type": "ItemChanger.Tags.ShinyFlingTag, ItemChanger",
-              "fling": "Down",
+              "fling": "Right",
               "Loaded": false
             }
           ]
