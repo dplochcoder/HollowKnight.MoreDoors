@@ -45,11 +45,24 @@ namespace MoreDoors
             }
         }
 
+        private bool GetMod(out MoreDoorsModule mod)
+        {
+            try
+            {
+                mod = ItemChangerMod.Modules.Get<MoreDoorsModule>();
+                return mod != null;
+            }
+            catch (Exception)
+            {
+                mod = default;
+                return false;
+            }
+        }
+
         private void UpdateImpl()
         {
-            var mod = ItemChangerMod.Modules?.Get<MoreDoorsModule>();
+            if (!GetMod(out var mod)) return;
             inventoryKeys.Clear();
-            if (mod == null) return;
 
             foreach (var e in mod.DoorStates)
             {
