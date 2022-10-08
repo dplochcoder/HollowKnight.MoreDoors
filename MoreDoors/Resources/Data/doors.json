@@ -936,7 +936,7 @@
     "UIName": "Heart",
     "Door": {
       "Sprite": "Crystal",
-      "NoKeyDesc": "A dense, deeply crystallized door. It seems to have a hearbeat.",
+      "NoKeyDesc": "A dense, deeply crystallized door. It seems to have a heartbeat.",
       "KeyDesc": "The heart of the mountain beckons.<br>Insert the Heart Key?",
       "LeftLocation": {
         "SceneName": "Mines_31",
