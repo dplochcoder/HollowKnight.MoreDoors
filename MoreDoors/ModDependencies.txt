@@ -5,5 +5,5 @@ ItemChanger
 MenuChanger
 Randomizer 4
 RandomizerCore
-PurenailCore
+PurenailCore from https://github.com/dplochcoder/HollowKnight.PurenailCore/releases/download/v1.1.0.0/PurenailCore.zip
 SFCore
