@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\HollowKnight.PurenailCore\PurenailCore\PurenailCore.csproj" />
     <ProjectReference Include="..\MoreDoors\MoreDoors.csproj" />
   </ItemGroup>
 

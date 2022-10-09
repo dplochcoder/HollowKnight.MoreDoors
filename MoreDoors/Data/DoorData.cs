@@ -6,11 +6,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+using JsonUtil = PurenailCore.SystemUtil.JsonUtil<MoreDoors.MoreDoors>;
+
 namespace MoreDoors.Data
 {
     public record DoorData
     {
-        public static readonly SortedDictionary<string, DoorData> Data = JsonUtil.Deserialize<SortedDictionary<string, DoorData>>("MoreDoors.Resources.Data.doors.json");
+        public static readonly SortedDictionary<string, DoorData> Data = JsonUtil.DeserializeEmbedded<SortedDictionary<string, DoorData>>("MoreDoors.Resources.Data.doors.json");
         public static readonly IReadOnlyList<string> DoorNames = new List<string>(Data.Keys);
 
         public static DoorData Get(string doorName) => Data[doorName];

@@ -1,30 +1,16 @@
 ﻿using ItemChanger.Locations;
 using System;
-using System.IO;
+
+using JsonUtil = PurenailCore.SystemUtil.JsonUtil<MoreDoors.MoreDoors>;
 
 namespace MoreDoors.Data
 {
 
     public static class DataUpdater
     {
-        private static string InferGitRoot(string path)
-        {
-            var info = Directory.GetParent(path);
-            while (info != null)
-            {
-                if (Directory.Exists(Path.Combine(info.FullName, ".git")))
-                {
-                    return info.FullName;
-                }
-                info = Directory.GetParent(info.FullName);
-            }
-
-            return path;
-        }
-
         public static void Run()
         {
-            string root = InferGitRoot(Directory.GetCurrentDirectory());
+            string root = JsonUtil.InferGitRoot();
             string path = $"{root}/MoreDoors/Resources/Data/doors.json";
 
             bool anyErr = false;
@@ -38,8 +24,8 @@ namespace MoreDoors.Data
             }
             if (anyErr) throw new ArgumentException("Errors encountered");
 
-            File.Delete(path);
-            JsonUtil.Serialize(DoorData.Data, path);
+
+            JsonUtil.RewriteJsonFile(DoorData.Data, path);
         }
 
         private static bool Validate(DoorData d, out string err)
