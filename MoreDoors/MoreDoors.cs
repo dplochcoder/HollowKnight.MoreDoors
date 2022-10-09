@@ -21,6 +21,10 @@ namespace MoreDoors
 
         public static new void Log(string msg) { ((Loggable)Instance).Log(msg); }
 
+        public static new void LogWarn(string msg) { ((Loggable)Instance).LogWarn(msg); }
+
+        public static new void LogError(string msg) { ((Loggable)Instance).LogError(msg); }
+
         public MoreDoors() : base("MoreDoors")
         {
             Instance = this;

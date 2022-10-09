@@ -41,7 +41,7 @@ namespace MoreDoors
             }
             catch (Exception e)
             {
-                MoreDoors.Log($"Error updating More Keys menu: {e}");
+                MoreDoors.LogError($"Error updating More Keys menu: {e}");
             }
         }
 
@@ -119,7 +119,7 @@ namespace MoreDoors
             }
             catch (Exception e)
             {
-                MoreDoors.Log($"Error setting up More Keys menu: {e}");
+                MoreDoors.LogError($"Error setting up More Keys menu: {e}");
             }
         }
 
