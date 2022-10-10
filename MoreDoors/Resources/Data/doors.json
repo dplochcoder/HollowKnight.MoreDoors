@@ -672,7 +672,11 @@
         "tags": null
       },
       "Logic": "Ruins_House_01[left1]",
-      "WorldMapLocationOverride": null,
+      "WorldMapLocationOverride": {
+        "SceneName": "Ruins2_04",
+        "X": 130.0,
+        "Y": 30.0
+      },
       "ExtraWorldMapLocations": null
     }
   },
