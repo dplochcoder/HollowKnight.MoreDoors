@@ -39,10 +39,6 @@ namespace MoreDoors.IC
 
         public override void Initialize()
         {
-            ModHooks.GetPlayerBoolHook += OverrideGetBool;
-            ModHooks.SetPlayerBoolHook += OverrideSetBool;
-            ModHooks.LanguageGetHook += OverrideLanguageGet;
-
             foreach (var doorName in DoorStates.Keys)
             {
                 var data = DoorData.Get(doorName);
@@ -59,6 +55,9 @@ namespace MoreDoors.IC
             }
             PromptStrings[MenuConvKey] = "More Keys";
 
+            ModHooks.GetPlayerBoolHook += OverrideGetBool;
+            ModHooks.SetPlayerBoolHook += OverrideSetBool;
+            ModHooks.LanguageGetHook += OverrideLanguageGet;
             PriorityEvents.BeforeSceneManagerStart.Subscribe(BeforeSceneManagerStartPriority, OnSceneManagerStart);
             Events.OnTransitionOverride += OnTransitionOverride;
         }
