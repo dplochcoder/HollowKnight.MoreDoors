@@ -101,12 +101,22 @@ namespace MoreDoors.IC
         {
             if (DoorNamesByKey.TryGetValue(name, out string doorName))
             {
+                if (newValue)
+                {
+                    MoreDoors.LogDebug($"Key for door '{doorName}' obtained through PDSetBool");
+                }
+
                 var state = DoorStates[doorName];
                 state.KeyObtained = newValue;
                 MoreKeysPage.Instance.Update();
             }
             else if (DoorNamesByDoor.TryGetValue(name, out doorName))
             {
+                if (newValue)
+                {
+                    MoreDoors.LogDebug($"Door '{doorName}' opened through PDSetBool");
+                }
+
                 var state = DoorStates[doorName];
                 DoorStates[doorName].DoorOpened = newValue;
                 MoreKeysPage.Instance.Update();
@@ -121,20 +131,43 @@ namespace MoreDoors.IC
         private void OnSceneManagerStart(SceneManager sm)
         {
             var sceneName = sm.gameObject.scene.name;
+            MoreDoors.LogDebug($"OnSceneManagerStart({sceneName})");
             foreach (var doorName in DoorNamesByScene.GetOrDefault(sceneName, emptySet))
             {
                 // If the door is already opened, skip, even though it's not strictly necessary.
                 var state = DoorStates[doorName];
-                if (state.DoorOpened) continue;
+                if (state.DoorOpened)
+                {
+                    continue;
+                }
+                else
+                {
+                    MoreDoors.LogDebug($"Door '{doorName}' not spawned because DoorOpened");
+                }
 
                 var data = DoorData.Get(doorName);
-                if (sceneName == data.Door.LeftLocation.SceneName && !state.LeftDoorForceOpened)
+                if (sceneName == data.Door.LeftLocation.SceneName)
                 {
-                    DoorSpawner.SpawnDoor(sm, doorName, true);
+                    if (!state.LeftDoorForceOpened)
+                    {
+                        DoorSpawner.SpawnDoor(sm, doorName, true);
+                    }
+                    else
+                    {
+                        MoreDoors.LogDebug($"Left door '{doorName}' not spawned because LeftDoorForceOpened");
+                    }
                 }
-                if (sceneName == data.Door.RightLocation.SceneName && !state.RightDoorForceOpened)
+
+                if (sceneName == data.Door.RightLocation.SceneName)
                 {
-                    DoorSpawner.SpawnDoor(sm, doorName, false);
+                    if (!state.RightDoorForceOpened)
+                    {
+                        DoorSpawner.SpawnDoor(sm, doorName, false);
+                    }
+                    else
+                    {
+                        MoreDoors.LogDebug($"Right door '{doorName}' not spawned because RightDoorForceOpened");
+                    }
                 }
             }
         }
@@ -149,10 +182,12 @@ namespace MoreDoors.IC
                 if (data.Door.LeftLocation.TransitionName == tname)
                 {
                     DoorStates[doorName].LeftDoorForceOpened = true;
+                    MoreDoors.LogDebug($"Door '{doorName}' forced open left");
                 }
                 else
                 {
                     DoorStates[doorName].RightDoorForceOpened = true;
+                    MoreDoors.LogDebug($"Door '{doorName}' forced open right");
                 }
 
                 foreach (var obj in Object.FindObjectsOfType<DoorNameMarker>())

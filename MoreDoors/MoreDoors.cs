@@ -19,6 +19,8 @@ namespace MoreDoors
 
         public bool ToggleButtonInsideMenu => false;
 
+        public static new void LogDebug(string msg) { ((Loggable)Instance).LogDebug(msg); }
+
         public static new void Log(string msg) { ((Loggable)Instance).Log(msg); }
 
         public static new void LogWarn(string msg) { ((Loggable)Instance).LogWarn(msg); }
