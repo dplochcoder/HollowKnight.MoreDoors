@@ -42,7 +42,8 @@ namespace MoreDoors.Debug
             {
                 ds.KeyObtained = false;
                 ds.DoorOpened = false;
-                ds.DoorForceOpened = false;
+                ds.LeftDoorForceOpened = false;
+                ds.RightDoorForceOpened = false;
             }
             MoreKeysPage.Instance.Update();
         }
@@ -56,7 +57,8 @@ namespace MoreDoors.Debug
             foreach (var ds in mod.DoorStates.Values)
             {
                 ds.DoorOpened = false;
-                ds.DoorForceOpened = false;
+                ds.LeftDoorForceOpened = false;
+                ds.RightDoorForceOpened = false;
             }
         }
     }
