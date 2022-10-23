@@ -60,6 +60,8 @@ namespace MoreDoors.IC
             ModHooks.LanguageGetHook += OverrideLanguageGet;
             PriorityEvents.BeforeSceneManagerStart.Subscribe(BeforeSceneManagerStartPriority, OnSceneManagerStart);
             Events.OnTransitionOverride += OnTransitionOverride;
+
+            MoreKeysPage.Instance.Update();
         }
 
         public void AddDeployers()
