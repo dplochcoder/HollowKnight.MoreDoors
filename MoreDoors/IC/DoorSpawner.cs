@@ -44,6 +44,7 @@ namespace MoreDoors.IC
 
         private static void SetupConversationControl(PlayMakerFSM fsm, DoorData data, bool left)
         {
+            fsm.GetState("Init").GetFirstActionOfType<PlayerDataBoolTest>().boolName = left ? data.PDDoorLeftForceOpenedName : data.PDDoorRighForceOpenedName;
             fsm.GetState("Check Key").GetFirstActionOfType<PlayerDataBoolTest>().boolName = data.PDKeyName;
             fsm.GetState("Send Text").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(data.KeyPromptId);
             fsm.GetState("No Key").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(data.NoKeyPromptId);
@@ -88,8 +89,6 @@ namespace MoreDoors.IC
             promptMarker.transform.localPosition = new(0.7f, 0.77f, 0.206f);
             promptMarker.AddComponent<DeactivateInDarknessWithoutLantern>().enabled = true;
 
-            // TODO: Establish an ordering between mod initializations on scene load.
-            // Implement a constraints mod that supports this without the need for linking.
             if (sm.darknessLevel == 2 && !PlayerData.instance.GetBool(nameof(PlayerData.instance.hasLantern)))
             {
                 // Why is this so finicky

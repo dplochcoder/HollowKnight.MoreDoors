@@ -2,6 +2,7 @@
 using ItemChanger.Locations;
 using MoreDoors.IC;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -125,6 +126,12 @@ namespace MoreDoors.Data
 
         [JsonIgnore]
         public string PDKeyName => $"moreDoors{CamelCaseName}DoorOpened";
+
+        [JsonIgnore]
+        public string PDDoorLeftForceOpenedName => $"moreDoors{CamelCaseName}LeftForceOpened";
+
+        [JsonIgnore]
+        public string PDDoorRighForceOpenedName => $"moreDoors{CamelCaseName}RightForceOpened";
 
         [JsonIgnore]
         public string KeyTermName => $"MOREDOORS_{UpperCaseName}_KEY";
