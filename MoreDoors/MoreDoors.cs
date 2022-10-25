@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PurenailCore.ModUtil;
 using SFCore;
+using MoreDoors.FStats;
 
 namespace MoreDoors
 {
@@ -47,6 +48,10 @@ namespace MoreDoors
             if (ModHooks.GetMod("DebugMod") is Mod)
             {
                 DebugInterop.Setup();
+            }
+            if (ModHooks.GetMod("FStatsMod") is Mod)
+            {
+                FStatsInterop.Setup();
             }
         }
 

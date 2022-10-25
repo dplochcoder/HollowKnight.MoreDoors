@@ -109,12 +109,18 @@ namespace MoreDoors.IC
             return orig;
         }
 
+        public delegate void KeyObtained(string uiName);
+
+        public static event KeyObtained OnKeyObtained;
+
         private bool OverrideSetBool(string name, bool newValue)
         {
             if (DoorNamesByKey.TryGetValue(name, out string doorName))
             {
                 var state = DoorStates[doorName];
                 state.KeyObtained = newValue;
+
+                if (newValue) OnKeyObtained?.Invoke(DoorData.Get(doorName).Key.UIItemName);
                 MoreKeysPage.Instance.Update();
             }
             else if (DoorNamesByDoor.TryGetValue(name, out doorName))
