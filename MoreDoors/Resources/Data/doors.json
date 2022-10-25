@@ -726,7 +726,7 @@
       },
       "Logic": "Ruins1_30[left2]",
       "WorldMapLocationOverride": {
-        "SceneName": null,
+        "SceneName": "Ruins1_30",
         "X": 11.0,
         "Y": 4.0
       },
@@ -927,7 +927,7 @@
       },
       "Logic": "Fungus3_44[door1]",
       "WorldMapLocationOverride": {
-        "SceneName": null,
+        "SceneName": "Fungus3_44",
         "X": 17.0,
         "Y": 47.5
       },
@@ -1065,7 +1065,7 @@
       },
       "Logic": "Hive_03[top1]",
       "WorldMapLocationOverride": {
-        "SceneName": null,
+        "SceneName": "Hive_03",
         "X": 31.0,
         "Y": 128.5
       },
@@ -1731,7 +1731,7 @@
       },
       "Logic": "Fungus1_12[right1] + (UPSLASH | SCREAM)",
       "WorldMapLocationOverride": {
-        "SceneName": null,
+        "SceneName": "Fungus1_12",
         "X": 15.0,
         "Y": 55.0
       },
