@@ -46,6 +46,8 @@ namespace MoreDoors.IC
             shiny.transform.localPosition = new(offx, offy, 1);
             shiny.transform.localScale = new(scale, scale, scale);
             shiny.SetActive(true);
+
+            obj.GetComponent<HealthManager>().OnDeath += () => Object.Destroy(shiny);
         }
     }
 
