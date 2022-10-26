@@ -30,6 +30,7 @@ namespace MoreDoors.Rando
         public AddKeyLocations AddKeyLocations = AddKeyLocations.None;
 
         public static readonly int FullDoorsMask = FullMask(DoorData.Count);
+        public const int NoDoorsMask = 0;
 
         [MenuIgnore]
         public int DoorsMask = FullDoorsMask;

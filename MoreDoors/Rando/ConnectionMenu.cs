@@ -111,6 +111,20 @@ namespace MoreDoors.Rando
             new SettingsCode(customPage, MoreDoors.Instance, doorsLevel, transitions, dme, addKeyLocations);
         }
 
+        private SmallButton NewDoorsToggleButton(MenuPage page, string text, IValueElement<int> maskElement, int targetMask)
+        {
+            SmallButton b = new(page, text);
+            maskElement.ValueChanged += newMask =>
+            {
+                if (newMask == targetMask) b.Lock();
+                else b.Unlock();
+            };
+            b.OnClick += () => maskElement.SetValue(targetMask);
+
+            if (MoreDoors.GS.RandoSettings.DoorsMask == targetMask) b.Lock();
+            return b;
+        }
+
         private void FillCustomDoorsPage(MenuPage page, IValueElement<int> mask)
         {
             List<IMenuElement> doorButtons = new();
@@ -132,7 +146,12 @@ namespace MoreDoors.Rando
                 doorButtons.Add(button);
             }
 
-            GridItemPanel panel = new(page, SpaceParameters.TOP_CENTER, 4, SpaceParameters.VSPACE_SMALL, SpaceParameters.HSPACE_SMALL, true, doorButtons.ToArray());
+            SmallButton enableAllButton = NewDoorsToggleButton(page,"Enable All", mask, RandomizationSettings.FullDoorsMask);
+            SmallButton disableAllButton = NewDoorsToggleButton(page, "Disable All", mask, RandomizationSettings.NoDoorsMask);
+
+            GridItemPanel togglePanel = new(page, SpaceParameters.TOP_CENTER, 2, SpaceParameters.VSPACE_SMALL, SpaceParameters.HSPACE_LARGE, false, enableAllButton, disableAllButton);
+            GridItemPanel doorsPanel = new(page, SpaceParameters.TOP_CENTER, 4, SpaceParameters.VSPACE_SMALL, SpaceParameters.HSPACE_SMALL, false, doorButtons.ToArray());
+            new VerticalItemPanel(page, SpaceParameters.TOP_CENTER, SpaceParameters.VSPACE_MEDIUM, true, togglePanel, doorsPanel);
         }
     }
 
