@@ -142,7 +142,7 @@
         "flingType": "Everywhere",
         "tags": null
       },
-      "Logic": "Abyss_17[top1] + (DAMAGEBOOSTS | LEFTCLAW | WINGS | RIGHTCLAW + PRECISEMOVEMENT)",
+      "Logic": "*Pale_Ore-Basin",
       "WorldMapLocationOverride": null,
       "ExtraWorldMapLocations": null
     }
