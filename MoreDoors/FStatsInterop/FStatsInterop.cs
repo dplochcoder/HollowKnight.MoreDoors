@@ -3,6 +3,7 @@ using FStats.StatControllers;
 using FStats.Util;
 using ItemChanger;
 using MoreDoors.IC;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -57,7 +58,7 @@ namespace MoreDoors.FStats
             int pageSize = COL_LENGTH * 2;
             for (int i = 0; i < rows.Count; i += pageSize)
             {
-                foreach (var di in Paginate(rows.GetRange(i, pageSize), $" ({(i + pageSize) / pageSize} of {(rows.Count + pageSize - 1) / pageSize})"))
+                foreach (var di in Paginate(rows.GetRange(i, Math.Min(rows.Count - i, pageSize)), $" ({(i + pageSize) / pageSize} of {(rows.Count + pageSize - 1) / pageSize})"))
                 {
                     yield return di;
                 }
