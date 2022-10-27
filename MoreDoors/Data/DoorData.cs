@@ -131,7 +131,7 @@ namespace MoreDoors.Data
         public string PDDoorLeftForceOpenedName => $"moreDoors{CamelCaseName}LeftForceOpened";
 
         [JsonIgnore]
-        public string PDDoorRighForceOpenedName => $"moreDoors{CamelCaseName}RightForceOpened";
+        public string PDDoorRightForceOpenedName => $"moreDoors{CamelCaseName}RightForceOpened";
 
         [JsonIgnore]
         public string KeyTermName => $"MOREDOORS_{UpperCaseName}_KEY";

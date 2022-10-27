@@ -44,7 +44,7 @@ namespace MoreDoors.IC
 
         private static void SetupConversationControl(PlayMakerFSM fsm, DoorData data, bool left)
         {
-            fsm.GetState("Init").GetFirstActionOfType<PlayerDataBoolTest>().boolName = left ? data.PDDoorLeftForceOpenedName : data.PDDoorRighForceOpenedName;
+            fsm.GetState("Init").GetFirstActionOfType<PlayerDataBoolTest>().boolName = left ? data.PDDoorLeftForceOpenedName : data.PDDoorRightForceOpenedName;
             fsm.GetState("Check Key").GetFirstActionOfType<PlayerDataBoolTest>().boolName = data.PDKeyName;
             fsm.GetState("Send Text").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(data.KeyPromptId);
             fsm.GetState("No Key").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(data.NoKeyPromptId);
