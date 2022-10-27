@@ -141,10 +141,6 @@ namespace MoreDoors.IC
             var sceneName = sm.gameObject.scene.name;
             foreach (var doorName in DoorNamesByScene.GetOrDefault(sceneName, emptySet))
             {
-                // If the door is already opened, skip, even though it's not strictly necessary.
-                var state = DoorStates[doorName];
-                if (state.DoorOpened) continue;
-
                 var data = DoorData.Get(doorName);
                 if (sceneName == data.Door.LeftLocation.SceneName) DoorSpawner.SpawnDoor(sm, doorName, true);
                 if (sceneName == data.Door.RightLocation.SceneName) DoorSpawner.SpawnDoor(sm, doorName, false);
