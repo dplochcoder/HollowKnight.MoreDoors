@@ -31,7 +31,10 @@ namespace MoreDoors.Data
         {
             foreach (var doorName in DoorNames)
             {
-                Finder.DefineCustomItem(new KeyItem(doorName));
+                KeyItem key = new(doorName);
+                key.AddLocationInteropTags();
+
+                Finder.DefineCustomItem(key);
                 Finder.DefineCustomLocation(Get(doorName).Key.Location);
             }
 

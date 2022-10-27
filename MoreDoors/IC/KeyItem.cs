@@ -3,7 +3,9 @@ using ItemChanger.Locations;
 using ItemChanger.Tags;
 using ItemChanger.UIDefs;
 using MoreDoors.Data;
+using RandomizerMod.RandomizerData;
 using System.Linq;
+using UnityEngine;
 
 namespace MoreDoors.IC
 {
@@ -32,7 +34,13 @@ namespace MoreDoors.IC
                 shopDesc = new BoxedString(data.Key.ShopDesc),
                 sprite = new EmbeddedSprite($"Keys.{data.Key.Sprite}")
             };
+        }
 
+        public void AddLocationInteropTags()
+        {
+            if (HasTag<InteropTag>()) return;
+
+            var data = DoorData.Get(DoorName);
             AddInterop(this);
 
             var loc = data.Key.Location;
