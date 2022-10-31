@@ -6,7 +6,6 @@ using MenuChanger.Extensions;
 using MenuChanger.MenuPanels;
 using System;
 using System.Collections.Generic;
-using ConnectionSettingsCode;
 using System.Reflection;
 using UnityEngine.UI;
 using UnityEngine;
@@ -118,8 +117,6 @@ namespace MoreDoors.Rando
 
             new VerticalItemPanel(moreDoorsPage, SpaceParameters.TOP_CENTER_UNDER_TITLE, SpaceParameters.VSPACE_MEDIUM, true,
                 doorsLevel, transitions, customizeButton, addKeyLocations);
-            new SettingsCode(moreDoorsPage, MoreDoors.Instance, doorsLevel, transitions, dme, addKeyLocations);
-            new SettingsCode(customPage, MoreDoors.Instance, doorsLevel, transitions, dme, addKeyLocations);
         }
 
         public void ApplySettings(RandomizationSettings settings)
