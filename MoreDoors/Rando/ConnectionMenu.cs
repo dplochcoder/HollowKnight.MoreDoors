@@ -11,8 +11,8 @@ using System.Reflection;
 using UnityEngine.UI;
 using UnityEngine;
 using MoreDoors.Data;
-using static System.TimeZoneInfo;
-using HutongGames.PlayMaker;
+using Modding;
+using RandoSettingsManager;
 
 namespace MoreDoors.Rando
 {
@@ -24,7 +24,14 @@ namespace MoreDoors.Rando
         {
             RandomizerMenuAPI.AddMenuPage(OnRandomizerMenuConstruction, TryGetMenuButton);
             MenuChangerMod.OnExitMainMenu += () => Instance = null;
+
+            if (ModHooks.GetMod("RandoSettingsManager") is Mod)
+            {
+                HookRandoSettingsManager();
+            }
         }
+
+        private static void HookRandoSettingsManager() => RandoSettingsManagerMod.Instance.RegisterConnection(SettingsProxy.Instance);
 
         public static void OnRandomizerMenuConstruction(MenuPage page) => Instance = new(page);
 
@@ -79,6 +86,10 @@ namespace MoreDoors.Rando
         }
 
         private SmallButton entryButton;
+        private MenuItem<DoorsLevel> doorsLevel;
+        private MenuItem<AddKeyLocations> addKeyLocations;
+        private MenuItem<bool> transitions;
+        private DoorsMaskElement dme;
 
         private ConnectionMenu(MenuPage connectionsPage)
         {
@@ -90,15 +101,15 @@ namespace MoreDoors.Rando
             MenuElementFactory<RandomizationSettings> factory = new(moreDoorsPage, settings);
             Localize(factory);
 
-            var doorsLevel = ModifyColors(factory, nameof(settings.DoorsLevel), DoorsLevel.NoDoors);
-            var addKeyLocations = ModifyColors(factory, nameof(settings.AddKeyLocations), AddKeyLocations.None);
+            doorsLevel = ModifyColors(factory, nameof(settings.DoorsLevel), DoorsLevel.NoDoors);
+            addKeyLocations = ModifyColors(factory, nameof(settings.AddKeyLocations), AddKeyLocations.None);
             SetEnabledColor();
 
             SmallButton customizeButton = new(moreDoorsPage, Localize("Customize Doors"));
-            DoorsMaskElement dme = new(customizeButton);
+            dme = new(customizeButton);
             dme.SetCustomButtonColor();
 
-            var transitions = (MenuItem<bool>)factory.ElementLookup[nameof(settings.RandomizeDoorTransitions)];
+            transitions = (MenuItem<bool>)factory.ElementLookup[nameof(settings.RandomizeDoorTransitions)];
             LockIf(doorsLevel, DoorsLevel.NoDoors, transitions, customizeButton);
 
             MenuPage customPage = new("MoreDoors Customize Doors", moreDoorsPage);
@@ -109,6 +120,14 @@ namespace MoreDoors.Rando
                 doorsLevel, transitions, customizeButton, addKeyLocations);
             new SettingsCode(moreDoorsPage, MoreDoors.Instance, doorsLevel, transitions, dme, addKeyLocations);
             new SettingsCode(customPage, MoreDoors.Instance, doorsLevel, transitions, dme, addKeyLocations);
+        }
+
+        public void ApplySettings(RandomizationSettings settings)
+        {
+            doorsLevel.SetValue(settings.DoorsLevel);
+            addKeyLocations.SetValue(settings.AddKeyLocations);
+            transitions.SetValue(settings.RandomizeDoorTransitions);
+            dme.SetValue(settings.DoorsMask);
         }
 
         private SmallButton NewDoorsToggleButton(MenuPage page, string text, IValueElement<int> maskElement, int targetMask)

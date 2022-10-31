@@ -25,6 +25,15 @@ namespace MoreDoors.Rando
 
     public class RandomizationSettings
     {
+        public record Version
+        {
+            public static readonly Version Instance = new();
+
+            // If the fields of this class are semantically changed, bump this to the next integer.
+            public int FieldsVersion = 1;
+            public int DoorHash = DoorData.ComputeDoorNameHash();
+        }
+
         public DoorsLevel DoorsLevel = DoorsLevel.NoDoors;
         public bool RandomizeDoorTransitions = false;
         public AddKeyLocations AddKeyLocations = AddKeyLocations.None;

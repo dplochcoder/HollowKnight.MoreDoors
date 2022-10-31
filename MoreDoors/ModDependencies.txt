@@ -5,6 +5,7 @@ ItemChanger
 MenuChanger
 Randomizer 4
 RandomizerCore
-PurenailCore from https://github.com/dplochcoder/HollowKnight.PurenailCore/releases/download/v1.1.0.0/PurenailCore.zip
+RandoSettingsManager from https://github.com/BadMagic100/RandoSettingsManager/releases/download/v1.0.8339.6016/RandoSettingsManager.zip
+PurenailCore
 SFCore
 FStats
