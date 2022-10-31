@@ -42,18 +42,9 @@ Disabling the shiny hint has no effect on gameplay, vanilla or rando, so it is n
 You can customize the set of doors you want to allow on the 'Customize Doors' page.
 Simply deselect a door to exclude it from randomization, even under 'All Doors'. This also removes its key location.
 
-MoreDoors integrates with ConnectionSettingsCode, allowing you to easily share your custom settings with other players.
+MoreDoors integrates with RandoSettingsManager, so it needs no manual configuration when saving or loading profiles, and will automatically disable itself when loading a profile from a game which didn't have MoreDoors installed/enabled.
 
 ### Interop
 
 All key items are placed in the 'Keys' pool for randomization, and for All Major Items tracking.
-If 'Duplicate Unique Keys' is set, every key gets a duplicate.
-
-## Vanilla (Non-Rando)
-
-You can also play with MoreDoors without using Randomizer (though the mod must remain installed), for a vanilla experience.
-All the keys are placed such that the base game is completable without any skips.
-
-To enable MoreDoors in non-rando, go to the MoreDoors Options menu in Mod options, and set "Enable in Vanilla" to "Yes".
-The setting takes effect when you start a new non-rando save; it cannot affect existing saves.
-
+If 'Duplicate Unique Keys' is set, every key gets a duplicate
