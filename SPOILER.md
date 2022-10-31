@@ -4,6 +4,11 @@ Below is the full list of randomized doors, and their vanilla key locations.
 
 Read at your own risk!  There's no taking it back.
 
+## Archive Door
+
+* Blocks access to Teacher's Archives from Fog Canyon East
+* Key is at the highest Ooma in the canyon Charm Notch room
+
 ## Bardoon's Door
 
 * Blocks access to upper Edge

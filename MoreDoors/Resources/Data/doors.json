@@ -1,4 +1,78 @@
 {
+  "Archive": {
+    "CamelCaseName": "Archive",
+    "UpperCaseName": "ARCHIVE",
+    "UIName": "Archive",
+    "Door": {
+      "Sprite": "Acid",
+      "NoKeyDesc": "A heavy brass door, with green-tinted windows.",
+      "KeyDesc": "The teacher's studies are waiting to be read.<br>Insert the Archive Key?",
+      "LeftLocation": {
+        "SceneName": "Fungus3_26",
+        "GateName": "left2",
+        "RequiresLantern": false,
+        "X": 1.1,
+        "Y": 11.6
+      },
+      "RightLocation": {
+        "SceneName": "Fungus3_27",
+        "GateName": "right1",
+        "RequiresLantern": false,
+        "X": 73.9,
+        "Y": 10.6
+      },
+      "Deployers": null
+    },
+    "Key": {
+      "ItemName": "MoreDoors-Archive_Key",
+      "UIItemName": "Archive Key",
+      "ShopDesc": "I'm pretty sure there are words on this, yes these are definitely words.",
+      "InvDesc": "An ornate key embroidered in scientific inscryption, though it's barely comprehensible.",
+      "UsedInvDesc": "So many layers of protection, but they must be undone.",
+      "Sprite": "Archive",
+      "Location": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Jellyfish (5)",
+          "sceneName": "Fungus3_28",
+          "semiPersistent": true
+        },
+        "falseLocation": {
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "HintShinyScale": 2.5,
+          "HintShinyX": -0.25,
+          "HintShinyY": 1.5,
+          "objectName": "Jellyfish (5)",
+          "removeGeo": false,
+          "forceShiny": false,
+          "name": "MoreDoors-Archive_Key-Ooma-Canyon_Charm_Notch",
+          "sceneName": "Fungus3_28",
+          "flingType": "Everywhere",
+          "tags": null
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 33.0,
+          "y": 33.5,
+          "elevation": 0.0,
+          "managed": false,
+          "forceShiny": false,
+          "name": "MoreDoors-Archive_Key-Ooma-Canyon_Charm_Notch",
+          "sceneName": "Fungus3_28",
+          "flingType": "Everywhere",
+          "tags": null
+        },
+        "name": "MoreDoors-Archive_Key-Ooma-Canyon_Charm_Notch",
+        "sceneName": "Fungus3_28",
+        "flingType": "Everywhere",
+        "tags": null
+      },
+      "Logic": "*Charm_Notch-Fog_Canyon",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
+    }
+  },
   "Bardoon": {
     "CamelCaseName": "Bardoon",
     "UpperCaseName": "BARDOON",
