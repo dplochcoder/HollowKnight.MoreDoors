@@ -34,7 +34,7 @@ Read at your own risk!  There's no taking it back.
 * Blocks access to Hallownest's Crown
 * Key is at the last Crystal Hunter inside Crystallized Mound
 
-## Dark Door
+## Dark Nest Door
 
 * Blocks access to the Deepnest whispering root, from the first devout
 * Key is at the last Carver Hatcher in the failed tramway
