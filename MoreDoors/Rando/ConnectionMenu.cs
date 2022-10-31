@@ -124,9 +124,11 @@ namespace MoreDoors.Rando
 
         public void ApplySettings(RandomizationSettings settings)
         {
+            transitions.Unlock();
+            transitions.SetValue(settings.RandomizeDoorTransitions);
+
             doorsLevel.SetValue(settings.DoorsLevel);
             addKeyLocations.SetValue(settings.AddKeyLocations);
-            transitions.SetValue(settings.RandomizeDoorTransitions);
             dme.SetValue(settings.DoorsMask);
         }
 
