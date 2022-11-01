@@ -1,6 +1,7 @@
 CondensedSpoilerLogger
 ConnectionSettingsCode
 DebugMod
+FStats
 ItemChanger
 MenuChanger
 Randomizer 4
@@ -8,6 +9,3 @@ RandomizerCore
 RandoSettingsManager from https://github.com/BadMagic100/RandoSettingsManager/releases/download/v1.0.8339.6016/RandoSettingsManager.zip
 PurenailCore
 SFCore
-FStatsnailCore
-SFCore
-FStats
