@@ -1,7 +1,8 @@
 CondensedSpoilerLogger
+ConnectionSettingsCode
 DebugMod
 ItemChanger
-MenuChanger from https://files.catbox.moe/0sa0nc.zip
+MenuChanger
 Randomizer 4
 RandomizerCore
 RandoSettingsManager from https://github.com/BadMagic100/RandoSettingsManager/releases/download/v1.0.8339.6016/RandoSettingsManager.zip

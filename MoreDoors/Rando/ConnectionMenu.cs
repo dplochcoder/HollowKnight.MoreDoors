@@ -12,6 +12,7 @@ using UnityEngine;
 using MoreDoors.Data;
 using Modding;
 using RandoSettingsManager;
+using ConnectionSettingsCode;
 
 namespace MoreDoors.Rando
 {
@@ -117,6 +118,8 @@ namespace MoreDoors.Rando
 
             new VerticalItemPanel(moreDoorsPage, SpaceParameters.TOP_CENTER_UNDER_TITLE, SpaceParameters.VSPACE_MEDIUM, true,
                 doorsLevel, transitions, customizeButton, addKeyLocations);
+            new SettingsCode(moreDoorsPage, MoreDoors.Instance, doorsLevel, dme, transitions, addKeyLocations);
+            new SettingsCode(customPage, MoreDoors.Instance, doorsLevel, dme, transitions, addKeyLocations);
         }
 
         public void ApplySettings(RandomizationSettings settings)
