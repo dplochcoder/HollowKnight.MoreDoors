@@ -9,7 +9,7 @@
       "KeyDesc": "The teacher's studies are waiting to be read.<br>Insert the Archive Key?",
       "LeftLocation": {
         "SceneName": "Fungus3_26",
-        "GateName": "left2",
+        "GateName": "left3",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 11.6

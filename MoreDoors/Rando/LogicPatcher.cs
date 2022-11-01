@@ -55,6 +55,7 @@ namespace MoreDoors.Rando
         private static readonly Dictionary<string, StartModifier> StartModifiers = new()
         {
             { "Abyss", sd => sd with { Transition = "Abyss_06_Core[left3]" } },
+            { "East Fog Canyon", ForbidWithMoreDoors("ROOMRANDO") },
             { "Hallownest's Crown", ForbidWithMoreDoors("ROOMRANDO") },
             { "Hive", ForbidWithMoreDoors("ROOMRANDO") },
             { "Lower Greenpath", ForbidWithMoreDoors("ROOMRANDO") },
