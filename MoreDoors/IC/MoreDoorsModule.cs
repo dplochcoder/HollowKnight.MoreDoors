@@ -4,6 +4,7 @@ using Modding;
 using MoreDoors.Data;
 using Newtonsoft.Json;
 using PurenailCore.ICUtil;
+using PurenailCore.SystemUtil;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -47,10 +48,12 @@ namespace MoreDoors.IC
                 DoorNamesByKey[data.PDKeyName] = doorName;
                 DoorNamesByDoor[data.PDDoorOpenedName] = doorName;
 
-                DoorNamesByScene.GetOrAdd(data.Door.LeftLocation.SceneName, new()).Add(doorName);
-                DoorNamesByScene.GetOrAdd(data.Door.RightLocation.SceneName, new()).Add(doorName);
+                DoorNamesByScene.GetOrAddNew(data.Door.LeftLocation.SceneName).Add(doorName);
+                DoorNamesByScene.GetOrAddNew(data.Door.RightLocation.SceneName).Add(doorName);
                 DoorNamesByTransition[data.Door.LeftLocation.TransitionName] = doorName;
                 DoorNamesByTransition[data.Door.RightLocation.TransitionName] = doorName;
+                DoorNamesByLeftForce[data.PDDoorLeftForceOpenedName] = doorName;
+                DoorNamesByRightForce[data.PDDoorRightForceOpenedName] = doorName;
 
                 PromptStrings[data.NoKeyPromptId] = data.Door.NoKeyDesc;
                 PromptStrings[data.KeyPromptId] = data.Door.KeyDesc;
@@ -126,7 +129,12 @@ namespace MoreDoors.IC
             else if (DoorNamesByDoor.TryGetValue(name, out doorName))
             {
                 var state = DoorStates[doorName];
-                DoorStates[doorName].DoorOpened = newValue;
+                state.DoorOpened = newValue;
+                if (newValue)
+                {
+                    state.LeftDoorForceOpened = newValue;
+                    state.RightDoorForceOpened = newValue;
+                }
                 MoreKeysPage.Instance.Update();
             }
             return newValue;
