@@ -34,6 +34,7 @@ namespace MoreDoors.IC
                 shopDesc = new BoxedString(data.Key.ShopDesc),
                 sprite = new EmbeddedSprite($"Keys.{data.Key.Sprite}")
             };
+            AddInterop(this);
         }
 
         public void AddLocationInteropTags()
@@ -41,8 +42,6 @@ namespace MoreDoors.IC
             if (HasTag<InteropTag>()) return;
 
             var data = DoorData.Get(DoorName);
-            AddInterop(this);
-
             var loc = data.Key.Location;
             // TODO: This seems like a bug in ItemChanger that we have to do this.
             // DualPlacement concatenates tags from both delegate locations, but it ignores any tags set on the DualLocation itself.
