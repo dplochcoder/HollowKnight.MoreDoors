@@ -23,46 +23,28 @@ namespace MoreDoors.FStats
         public override IEnumerable<DisplayInfo> GetDisplayInfos()
         {
             List<string> rows = KeyCollections.OrderBy(kc => kc.time).Select(kc => $"{kc.keyName}: {kc.time.PlaytimeHHMMSS()}").ToList();
-            if (rows.Count == 0) return new List<DisplayInfo>();
-
-            return Paginate(rows, "");
+            if (rows.Count == 0) yield break;
+            
+            yield return new()
+            {
+                Title = $"More Keys Timeline",
+                MainStat = $"Keys Collected: {KeyCollections.Count} of {ItemChangerMod.Modules.Get<MoreDoorsModule>().DoorStates.Count}",
+                StatColumns = Columnize(rows),
+                Priority = BuiltinScreenPriorityValues.ExtensionStats
+            };
         }
 
-        private const int COL_LENGTH = 8;
+        private const int COL_SIZE = 10;
 
-        private IEnumerable<DisplayInfo> Paginate(List<string> rows, string suffix)
+        private List<string> Columnize(List<string> rows)
         {
-            if (rows.Count <= COL_LENGTH * 2)
+            int numCols = (rows.Count + COL_SIZE - 1) / COL_SIZE;
+            List<string> list = new();
+            for (int i = 0; i < numCols; i++)
             {
-                List<string> cols = new();
-                if (rows.Count <= COL_LENGTH)
-                {
-                    cols.Add(string.Join("\n", rows));
-                }
-                else
-                {
-                    cols.Add(string.Join("\n", rows.Slice(0, 2)));
-                    cols.Add(string.Join("\n", rows.Slice(1, 2)));
-                }
-
-                yield return new()
-                {
-                    Title = $"More Keys Timeline{suffix}",
-                    MainStat = $"Keys Collected: {KeyCollections.Count} of {ItemChangerMod.Modules.Get<MoreDoorsModule>().DoorStates.Count}",
-                    StatColumns = cols,
-                    Priority = BuiltinScreenPriorityValues.ExtensionStats
-                };
-                yield break;
+                list.Add(string.Join("\n", rows.Slice(i, numCols)));
             }
-
-            int pageSize = COL_LENGTH * 2;
-            for (int i = 0; i < rows.Count; i += pageSize)
-            {
-                foreach (var di in Paginate(rows.GetRange(i, Math.Min(rows.Count - i, pageSize)), $" ({(i + pageSize) / pageSize} of {(rows.Count + pageSize - 1) / pageSize})"))
-                {
-                    yield return di;
-                }
-            }
+            return list;
         }
 
         public override void Initialize() => MoreDoorsModule.OnKeyObtained += OnKeyObtained;
