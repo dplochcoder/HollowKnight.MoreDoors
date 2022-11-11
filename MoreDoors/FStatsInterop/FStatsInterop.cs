@@ -3,7 +3,6 @@ using FStats.StatControllers;
 using FStats.Util;
 using ItemChanger;
 using MoreDoors.IC;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 

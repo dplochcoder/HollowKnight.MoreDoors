@@ -3,9 +3,7 @@ using ItemChanger.Locations;
 using ItemChanger.Tags;
 using ItemChanger.UIDefs;
 using MoreDoors.Data;
-using RandomizerMod.RandomizerData;
 using System.Linq;
-using UnityEngine;
 
 namespace MoreDoors.IC
 {

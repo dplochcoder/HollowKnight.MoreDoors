@@ -2,7 +2,6 @@
 using ItemChanger.Extensions;
 using Modding;
 using MoreDoors.Data;
-using Newtonsoft.Json;
 using PurenailCore.ICUtil;
 using PurenailCore.SystemUtil;
 using System.Collections.Generic;

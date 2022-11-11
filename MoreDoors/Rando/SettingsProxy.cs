@@ -1,5 +1,4 @@
-﻿using RandomizerMod.Settings;
-using RandoSettingsManager.SettingsManagement;
+﻿using RandoSettingsManager.SettingsManagement;
 using RandoSettingsManager.SettingsManagement.Versioning;
 
 namespace MoreDoors.Rando
