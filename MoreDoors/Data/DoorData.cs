@@ -124,10 +124,10 @@ namespace MoreDoors.Data
         public KeyInfo Key;
 
         [JsonIgnore]
-        public string PDDoorOpenedName => $"moreDoors{CamelCaseName}Key";
+        public string PDKeyName => $"moreDoors{CamelCaseName}Key";
 
         [JsonIgnore]
-        public string PDKeyName => $"moreDoors{CamelCaseName}DoorOpened";
+        public string PDDoorOpenedName => $"moreDoors{CamelCaseName}DoorOpened";
 
         [JsonIgnore]
         public string PDDoorLeftForceOpenedName => $"moreDoors{CamelCaseName}LeftForceOpened";
