@@ -1,6 +1,9 @@
 ﻿using ItemChanger;
 using ItemChanger.Extensions;
 using ItemChanger.Locations;
+using ItemChanger.Util;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,10 +30,10 @@ namespace MoreDoors.IC
         private void AddShiny(Scene to)
         {
             if (!MoreDoors.GS.ShowKeyShinies || Placement.AllObtained()) return;
-            AddShinyToGameObject(ObjectLocation.FindGameObject(objectName), HintShinyScale, HintShinyX, HintShinyY);
+            AddShinyToGameObject(ObjectLocation.FindGameObject(objectName), Placement.Items, HintShinyScale, HintShinyX, HintShinyY);
         }
 
-        public static void AddShinyToGameObject(GameObject obj, float scale, float offx, float offy)
+        public static void AddShinyToGameObject(GameObject obj, IEnumerable<AbstractItem> items, float scale, float offx, float offy)
         {
             GameObject shiny = Object.Instantiate(Preloader.Instance.Shiny);
             shiny.name = "Hint Shiny";
@@ -45,6 +48,7 @@ namespace MoreDoors.IC
             shiny.transform.SetParent(obj.transform, false);
             shiny.transform.localPosition = new(offx, offy, 1);
             shiny.transform.localScale = new(scale, scale, scale);
+            ShinyUtility.SetShinyColor(shiny, items);
             shiny.SetActive(true);
 
             obj.GetComponent<HealthManager>().OnDeath += () => Object.Destroy(shiny);
@@ -72,7 +76,7 @@ namespace MoreDoors.IC
         private void AddShiny(PlayMakerFSM fsm)
         {
             if (!MoreDoors.GS.ShowKeyShinies || Placement.AllObtained()) return;
-            ShinyEnemyLocation.AddShinyToGameObject(fsm.gameObject, HintShinyScale, HintShinyX, HintShinyY);
+            ShinyEnemyLocation.AddShinyToGameObject(fsm.gameObject, Placement.Items, HintShinyScale, HintShinyX, HintShinyY);
         }
     }
 }
