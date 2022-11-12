@@ -43,7 +43,7 @@ namespace MoreDoors.Rando
             item.Text.color = EqualityComparer<T>.Default.Equals(value, none) ? Colors.FALSE_COLOR : Colors.DEFAULT_COLOR;
         }
 
-        private void SetEnabledColor() => entryButton.Text.color = MoreDoors.GS.RandoSettings.IsEnabled ? Colors.TRUE_COLOR : Colors.DEFAULT_COLOR;
+        private void SetEnabledColor() => entryButton.Text.color = Settings.IsEnabled ? Colors.TRUE_COLOR : Colors.DEFAULT_COLOR;
 
         private MenuItem<T> ModifyColors<T>(MenuElementFactory<RandomizationSettings> factory, string fieldName, T none)
         {
@@ -91,25 +91,27 @@ namespace MoreDoors.Rando
         private delegate void CustomDoorsChanged();
         private event CustomDoorsChanged OnCustomDoorsChanged;
 
+        private RandomizationSettings Settings => MoreDoors.GS.RandoSettings;
+
         private ConnectionMenu(MenuPage connectionsPage)
         {
             MenuPage moreDoorsPage = new("MoreDoors Main Page", connectionsPage);
             entryButton = new(connectionsPage, Localize("More Doors"));
             entryButton.AddHideAndShowEvent(moreDoorsPage);
 
-            var settings = MoreDoors.GS.RandoSettings;
-            MenuElementFactory<RandomizationSettings> factory = new(moreDoorsPage, settings);
+            MenuElementFactory<RandomizationSettings> factory = new(moreDoorsPage, Settings);
             Localize(factory);
 
-            doorsLevel = ModifyColors(factory, nameof(settings.DoorsLevel), DoorsLevel.NoDoors);
-            addKeyLocations = ModifyColors(factory, nameof(settings.AddKeyLocations), AddKeyLocations.None);
+            doorsLevel = ModifyColors(factory, nameof(Settings.DoorsLevel), DoorsLevel.NoDoors);
+            addKeyLocations = ModifyColors(factory, nameof(Settings.AddKeyLocations), AddKeyLocations.None);
             SetEnabledColor();
 
             SmallButton customizeButton = new(moreDoorsPage, Localize("Customize Doors"));
-            OnCustomDoorsChanged += () => customizeButton.Text.color = settings.EnabledDoors.Count == DoorData.Count ? Colors.DEFAULT_COLOR : Colors.TRUE_COLOR;
+            OnCustomDoorsChanged += () => customizeButton.Text.color = customizeButton.Locked ? Colors.LOCKED_FALSE_COLOR : (Settings.EnabledDoors.Count == DoorData.Count ? Colors.DEFAULT_COLOR : Colors.TRUE_COLOR);
 
-            transitions = (MenuItem<bool>)factory.ElementLookup[nameof(settings.RandomizeDoorTransitions)];
+            transitions = (MenuItem<bool>)factory.ElementLookup[nameof(Settings.RandomizeDoorTransitions)];
             LockIf(doorsLevel, DoorsLevel.NoDoors, transitions, customizeButton);
+            doorsLevel.ValueChanged += _ => OnCustomDoorsChanged();
 
             MenuPage customPage = new("MoreDoors Customize Doors", moreDoorsPage);
             FillCustomDoorsPage(customPage);
@@ -117,7 +119,7 @@ namespace MoreDoors.Rando
 
             new VerticalItemPanel(moreDoorsPage, SpaceParameters.TOP_CENTER_UNDER_TITLE, SpaceParameters.VSPACE_MEDIUM, true,
                 doorsLevel, transitions, customizeButton, addKeyLocations);
-            OnCustomDoorsChanged?.Invoke();
+            OnCustomDoorsChanged();
         }
 
         public void ApplySettings(RandomizationSettings settings)
@@ -127,7 +129,7 @@ namespace MoreDoors.Rando
 
             doorsLevel.SetValue(settings.DoorsLevel);
             addKeyLocations.SetValue(settings.AddKeyLocations);
-            OnCustomDoorsChanged?.Invoke();
+            OnCustomDoorsChanged();
         }
 
         private SmallButton NewDoorsToggleButton(MenuPage page, string text, bool enabled)
@@ -135,13 +137,13 @@ namespace MoreDoors.Rando
             SmallButton b = new(page, text);
             OnCustomDoorsChanged += () =>
             {
-                if (DoorData.DoorNames.All(d => MoreDoors.GS.RandoSettings.IsDoorEnabled(d) == enabled)) b.Lock();
+                if (DoorData.DoorNames.All(d => Settings.IsDoorEnabled(d) == enabled)) b.Lock();
                 else b.Unlock();
             };
             b.OnClick += () =>
             {
-                DoorData.DoorNames.ForEach(d => MoreDoors.GS.RandoSettings.SetDoorEnabled(d, enabled));
-                OnCustomDoorsChanged?.Invoke();
+                DoorData.DoorNames.ForEach(d => Settings.SetDoorEnabled(d, enabled));
+                OnCustomDoorsChanged();
             };
             return b;
         }
@@ -151,13 +153,16 @@ namespace MoreDoors.Rando
             List<IMenuElement> doorButtons = new();
             foreach (var doorName in DoorData.DoorNames)
             {
-                var data = DoorData.Get(doorName);
-
-                ToggleButton button = new(page, Localize(data.UIName));
-                button.ValueChanged += b => MoreDoors.GS.RandoSettings.SetDoorEnabled(doorName, b);
+                var localDoorName = doorName;
+                ToggleButton button = new(page, Localize(DoorData.Get(doorName).UIName));
+                button.ValueChanged += b =>
+                {
+                    Settings.SetDoorEnabled(localDoorName, b);
+                    OnCustomDoorsChanged();
+                };
                 OnCustomDoorsChanged += () =>
                 {
-                    if (MoreDoors.GS.RandoSettings.IsDoorEnabled(doorName) != button.Value) button.SetValue(!button.Value);
+                    if (Settings.IsDoorEnabled(localDoorName) != button.Value) button.SetValue(!button.Value);
                 };
 
                 doorButtons.Add(button);

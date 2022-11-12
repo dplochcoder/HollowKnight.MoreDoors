@@ -28,7 +28,7 @@ namespace MoreDoors.Rando
         public DoorsLevel DoorsLevel = DoorsLevel.NoDoors;
         public bool RandomizeDoorTransitions = false;
         public AddKeyLocations AddKeyLocations = AddKeyLocations.None;
-        public SortedSet<string> EnabledDoors = new();
+        public SortedSet<string> EnabledDoors = new(DoorData.DoorNames);
 
         [JsonIgnore]
         public bool IsEnabled => EnabledDoors.Count > 0 && (DoorsLevel != DoorsLevel.NoDoors || AddKeyLocations == AddKeyLocations.AllDoors);
