@@ -61,9 +61,6 @@
     <Reference Include="Assembly-CSharp-firstpass">
       <HintPath>$(HollowKnightRefs)/Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
-    <Reference Include="ConnectionSettingsCode">
-      <HintPath>$(HollowKnightRefs)/Mods/ConnectionSettingsCode/ConnectionSettingsCode.dll</HintPath>
-    </Reference>
     <Reference Include="DebugMod">
       <HintPath>$(HollowKnightRefs)/Mods/DebugMod/DebugMod.dll</HintPath>
     </Reference>

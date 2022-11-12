@@ -4,7 +4,6 @@ using MoreDoors.IC;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 using JsonUtil = PurenailCore.SystemUtil.JsonUtil<MoreDoors.MoreDoors>;
 
@@ -13,22 +12,17 @@ namespace MoreDoors.Data
     public record DoorData
     {
         public static readonly SortedDictionary<string, DoorData> Data = JsonUtil.DeserializeEmbedded<SortedDictionary<string, DoorData>>("MoreDoors.Resources.Data.doors.json");
-        public static readonly IReadOnlyList<string> DoorNames = new List<string>(Data.Keys);
+        public static readonly SortedSet<string> DoorNames = new(Data.Keys);
 
         public static DoorData Get(string doorName) => Data[doorName];
 
-        public static int Count => Data.Count;
+        public static bool IsDoor(string doorName) => DoorNames.Contains(doorName);
 
-        public static int ComputeDoorNameHash()
-        {
-            var sha1 = System.Security.Cryptography.SHA1.Create();
-            var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(string.Join("|", DoorNames)));
-            return (hash[0] << 24) | (hash[1] << 16) | (hash[2] << 8) | hash[3];
-        }
+        public static int Count => Data.Count;
 
         public static void Load()
         {
-            foreach (var doorName in DoorNames)
+            foreach (var doorName in Data.Keys)
             {
                 KeyItem key = new(doorName);
                 key.AddLocationInteropTags();

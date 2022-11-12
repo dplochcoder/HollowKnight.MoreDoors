@@ -2,7 +2,6 @@
 using ItemChanger.Extensions;
 using ItemChanger.Locations;
 using ItemChanger.Util;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

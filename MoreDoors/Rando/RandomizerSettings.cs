@@ -1,5 +1,4 @@
-﻿using MenuChanger.Attributes;
-using MoreDoors.Data;
+﻿using MoreDoors.Data;
 using Newtonsoft.Json;
 using PurenailCore.SystemUtil;
 using RandomizerMod.Settings;
@@ -26,59 +25,27 @@ namespace MoreDoors.Rando
 
     public class RandomizationSettings
     {
-        public record Version
-        {
-            public static readonly Version Instance = new();
-
-            // If the fields of this class are semantically changed, bump this to the next integer.
-            public int FieldsVersion = 1;
-            public int DoorHash = DoorData.ComputeDoorNameHash();
-        }
-
         public DoorsLevel DoorsLevel = DoorsLevel.NoDoors;
         public bool RandomizeDoorTransitions = false;
         public AddKeyLocations AddKeyLocations = AddKeyLocations.None;
-
-        public static readonly int FullDoorsMask = FullMask(DoorData.Count);
-        public const int NoDoorsMask = 0;
-
-        [MenuIgnore]
-        public int DoorsMask = FullDoorsMask;
-
-        [MenuIgnore]
-        public int? DoorNameHash;
+        public SortedSet<string> EnabledDoors = new();
 
         [JsonIgnore]
-        public bool IsEnabled => DoorsMask != 0 && (DoorsLevel != DoorsLevel.NoDoors || AddKeyLocations == AddKeyLocations.AllDoors);
+        public bool IsEnabled => EnabledDoors.Count > 0 && (DoorsLevel != DoorsLevel.NoDoors || AddKeyLocations == AddKeyLocations.AllDoors);
 
-        public bool IsDoorAllowed(int index) => (DoorsMask & (1 << index)) != 0;
+        public bool IsDoorEnabled(string door) => EnabledDoors.Contains(door);
 
-        public void SetDoorAllowed(int index, bool value) => DoorsMask = (DoorsMask & ~(1 << index)) | (value ? (1 << index) : 0);
-
-        public void MaybeUpdateDoorsMask()
+        public void SetDoorEnabled(string door, bool value)
         {
-            int hash = DoorData.ComputeDoorNameHash();
-            if (DoorNameHash != hash)
-            {
-                DoorsMask = FullDoorsMask;
-                DoorNameHash = hash;
-            }
+            if (value) EnabledDoors.Add(door);
+            else EnabledDoors.Remove(door);
         }
 
-        private static int FullMask(int n)
-        {
-            if (n > 31) throw new ArgumentException("Too many doors =<");
-
-            int o = 0;
-            for (int i = 0; i < n; i++) o |= (1 << i);
-            return o;
-        }
+        public void MaybeUpdateEnabledDoors() => EnabledDoors.RemoveWhere(d => !DoorData.IsDoor(d));
 
         public HashSet<string> ComputeActiveDoors(GenerationSettings gs, Random r)
         {
-            List<string> potentialDoors = Enumerable.Range(0, DoorData.Count)
-                .Where(i => IsDoorAllowed(i))
-                .Select(i => DoorData.DoorNames[i]).ToList();
+            List<string> potentialDoors = EnabledDoors.ToList();
             if (gs.LongLocationSettings.WhitePalaceRando != LongLocationSettings.WPSetting.Allowed) potentialDoors.Remove("Pain");
 
             HashSet<string> doors = new();

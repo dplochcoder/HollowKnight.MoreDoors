@@ -3,22 +3,15 @@ using RandoSettingsManager.SettingsManagement.Versioning;
 
 namespace MoreDoors.Rando
 {
-    public class SettingsProxy : RandoSettingsProxy<RandomizationSettings, RandomizationSettings.Version>
+    public class SettingsProxy : RandoSettingsProxy<RandomizationSettings, string>
     {
         public static readonly SettingsProxy Instance = new();
 
-        private class Policy : VersioningPolicy<RandomizationSettings.Version>
-        {
-            public static readonly Policy Instance = new();
-
-            public override RandomizationSettings.Version Version => RandomizationSettings.Version.Instance;
-
-            public override bool Allow(RandomizationSettings.Version version) => version == Version;
-        }
-
         public override string ModKey => nameof(MoreDoors);
 
-        public override VersioningPolicy<RandomizationSettings.Version> VersioningPolicy => Policy.Instance;
+        private static readonly VersioningPolicy<string> Policy = new StrictModVersioningPolicy(MoreDoors.Instance);
+
+        public override VersioningPolicy<string> VersioningPolicy => Policy;
 
         public override bool TryProvideSettings(out RandomizationSettings? settings)
         {

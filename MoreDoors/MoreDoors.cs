@@ -60,7 +60,7 @@ namespace MoreDoors
         public void OnLoadGlobal(GlobalSettings s)
         {
             GS = s ?? new();
-            GS.RandoSettings.MaybeUpdateDoorsMask();
+            GS.RandoSettings.MaybeUpdateEnabledDoors();
         }
 
         public GlobalSettings OnSaveGlobal() => GS ?? new();
