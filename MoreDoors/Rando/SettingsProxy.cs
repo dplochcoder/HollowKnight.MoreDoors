@@ -5,13 +5,9 @@ namespace MoreDoors.Rando
 {
     public class SettingsProxy : RandoSettingsProxy<RandomizationSettings, string>
     {
-        public static readonly SettingsProxy Instance = new();
-
         public override string ModKey => nameof(MoreDoors);
 
-        private static readonly VersioningPolicy<string> Policy = new StrictModVersioningPolicy(MoreDoors.Instance);
-
-        public override VersioningPolicy<string> VersioningPolicy => Policy;
+        public override VersioningPolicy<string> VersioningPolicy => new StrictModVersioningPolicy(MoreDoors.Instance);
 
         public override bool TryProvideSettings(out RandomizationSettings? settings)
         {
