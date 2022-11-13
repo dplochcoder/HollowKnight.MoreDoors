@@ -996,7 +996,7 @@
         "forceShiny": false,
         "name": "MoreDoors-Garden_Key-Mossfly-Outside_Overgrown_Mound",
         "sceneName": "Fungus3_44",
-        "flingType": "Right",
+        "flingType": "Everywhere",
         "tags": [
           {
             "$type": "ItemChanger.Tags.ShinyFlingTag, ItemChanger",
@@ -1577,7 +1577,7 @@
           "forceShiny": false,
           "name": "MoreDoors-Moss_Key-Moss_Knight-Lake_of_Unn",
           "sceneName": "Fungus1_26",
-          "flingType": "StraightUp",
+          "flingType": "Everywhere",
           "tags": [
             {
               "$type": "ItemChanger.Tags.ShinyFlingTag, ItemChanger",
