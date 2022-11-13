@@ -996,8 +996,14 @@
         "forceShiny": false,
         "name": "MoreDoors-Garden_Key-Mossfly-Outside_Overgrown_Mound",
         "sceneName": "Fungus3_44",
-        "flingType": "Everywhere",
-        "tags": null
+        "flingType": "Right",
+        "tags": [
+          {
+            "$type": "ItemChanger.Tags.ShinyFlingTag, ItemChanger",
+            "fling": "Right",
+            "Loaded": false
+          }
+        ]
       },
       "Logic": "Fungus3_44[door1]",
       "WorldMapLocationOverride": {
