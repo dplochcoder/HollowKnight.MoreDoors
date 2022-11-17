@@ -28,24 +28,24 @@ namespace MoreDoors.Rando
         public DoorsLevel DoorsLevel = DoorsLevel.NoDoors;
         public bool RandomizeDoorTransitions = false;
         public AddKeyLocations AddKeyLocations = AddKeyLocations.None;
-        public SortedSet<string> EnabledDoors = new(DoorData.DoorNames);
+        public SortedSet<string> DisabledDoors = new();
 
         [JsonIgnore]
-        public bool IsEnabled => EnabledDoors.Count > 0 && (DoorsLevel != DoorsLevel.NoDoors || AddKeyLocations == AddKeyLocations.AllDoors);
+        public bool IsEnabled => DisabledDoors.Count < DoorData.Count && (DoorsLevel != DoorsLevel.NoDoors || AddKeyLocations == AddKeyLocations.AllDoors);
 
-        public bool IsDoorEnabled(string door) => EnabledDoors.Contains(door);
+        public bool IsDoorEnabled(string door) => !DisabledDoors.Contains(door);
 
         public void SetDoorEnabled(string door, bool value)
         {
-            if (value) EnabledDoors.Add(door);
-            else EnabledDoors.Remove(door);
+            if (value) DisabledDoors.Remove(door);
+            else DisabledDoors.Add(door);
         }
 
-        public void MaybeUpdateEnabledDoors() => EnabledDoors.RemoveWhere(d => !DoorData.IsDoor(d));
+        public void MaybeUpdateEnabledDoors() => DisabledDoors.RemoveWhere(d => !DoorData.IsDoor(d));
 
         public HashSet<string> ComputeActiveDoors(GenerationSettings gs, Random r)
         {
-            List<string> potentialDoors = EnabledDoors.ToList();
+            List<string> potentialDoors = DoorData.DoorNames.Where(d => !DisabledDoors.Contains(d)).ToList();
             if (gs.LongLocationSettings.WhitePalaceRando != LongLocationSettings.WPSetting.Allowed) potentialDoors.Remove("Pain");
 
             HashSet<string> doors = new();

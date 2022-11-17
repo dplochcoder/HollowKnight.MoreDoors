@@ -107,7 +107,7 @@ namespace MoreDoors.Rando
             SetEnabledColor();
 
             SmallButton customizeButton = new(moreDoorsPage, Localize("Customize Doors"));
-            OnCustomDoorsChanged += () => customizeButton.Text.color = customizeButton.Locked ? Colors.LOCKED_FALSE_COLOR : (Settings.EnabledDoors.Count == DoorData.Count ? Colors.DEFAULT_COLOR : Colors.TRUE_COLOR);
+            OnCustomDoorsChanged += () => customizeButton.Text.color = customizeButton.Locked ? Colors.LOCKED_FALSE_COLOR : (Settings.DisabledDoors.Count == 0 ? Colors.DEFAULT_COLOR : Colors.TRUE_COLOR);
 
             transitions = (MenuItem<bool>)factory.ElementLookup[nameof(Settings.RandomizeDoorTransitions)];
             LockIf(doorsLevel, DoorsLevel.NoDoors, transitions, customizeButton);
@@ -129,7 +129,7 @@ namespace MoreDoors.Rando
 
             doorsLevel.SetValue(settings.DoorsLevel);
             addKeyLocations.SetValue(settings.AddKeyLocations);
-            Settings.EnabledDoors = new(settings.EnabledDoors);
+            Settings.DisabledDoors = new(settings.DisabledDoors);
             OnCustomDoorsChanged();
         }
 
