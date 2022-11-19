@@ -125,16 +125,6 @@ namespace MoreDoors.Rando
                 }
             }
 
-            // Ensure that flower quest is doable.
-            List<string> requiredKeys = new();
-            if (LS.IncludeDoor("Lake")) requiredKeys.Add(DoorData.Get("Lake").KeyTermName);
-            if (LS.IncludeDoor("Garden")) requiredKeys.Add(DoorData.Get("Garden").KeyTermName);
-            if (requiredKeys.Count > 0)
-            {
-                string clause = string.Join(" + ", requiredKeys);
-                lmb.DoLogicEdit(new(LocationNames.Mask_Shard_Grey_Mourner, $"ORIG + ({clause} | MAPAREARANDO | FULLAREARANDO | ROOMRANDO)"));
-            }
-
             RandoInterop.LS = LS;
         }
 
