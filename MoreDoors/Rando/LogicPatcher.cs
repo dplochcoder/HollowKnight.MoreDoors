@@ -144,8 +144,8 @@ namespace MoreDoors.Rando
             replacer.Apply(lmb);
 
             // We don't need this data any more, get rid of it.
-            RandoInterop.LS.ModifiedLogicNames = null;
-            RandoInterop.LS.LogicSubstitutions = null;
+            RandoInterop.LS.ModifiedLogicNames.Clear();
+            RandoInterop.LS.LogicSubstitutions.Clear();
         }
     }
 }
