@@ -129,7 +129,8 @@ namespace MoreDoors.Rando
 
             doorsLevel.SetValue(settings.DoorsLevel);
             addKeyLocations.SetValue(settings.AddKeyLocations);
-            Settings.DisabledDoors = new(settings.DisabledDoors);
+            Settings.DisabledDoors.Clear();
+            settings.DisabledDoors.ForEach(d => Settings.DisabledDoors.Add(d));
             OnCustomDoorsChanged();
         }
 
