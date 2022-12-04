@@ -24,7 +24,7 @@ namespace MoreDoors.Rando
             SettingsPM.OnResolveIntTerm += ResolveMoreDoorsRando;
 
             // This should run before DarknessRandomizer and/or RandoPlus
-            RCData.RuntimeLogicOverride.Subscribe(35f, ModifyCoreDefinitions);
+            RCData.RuntimeLogicOverride.Subscribe(55f, ModifyCoreDefinitions);
 
             // Updating everything to use proxies should run after.
             RCData.RuntimeLogicOverride.Subscribe(100f, SubstituteProxies);
