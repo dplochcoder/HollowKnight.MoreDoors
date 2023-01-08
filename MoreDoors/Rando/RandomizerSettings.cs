@@ -42,17 +42,20 @@ namespace MoreDoors.Rando
         }
 
         public void MaybeUpdateEnabledDoors() => DisabledDoors.RemoveWhere(d => !DoorData.IsDoor(d));
+    }
 
-        public HashSet<string> ComputeActiveDoors(GenerationSettings gs, Random r)
+    public static class RandomizationSettingsExtensions
+    {
+        public static HashSet<string> ComputeActiveDoors(this RandomizationSettings settings, GenerationSettings gs, Random r)
         {
-            List<string> potentialDoors = DoorData.DoorNames.Where(d => !DisabledDoors.Contains(d)).ToList();
+            List<string> potentialDoors = DoorData.DoorNames.Where(d => !settings.DisabledDoors.Contains(d)).ToList();
             if (gs.LongLocationSettings.WhitePalaceRando != LongLocationSettings.WPSetting.Allowed) potentialDoors.Remove("Pain");
 
             HashSet<string> doors = new();
             if (potentialDoors.Count == 0) return doors;
 
             int modifier;
-            switch (DoorsLevel)
+            switch (settings.DoorsLevel)
             {
                 case DoorsLevel.NoDoors:
                     return doors;
@@ -66,7 +69,7 @@ namespace MoreDoors.Rando
                     potentialDoors.ForEach(d => doors.Add(d));
                     return doors;
                 default:
-                    throw new ArgumentException($"Unknown DoorsLevel: {DoorsLevel}");
+                    throw new ArgumentException($"Unknown DoorsLevel: {settings.DoorsLevel}");
             }
 
             int mid = potentialDoors.Count * modifier / 3;
