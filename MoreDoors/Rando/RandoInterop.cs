@@ -25,6 +25,7 @@ namespace MoreDoors.Rando
 
             RandoController.OnExportCompleted += OnExportCompleted;
             RandomizerMod.Logging.SettingsLog.AfterLogSettings += LogSettings;
+            RandomizerMod.Logging.LogManager.AddLogger(new MoreDoorsLogger());
         }
 
         private static void OnExportCompleted(RandoController rc)
