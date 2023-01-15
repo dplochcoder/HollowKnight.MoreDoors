@@ -113,6 +113,15 @@ namespace MoreDoors.Rando
                     HandleTransition(lmb, data, data.Door.LeftLocation, LS.ModifiedLogicNames, LS.LogicSubstitutions);
                     HandleTransition(lmb, data, data.Door.RightLocation, LS.ModifiedLogicNames, LS.LogicSubstitutions);
                     lmb.AddItem(new CappedItem(data.Key.ItemName, new TermValue[] { new(keyTerm, 1) }, new(keyTerm, 1)));
+
+                    // Modify the infection wall.
+                    if (doorName == "False")
+                    {
+                        // The right side of the infection wall is in logic only through defeating false knight.
+                        lmb.DoLogicEdit(new("Crossroads_10[left1]", "ORIG + (ROOMRANDO | Defeated_False_Knight)"));
+                        // The left side of the infection wall is only reachable if the right side is reachable.
+                        lmb.DoLogicEdit(new("Crossroads_06[right1]", "ORIG + Crossroads_10[left1]"));
+                    }
                 }
 
                 // Add vanilla key logic defs.
@@ -139,15 +148,6 @@ namespace MoreDoors.Rando
             replacer.IgnoredNames = new(RandoInterop.LS.ModifiedLogicNames);
             replacer.SimpleTokenReplacements = new(RandoInterop.LS.LogicSubstitutions);
             replacer.Apply(lmb);
-
-            // Modify the infection wall.
-            if (RandoInterop.LS.EnabledDoorNames.Contains("False"))
-            {
-                // The right side of the infection wall is in logic only through defeating false knight.
-                lmb.DoLogicEdit(new("Crossroads_10[left1]", "ORIG + (ROOMRANDO | Defeated_False_Knight)"));
-                // The left side of the infection wall is only reachable if the right side is reachable.
-                lmb.DoLogicEdit(new("Crossroads_06[right1]", "ORIG + Crossroads_10[left1]"));
-            }
 
             // We don't need this data any more, get rid of it.
             RandoInterop.LS.ModifiedLogicNames.Clear();
