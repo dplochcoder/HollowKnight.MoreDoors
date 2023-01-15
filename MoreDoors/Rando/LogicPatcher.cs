@@ -28,9 +28,6 @@ namespace MoreDoors.Rando
 
             // Updating everything to use proxies should run after.
             RCData.RuntimeLogicOverride.Subscribe(100f, SubstituteProxies);
-
-            // Fix infection wall logic if the False door is enabled.
-            InfectionWallLogicFix.Setup(gs => RandoInterop.IsEnabled && gs.PoolSettings.Keys && RandoInterop.LS.EnabledDoorNames.Contains("False"), 101f);
         }
 
         private static bool ResolveMoreDoorsRando(string term, out int result)
@@ -142,6 +139,15 @@ namespace MoreDoors.Rando
             replacer.IgnoredNames = new(RandoInterop.LS.ModifiedLogicNames);
             replacer.SimpleTokenReplacements = new(RandoInterop.LS.LogicSubstitutions);
             replacer.Apply(lmb);
+
+            // Modify the infection wall.
+            if (RandoInterop.LS.EnabledDoorNames.Contains("False"))
+            {
+                // The right side of the infection wall is in logic only through defeating false knight.
+                lmb.DoLogicEdit(new("Crossroads_10[left1]", "ORIG + (ROOMRANDO | Defeated_False_Knight)"));
+                // The left side of the infection wall is only reachable if the right side is reachable.
+                lmb.DoLogicEdit(new("Crossroads_06[right1]", "ORIG + Crossroads_10[left1]"));
+            }
 
             // We don't need this data any more, get rid of it.
             RandoInterop.LS.ModifiedLogicNames.Clear();
