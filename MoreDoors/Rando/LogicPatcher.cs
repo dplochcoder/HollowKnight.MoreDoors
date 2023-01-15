@@ -86,7 +86,7 @@ namespace MoreDoors.Rando
             lmb.DoLogicEdit(new(doorLoc.TransitionProxyName, $"ORIG | {doorLoc.TransitionName}"));
 
             string lanternClause = doorLoc.RequiresLantern ? " + LANTERN" : "";
-            lmb.AddLogicDef(new(doorLoc.TransitionName, $"{doorLoc.TransitionName} | {doorLoc.TransitionProxyName}{lanternClause} + {data.KeyTermName}"));
+            lmb.AddLogicDef(new(doorLoc.TransitionName, $"{doorLoc.TransitionName} | {doorLoc.TransitionProxyName}{lanternClause} + ({data.KeyTermName} | {data.DoorOpenedTermName})"));
         }
 
         public static void ModifyCoreDefinitions(GenerationSettings gs, LogicManagerBuilder lmb)
@@ -110,6 +110,7 @@ namespace MoreDoors.Rando
                 {
                     // Modify transition logic for this door.
                     var keyTerm = lmb.GetOrAddTerm(data.KeyTermName);
+                    lmb.AddWaypoint(new(data.DoorOpenedTermName, $"{data.Door.LeftLocation.TransitionName} | {data.Door.RightLocation.TransitionName}"));
                     HandleTransition(lmb, data, data.Door.LeftLocation, LS.ModifiedLogicNames, LS.LogicSubstitutions);
                     HandleTransition(lmb, data, data.Door.RightLocation, LS.ModifiedLogicNames, LS.LogicSubstitutions);
                     lmb.AddItem(new CappedItem(data.Key.ItemName, new TermValue[] { new(keyTerm, 1) }, new(keyTerm, 1)));
