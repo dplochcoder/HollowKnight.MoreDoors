@@ -133,9 +133,6 @@ namespace MoreDoors.Data
         public string KeyTermName => $"MOREDOORS_{UpperCaseName}_KEY";
 
         [JsonIgnore]
-        public string DoorOpenedWaypoint => $"MOREDOORS_{UpperCaseName}_DOOR_OPENED";
-
-        [JsonIgnore]
         public string NoKeyPromptId => $"MOREDOORS_{UpperCaseName}_DOOR_NOKEY";
 
         [JsonIgnore]

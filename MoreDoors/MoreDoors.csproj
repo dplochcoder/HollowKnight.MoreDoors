@@ -10,8 +10,8 @@
     <Copyright>Copyright © dplochcoder 2022</Copyright>
     <Authors>dplochcoder</Authors>
     <NoWarn>7035</NoWarn>
-    <AssemblyVersion>2.0.5.1</AssemblyVersion>
-    <FileVersion>2.0.5.1</FileVersion>
+    <AssemblyVersion>2.0.5.2</AssemblyVersion>
+    <FileVersion>2.0.5.2</FileVersion>
     <Deterministic>false</Deterministic>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <LangVersion>latest</LangVersion>
