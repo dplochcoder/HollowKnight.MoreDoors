@@ -63,6 +63,7 @@ namespace MoreDoors.IC
             ModHooks.SetPlayerBoolHook += OverrideSetBool;
             ModHooks.LanguageGetHook += OverrideLanguageGet;
             PriorityEvents.BeforeSceneManagerStart.Subscribe(BeforeSceneManagerStartPriority, OnSceneManagerStart);
+            Events.OnBeginSceneTransition += OnUseTransition;
             Events.OnTransitionOverride += OnTransitionOverride;
 
             MoreKeysPage.Instance.Update();
@@ -83,6 +84,7 @@ namespace MoreDoors.IC
             ModHooks.SetPlayerBoolHook -= OverrideSetBool;
             ModHooks.LanguageGetHook -= OverrideLanguageGet;
             PriorityEvents.BeforeSceneManagerStart.Unsubscribe(BeforeSceneManagerStartPriority, OnSceneManagerStart);
+            Events.OnBeginSceneTransition -= OnUseTransition;
             Events.OnTransitionOverride -= OnTransitionOverride;
         }
 
@@ -154,10 +156,13 @@ namespace MoreDoors.IC
             }
         }
 
-        private void OnTransitionOverride(Transition src, Transition origDst, ITransition newDst)
-        {
+        private void OnUseTransition(Transition t) => OnUseITransition(t);
+
+        private void OnTransitionOverride(Transition src, Transition origDst, ITransition newDst) => OnUseITransition(newDst);
+
+        private void OnUseITransition(ITransition t) {
             // If we went through a door via RoomRando, force it open.
-            var tname = $"{newDst.SceneName}[{newDst.GateName}]";
+            var tname = $"{t.SceneName}[{t.GateName}]";
             if (DoorNamesByTransition.TryGetValue(tname, out string doorName) && !DoorStates[doorName].DoorOpened)
             {
                 var data = DoorData.Get(doorName);
