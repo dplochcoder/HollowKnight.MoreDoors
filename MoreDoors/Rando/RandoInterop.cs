@@ -13,6 +13,15 @@ public static class RandoInterop
 {
     public static LocalSettings LS { get; set; }
 
+    private static void EarlyCreateSettings(RandoController rc)
+    {
+        if (!IsEnabled) return;
+
+        LS = new();
+        System.Random r = new(rc.gs.Seed + 13);
+        LS.EnabledDoorNames = LS.Settings.ComputeActiveDoors(rc.gs, r);
+    }
+
     public static bool IsEnabled => MoreDoors.GS.RandoSettings.IsEnabled;
 
     public static void Setup()
@@ -23,6 +32,7 @@ public static class RandoInterop
         CondensedSpoilerLogger.AddCategory("MoreDoors Keys", _ => IsEnabled,
             new(DoorData.DoorNames.Select(d => DoorData.Get(d).Key.ItemName)));
 
+        RandoController.OnBeginRun += EarlyCreateSettings;
         RandoController.OnExportCompleted += OnExportCompleted;
         RandomizerMod.Logging.SettingsLog.AfterLogSettings += LogSettings;
         RandomizerMod.Logging.LogManager.AddLogger(new MoreDoorsLogger());

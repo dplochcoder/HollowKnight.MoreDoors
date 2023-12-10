@@ -1,6 +1,6 @@
-﻿using ItemChanger;
-using MoreDoors.Data;
+﻿using MoreDoors.Data;
 using PurenailCore.RandoUtil;
+using PurenailCore.SystemUtil;
 using RandomizerCore;
 using RandomizerCore.Logic;
 using RandomizerCore.LogicItems;
@@ -8,16 +8,14 @@ using RandomizerCore.StringLogic;
 using RandomizerMod.Menu;
 using RandomizerMod.RC;
 using RandomizerMod.Settings;
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using StartDef = RandomizerMod.RandomizerData.StartDef;
 
 namespace MoreDoors.Rando;
 
 public static class LogicPatcher
 {
-    private const string MoreDoorsRando = "MOREDOORSRANDO";
-
     public static void Setup()
     {
         RandomizerMenuAPI.OnGenerateStartLocationDict += PatchStartLocations;
@@ -30,11 +28,25 @@ public static class LogicPatcher
         RCData.RuntimeLogicOverride.Subscribe(100f, SubstituteProxies);
     }
 
+    private const string TERM_PREFIX = "MOREDOORSRANDO[";
+
+    private static bool ParseMoreDoorsTerm(string term, out string doorName)
+    {
+        if (term.StartsWith(TERM_PREFIX) && term.EndsWith("]"))
+        {
+            doorName = term.Substring(TERM_PREFIX.Length, term.Length - TERM_PREFIX.Length - 1);
+            return true;
+        }
+
+        doorName = "";
+        return false;
+    }
+
     private static bool ResolveMoreDoorsRando(string term, out int result)
     {
-        if (term == MoreDoorsRando)
+        if (ParseMoreDoorsTerm(term, out var doorName))
         {
-            result = RandoInterop.IsEnabled ? 1 : 0;
+            result = (RandoInterop.IsEnabled && RandoInterop.LS != null && RandoInterop.LS.EnabledDoorNames.Contains(doorName)) ? 1 : 0;
             return true;
         }
 
@@ -44,34 +56,46 @@ public static class LogicPatcher
 
     private delegate StartDef StartModifier(StartDef startDef);
 
-    private static StartModifier ForbidWithMoreDoors(string unless = "FALSE") => sd => sd with
+    private static StartModifier ForbidUnless(string exception, params string[] doorNames)
     {
-        RandoLogic = $"({sd.RandoLogic ?? sd.Logic}) + ({MoreDoorsRando}=0 | {unless})"
-    };
+        var clauses = doorNames.Select(n => $"MOREDOORSRANDO[{n}]=0").ToArray();
+        var doorsClause = string.Join(" + ", clauses);
+        return sd => sd with
+        {
+            RandoLogic = $"({sd.RandoLogic ?? sd.Logic}) + (({doorsClause}) | {exception})"
+        };
+    }
+
+    private static StartModifier Forbid(params string[] doorNames) => ForbidUnless("FALSE", doorNames);
+
+    private static StartModifier ForbidUnlessRoomRando(params string[] doorNames) => ForbidUnless("ROOMRANDO", doorNames);
 
     private static readonly Dictionary<string, StartModifier> StartModifiers = new()
     {
-        { "Abyss", sd => sd with { Transition = "Abyss_06_Core[left3]" } },
-        { "East Fog Canyon", ForbidWithMoreDoors("ROOMRANDO") },
-        { "Hallownest's Crown", ForbidWithMoreDoors("ROOMRANDO") },
-        { "Hive", ForbidWithMoreDoors("ROOMRANDO") },
-        { "Lower Greenpath", ForbidWithMoreDoors("ROOMRANDO") },
-        { "Mantis Village", ForbidWithMoreDoors() },
-        { "Queens's Gardens", ForbidWithMoreDoors("ROOMRANDO") },
-        { "Queen's Station", ForbidWithMoreDoors("ROOMRANDO") },
-        { "West Blue Lake", ForbidWithMoreDoors() },
-        { "West Fog Canyon", ForbidWithMoreDoors("ROOMRANDO") }
+        { "Distant Village", Forbid(DoorNames.VILLAGE) },
+        { "East Fog Canyon", ForbidUnlessRoomRando(DoorNames.ARCHIVE) },
+        { "Hallownest's Crown", ForbidUnlessRoomRando(DoorNames.CROWN) },
+        { "Kingdom's Edge", ForbidUnlessRoomRando(DoorNames.BARDOON) },
+        { "Lower Greenpath", ForbidUnlessRoomRando(DoorNames.MOSS) },
     };
     private static void PatchStartLocations(Dictionary<string, StartDef> startDefs)
     {
-        List<string> keys = new(startDefs.Keys);
-        foreach (var start in keys)
+        // Forbid starting in a room with a door in it, to be safe.
+        Dictionary<string, List<string>> sceneToDoors = new();
+        foreach (var data in DoorData.Data)
         {
-            if (StartModifiers.TryGetValue(start, out StartModifier ms))
-            {
-                var sd = startDefs[start];
-                startDefs[start] = ms(sd);
-            }
+            var door = data.Value.Door;
+            sceneToDoors.GetOrAddNew(door.LeftLocation.SceneName).Add(data.Key);
+            sceneToDoors.GetOrAddNew(door.RightLocation.SceneName).Add(data.Key);
+        }
+
+        List<string> keys = new(startDefs.Keys);
+        foreach (var startName in keys)
+        {
+            var start = startDefs[startName];
+
+            if (sceneToDoors.TryGetValue(start.SceneName, out var doors)) startDefs[startName] = Forbid(doors.ToArray())(startDefs[startName]);
+            if (StartModifiers.TryGetValue(startName, out var modifier)) startDefs[startName] = modifier(startDefs[startName]);
         }
     }
 
@@ -98,24 +122,21 @@ public static class LogicPatcher
             "COMBAT[Shrumal_Ogre]",
             "SIDESLASH | UPSLASH | CYCLONE | GREATSLASH | FULLDASHSLASH | ANYDASHSLASH + DASHMASTER + OBSCURESKIPS | SPICYCOMBATSKIPS");
 
-        LocalSettings LS = new();
-        Random r = new(gs.Seed + 13);
-        LS.EnabledDoorNames = LS.Settings.ComputeActiveDoors(gs, r);
-
+        var ls = RandoInterop.LS;
         foreach (var doorName in DoorData.DoorNames)
         {
             var data = DoorData.Get(doorName);
 
-            if (LS.IncludeDoor(doorName))
+            if (ls.IncludeDoor(doorName))
             {
                 // Modify transition logic for this door.
                 var keyTerm = lmb.GetOrAddTerm(data.KeyTermName);
-                HandleTransition(lmb, data, data.Door.LeftLocation, LS.ModifiedLogicNames, LS.LogicSubstitutions);
-                HandleTransition(lmb, data, data.Door.RightLocation, LS.ModifiedLogicNames, LS.LogicSubstitutions);
+                HandleTransition(lmb, data, data.Door.LeftLocation, ls.ModifiedLogicNames, ls.LogicSubstitutions);
+                HandleTransition(lmb, data, data.Door.RightLocation, ls.ModifiedLogicNames, ls.LogicSubstitutions);
                 lmb.AddItem(new CappedItem(data.Key.ItemName, new TermValue[] { new(keyTerm, 1) }, new(keyTerm, 1)));
 
                 // Modify the infection wall.
-                if (doorName == "False")
+                if (doorName == DoorNames.FALSE)
                 {
                     // The right side of the infection wall is in logic only through defeating false knight.
                     lmb.DoLogicEdit(new("Crossroads_10[left1]", "ORIG + (ROOMRANDO | Defeated_False_Knight)"));
@@ -125,13 +146,8 @@ public static class LogicPatcher
             }
 
             // Add vanilla key logic defs.
-            if (LS.IncludeKeyLocation(doorName))
-            {
-                lmb.AddLogicDef(new(data.Key.Location.name, data.Key.Logic));
-            }
+            if (ls.IncludeKeyLocation(doorName)) lmb.AddLogicDef(new(data.Key.Location.name, data.Key.Logic));
         }
-
-        RandoInterop.LS = LS;
     }
 
     public static void SubstituteProxies(GenerationSettings gs, LogicManagerBuilder lmb)
