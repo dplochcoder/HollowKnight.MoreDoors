@@ -1,11 +1,10 @@
 ﻿using MoreDoors.Rando;
 
-namespace MoreDoors
+namespace MoreDoors;
+
+public class GlobalSettings
 {
-    public class GlobalSettings
-    {
-        public RandomizationSettings RandoSettings = new();
-        public bool EnableInVanilla = false;
-        public bool ShowKeyShinies = true;
-    }
+    public RandomizationSettings RandoSettings = new();
+    public bool EnableInVanilla = false;
+    public bool ShowKeyShinies = true;
 }

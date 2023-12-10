@@ -5,44 +5,43 @@ using MoreDoors.IC;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MoreDoors.Rando
+namespace MoreDoors.Rando;
+
+public static class Vanilla
 {
-    public static class Vanilla
+    public static void Setup()
     {
-        public static void Setup()
+        On.UIManager.StartNewGame += PlaceVanillaItems;
+    }
+
+    private static bool IsRandoSave() => RandomizerMod.RandomizerMod.RS?.GenerationSettings != null;
+
+    private static List<string> GetRandoVanillaKeys()
+    {
+        if (RandomizerMod.RandomizerMod.RS.GenerationSettings.PoolSettings.Keys || MoreDoors.GS.RandoSettings.AddKeyLocations == AddKeyLocations.None) return new();
+        return RandoInterop.LS?.EnabledDoorNames.ToList() ?? new();
+    }
+
+    private static void PlaceVanillaItems(On.UIManager.orig_StartNewGame orig, UIManager self, bool permaDeath, bool bossRush)
+    {
+        List<AbstractPlacement> placements = new();
+
+        bool rando = ModHooks.GetMod("Randomizer 4") is Mod && IsRandoSave();
+        bool includeVanilla = MoreDoors.GS.EnableInVanilla;
+        List<string> doorNames = rando ? GetRandoVanillaKeys() : (includeVanilla ? new(DoorData.DoorNames) : new());
+        foreach (var door in doorNames)
         {
-            On.UIManager.StartNewGame += PlaceVanillaItems;
+            var data = DoorData.Get(door);
+            placements.Add(data.Key.Location.Wrap().Add(Finder.GetItem(data.Key.ItemName)));
         }
+        ItemChangerMod.AddPlacements(placements);
 
-        private static bool IsRandoSave() => RandomizerMod.RandomizerMod.RS?.GenerationSettings != null;
-
-        private static List<string> GetRandoVanillaKeys()
+        if (!rando && doorNames.Count > 0)
         {
-            if (RandomizerMod.RandomizerMod.RS.GenerationSettings.PoolSettings.Keys || MoreDoors.GS.RandoSettings.AddKeyLocations == AddKeyLocations.None) return new();
-            return RandoInterop.LS?.EnabledDoorNames.ToList() ?? new();
+            var mod = ItemChangerMod.Modules.Add<MoreDoorsModule>();
+            doorNames.ForEach(d => mod.DoorStates[d] = new());
+            mod.AddDeployers();
         }
-
-        private static void PlaceVanillaItems(On.UIManager.orig_StartNewGame orig, UIManager self, bool permaDeath, bool bossRush)
-        {
-            List<AbstractPlacement> placements = new();
-
-            bool rando = ModHooks.GetMod("Randomizer 4") is Mod && IsRandoSave();
-            bool includeVanilla = MoreDoors.GS.EnableInVanilla;
-            List<string> doorNames = rando ? GetRandoVanillaKeys() : (includeVanilla ? new(DoorData.DoorNames) : new());
-            foreach (var door in doorNames)
-            {
-                var data = DoorData.Get(door);
-                placements.Add(data.Key.Location.Wrap().Add(Finder.GetItem(data.Key.ItemName)));
-            }
-            ItemChangerMod.AddPlacements(placements);
-
-            if (!rando && doorNames.Count > 0)
-            {
-                var mod = ItemChangerMod.Modules.Add<MoreDoorsModule>();
-                doorNames.ForEach(d => mod.DoorStates[d] = new());
-                mod.AddDeployers();
-            }
-            orig(self, permaDeath, bossRush);
-        }
+        orig(self, permaDeath, bossRush);
     }
 }

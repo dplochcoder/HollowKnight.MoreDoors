@@ -6,83 +6,82 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MoreDoors.Rando
+namespace MoreDoors.Rando;
+
+public enum DoorsLevel
 {
-    public enum DoorsLevel
+    NoDoors,
+    SomeDoors,
+    MoreDoors,
+    AllDoors
+}
+
+public enum AddKeyLocations
+{
+    None,
+    MatchingDoors,
+    AllDoors
+}
+
+public class RandomizationSettings
+{
+    public DoorsLevel DoorsLevel = DoorsLevel.NoDoors;
+    public bool RandomizeDoorTransitions = false;
+    public AddKeyLocations AddKeyLocations = AddKeyLocations.None;
+    public SortedSet<string> DisabledDoors = new();
+
+    [JsonIgnore]
+    public bool IsEnabled => DisabledDoors.Count < DoorData.Count && (DoorsLevel != DoorsLevel.NoDoors || AddKeyLocations == AddKeyLocations.AllDoors);
+
+    public bool IsDoorEnabled(string door) => !DisabledDoors.Contains(door);
+
+    public void SetDoorEnabled(string door, bool value)
     {
-        NoDoors,
-        SomeDoors,
-        MoreDoors,
-        AllDoors
+        if (value) DisabledDoors.Remove(door);
+        else DisabledDoors.Add(door);
     }
 
-    public enum AddKeyLocations
+    public void MaybeUpdateEnabledDoors() => DisabledDoors.RemoveWhere(d => !DoorData.IsDoor(d));
+}
+
+public static class RandomizationSettingsExtensions
+{
+    public static HashSet<string> ComputeActiveDoors(this RandomizationSettings settings, GenerationSettings gs, Random r)
     {
-        None,
-        MatchingDoors,
-        AllDoors
-    }
+        List<string> potentialDoors = DoorData.DoorNames.Where(d => !settings.DisabledDoors.Contains(d)).ToList();
+        if (gs.LongLocationSettings.WhitePalaceRando != LongLocationSettings.WPSetting.Allowed) potentialDoors.Remove("Pain");
 
-    public class RandomizationSettings
-    {
-        public DoorsLevel DoorsLevel = DoorsLevel.NoDoors;
-        public bool RandomizeDoorTransitions = false;
-        public AddKeyLocations AddKeyLocations = AddKeyLocations.None;
-        public SortedSet<string> DisabledDoors = new();
+        HashSet<string> doors = new();
+        if (potentialDoors.Count == 0) return doors;
 
-        [JsonIgnore]
-        public bool IsEnabled => DisabledDoors.Count < DoorData.Count && (DoorsLevel != DoorsLevel.NoDoors || AddKeyLocations == AddKeyLocations.AllDoors);
-
-        public bool IsDoorEnabled(string door) => !DisabledDoors.Contains(door);
-
-        public void SetDoorEnabled(string door, bool value)
+        int modifier;
+        switch (settings.DoorsLevel)
         {
-            if (value) DisabledDoors.Remove(door);
-            else DisabledDoors.Add(door);
+            case DoorsLevel.NoDoors:
+                return doors;
+            case DoorsLevel.SomeDoors:
+                modifier = 1;
+                break;
+            case DoorsLevel.MoreDoors:
+                modifier = 2;
+                break;
+            case DoorsLevel.AllDoors:
+                potentialDoors.ForEach(d => doors.Add(d));
+                return doors;
+            default:
+                throw new ArgumentException($"Unknown DoorsLevel: {settings.DoorsLevel}");
         }
 
-        public void MaybeUpdateEnabledDoors() => DisabledDoors.RemoveWhere(d => !DoorData.IsDoor(d));
-    }
+        int mid = potentialDoors.Count * modifier / 3;
+        int numDoors = mid - modifier + r.Next(0, modifier * 2 + 1);
 
-    public static class RandomizationSettingsExtensions
-    {
-        public static HashSet<string> ComputeActiveDoors(this RandomizationSettings settings, GenerationSettings gs, Random r)
-        {
-            List<string> potentialDoors = DoorData.DoorNames.Where(d => !settings.DisabledDoors.Contains(d)).ToList();
-            if (gs.LongLocationSettings.WhitePalaceRando != LongLocationSettings.WPSetting.Allowed) potentialDoors.Remove("Pain");
+        // Clamp to at least one door.
+        if (numDoors > potentialDoors.Count - 1) numDoors = potentialDoors.Count - 1;
+        if (numDoors < 1) numDoors = 1;
 
-            HashSet<string> doors = new();
-            if (potentialDoors.Count == 0) return doors;
+        potentialDoors.Shuffle(r);
+        for (int i = 0; i < numDoors; i++) doors.Add(potentialDoors[i]);
 
-            int modifier;
-            switch (settings.DoorsLevel)
-            {
-                case DoorsLevel.NoDoors:
-                    return doors;
-                case DoorsLevel.SomeDoors:
-                    modifier = 1;
-                    break;
-                case DoorsLevel.MoreDoors:
-                    modifier = 2;
-                    break;
-                case DoorsLevel.AllDoors:
-                    potentialDoors.ForEach(d => doors.Add(d));
-                    return doors;
-                default:
-                    throw new ArgumentException($"Unknown DoorsLevel: {settings.DoorsLevel}");
-            }
-
-            int mid = potentialDoors.Count * modifier / 3;
-            int numDoors = mid - modifier + r.Next(0, modifier * 2 + 1);
-
-            // Clamp to at least one door.
-            if (numDoors > potentialDoors.Count - 1) numDoors = potentialDoors.Count - 1;
-            if (numDoors < 1) numDoors = 1;
-
-            potentialDoors.Shuffle(r);
-            for (int i = 0; i < numDoors; i++) doors.Add(potentialDoors[i]);
-
-            return doors;
-        }
+        return doors;
     }
 }

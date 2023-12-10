@@ -11,84 +11,83 @@ using PurenailCore.ModUtil;
 using SFCore;
 using MoreDoors.FStats;
 
-namespace MoreDoors
+namespace MoreDoors;
+
+public class MoreDoors : Mod, IGlobalSettings<GlobalSettings>, ICustomMenuMod
 {
-    public class MoreDoors : Mod, IGlobalSettings<GlobalSettings>, ICustomMenuMod
+    public static MoreDoors Instance { get; private set; }
+    public static GlobalSettings GS { get; private set; } = new();
+
+    public bool ToggleButtonInsideMenu => false;
+
+    public static new void LogDebug(string msg) { ((Loggable)Instance).LogDebug(msg); }
+
+    public static new void Log(string msg) { ((Loggable)Instance).Log(msg); }
+
+    public static new void LogWarn(string msg) { ((Loggable)Instance).LogWarn(msg); }
+
+    public static new void LogError(string msg) { ((Loggable)Instance).LogError(msg); }
+
+    public MoreDoors() : base("MoreDoors")
     {
-        public static MoreDoors Instance { get; private set; }
-        public static GlobalSettings GS { get; private set; } = new();
+        Instance = this;
+        InventoryHelper.AddInventoryPage(InventoryPageType.Empty, "More Keys", MoreDoorsModule.MenuConvKey, "MoreKeys",
+            MoreDoorsModule.MoreDoorsEnabledName, MoreKeysPage.Instance.GeneratePage);
+    }
 
-        public bool ToggleButtonInsideMenu => false;
+    public override void Initialize(Dictionary<string, Dictionary<string, GameObject>> preloadedObjects)
+    {
+        IC.Preloader.Instance.Initialize(preloadedObjects);
+        DoorData.Load();
 
-        public static new void LogDebug(string msg) { ((Loggable)Instance).LogDebug(msg); }
-
-        public static new void Log(string msg) { ((Loggable)Instance).Log(msg); }
-
-        public static new void LogWarn(string msg) { ((Loggable)Instance).LogWarn(msg); }
-
-        public static new void LogError(string msg) { ((Loggable)Instance).LogError(msg); }
-
-        public MoreDoors() : base("MoreDoors")
+        Vanilla.Setup();
+        if (ModHooks.GetMod("Randomizer 4") is Mod)
         {
-            Instance = this;
-            InventoryHelper.AddInventoryPage(InventoryPageType.Empty, "More Keys", MoreDoorsModule.MenuConvKey, "MoreKeys",
-                MoreDoorsModule.MoreDoorsEnabledName, MoreKeysPage.Instance.GeneratePage);
+            RandoInterop.Setup();
         }
-
-        public override void Initialize(Dictionary<string, Dictionary<string, GameObject>> preloadedObjects)
+        if (ModHooks.GetMod("DebugMod") is Mod)
         {
-            IC.Preloader.Instance.Initialize(preloadedObjects);
-            DoorData.Load();
-
-            Vanilla.Setup();
-            if (ModHooks.GetMod("Randomizer 4") is Mod)
-            {
-                RandoInterop.Setup();
-            }
-            if (ModHooks.GetMod("DebugMod") is Mod)
-            {
-                DebugInterop.Setup();
-            }
-            if (ModHooks.GetMod("FStatsMod") is Mod)
-            {
-                FStatsInterop.Setup();
-            }
+            DebugInterop.Setup();
         }
-
-        public override List<(string, string)> GetPreloadNames() => new(IC.Preloader.Instance.GetPreloadNames());
-
-        public void OnLoadGlobal(GlobalSettings s)
+        if (ModHooks.GetMod("FStatsMod") is Mod)
         {
-            GS = s ?? new();
-            GS.RandoSettings.MaybeUpdateEnabledDoors();
+            FStatsInterop.Setup();
         }
+    }
 
-        public GlobalSettings OnSaveGlobal() => GS ?? new();
+    public override List<(string, string)> GetPreloadNames() => new(IC.Preloader.Instance.GetPreloadNames());
 
-        private static readonly string Version = VersionUtil.ComputeVersion<MoreDoors>();
+    public void OnLoadGlobal(GlobalSettings s)
+    {
+        GS = s ?? new();
+        GS.RandoSettings.MaybeUpdateEnabledDoors();
+    }
 
-        public override string GetVersion() => Version;
+    public GlobalSettings OnSaveGlobal() => GS ?? new();
 
-        public MenuScreen GetMenuScreen(MenuScreen modListMenu, ModToggleDelegates? toggleDelegates)
+    private static readonly string Version = VersionUtil.ComputeVersion<MoreDoors>();
+
+    public override string GetVersion() => Version;
+
+    public MenuScreen GetMenuScreen(MenuScreen modListMenu, ModToggleDelegates? toggleDelegates)
+    {
+        ModMenuScreenBuilder builder = new(Localize("More Doors"), modListMenu);
+        builder.AddHorizontalOption(new()
         {
-            ModMenuScreenBuilder builder = new(Localize("More Doors"), modListMenu);
-            builder.AddHorizontalOption(new()
-            {
-                Name = Localize("Enable in Vanilla"),
-                Description = "If yes, MoreDoors will be added to vanilla save files.",
-                Values = new string[] { "No", "Yes" },
-                Saver = i => GS.EnableInVanilla = i == 1,
-                Loader = () => GS.EnableInVanilla ? 1 : 0
-            });
-            builder.AddHorizontalOption(new()
-            {
-                Name = Localize("Show Key Shinies"),
-                Description = "If yes, enemies holding keys will be marked with a shiny as a hint.",
-                Values = new string[] { "No", "Yes" },
-                Saver = i => GS.ShowKeyShinies = i == 1,
-                Loader = () => GS.ShowKeyShinies ? 1 : 0
-            });
-            return builder.CreateMenuScreen();
-        }
+            Name = Localize("Enable in Vanilla"),
+            Description = "If yes, MoreDoors will be added to vanilla save files.",
+            Values = new string[] { "No", "Yes" },
+            Saver = i => GS.EnableInVanilla = i == 1,
+            Loader = () => GS.EnableInVanilla ? 1 : 0
+        });
+        builder.AddHorizontalOption(new()
+        {
+            Name = Localize("Show Key Shinies"),
+            Description = "If yes, enemies holding keys will be marked with a shiny as a hint.",
+            Values = new string[] { "No", "Yes" },
+            Saver = i => GS.ShowKeyShinies = i == 1,
+            Loader = () => GS.ShowKeyShinies ? 1 : 0
+        });
+        return builder.CreateMenuScreen();
     }
 }
