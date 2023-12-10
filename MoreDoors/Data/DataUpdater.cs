@@ -1,6 +1,8 @@
 ﻿using ItemChanger.Locations;
 using System;
-
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using JsonUtil = PurenailCore.SystemUtil.JsonUtil<MoreDoors.MoreDoors>;
 
 namespace MoreDoors.Data;
@@ -10,7 +12,8 @@ public static class DataUpdater
     public static void Run()
     {
         string root = JsonUtil.InferGitRoot();
-        string path = $"{root}/MoreDoors/Resources/Data/doors.json";
+        string jsonPath = $"{root}/MoreDoors/Resources/Data/doors.json";
+        string namesPath = $"{root}/MoreDoors/Data/DoorNames.cs";
 
         bool anyErr = false;
         foreach (var door in DoorData.DoorNames)
@@ -23,9 +26,29 @@ public static class DataUpdater
         }
         if (anyErr) throw new ArgumentException("Errors encountered");
 
-
-        JsonUtil.RewriteJsonFile(DoorData.Data, path);
+        JsonUtil.RewriteJsonFile(DoorData.Data, jsonPath);
+        RewriteDoorNamesFile(namesPath);
     }
+
+    private static void RewriteDoorNamesFile(string path)
+    {
+        List<string> content = new();
+        content.Add("namespace MoreDoors.Data;");
+        content.Add("");
+        content.Add("internal clas DoorNames");
+        content.Add("{");
+        foreach (var door in DoorData.DoorNames)
+        {
+            content.Add($"    public const string {ConstName(door)} = \"{door}\"");
+        }
+        content.Add("}");
+        content.Add("");
+
+        File.Delete(path);
+        File.WriteAllText(path, string.Join("\n", content.ToArray()));
+    }
+
+    private static string ConstName(string name) => name.ToUpper().Replace(" ", "_").Replace("'", "");
 
     private static bool Validate(DoorData d, out string err)
     {
