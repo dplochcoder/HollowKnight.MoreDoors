@@ -47,10 +47,10 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
 
     public override void Initialize()
     {
-        foreach (var doorName in DoorStates.Keys)
+        foreach (var e in DoorStates)
         {
-            var doorState = DoorStates[doorName];
-            var data = doorState.Data ??= DoorData.GetFromJson(doorName);
+            var doorName = e.Key;
+            var data = e.Value.Data;
             DoorNamesByKey[data.PDKeyName] = doorName;
             DoorNamesByDoor[data.PDDoorOpenedName] = doorName;
 
