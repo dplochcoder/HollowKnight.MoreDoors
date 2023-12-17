@@ -70,7 +70,7 @@ public static class DoorSpawner
         var data = DoorData.Get(doorName);
         var gameObj = Object.Instantiate(Preloader.Instance.Door);
         var renderer = gameObj.GetComponent<SpriteRenderer>();
-        renderer.sprite = new EmbeddedSprite($"Doors.{data.Door.Sprite}").Value;
+        renderer.sprite = data.Door.Sprite.Value;
 
         SetupConversationControl(gameObj.LocateMyFSM("Conversation Control"), data, left);
 

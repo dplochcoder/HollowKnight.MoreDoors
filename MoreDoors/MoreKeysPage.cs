@@ -78,8 +78,7 @@ public class MoreKeysPage
             if (door != null)
             {
                 var ds = mod.DoorStates[door];
-                var kSprite = new EmbeddedSprite($"Keys.{DoorData.Get(door).Key.Sprite}");
-                ks.spriteRenderer.sprite = kSprite.Value;
+                ks.spriteRenderer.sprite = DoorData.Get(door).Key.Sprite.Value;
                 ks.spriteRenderer.color = ds.DoorOpened ? KEY_USED_COLOR : KEY_OBTAINED_COLOR;
                 ks.img.transform.localScale = ds.DoorOpened ? KEY_USED_SCALE : KEY_OBTAINED_SCALE;
                 ks.check.SetActive(ds.KeyObtained && ds.DoorOpened);

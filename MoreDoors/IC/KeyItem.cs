@@ -30,7 +30,7 @@ public class KeyItem : AbstractItem
         {
             name = new BoxedString(data.Key.UIItemName),
             shopDesc = new BoxedString(data.Key.ShopDesc),
-            sprite = new EmbeddedSprite($"Keys.{data.Key.Sprite}")
+            sprite = data.Key.Sprite,
         };
         AddInterop(this);
     }

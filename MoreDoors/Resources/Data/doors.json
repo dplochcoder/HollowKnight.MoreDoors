@@ -4,7 +4,10 @@
     "UpperCaseName": "ARCHIVE",
     "UIName": "Archive",
     "Door": {
-      "Sprite": "Acid",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Acid"
+      },
       "NoKeyDesc": "A heavy brass door, with green-tinted windows.",
       "KeyDesc": "The teacher's studies are waiting to be read.<br>Insert the Archive Key?",
       "LeftLocation": {
@@ -29,7 +32,10 @@
       "ShopDesc": "I'm pretty sure there are words on this, yes these are definitely words.",
       "InvDesc": "An ornate key embroidered in scientific inscryption, though it's barely comprehensible.",
       "UsedInvDesc": "So many layers of protection, but they must be undone.",
-      "Sprite": "Archive",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Archive"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -78,7 +84,10 @@
     "UpperCaseName": "BARDOON",
     "UIName": "Bardoon's",
     "Door": {
-      "Sprite": "City",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.City"
+      },
       "NoKeyDesc": "An ashen door glazed with primal acid.",
       "KeyDesc": "The gateway to more primal aspids creaks open.<br>Insert Bardoon's Key?",
       "LeftLocation": {
@@ -103,7 +112,10 @@
       "ShopDesc": "He seems nice but his neighbors are just the worst.",
       "InvDesc": "A key of olden times, of ancient wisdom. It is peppered with ash.",
       "UsedInvDesc": "The way of the fool has been opened.",
-      "Sprite": "Bardoon",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Bardoon"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -152,7 +164,10 @@
     "UpperCaseName": "BROKEN",
     "UIName": "Broken",
     "Door": {
-      "Sprite": "Abyssal",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Abyssal"
+      },
       "NoKeyDesc": "A decaying door haunted by the lost.",
       "KeyDesc": "A kindred spirit's cries for help echo from within.<br>Insert the Broken Key?",
       "LeftLocation": {
@@ -177,7 +192,10 @@
       "ShopDesc": "Broken? It looks completely functional to me.",
       "InvDesc": "A dark key dripping with infection. It looks like it's asking you for help.",
       "UsedInvDesc": "Finally bested, a lost soul slumbers in peace.",
-      "Sprite": "Broken",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Broken"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -226,7 +244,10 @@
     "UpperCaseName": "BURIEDGEO",
     "UIName": "Buried Geo",
     "Door": {
-      "Sprite": "Abyssal",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Abyssal"
+      },
       "NoKeyDesc": "An old, stone vestibule. It smells of ancient treasure.",
       "KeyDesc": "The treasure is both far and near.<br>Insert the Buried Geo Key?",
       "LeftLocation": {
@@ -251,7 +272,10 @@
       "ShopDesc": "I better be charging more than 420 for this.",
       "InvDesc": "A heavy key beset with an ornate rock. It smells of greed, and betrayal.",
       "UsedInvDesc": "The treasure is yours now, may none blame you for it.",
-      "Sprite": "BuriedGeo",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.BuriedGeo"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -300,7 +324,10 @@
     "UpperCaseName": "CANYON",
     "UIName": "Canyon",
     "Door": {
-      "Sprite": "Canyon",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Canyon"
+      },
       "NoKeyDesc": "A quiet door of forgotten peace. It tingles a little.",
       "KeyDesc": "The pilgrim's way begins to open.<br>Insert the Canyon Key?",
       "LeftLocation": {
@@ -325,7 +352,10 @@
       "ShopDesc": "Ow! Why is this so receptive to static?",
       "InvDesc": "A bright key with hints of green under a gelatinous coating.",
       "UsedInvDesc": "The Pilgrim's Way has been opened.",
-      "Sprite": "Canyon",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Canyon"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -374,7 +404,10 @@
     "UpperCaseName": "CORE",
     "UIName": "Core",
     "Door": {
-      "Sprite": "Mushroom",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Mushroom"
+      },
       "NoKeyDesc": "A spongy door overgrown with rich fungus.",
       "KeyDesc": "The depths of the wastes cry WAH.<br>Insert the Core Key?",
       "LeftLocation": {
@@ -399,7 +432,10 @@
       "ShopDesc": "Please get rid of this, it's got something growing on it.",
       "InvDesc": "It's overgrown with a rich fungus, and emits a powerful aroma.",
       "UsedInvDesc": "The heart of the wastes has been opened, yet only darkness lies beneath.",
-      "Sprite": "Core",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Core"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -449,7 +485,10 @@
     "UpperCaseName": "CROWN",
     "UIName": "Crown",
     "Door": {
-      "Sprite": "Crystal",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Crystal"
+      },
       "NoKeyDesc": "A crystalline door shining with a forgotten light.",
       "KeyDesc": "This is as high as you'll go.<br>Insert the Crown Key?",
       "LeftLocation": {
@@ -474,7 +513,10 @@
       "ShopDesc": "Goodness, this one is shiny. Where could it have come from?",
       "InvDesc": "Crowned with sharp crystals, it gleams with a forgotten light.",
       "UsedInvDesc": "Damned are those who forsake their creator.",
-      "Sprite": "Crown",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Crown"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -533,7 +575,10 @@
     "UpperCaseName": "DARKNEST",
     "UIName": "Dark Nest",
     "Door": {
-      "Sprite": "Deepnest",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Deepnest"
+      },
       "NoKeyDesc": "A shell-encrusted door infested with spiders.",
       "KeyDesc": "The skittering never stops.<br>Insert the Dark Key?",
       "LeftLocation": {
@@ -558,7 +603,10 @@
       "ShopDesc": "I swear I can't even see this thing without my Lumaflies, it's so black.'",
       "InvDesc": "It's dark, thorny, and wrapped in webs. Something out there is angry it's been lost.",
       "UsedInvDesc": "You can still hear the skitters, even this far away.",
-      "Sprite": "Darknest",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Darknest"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -607,7 +655,10 @@
     "UpperCaseName": "FALSE",
     "UIName": "False",
     "Door": {
-      "Sprite": "False",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.False"
+      },
       "NoKeyDesc": "It looks like it's a locked door but you're not so sure.",
       "KeyDesc": "The hardest challenge in the game awaits you.<br>Insert the False Key?",
       "LeftLocation": {
@@ -632,7 +683,10 @@
       "ShopDesc": "I think this is to protect him, not you.",
       "InvDesc": "It looks like a key at first, but you can see it's just a casing for a tiny key inside.",
       "UsedInvDesc": "If only they possessed the strength they longed for.",
-      "Sprite": "False",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.False"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -681,7 +735,10 @@
     "UpperCaseName": "FLOODED_STAG",
     "UIName": "Flooded Stag",
     "Door": {
-      "Sprite": "Water",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Water"
+      },
       "NoKeyDesc": "A cold stone door, dripping with water.",
       "KeyDesc": "You can feel the power of buoyancy calling out to you.<br>Insert the Flooded Stag Key?",
       "LeftLocation": {
@@ -706,7 +763,10 @@
       "ShopDesc": "I don't think this protects anything, just a bunch of water?",
       "InvDesc": "A wet, stone key, ever dripping. It rings of forgotten love.",
       "UsedInvDesc": "The secret cellar of the city has been opened.",
-      "Sprite": "FloodedStag",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.FloodedStag"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -759,7 +819,10 @@
     "UpperCaseName": "FOUNTAIN",
     "UIName": "Fountain",
     "Door": {
-      "Sprite": "City",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.City"
+      },
       "NoKeyDesc": "An ornate door, bespeckled in expensive relics.",
       "KeyDesc": "Rain flows intricately between the carvings.<br>Insert the Fountain Key?",
       "LeftLocation": {
@@ -784,7 +847,10 @@
       "ShopDesc": "Is it destiny you seek, or geo?  Are they different?",
       "InvDesc": "A shiny, cast key adorned with a replica Hallownest Seal. Probably valuable to collectors.",
       "UsedInvDesc": "May his sacrifice never be forgotten.",
-      "Sprite": "Fountain",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Fountain"
+      },
       "Location": {
         "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
         "HintShinyScale": 1.5,
@@ -812,7 +878,10 @@
     "UpperCaseName": "FRAGILE",
     "UIName": "Fragile",
     "Door": {
-      "Sprite": "Mushroom",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Mushroom"
+      },
       "NoKeyDesc": "A spongy door reinforced with shards of old charms.",
       "KeyDesc": "Mind your legs.<br>Insert the Fragile Key?",
       "LeftLocation": {
@@ -837,7 +906,10 @@
       "ShopDesc": "Don't let the Better Bugsness Bureau know about this.",
       "InvDesc": "It glistens with gold, brighter than it should be. Don't break it.",
       "UsedInvDesc": "He is free now to fulfill his destiny. Was it worth it?",
-      "Sprite": "Fragile",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Fragile"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -886,7 +958,10 @@
     "UpperCaseName": "FUNGAL",
     "UIName": "Fungal",
     "Door": {
-      "Sprite": "Mushroom",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Mushroom"
+      },
       "NoKeyDesc": "This door has, like, so many mushrooms on it.",
       "KeyDesc": "The pilgrim's way expands.<br>Insert the Fungal Key?",
       "LeftLocation": {
@@ -911,7 +986,10 @@
       "ShopDesc": "Chop 'em, sautee 'em, stick 'em in a stew.",
       "InvDesc": "It smells of mushrooms, and an arid air. The head is soft and spongy.",
       "UsedInvDesc": "The wastes are opened, the Pilgrim's Way expands.",
-      "Sprite": "Fungal",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Fungal"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -960,7 +1038,10 @@
     "UpperCaseName": "GARDEN",
     "UIName": "Garden",
     "Door": {
-      "Sprite": "Green",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Green"
+      },
       "NoKeyDesc": "A richly green door with just a spritz of acid.",
       "KeyDesc": "The queen awaits her boy.<br>Insert the Garden Key?",
       "LeftLocation": {
@@ -985,7 +1066,10 @@
       "ShopDesc": "Interesting to see things so cared for in a kingdom forgotten.",
       "InvDesc": "A key draped in moss, tainted with infection. Beautiful, but tragic.",
       "UsedInvDesc": "May the sanctity of her garden never be broken.",
-      "Sprite": "Garden",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Garden"
+      },
       "Location": {
         "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
         "HintShinyScale": 1.0,
@@ -1019,7 +1103,10 @@
     "UpperCaseName": "HEART",
     "UIName": "Heart",
     "Door": {
-      "Sprite": "Crystal",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Crystal"
+      },
       "NoKeyDesc": "A dense, deeply crystallized door. It seems to have a heartbeat.",
       "KeyDesc": "The heart of the mountain beckons.<br>Insert the Heart Key?",
       "LeftLocation": {
@@ -1044,7 +1131,10 @@
       "ShopDesc": "If you hold this up to your ear, you'll realize you don't HAVE ears, dumbdumb.",
       "InvDesc": "It gleams of rich crystal, ornate and intricate. You can feel it beating in your hands.",
       "UsedInvDesc": "The mountain seems less whole for it, but surely it was for good.",
-      "Sprite": "Heart",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Heart"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1104,7 +1194,10 @@
     "UpperCaseName": "HIVE",
     "UIName": "Hive",
     "Door": {
-      "Sprite": "Hive",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Hive"
+      },
       "NoKeyDesc": "It's made of honeycombs, sturdy as stone.",
       "KeyDesc": "The buzzing resonates with your soul.<br>Insert the Hive Key?",
       "LeftLocation": {
@@ -1129,7 +1222,10 @@
       "ShopDesc": "It's technically edible, I wouldn't recommend that though.",
       "InvDesc": "A reflective key encased in honey, protected by stingers. It is difficult to hold.",
       "UsedInvDesc": "They did not welcome you, but the queen understands.",
-      "Sprite": "Hive",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Hive"
+      },
       "Location": {
         "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
         "HintShinyScale": 1.0,
@@ -1157,7 +1253,10 @@
     "UpperCaseName": "ISMA",
     "UIName": "Isma's'",
     "Door": {
-      "Sprite": "Acid",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Acid"
+      },
       "NoKeyDesc": "A bright green door, bubbling with life. Don't touch it, though.",
       "KeyDesc": "It sizzles with a forgotten life.<br>Insert Isma's Key?",
       "LeftLocation": {
@@ -1182,7 +1281,10 @@
       "ShopDesc": "Why does this smell like beetle dung?",
       "InvDesc": "It looks like it should be wet, but it isn't. It glistens with an old life.",
       "UsedInvDesc": "The grove sizzles on.",
-      "Sprite": "Isma",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Isma"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1231,7 +1333,10 @@
     "UpperCaseName": "JONI",
     "UIName": "Joni's",
     "Door": {
-      "Sprite": "Joni",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Joni"
+      },
       "NoKeyDesc": "A robust door overgrown with lifeblood.",
       "KeyDesc": "You weren't invited, but you're here anyway.<br>Insert Joni's Key?",
       "LeftLocation": {
@@ -1256,7 +1361,10 @@
       "ShopDesc": "I feel like I shouldn't have this, so it's at a discount.",
       "InvDesc": "A key adorned with lifeblood, large yet fragile. It guards something dangerous.",
       "UsedInvDesc": "It was not yours to take, but it will be put to good use.",
-      "Sprite": "Joni",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Joni"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1305,7 +1413,10 @@
     "UpperCaseName": "JUNK",
     "UIName": "Junk",
     "Door": {
-      "Sprite": "Water",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Water"
+      },
       "NoKeyDesc": "A wet, pasty door. You can see larvae growing.",
       "KeyDesc": "The larvae have grown larger.<br>Insert the Junk Key?",
       "LeftLocation": {
@@ -1330,7 +1441,10 @@
       "ShopDesc": "It comes with complimentary uncaged Lumaflies.",
       "InvDesc": "A dirty key embedded with geo, and a hint of larvae. You probably don't want to hang onto this.",
       "UsedInvDesc": "The real treasure lies in the paths wandered.",
-      "Sprite": "Junk",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Junk"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1379,7 +1493,10 @@
     "UpperCaseName": "LAKE",
     "UIName": "Lake",
     "Door": {
-      "Sprite": "Water",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Water"
+      },
       "NoKeyDesc": "A wet, quiet door. There is a certain shadow about it.",
       "KeyDesc": "You sense the sadness of a journey completed.<br>Insert the Lake Key?",
       "LeftLocation": {
@@ -1404,7 +1521,10 @@
       "ShopDesc": "Many souls died to use this key, I assume that makes it worth this price.",
       "InvDesc": "It's a bright blue, always gleaming with some inexplicable light. A true mystery.",
       "UsedInvDesc": "What will you do now, that the mystery is solved?",
-      "Sprite": "Lake",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Lake"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1453,7 +1573,10 @@
     "UpperCaseName": "MANTIS",
     "UIName": "Mantis",
     "Door": {
-      "Sprite": "Mantis",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Mantis"
+      },
       "NoKeyDesc": "A sharp, carefully sculpted door. It smells of honor.",
       "KeyDesc": "Your challengers await.<br>Insert the Mantis Key?",
       "LeftLocation": {
@@ -1478,7 +1601,10 @@
       "ShopDesc": "It unlocks one of the most guarded places in the kingdom.",
       "InvDesc": "Polished, sharp, emblazoned with a proud insignia. A warrior's key.",
       "UsedInvDesc": "Your respect is earned.",
-      "Sprite": "Mantis",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Mantis"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1533,7 +1659,10 @@
     "UpperCaseName": "MOSS",
     "UIName": "Moss",
     "Door": {
-      "Sprite": "Green",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Green"
+      },
       "NoKeyDesc": "A bright stone door overgrown with moss.",
       "KeyDesc": "The power of leftslash compels you.<br>Insert the Moss Key?",
       "LeftLocation": {
@@ -1558,7 +1687,10 @@
       "ShopDesc": "If you look carefully it's actually four little keys pretending to be a big key.",
       "InvDesc": "A soft green key overgrown with moss and attached leaves, as though camouflaged.",
       "UsedInvDesc": "The way is opened, yet more awaits on the other side.",
-      "Sprite": "Moss",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Moss"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1613,7 +1745,10 @@
     "UpperCaseName": "MOTHWING",
     "UIName": "Mothwing",
     "Door": {
-      "Sprite": "Green",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Green"
+      },
       "NoKeyDesc": "It looks like you can't get any closer, ghost.",
       "KeyDesc": "It looks like you found a way to get closer.<br>Insert the Mothwing Key?",
       "LeftLocation": {
@@ -1638,7 +1773,10 @@
       "ShopDesc": "You too can unlock your inner SHAAAW",
       "InvDesc": "A sleek key, with a wavy cloak bound to it by silk strands. It always billows away.",
       "UsedInvDesc": "She will be stronger next time. Are you prepared?",
-      "Sprite": "Mothwing",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Mothwing"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1687,7 +1825,10 @@
     "UpperCaseName": "NEST",
     "UIName": "Nest",
     "Door": {
-      "Sprite": "Deepnest",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Deepnest"
+      },
       "NoKeyDesc": "A crunchy door laced with spider webs.",
       "KeyDesc": "You can feel your skin crawling.<br>Insert the Nest Key?",
       "LeftLocation": {
@@ -1712,7 +1853,10 @@
       "ShopDesc": "I tried cleaning it but it always seems to have more webs.",
       "InvDesc": "A dark, thorny key. It smells of the depths.",
       "UsedInvDesc": "Greater thorns await within.",
-      "Sprite": "Nest",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Nest"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1770,7 +1914,10 @@
     "UpperCaseName": "OVERGROWN",
     "UIName": "Overgrown",
     "Door": {
-      "Sprite": "Green",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Green"
+      },
       "NoKeyDesc": "A bubbly door decorated with green.",
       "KeyDesc": "It's okay, you have an excuse this time.<br>Insert the Overgrown Key?",
       "LeftLocation": {
@@ -1795,7 +1942,10 @@
       "ShopDesc": "Strange... this key seems like it's been forgotten more times than anyone can remember.",
       "InvDesc": "A key caked in a mixture of moss, leaves, and a tingly gelatin.",
       "UsedInvDesc": "There was nothing here but a scream.",
-      "Sprite": "Overgrown",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Overgrown"
+      },
       "Location": {
         "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
         "HintShinyScale": 1.0,
@@ -1823,7 +1973,10 @@
     "UpperCaseName": "PAIN",
     "UIName": "Pain",
     "Door": {
-      "Sprite": "Pain",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Pain"
+      },
       "NoKeyDesc": "An ornate door with saw blades instead of gears for a lock mechanism.",
       "KeyDesc": "The screech of saw blades permeates all.<br>Insert the Pain Key?",
       "LeftLocation": {
@@ -1855,7 +2008,10 @@
       "ShopDesc": "This looks like it's been beaten to hell by blades, does it even work?",
       "InvDesc": "A marble-white key with saw blades for a stem. It buzzes constantly. Also it keeps scratching up the other keys.",
       "UsedInvDesc": "To obtain that stupid Godtuner, one must endure the harshest punishment.",
-      "Sprite": "Pain",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Pain"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1911,7 +2067,10 @@
     "UpperCaseName": "SANCTUM",
     "UIName": "Sanctum",
     "Door": {
-      "Sprite": "City",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.City"
+      },
       "NoKeyDesc": "A door forged of empty shells and broken glass.",
       "KeyDesc": "A pure focus awaits.<br>Insert the Sanctum Key?",
       "LeftLocation": {
@@ -1936,7 +2095,10 @@
       "ShopDesc": "It's brimming with soul, too much of it.",
       "InvDesc": "A glowing machination of soul. It whispers the forgotten words of hundreds of experiments.",
       "UsedInvDesc": "So much was sacrificed in vain.",
-      "Sprite": "Sanctum",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Sanctum"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -1985,7 +2147,10 @@
     "UpperCaseName": "SHADE",
     "UIName": "Shade",
     "Door": {
-      "Sprite": "Abyssal",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Abyssal"
+      },
       "NoKeyDesc": "A dark door forged of bones and abandoned souls.",
       "KeyDesc": "The destiny of darkness awaits.<br>Insert the Shade Key?",
       "LeftLocation": {
@@ -2010,7 +2175,10 @@
       "ShopDesc": "It smells of darkness, please take it away.",
       "InvDesc": "It rejects all light, save for two pairs of eyes staring back at you. Were you one of them?",
       "UsedInvDesc": "They beckon you to the void from whence you came.",
-      "Sprite": "Shade",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Shade"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -2059,7 +2227,10 @@
     "UpperCaseName": "TRAITOR",
     "UIName": "Traitor",
     "Door": {
-      "Sprite": "Green",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Green"
+      },
       "NoKeyDesc": "An ornate metal door embellished with thorns.",
       "KeyDesc": "The path of the warrior ends here.<br>Insert the Traitor's Key?",
       "LeftLocation": {
@@ -2084,7 +2255,10 @@
       "ShopDesc": "I found this on some lady drilling in the wastes, doesn't seem too important.",
       "InvDesc": "An overgrown key with two sharp pincers for a stem. Someone doesn't want you there.",
       "UsedInvDesc": "She believes you can do it. Can you?",
-      "Sprite": "Traitor",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Traitor"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {
@@ -2144,7 +2318,10 @@
     "UpperCaseName": "VILLAGE",
     "UIName": "Village",
     "Door": {
-      "Sprite": "Deepnest",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Deepnest"
+      },
       "NoKeyDesc": "A solid door reinforced with silk weaves.",
       "KeyDesc": "Even the King's influence does not reach here.<br>Insert the Village Key?",
       "LeftLocation": {
@@ -2169,7 +2346,10 @@
       "ShopDesc": "I think this is technically an heirloom? I should probably charge more for it.",
       "InvDesc": "A thorny key emblazoned with the sigil of the beast. You were not supposed to find this.",
       "UsedInvDesc": "It was inevitable. She forgives you.",
-      "Sprite": "Village",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Village"
+      },
       "Location": {
         "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
         "Test": {

@@ -55,7 +55,7 @@ public record DoorData
             public string TransitionProxyName => $"{SceneName}_Proxy[{GateName}]";
         }
 
-        public string Sprite;
+        public ISprite Sprite;
         public string NoKeyDesc;
         public string KeyDesc;
         public Location LeftLocation;
@@ -71,7 +71,7 @@ public record DoorData
         public string ShopDesc;
         public string InvDesc;
         public string UsedInvDesc;
-        public string Sprite;
+        public ISprite Sprite;
         public AbstractLocation Location;
         public string Logic;
 
