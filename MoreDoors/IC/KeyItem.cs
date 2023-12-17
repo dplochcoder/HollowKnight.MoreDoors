@@ -3,6 +3,7 @@ using ItemChanger.Locations;
 using ItemChanger.Tags;
 using ItemChanger.UIDefs;
 using MoreDoors.Data;
+using RandomizerMod.RandomizerData;
 using System.Linq;
 
 namespace MoreDoors.IC;
@@ -20,26 +21,27 @@ public class KeyItem : AbstractItem
         return tag;
     }
 
-    public KeyItem(string doorName)
+    public KeyItem(string doorName, string itemName, UIDef? uiDef)
     {
-        var data = DoorData.Get(doorName);
-        this.name = data.Key.ItemName;
-
+        this.name = itemName;
         this.DoorName = doorName;
-        this.UIDef = new MsgUIDef()
-        {
-            name = new BoxedString(data.Key.UIItemName),
-            shopDesc = new BoxedString(data.Key.ShopDesc),
-            sprite = data.Key.Sprite,
-        };
+        this.UIDef = uiDef;
         AddInterop(this);
+
     }
 
-    public void AddLocationInteropTags()
+    public KeyItem(string doorName, DoorData data) : this(doorName, data.Key.ItemName, new MsgUIDef()
+    {
+        name = new BoxedString(data.Key.UIItemName),
+        shopDesc = new BoxedString(data.Key.ShopDesc),
+        sprite = data.Key.Sprite,
+    })
+    { }
+
+    public void AddLocationInteropTags(DoorData data)
     {
         if (HasTag<InteropTag>()) return;
 
-        var data = DoorData.Get(DoorName);
         var loc = data.Key.Location;
         // TODO: This seems like a bug in ItemChanger that we have to do this.
         // DualPlacement concatenates tags from both delegate locations, but it ignores any tags set on the DualLocation itself.
@@ -48,9 +50,9 @@ public class KeyItem : AbstractItem
         AddInterop(loc).Properties["WorldMapLocations"] = data.Key.GetWorldMapLocations().Select(l => l.AsTuple).ToArray();
     }
 
-    public override AbstractItem Clone() => new KeyItem(DoorName);
+    public override AbstractItem Clone() => new KeyItem(DoorName, name, UIDef?.Clone());
 
-    public override void GiveImmediate(GiveInfo info) => PlayerData.instance.SetBool(DoorData.Get(DoorName).PDKeyName, true);
+    public override void GiveImmediate(GiveInfo info) => PlayerData.instance.SetBool(DoorData.GetFromModule(DoorName).PDKeyName, true);
 
-    public override bool Redundant() => PlayerData.instance.GetBool(DoorData.Get(DoorName).PDKeyName);
+    public override bool Redundant() => PlayerData.instance.GetBool(DoorData.GetFromModule(DoorName).PDKeyName);
 }

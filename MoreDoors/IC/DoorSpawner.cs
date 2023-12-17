@@ -67,7 +67,7 @@ public static class DoorSpawner
 
     public static void SpawnDoor(SceneManager sm, string doorName, bool left)
     {
-        var data = DoorData.Get(doorName);
+        var data = DoorData.GetFromModule(doorName);
         var gameObj = Object.Instantiate(Preloader.Instance.Door);
         var renderer = gameObj.GetComponent<SpriteRenderer>();
         renderer.sprite = data.Door.Sprite.Value;

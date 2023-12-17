@@ -123,9 +123,10 @@ public static class LogicPatcher
             "SIDESLASH | UPSLASH | CYCLONE | GREATSLASH | FULLDASHSLASH | ANYDASHSLASH + DASHMASTER + OBSCURESKIPS | SPICYCOMBATSKIPS");
 
         var ls = RandoInterop.LS;
-        foreach (var doorName in DoorData.DoorNames)
+        foreach (var e in DoorData.Data)
         {
-            var data = DoorData.Get(doorName);
+            var doorName = e.Key;
+            var data = e.Value;
 
             if (ls.IncludeDoor(doorName))
             {

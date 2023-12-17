@@ -18,6 +18,12 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
 
     public class DoorState
     {
+        public DoorData Data;
+        public DoorState(DoorData data)
+        {
+            this.Data = data;
+        }
+
         public bool KeyObtained = false;
         public bool DoorOpened = false;
 
@@ -43,7 +49,8 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
     {
         foreach (var doorName in DoorStates.Keys)
         {
-            var data = DoorData.Get(doorName);
+            var doorState = DoorStates[doorName];
+            var data = doorState.Data ??= DoorData.GetFromJson(doorName);
             DoorNamesByKey[data.PDKeyName] = doorName;
             DoorNamesByDoor[data.PDDoorOpenedName] = doorName;
 
@@ -71,10 +78,9 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
 
     public void AddDeployers()
     {
-        foreach (var doorName in DoorStates.Keys)
+        foreach (var doorState in DoorStates.Values)
         {
-            var data = DoorData.Get(doorName);
-            data.Door.Deployers?.ForEach(ItemChangerMod.AddDeployer);
+            doorState.Data.Door.Deployers?.ForEach(ItemChangerMod.AddDeployer);
         }
     }
 
@@ -124,7 +130,7 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
             var state = DoorStates[doorName];
             state.KeyObtained = newValue;
 
-            if (newValue) OnKeyObtained?.Invoke(DoorData.Get(doorName).Key.UIItemName);
+            if (newValue) OnKeyObtained?.Invoke(state.Data.Key.UIItemName);
             MoreKeysPage.Instance.Update();
         }
         else if (DoorNamesByDoor.TryGetValue(name, out doorName))
@@ -150,7 +156,7 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         var sceneName = sm.gameObject.scene.name;
         foreach (var doorName in DoorNamesByScene.GetOrDefault(sceneName, emptySet))
         {
-            var data = DoorData.Get(doorName);
+            var data = DoorStates[doorName].Data;
             if (sceneName == data.Door.LeftLocation.SceneName) DoorSpawner.SpawnDoor(sm, doorName, true);
             if (sceneName == data.Door.RightLocation.SceneName) DoorSpawner.SpawnDoor(sm, doorName, false);
         }
@@ -165,7 +171,7 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         var tname = $"{t.SceneName}[{t.GateName}]";
         if (DoorNamesByTransition.TryGetValue(tname, out string doorName) && !DoorStates[doorName].DoorOpened)
         {
-            var data = DoorData.Get(doorName);
+            var data = DoorStates[doorName].Data;
             if (data.Door.LeftLocation.TransitionName == tname) DoorStates[doorName].LeftDoorForceOpened = true;
             else if (data.Door.RightLocation.TransitionName == tname) DoorStates[doorName].RightDoorForceOpened = true;
 

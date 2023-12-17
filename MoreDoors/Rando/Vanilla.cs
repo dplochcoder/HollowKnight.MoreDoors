@@ -28,10 +28,10 @@ public static class Vanilla
 
         bool rando = ModHooks.GetMod("Randomizer 4") is Mod && IsRandoSave();
         bool includeVanilla = MoreDoors.GS.EnableInVanilla;
-        List<string> doorNames = rando ? GetRandoVanillaKeys() : (includeVanilla ? new(DoorData.DoorNames) : new());
+        List<string> doorNames = rando ? GetRandoVanillaKeys() : (includeVanilla ? new(DoorData.Data.Keys) : new());
         foreach (var door in doorNames)
         {
-            var data = DoorData.Get(door);
+            var data = DoorData.GetFromJson(door);
             placements.Add(data.Key.Location.Wrap().Add(Finder.GetItem(data.Key.ItemName)));
         }
         ItemChangerMod.AddPlacements(placements);
@@ -39,7 +39,7 @@ public static class Vanilla
         if (!rando && doorNames.Count > 0)
         {
             var mod = ItemChangerMod.Modules.Add<MoreDoorsModule>();
-            doorNames.ForEach(d => mod.DoorStates[d] = new());
+            doorNames.ForEach(d => mod.DoorStates[d] = new(DoorData.GetFromJson(d)));
             mod.AddDeployers();
         }
         orig(self, permaDeath, bossRush);

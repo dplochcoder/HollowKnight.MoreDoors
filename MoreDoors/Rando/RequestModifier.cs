@@ -23,9 +23,10 @@ public class RequestModifier
     {
         if (!RandoInterop.IsEnabled) return;
 
-        foreach (var doorName in DoorData.DoorNames)
+        foreach (var e in DoorData.Data)
         {
-            var data = DoorData.Get(doorName);
+            var doorName = e.Key;
+            var data = e.Value;
             if (RandoInterop.LS.IncludeDoor(doorName))
             {
                 rb.EditItemRequest(data.Key.ItemName, info =>
@@ -56,9 +57,9 @@ public class RequestModifier
 
     private const string TRANSITION_STAGE_NAME = "More Doors Transition Stage";
 
-    private static IEnumerable<string> LeftTransitions() => RandoInterop.LS.EnabledDoorNames.Select(d => DoorData.Get(d).Door.LeftLocation.TransitionName);
+    private static IEnumerable<string> LeftTransitions() => RandoInterop.LS.EnabledDoorNames.Select(d => DoorData.GetFromJson(d).Door.LeftLocation.TransitionName);
 
-    private static IEnumerable<string> RightTransitions() => RandoInterop.LS.EnabledDoorNames.Select(d => DoorData.Get(d).Door.RightLocation.TransitionName);
+    private static IEnumerable<string> RightTransitions() => RandoInterop.LS.EnabledDoorNames.Select(d => DoorData.GetFromJson(d).Door.RightLocation.TransitionName);
 
     private static void ApplyTransitionRando(RequestBuilder rb)
     {
@@ -70,7 +71,7 @@ public class RequestModifier
 
         foreach (var door in RandoInterop.LS.EnabledDoorNames)
         {
-            var data = DoorData.Get(door);
+            var data = DoorData.GetFromJson(door);
             VanillaDef left = new(data.Door.LeftLocation.TransitionName, data.Door.RightLocation.TransitionName);
             VanillaDef right = new(data.Door.RightLocation.TransitionName, data.Door.LeftLocation.TransitionName);
             rb.RemoveFromVanilla(left);
@@ -132,9 +133,10 @@ public class RequestModifier
             throw new ArgumentException($"Nowhere to place MoreDoors Keys; Either randomize Keys or enable 'Add Key Locations'");
         }
 
-        foreach (var doorName in DoorData.DoorNames)
+        foreach (var e in DoorData.Data)
         {
-            var data = DoorData.Get(doorName);
+            var doorName = e.Key;
+            var data = e.Value;
             if (RandoInterop.LS.IncludeDoor(doorName))
             {
                 if (rb.gs.PoolSettings.Keys)
@@ -167,9 +169,9 @@ public class RequestModifier
         if (!RandoInterop.IsEnabled || !rb.gs.PoolSettings.Keys || !rb.gs.CursedSettings.Deranged) return;
 
         Dictionary<string, string> keyLoc = new();
-        foreach (var door in DoorData.DoorNames)
+        foreach (var door in DoorData.Data.Keys)
         {
-            var data = DoorData.Get(door);
+            var data = DoorData.GetFromJson(door);
             keyLoc[data.Key.ItemName] = data.Key.Location.name;
         }
 

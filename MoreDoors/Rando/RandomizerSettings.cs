@@ -41,14 +41,14 @@ public class RandomizationSettings
         else DisabledDoors.Add(door);
     }
 
-    public void MaybeUpdateEnabledDoors() => DisabledDoors.RemoveWhere(d => !DoorData.IsDoor(d));
+    public void MaybeUpdateEnabledDoors() => DisabledDoors.RemoveWhere(d => !DoorData.Data.ContainsKey(d));
 }
 
 public static class RandomizationSettingsExtensions
 {
     public static HashSet<string> ComputeActiveDoors(this RandomizationSettings settings, GenerationSettings gs, Random r)
     {
-        List<string> potentialDoors = DoorData.DoorNames.Where(d => !settings.DisabledDoors.Contains(d)).ToList();
+        List<string> potentialDoors = DoorData.Data.Keys.Where(d => !settings.DisabledDoors.Contains(d)).ToList();
         if (gs.LongLocationSettings.WhitePalaceRando != LongLocationSettings.WPSetting.Allowed) potentialDoors.Remove("Pain");
 
         HashSet<string> doors = new();

@@ -78,7 +78,7 @@ public class MoreKeysPage
             if (door != null)
             {
                 var ds = mod.DoorStates[door];
-                ks.spriteRenderer.sprite = DoorData.Get(door).Key.Sprite.Value;
+                ks.spriteRenderer.sprite = DoorData.GetFromModule(door).Key.Sprite.Value;
                 ks.spriteRenderer.color = ds.DoorOpened ? KEY_USED_COLOR : KEY_OBTAINED_COLOR;
                 ks.img.transform.localScale = ds.DoorOpened ? KEY_USED_SCALE : KEY_OBTAINED_SCALE;
                 ks.check.SetActive(ds.KeyObtained && ds.DoorOpened);
@@ -285,8 +285,8 @@ public class MoreKeysPage
         else
         {
             string door = inventoryKeys[index];
-            var data = DoorData.Get(door);
             var dState = ItemChangerMod.Modules.Get<MoreDoorsModule>().DoorStates[door];
+            var data = dState.Data;
 
             keyTitle.GetComponent<TextMeshPro>().text = data.Key.UIItemName;
             keyDesc.GetComponent<TextMeshPro>().text = dState.DoorOpened ? data.Key.UsedInvDesc : data.Key.InvDesc;

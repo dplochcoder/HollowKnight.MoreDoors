@@ -139,12 +139,12 @@ internal class ConnectionMenu
         SmallButton b = new(page, text);
         OnCustomDoorsChanged += () =>
         {
-            if (DoorData.DoorNames.All(d => Settings.IsDoorEnabled(d) == enabled)) b.Lock();
+            if (DoorData.Data.Keys.All(d => Settings.IsDoorEnabled(d) == enabled)) b.Lock();
             else b.Unlock();
         };
         b.OnClick += () =>
         {
-            DoorData.DoorNames.ForEach(d => Settings.SetDoorEnabled(d, enabled));
+            DoorData.Data.Keys.ForEach(d => Settings.SetDoorEnabled(d, enabled));
             OnCustomDoorsChanged();
         };
         return b;
@@ -153,18 +153,20 @@ internal class ConnectionMenu
     private void FillCustomDoorsPage(MenuPage page)
     {
         List<IMenuElement> doorButtons = new();
-        foreach (var doorName in DoorData.DoorNames)
+        foreach (var e in DoorData.Data)
         {
-            var localDoorName = doorName;
-            ToggleButton button = new(page, Localize(DoorData.Get(doorName).UIName));
+            var doorName = e.Key;
+            var data = e.Value;
+
+            ToggleButton button = new(page, Localize(data.UIName));
             button.ValueChanged += b =>
             {
-                Settings.SetDoorEnabled(localDoorName, b);
+                Settings.SetDoorEnabled(doorName, b);
                 OnCustomDoorsChanged();
             };
             OnCustomDoorsChanged += () =>
             {
-                if (Settings.IsDoorEnabled(localDoorName) != button.Value) button.SetValue(!button.Value);
+                if (Settings.IsDoorEnabled(doorName) != button.Value) button.SetValue(!button.Value);
             };
 
             doorButtons.Add(button);

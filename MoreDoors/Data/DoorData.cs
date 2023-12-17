@@ -12,23 +12,25 @@ namespace MoreDoors.Data;
 public record DoorData
 {
     public static readonly SortedDictionary<string, DoorData> Data = JsonUtil.DeserializeEmbedded<SortedDictionary<string, DoorData>>("MoreDoors.Resources.Data.doors.json");
-    public static readonly SortedSet<string> DoorNames = new(Data.Keys);
 
-    public static DoorData Get(string doorName) => Data[doorName];
+    public static DoorData GetFromJson(string doorName) => Data[doorName];
 
-    public static bool IsDoor(string doorName) => DoorNames.Contains(doorName);
+    public static DoorData GetFromModule(string doorName) => ItemChangerMod.Modules.Get<MoreDoorsModule>().DoorStates[doorName].Data;
 
     public static int Count => Data.Count;
 
     public static void Load()
     {
-        foreach (var doorName in Data.Keys)
+        foreach (var e in Data)
         {
-            KeyItem key = new(doorName);
-            key.AddLocationInteropTags();
+            var doorName = e.Key;
+            var data = e.Value;
+
+            KeyItem key = new(doorName, data);
+            key.AddLocationInteropTags(data);
 
             Finder.DefineCustomItem(key);
-            Finder.DefineCustomLocation(Get(doorName).Key.Location);
+            Finder.DefineCustomLocation(data.Key.Location);
         }
 
         MoreDoors.Log("Loaded Doors");
