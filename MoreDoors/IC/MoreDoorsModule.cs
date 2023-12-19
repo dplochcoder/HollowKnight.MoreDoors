@@ -50,7 +50,7 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         foreach (var e in DoorStates)
         {
             var doorName = e.Key;
-            var data = e.Value.Data;
+            var data = e.Value.Data ??= DoorData.GetFromJson(doorName);
             DoorNamesByKey[data.PDKeyName] = doorName;
             DoorNamesByDoor[data.PDDoorOpenedName] = doorName;
 
