@@ -3,7 +3,6 @@ using ItemChanger.Locations;
 using ItemChanger.Tags;
 using ItemChanger.UIDefs;
 using MoreDoors.Data;
-using RandomizerMod.RandomizerData;
 using System.Linq;
 
 namespace MoreDoors.IC;
@@ -20,6 +19,9 @@ public class KeyItem : AbstractItem
         tag.Properties["ModSource"] = nameof(MoreDoors);
         return tag;
     }
+
+    // Json constructor
+    KeyItem() { }
 
     public KeyItem(string doorName, string itemName, UIDef? uiDef)
     {
