@@ -1,2 +1,3 @@
-PurenailCore
 MoreDoors
+PurenailCore
+RandomizerCore.Json

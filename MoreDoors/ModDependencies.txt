@@ -6,5 +6,6 @@ MenuChanger
 PurenailCore
 Randomizer 4
 RandomizerCore
+RandomizerCore.Json
 RandoSettingsManager
 SFCore
