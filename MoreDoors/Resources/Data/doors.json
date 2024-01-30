@@ -6,7 +6,7 @@
     "Door": {
       "Sprite": {
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
-        "key": "Doors.Acid"
+        "key": "Doors.Canyon"
       },
       "NoKeyDesc": "A heavy brass door, with green-tinted windows.",
       "KeyDesc": "The teacher's studies are waiting to be read.<br>Insert the Archive Key?",
@@ -86,7 +86,7 @@
     "Door": {
       "Sprite": {
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
-        "key": "Doors.City"
+        "key": "Doors.Edge"
       },
       "NoKeyDesc": "An ashen door glazed with primal acid.",
       "KeyDesc": "The gateway to more primal aspids creaks open.<br>Insert Bardoon's Key?",
@@ -246,7 +246,7 @@
     "Door": {
       "Sprite": {
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
-        "key": "Doors.Abyssal"
+        "key": "Doors.Edge"
       },
       "NoKeyDesc": "An old, stone vestibule. It smells of ancient treasure.",
       "KeyDesc": "The treasure is both far and near.<br>Insert the Buried Geo Key?",
@@ -406,7 +406,7 @@
     "Door": {
       "Sprite": {
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
-        "key": "Doors.Mushroom"
+        "key": "Doors.Fungal"
       },
       "NoKeyDesc": "A spongy door overgrown with rich fungus.",
       "KeyDesc": "The depths of the wastes cry WAH.<br>Insert the Core Key?",
@@ -737,7 +737,7 @@
     "Door": {
       "Sprite": {
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
-        "key": "Doors.Water"
+        "key": "Doors.FloodedStag"
       },
       "NoKeyDesc": "A cold stone door, dripping with water.",
       "KeyDesc": "You can feel the power of buoyancy calling out to you.<br>Insert the Flooded Stag Key?",
@@ -880,7 +880,7 @@
     "Door": {
       "Sprite": {
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
-        "key": "Doors.Mushroom"
+        "key": "Doors.Fungal"
       },
       "NoKeyDesc": "A spongy door reinforced with shards of old charms.",
       "KeyDesc": "Mind your legs.<br>Insert the Fragile Key?",
@@ -960,7 +960,7 @@
     "Door": {
       "Sprite": {
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
-        "key": "Doors.Mushroom"
+        "key": "Doors.Fungal"
       },
       "NoKeyDesc": "This door has, like, so many mushrooms on it.",
       "KeyDesc": "The pilgrim's way expands.<br>Insert the Fungal Key?",
@@ -1040,7 +1040,7 @@
     "Door": {
       "Sprite": {
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
-        "key": "Doors.Green"
+        "key": "Doors.GreenChain"
       },
       "NoKeyDesc": "A richly green door with just a spritz of acid.",
       "KeyDesc": "The queen awaits her boy.<br>Insert the Garden Key?",
@@ -1415,7 +1415,7 @@
     "Door": {
       "Sprite": {
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
-        "key": "Doors.Water"
+        "key": "Doors.Junk"
       },
       "NoKeyDesc": "A wet, pasty door. You can see larvae growing.",
       "KeyDesc": "The larvae have grown larger.<br>Insert the Junk Key?",
@@ -1495,7 +1495,7 @@
     "Door": {
       "Sprite": {
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
-        "key": "Doors.Water"
+        "key": "Doors.Lake"
       },
       "NoKeyDesc": "A wet, quiet door. There is a certain shadow about it.",
       "KeyDesc": "You sense the sadness of a journey completed.<br>Insert the Lake Key?",
@@ -1661,7 +1661,7 @@
     "Door": {
       "Sprite": {
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
-        "key": "Doors.Green"
+        "key": "Doors.GreenThick"
       },
       "NoKeyDesc": "A bright stone door overgrown with moss.",
       "KeyDesc": "The power of leftslash compels you.<br>Insert the Moss Key?",
@@ -1747,7 +1747,7 @@
     "Door": {
       "Sprite": {
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
-        "key": "Doors.Green"
+        "key": "Doors.GreenChain"
       },
       "NoKeyDesc": "It looks like you can't get any closer, ghost.",
       "KeyDesc": "It looks like you found a way to get closer.<br>Insert the Mothwing Key?",
@@ -1916,7 +1916,7 @@
     "Door": {
       "Sprite": {
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
-        "key": "Doors.Green"
+        "key": "Doors.GreenThick"
       },
       "NoKeyDesc": "A bubbly door decorated with green.",
       "KeyDesc": "It's okay, you have an excuse this time.<br>Insert the Overgrown Key?",
@@ -2069,7 +2069,7 @@
     "Door": {
       "Sprite": {
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
-        "key": "Doors.City"
+        "key": "Doors.Sanctum"
       },
       "NoKeyDesc": "A door forged of empty shells and broken glass.",
       "KeyDesc": "A pure focus awaits.<br>Insert the Sanctum Key?",
@@ -2229,7 +2229,7 @@
     "Door": {
       "Sprite": {
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
-        "key": "Doors.Green"
+        "key": "Doors.Traitor"
       },
       "NoKeyDesc": "An ornate metal door embellished with thorns.",
       "KeyDesc": "The path of the warrior ends here.<br>Insert the Traitor's Key?",
