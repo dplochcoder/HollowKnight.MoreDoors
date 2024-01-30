@@ -175,7 +175,7 @@
         "GateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
-        "Y": 19.6
+        "Y": 17.6
       },
       "RightLocation": {
         "SceneName": "Abyss_19",
@@ -503,7 +503,7 @@
         "GateName": "right1",
         "RequiresLantern": false,
         "X": 73.9,
-        "Y": 197.6
+        "Y": 197.2
       },
       "Deployers": null
     },
@@ -1121,7 +1121,7 @@
         "GateName": "right2",
         "RequiresLantern": false,
         "X": 73.9,
-        "Y": 65.6
+        "Y": 65.2
       },
       "Deployers": null
     },
