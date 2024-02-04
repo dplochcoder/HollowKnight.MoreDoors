@@ -2,6 +2,7 @@
 using ItemChanger.Locations;
 using MoreDoors.IC;
 using Newtonsoft.Json;
+using RandoSettingsManager.SettingsManagement.Versioning;
 using System;
 using System.Collections.Generic;
 
@@ -56,20 +57,30 @@ public record DoorData
 
         public record Location
         {
-            public string TransitionSceneName;
-            public string TransitionGateName;
+            public record LogicTransition
+            {
+                public string SceneName;
+                public string GateName;
+
+                [JsonIgnore]
+                public string Name => $"{SceneName}[{GateName}]";
+                [JsonIgnore]
+                public string ProxyName => $"{SceneName}_Proxy[{GateName}]";
+            }
+
+            public LogicTransition? Transition;
             public bool RequiresLantern;
             public float X;
             public float Y;
 
-            [JsonIgnore]
-            public string TransitionName => $"{TransitionSceneName}[{TransitionGateName}]";
-
-            [JsonIgnore]
-            public string TransitionProxyName => $"{TransitionSceneName}_Proxy[{TransitionGateName}]";
-
-            public bool ValidateAndUpdate(out string err)
+            public bool ValidateAndUpdate(bool requireTransition, out string err)
             {
+                if (requireTransition && Transition == null)
+                {
+                    err = "Door is missing Transition";
+                    return false;
+                }
+
                 err = "";
                 return true;
             }
@@ -90,15 +101,13 @@ public record DoorData
             SplitMode.RightTwin => RightLocation,
         };
 
-        public string LeftSceneName => SplitLocation(Side.Left).TransitionSceneName;
-        public string RightSceneName => SplitLocation(Side.Right).TransitionSceneName;
-        public string LeftTransitionProxyName => SplitLocation(Side.Left).TransitionProxyName;
-        public string RightTransitionProxyName => SplitLocation(Side.Right).TransitionProxyName;
+        public string LeftSceneName => SplitLocation(Side.Left).Transition.SceneName;
+        public string RightSceneName => SplitLocation(Side.Right).Transition.SceneName;
 
         public bool ValidateAndUpdate(out string err)
         {
-            if (!LeftLocation.ValidateAndUpdate(out err)) return false;
-            if (!RightLocation.ValidateAndUpdate(out err)) return false;
+            if (!LeftLocation.ValidateAndUpdate(Mode != SplitMode.RightTwin, out err)) return false;
+            if (!RightLocation.ValidateAndUpdate(Mode != SplitMode.LeftTwin, out err)) return false;
 
             err = "";
             return true;

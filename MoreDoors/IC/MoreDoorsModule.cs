@@ -48,6 +48,12 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
     // After DarknessRandomizer
     private const float BeforeSceneManagerStartPriority = 110f;
 
+    private void IndexTransition(DoorData.DoorInfo.Location loc, string doorName)
+    {
+        if (loc.Transition == null) return;
+        DoorNamesByTransition[loc.Transition.Name] = doorName;
+    }
+
     public override void Initialize()
     {
         foreach (var e in DoorStates)
@@ -61,8 +67,8 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
 
             DoorNamesByScene.GetOrAddNew(data.Door.LeftSceneName).Add(doorName);
             DoorNamesByScene.GetOrAddNew(data.Door.RightSceneName).Add(doorName);
-            DoorNamesByTransition[data.Door.LeftLocation.TransitionName] = doorName;
-            DoorNamesByTransition[data.Door.RightLocation.TransitionName] = doorName;
+            IndexTransition(data.Door.LeftLocation, doorName);
+            IndexTransition(data.Door.RightLocation, doorName);
             DoorNamesByLeftForce[data.PDDoorLeftForceOpenedName] = doorName;
             DoorNamesByRightForce[data.PDDoorRightForceOpenedName] = doorName;
 
@@ -179,8 +185,8 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
             var door = DoorStates[doorName].Data.Door;
             if (door.Mode != DoorData.DoorInfo.SplitMode.Normal) return;
 
-            if (door.LeftLocation.TransitionName == tname) DoorStates[doorName].LeftDoorForceOpened = true;
-            else if (door.RightLocation.TransitionName == tname) DoorStates[doorName].RightDoorForceOpened = true;
+            if (door.LeftLocation.Transition.Name == tname) DoorStates[doorName].LeftDoorForceOpened = true;
+            else if (door.RightLocation.Transition.Name == tname) DoorStates[doorName].RightDoorForceOpened = true;
 
             foreach (var obj in Object.FindObjectsOfType<DoorNameMarker>())
             {

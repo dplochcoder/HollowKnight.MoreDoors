@@ -59,11 +59,11 @@ public class RequestModifier
 
     private static IEnumerable<string> SplitLeftTransitions() => RandoInterop.LS.EnabledDoorNames.Select(d => DoorData.GetFromJson(d).Door)
         .Where(d => d.Mode == DoorData.DoorInfo.SplitMode.Normal)
-        .Select(d => d.LeftLocation.TransitionName);
+        .Select(d => d.LeftLocation.Transition.Name);
 
     private static IEnumerable<string> SplitRightTransitions() => RandoInterop.LS.EnabledDoorNames.Select(d => DoorData.GetFromJson(d).Door)
         .Where(d => d.Mode == DoorData.DoorInfo.SplitMode.Normal)
-        .Select(d => d.RightLocation.TransitionName);
+        .Select(d => d.RightLocation.Transition.Name);
 
     private static void ApplyTransitionRando(RequestBuilder rb)
     {
@@ -78,8 +78,8 @@ public class RequestModifier
             var data = DoorData.GetFromJson(door);
             if (data.Door.Mode != DoorData.DoorInfo.SplitMode.Normal) continue;
 
-            VanillaDef left = new(data.Door.LeftLocation.TransitionName, data.Door.RightLocation.TransitionName);
-            VanillaDef right = new(data.Door.RightLocation.TransitionName, data.Door.LeftLocation.TransitionName);
+            VanillaDef left = new(data.Door.LeftLocation.Transition.Name, data.Door.RightLocation.Transition.Name);
+            VanillaDef right = new(data.Door.RightLocation.Transition.Name, data.Door.LeftLocation.Transition.Name);
             rb.RemoveFromVanilla(left);
             rb.RemoveFromVanilla(right);
         }
