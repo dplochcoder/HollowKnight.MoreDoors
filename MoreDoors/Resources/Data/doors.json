@@ -11,15 +11,15 @@
       "NoKeyDesc": "A sturdy door overflowing with literature, entirely illegible.",
       "KeyDesc": "The teacher's research must pass on.<br>Insert the Archive Key?",
       "LeftLocation": {
-        "SceneName": "Fungus3_26",
-        "GateName": "left3",
+        "TransitionSceneName": "Fungus3_26",
+        "TransitionGateName": "left3",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 11.6
       },
       "RightLocation": {
-        "SceneName": "Fungus3_27",
-        "GateName": "right1",
+        "TransitionSceneName": "Fungus3_27",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 73.9,
         "Y": 10.6
@@ -91,15 +91,15 @@
       "NoKeyDesc": "An old door glazed with primal acid.",
       "KeyDesc": "The rumble of foolery echoes in the distance.<br>Insert Bardoon's Key?",
       "LeftLocation": {
-        "SceneName": "Deepnest_East_04",
-        "GateName": "left2",
+        "TransitionSceneName": "Deepnest_East_04",
+        "TransitionGateName": "left2",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 95.6
       },
       "RightLocation": {
-        "SceneName": "Deepnest_East_07",
-        "GateName": "right1",
+        "TransitionSceneName": "Deepnest_East_07",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 88.9,
         "Y": 66.6
@@ -171,15 +171,15 @@
       "NoKeyDesc": "A decaying door haunted by the lost.",
       "KeyDesc": "A kindred spirit's cries for help echo from within.<br>Insert the Broken Key?",
       "LeftLocation": {
-        "SceneName": "Abyss_18",
-        "GateName": "left1",
+        "TransitionSceneName": "Abyss_18",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 17.6
       },
       "RightLocation": {
-        "SceneName": "Abyss_19",
-        "GateName": "right1",
+        "TransitionSceneName": "Abyss_19",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 158.9,
         "Y": 33.6
@@ -251,15 +251,15 @@
       "NoKeyDesc": "An old, stone vestibule. It smells of ancient treasure.",
       "KeyDesc": "The treasure is both far and near.<br>Insert the Buried Geo Key?",
       "LeftLocation": {
-        "SceneName": "Deepnest_East_16",
-        "GateName": "left1",
+        "TransitionSceneName": "Deepnest_East_16",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 6.6
       },
       "RightLocation": {
-        "SceneName": "Deepnest_East_06",
-        "GateName": "right1",
+        "TransitionSceneName": "Deepnest_East_06",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 349.9,
         "Y": 17.6
@@ -331,15 +331,15 @@
       "NoKeyDesc": "A door of repose and study. It's a little slimy.",
       "KeyDesc": "The pilgrim's way unfolds.<br>Insert the Canyon Key?",
       "LeftLocation": {
-        "SceneName": "Fungus2_01",
-        "GateName": "left1",
+        "TransitionSceneName": "Fungus2_01",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 43.6
       },
       "RightLocation": {
-        "SceneName": "Fungus3_02",
-        "GateName": "right2",
+        "TransitionSceneName": "Fungus3_02",
+        "TransitionGateName": "right2",
         "RequiresLantern": false,
         "X": 29.9,
         "Y": 5.6
@@ -411,15 +411,15 @@
       "NoKeyDesc": "A spongy door overgrown with rich fungus.",
       "KeyDesc": "The depths of the wastes cry WAH.<br>Insert the Core Key?",
       "LeftLocation": {
-        "SceneName": "Fungus2_17",
-        "GateName": "left1",
+        "TransitionSceneName": "Fungus2_17",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 35.6
       },
       "RightLocation": {
-        "SceneName": "Fungus2_29",
-        "GateName": "right1",
+        "TransitionSceneName": "Fungus2_29",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 92.9,
         "Y": 33.6
@@ -492,15 +492,15 @@
       "NoKeyDesc": "A crystalline door shining with a forgotten light.",
       "KeyDesc": "This is as high as you'll go.<br>Insert the Crown Key?",
       "LeftLocation": {
-        "SceneName": "Mines_23",
-        "GateName": "left1",
+        "TransitionSceneName": "Mines_23",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 14.6
       },
       "RightLocation": {
-        "SceneName": "Mines_20",
-        "GateName": "right1",
+        "TransitionSceneName": "Mines_20",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 73.9,
         "Y": 197.2
@@ -582,15 +582,15 @@
       "NoKeyDesc": "A cobblestone door armored in silk.",
       "KeyDesc": "The skittering never stops.<br>Insert the Dark Key?",
       "LeftLocation": {
-        "SceneName": "Deepnest_34",
-        "GateName": "left1",
+        "TransitionSceneName": "Deepnest_34",
+        "TransitionGateName": "left1",
         "RequiresLantern": true,
         "X": 1.1,
         "Y": 17.6
       },
       "RightLocation": {
-        "SceneName": "Deepnest_39",
-        "GateName": "right1",
+        "TransitionSceneName": "Deepnest_39",
+        "TransitionGateName": "right1",
         "RequiresLantern": true,
         "X": 208.9,
         "Y": 9.6
@@ -662,15 +662,15 @@
       "NoKeyDesc": "It looks like it's a locked door but you're not so sure.",
       "KeyDesc": "The hardest challenge in the game awaits you.<br>Insert the False Key?",
       "LeftLocation": {
-        "SceneName": "Crossroads_03",
-        "GateName": "left1",
+        "TransitionSceneName": "Crossroads_03",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 2.1,
         "Y": 33.6
       },
       "RightLocation": {
-        "SceneName": "Crossroads_21",
-        "GateName": "right1",
+        "TransitionSceneName": "Crossroads_21",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 98.9,
         "Y": 16.6
@@ -742,15 +742,15 @@
       "NoKeyDesc": "A cold stone door, endlessly dripping.",
       "KeyDesc": "You can feel the power of buoyancy calling out to you.<br>Insert the Flooded Stag Key?",
       "LeftLocation": {
-        "SceneName": "Ruins2_07",
-        "GateName": "left1",
+        "TransitionSceneName": "Ruins2_07",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 8.6
       },
       "RightLocation": {
-        "SceneName": "Ruins2_06",
-        "GateName": "right2",
+        "TransitionSceneName": "Ruins2_06",
+        "TransitionGateName": "right2",
         "RequiresLantern": false,
         "X": 53.9,
         "Y": 7.6
@@ -826,15 +826,15 @@
       "NoKeyDesc": "An ornate door, bespeckled with a collector's wealth.",
       "KeyDesc": "Rain flows intricately between the carvings.<br>Insert the Fountain Key?",
       "LeftLocation": {
-        "SceneName": "Ruins1_27",
-        "GateName": "left1",
+        "TransitionSceneName": "Ruins1_27",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 7.6
       },
       "RightLocation": {
-        "SceneName": "Ruins1_05b",
-        "GateName": "right1",
+        "TransitionSceneName": "Ruins1_05b",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 63.9,
         "Y": 8.6
@@ -885,15 +885,15 @@
       "NoKeyDesc": "A spongy door reinforced with shards of old charms.",
       "KeyDesc": "Mind your legs.<br>Insert the Fragile Key?",
       "LeftLocation": {
-        "SceneName": "Fungus2_26",
-        "GateName": "left1",
+        "TransitionSceneName": "Fungus2_26",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 9.6
       },
       "RightLocation": {
-        "SceneName": "Fungus2_06",
-        "GateName": "right1",
+        "TransitionSceneName": "Fungus2_06",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 34.9,
         "Y": 60.6
@@ -965,15 +965,15 @@
       "NoKeyDesc": "The fungus grows ever onwards, without memory.",
       "KeyDesc": "The pilgrim's way expands.<br>Insert the Fungal Key?",
       "LeftLocation": {
-        "SceneName": "Fungus2_07",
-        "GateName": "left1",
+        "TransitionSceneName": "Fungus2_07",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 15.6
       },
       "RightLocation": {
-        "SceneName": "Fungus2_06",
-        "GateName": "right2",
+        "TransitionSceneName": "Fungus2_06",
+        "TransitionGateName": "right2",
         "RequiresLantern": false,
         "X": 34.9,
         "Y": 11.6
@@ -1045,15 +1045,15 @@
       "NoKeyDesc": "A lush door tainted with chains. This is a protected place.",
       "KeyDesc": "The gardens must be tended.<br>Insert the Garden Key?",
       "LeftLocation": {
-        "SceneName": "Fungus3_34",
-        "GateName": "left1",
+        "TransitionSceneName": "Fungus3_34",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 13.6
       },
       "RightLocation": {
-        "SceneName": "Fungus3_04",
-        "GateName": "right1",
+        "TransitionSceneName": "Fungus3_04",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 38.9,
         "Y": 58.6
@@ -1110,15 +1110,15 @@
       "NoKeyDesc": "A dense, deeply crystallized door. It seems to have a heartbeat.",
       "KeyDesc": "The heart of the mountain beckons.<br>Insert the Heart Key?",
       "LeftLocation": {
-        "SceneName": "Mines_31",
-        "GateName": "left1",
+        "TransitionSceneName": "Mines_31",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 21.6
       },
       "RightLocation": {
-        "SceneName": "Mines_20",
-        "GateName": "right2",
+        "TransitionSceneName": "Mines_20",
+        "TransitionGateName": "right2",
         "RequiresLantern": false,
         "X": 73.9,
         "Y": 65.2
@@ -1201,15 +1201,15 @@
       "NoKeyDesc": "It's made of honeycombs, sturdy as stone.",
       "KeyDesc": "The buzzing resonates with your soul.<br>Insert the Hive Key?",
       "LeftLocation": {
-        "SceneName": "Hive_02",
-        "GateName": "left2",
+        "TransitionSceneName": "Hive_02",
+        "TransitionGateName": "left2",
         "RequiresLantern": false,
         "X": 95.1,
         "Y": 52.6
       },
       "RightLocation": {
-        "SceneName": "Hive_01",
-        "GateName": "right1",
+        "TransitionSceneName": "Hive_01",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 118.9,
         "Y": 52.6
@@ -1260,15 +1260,15 @@
       "NoKeyDesc": "A bright green door, bubbling with life. Don't touch it, though.",
       "KeyDesc": "It sizzles with a forgotten life.<br>Insert Isma's Key?",
       "LeftLocation": {
-        "SceneName": "Waterways_07",
-        "GateName": "left1",
+        "TransitionSceneName": "Waterways_07",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 22.6
       },
       "RightLocation": {
-        "SceneName": "Abyss_01",
-        "GateName": "right2",
+        "TransitionSceneName": "Abyss_01",
+        "TransitionGateName": "right2",
         "RequiresLantern": false,
         "X": 29.5,
         "Y": 52.6
@@ -1340,15 +1340,15 @@
       "NoKeyDesc": "A robust door overgrown with lifeblood.",
       "KeyDesc": "You weren't invited, but you're here anyway.<br>Insert Joni's Key?",
       "LeftLocation": {
-        "SceneName": "Cliffs_04",
-        "GateName": "left1",
+        "TransitionSceneName": "Cliffs_04",
+        "TransitionGateName": "left1",
         "RequiresLantern": true,
         "X": 1.1,
         "Y": 45.6
       },
       "RightLocation": {
-        "SceneName": "Cliffs_01",
-        "GateName": "right2",
+        "TransitionSceneName": "Cliffs_01",
+        "TransitionGateName": "right2",
         "RequiresLantern": false,
         "X": 138.9,
         "Y": 93.6
@@ -1420,15 +1420,15 @@
       "NoKeyDesc": "A creaking door, rusting and rotting. It smells of infestation.",
       "KeyDesc": "A great shadow looms beyond.<br>Insert the Junk Key?",
       "LeftLocation": {
-        "SceneName": "Waterways_08",
-        "GateName": "left2",
+        "TransitionSceneName": "Waterways_08",
+        "TransitionGateName": "left2",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 56.6
       },
       "RightLocation": {
-        "SceneName": "GG_Pipeway",
-        "GateName": "right1",
+        "TransitionSceneName": "GG_Pipeway",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 147.9,
         "Y": 6.6
@@ -1500,15 +1500,15 @@
       "NoKeyDesc": "A wet, quiet door. There is a certain shadow about it.",
       "KeyDesc": "You sense the sadness of a journey completed.<br>Insert the Lake Key?",
       "LeftLocation": {
-        "SceneName": "Crossroads_50",
-        "GateName": "left1",
+        "TransitionSceneName": "Crossroads_50",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 46.6
       },
       "RightLocation": {
-        "SceneName": "Crossroads_04",
-        "GateName": "right1",
+        "TransitionSceneName": "Crossroads_04",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 158.9,
         "Y": 26.6
@@ -1580,15 +1580,15 @@
       "NoKeyDesc": "A sharp, carefully sculpted door. It smells of honor.",
       "KeyDesc": "Your challengers await.<br>Insert the Mantis Key?",
       "LeftLocation": {
-        "SceneName": "Fungus2_13",
-        "GateName": "left2",
+        "TransitionSceneName": "Fungus2_13",
+        "TransitionGateName": "left2",
         "RequiresLantern": false,
         "X": 2.5,
         "Y": 60.6
       },
       "RightLocation": {
-        "SceneName": "Fungus2_14",
-        "GateName": "right1",
+        "TransitionSceneName": "Fungus2_14",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 173.9,
         "Y": 11.6
@@ -1666,15 +1666,15 @@
       "NoKeyDesc": "A lush door, smothered in moss. It's almost hidden.",
       "KeyDesc": "The power of leftslash compels you.<br>Insert the Moss Key?",
       "LeftLocation": {
-        "SceneName": "Fungus1_11",
-        "GateName": "left1",
+        "TransitionSceneName": "Fungus1_11",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 34.6
       },
       "RightLocation": {
-        "SceneName": "Fungus1_29",
-        "GateName": "right1",
+        "TransitionSceneName": "Fungus1_29",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 83.9,
         "Y": 16.6
@@ -1752,15 +1752,15 @@
       "NoKeyDesc": "It looks like you can't get any closer, ghost.",
       "KeyDesc": "It looks like you found a way to get closer.<br>Insert the Mothwing Key?",
       "LeftLocation": {
-        "SceneName": "Fungus1_21",
-        "GateName": "left1",
+        "TransitionSceneName": "Fungus1_21",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 15.6
       },
       "RightLocation": {
-        "SceneName": "Fungus1_04",
-        "GateName": "right1",
+        "TransitionSceneName": "Fungus1_04",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 93.9,
         "Y": 34.6
@@ -1832,15 +1832,15 @@
       "NoKeyDesc": "A crunchy door laced with spider webs.",
       "KeyDesc": "You can feel your skin crawling.<br>Insert the Nest Key?",
       "LeftLocation": {
-        "SceneName": "Deepnest_30",
-        "GateName": "left1",
+        "TransitionSceneName": "Deepnest_30",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 7.6
       },
       "RightLocation": {
-        "SceneName": "Deepnest_03",
-        "GateName": "right1",
+        "TransitionSceneName": "Deepnest_03",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 58.9,
         "Y": 5.6
@@ -1921,15 +1921,15 @@
       "NoKeyDesc": "A buried door, overgrown with the lush of the canyon.",
       "KeyDesc": "It's okay, you have an excuse this time.<br>Insert the Overgrown Key?",
       "LeftLocation": {
-        "SceneName": "Fungus3_01",
-        "GateName": "left1",
+        "TransitionSceneName": "Fungus3_01",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 39.6
       },
       "RightLocation": {
-        "SceneName": "Fungus3_24",
-        "GateName": "right1",
+        "TransitionSceneName": "Fungus3_24",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 98.9,
         "Y": 14.6
@@ -1980,15 +1980,15 @@
       "NoKeyDesc": "An ornate door with saw blades instead of gears for a lock mechanism.",
       "KeyDesc": "The screech of saw blades permeates all.<br>Insert the Pain Key?",
       "LeftLocation": {
-        "SceneName": "White_Palace_06",
-        "GateName": "left1",
+        "TransitionSceneName": "White_Palace_06",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 14.8,
         "Y": 5.6
       },
       "RightLocation": {
-        "SceneName": "White_Palace_18",
-        "GateName": "right1",
+        "TransitionSceneName": "White_Palace_18",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 298.9,
         "Y": 14.6
@@ -2074,15 +2074,15 @@
       "NoKeyDesc": "A regal door glowing with soul, awaiting a stuent.",
       "KeyDesc": "A pure focus awaits.<br>Insert the Sanctum Key?",
       "LeftLocation": {
-        "SceneName": "Ruins1_09",
-        "GateName": "left1",
+        "TransitionSceneName": "Ruins1_09",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 2.1,
         "Y": 18.6
       },
       "RightLocation": {
-        "SceneName": "Ruins1_05",
-        "GateName": "right1",
+        "TransitionSceneName": "Ruins1_05",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 61.9,
         "Y": 153.6
@@ -2154,15 +2154,15 @@
       "NoKeyDesc": "A dark door forged of bones and abandoned souls.",
       "KeyDesc": "The destiny of darkness awaits.<br>Insert the Shade Key?",
       "LeftLocation": {
-        "SceneName": "Abyss_16",
-        "GateName": "left1",
+        "TransitionSceneName": "Abyss_16",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 7.6
       },
       "RightLocation": {
-        "SceneName": "Abyss_06_Core",
-        "GateName": "right2",
+        "TransitionSceneName": "Abyss_06_Core",
+        "TransitionGateName": "right2",
         "RequiresLantern": false,
         "X": 98.9,
         "Y": 5.6
@@ -2234,15 +2234,15 @@
       "NoKeyDesc": "The door of a rival, a betrayor, guarding her keep.",
       "KeyDesc": "The path of the warrior ends here.<br>Insert the Traitor's Key?",
       "LeftLocation": {
-        "SceneName": "Fungus3_04",
-        "GateName": "left1",
+        "TransitionSceneName": "Fungus3_04",
+        "TransitionGateName": "left1",
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 85.6
       },
       "RightLocation": {
-        "SceneName": "Fungus3_21",
-        "GateName": "right1",
+        "TransitionSceneName": "Fungus3_21",
+        "TransitionGateName": "right1",
         "RequiresLantern": false,
         "X": 73.9,
         "Y": 8.6
@@ -2325,15 +2325,15 @@
       "NoKeyDesc": "A solid door reinforced with silk weaves. The beast watches you.",
       "KeyDesc": "Even the King's influence does not reach here.<br>Insert the Village Key?",
       "LeftLocation": {
-        "SceneName": "Deepnest_41",
-        "GateName": "left1",
+        "TransitionSceneName": "Deepnest_41",
+        "TransitionGateName": "left1",
         "RequiresLantern": true,
         "X": 1.1,
         "Y": 91.6
       },
       "RightLocation": {
-        "SceneName": "Deepnest_10",
-        "GateName": "right2",
+        "TransitionSceneName": "Deepnest_10",
+        "TransitionGateName": "right2",
         "RequiresLantern": false,
         "X": 73.9,
         "Y": 89.6

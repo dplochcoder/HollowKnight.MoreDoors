@@ -44,17 +44,23 @@ public record DoorData
     {
         public record Location
         {
-            public string SceneName;
-            public string GateName;
+            public string TransitionSceneName;
+            public string TransitionGateName;
             public bool RequiresLantern;
             public float X;
             public float Y;
 
             [JsonIgnore]
-            public string TransitionName => $"{SceneName}[{GateName}]";
+            public string TransitionName => $"{TransitionSceneName}[{TransitionGateName}]";
 
             [JsonIgnore]
-            public string TransitionProxyName => $"{SceneName}_Proxy[{GateName}]";
+            public string TransitionProxyName => $"{TransitionSceneName}_Proxy[{TransitionGateName}]";
+
+            public bool ValidateAndUpdate(out string err)
+            {
+                err = "";
+                return true;
+            }
         }
 
         public ISprite Sprite;
@@ -63,6 +69,15 @@ public record DoorData
         public Location LeftLocation;
         public Location RightLocation;
         public List<IDeployer>? Deployers;
+
+        public bool ValidateAndUpdate(out string err)
+        {
+            if (!LeftLocation.ValidateAndUpdate(out err)) return false;
+            if (!RightLocation.ValidateAndUpdate(out err)) return false;
+
+            err = "";
+            return true;
+        }
     }
     public DoorInfo Door;
 
@@ -142,6 +157,8 @@ public record DoorData
 
     public bool ValidateAndUpdate(out string err)
     {
+        if (!Door.ValidateAndUpdate(out err)) return false;
+
         string s = Key.Location.sceneName;
         if (Key.Location is DualLocation dl)
         {

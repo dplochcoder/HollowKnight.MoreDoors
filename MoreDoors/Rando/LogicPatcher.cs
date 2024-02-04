@@ -85,8 +85,8 @@ public static class LogicPatcher
         foreach (var data in DoorData.Data)
         {
             var door = data.Value.Door;
-            sceneToDoors.GetOrAddNew(door.LeftLocation.SceneName).Add(data.Key);
-            sceneToDoors.GetOrAddNew(door.RightLocation.SceneName).Add(data.Key);
+            sceneToDoors.GetOrAddNew(door.LeftLocation.TransitionSceneName).Add(data.Key);
+            sceneToDoors.GetOrAddNew(door.RightLocation.TransitionSceneName).Add(data.Key);
         }
 
         List<string> keys = new(startDefs.Keys);

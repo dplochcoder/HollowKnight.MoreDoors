@@ -54,8 +54,8 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
             DoorNamesByKey[data.PDKeyName] = doorName;
             DoorNamesByDoor[data.PDDoorOpenedName] = doorName;
 
-            DoorNamesByScene.GetOrAddNew(data.Door.LeftLocation.SceneName).Add(doorName);
-            DoorNamesByScene.GetOrAddNew(data.Door.RightLocation.SceneName).Add(doorName);
+            DoorNamesByScene.GetOrAddNew(data.Door.LeftLocation.TransitionSceneName).Add(doorName);
+            DoorNamesByScene.GetOrAddNew(data.Door.RightLocation.TransitionSceneName).Add(doorName);
             DoorNamesByTransition[data.Door.LeftLocation.TransitionName] = doorName;
             DoorNamesByTransition[data.Door.RightLocation.TransitionName] = doorName;
             DoorNamesByLeftForce[data.PDDoorLeftForceOpenedName] = doorName;
@@ -157,8 +157,8 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         foreach (var doorName in DoorNamesByScene.GetOrDefault(sceneName, emptySet))
         {
             var data = DoorStates[doorName].Data;
-            if (sceneName == data.Door.LeftLocation.SceneName) DoorSpawner.SpawnDoor(sm, doorName, true);
-            if (sceneName == data.Door.RightLocation.SceneName) DoorSpawner.SpawnDoor(sm, doorName, false);
+            if (sceneName == data.Door.LeftLocation.TransitionSceneName) DoorSpawner.SpawnDoor(sm, doorName, true);
+            if (sceneName == data.Door.RightLocation.TransitionSceneName) DoorSpawner.SpawnDoor(sm, doorName, false);
         }
     }
 
