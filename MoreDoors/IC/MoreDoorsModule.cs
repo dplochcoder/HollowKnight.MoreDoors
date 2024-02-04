@@ -31,6 +31,9 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         public bool RightDoorForceOpened = false;
     }
 
+    // Hack for hk7y plando.
+    public bool ImportNewJson = false;
+
     // Indexed by door name.
     public SortedDictionary<string, DoorState> DoorStates = new();
 
@@ -50,7 +53,9 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         foreach (var e in DoorStates)
         {
             var doorName = e.Key;
-            var data = e.Value.Data ??= DoorData.GetFromJson(doorName);
+            var data = e.Value.Data;
+            if (ImportNewJson || data == null) data = DoorData.GetFromJson(doorName);
+
             DoorNamesByKey[data.PDKeyName] = doorName;
             DoorNamesByDoor[data.PDDoorOpenedName] = doorName;
 
