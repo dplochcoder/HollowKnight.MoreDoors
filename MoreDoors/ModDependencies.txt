@@ -3,9 +3,9 @@ DebugMod
 FStats
 ItemChanger
 MenuChanger
-PurenailCore from https://github.com/dplochcoder/HollowKnight.PurenailCore/releases/download/v1.2.1.0/PurenailCore.zip
-Randomizer 4 from https://github.com/homothetyhk/RandomizerMod/releases/download/v4.1.4%2B470/RandomizerMod.zip
-RandomizerCore from https://github.com/homothetyhk/RandomizerCore/releases/download/v2.0.0/RandomizerCore.zip
-RandomizerCore.Json from https://github.com/homothetyhk/RandomizerCore.Json/releases/download/v1.0.0/RandomizerCore.Json.zip
+PurenailCore
+Randomizer 4
+RandomizerCore
+RandomizerCore.Json
 RandoSettingsManager
 SFCore
