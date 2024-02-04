@@ -91,8 +91,8 @@ public class MoreKeysPage
         }
     }
 
-    private ISprite checkSprite = new EmbeddedSprite("Menu.Checkmark");
-    private ISprite emptySprite = new EmbeddedSprite("Menu.UnplacedKey");
+    private ISprite checkSprite = new EmbeddedSprite("Checkmark");
+    private ISprite emptySprite = new EmbeddedSprite("UnplacedKey");
     private GameObject keyTitle;
     private GameObject keyDesc;
 
