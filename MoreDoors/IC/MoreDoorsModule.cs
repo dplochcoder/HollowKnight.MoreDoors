@@ -54,8 +54,8 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
             DoorNamesByKey[data.PDKeyName] = doorName;
             DoorNamesByDoor[data.PDDoorOpenedName] = doorName;
 
-            DoorNamesByScene.GetOrAddNew(data.Door.LeftLocation.TransitionSceneName).Add(doorName);
-            DoorNamesByScene.GetOrAddNew(data.Door.RightLocation.TransitionSceneName).Add(doorName);
+            DoorNamesByScene.GetOrAddNew(data.Door.LeftSceneName).Add(doorName);
+            DoorNamesByScene.GetOrAddNew(data.Door.RightSceneName).Add(doorName);
             DoorNamesByTransition[data.Door.LeftLocation.TransitionName] = doorName;
             DoorNamesByTransition[data.Door.RightLocation.TransitionName] = doorName;
             DoorNamesByLeftForce[data.PDDoorLeftForceOpenedName] = doorName;
@@ -157,8 +157,8 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         foreach (var doorName in DoorNamesByScene.GetOrDefault(sceneName, emptySet))
         {
             var data = DoorStates[doorName].Data;
-            if (sceneName == data.Door.LeftLocation.TransitionSceneName) DoorSpawner.SpawnDoor(sm, doorName, true);
-            if (sceneName == data.Door.RightLocation.TransitionSceneName) DoorSpawner.SpawnDoor(sm, doorName, false);
+            if (sceneName == data.Door.LeftSceneName) DoorSpawner.SpawnDoor(sm, doorName, true);
+            if (sceneName == data.Door.RightSceneName) DoorSpawner.SpawnDoor(sm, doorName, false);
         }
     }
 
@@ -171,9 +171,11 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         var tname = $"{t.SceneName}[{t.GateName}]";
         if (DoorNamesByTransition.TryGetValue(tname, out string doorName) && !DoorStates[doorName].DoorOpened)
         {
-            var data = DoorStates[doorName].Data;
-            if (data.Door.LeftLocation.TransitionName == tname) DoorStates[doorName].LeftDoorForceOpened = true;
-            else if (data.Door.RightLocation.TransitionName == tname) DoorStates[doorName].RightDoorForceOpened = true;
+            var door = DoorStates[doorName].Data.Door;
+            if (door.Mode != DoorData.DoorInfo.SplitMode.Normal) return;
+
+            if (door.LeftLocation.TransitionName == tname) DoorStates[doorName].LeftDoorForceOpened = true;
+            else if (door.RightLocation.TransitionName == tname) DoorStates[doorName].RightDoorForceOpened = true;
 
             foreach (var obj in Object.FindObjectsOfType<DoorNameMarker>())
             {

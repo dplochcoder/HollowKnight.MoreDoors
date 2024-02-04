@@ -42,6 +42,18 @@ public record DoorData
 
     public record DoorInfo
     {
+        public enum SplitMode
+        {
+            Normal,
+            LeftTwin,
+            RightTwin,
+        }
+        private enum Side
+        {
+            Left,
+            Right,
+        }
+
         public record Location
         {
             public string TransitionSceneName;
@@ -68,7 +80,20 @@ public record DoorData
         public string KeyDesc;
         public Location LeftLocation;
         public Location RightLocation;
+        public SplitMode Mode;
         public List<IDeployer>? Deployers;
+
+        private Location SplitLocation(Side side) => Mode switch
+        {
+            SplitMode.Normal => side == Side.Left ? LeftLocation : RightLocation,
+            SplitMode.LeftTwin => LeftLocation,
+            SplitMode.RightTwin => RightLocation,
+        };
+
+        public string LeftSceneName => SplitLocation(Side.Left).TransitionSceneName;
+        public string RightSceneName => SplitLocation(Side.Right).TransitionSceneName;
+        public string LeftTransitionProxyName => SplitLocation(Side.Left).TransitionProxyName;
+        public string RightTransitionProxyName => SplitLocation(Side.Right).TransitionProxyName;
 
         public bool ValidateAndUpdate(out string err)
         {

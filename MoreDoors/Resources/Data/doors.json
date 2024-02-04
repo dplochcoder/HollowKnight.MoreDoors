@@ -24,7 +24,12 @@
         "X": 73.9,
         "Y": 10.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Fungus3_26",
+      "RightSceneName": "Fungus3_27",
+      "LeftTransitionProxyName": "Fungus3_26_Proxy[left3]",
+      "RightTransitionProxyName": "Fungus3_27_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Archive_Key",
@@ -104,7 +109,12 @@
         "X": 88.9,
         "Y": 66.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Deepnest_East_04",
+      "RightSceneName": "Deepnest_East_07",
+      "LeftTransitionProxyName": "Deepnest_East_04_Proxy[left2]",
+      "RightTransitionProxyName": "Deepnest_East_07_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Bardoon's_Key",
@@ -184,7 +194,12 @@
         "X": 158.9,
         "Y": 33.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Abyss_18",
+      "RightSceneName": "Abyss_19",
+      "LeftTransitionProxyName": "Abyss_18_Proxy[left1]",
+      "RightTransitionProxyName": "Abyss_19_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Broken_Key",
@@ -264,7 +279,12 @@
         "X": 349.9,
         "Y": 17.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Deepnest_East_16",
+      "RightSceneName": "Deepnest_East_06",
+      "LeftTransitionProxyName": "Deepnest_East_16_Proxy[left1]",
+      "RightTransitionProxyName": "Deepnest_East_06_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Buried_Geo_Key",
@@ -344,7 +364,12 @@
         "X": 29.9,
         "Y": 5.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Fungus2_01",
+      "RightSceneName": "Fungus3_02",
+      "LeftTransitionProxyName": "Fungus2_01_Proxy[left1]",
+      "RightTransitionProxyName": "Fungus3_02_Proxy[right2]"
     },
     "Key": {
       "ItemName": "MoreDoors-Canyon_Key",
@@ -424,7 +449,12 @@
         "X": 92.9,
         "Y": 33.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Fungus2_17",
+      "RightSceneName": "Fungus2_29",
+      "LeftTransitionProxyName": "Fungus2_17_Proxy[left1]",
+      "RightTransitionProxyName": "Fungus2_29_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Core_Key",
@@ -505,7 +535,12 @@
         "X": 73.9,
         "Y": 197.2
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Mines_23",
+      "RightSceneName": "Mines_20",
+      "LeftTransitionProxyName": "Mines_23_Proxy[left1]",
+      "RightTransitionProxyName": "Mines_20_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Crown_Key",
@@ -595,7 +630,12 @@
         "X": 208.9,
         "Y": 9.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Deepnest_34",
+      "RightSceneName": "Deepnest_39",
+      "LeftTransitionProxyName": "Deepnest_34_Proxy[left1]",
+      "RightTransitionProxyName": "Deepnest_39_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Dark_Nest_Key",
@@ -675,7 +715,12 @@
         "X": 98.9,
         "Y": 16.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Crossroads_03",
+      "RightSceneName": "Crossroads_21",
+      "LeftTransitionProxyName": "Crossroads_03_Proxy[left1]",
+      "RightTransitionProxyName": "Crossroads_21_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-False_Key",
@@ -755,7 +800,12 @@
         "X": 53.9,
         "Y": 7.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Ruins2_07",
+      "RightSceneName": "Ruins2_06",
+      "LeftTransitionProxyName": "Ruins2_07_Proxy[left1]",
+      "RightTransitionProxyName": "Ruins2_06_Proxy[right2]"
     },
     "Key": {
       "ItemName": "MoreDoors-Flooded_Stag_Key",
@@ -839,7 +889,12 @@
         "X": 63.9,
         "Y": 8.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Ruins1_27",
+      "RightSceneName": "Ruins1_05b",
+      "LeftTransitionProxyName": "Ruins1_27_Proxy[left1]",
+      "RightTransitionProxyName": "Ruins1_05b_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Fountain_Key",
@@ -898,7 +953,12 @@
         "X": 34.9,
         "Y": 60.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Fungus2_26",
+      "RightSceneName": "Fungus2_06",
+      "LeftTransitionProxyName": "Fungus2_26_Proxy[left1]",
+      "RightTransitionProxyName": "Fungus2_06_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Fragile_Key",
@@ -978,7 +1038,12 @@
         "X": 34.9,
         "Y": 11.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Fungus2_07",
+      "RightSceneName": "Fungus2_06",
+      "LeftTransitionProxyName": "Fungus2_07_Proxy[left1]",
+      "RightTransitionProxyName": "Fungus2_06_Proxy[right2]"
     },
     "Key": {
       "ItemName": "MoreDoors-Fungal_Key",
@@ -1058,7 +1123,12 @@
         "X": 38.9,
         "Y": 58.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Fungus3_34",
+      "RightSceneName": "Fungus3_04",
+      "LeftTransitionProxyName": "Fungus3_34_Proxy[left1]",
+      "RightTransitionProxyName": "Fungus3_04_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Garden_Key",
@@ -1123,7 +1193,12 @@
         "X": 73.9,
         "Y": 65.2
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Mines_31",
+      "RightSceneName": "Mines_20",
+      "LeftTransitionProxyName": "Mines_31_Proxy[left1]",
+      "RightTransitionProxyName": "Mines_20_Proxy[right2]"
     },
     "Key": {
       "ItemName": "MoreDoors-Heart_Key",
@@ -1214,7 +1289,12 @@
         "X": 118.9,
         "Y": 52.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Hive_02",
+      "RightSceneName": "Hive_01",
+      "LeftTransitionProxyName": "Hive_02_Proxy[left2]",
+      "RightTransitionProxyName": "Hive_01_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Hive_Key",
@@ -1273,7 +1353,12 @@
         "X": 29.5,
         "Y": 52.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Waterways_07",
+      "RightSceneName": "Abyss_01",
+      "LeftTransitionProxyName": "Waterways_07_Proxy[left1]",
+      "RightTransitionProxyName": "Abyss_01_Proxy[right2]"
     },
     "Key": {
       "ItemName": "MoreDoors-Isma's_Key",
@@ -1353,7 +1438,12 @@
         "X": 138.9,
         "Y": 93.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Cliffs_04",
+      "RightSceneName": "Cliffs_01",
+      "LeftTransitionProxyName": "Cliffs_04_Proxy[left1]",
+      "RightTransitionProxyName": "Cliffs_01_Proxy[right2]"
     },
     "Key": {
       "ItemName": "MoreDoors-Joni's_Key",
@@ -1433,7 +1523,12 @@
         "X": 147.9,
         "Y": 6.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Waterways_08",
+      "RightSceneName": "GG_Pipeway",
+      "LeftTransitionProxyName": "Waterways_08_Proxy[left2]",
+      "RightTransitionProxyName": "GG_Pipeway_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Junk_Key",
@@ -1513,7 +1608,12 @@
         "X": 158.9,
         "Y": 26.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Crossroads_50",
+      "RightSceneName": "Crossroads_04",
+      "LeftTransitionProxyName": "Crossroads_50_Proxy[left1]",
+      "RightTransitionProxyName": "Crossroads_04_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Lake_Key",
@@ -1593,7 +1693,12 @@
         "X": 173.9,
         "Y": 11.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Fungus2_13",
+      "RightSceneName": "Fungus2_14",
+      "LeftTransitionProxyName": "Fungus2_13_Proxy[left2]",
+      "RightTransitionProxyName": "Fungus2_14_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Mantis_Key",
@@ -1679,7 +1784,12 @@
         "X": 83.9,
         "Y": 16.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Fungus1_11",
+      "RightSceneName": "Fungus1_29",
+      "LeftTransitionProxyName": "Fungus1_11_Proxy[left1]",
+      "RightTransitionProxyName": "Fungus1_29_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Moss_Key",
@@ -1765,7 +1875,12 @@
         "X": 93.9,
         "Y": 34.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Fungus1_21",
+      "RightSceneName": "Fungus1_04",
+      "LeftTransitionProxyName": "Fungus1_21_Proxy[left1]",
+      "RightTransitionProxyName": "Fungus1_04_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Mothwing_Key",
@@ -1845,7 +1960,12 @@
         "X": 58.9,
         "Y": 5.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Deepnest_30",
+      "RightSceneName": "Deepnest_03",
+      "LeftTransitionProxyName": "Deepnest_30_Proxy[left1]",
+      "RightTransitionProxyName": "Deepnest_03_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Nest_Key",
@@ -1934,7 +2054,12 @@
         "X": 98.9,
         "Y": 14.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Fungus3_01",
+      "RightSceneName": "Fungus3_24",
+      "LeftTransitionProxyName": "Fungus3_01_Proxy[left1]",
+      "RightTransitionProxyName": "Fungus3_24_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Overgrown_Key",
@@ -1993,6 +2118,7 @@
         "X": 298.9,
         "Y": 14.6
       },
+      "Mode": "Normal",
       "Deployers": [
         {
           "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
@@ -2000,7 +2126,11 @@
           "ObjectName": "Breakable Wall Ruin Lift",
           "MatchType": "FirstName"
         }
-      ]
+      ],
+      "LeftSceneName": "White_Palace_06",
+      "RightSceneName": "White_Palace_18",
+      "LeftTransitionProxyName": "White_Palace_06_Proxy[left1]",
+      "RightTransitionProxyName": "White_Palace_18_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Pain_Key",
@@ -2087,7 +2217,12 @@
         "X": 61.9,
         "Y": 153.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Ruins1_09",
+      "RightSceneName": "Ruins1_05",
+      "LeftTransitionProxyName": "Ruins1_09_Proxy[left1]",
+      "RightTransitionProxyName": "Ruins1_05_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Sanctum_Key",
@@ -2167,7 +2302,12 @@
         "X": 98.9,
         "Y": 5.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Abyss_16",
+      "RightSceneName": "Abyss_06_Core",
+      "LeftTransitionProxyName": "Abyss_16_Proxy[left1]",
+      "RightTransitionProxyName": "Abyss_06_Core_Proxy[right2]"
     },
     "Key": {
       "ItemName": "MoreDoors-Shade_Key",
@@ -2247,7 +2387,12 @@
         "X": 73.9,
         "Y": 8.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Fungus3_04",
+      "RightSceneName": "Fungus3_21",
+      "LeftTransitionProxyName": "Fungus3_04_Proxy[left1]",
+      "RightTransitionProxyName": "Fungus3_21_Proxy[right1]"
     },
     "Key": {
       "ItemName": "MoreDoors-Traitor's_Key",
@@ -2338,7 +2483,12 @@
         "X": 73.9,
         "Y": 89.6
       },
-      "Deployers": null
+      "Mode": "Normal",
+      "Deployers": null,
+      "LeftSceneName": "Deepnest_41",
+      "RightSceneName": "Deepnest_10",
+      "LeftTransitionProxyName": "Deepnest_41_Proxy[left1]",
+      "RightTransitionProxyName": "Deepnest_10_Proxy[right2]"
     },
     "Key": {
       "ItemName": "MoreDoors-Village_Key",

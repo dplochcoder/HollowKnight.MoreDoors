@@ -85,8 +85,8 @@ public static class LogicPatcher
         foreach (var data in DoorData.Data)
         {
             var door = data.Value.Door;
-            sceneToDoors.GetOrAddNew(door.LeftLocation.TransitionSceneName).Add(data.Key);
-            sceneToDoors.GetOrAddNew(door.RightLocation.TransitionSceneName).Add(data.Key);
+            sceneToDoors.GetOrAddNew(door.LeftSceneName).Add(data.Key);
+            sceneToDoors.GetOrAddNew(door.RightSceneName).Add(data.Key);
         }
 
         List<string> keys = new(startDefs.Keys);
@@ -98,8 +98,30 @@ public static class LogicPatcher
             if (StartModifiers.TryGetValue(startName, out var modifier)) startDefs[startName] = modifier(startDefs[startName]);
         }
     }
+    private static void HandleDoorLogic(LogicManagerBuilder lmb, DoorData data, HashSet<string> fixedTerms, Dictionary<string, SimpleToken> replacementMap)
+    {
+        switch (data.Door.Mode)
+        {
+            case DoorData.DoorInfo.SplitMode.Normal:
+                {
+                    HandleSplitTransition(lmb, data, data.Door.LeftLocation, fixedTerms, replacementMap);
+                    HandleSplitTransition(lmb, data, data.Door.RightLocation, fixedTerms, replacementMap);
+                    break;
+                }
+            case DoorData.DoorInfo.SplitMode.LeftTwin:
+                {
+                    HandleBiasedTransition(lmb, data.Door.LeftLocation, fixedTerms, replacementMap);
+                    break;
+                }
+            case DoorData.DoorInfo.SplitMode.RightTwin:
+                {
+                    HandleBiasedTransition(lmb, data.Door.RightLocation, fixedTerms, replacementMap);
+                    break;
+                }
+        }
+    }
 
-    private static void HandleTransition(LogicManagerBuilder lmb, DoorData data, DoorData.DoorInfo.Location doorLoc, HashSet<string> fixedTerms, Dictionary<string, SimpleToken> replacementMap)
+    private static void HandleSplitTransition(LogicManagerBuilder lmb, DoorData data, DoorData.DoorInfo.Location doorLoc, HashSet<string> fixedTerms, Dictionary<string, SimpleToken> replacementMap)
     {
         fixedTerms.Add(doorLoc.TransitionName);
         fixedTerms.Add(doorLoc.TransitionProxyName);
@@ -111,6 +133,12 @@ public static class LogicPatcher
 
         string lanternClause = doorLoc.RequiresLantern ? " + LANTERN" : "";
         lmb.AddLogicDef(new(doorLoc.TransitionName, $"{doorLoc.TransitionName} | {doorLoc.TransitionProxyName}{lanternClause} + {data.KeyTermName}"));
+    }
+
+    private static void HandleBiasedTransition(LogicManagerBuilder lmb, DoorData.DoorInfo.Location doorLoc, HashSet<string> fixedTerms, Dictionary<string, SimpleToken> replacementMap)
+    {
+        // FIXME
+        throw new System.ArgumentException("Unimplemented");
     }
 
     public static void ModifyCoreDefinitions(GenerationSettings gs, LogicManagerBuilder lmb)
@@ -132,8 +160,7 @@ public static class LogicPatcher
             {
                 // Modify transition logic for this door.
                 var keyTerm = lmb.GetOrAddTerm(data.KeyTermName);
-                HandleTransition(lmb, data, data.Door.LeftLocation, ls.ModifiedLogicNames, ls.LogicSubstitutions);
-                HandleTransition(lmb, data, data.Door.RightLocation, ls.ModifiedLogicNames, ls.LogicSubstitutions);
+                HandleDoorLogic(lmb, data, ls.ModifiedLogicNames, ls.LogicSubstitutions);
                 lmb.AddItem(new CappedItem(data.Key.ItemName, new TermValue[] { new(keyTerm, 1) }, new(keyTerm, 1)));
 
                 // Modify the infection wall.

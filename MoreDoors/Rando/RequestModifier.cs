@@ -57,9 +57,13 @@ public class RequestModifier
 
     private const string TRANSITION_STAGE_NAME = "More Doors Transition Stage";
 
-    private static IEnumerable<string> LeftTransitions() => RandoInterop.LS.EnabledDoorNames.Select(d => DoorData.GetFromJson(d).Door.LeftLocation.TransitionName);
+    private static IEnumerable<string> SplitLeftTransitions() => RandoInterop.LS.EnabledDoorNames.Select(d => DoorData.GetFromJson(d).Door)
+        .Where(d => d.Mode == DoorData.DoorInfo.SplitMode.Normal)
+        .Select(d => d.LeftLocation.TransitionName);
 
-    private static IEnumerable<string> RightTransitions() => RandoInterop.LS.EnabledDoorNames.Select(d => DoorData.GetFromJson(d).Door.RightLocation.TransitionName);
+    private static IEnumerable<string> SplitRightTransitions() => RandoInterop.LS.EnabledDoorNames.Select(d => DoorData.GetFromJson(d).Door)
+        .Where(d => d.Mode == DoorData.DoorInfo.SplitMode.Normal)
+        .Select(d => d.RightLocation.TransitionName);
 
     private static void ApplyTransitionRando(RequestBuilder rb)
     {
@@ -72,6 +76,8 @@ public class RequestModifier
         foreach (var door in RandoInterop.LS.EnabledDoorNames)
         {
             var data = DoorData.GetFromJson(door);
+            if (data.Door.Mode != DoorData.DoorInfo.SplitMode.Normal) continue;
+
             VanillaDef left = new(data.Door.LeftLocation.TransitionName, data.Door.RightLocation.TransitionName);
             VanillaDef right = new(data.Door.RightLocation.TransitionName, data.Door.LeftLocation.TransitionName);
             rb.RemoveFromVanilla(left);
@@ -91,8 +97,8 @@ public class RequestModifier
                 stageLabel = TRANSITION_STAGE_NAME,
                 coupled = ts.Coupled,
             };
-            b.Transitions.AddRange(LeftTransitions());
-            b.Transitions.AddRange(RightTransitions());
+            b.Transitions.AddRange(SplitLeftTransitions());
+            b.Transitions.AddRange(SplitRightTransitions());
             builder = b;
         }
         else
@@ -104,8 +110,8 @@ public class RequestModifier
                 coupled = ts.Coupled,
                 stageLabel = TRANSITION_STAGE_NAME
             };
-            b.Group1.AddRange(LeftTransitions());
-            b.Group2.AddRange(RightTransitions());
+            b.Group1.AddRange(SplitLeftTransitions());
+            b.Group2.AddRange(SplitRightTransitions());
             builder = b;
         }
 
@@ -113,8 +119,8 @@ public class RequestModifier
         sb.Add(builder);
 
         HashSet<string> doorTransitions = new();
-        LeftTransitions().ToList().ForEach(t => doorTransitions.Add(t));
-        RightTransitions().ToList().ForEach(t => doorTransitions.Add(t));
+        SplitLeftTransitions().ToList().ForEach(t => doorTransitions.Add(t));
+        SplitRightTransitions().ToList().ForEach(t => doorTransitions.Add(t));
 
         bool MatchedTryResolveGroup(RequestBuilder rb, string item, RequestBuilder.ElementType type, out GroupBuilder gb)
         {
