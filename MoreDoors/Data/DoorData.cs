@@ -139,4 +139,25 @@ public record DoorData
 
     [JsonIgnore]
     public string KeyPromptId => $"MOREDOORS_{UpperCaseName}_DOOR_KEY";
+
+    public bool ValidateAndUpdate(out string err)
+    {
+        string s = Key.Location.sceneName;
+        if (Key.Location is DualLocation dl)
+        {
+            if (dl.falseLocation.sceneName != s)
+            {
+                err = "Bad false location sceneName";
+                return false;
+            }
+            if (dl.trueLocation.sceneName != s)
+            {
+                err = "Bad true location sceneName";
+                return false;
+            }
+        }
+
+        err = "";
+        return true;
+    }
 }

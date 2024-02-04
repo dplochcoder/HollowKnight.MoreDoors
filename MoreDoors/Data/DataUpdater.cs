@@ -18,7 +18,7 @@ public static class DataUpdater
         bool anyErr = false;
         foreach (var door in DoorData.Data.Keys)
         {
-            if (!Validate(DoorData.GetFromJson(door), out string err))
+            if (!DoorData.GetFromJson(door).ValidateAndUpdate(out string err))
             {
                 Console.WriteLine($"Error on door {door}: {err}");
                 anyErr = true;
@@ -50,25 +50,4 @@ public static class DataUpdater
     }
 
     private static string ConstName(string name) => name.ToUpper().Replace(" ", "_").Replace("'", "");
-
-    private static bool Validate(DoorData d, out string err)
-    {
-        string s = d.Key.Location.sceneName;
-        if (d.Key.Location is DualLocation dl)
-        {
-            if (dl.falseLocation.sceneName != s)
-            {
-                err = "Bad false location sceneName";
-                return false;
-            }
-            if (dl.trueLocation.sceneName != s)
-            {
-                err = "Bad true location sceneName";
-                return false;
-            }
-        }
-
-        err = "";
-        return true;
-    }
 }
