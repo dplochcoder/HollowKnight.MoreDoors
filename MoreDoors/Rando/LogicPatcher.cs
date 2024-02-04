@@ -6,6 +6,7 @@ using RandomizerCore.Logic;
 using RandomizerCore.LogicItems;
 using RandomizerCore.StringLogic;
 using RandomizerMod.Menu;
+using RandomizerMod.RandomizerData;
 using RandomizerMod.RC;
 using RandomizerMod.Settings;
 using System.Collections.Generic;
@@ -104,24 +105,24 @@ public static class LogicPatcher
         {
             case DoorData.DoorInfo.SplitMode.Normal:
                 {
-                    HandleSplitTransition(lmb, data, data.Door.LeftLocation, fixedTerms, replacementMap);
-                    HandleSplitTransition(lmb, data, data.Door.RightLocation, fixedTerms, replacementMap);
+                    HandleTransition(lmb, data, data.Door.LeftLocation, fixedTerms, replacementMap);
+                    HandleTransition(lmb, data, data.Door.RightLocation, fixedTerms, replacementMap);
                     break;
                 }
             case DoorData.DoorInfo.SplitMode.LeftTwin:
                 {
-                    HandleBiasedTransition(lmb, data.Door.LeftLocation, fixedTerms, replacementMap);
+                    HandleTransition(lmb, data, data.Door.LeftLocation, fixedTerms, replacementMap);
                     break;
                 }
             case DoorData.DoorInfo.SplitMode.RightTwin:
                 {
-                    HandleBiasedTransition(lmb, data.Door.RightLocation, fixedTerms, replacementMap);
+                    HandleTransition(lmb, data, data.Door.RightLocation, fixedTerms, replacementMap);
                     break;
                 }
         }
     }
 
-    private static void HandleSplitTransition(LogicManagerBuilder lmb, DoorData data, DoorData.DoorInfo.Location doorLoc, HashSet<string> fixedTerms, Dictionary<string, SimpleToken> replacementMap)
+    private static void HandleTransition(LogicManagerBuilder lmb, DoorData data, DoorData.DoorInfo.Location doorLoc, HashSet<string> fixedTerms, Dictionary<string, SimpleToken> replacementMap)
     {
         fixedTerms.Add(doorLoc.TransitionName);
         fixedTerms.Add(doorLoc.TransitionProxyName);
@@ -129,16 +130,13 @@ public static class LogicPatcher
 
         lmb.GetOrAddTerm(doorLoc.TransitionProxyName, TermType.State);
         lmb.AddWaypoint(new(doorLoc.TransitionProxyName, lmb.LogicLookup[doorLoc.TransitionName].ToInfix()));
-        lmb.DoLogicEdit(new(doorLoc.TransitionProxyName, $"ORIG | {doorLoc.TransitionName}"));
 
+        bool split = data.Door.Mode == DoorData.DoorInfo.SplitMode.Normal;
         string lanternClause = doorLoc.RequiresLantern ? " + LANTERN" : "";
-        lmb.AddLogicDef(new(doorLoc.TransitionName, $"{doorLoc.TransitionName} | {doorLoc.TransitionProxyName}{lanternClause} + {data.KeyTermName}"));
-    }
+        if (split) lmb.DoLogicEdit(new(doorLoc.TransitionProxyName, $"ORIG | {doorLoc.TransitionName}"));
+        else lmb.DoLogicEdit(new(doorLoc.TransitionProxyName, $"ORIG | {doorLoc.TransitionName}{lanternClause} + {data.KeyTermName}"));
 
-    private static void HandleBiasedTransition(LogicManagerBuilder lmb, DoorData.DoorInfo.Location doorLoc, HashSet<string> fixedTerms, Dictionary<string, SimpleToken> replacementMap)
-    {
-        // FIXME
-        throw new System.ArgumentException("Unimplemented");
+        lmb.AddLogicDef(new(doorLoc.TransitionName, $"{doorLoc.TransitionName} | {doorLoc.TransitionProxyName}{lanternClause} + {data.KeyTermName}"));
     }
 
     public static void ModifyCoreDefinitions(GenerationSettings gs, LogicManagerBuilder lmb)
