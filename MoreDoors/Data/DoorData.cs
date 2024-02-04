@@ -68,7 +68,14 @@ public record DoorData
                 public string ProxyName => $"{SceneName}_Proxy[{GateName}]";
             }
 
+            public record SecretMask
+            {
+                public float Width;
+                public float Height;
+            }
+
             public LogicTransition? Transition;
+            public SecretMask? Mask;
             public bool RequiresLantern;
             public float X;
             public float Y;

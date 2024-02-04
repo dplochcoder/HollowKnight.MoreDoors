@@ -2,6 +2,7 @@
 using ItemChanger.Extensions;
 using Modding;
 using MoreDoors.Data;
+using Newtonsoft.Json;
 using PurenailCore.ICUtil;
 using PurenailCore.SystemUtil;
 using System.Collections.Generic;
@@ -44,6 +45,11 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
     private readonly Dictionary<string, HashSet<string>> DoorNamesByScene = new();
     private readonly Dictionary<string, string> DoorNamesByTransition = new();
     private readonly Dictionary<string, string> PromptStrings = new();
+
+    [JsonIgnore]
+    public string LastSceneName { get; private set; }
+    [JsonIgnore]
+    public string LastGameName { get; private set; }
 
     // After DarknessRandomizer
     private const float BeforeSceneManagerStartPriority = 110f;
@@ -130,6 +136,16 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         return orig;
     }
 
+    public bool IsDoorOpened(string doorName, bool left)
+    {
+        var state = DoorStates[doorName];
+        return state.DoorOpened || (left && state.LeftDoorForceOpened) || (!left && state.RightDoorForceOpened);
+    }
+
+    public delegate void DoorOpened(string doorName, bool left);
+
+    public static event DoorOpened OnDoorOpened;
+
     public delegate void KeyObtained(string uiName);
 
     public static event KeyObtained OnKeyObtained;
@@ -152,6 +168,9 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
             {
                 state.LeftDoorForceOpened = newValue;
                 state.RightDoorForceOpened = newValue;
+
+                OnDoorOpened?.Invoke(doorName, true);
+                OnDoorOpened?.Invoke(doorName, false);
             }
             MoreKeysPage.Instance.Update();
         }
@@ -178,6 +197,9 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
     private void OnTransitionOverride(Transition src, Transition origDst, ITransition newDst) => OnUseITransition(newDst);
 
     private void OnUseITransition(ITransition t) {
+        LastSceneName = t.SceneName;
+        LastGameName = t.GateName;
+
         // If we went through a door via RoomRando, force it open.
         var tname = $"{t.SceneName}[{t.GateName}]";
         if (DoorNamesByTransition.TryGetValue(tname, out string doorName) && !DoorStates[doorName].DoorOpened)
@@ -185,8 +207,16 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
             var door = DoorStates[doorName].Data.Door;
             if (door.Mode != DoorData.DoorInfo.SplitMode.Normal) return;
 
-            if (door.LeftLocation.Transition.Name == tname) DoorStates[doorName].LeftDoorForceOpened = true;
-            else if (door.RightLocation.Transition.Name == tname) DoorStates[doorName].RightDoorForceOpened = true;
+            if (door.LeftLocation.Transition.Name == tname)
+            {
+                DoorStates[doorName].LeftDoorForceOpened = true;
+                OnDoorOpened?.Invoke(doorName, true);
+            }
+            else if (door.RightLocation.Transition.Name == tname)
+            {
+                DoorStates[doorName].RightDoorForceOpened = true;
+                OnDoorOpened?.Invoke(doorName, false);
+            }
 
             foreach (var obj in Object.FindObjectsOfType<DoorNameMarker>())
             {
