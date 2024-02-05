@@ -1490,7 +1490,7 @@
           "$type": "MoreDoors.IC.SpriteDimmer, MoreDoors",
           "TargetGameObject": "cd_room_beam_glow",
           "AlphaMultiplier": 0.15,
-          "SceneName": null,
+          "SceneName": "Cliffs_04",
           "X": 0.0,
           "Y": 0.0,
           "Test": null

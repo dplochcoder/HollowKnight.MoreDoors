@@ -49,7 +49,7 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
     [JsonIgnore]
     public string LastSceneName { get; private set; }
     [JsonIgnore]
-    public string LastGameName { get; private set; }
+    public string LastGateName { get; private set; }
 
     // After DarknessRandomizer
     private const float BeforeSceneManagerStartPriority = 110f;
@@ -203,7 +203,7 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
 
     private void OnUseITransition(ITransition t) {
         LastSceneName = t.SceneName;
-        LastGameName = t.GateName;
+        LastGateName = t.GateName;
 
         // If we went through a door via RoomRando, force it open.
         var tname = $"{t.SceneName}[{t.GateName}]";

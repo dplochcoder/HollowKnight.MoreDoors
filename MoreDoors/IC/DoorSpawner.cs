@@ -116,15 +116,15 @@ public static class DoorSpawner
 
     private static EmbeddedSprite SECRET_SPRITE = new("SecretMask");
 
-    private static void MaybeSpawnSecretMask(GameObject parent, string doorName, DoorData data, bool left, DoorData.DoorInfo.Location loc)
+    private static void MaybeSpawnSecretMask(Vector3 basePos, string doorName, DoorData data, bool left, DoorData.DoorInfo.Location loc)
     {
-        bool showMask = data.Door.Mode != DoorData.DoorInfo.SplitMode.Normal;
+        bool showMask = data.Door.Mode == DoorData.DoorInfo.SplitMode.Normal;
         if (!showMask)
         {
             bool matchesBias = left == (data.Door.Mode == DoorData.DoorInfo.SplitMode.LeftTwin);
 
             var mod = ItemChangerMod.Modules.Get<MoreDoorsModule>();
-            bool matchesGate = loc.Transition != null && mod.LastGameName == loc.Transition.GateName;
+            bool matchesGate = loc.Transition != null && mod.LastSceneName == loc.Transition.SceneName && mod.LastGateName == loc.Transition.GateName;
 
             showMask = matchesBias ^ matchesGate;
         }
@@ -135,7 +135,7 @@ public static class DoorSpawner
 
         var obj = new GameObject($"{doorName}_SecretMask");
         obj.SetActive(false);
-        obj.transform.position = parent.transform.position + new Vector3((mask.Width / 2 + 0.5f) * (left ? -1 : 1), 0, -1);
+        obj.transform.position = basePos + new Vector3((mask.Width / 2 + 0.5f) * (left ? -1 : 1), 0, -1);
         obj.transform.localScale = new(mask.Width / 2 * (left ? -1 : 1), mask.Height, 1);
 
         var renderer = obj.AddComponent<SpriteRenderer>();
@@ -163,7 +163,7 @@ public static class DoorSpawner
         var renderer = gameObj.GetComponent<SpriteRenderer>();
         renderer.sprite = data.Door.Sprite.Value;
         var open = PlayerData.instance.GetBool(data.PDDoorOpenedName);
-        if (!open && loc.Mask != null) MaybeSpawnSecretMask(gameObj, doorName, data, left, loc);
+        if (!open && loc.Mask != null) MaybeSpawnSecretMask(gameObj.transform.position, doorName, data, left, loc);
 
         if (!left)
         {
