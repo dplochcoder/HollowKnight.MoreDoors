@@ -365,18 +365,21 @@
         },
         "Mask": null,
         "RequiresLantern": false,
-        "X": 1.1,
-        "Y": 43.6
+        "X": 1.6,
+        "Y": 43.5
       },
       "RightLocation": {
         "Transition": {
           "SceneName": "Fungus3_02",
           "GateName": "right2"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10.0,
+          "Height": 10.0
+        },
         "RequiresLantern": false,
-        "X": 29.9,
-        "Y": 5.6
+        "X": 24.2,
+        "Y": 5.5
       },
       "Mode": "Normal",
       "Deployers": null
@@ -538,10 +541,13 @@
           "SceneName": "Mines_23",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10,
+          "Height": 8
+        },
         "RequiresLantern": false,
-        "X": 1.1,
-        "Y": 14.6
+        "X": 3.1,
+        "Y": 14.2
       },
       "RightLocation": {
         "Transition": {
@@ -550,11 +556,24 @@
         },
         "Mask": null,
         "RequiresLantern": false,
-        "X": 73.9,
+        "X": 73.2,
         "Y": 197.2
       },
       "Mode": "Normal",
-      "Deployers": null
+      "Deployers": [
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Mines_20",
+          "ObjectName": "mine_crystal_06 (5)",
+          "MatchType": "FirstName"
+        },
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Mines_20",
+          "ObjectName": "mine_crystal_06 (9)",
+          "MatchType": "FirstName"
+        }
+      ]
     },
     "Key": {
       "ItemName": "MoreDoors-Crown_Key",
@@ -724,7 +743,7 @@
         },
         "Mask": null,
         "RequiresLantern": false,
-        "X": 2.1,
+        "X": 2.6,
         "Y": 33.6
       },
       "RightLocation": {
@@ -734,11 +753,24 @@
         },
         "Mask": null,
         "RequiresLantern": false,
-        "X": 98.9,
+        "X": 97.9,
         "Y": 16.6
       },
       "Mode": "Normal",
-      "Deployers": null
+      "Deployers": [
+        {
+          "$type": "MoreDoors.IC.SpriteDimmer, MoreDoors",
+          "SceneName": "Crossroads_03",
+          "TargetGameObject": "cd_room_beam_glow",
+          "AlphaMultiplier": 0.35
+        },
+        {
+          "$type": "MoreDoors.IC.SpriteDimmer, MoreDoors",
+          "SceneName": "Crossroads_03",
+          "TargetGameObject": "cd_room_beam_glow (1)",
+          "AlphaMultiplier": 0.15
+        }
+      ]
     },
     "Key": {
       "ItemName": "MoreDoors-False_Key",
@@ -966,20 +998,26 @@
           "SceneName": "Fungus2_26",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10.0,
+          "Height": 14.0
+        },
         "RequiresLantern": false,
-        "X": 1.1,
-        "Y": 9.6
+        "X": 5.9,
+        "Y": 9.5
       },
       "RightLocation": {
         "Transition": {
           "SceneName": "Fungus2_06",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10.0,
+          "Height": 8.0
+        },
         "RequiresLantern": false,
-        "X": 34.9,
-        "Y": 60.6
+        "X": 31.6,
+        "Y": 60.5
       },
       "Mode": "Normal",
       "Deployers": null
@@ -1053,20 +1091,26 @@
           "SceneName": "Fungus2_07",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10.0,
+          "Height": 8.0
+        },
         "RequiresLantern": false,
-        "X": 1.1,
-        "Y": 15.6
+        "X": 2.4,
+        "Y": 15.5
       },
       "RightLocation": {
         "Transition": {
           "SceneName": "Fungus2_06",
           "GateName": "right2"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10.0,
+          "Height": 8.0
+        },
         "RequiresLantern": false,
-        "X": 34.9,
-        "Y": 11.6
+        "X": 32.2,
+        "Y": 11.5
       },
       "Mode": "Normal",
       "Deployers": null
@@ -1214,17 +1258,20 @@
         },
         "Mask": null,
         "RequiresLantern": false,
-        "X": 1.1,
-        "Y": 21.6
+        "X": 1.2,
+        "Y": 21.2
       },
       "RightLocation": {
         "Transition": {
           "SceneName": "Mines_20",
           "GateName": "right2"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10,
+          "Height": 8
+        },
         "RequiresLantern": false,
-        "X": 73.9,
+        "X": 70.5,
         "Y": 65.2
       },
       "Mode": "Normal",
@@ -1737,20 +1784,26 @@
           "SceneName": "Fungus2_13",
           "GateName": "left2"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 14.0,
+          "Height": 10.0
+        },
         "RequiresLantern": false,
-        "X": 2.5,
-        "Y": 60.6
+        "X": 11.55,
+        "Y": 60.4
       },
       "RightLocation": {
         "Transition": {
           "SceneName": "Fungus2_14",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 30.0,
+          "Height": 11.0
+        },
         "RequiresLantern": false,
-        "X": 173.9,
-        "Y": 11.6
+        "X": 146.5,
+        "Y": 11.4
       },
       "Mode": "Normal",
       "Deployers": null
@@ -1832,7 +1885,7 @@
         },
         "Mask": null,
         "RequiresLantern": false,
-        "X": 1.1,
+        "X": 1.8,
         "Y": 34.6
       },
       "RightLocation": {
@@ -1840,9 +1893,12 @@
           "SceneName": "Fungus1_29",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10.0,
+          "Height": 10.0
+        },
         "RequiresLantern": false,
-        "X": 83.9,
+        "X": 79.9,
         "Y": 16.6
       },
       "Mode": "Normal",
@@ -1933,9 +1989,12 @@
           "SceneName": "Fungus1_04",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10.0,
+          "Height": 8.5
+        },
         "RequiresLantern": false,
-        "X": 93.9,
+        "X": 88.9,
         "Y": 34.6
       },
       "Mode": "Normal",
