@@ -31,9 +31,7 @@
         "Y": 10.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Fungus3_26",
-      "RightSceneName": "Fungus3_27"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Archive_Key",
@@ -120,9 +118,7 @@
         "Y": 66.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Deepnest_East_04",
-      "RightSceneName": "Deepnest_East_07"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Bardoon's_Key",
@@ -209,9 +205,7 @@
         "Y": 33.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Abyss_18",
-      "RightSceneName": "Abyss_19"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Broken_Key",
@@ -298,9 +292,7 @@
         "Y": 17.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Deepnest_East_16",
-      "RightSceneName": "Deepnest_East_06"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Buried_Geo_Key",
@@ -387,9 +379,7 @@
         "Y": 5.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Fungus2_01",
-      "RightSceneName": "Fungus3_02"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Canyon_Key",
@@ -476,9 +466,7 @@
         "Y": 33.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Fungus2_17",
-      "RightSceneName": "Fungus2_29"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Core_Key",
@@ -566,9 +554,7 @@
         "Y": 197.2
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Mines_23",
-      "RightSceneName": "Mines_20"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Crown_Key",
@@ -665,9 +651,7 @@
         "Y": 9.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Deepnest_34",
-      "RightSceneName": "Deepnest_39"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Dark_Nest_Key",
@@ -754,9 +738,7 @@
         "Y": 16.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Crossroads_03",
-      "RightSceneName": "Crossroads_21"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-False_Key",
@@ -843,9 +825,7 @@
         "Y": 7.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Ruins2_07",
-      "RightSceneName": "Ruins2_06"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Flooded_Stag_Key",
@@ -936,9 +916,7 @@
         "Y": 8.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Ruins1_27",
-      "RightSceneName": "Ruins1_05b"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Fountain_Key",
@@ -1004,9 +982,7 @@
         "Y": 60.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Fungus2_26",
-      "RightSceneName": "Fungus2_06"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Fragile_Key",
@@ -1093,9 +1069,7 @@
         "Y": 11.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Fungus2_07",
-      "RightSceneName": "Fungus2_06"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Fungal_Key",
@@ -1182,9 +1156,7 @@
         "Y": 58.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Fungus3_34",
-      "RightSceneName": "Fungus3_04"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Garden_Key",
@@ -1256,9 +1228,7 @@
         "Y": 65.2
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Mines_31",
-      "RightSceneName": "Mines_20"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Heart_Key",
@@ -1356,9 +1326,7 @@
         "Y": 52.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Hive_02",
-      "RightSceneName": "Hive_01"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Hive_Key",
@@ -1424,9 +1392,7 @@
         "Y": 52.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Waterways_07",
-      "RightSceneName": "Abyss_01"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Isma's_Key",
@@ -1529,9 +1495,7 @@
           "Y": 0.0,
           "Test": null
         }
-      ],
-      "LeftSceneName": "Cliffs_04",
-      "RightSceneName": "Cliffs_01"
+      ]
     },
     "Key": {
       "ItemName": "MoreDoors-Joni's_Key",
@@ -1618,9 +1582,7 @@
         "Y": 6.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Waterways_08",
-      "RightSceneName": "GG_Pipeway"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Junk_Key",
@@ -1707,9 +1669,7 @@
         "Y": 26.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Crossroads_50",
-      "RightSceneName": "Crossroads_04"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Lake_Key",
@@ -1796,9 +1756,7 @@
         "Y": 11.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Fungus2_13",
-      "RightSceneName": "Fungus2_14"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Mantis_Key",
@@ -1891,9 +1849,7 @@
         "Y": 16.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Fungus1_11",
-      "RightSceneName": "Fungus1_29"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Moss_Key",
@@ -1986,9 +1942,7 @@
         "Y": 34.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Fungus1_21",
-      "RightSceneName": "Fungus1_04"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Mothwing_Key",
@@ -2075,9 +2029,7 @@
         "Y": 5.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Deepnest_30",
-      "RightSceneName": "Deepnest_03"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Nest_Key",
@@ -2173,9 +2125,7 @@
         "Y": 14.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Fungus3_01",
-      "RightSceneName": "Fungus3_24"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Overgrown_Key",
@@ -2248,9 +2198,7 @@
           "ObjectName": "Breakable Wall Ruin Lift",
           "MatchType": "FirstName"
         }
-      ],
-      "LeftSceneName": "White_Palace_06",
-      "RightSceneName": "White_Palace_18"
+      ]
     },
     "Key": {
       "ItemName": "MoreDoors-Pain_Key",
@@ -2344,9 +2292,7 @@
         "Y": 153.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Ruins1_09",
-      "RightSceneName": "Ruins1_05"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Sanctum_Key",
@@ -2433,9 +2379,7 @@
         "Y": 5.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Abyss_16",
-      "RightSceneName": "Abyss_06_Core"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Shade_Key",
@@ -2522,9 +2466,7 @@
         "Y": 8.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Fungus3_04",
-      "RightSceneName": "Fungus3_21"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Traitor's_Key",
@@ -2622,9 +2564,7 @@
         "Y": 89.6
       },
       "Mode": "Normal",
-      "Deployers": null,
-      "LeftSceneName": "Deepnest_41",
-      "RightSceneName": "Deepnest_10"
+      "Deployers": null
     },
     "Key": {
       "ItemName": "MoreDoors-Village_Key",

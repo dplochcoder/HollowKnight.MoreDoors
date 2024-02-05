@@ -110,7 +110,9 @@ public record DoorData
             SplitMode.RightTwin => RightLocation,
         };
 
+        [JsonIgnore]
         public string LeftSceneName => SplitLocation(Side.Left).Transition.SceneName;
+        [JsonIgnore]
         public string RightSceneName => SplitLocation(Side.Right).Transition.SceneName;
 
         public bool ValidateAndUpdate(out string err)
