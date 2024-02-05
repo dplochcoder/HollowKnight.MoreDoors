@@ -375,7 +375,9 @@
         },
         "Mask": {
           "Width": 10.0,
-          "Height": 10.0
+          "Height": 10.0,
+          "OffsetX": 0.5,
+          "OffsetY": 0.0
         },
         "RequiresLantern": false,
         "X": 24.2,
@@ -542,8 +544,10 @@
           "GateName": "left1"
         },
         "Mask": {
-          "Width": 10,
-          "Height": 8
+          "Width": 10.0,
+          "Height": 8.0,
+          "OffsetX": 0.5,
+          "OffsetY": 0.0
         },
         "RequiresLantern": false,
         "X": 3.1,
@@ -1000,7 +1004,9 @@
         },
         "Mask": {
           "Width": 10.0,
-          "Height": 14.0
+          "Height": 14.0,
+          "OffsetX": 0.5,
+          "OffsetY": 0.0
         },
         "RequiresLantern": false,
         "X": 5.9,
@@ -1013,7 +1019,9 @@
         },
         "Mask": {
           "Width": 10.0,
-          "Height": 8.0
+          "Height": 8.0,
+          "OffsetX": 0.5,
+          "OffsetY": 0.0
         },
         "RequiresLantern": false,
         "X": 31.6,
@@ -1093,7 +1101,9 @@
         },
         "Mask": {
           "Width": 10.0,
-          "Height": 8.0
+          "Height": 8.0,
+          "OffsetX": 0.5,
+          "OffsetY": 0.0
         },
         "RequiresLantern": false,
         "X": 2.4,
@@ -1106,7 +1116,9 @@
         },
         "Mask": {
           "Width": 10.0,
-          "Height": 8.0
+          "Height": 8.0,
+          "OffsetX": 0.5,
+          "OffsetY": 0.0
         },
         "RequiresLantern": false,
         "X": 32.2,
@@ -1267,8 +1279,10 @@
           "GateName": "right2"
         },
         "Mask": {
-          "Width": 10,
-          "Height": 8
+          "Width": 10.0,
+          "Height": 8.0,
+          "OffsetX": 0.5,
+          "OffsetY": 0.0
         },
         "RequiresLantern": false,
         "X": 70.5,
@@ -1512,7 +1526,9 @@
         },
         "Mask": {
           "Width": 10.0,
-          "Height": 8.5
+          "Height": 8.5,
+          "OffsetX": 0.5,
+          "OffsetY": 0.0
         },
         "RequiresLantern": true,
         "X": 8.6,
@@ -1525,7 +1541,9 @@
         },
         "Mask": {
           "Width": 10.0,
-          "Height": 8.5
+          "Height": 8.5,
+          "OffsetX": 0.5,
+          "OffsetY": 0.0
         },
         "RequiresLantern": false,
         "X": 131.6,
@@ -1786,7 +1804,9 @@
         },
         "Mask": {
           "Width": 14.0,
-          "Height": 10.0
+          "Height": 10.0,
+          "OffsetX": 0.5,
+          "OffsetY": 0.0
         },
         "RequiresLantern": false,
         "X": 11.55,
@@ -1799,7 +1819,9 @@
         },
         "Mask": {
           "Width": 30.0,
-          "Height": 11.0
+          "Height": 11.0,
+          "OffsetX": 0.5,
+          "OffsetY": 0.0
         },
         "RequiresLantern": false,
         "X": 146.5,
@@ -1895,7 +1917,9 @@
         },
         "Mask": {
           "Width": 10.0,
-          "Height": 10.0
+          "Height": 10.0,
+          "OffsetX": 0.5,
+          "OffsetY": 0.0
         },
         "RequiresLantern": false,
         "X": 79.9,
@@ -1991,7 +2015,9 @@
         },
         "Mask": {
           "Width": 10.0,
-          "Height": 8.5
+          "Height": 8.5,
+          "OffsetX": 0.5,
+          "OffsetY": 0.0
         },
         "RequiresLantern": false,
         "X": 88.9,

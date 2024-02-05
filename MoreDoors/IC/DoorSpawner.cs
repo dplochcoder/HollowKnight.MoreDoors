@@ -135,7 +135,7 @@ public static class DoorSpawner
 
         var obj = new GameObject($"{doorName}_SecretMask");
         obj.SetActive(false);
-        obj.transform.position = basePos + new Vector3((mask.Width / 2 + 0.5f) * (left ? -1 : 1), 0, -1);
+        obj.transform.position = basePos + new Vector3((mask.Width / 2 + mask.OffsetX) * (left ? -1 : 1), mask.OffsetY, -1);
         obj.transform.localScale = new(mask.Width / 2 * (left ? -1 : 1), mask.Height, 1);
 
         var renderer = obj.AddComponent<SpriteRenderer>();

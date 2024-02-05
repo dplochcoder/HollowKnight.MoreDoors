@@ -72,6 +72,8 @@ public record DoorData
             {
                 public float Width;
                 public float Height;
+                public float OffsetX;
+                public float OffsetY;
             }
 
             public LogicTransition? Transition;
