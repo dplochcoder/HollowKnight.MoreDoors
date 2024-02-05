@@ -96,7 +96,9 @@ public record DoorData
         public ISprite Sprite;
         public string NoKeyDesc;
         public string KeyDesc;
+        // Location where the player looks left to the door.
         public Location LeftLocation;
+        // Location where the player looks right to the door.
         public Location RightLocation;
         public SplitMode Mode;
         public List<IDeployer>? Deployers;

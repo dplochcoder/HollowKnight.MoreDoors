@@ -1497,9 +1497,12 @@
           "SceneName": "Cliffs_04",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10.0,
+          "Height": 8.5
+        },
         "RequiresLantern": true,
-        "X": 1.1,
+        "X": 8.6,
         "Y": 45.6
       },
       "RightLocation": {
@@ -1507,13 +1510,26 @@
           "SceneName": "Cliffs_01",
           "GateName": "right2"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10.0,
+          "Height": 8.5
+        },
         "RequiresLantern": false,
-        "X": 138.9,
+        "X": 131.6,
         "Y": 93.6
       },
       "Mode": "Normal",
-      "Deployers": null,
+      "Deployers": [
+        {
+          "$type": "MoreDoors.IC.SpriteDimmer, MoreDoors",
+          "TargetGameObject": "cd_room_beam_glow",
+          "AlphaMultiplier": 0.15,
+          "SceneName": null,
+          "X": 0.0,
+          "Y": 0.0,
+          "Test": null
+        }
+      ],
       "LeftSceneName": "Cliffs_04",
       "RightSceneName": "Cliffs_01"
     },

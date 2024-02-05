@@ -66,7 +66,12 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         {
             var doorName = e.Key;
             var data = e.Value.Data;
-            if (ImportNewJson || data == null) data = DoorData.GetFromJson(doorName);
+            ImportNewJson = true;  // DEBUG
+            if (ImportNewJson || data == null)
+            {
+                data = DoorData.GetFromJson(doorName);
+                e.Value.Data = data;
+            }
 
             DoorNamesByKey[data.PDKeyName] = doorName;
             DoorNamesByDoor[data.PDDoorOpenedName] = doorName;

@@ -29,8 +29,8 @@ internal class DoorSecretMask : MonoBehaviour
 
     private void OnDestroy() => MoreDoorsModule.OnDoorOpened -= FadeMask;
 
-    private static readonly float FADE_DELAY = 1.0f;
-    private static readonly float FADE_TIME = 1.0f;
+    private static readonly float FADE_DELAY = 1.65f;
+    private static readonly float FADE_TIME = 2.2f;
 
     private bool fading = false;
     private float delay = 0;
@@ -133,11 +133,10 @@ public static class DoorSpawner
 
         var mask = loc.Mask;
 
-        var obj = new GameObject("SecretMask");
+        var obj = new GameObject($"{doorName}_SecretMask");
         obj.SetActive(false);
-        obj.transform.SetParent(parent.transform);
-        obj.transform.position = parent.transform.position + new Vector3(mask.Width / 2 * (left ? -1 : 1), 0, -1);
-        obj.transform.localScale = new(mask.Width / 2, mask.Height, 1);
+        obj.transform.position = parent.transform.position + new Vector3((mask.Width / 2 + 0.5f) * (left ? -1 : 1), 0, -1);
+        obj.transform.localScale = new(mask.Width / 2 * (left ? -1 : 1), mask.Height, 1);
 
         var renderer = obj.AddComponent<SpriteRenderer>();
         renderer.sprite = SECRET_SPRITE.Value;
@@ -156,16 +155,16 @@ public static class DoorSpawner
     {
         var data = DoorData.GetFromModule(doorName);
         var gameObj = Object.Instantiate(Preloader.Instance.Door);
-        var renderer = gameObj.GetComponent<SpriteRenderer>();
-        renderer.sprite = data.Door.Sprite.Value;
-
         SetupConversationControl(gameObj.LocateMyFSM("Conversation Control"), data, left);
 
         var loc = left ? data.Door.LeftLocation : data.Door.RightLocation;
+        gameObj.transform.position = new(loc.X, loc.Y, gameObj.transform.position.z);
+
+        var renderer = gameObj.GetComponent<SpriteRenderer>();
+        renderer.sprite = data.Door.Sprite.Value;
         var open = PlayerData.instance.GetBool(data.PDDoorOpenedName);
         if (!open && loc.Mask != null) MaybeSpawnSecretMask(gameObj, doorName, data, left, loc);
 
-        gameObj.transform.position = new(loc.X, loc.Y, gameObj.transform.position.z);
         if (!left)
         {
             gameObj.transform.rotation = new(0, 180, 0, 0);
