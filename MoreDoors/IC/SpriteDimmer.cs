@@ -1,4 +1,5 @@
 ﻿using ItemChanger;
+using ItemChanger.Extensions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,7 +15,7 @@ internal record SpriteDimmer : IDeployer
 
     public void OnSceneChange(Scene to)
     {
-        var target = GameObject.Find(TargetGameObject);
+        var target = to.FindGameObject(TargetGameObject);
         if (target == null) return;
 
         var spriteRenderer = target.GetComponent<SpriteRenderer>();
