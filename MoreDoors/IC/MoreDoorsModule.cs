@@ -7,6 +7,7 @@ using PurenailCore.ICUtil;
 using PurenailCore.SystemUtil;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace MoreDoors.IC;
 
@@ -45,6 +46,7 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
     private readonly Dictionary<string, HashSet<string>> DoorNamesByScene = new();
     private readonly Dictionary<string, string> DoorNamesByTransition = new();
     private readonly Dictionary<string, string> PromptStrings = new();
+    private readonly Dictionary<string, List<IDeployer>> DeployersByScene = new();
 
     [JsonIgnore]
     public string LastSceneName { get; private set; }
@@ -66,7 +68,6 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         {
             var doorName = e.Key;
             var data = e.Value.Data;
-            ImportNewJson = true;  // DEBUG
             if (ImportNewJson || data == null)
             {
                 data = DoorData.GetFromJson(doorName);
@@ -85,6 +86,8 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
 
             PromptStrings[data.NoKeyPromptId] = data.Door.NoKeyDesc;
             PromptStrings[data.KeyPromptId] = data.Door.KeyDesc;
+
+            data.Door.Deployers?.ForEach(d => DeployersByScene.GetOrAddNew(d.SceneName).Add(d));
         }
         PromptStrings[MenuConvKey] = "More Keys";
 
@@ -94,16 +97,9 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         PriorityEvents.BeforeSceneManagerStart.Subscribe(BeforeSceneManagerStartPriority, OnSceneManagerStart);
         Events.OnBeginSceneTransition += OnUseTransition;
         Events.OnTransitionOverride += OnTransitionOverride;
+        Events.OnSceneChange += RunDeployers;
 
         MoreKeysPage.Instance.Update();
-    }
-
-    public void AddDeployers()
-    {
-        foreach (var doorState in DoorStates.Values)
-        {
-            doorState.Data.Door.Deployers?.ForEach(ItemChangerMod.AddDeployer);
-        }
     }
 
     public override void Unload()
@@ -114,6 +110,7 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         PriorityEvents.BeforeSceneManagerStart.Unsubscribe(BeforeSceneManagerStartPriority, OnSceneManagerStart);
         Events.OnBeginSceneTransition -= OnUseTransition;
         Events.OnTransitionOverride -= OnTransitionOverride;
+        Events.OnSceneChange -= RunDeployers;
     }
 
     private bool OverrideGetBool(string name, bool orig)
@@ -200,6 +197,11 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
     private void OnUseTransition(Transition t) => OnUseITransition(t);
 
     private void OnTransitionOverride(Transition src, Transition origDst, ITransition newDst) => OnUseITransition(newDst);
+
+    private void RunDeployers(Scene to)
+    {
+        if (DeployersByScene.TryGetValue(to.name, out var list)) list.ForEach(d => d.OnSceneChange(to));
+    }
 
     private void OnUseITransition(ITransition t) {
         LastSceneName = t.SceneName;

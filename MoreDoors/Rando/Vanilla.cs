@@ -40,7 +40,6 @@ public static class Vanilla
         {
             var mod = ItemChangerMod.Modules.Add<MoreDoorsModule>();
             doorNames.ForEach(d => mod.DoorStates[d] = new(DoorData.GetFromJson(d)));
-            mod.AddDeployers();
         }
         orig(self, permaDeath, bossRush);
     }

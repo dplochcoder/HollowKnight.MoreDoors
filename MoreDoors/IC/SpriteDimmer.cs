@@ -1,24 +1,27 @@
-﻿using UnityEngine;
+﻿using ItemChanger;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace MoreDoors.IC;
 
-internal record SpriteDimmer : ItemChanger.Deployer
+internal record SpriteDimmer : IDeployer
 {
+    public string SceneName;
     public string TargetGameObject;
     public float AlphaMultiplier;
 
-    public override GameObject Instantiate() => throw new System.NotImplementedException();
+    string IDeployer.SceneName => SceneName;
 
-    public override GameObject Deploy()
+    public void OnSceneChange(Scene to)
     {
         var target = GameObject.Find(TargetGameObject);
-        if (target == null) return null;
+        if (target == null) return;
 
         var spriteRenderer = target.GetComponent<SpriteRenderer>();
-        if (spriteRenderer == null) return null;
+        if (spriteRenderer == null) return;
 
         var color = spriteRenderer.color;
         spriteRenderer.color = new(color.r, color.g, color.b, color.a * AlphaMultiplier);
-        return null;
+        return;
     }
 }

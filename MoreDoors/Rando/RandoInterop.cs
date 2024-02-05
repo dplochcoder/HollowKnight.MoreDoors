@@ -47,7 +47,6 @@ public static class RandoInterop
         {
             mod.DoorStates[doorName] = new(DoorData.GetFromJson(doorName));
         }
-        mod.AddDeployers();
     }
 
     private static void LogSettings(RandomizerMod.Logging.LogArguments args, TextWriter tw)

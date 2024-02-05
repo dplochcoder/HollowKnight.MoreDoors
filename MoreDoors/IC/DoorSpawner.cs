@@ -29,8 +29,8 @@ internal class DoorSecretMask : MonoBehaviour
 
     private void OnDestroy() => MoreDoorsModule.OnDoorOpened -= FadeMask;
 
-    private static readonly float FADE_DELAY = 1.65f;
-    private static readonly float FADE_TIME = 2.2f;
+    private static readonly float FADE_DELAY = 2.1f;
+    private static readonly float FADE_TIME = 4f;
 
     private bool fading = false;
     private float delay = 0;
