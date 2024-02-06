@@ -56,12 +56,6 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
     // After DarknessRandomizer
     private const float BeforeSceneManagerStartPriority = 110f;
 
-    private void IndexTransition(DoorData.DoorInfo.Location loc, string doorName)
-    {
-        if (loc.Transition == null) return;
-        DoorNamesByTransition[loc.Transition.Name] = doorName;
-    }
-
     private void IndexDoor(string doorName, DoorData data)
     {
         DoorNamesByKey[data.PDKeyName] = doorName;
@@ -69,8 +63,8 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
 
         DoorNamesByScene.GetOrAddNew(data.Door.LeftSceneName).Add(doorName);
         DoorNamesByScene.GetOrAddNew(data.Door.RightSceneName).Add(doorName);
-        IndexTransition(data.Door.LeftLocation, doorName);
-        IndexTransition(data.Door.RightLocation, doorName);
+        DoorNamesByTransition[data.Door.LeftLocation.Transition.Name] = doorName;
+        DoorNamesByTransition[data.Door.RightLocation.Transition.Name] = doorName;
         DoorNamesByLeftForce[data.PDDoorLeftForceOpenedName] = doorName;
         DoorNamesByRightForce[data.PDDoorRightForceOpenedName] = doorName;
 
@@ -86,7 +80,7 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         {
             var doorName = e.Key;
             var data = e.Value.Data;
-            if (ImportNewJson || data == null)
+            if (true || ImportNewJson || data == null)
             {
                 data = DoorData.GetFromJson(doorName);
                 e.Value.Data = data;

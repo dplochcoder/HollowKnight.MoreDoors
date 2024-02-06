@@ -2427,36 +2427,39 @@
       "KeyDesc": "The screech of saw blades permeates all.<br>Insert the Pain Key?",
       "LeftLocation": {
         "Transition": {
-          "SceneName": "White_Palace_06",
-          "GateName": "left1"
+          "SceneName": "White_Palace_18",
+          "GateName": "right1"
         },
         "Masks": [
           {
-            "Width": 0.0,
+            "Width": 20.0,
             "Height": 14.0,
-            "OffsetX": 0.0,
-            "OffsetY": 0.0
+            "OffsetX": -0.5,
+            "OffsetY": 3.0
           }
         ],
         "RequiresLantern": false,
-        "X": 290.0,
-        "Y": 14.6
+        "X": 291.5,
+        "Y": 14.5
       },
       "RightLocation": {
-        "Transition": null,
+        "Transition": {
+          "SceneName": "White_Palace_18",
+          "GateName": "right1"
+        },
         "Masks": [
           {
-            "Width": 0.0,
+            "Width": 20.0,
             "Height": 14.0,
-            "OffsetX": 0.0,
-            "OffsetY": 0.0
+            "OffsetX": -0.5,
+            "OffsetY": 3.0
           }
         ],
         "RequiresLantern": false,
-        "X": 280.0,
-        "Y": 14.6
+        "X": 277.0,
+        "Y": 14.5
       },
-      "Mode": "LeftTwin",
+      "Mode": "RightTwin",
       "Deployers": [
         {
           "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",

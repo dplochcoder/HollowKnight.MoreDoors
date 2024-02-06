@@ -121,12 +121,12 @@ public static class DoorSpawner
         bool showMasks = data.Door.Mode == DoorData.DoorInfo.SplitMode.Normal;
         if (!showMasks)
         {
-            bool matchesBias = left == (data.Door.Mode == DoorData.DoorInfo.SplitMode.LeftTwin);
+            bool nextToGate = left != (data.Door.Mode == DoorData.DoorInfo.SplitMode.LeftTwin);
 
             var mod = ItemChangerMod.Modules.Get<MoreDoorsModule>();
-            bool matchesGate = loc.Transition != null && mod.LastSceneName == loc.Transition.SceneName && mod.LastGateName == loc.Transition.GateName;
+            bool cameFromGate = mod.LastSceneName == loc.Transition.SceneName && mod.LastGateName == loc.Transition.GateName;
 
-            showMasks = matchesBias ^ matchesGate;
+            showMasks = nextToGate == cameFromGate;
         }
 
         if (!showMasks) return;

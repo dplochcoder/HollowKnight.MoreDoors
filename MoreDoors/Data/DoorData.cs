@@ -76,20 +76,14 @@ public record DoorData
                 public float OffsetY;
             }
 
-            public LogicTransition? Transition;
+            public LogicTransition Transition;
             public List<SecretMask>? Masks;
             public bool RequiresLantern;
             public float X;
             public float Y;
 
-            public bool ValidateAndUpdate(bool requireTransition, out string err)
+            public bool ValidateAndUpdate(out string err)
             {
-                if (requireTransition && Transition == null)
-                {
-                    err = "Door is missing Transition";
-                    return false;
-                }
-
                 err = "";
                 return true;
             }
@@ -119,8 +113,16 @@ public record DoorData
 
         public bool ValidateAndUpdate(out string err)
         {
-            if (!LeftLocation.ValidateAndUpdate(Mode != SplitMode.RightTwin, out err)) return false;
-            if (!RightLocation.ValidateAndUpdate(Mode != SplitMode.LeftTwin, out err)) return false;
+            if (!LeftLocation.ValidateAndUpdate(out err)) return false;
+            if (!RightLocation.ValidateAndUpdate(out err)) return false;
+
+            bool split = Mode == SplitMode.Normal;
+            bool matching = LeftLocation.Transition.Name == RightLocation.Transition.Name;
+            if (split == matching)
+            {
+                err = "Split mode does not match transitions";
+                return false;
+            }
 
             err = "";
             return true;
