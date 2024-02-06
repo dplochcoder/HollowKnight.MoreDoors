@@ -62,6 +62,24 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         DoorNamesByTransition[loc.Transition.Name] = doorName;
     }
 
+    private void IndexDoor(string doorName, DoorData data)
+    {
+        DoorNamesByKey[data.PDKeyName] = doorName;
+        DoorNamesByDoor[data.PDDoorOpenedName] = doorName;
+
+        DoorNamesByScene.GetOrAddNew(data.Door.LeftSceneName).Add(doorName);
+        DoorNamesByScene.GetOrAddNew(data.Door.RightSceneName).Add(doorName);
+        IndexTransition(data.Door.LeftLocation, doorName);
+        IndexTransition(data.Door.RightLocation, doorName);
+        DoorNamesByLeftForce[data.PDDoorLeftForceOpenedName] = doorName;
+        DoorNamesByRightForce[data.PDDoorRightForceOpenedName] = doorName;
+
+        PromptStrings[data.NoKeyPromptId] = data.Door.NoKeyDesc;
+        PromptStrings[data.KeyPromptId] = data.Door.KeyDesc;
+
+        data.Door.Deployers?.ForEach(d => DeployersByScene.GetOrAddNew(d.SceneName).Add(d));
+    }
+
     public override void Initialize()
     {
         foreach (var e in DoorStates)
@@ -74,20 +92,7 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
                 e.Value.Data = data;
             }
 
-            DoorNamesByKey[data.PDKeyName] = doorName;
-            DoorNamesByDoor[data.PDDoorOpenedName] = doorName;
-
-            DoorNamesByScene.GetOrAddNew(data.Door.LeftSceneName).Add(doorName);
-            DoorNamesByScene.GetOrAddNew(data.Door.RightSceneName).Add(doorName);
-            IndexTransition(data.Door.LeftLocation, doorName);
-            IndexTransition(data.Door.RightLocation, doorName);
-            DoorNamesByLeftForce[data.PDDoorLeftForceOpenedName] = doorName;
-            DoorNamesByRightForce[data.PDDoorRightForceOpenedName] = doorName;
-
-            PromptStrings[data.NoKeyPromptId] = data.Door.NoKeyDesc;
-            PromptStrings[data.KeyPromptId] = data.Door.KeyDesc;
-
-            data.Door.Deployers?.ForEach(d => DeployersByScene.GetOrAddNew(d.SceneName).Add(d));
+            IndexDoor(doorName, data);
         }
         PromptStrings[MenuConvKey] = "More Keys";
 
@@ -100,6 +105,27 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         Events.OnSceneChange += RunDeployers;
 
         MoreKeysPage.Instance.Update();
+    }
+
+    internal void DebugResetData(IDictionary<string, DoorData> data)
+    {
+        DoorNamesByKey.Clear();
+        DoorNamesByDoor.Clear();
+        DoorNamesByScene.Clear();
+        DoorNamesByTransition.Clear();
+        DoorNamesByLeftForce.Clear();
+        DoorNamesByRightForce.Clear();
+        PromptStrings.Clear();
+        DeployersByScene.Clear();
+
+        foreach (var e in data)
+        {
+            var doorName = e.Key;
+            var doorData = e.Value;
+
+            IndexDoor(doorName, doorData);
+        }
+        PromptStrings[MenuConvKey] = "More Keys";
     }
 
     public override void Unload()

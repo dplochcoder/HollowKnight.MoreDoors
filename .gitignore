@@ -5,3 +5,4 @@
 /.vs
 **/bin/**
 **/obj/**
+/MoreDoors/Resources/Data/debug.json

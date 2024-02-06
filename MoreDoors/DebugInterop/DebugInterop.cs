@@ -1,5 +1,8 @@
 ﻿using DebugMod;
+using MoreDoors.Data;
 using MoreDoors.IC;
+using System.Collections.Generic;
+using JsonUtil = PurenailCore.SystemUtil.JsonUtil<MoreDoors.MoreDoors>;
 
 namespace MoreDoors.Debug;
 
@@ -59,6 +62,24 @@ public static class DebugInterop
             ds.DoorOpened = false;
             ds.LeftDoorForceOpened = false;
             ds.RightDoorForceOpened = false;
+        }
+    }
+
+    [BindableMethod(name = "Debug Reload Json", category = "MoreDoors")]
+    public static void ReloadJson()
+    {
+        if (!MoreDoorsEnabled(out var mod)) return;
+
+        try
+        {
+            var data = JsonUtil.DeserializeEmbedded<DebugData>("MoreDoors.Resources.Data.debug.json");
+            var newDoorData = JsonUtil.DeserializeFromPath<SortedDictionary<string, DoorData>>(data.DoorsJsonPath);
+            mod.DebugResetData(newDoorData);
+        }
+        catch (System.Exception)
+        {
+            Console.AddLine("Debug data not available in this build");
+            return;
         }
     }
 }
