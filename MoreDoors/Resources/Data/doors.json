@@ -15,9 +15,14 @@
           "SceneName": "Fungus3_26",
           "GateName": "left3"
         },
-        "Masks": null,
+        "Masks": [
+          {
+            "Width": 10,
+            "Height": 8
+          }
+        ],
         "RequiresLantern": false,
-        "X": 1.1,
+        "X": 3.6,
         "Y": 11.6
       },
       "RightLocation": {
@@ -25,13 +30,49 @@
           "SceneName": "Fungus3_27",
           "GateName": "right1"
         },
-        "Masks": null,
+        "Masks": [
+          {
+            "Width": 10,
+            "Height": 10
+          }
+        ],
         "RequiresLantern": false,
-        "X": 73.9,
+        "X": 71.9,
         "Y": 10.6
       },
       "Mode": "Normal",
-      "Deployers": null
+      "Deployers": [
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Fungus3_27",
+          "ObjectName": "fog_canyon_plants_0000_6 (4)",
+          "MatchType": "FirstName"
+        },
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Fungus3_27",
+          "ObjectName": "fung_FG_hanging_01 169 (4)",
+          "MatchType": "FirstName"
+        },
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Fungus3_27",
+          "ObjectName": "fung_FG_hanging_01 169 (3)",
+          "MatchType": "FirstName"
+        },
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Fungus3_27",
+          "ObjectName": "fung_vine_cut",
+          "MatchType": "FirstName"
+        },
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Fungus3_26",
+          "ObjectName": "fog_canyon_plants_0000_6 (5)",
+          "MatchType": "FirstName"
+        }
+      ]
     },
     "Key": {
       "ItemName": "MoreDoors-Archive_Key",
@@ -461,7 +502,7 @@
         "Y": 5.5
       },
       "Mode": "Normal",
-      "Deployers": null
+      "Deployers": null,
     },
     "Key": {
       "ItemName": "MoreDoors-Canyon_Key",
@@ -542,9 +583,14 @@
           "SceneName": "Fungus2_29",
           "GateName": "right1"
         },
-        "Masks": null,
+        "Masks": [
+          {
+            "Width": 10,
+            "Height": 10
+          }
+        ],
         "RequiresLantern": false,
-        "X": 92.9,
+        "X": 87.4,
         "Y": 33.6
       },
       "Mode": "Normal",
@@ -1296,6 +1342,12 @@
             "Height": 14.0,
             "OffsetX": 0.0,
             "OffsetY": 0.0
+          },
+          {
+            "Width": 10.0,
+            "Height": 14.0,
+            "OffsetX": -1.65,
+            "OffsetY": 12
           }
         ],
         "RequiresLantern": false,
@@ -2372,27 +2424,52 @@
           "SceneName": "White_Palace_06",
           "GateName": "left1"
         },
-        "Masks": null,
+        "Masks": [
+          {
+            "Witdh": 20,
+            "Height": 14
+          }
+        ],
         "RequiresLantern": false,
-        "X": 14.8,
-        "Y": 5.6
-      },
-      "RightLocation": {
-        "Transition": {
-          "SceneName": "White_Palace_18",
-          "GateName": "right1"
-        },
-        "Masks": null,
-        "RequiresLantern": false,
-        "X": 298.9,
+        "X": 290.0,
         "Y": 14.6
       },
-      "Mode": "Normal",
+      "RightLocation": {
+        "Transition": null,
+        "Masks": [
+          {
+            "Witdh": 20,
+            "Height": 14
+          }
+        ],
+        "RequiresLantern": false,
+        "X": 280.0,
+        "Y": 14.6
+      },
+      "Mode": "LeftTwin",
       "Deployers": [
         {
           "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
-          "SceneName": "White_Palace_06",
-          "ObjectName": "Breakable Wall Ruin Lift",
+          "SceneName": "White_Palace_18",
+          "ObjectName": "white_vine_01_silhouette (22)",
+          "MatchType": "FirstName"
+        },
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "White_Palace_18",
+          "ObjectName": "white_vine_01_silhouette (25)",
+          "MatchType": "FirstName"
+        },
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "White_Palace_18",
+          "ObjectName": "white_pillar (19)",
+          "MatchType": "FirstName"
+        },
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "White_Palace_18",
+          "ObjectName": "white_pillar (20)",
           "MatchType": "FirstName"
         }
       ]
@@ -2574,9 +2651,14 @@
           "SceneName": "Abyss_16",
           "GateName": "left1"
         },
-        "Masks": null,
+        "Masks": [
+          {
+            "Width": 10,
+            "Height": 8
+          }
+        ],
         "RequiresLantern": false,
-        "X": 1.1,
+        "X": 3.1,
         "Y": 7.6
       },
       "RightLocation": {
@@ -2584,9 +2666,14 @@
           "SceneName": "Abyss_06_Core",
           "GateName": "right2"
         },
-        "Masks": null,
+        "Masks": [
+          {
+            "Width": 10,
+            "Height": 10
+          }
+        ],
         "RequiresLantern": false,
-        "X": 98.9,
+        "X": 95.9,
         "Y": 5.6
       },
       "Mode": "Normal",
