@@ -102,9 +102,14 @@
           "SceneName": "Deepnest_East_04",
           "GateName": "left2"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10.0,
+          "Height": 8.0,
+          "OffsetX": 0.0,
+          "OffsetY": 0.0
+        },
         "RequiresLantern": false,
-        "X": 1.1,
+        "X": 4.6,
         "Y": 95.6
       },
       "RightLocation": {
@@ -112,13 +117,25 @@
           "SceneName": "Deepnest_East_07",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10.0,
+          "Height": 10.0,
+          "OffsetX": 0.0,
+          "OffsetY": 0.0
+        },
         "RequiresLantern": false,
-        "X": 88.9,
+        "X": 82.9,
         "Y": 66.6
       },
       "Mode": "Normal",
-      "Deployers": null
+      "Deployers": [
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Deepnest_East_07",
+          "ObjectName": "white_ash_scenery_0000_1 (24)",
+          "MatchType": "FirstName"
+        }
+      ]
     },
     "Key": {
       "ItemName": "MoreDoors-Bardoon's_Key",
@@ -189,23 +206,40 @@
           "SceneName": "Abyss_18",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10.0,
+          "Height": 14.0,
+          "OffsetX": 0.0,
+          "OffsetY": 0.0
+        },
         "RequiresLantern": false,
-        "X": 1.1,
-        "Y": 17.6
+        "X": 6.1,
+        "Y": 19.6
       },
       "RightLocation": {
         "Transition": {
           "SceneName": "Abyss_19",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 20.0,
+          "Height": 10.0,
+          "OffsetX": -1.1,
+          "OffsetY": 0.0
+        },
         "RequiresLantern": false,
-        "X": 158.9,
+        "X": 150.1,
         "Y": 33.6
       },
       "Mode": "Normal",
-      "Deployers": null
+      "Deployers": [
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Abyss_18",
+          "ObjectName": "palace_root2 (6)",
+          "MatchType": "FirstName"
+        }
+      ]
     },
     "Key": {
       "ItemName": "MoreDoors-Broken_Key",
@@ -276,9 +310,14 @@
           "SceneName": "Deepnest_East_16",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10.0,
+          "Height": 10.0,
+          "OffsetX": 0.0,
+          "OffsetY": 0.0
+        },
         "RequiresLantern": false,
-        "X": 1.1,
+        "X": 6.6,
         "Y": 6.6
       },
       "RightLocation": {
@@ -286,13 +325,37 @@
           "SceneName": "Deepnest_East_06",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10.0,
+          "Height": 9.0,
+          "OffsetX": 0.0,
+          "OffsetY": 0.0
+        },
         "RequiresLantern": false,
-        "X": 349.9,
+        "X": 346.9,
         "Y": 17.6
       },
       "Mode": "Normal",
-      "Deployers": null
+      "Deployers": [
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Deepnest_East_06",
+          "ObjectName": "white_ash_scenery_0000_1 (26)",
+          "MatchType": "FirstName"
+        },
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Deepnest_East_16",
+          "ObjectName": "bone_deep_0104_b (1)",
+          "MatchType": "FirstName"
+        },
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Deepnest_East_16",
+          "ObjectName": "white_ash_scenery_0005_6 (7)",
+          "MatchType": "FirstName"
+        }
+      ]
     },
     "Key": {
       "ItemName": "MoreDoors-Buried_Geo_Key",
@@ -845,9 +908,14 @@
           "SceneName": "Ruins2_07",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10.0,
+          "Height": 10.0,
+          "OffsetX": 0.0,
+          "OffsetY": 0.0
+        },
         "RequiresLantern": false,
-        "X": 1.1,
+        "X": 6.1,
         "Y": 8.6
       },
       "RightLocation": {
@@ -1196,9 +1264,14 @@
           "SceneName": "Fungus3_34",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10.0,
+          "Height": 14.0,
+          "OffsetX": 0.0,
+          "OffsetY": 0.0
+        },
         "RequiresLantern": false,
-        "X": 1.1,
+        "X": 8.1,
         "Y": 13.6
       },
       "RightLocation": {
@@ -1209,7 +1282,7 @@
         "Mask": null,
         "RequiresLantern": false,
         "X": 38.9,
-        "Y": 58.6
+        "Y": 58.5
       },
       "Mode": "Normal",
       "Deployers": null
@@ -1630,7 +1703,7 @@
         },
         "Mask": null,
         "RequiresLantern": false,
-        "X": 1.1,
+        "X": 2.6,
         "Y": 56.6
       },
       "RightLocation": {
@@ -1805,12 +1878,12 @@
         "Mask": {
           "Width": 14.0,
           "Height": 10.0,
-          "OffsetX": 0.5,
+          "OffsetX": -0.75,
           "OffsetY": 0.0
         },
         "RequiresLantern": false,
-        "X": 11.55,
-        "Y": 60.4
+        "X": 11.52,
+        "Y": 60.35
       },
       "RightLocation": {
         "Transition": {
@@ -1818,14 +1891,14 @@
           "GateName": "right1"
         },
         "Mask": {
-          "Width": 30.0,
+          "Width": 20.0,
           "Height": 11.0,
-          "OffsetX": 0.5,
+          "OffsetX": -1.0,
           "OffsetY": 0.0
         },
         "RequiresLantern": false,
-        "X": 146.5,
-        "Y": 11.4
+        "X": 147.3,
+        "Y": 11.35
       },
       "Mode": "Normal",
       "Deployers": null
@@ -2358,9 +2431,14 @@
           "SceneName": "Ruins1_09",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 7.5,
+          "Height": 10.0,
+          "OffsetX": -0.75,
+          "OffsetY": 0.0
+        },
         "RequiresLantern": false,
-        "X": 2.1,
+        "X": 5.8,
         "Y": 18.6
       },
       "RightLocation": {
@@ -2368,9 +2446,14 @@
           "SceneName": "Ruins1_05",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10.0,
+          "Height": 12.0,
+          "OffsetX": 0.0,
+          "OffsetY": 2.0
+        },
         "RequiresLantern": false,
-        "X": 61.9,
+        "X": 56.4,
         "Y": 153.6
       },
       "Mode": "Normal",
@@ -2532,9 +2615,14 @@
           "SceneName": "Fungus3_04",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Mask": {
+          "Width": 10.0,
+          "Height": 10.0,
+          "OffsetX": 0.0,
+          "OffsetY": 0.0
+        },
         "RequiresLantern": false,
-        "X": 1.1,
+        "X": 4.9,
         "Y": 85.6
       },
       "RightLocation": {
@@ -2544,11 +2632,24 @@
         },
         "Mask": null,
         "RequiresLantern": false,
-        "X": 73.9,
-        "Y": 8.6
+        "X": 73.4,
+        "Y": 8.5
       },
       "Mode": "Normal",
-      "Deployers": null
+      "Deployers": [
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Fungus3_04",
+          "ObjectName": "fungd_plant_28 (3)",
+          "MatchType": "FirstName"
+        },
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Fungus3_21",
+          "ObjectName": "fung_bush8 (7)",
+          "MatchType": "FirstName"
+        }
+      ]
     },
     "Key": {
       "ItemName": "MoreDoors-Traitor's_Key",
