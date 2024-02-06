@@ -75,6 +75,8 @@ public static class DebugInterop
             var data = JsonUtil.DeserializeEmbedded<DebugData>("MoreDoors.Resources.Data.debug.json");
             var newDoorData = JsonUtil.DeserializeFromPath<SortedDictionary<string, DoorData>>(data.DoorsJsonPath);
             mod.DebugResetData(newDoorData);
+
+            Console.AddLine("Debug data reset from json on disk");
         }
         catch (System.Exception)
         {
