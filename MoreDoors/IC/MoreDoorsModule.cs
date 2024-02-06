@@ -123,6 +123,7 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
             var doorName = e.Key;
             var doorData = e.Value;
 
+            DoorStates[doorName].Data = doorData;
             IndexDoor(doorName, doorData);
         }
         PromptStrings[MenuConvKey] = "More Keys";
