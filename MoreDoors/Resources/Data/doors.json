@@ -15,7 +15,7 @@
           "SceneName": "Fungus3_26",
           "GateName": "left3"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 11.6
@@ -25,7 +25,7 @@
           "SceneName": "Fungus3_27",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 73.9,
         "Y": 10.6
@@ -102,12 +102,14 @@
           "SceneName": "Deepnest_East_04",
           "GateName": "left2"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 8.0,
-          "OffsetX": 0.0,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 8.0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 4.6,
         "Y": 95.6
@@ -117,12 +119,14 @@
           "SceneName": "Deepnest_East_07",
           "GateName": "right1"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 10.0,
-          "OffsetX": 0.0,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 10.0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 82.9,
         "Y": 66.6
@@ -206,12 +210,14 @@
           "SceneName": "Abyss_18",
           "GateName": "left1"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 14.0,
-          "OffsetX": 0.0,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 14.0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 6.1,
         "Y": 19.6
@@ -221,12 +227,14 @@
           "SceneName": "Abyss_19",
           "GateName": "right1"
         },
-        "Mask": {
-          "Width": 20.0,
-          "Height": 10.0,
-          "OffsetX": -1.1,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 20.0,
+            "Height": 10.0,
+            "OffsetX": -1.1,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 150.1,
         "Y": 33.6
@@ -310,12 +318,14 @@
           "SceneName": "Deepnest_East_16",
           "GateName": "left1"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 10.0,
-          "OffsetX": 0.0,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 10.0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 6.6,
         "Y": 6.6
@@ -325,12 +335,14 @@
           "SceneName": "Deepnest_East_06",
           "GateName": "right1"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 9.0,
-          "OffsetX": 0.0,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 9.0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 346.9,
         "Y": 17.6
@@ -426,7 +438,7 @@
           "SceneName": "Fungus2_01",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 1.6,
         "Y": 43.5
@@ -436,12 +448,14 @@
           "SceneName": "Fungus3_02",
           "GateName": "right2"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 10.0,
-          "OffsetX": 0.5,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 10.0,
+            "OffsetX": 0.5,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 24.2,
         "Y": 5.5
@@ -518,7 +532,7 @@
           "SceneName": "Fungus2_17",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 35.6
@@ -528,7 +542,7 @@
           "SceneName": "Fungus2_29",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 92.9,
         "Y": 33.6
@@ -606,12 +620,14 @@
           "SceneName": "Mines_23",
           "GateName": "left1"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 8.0,
-          "OffsetX": 0.5,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 8.0,
+            "OffsetX": 0.5,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 3.1,
         "Y": 14.2
@@ -621,7 +637,7 @@
           "SceneName": "Mines_20",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 73.2,
         "Y": 197.2
@@ -721,7 +737,7 @@
           "SceneName": "Deepnest_34",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": true,
         "X": 1.1,
         "Y": 17.6
@@ -731,7 +747,7 @@
           "SceneName": "Deepnest_39",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": true,
         "X": 208.9,
         "Y": 9.6
@@ -808,7 +824,7 @@
           "SceneName": "Crossroads_03",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 2.6,
         "Y": 33.6
@@ -818,7 +834,7 @@
           "SceneName": "Crossroads_21",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 97.9,
         "Y": 16.6
@@ -908,12 +924,14 @@
           "SceneName": "Ruins2_07",
           "GateName": "left1"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 10.0,
-          "OffsetX": 0.0,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 10.0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 6.1,
         "Y": 8.6
@@ -923,7 +941,7 @@
           "SceneName": "Ruins2_06",
           "GateName": "right2"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 53.9,
         "Y": 7.6
@@ -1004,7 +1022,7 @@
           "SceneName": "Ruins1_27",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 7.6
@@ -1014,7 +1032,7 @@
           "SceneName": "Ruins1_05b",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 63.9,
         "Y": 8.6
@@ -1070,12 +1088,14 @@
           "SceneName": "Fungus2_26",
           "GateName": "left1"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 14.0,
-          "OffsetX": 0.5,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 14.0,
+            "OffsetX": 0.5,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 5.9,
         "Y": 9.5
@@ -1085,12 +1105,14 @@
           "SceneName": "Fungus2_06",
           "GateName": "right1"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 8.0,
-          "OffsetX": 0.5,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 8.0,
+            "OffsetX": 0.5,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 31.6,
         "Y": 60.5
@@ -1167,12 +1189,14 @@
           "SceneName": "Fungus2_07",
           "GateName": "left1"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 8.0,
-          "OffsetX": 0.5,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 8.0,
+            "OffsetX": 0.5,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 2.4,
         "Y": 15.5
@@ -1182,12 +1206,14 @@
           "SceneName": "Fungus2_06",
           "GateName": "right2"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 8.0,
-          "OffsetX": 0.5,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 8.0,
+            "OffsetX": 0.5,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 32.2,
         "Y": 11.5
@@ -1264,12 +1290,14 @@
           "SceneName": "Fungus3_34",
           "GateName": "left1"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 14.0,
-          "OffsetX": 0.0,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 14.0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 8.1,
         "Y": 13.6
@@ -1279,7 +1307,7 @@
           "SceneName": "Fungus3_04",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 38.9,
         "Y": 58.5
@@ -1341,7 +1369,7 @@
           "SceneName": "Mines_31",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 1.2,
         "Y": 21.2
@@ -1351,12 +1379,14 @@
           "SceneName": "Mines_20",
           "GateName": "right2"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 8.0,
-          "OffsetX": 0.5,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 8.0,
+            "OffsetX": 0.5,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 70.5,
         "Y": 65.2
@@ -1444,7 +1474,7 @@
           "SceneName": "Hive_02",
           "GateName": "left2"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 95.1,
         "Y": 52.6
@@ -1454,7 +1484,7 @@
           "SceneName": "Hive_01",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 118.9,
         "Y": 52.6
@@ -1510,7 +1540,7 @@
           "SceneName": "Waterways_07",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 22.6
@@ -1520,7 +1550,7 @@
           "SceneName": "Abyss_01",
           "GateName": "right2"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 29.5,
         "Y": 52.6
@@ -1597,12 +1627,14 @@
           "SceneName": "Cliffs_04",
           "GateName": "left1"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 8.5,
-          "OffsetX": 0.5,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 8.5,
+            "OffsetX": 0.5,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": true,
         "X": 8.6,
         "Y": 45.6
@@ -1612,12 +1644,14 @@
           "SceneName": "Cliffs_01",
           "GateName": "right2"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 8.5,
-          "OffsetX": 0.5,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 8.5,
+            "OffsetX": 0.5,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 131.6,
         "Y": 93.6
@@ -1701,7 +1735,7 @@
           "SceneName": "Waterways_08",
           "GateName": "left2"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 2.6,
         "Y": 56.6
@@ -1711,7 +1745,7 @@
           "SceneName": "GG_Pipeway",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 147.9,
         "Y": 6.6
@@ -1788,7 +1822,7 @@
           "SceneName": "Crossroads_50",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 46.6
@@ -1798,7 +1832,7 @@
           "SceneName": "Crossroads_04",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 158.9,
         "Y": 26.6
@@ -1875,12 +1909,14 @@
           "SceneName": "Fungus2_13",
           "GateName": "left2"
         },
-        "Mask": {
-          "Width": 14.0,
-          "Height": 10.0,
-          "OffsetX": -0.75,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 14.0,
+            "Height": 10.0,
+            "OffsetX": -0.75,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 11.52,
         "Y": 60.35
@@ -1890,12 +1926,14 @@
           "SceneName": "Fungus2_14",
           "GateName": "right1"
         },
-        "Mask": {
-          "Width": 20.0,
-          "Height": 11.0,
-          "OffsetX": -1.0,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 20.0,
+            "Height": 11.0,
+            "OffsetX": -1.0,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 147.3,
         "Y": 11.35
@@ -1978,7 +2016,7 @@
           "SceneName": "Fungus1_11",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 1.8,
         "Y": 34.6
@@ -1988,12 +2026,14 @@
           "SceneName": "Fungus1_29",
           "GateName": "right1"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 10.0,
-          "OffsetX": 0.5,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 10.0,
+            "OffsetX": 0.5,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 79.9,
         "Y": 16.6
@@ -2076,7 +2116,7 @@
           "SceneName": "Fungus1_21",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 15.6
@@ -2086,12 +2126,14 @@
           "SceneName": "Fungus1_04",
           "GateName": "right1"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 8.5,
-          "OffsetX": 0.5,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 8.5,
+            "OffsetX": 0.5,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 88.9,
         "Y": 34.6
@@ -2168,7 +2210,7 @@
           "SceneName": "Deepnest_30",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 7.6
@@ -2178,7 +2220,7 @@
           "SceneName": "Deepnest_03",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 58.9,
         "Y": 5.6
@@ -2264,7 +2306,7 @@
           "SceneName": "Fungus3_01",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 39.6
@@ -2274,7 +2316,7 @@
           "SceneName": "Fungus3_24",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 98.9,
         "Y": 14.6
@@ -2330,7 +2372,7 @@
           "SceneName": "White_Palace_06",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 14.8,
         "Y": 5.6
@@ -2340,7 +2382,7 @@
           "SceneName": "White_Palace_18",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 298.9,
         "Y": 14.6
@@ -2431,12 +2473,14 @@
           "SceneName": "Ruins1_09",
           "GateName": "left1"
         },
-        "Mask": {
-          "Width": 7.5,
-          "Height": 10.0,
-          "OffsetX": -0.75,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 7.5,
+            "Height": 10.0,
+            "OffsetX": -0.75,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 5.8,
         "Y": 18.6
@@ -2446,12 +2490,14 @@
           "SceneName": "Ruins1_05",
           "GateName": "right1"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 12.0,
-          "OffsetX": 0.0,
-          "OffsetY": 2.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 12.0,
+            "OffsetX": 0.0,
+            "OffsetY": 2.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 56.4,
         "Y": 153.6
@@ -2528,7 +2574,7 @@
           "SceneName": "Abyss_16",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 7.6
@@ -2538,7 +2584,7 @@
           "SceneName": "Abyss_06_Core",
           "GateName": "right2"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 98.9,
         "Y": 5.6
@@ -2615,12 +2661,14 @@
           "SceneName": "Fungus3_04",
           "GateName": "left1"
         },
-        "Mask": {
-          "Width": 10.0,
-          "Height": 10.0,
-          "OffsetX": 0.0,
-          "OffsetY": 0.0
-        },
+        "Masks": [
+          {
+            "Width": 10.0,
+            "Height": 10.0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0
+          }
+        ],
         "RequiresLantern": false,
         "X": 4.9,
         "Y": 85.6
@@ -2630,7 +2678,7 @@
           "SceneName": "Fungus3_21",
           "GateName": "right1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 73.4,
         "Y": 8.5
@@ -2731,7 +2779,7 @@
           "SceneName": "Deepnest_41",
           "GateName": "left1"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": true,
         "X": 1.1,
         "Y": 91.6
@@ -2741,7 +2789,7 @@
           "SceneName": "Deepnest_10",
           "GateName": "right2"
         },
-        "Mask": null,
+        "Masks": null,
         "RequiresLantern": false,
         "X": 73.9,
         "Y": 89.6

@@ -77,7 +77,7 @@ public record DoorData
             }
 
             public LogicTransition? Transition;
-            public SecretMask? Mask;
+            public List<SecretMask>? Masks;
             public bool RequiresLantern;
             public float X;
             public float Y;
