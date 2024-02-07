@@ -202,6 +202,11 @@ public static class DoorSpawner
         promptMarker.transform.localPosition = new(0.7f, 0.77f, 0.206f);
         promptMarker.AddComponent<DeactivateInDarknessWithoutLantern>().enabled = true;
 
+        // Fix the phys box.
+        var physBox = gameObj.FindChild("Phys Box").GetComponent<BoxCollider2D>();
+        physBox.offset += new Vector2(0.5f * (left ? -1 : 1), -0.35f);
+        physBox.size += new Vector2(1f, -0.7f);
+
         if (sm.darknessLevel == 2 && !PlayerData.instance.GetBool(nameof(PlayerData.instance.hasLantern)))
         {
             // Why is this so finicky
