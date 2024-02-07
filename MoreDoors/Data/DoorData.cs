@@ -57,17 +57,6 @@ public record DoorData
 
         public record Location
         {
-            public record LogicTransition
-            {
-                public string SceneName;
-                public string GateName;
-
-                [JsonIgnore]
-                public string Name => $"{SceneName}[{GateName}]";
-                [JsonIgnore]
-                public string ProxyName => $"{SceneName}_Proxy[{GateName}]";
-            }
-
             public record SecretMask
             {
                 public float Width;
@@ -76,11 +65,18 @@ public record DoorData
                 public float OffsetY;
             }
 
-            public LogicTransition Transition;
+            public string SceneName;
+            public string GateName;
             public List<SecretMask>? Masks;
             public bool RequiresLantern;
             public float X;
             public float Y;
+
+            [JsonIgnore]
+            public string TransitionName => $"{SceneName}[{GateName}]";
+
+            [JsonIgnore]
+            public string TransitionProxyName => $"{SceneName}_Proxy[{GateName}]";
 
             public bool ValidateAndUpdate(out string err)
             {
@@ -107,9 +103,9 @@ public record DoorData
         };
 
         [JsonIgnore]
-        public string LeftSceneName => SplitLocation(Side.Left).Transition.SceneName;
+        public string LeftSceneName => SplitLocation(Side.Left).SceneName;
         [JsonIgnore]
-        public string RightSceneName => SplitLocation(Side.Right).Transition.SceneName;
+        public string RightSceneName => SplitLocation(Side.Right).SceneName;
 
         public bool ValidateAndUpdate(out string err)
         {
@@ -117,7 +113,7 @@ public record DoorData
             if (!RightLocation.ValidateAndUpdate(out err)) return false;
 
             bool split = Mode == SplitMode.Normal;
-            bool matching = LeftLocation.Transition.Name == RightLocation.Transition.Name;
+            bool matching = LeftLocation.TransitionName == RightLocation.TransitionName;
             if (split == matching)
             {
                 err = "Split mode does not match transitions";

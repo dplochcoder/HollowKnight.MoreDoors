@@ -124,19 +124,19 @@ public static class LogicPatcher
 
     private static void HandleTransition(LogicManagerBuilder lmb, DoorData data, DoorData.DoorInfo.Location doorLoc, HashSet<string> fixedTerms, Dictionary<string, SimpleToken> replacementMap)
     {
-        fixedTerms.Add(doorLoc.Transition.Name);
-        fixedTerms.Add(doorLoc.Transition.ProxyName);
-        replacementMap[doorLoc.Transition.Name] = new(doorLoc.Transition.ProxyName);
+        fixedTerms.Add(doorLoc.TransitionName);
+        fixedTerms.Add(doorLoc.TransitionProxyName);
+        replacementMap[doorLoc.TransitionName] = new(doorLoc.TransitionProxyName);
 
-        lmb.GetOrAddTerm(doorLoc.Transition.Name, TermType.State);
-        lmb.AddWaypoint(new(doorLoc.Transition.ProxyName, lmb.LogicLookup[doorLoc.Transition.Name].ToInfix()));
+        lmb.GetOrAddTerm(doorLoc.TransitionName, TermType.State);
+        lmb.AddWaypoint(new(doorLoc.TransitionProxyName, lmb.LogicLookup[doorLoc.TransitionName].ToInfix()));
 
         bool split = data.Door.Mode == DoorData.DoorInfo.SplitMode.Normal;
         string lanternClause = doorLoc.RequiresLantern ? " + LANTERN" : "";
-        if (split) lmb.DoLogicEdit(new(doorLoc.Transition.ProxyName, $"ORIG | {doorLoc.Transition.Name}"));
-        else lmb.DoLogicEdit(new(doorLoc.Transition.ProxyName, $"ORIG | {doorLoc.Transition.Name}{lanternClause} + {data.KeyTermName}"));
+        if (split) lmb.DoLogicEdit(new(doorLoc.TransitionProxyName, $"ORIG | {doorLoc.TransitionName}"));
+        else lmb.DoLogicEdit(new(doorLoc.TransitionProxyName, $"ORIG | {doorLoc.TransitionName}{lanternClause} + {data.KeyTermName}"));
 
-        lmb.AddLogicDef(new(doorLoc.Transition.Name, $"{doorLoc.Transition.Name} | {doorLoc.Transition.ProxyName}{lanternClause} + {data.KeyTermName}"));
+        lmb.AddLogicDef(new(doorLoc.TransitionName, $"{doorLoc.TransitionName} | {doorLoc.TransitionProxyName}{lanternClause} + {data.KeyTermName}"));
     }
 
     public static void ModifyCoreDefinitions(GenerationSettings gs, LogicManagerBuilder lmb)

@@ -145,7 +145,7 @@ public static class DoorSpawner
             bool nextToGate = left != (data.Door.Mode == DoorData.DoorInfo.SplitMode.LeftTwin);
 
             var mod = ItemChangerMod.Modules.Get<MoreDoorsModule>();
-            bool cameFromGate = mod.LastSceneName == loc.Transition.SceneName && mod.LastGateName == loc.Transition.GateName;
+            bool cameFromGate = mod.LastSceneName == loc.SceneName && mod.LastGateName == loc.GateName;
 
             showMasks = nextToGate == cameFromGate;
         }
