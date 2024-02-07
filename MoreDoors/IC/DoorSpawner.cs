@@ -13,6 +13,27 @@ public class DoorNameMarker : MonoBehaviour
     public string DoorName;
 }
 
+internal class SplitDoorSyncer : MonoBehaviour
+{
+    private string DoorName;
+
+    private void Awake()
+    {
+        DoorName = GetComponent<DoorNameMarker>().DoorName;
+        MoreDoorsModule.OnDoorOpened += SyncDoor;
+    }
+
+    private void OnDestroy() => MoreDoorsModule.OnDoorOpened -= SyncDoor;
+
+    private void SyncDoor(string doorName, bool left)
+    {
+        if (doorName != DoorName) return;
+
+        var fsm = gameObject.LocateMyFSM("Conversation Control");
+        if (fsm.ActiveStateName == "Idle") fsm.SetState("Yes");
+    }
+}
+
 internal class DoorSecretMask : MonoBehaviour
 {
     public string DoorName;
@@ -156,7 +177,8 @@ public static class DoorSpawner
     {
         var data = DoorData.GetFromModule(doorName);
         var gameObj = Object.Instantiate(Preloader.Instance.Door);
-        SetupConversationControl(gameObj.LocateMyFSM("Conversation Control"), data, left);
+        var convCtrl = gameObj.LocateMyFSM("Conversation Control");
+        SetupConversationControl(convCtrl, data, left);
 
         var loc = left ? data.Door.LeftLocation : data.Door.RightLocation;
         gameObj.transform.position = new(loc.X, loc.Y, gameObj.transform.position.z);
@@ -174,6 +196,7 @@ public static class DoorSpawner
 
         gameObj.name = $"{data.CamelCaseName} Door";
         gameObj.AddComponent<DoorNameMarker>().DoorName = doorName;
+        if (!open && data.Door.Mode != DoorData.DoorInfo.SplitMode.Normal) gameObj.AddComponent<SplitDoorSyncer>();
 
         var promptMarker = gameObj.FindChild("Prompt Marker");
         promptMarker.transform.localPosition = new(0.7f, 0.77f, 0.206f);
