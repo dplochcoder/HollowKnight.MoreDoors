@@ -80,7 +80,7 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         {
             var doorName = e.Key;
             var data = e.Value.Data;
-            if (true || ImportNewJson || data == null)
+            if (ImportNewJson || data == null)
             {
                 data = DoorData.GetFromJson(doorName);
                 e.Value.Data = data;
