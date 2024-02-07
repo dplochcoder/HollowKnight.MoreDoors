@@ -23,7 +23,8 @@
         ],
         "RequiresLantern": false,
         "X": 3.6,
-        "Y": 11.6
+        "Y": 11.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Fungus3_27",
@@ -38,7 +39,8 @@
         ],
         "RequiresLantern": false,
         "X": 71.9,
-        "Y": 10.6
+        "Y": 10.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": [
@@ -151,7 +153,8 @@
         ],
         "RequiresLantern": false,
         "X": 4.6,
-        "Y": 95.6
+        "Y": 95.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Deepnest_East_07",
@@ -166,7 +169,8 @@
         ],
         "RequiresLantern": false,
         "X": 82.9,
-        "Y": 66.6
+        "Y": 66.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": [
@@ -255,7 +259,8 @@
         ],
         "RequiresLantern": false,
         "X": 6.1,
-        "Y": 19.6
+        "Y": 19.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Abyss_19",
@@ -270,7 +275,8 @@
         ],
         "RequiresLantern": false,
         "X": 150.1,
-        "Y": 33.6
+        "Y": 33.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": [
@@ -359,7 +365,8 @@
         ],
         "RequiresLantern": false,
         "X": 6.6,
-        "Y": 6.6
+        "Y": 6.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Deepnest_East_06",
@@ -374,7 +381,8 @@
         ],
         "RequiresLantern": false,
         "X": 346.9,
-        "Y": 17.6
+        "Y": 17.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": [
@@ -468,7 +476,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.6,
-        "Y": 43.5
+        "Y": 43.5,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Fungus3_02",
@@ -483,7 +492,8 @@
         ],
         "RequiresLantern": false,
         "X": 24.2,
-        "Y": 5.5
+        "Y": 5.5,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -558,7 +568,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
-        "Y": 35.6
+        "Y": 35.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Fungus2_29",
@@ -573,7 +584,8 @@
         ],
         "RequiresLantern": false,
         "X": 87.4,
-        "Y": 33.6
+        "Y": 33.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -656,7 +668,8 @@
         ],
         "RequiresLantern": false,
         "X": 3.1,
-        "Y": 14.2
+        "Y": 14.2,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Mines_20",
@@ -664,7 +677,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 73.2,
-        "Y": 197.2
+        "Y": 197.2,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": [
@@ -762,7 +776,8 @@
         "Masks": null,
         "RequiresLantern": true,
         "X": 1.1,
-        "Y": 17.6
+        "Y": 17.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Deepnest_39",
@@ -770,7 +785,8 @@
         "Masks": null,
         "RequiresLantern": true,
         "X": 208.9,
-        "Y": 9.6
+        "Y": 9.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -845,7 +861,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 2.6,
-        "Y": 33.6
+        "Y": 33.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Crossroads_21",
@@ -853,7 +870,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 97.9,
-        "Y": 16.6
+        "Y": 16.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": [
@@ -948,7 +966,8 @@
         ],
         "RequiresLantern": false,
         "X": 6.1,
-        "Y": 8.6
+        "Y": 8.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Ruins2_06",
@@ -956,7 +975,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 53.9,
-        "Y": 7.6
+        "Y": 7.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -1035,7 +1055,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
-        "Y": 7.6
+        "Y": 7.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Ruins1_05b",
@@ -1043,7 +1064,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 63.9,
-        "Y": 8.6
+        "Y": 8.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -1104,7 +1126,8 @@
         ],
         "RequiresLantern": false,
         "X": 5.9,
-        "Y": 9.5
+        "Y": 9.5,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Fungus2_06",
@@ -1119,7 +1142,8 @@
         ],
         "RequiresLantern": false,
         "X": 31.6,
-        "Y": 60.5
+        "Y": 60.5,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -1201,7 +1225,8 @@
         ],
         "RequiresLantern": false,
         "X": 2.4,
-        "Y": 15.5
+        "Y": 15.5,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Fungus2_06",
@@ -1216,7 +1241,8 @@
         ],
         "RequiresLantern": false,
         "X": 32.2,
-        "Y": 11.5
+        "Y": 11.5,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -1304,7 +1330,8 @@
         ],
         "RequiresLantern": false,
         "X": 8.1,
-        "Y": 13.6
+        "Y": 13.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Fungus3_04",
@@ -1312,7 +1339,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 38.9,
-        "Y": 58.5
+        "Y": 58.5,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -1372,7 +1400,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.2,
-        "Y": 21.2
+        "Y": 21.2,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Mines_20",
@@ -1387,7 +1416,8 @@
         ],
         "RequiresLantern": false,
         "X": 70.5,
-        "Y": 65.2
+        "Y": 65.2,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -1473,7 +1503,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 95.1,
-        "Y": 52.6
+        "Y": 52.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Hive_01",
@@ -1481,7 +1512,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 118.9,
-        "Y": 52.6
+        "Y": 52.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -1535,7 +1567,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
-        "Y": 22.6
+        "Y": 22.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Abyss_01",
@@ -1543,7 +1576,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 29.5,
-        "Y": 52.6
+        "Y": 52.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -1625,7 +1659,8 @@
         ],
         "RequiresLantern": true,
         "X": 8.6,
-        "Y": 45.6
+        "Y": 45.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Cliffs_01",
@@ -1640,7 +1675,8 @@
         ],
         "RequiresLantern": false,
         "X": 131.6,
-        "Y": 93.6
+        "Y": 93.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": [
@@ -1722,7 +1758,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 2.6,
-        "Y": 56.6
+        "Y": 56.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "GG_Pipeway",
@@ -1730,7 +1767,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 147.9,
-        "Y": 6.6
+        "Y": 6.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -1805,7 +1843,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
-        "Y": 46.6
+        "Y": 46.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Crossroads_04",
@@ -1813,7 +1852,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 158.9,
-        "Y": 26.6
+        "Y": 26.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -1895,7 +1935,8 @@
         ],
         "RequiresLantern": false,
         "X": 11.52,
-        "Y": 60.35
+        "Y": 60.35,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Fungus2_14",
@@ -1910,7 +1951,8 @@
         ],
         "RequiresLantern": false,
         "X": 147.3,
-        "Y": 11.35
+        "Y": 11.35,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -1991,7 +2033,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.8,
-        "Y": 34.6
+        "Y": 34.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Fungus1_29",
@@ -2006,7 +2049,8 @@
         ],
         "RequiresLantern": false,
         "X": 79.9,
-        "Y": 16.6
+        "Y": 16.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -2087,7 +2131,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
-        "Y": 15.6
+        "Y": 15.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Fungus1_04",
@@ -2102,7 +2147,8 @@
         ],
         "RequiresLantern": false,
         "X": 88.9,
-        "Y": 34.6
+        "Y": 34.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -2177,7 +2223,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
-        "Y": 7.6
+        "Y": 7.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Deepnest_03",
@@ -2185,7 +2232,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 58.9,
-        "Y": 5.6
+        "Y": 5.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -2269,7 +2317,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
-        "Y": 39.6
+        "Y": 39.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Fungus3_24",
@@ -2277,7 +2326,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 98.9,
-        "Y": 14.6
+        "Y": 14.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -2338,7 +2388,16 @@
         ],
         "RequiresLantern": false,
         "X": 291.5,
-        "Y": 14.5
+        "Y": 14.5,
+        "Decorators": [
+          {
+            "$type": "MoreDoors.IC.SpikeAttacher, MoreDoors",
+            "OffsetX": -0.3,
+            "OffsetY": -3.9,
+            "Width": 2.15,
+            "Height": 0.6
+          }
+        ]
       },
       "RightLocation": {
         "SceneName": "White_Palace_18",
@@ -2353,7 +2412,16 @@
         ],
         "RequiresLantern": false,
         "X": 277.0,
-        "Y": 14.5
+        "Y": 14.5,
+        "Decorators": [
+          {
+            "$type": "MoreDoors.IC.SpikeAttacher, MoreDoors",
+            "OffsetX": 0.3,
+            "OffsetY": -3.9,
+            "Width": 2.15,
+            "Height": 0.6
+          }
+        ]
       },
       "Mode": "RightTwin",
       "Deployers": [
@@ -2467,7 +2535,8 @@
         ],
         "RequiresLantern": false,
         "X": 5.8,
-        "Y": 18.6
+        "Y": 18.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Ruins1_05",
@@ -2482,7 +2551,8 @@
         ],
         "RequiresLantern": false,
         "X": 56.4,
-        "Y": 153.6
+        "Y": 153.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -2564,7 +2634,8 @@
         ],
         "RequiresLantern": false,
         "X": 3.1,
-        "Y": 7.6
+        "Y": 7.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Abyss_06_Core",
@@ -2579,7 +2650,8 @@
         ],
         "RequiresLantern": false,
         "X": 95.9,
-        "Y": 5.6
+        "Y": 5.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null
@@ -2661,7 +2733,8 @@
         ],
         "RequiresLantern": false,
         "X": 4.9,
-        "Y": 85.6
+        "Y": 85.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Fungus3_21",
@@ -2669,7 +2742,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 73.4,
-        "Y": 8.5
+        "Y": 8.5,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": [
@@ -2768,7 +2842,8 @@
         "Masks": null,
         "RequiresLantern": true,
         "X": 1.1,
-        "Y": 91.6
+        "Y": 91.6,
+        "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Deepnest_10",
@@ -2776,7 +2851,8 @@
         "Masks": null,
         "RequiresLantern": false,
         "X": 73.9,
-        "Y": 89.6
+        "Y": 89.6,
+        "Decorators": null
       },
       "Mode": "Normal",
       "Deployers": null

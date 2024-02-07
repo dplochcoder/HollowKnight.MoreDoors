@@ -71,6 +71,7 @@ public record DoorData
             public bool RequiresLantern;
             public float X;
             public float Y;
+            public List<IDoorDecorator>? Decorators;
 
             [JsonIgnore]
             public string TransitionName => $"{SceneName}[{GateName}]";

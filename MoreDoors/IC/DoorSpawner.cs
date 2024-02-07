@@ -215,6 +215,7 @@ public static class DoorSpawner
             renderer.color = darkDoorColor;
         }
 
+        loc.Decorators?.ForEach(dec => dec.Decorate(gameObj));
         gameObj.SetActive(true);
     }
 
