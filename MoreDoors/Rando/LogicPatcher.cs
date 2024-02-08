@@ -127,6 +127,7 @@ public static class LogicPatcher
         fixedTerms.Add(doorLoc.TransitionName);
         fixedTerms.Add(doorLoc.TransitionProxyName);
         replacementMap[doorLoc.TransitionName] = new(doorLoc.TransitionProxyName);
+        replacementMap[$"{doorLoc.TransitionName}/"] = new($"{doorLoc.TransitionProxyName}/");
 
         lmb.GetOrAddTerm(doorLoc.TransitionName, TermType.State);
         lmb.AddWaypoint(new(doorLoc.TransitionProxyName, lmb.LogicLookup[doorLoc.TransitionName].ToInfix()));
