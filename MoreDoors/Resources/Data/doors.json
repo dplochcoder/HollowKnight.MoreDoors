@@ -1500,23 +1500,59 @@
       "LeftLocation": {
         "SceneName": "Hive_02",
         "GateName": "left2",
-        "Masks": null,
+        "Masks": [
+          {
+            "Width": 10,
+            "Height": 4.9,
+            "OffsetY": -0.5
+          }
+        ],
         "RequiresLantern": false,
-        "X": 95.1,
+        "X": 105.1,
         "Y": 52.6,
         "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Hive_01",
         "GateName": "right1",
-        "Masks": null,
+        "Masks": [
+          {
+            "Width": 10,
+            "Height": 8
+          }
+        ],
         "RequiresLantern": false,
-        "X": 118.9,
+        "X": 110.9,
         "Y": 52.6,
         "Decorators": null
       },
       "Mode": "Normal",
-      "Deployers": null
+      "Deployers": [
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Hive_01",
+          "ObjectName": "hive_scenery_0000_h (29)",
+          "MatchType": "FirstName"
+        },
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Hive_01",
+          "ObjectName": "hive_scenery_0000_h (22)",
+          "MatchType": "FirstName"
+        },
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Hive_02",
+          "ObjectName": "hive_scenery_0033_h (8)",
+          "MatchType": "FirstName"
+        },
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Hive_02",
+          "ObjectName": "hive_scenery_0033_h (7)",
+          "MatchType": "FirstName"
+        }
+      ]
     },
     "Key": {
       "ItemName": "MoreDoors-Hive_Key",
