@@ -1502,8 +1502,9 @@
         "GateName": "left2",
         "Masks": [
           {
-            "Width": 10,
+            "Width": 10.0,
             "Height": 4.9,
+            "OffsetX": 0.0,
             "OffsetY": -0.5
           }
         ],
@@ -1517,8 +1518,10 @@
         "GateName": "right1",
         "Masks": [
           {
-            "Width": 10,
-            "Height": 8
+            "Width": 10.0,
+            "Height": 8.0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0
           }
         ],
         "RequiresLantern": false,
@@ -1876,23 +1879,46 @@
       "LeftLocation": {
         "SceneName": "Crossroads_50",
         "GateName": "left1",
-        "Masks": null,
+        "Masks": [
+          {
+            "Width": 10,
+            "Height": 10
+          }
+        ],
         "RequiresLantern": false,
-        "X": 1.1,
+        "X": 5.3,
         "Y": 46.6,
         "Decorators": null
       },
       "RightLocation": {
         "SceneName": "Crossroads_04",
         "GateName": "right1",
-        "Masks": null,
+        "Masks": [
+          {
+            "Width": 10,
+            "Height": 8
+          }
+        ],
         "RequiresLantern": false,
-        "X": 158.9,
+        "X": 155.9,
         "Y": 26.6,
         "Decorators": null
       },
       "Mode": "Normal",
-      "Deployers": null
+      "Deployers": [
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Crossroads_04",
+          "ObjectName": "cd_FG_rock_20 (1)",
+          "MatchType": "FirstName"
+        },
+        {
+          "$type": "ItemChanger.Deployers.ObjectDestroyer, ItemChanger",
+          "SceneName": "Crossroads_04",
+          "ObjectName": "roof_FG_rock_07_0003_03",
+          "MatchType": "FirstName"
+        }
+      ]
     },
     "Key": {
       "ItemName": "MoreDoors-Lake_Key",
