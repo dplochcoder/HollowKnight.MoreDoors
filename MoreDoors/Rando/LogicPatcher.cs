@@ -135,7 +135,11 @@ public static class LogicPatcher
         bool split = data.Door.Mode == DoorData.DoorInfo.SplitMode.Normal;
         string lanternClause = doorLoc.RequiresLantern ? " + LANTERN" : "";
         if (split) lmb.DoLogicEdit(new(doorLoc.TransitionProxyName, $"ORIG | {doorLoc.TransitionName}"));
-        else lmb.DoLogicEdit(new(doorLoc.TransitionProxyName, $"ORIG + {data.KeyTermName} | {doorLoc.TransitionName}{lanternClause} + {data.KeyTermName}"));
+        else
+        {
+            // This creates some false negatives for reverse PoP, the real fix will require more work.
+            lmb.DoLogicEdit(new(doorLoc.TransitionProxyName, $"ORIG + {data.KeyTermName} | {doorLoc.TransitionName}{lanternClause} + {data.KeyTermName}"));
+        }
 
         lmb.AddLogicDef(new(doorLoc.TransitionName, $"{doorLoc.TransitionName} | {doorLoc.TransitionProxyName}{lanternClause} + {data.KeyTermName}"));
     }
