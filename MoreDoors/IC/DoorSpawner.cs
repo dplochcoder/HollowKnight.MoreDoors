@@ -173,7 +173,7 @@ public static class DoorSpawner
 
     private static readonly Color darkDoorColor = new(0.2647f, 0.2647f, 0.2647f);
 
-    public static void SpawnDoor(SceneManager sm, string doorName, bool left)
+    public static void SpawnDoor(MoreDoorsModule mod, SceneManager sm, string doorName, bool left)
     {
         var data = DoorData.GetFromModule(doorName);
         var gameObj = Object.Instantiate(Preloader.Instance.Door);
@@ -185,7 +185,7 @@ public static class DoorSpawner
 
         var renderer = gameObj.GetComponent<SpriteRenderer>();
         renderer.sprite = data.Door.Sprite.Value;
-        var open = PlayerData.instance.GetBool(data.PDDoorOpenedName);
+        var open = mod.IsDoorOpened(doorName, left);
         if (!open && loc.Masks != null) MaybeSpawnSecretMasks(gameObj.transform.position, doorName, data, left, loc);
 
         if (!left)

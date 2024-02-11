@@ -210,8 +210,8 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         foreach (var doorName in DoorNamesByScene.GetOrDefault(sceneName, emptySet))
         {
             var data = DoorStates[doorName].Data;
-            if (sceneName == data.Door.LeftSceneName) DoorSpawner.SpawnDoor(sm, doorName, true);
-            if (sceneName == data.Door.RightSceneName) DoorSpawner.SpawnDoor(sm, doorName, false);
+            if (sceneName == data.Door.LeftSceneName) DoorSpawner.SpawnDoor(this, sm, doorName, true);
+            if (sceneName == data.Door.RightSceneName) DoorSpawner.SpawnDoor(this, sm, doorName, false);
         }
     }
 

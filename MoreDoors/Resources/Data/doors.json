@@ -1881,8 +1881,10 @@
         "GateName": "left1",
         "Masks": [
           {
-            "Width": 10,
-            "Height": 10
+            "Width": 10.0,
+            "Height": 10.0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0
           }
         ],
         "RequiresLantern": false,
@@ -1895,8 +1897,10 @@
         "GateName": "right1",
         "Masks": [
           {
-            "Width": 10,
-            "Height": 8
+            "Width": 10.0,
+            "Height": 8.0,
+            "OffsetX": 0.0,
+            "OffsetY": 0.0
           }
         ],
         "RequiresLantern": false,
