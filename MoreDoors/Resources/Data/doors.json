@@ -8,11 +8,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Canyon"
       },
-      "NoKeyDesc": "A sturdy door overflowing with literature, entirely illegible.",
-      "KeyDesc": "The teacher's research must pass on.<br>Insert the Archive Key?",
       "LeftLocation": {
         "SceneName": "Fungus3_26",
         "GateName": "left3",
+        "NoKeyDesc": "A sturdy door overflowing with literature, entirely illegible.",
+        "KeyDesc": "The teacher's research must pass on.<br>Insert the Archive Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -29,6 +29,8 @@
       "RightLocation": {
         "SceneName": "Fungus3_27",
         "GateName": "right1",
+        "NoKeyDesc": "A sturdy door overflowing with literature, entirely illegible.",
+        "KeyDesc": "The teacher's research must pass on.<br>Insert the Archive Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -138,11 +140,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Edge"
       },
-      "NoKeyDesc": "An old door glazed with primal acid.",
-      "KeyDesc": "The rumble of foolery echoes in the distance.<br>Insert Bardoon's Key?",
       "LeftLocation": {
         "SceneName": "Deepnest_East_04",
         "GateName": "left2",
+        "NoKeyDesc": "An old door glazed with primal acid.",
+        "KeyDesc": "The rumble of foolery echoes in the distance.<br>Insert Bardoon's Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -159,6 +161,8 @@
       "RightLocation": {
         "SceneName": "Deepnest_East_07",
         "GateName": "right1",
+        "NoKeyDesc": "An old door glazed with primal acid.",
+        "KeyDesc": "The rumble of foolery echoes in the distance.<br>Insert Bardoon's Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -244,11 +248,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Abyssal"
       },
-      "NoKeyDesc": "A decaying door haunted by the lost.",
-      "KeyDesc": "A kindred spirit's cries for help echo from within.<br>Insert the Broken Key?",
       "LeftLocation": {
         "SceneName": "Abyss_18",
         "GateName": "left1",
+        "NoKeyDesc": "A decaying door haunted by the lost.",
+        "KeyDesc": "A kindred spirit's cries for help echo from within.<br>Insert the Broken Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -265,6 +269,8 @@
       "RightLocation": {
         "SceneName": "Abyss_19",
         "GateName": "right1",
+        "NoKeyDesc": "A decaying door haunted by the lost.",
+        "KeyDesc": "A kindred spirit's cries for help echo from within.<br>Insert the Broken Key?",
         "Masks": [
           {
             "Width": 20.0,
@@ -350,11 +356,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Edge"
       },
-      "NoKeyDesc": "An old, stone vestibule. It smells of ancient treasure.",
-      "KeyDesc": "The treasure is both far and near.<br>Insert the Buried Geo Key?",
       "LeftLocation": {
         "SceneName": "Deepnest_East_16",
         "GateName": "left1",
+        "NoKeyDesc": "An old, stone vestibule. It smells of ancient treasure.",
+        "KeyDesc": "The treasure is both far and near.<br>Insert the Buried Geo Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -371,6 +377,8 @@
       "RightLocation": {
         "SceneName": "Deepnest_East_06",
         "GateName": "right1",
+        "NoKeyDesc": "An old, stone vestibule. It smells of ancient treasure.",
+        "KeyDesc": "The treasure is both far and near.<br>Insert the Buried Geo Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -468,11 +476,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Canyon"
       },
-      "NoKeyDesc": "A door of repose and study. It's a little slimy.",
-      "KeyDesc": "The pilgrim's way unfolds.<br>Insert the Canyon Key?",
       "LeftLocation": {
         "SceneName": "Fungus2_01",
         "GateName": "left1",
+        "NoKeyDesc": "A door of repose and study. It's a little slimy.",
+        "KeyDesc": "The pilgrim's way unfolds.<br>Insert the Canyon Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.6,
@@ -482,6 +490,8 @@
       "RightLocation": {
         "SceneName": "Fungus3_02",
         "GateName": "right2",
+        "NoKeyDesc": "A door of repose and study. It's a little slimy.",
+        "KeyDesc": "The pilgrim's way unfolds.<br>Insert the Canyon Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -560,11 +570,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Fungal"
       },
-      "NoKeyDesc": "A spongy door overgrown with rich fungus.",
-      "KeyDesc": "The depths of the wastes cry WAH.<br>Insert the Core Key?",
       "LeftLocation": {
         "SceneName": "Fungus2_17",
         "GateName": "left1",
+        "NoKeyDesc": "A spongy door overgrown with rich fungus.",
+        "KeyDesc": "The depths of the wastes cry WAH.<br>Insert the Core Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
@@ -574,6 +584,8 @@
       "RightLocation": {
         "SceneName": "Fungus2_29",
         "GateName": "right1",
+        "NoKeyDesc": "A spongy door overgrown with rich fungus.",
+        "KeyDesc": "The depths of the wastes cry WAH.<br>Insert the Core Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -653,11 +665,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Crystal"
       },
-      "NoKeyDesc": "A crystalline door shining with a forgotten light.",
-      "KeyDesc": "This is as high as you'll go.<br>Insert the Crown Key?",
       "LeftLocation": {
         "SceneName": "Mines_23",
         "GateName": "left1",
+        "NoKeyDesc": "A crystalline door shining with a forgotten light.",
+        "KeyDesc": "This is as high as you'll go.<br>Insert the Crown Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -674,6 +686,8 @@
       "RightLocation": {
         "SceneName": "Mines_20",
         "GateName": "right1",
+        "NoKeyDesc": "A crystalline door shining with a forgotten light.",
+        "KeyDesc": "This is as high as you'll go.<br>Insert the Crown Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 73.2,
@@ -768,11 +782,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Deepnest"
       },
-      "NoKeyDesc": "A cobblestone door armored in silk.",
-      "KeyDesc": "The skittering never stops.<br>Insert the Dark Key?",
       "LeftLocation": {
         "SceneName": "Deepnest_34",
         "GateName": "left1",
+        "NoKeyDesc": "A cobblestone door armored in silk.",
+        "KeyDesc": "The skittering never stops.<br>Insert the Dark Key?",
         "Masks": null,
         "RequiresLantern": true,
         "X": 1.1,
@@ -782,6 +796,8 @@
       "RightLocation": {
         "SceneName": "Deepnest_39",
         "GateName": "right1",
+        "NoKeyDesc": "A cobblestone door armored in silk.",
+        "KeyDesc": "The skittering never stops.<br>Insert the Dark Key?",
         "Masks": null,
         "RequiresLantern": true,
         "X": 208.9,
@@ -853,11 +869,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.False"
       },
-      "NoKeyDesc": "It looks like it's a locked door but you're not so sure.",
-      "KeyDesc": "The hardest challenge in the game awaits you.<br>Insert the False Key?",
       "LeftLocation": {
         "SceneName": "Crossroads_03",
         "GateName": "left1",
+        "NoKeyDesc": "It looks like it's a locked door but you're not so sure.",
+        "KeyDesc": "The hardest challenge in the game awaits you.<br>Insert the False Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 2.6,
@@ -867,6 +883,8 @@
       "RightLocation": {
         "SceneName": "Crossroads_21",
         "GateName": "right1",
+        "NoKeyDesc": "It looks like it's a locked door but you're not so sure.",
+        "KeyDesc": "The hardest challenge in the game awaits you.<br>Insert the False Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 97.9,
@@ -951,11 +969,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.FloodedStag"
       },
-      "NoKeyDesc": "A cold stone door, endlessly dripping.",
-      "KeyDesc": "You can feel the power of buoyancy calling out to you.<br>Insert the Flooded Stag Key?",
       "LeftLocation": {
         "SceneName": "Ruins2_07",
         "GateName": "left1",
+        "NoKeyDesc": "A cold stone door, endlessly dripping.",
+        "KeyDesc": "You can feel the power of buoyancy calling out to you.<br>Insert the Flooded Stag Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -972,6 +990,8 @@
       "RightLocation": {
         "SceneName": "Ruins2_06",
         "GateName": "right2",
+        "NoKeyDesc": "A cold stone door, endlessly dripping.",
+        "KeyDesc": "You can feel the power of buoyancy calling out to you.<br>Insert the Flooded Stag Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 53.9,
@@ -1047,11 +1067,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.City"
       },
-      "NoKeyDesc": "An ornate door, bespeckled with a collector's wealth.",
-      "KeyDesc": "Rain flows intricately between the carvings.<br>Insert the Fountain Key?",
       "LeftLocation": {
         "SceneName": "Ruins1_27",
         "GateName": "left1",
+        "NoKeyDesc": "An ornate door, bespeckled with a collector's wealth.",
+        "KeyDesc": "Rain flows intricately between the carvings.<br>Insert the Fountain Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
@@ -1061,6 +1081,8 @@
       "RightLocation": {
         "SceneName": "Ruins1_05b",
         "GateName": "right1",
+        "NoKeyDesc": "An ornate door, bespeckled with a collector's wealth.",
+        "KeyDesc": "Rain flows intricately between the carvings.<br>Insert the Fountain Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 63.9,
@@ -1111,11 +1133,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Fungal"
       },
-      "NoKeyDesc": "A spongy door reinforced with shards of old charms.",
-      "KeyDesc": "Mind your legs.<br>Insert the Fragile Key?",
       "LeftLocation": {
         "SceneName": "Fungus2_26",
         "GateName": "left1",
+        "NoKeyDesc": "A spongy door reinforced with shards of old charms.",
+        "KeyDesc": "Mind your legs.<br>Insert the Fragile Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -1132,6 +1154,8 @@
       "RightLocation": {
         "SceneName": "Fungus2_06",
         "GateName": "right1",
+        "NoKeyDesc": "A spongy door reinforced with shards of old charms.",
+        "KeyDesc": "Mind your legs.<br>Insert the Fragile Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -1210,11 +1234,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Fungal"
       },
-      "NoKeyDesc": "The fungus grows ever onwards, without memory.",
-      "KeyDesc": "The pilgrim's way expands.<br>Insert the Fungal Key?",
       "LeftLocation": {
         "SceneName": "Fungus2_07",
         "GateName": "left1",
+        "NoKeyDesc": "The fungus grows ever onwards, without memory.",
+        "KeyDesc": "The pilgrim's way expands.<br>Insert the Fungal Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -1231,6 +1255,8 @@
       "RightLocation": {
         "SceneName": "Fungus2_06",
         "GateName": "right2",
+        "NoKeyDesc": "The fungus grows ever onwards, without memory.",
+        "KeyDesc": "The pilgrim's way expands.<br>Insert the Fungal Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -1309,11 +1335,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.GreenChain"
       },
-      "NoKeyDesc": "A lush door tainted with chains. This is a protected place.",
-      "KeyDesc": "The gardens must be tended.<br>Insert the Garden Key?",
       "LeftLocation": {
         "SceneName": "Fungus3_34",
         "GateName": "left1",
+        "NoKeyDesc": "A lush door tainted with chains. This is a protected place.",
+        "KeyDesc": "The gardens must be tended.<br>Insert the Garden Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -1336,6 +1362,8 @@
       "RightLocation": {
         "SceneName": "Fungus3_04",
         "GateName": "right1",
+        "NoKeyDesc": "A lush door tainted with chains. This is a protected place.",
+        "KeyDesc": "The gardens must be tended.<br>Insert the Garden Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 38.9,
@@ -1392,11 +1420,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Crystal"
       },
-      "NoKeyDesc": "A dense, deeply crystallized door. It seems to have a heartbeat.",
-      "KeyDesc": "The heart of the mountain beckons.<br>Insert the Heart Key?",
       "LeftLocation": {
         "SceneName": "Mines_31",
         "GateName": "left1",
+        "NoKeyDesc": "A dense, deeply crystallized door. It seems to have a heartbeat.",
+        "KeyDesc": "The heart of the mountain beckons.<br>Insert the Heart Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.2,
@@ -1406,6 +1434,8 @@
       "RightLocation": {
         "SceneName": "Mines_20",
         "GateName": "right2",
+        "NoKeyDesc": "A dense, deeply crystallized door. It seems to have a heartbeat.",
+        "KeyDesc": "The heart of the mountain beckons.<br>Insert the Heart Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -1495,11 +1525,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Hive"
       },
-      "NoKeyDesc": "It's made of honeycombs, sturdy as stone.",
-      "KeyDesc": "The buzzing resonates with your soul.<br>Insert the Hive Key?",
       "LeftLocation": {
         "SceneName": "Hive_02",
         "GateName": "left2",
+        "NoKeyDesc": "It's made of honeycombs, sturdy as stone.",
+        "KeyDesc": "The buzzing resonates with your soul.<br>Insert the Hive Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -1516,6 +1546,8 @@
       "RightLocation": {
         "SceneName": "Hive_01",
         "GateName": "right1",
+        "NoKeyDesc": "It's made of honeycombs, sturdy as stone.",
+        "KeyDesc": "The buzzing resonates with your soul.<br>Insert the Hive Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -1598,11 +1630,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Acid"
       },
-      "NoKeyDesc": "A bright green door, bubbling with life. Don't touch it, though.",
-      "KeyDesc": "It sizzles with a forgotten life.<br>Insert Isma's Key?",
       "LeftLocation": {
         "SceneName": "Waterways_07",
         "GateName": "left1",
+        "NoKeyDesc": "A bright green door, bubbling with life. Don't touch it, though.",
+        "KeyDesc": "It sizzles with a forgotten life.<br>Insert Isma's Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
@@ -1612,6 +1644,8 @@
       "RightLocation": {
         "SceneName": "Abyss_01",
         "GateName": "right2",
+        "NoKeyDesc": "A bright green door, bubbling with life. Don't touch it, though.",
+        "KeyDesc": "It sizzles with a forgotten life.<br>Insert Isma's Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 29.5,
@@ -1683,11 +1717,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Joni"
       },
-      "NoKeyDesc": "A robust door overgrown with lifeblood.",
-      "KeyDesc": "You weren't invited, but you're here anyway.<br>Insert Joni's Key?",
       "LeftLocation": {
         "SceneName": "Cliffs_04",
         "GateName": "left1",
+        "NoKeyDesc": "A robust door overgrown with lifeblood.",
+        "KeyDesc": "You weren't invited, but you're here anyway.<br>Insert Joni's Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -1704,6 +1738,8 @@
       "RightLocation": {
         "SceneName": "Cliffs_01",
         "GateName": "right2",
+        "NoKeyDesc": "A robust door overgrown with lifeblood.",
+        "KeyDesc": "You weren't invited, but you're here anyway.<br>Insert Joni's Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -1789,11 +1825,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Junk"
       },
-      "NoKeyDesc": "A creaking door, rusting and rotting. It smells of infestation.",
-      "KeyDesc": "A great shadow looms beyond.<br>Insert the Junk Key?",
       "LeftLocation": {
         "SceneName": "Waterways_08",
         "GateName": "left2",
+        "NoKeyDesc": "A creaking door, rusting and rotting. It smells of infestation.",
+        "KeyDesc": "A great shadow looms beyond.<br>Insert the Junk Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 2.6,
@@ -1803,6 +1839,8 @@
       "RightLocation": {
         "SceneName": "GG_Pipeway",
         "GateName": "right1",
+        "NoKeyDesc": "A creaking door, rusting and rotting. It smells of infestation.",
+        "KeyDesc": "A great shadow looms beyond.<br>Insert the Junk Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 147.9,
@@ -1874,11 +1912,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Lake"
       },
-      "NoKeyDesc": "A wet, quiet door. There is a certain shadow about it.",
-      "KeyDesc": "You sense the sadness of a journey completed.<br>Insert the Lake Key?",
       "LeftLocation": {
         "SceneName": "Crossroads_50",
         "GateName": "left1",
+        "NoKeyDesc": "A wet, quiet door. There is a certain shadow about it.",
+        "KeyDesc": "You sense the sadness of a journey completed.<br>Insert the Lake Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -1895,6 +1933,8 @@
       "RightLocation": {
         "SceneName": "Crossroads_04",
         "GateName": "right1",
+        "NoKeyDesc": "A wet, quiet door. There is a certain shadow about it.",
+        "KeyDesc": "You sense the sadness of a journey completed.<br>Insert the Lake Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -1986,11 +2026,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Mantis"
       },
-      "NoKeyDesc": "A sharp, carefully sculpted door. It smells of honor.",
-      "KeyDesc": "Your challengers await.<br>Insert the Mantis Key?",
       "LeftLocation": {
         "SceneName": "Fungus2_13",
         "GateName": "left2",
+        "NoKeyDesc": "A sharp, carefully sculpted door. It smells of honor.",
+        "KeyDesc": "Your challengers await.<br>Insert the Mantis Key?",
         "Masks": [
           {
             "Width": 14.0,
@@ -2007,6 +2047,8 @@
       "RightLocation": {
         "SceneName": "Fungus2_14",
         "GateName": "right1",
+        "NoKeyDesc": "A sharp, carefully sculpted door. It smells of honor.",
+        "KeyDesc": "Your challengers await.<br>Insert the Mantis Key?",
         "Masks": [
           {
             "Width": 20.0,
@@ -2091,11 +2133,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.GreenThick"
       },
-      "NoKeyDesc": "A lush door, smothered in moss. It's almost hidden.",
-      "KeyDesc": "The power of leftslash compels you.<br>Insert the Moss Key?",
       "LeftLocation": {
         "SceneName": "Fungus1_11",
         "GateName": "left1",
+        "NoKeyDesc": "A lush door, smothered in moss. It's almost hidden.",
+        "KeyDesc": "The power of leftslash compels you.<br>Insert the Moss Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.8,
@@ -2105,6 +2147,8 @@
       "RightLocation": {
         "SceneName": "Fungus1_29",
         "GateName": "right1",
+        "NoKeyDesc": "A lush door, smothered in moss. It's almost hidden.",
+        "KeyDesc": "The power of leftslash compels you.<br>Insert the Moss Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -2189,11 +2233,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.GreenChain"
       },
-      "NoKeyDesc": "It looks like you can't get any closer, ghost.",
-      "KeyDesc": "It looks like you found a way to get closer.<br>Insert the Mothwing Key?",
       "LeftLocation": {
         "SceneName": "Fungus1_21",
         "GateName": "left1",
+        "NoKeyDesc": "It looks like you can't get any closer, ghost.",
+        "KeyDesc": "It looks like you found a way to get closer.<br>Insert the Mothwing Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
@@ -2203,6 +2247,8 @@
       "RightLocation": {
         "SceneName": "Fungus1_04",
         "GateName": "right1",
+        "NoKeyDesc": "It looks like you can't get any closer, ghost.",
+        "KeyDesc": "It looks like you found a way to get closer.<br>Insert the Mothwing Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -2281,11 +2327,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Deepnest"
       },
-      "NoKeyDesc": "A crunchy door laced with spider webs.",
-      "KeyDesc": "You can feel your skin crawling.<br>Insert the Nest Key?",
       "LeftLocation": {
         "SceneName": "Deepnest_30",
         "GateName": "left1",
+        "NoKeyDesc": "A crunchy door laced with spider webs.",
+        "KeyDesc": "You can feel your skin crawling.<br>Insert the Nest Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
@@ -2295,6 +2341,8 @@
       "RightLocation": {
         "SceneName": "Deepnest_03",
         "GateName": "right1",
+        "NoKeyDesc": "A crunchy door laced with spider webs.",
+        "KeyDesc": "You can feel your skin crawling.<br>Insert the Nest Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 58.9,
@@ -2375,11 +2423,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.GreenThick"
       },
-      "NoKeyDesc": "A buried door, overgrown with the lush of the canyon.",
-      "KeyDesc": "It's okay, you have an excuse this time.<br>Insert the Overgrown Key?",
       "LeftLocation": {
         "SceneName": "Fungus3_01",
         "GateName": "left1",
+        "NoKeyDesc": "A buried door, overgrown with the lush of the canyon.",
+        "KeyDesc": "It's okay, you have an excuse this time.<br>Insert the Overgrown Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 1.1,
@@ -2389,6 +2437,8 @@
       "RightLocation": {
         "SceneName": "Fungus3_24",
         "GateName": "right1",
+        "NoKeyDesc": "A buried door, overgrown with the lush of the canyon.",
+        "KeyDesc": "It's okay, you have an excuse this time.<br>Insert the Overgrown Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 98.9,
@@ -2439,11 +2489,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Pain"
       },
-      "NoKeyDesc": "An ornate door with saw blades instead of gears for a lock mechanism.",
-      "KeyDesc": "The screech of saw blades permeates all.<br>Insert the Pain Key?",
       "LeftLocation": {
         "SceneName": "White_Palace_18",
         "GateName": "right1",
+        "NoKeyDesc": "An ornate door with saw blades instead of gears for a lock mechanism.",
+        "KeyDesc": "The screech of saw blades permeates all.<br>Insert the Pain Key?",
         "Masks": [
           {
             "Width": 20.0,
@@ -2468,6 +2518,8 @@
       "RightLocation": {
         "SceneName": "White_Palace_18",
         "GateName": "right1",
+        "NoKeyDesc": "An ornate door with saw blades instead of gears for a lock mechanism.",
+        "KeyDesc": "The screech of saw blades permeates all.<br>Insert the Pain Key?",
         "Masks": [
           {
             "Width": 20.0,
@@ -2586,11 +2638,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Sanctum"
       },
-      "NoKeyDesc": "A regal door glowing with soul, awaiting a stuent.",
-      "KeyDesc": "A pure focus awaits.<br>Insert the Sanctum Key?",
       "LeftLocation": {
         "SceneName": "Ruins1_09",
         "GateName": "left1",
+        "NoKeyDesc": "A regal door glowing with soul, awaiting a stuent.",
+        "KeyDesc": "A pure focus awaits.<br>Insert the Sanctum Key?",
         "Masks": [
           {
             "Width": 7.5,
@@ -2607,6 +2659,8 @@
       "RightLocation": {
         "SceneName": "Ruins1_05",
         "GateName": "right1",
+        "NoKeyDesc": "A regal door glowing with soul, awaiting a stuent.",
+        "KeyDesc": "A pure focus awaits.<br>Insert the Sanctum Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -2685,11 +2739,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Abyssal"
       },
-      "NoKeyDesc": "A dark door forged of bones and abandoned souls.",
-      "KeyDesc": "The destiny of darkness awaits.<br>Insert the Shade Key?",
       "LeftLocation": {
         "SceneName": "Abyss_16",
         "GateName": "left1",
+        "NoKeyDesc": "A dark door forged of bones and abandoned souls.",
+        "KeyDesc": "The destiny of darkness awaits.<br>Insert the Shade Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -2706,6 +2760,8 @@
       "RightLocation": {
         "SceneName": "Abyss_06_Core",
         "GateName": "right2",
+        "NoKeyDesc": "A dark door forged of bones and abandoned souls.",
+        "KeyDesc": "The destiny of darkness awaits.<br>Insert the Shade Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -2784,11 +2840,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Traitor"
       },
-      "NoKeyDesc": "The door of a rival, a betrayor, guarding her keep.",
-      "KeyDesc": "The path of the warrior ends here.<br>Insert the Traitor's Key?",
       "LeftLocation": {
         "SceneName": "Fungus3_04",
         "GateName": "left1",
+        "NoKeyDesc": "The door of a rival, a betrayor, guarding her keep.",
+        "KeyDesc": "The path of the warrior ends here.<br>Insert the Traitor's Key?",
         "Masks": [
           {
             "Width": 10.0,
@@ -2805,6 +2861,8 @@
       "RightLocation": {
         "SceneName": "Fungus3_21",
         "GateName": "right1",
+        "NoKeyDesc": "The door of a rival, a betrayor, guarding her keep.",
+        "KeyDesc": "The path of the warrior ends here.<br>Insert the Traitor's Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 73.4,
@@ -2900,11 +2958,11 @@
         "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
         "key": "Doors.Deepnest"
       },
-      "NoKeyDesc": "A solid door reinforced with silk weaves. The beast watches you.",
-      "KeyDesc": "Even the King's influence does not reach here.<br>Insert the Village Key?",
       "LeftLocation": {
         "SceneName": "Deepnest_41",
         "GateName": "left1",
+        "NoKeyDesc": "A solid door reinforced with silk weaves. The beast watches you.",
+        "KeyDesc": "Even the King's influence does not reach here.<br>Insert the Village Key?",
         "Masks": null,
         "RequiresLantern": true,
         "X": 1.1,
@@ -2914,6 +2972,8 @@
       "RightLocation": {
         "SceneName": "Deepnest_10",
         "GateName": "right2",
+        "NoKeyDesc": "A solid door reinforced with silk weaves. The beast watches you.",
+        "KeyDesc": "Even the King's influence does not reach here.<br>Insert the Village Key?",
         "Masks": null,
         "RequiresLantern": false,
         "X": 73.9,

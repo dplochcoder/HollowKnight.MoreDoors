@@ -118,8 +118,8 @@ public static class DoorSpawner
     {
         fsm.GetState("Init").GetFirstActionOfType<PlayerDataBoolTest>().boolName = left ? data.PDDoorLeftForceOpenedName : data.PDDoorRightForceOpenedName;
         fsm.GetState("Check Key").GetFirstActionOfType<PlayerDataBoolTest>().boolName = data.PDKeyName;
-        fsm.GetState("Send Text").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(data.KeyPromptId);
-        fsm.GetState("No Key").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(data.NoKeyPromptId);
+        fsm.GetState("Send Text").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(left ? data.LeftKeyPromptId : data.RightKeyPromptId);
+        fsm.GetState("No Key").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(left ? data.LeftNoKeyPromptId : data.RightNoKeyPromptId);
 
         var origPosition = fsm.gameObject.transform.position;
         fsm.GetState("Open").AddFirstAction(new Lambda(() => ReparentDoor(fsm.gameObject, origPosition, left)));

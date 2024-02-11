@@ -67,6 +67,8 @@ public record DoorData
 
             public string SceneName;
             public string GateName;
+            public string NoKeyDesc;
+            public string KeyDesc;
             public List<SecretMask>? Masks;
             public bool RequiresLantern;
             public float X;
@@ -87,8 +89,6 @@ public record DoorData
         }
 
         public ISprite Sprite;
-        public string NoKeyDesc;
-        public string KeyDesc;
         // Location where the player looks left to the door.
         public Location LeftLocation;
         // Location where the player looks right to the door.
@@ -196,10 +196,13 @@ public record DoorData
     public string KeyTermName => $"MOREDOORS_{UpperCaseName}_KEY";
 
     [JsonIgnore]
-    public string NoKeyPromptId => $"MOREDOORS_{UpperCaseName}_DOOR_NOKEY";
-
+    public string LeftNoKeyPromptId => $"MOREDOORS_{UpperCaseName}_LEFT_DOOR_NOKEY";
     [JsonIgnore]
-    public string KeyPromptId => $"MOREDOORS_{UpperCaseName}_DOOR_KEY";
+    public string LeftKeyPromptId => $"MOREDOORS_{UpperCaseName}_LEFT_DOOR_KEY";
+    [JsonIgnore]
+    public string RightNoKeyPromptId => $"MOREDOORS_{UpperCaseName}_RIGHT_DOOR_NOKEY";
+    [JsonIgnore]
+    public string RightKeyPromptId => $"MOREDOORS_{UpperCaseName}_RIGHT_DOOR_KEY";
 
     public bool ValidateAndUpdate(out string err)
     {

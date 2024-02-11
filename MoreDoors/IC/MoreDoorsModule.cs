@@ -68,8 +68,10 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         DoorNamesByLeftForce[data.PDDoorLeftForceOpenedName] = doorName;
         DoorNamesByRightForce[data.PDDoorRightForceOpenedName] = doorName;
 
-        PromptStrings[data.NoKeyPromptId] = data.Door.NoKeyDesc;
-        PromptStrings[data.KeyPromptId] = data.Door.KeyDesc;
+        PromptStrings[data.LeftKeyPromptId] = data.Door.LeftLocation.KeyDesc;
+        PromptStrings[data.LeftNoKeyPromptId] = data.Door.LeftLocation.NoKeyDesc;
+        PromptStrings[data.RightKeyPromptId] = data.Door.RightLocation.KeyDesc;
+        PromptStrings[data.RightNoKeyPromptId] = data.Door.RightLocation.NoKeyDesc;
 
         data.Door.Deployers?.ForEach(d => DeployersByScene.GetOrAddNew(d.SceneName).Add(d));
     }
