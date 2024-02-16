@@ -68,7 +68,7 @@ public class RequestModifier
     private static void ApplyTransitionRando(RequestBuilder rb)
     {
         var ts = rb.gs.TransitionSettings;
-        if (!MoreDoors.GS.RandoSettings.RandomizeDoorTransitions || ts.Mode != TransitionSettings.TransitionMode.None)
+        if (!MoreDoors.GS.RandoSettings.IsEnabled || !MoreDoors.GS.RandoSettings.RandomizeDoorTransitions || ts.Mode != TransitionSettings.TransitionMode.None)
         {
             return;
         }
