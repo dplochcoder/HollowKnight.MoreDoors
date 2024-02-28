@@ -34,6 +34,8 @@ public static class Vanilla
             var data = DoorData.GetFromJson(door);
             placements.Add(data.Key.Location.Wrap().Add(Finder.GetItem(data.Key.ItemName)));
         }
+
+        ItemChangerMod.CreateSettingsProfile(false);
         ItemChangerMod.AddPlacements(placements);
 
         if (!rando && doorNames.Count > 0)
