@@ -4,6 +4,7 @@ using ItemChanger;
 using ItemChanger.Extensions;
 using ItemChanger.FsmStateActions;
 using MoreDoors.Data;
+using SFCore.Utils;
 using UnityEngine;
 
 namespace MoreDoors.IC;
@@ -114,25 +115,31 @@ public static class DoorSpawner
         obj.transform.rotation = new(0, left ? 0 : 180, 0, 1);
     }
 
+    private static FsmState GetState(PlayMakerFSM fsm, string name) => FsmUtil.GetState(fsm, name);
+
     private static void SetupConversationControl(PlayMakerFSM fsm, DoorData data, bool left)
     {
-        fsm.GetState("Init").GetFirstActionOfType<PlayerDataBoolTest>().boolName = left ? data.PDDoorLeftForceOpenedName : data.PDDoorRightForceOpenedName;
-        fsm.GetState("Check Key").GetFirstActionOfType<PlayerDataBoolTest>().boolName = data.PDKeyName;
-        fsm.GetState("Send Text").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(left ? data.LeftKeyPromptId : data.RightKeyPromptId);
-        fsm.GetState("No Key").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(left ? data.LeftNoKeyPromptId : data.RightNoKeyPromptId);
+        GetState(fsm, "Init").GetFirstActionOfType<PlayerDataBoolTest>().boolName = left ? data.PDDoorLeftForceOpenedName : data.PDDoorRightForceOpenedName;
+        GetState(fsm, "Check Key").GetFirstActionOfType<PlayerDataBoolTest>().boolName = data.PDKeyName;
+        GetState(fsm, "Send Text").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(left ? data.LeftKeyPromptId : data.RightKeyPromptId);
+        GetState(fsm, "No Key").GetFirstActionOfType<CallMethodProper>().parameters[0] = NewStringVar(left ? data.LeftNoKeyPromptId : data.RightNoKeyPromptId);
 
         var origPosition = fsm.gameObject.transform.position;
-        fsm.GetState("Open").AddFirstAction(new Lambda(() => ReparentDoor(fsm.gameObject, origPosition, left)));
+        GetState(fsm, "Open").AddFirstAction(new Lambda(() => ReparentDoor(fsm.gameObject, origPosition, left)));
 
-        var setters = fsm.GetState("Yes").GetActionsOfType<SetPlayerDataBool>();
+        var setters = GetState(fsm, "Yes").GetActionsOfType<SetPlayerDataBool>();
         setters[0].boolName = MoreDoorsModule.EmptyBoolName;
         setters[1].boolName = data.PDDoorOpenedName;
     }
 
-    private static void SetupNpcControlOnRight(PlayMakerFSM fsm)
+    private static void SetupNpcControl(PlayMakerFSM fsm, bool left)
     {
-        fsm.FsmVariables.FindFsmBool("Hero Always Left").Value = true;
-        fsm.FsmVariables.FindFsmBool("Hero Always Right").Value = false;
+        var playerTag = fsm.AddFsmStringVariable("PlayerTag");
+        playerTag.RawValue = "Player";
+        GetState(fsm, "Idle").GetFirstActionOfType<Trigger2dEvent>().collideTag = playerTag;
+
+        fsm.FsmVariables.FindFsmBool("Hero Always Left").Value = !left;
+        fsm.FsmVariables.FindFsmBool("Hero Always Right").Value = left;
     }
 
     private static EmbeddedSprite SECRET_SPRITE = new("SecretMask");
@@ -187,12 +194,8 @@ public static class DoorSpawner
         renderer.sprite = data.Door.Sprite.Value;
         var open = mod.IsDoorOpened(doorName, left);
         if (!open && loc.Masks != null) MaybeSpawnSecretMasks(gameObj.transform.position, doorName, data, left, loc);
-
-        if (!left)
-        {
-            gameObj.transform.rotation = new(0, 180, 0, 0);
-            SetupNpcControlOnRight(gameObj.LocateMyFSM("npc_control"));
-        }
+        
+        if (!left) gameObj.transform.rotation = new(0, 180, 0, 0);
 
         gameObj.name = $"{data.CamelCaseName} Door";
         gameObj.AddComponent<DoorNameMarker>().DoorName = doorName;
@@ -217,6 +220,9 @@ public static class DoorSpawner
 
         loc.Decorators?.ForEach(dec => dec.Decorate(gameObj));
         gameObj.SetActive(true);
+
+        // Something resets the variables on awake so we have to do this last.
+        SetupNpcControl(gameObj.LocateMyFSM("npc_control"), left);
     }
 
 }
