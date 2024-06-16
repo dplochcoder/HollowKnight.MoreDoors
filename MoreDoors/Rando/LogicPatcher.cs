@@ -78,6 +78,7 @@ public static class LogicPatcher
         { "Hallownest's Crown", ForbidUnlessRoomRando(DoorNames.CROWN) },
         { "Kingdom's Edge", ForbidUnlessRoomRando(DoorNames.BARDOON) },
         { "Lower Greenpath", ForbidUnlessRoomRando(DoorNames.MOSS) },
+        { "West Fog Canyon", ForbidUnlessRoomRando(DoorNames.OVERGROWN) },
     };
     private static void PatchStartLocations(Dictionary<string, StartDef> startDefs)
     {
