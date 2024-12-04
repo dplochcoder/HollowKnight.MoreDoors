@@ -12,12 +12,12 @@ internal class MoreKeysStats : StatController
 {
     public record KeyCollection
     {
-        public string keyName;
+        public string keyName = "";
         public float time;
     }
 
-    public List<KeyCollection> KeyCollections = new();
-    public HashSet<string> Keys = new();
+    public List<KeyCollection> KeyCollections = [];
+    public HashSet<string> Keys = [];
 
     public override IEnumerable<DisplayInfo> GetDisplayInfos()
     {
@@ -27,7 +27,7 @@ internal class MoreKeysStats : StatController
         yield return new()
         {
             Title = $"More Keys Timeline",
-            MainStat = $"Keys Collected: {KeyCollections.Count} of {ItemChangerMod.Modules.Get<MoreDoorsModule>().DoorStates.Count}",
+            MainStat = $"Keys Collected: {KeyCollections.Count} of {ItemChangerMod.Modules.Get<MoreDoorsModule>()!.DoorStates.Count}",
             StatColumns = Columnize(rows),
             Priority = BuiltinScreenPriorityValues.ExtensionStats
         };
@@ -38,7 +38,7 @@ internal class MoreKeysStats : StatController
     private List<string> Columnize(List<string> rows)
     {
         int numCols = (rows.Count + COL_SIZE - 1) / COL_SIZE;
-        List<string> list = new();
+        List<string> list = [];
         for (int i = 0; i < numCols; i++)
         {
             list.Add(string.Join("\n", rows.Slice(i, numCols)));
@@ -58,7 +58,7 @@ internal class MoreKeysStats : StatController
         KeyCollections.Add(new()
         {
             keyName = keyName,
-            time = Common.Instance.CountedTime
+            time = FStatsMod.LS.Get<Common>().CountedTime
         });
     }
 }

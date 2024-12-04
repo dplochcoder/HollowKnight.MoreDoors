@@ -83,10 +83,10 @@ public static class LogicPatcher
     private static void PatchStartLocations(Dictionary<string, StartDef> startDefs)
     {
         // Forbid starting in a room with a door in it, to be safe.
-        Dictionary<string, List<string>> sceneToDoors = new();
-        foreach (var data in DoorData.Data)
+        Dictionary<string, List<string>> sceneToDoors = [];
+        foreach (var data in DoorData.AllDoors())
         {
-            var door = data.Value.Door;
+            var door = data.Value.Door!;
             sceneToDoors.GetOrAddNew(door.LeftSceneName).Add(data.Key);
             sceneToDoors.GetOrAddNew(door.RightSceneName).Add(data.Key);
         }
@@ -102,22 +102,22 @@ public static class LogicPatcher
     }
     private static void HandleDoorLogic(LogicManagerBuilder lmb, DoorData data, HashSet<string> fixedTerms, Dictionary<string, SimpleToken> replacementMap)
     {
-        switch (data.Door.Mode)
+        switch (data.Door!.Mode)
         {
             case DoorData.DoorInfo.SplitMode.Normal:
                 {
-                    HandleTransition(lmb, data, data.Door.LeftLocation, fixedTerms, replacementMap);
-                    HandleTransition(lmb, data, data.Door.RightLocation, fixedTerms, replacementMap);
+                    HandleTransition(lmb, data, data.Door.LeftLocation!, fixedTerms, replacementMap);
+                    HandleTransition(lmb, data, data.Door.RightLocation!, fixedTerms, replacementMap);
                     break;
                 }
             case DoorData.DoorInfo.SplitMode.LeftTwin:
                 {
-                    HandleTransition(lmb, data, data.Door.LeftLocation, fixedTerms, replacementMap);
+                    HandleTransition(lmb, data, data.Door.LeftLocation!, fixedTerms, replacementMap);
                     break;
                 }
             case DoorData.DoorInfo.SplitMode.RightTwin:
                 {
-                    HandleTransition(lmb, data, data.Door.RightLocation, fixedTerms, replacementMap);
+                    HandleTransition(lmb, data, data.Door.RightLocation!, fixedTerms, replacementMap);
                     break;
                 }
         }
@@ -133,7 +133,7 @@ public static class LogicPatcher
         lmb.GetOrAddTerm(doorLoc.TransitionName, TermType.State);
         lmb.AddWaypoint(new(doorLoc.TransitionProxyName, lmb.LogicLookup[doorLoc.TransitionName].ToInfix()));
 
-        bool split = data.Door.Mode == DoorData.DoorInfo.SplitMode.Normal;
+        bool split = data.Door!.Mode == DoorData.DoorInfo.SplitMode.Normal;
         string lanternClause = doorLoc.RequiresLantern ? " + LANTERN" : "";
         if (split) lmb.DoLogicEdit(new(doorLoc.TransitionProxyName, $"ORIG | {doorLoc.TransitionName}"));
         else
@@ -155,7 +155,7 @@ public static class LogicPatcher
             "SIDESLASH | UPSLASH | CYCLONE | GREATSLASH | FULLDASHSLASH | ANYDASHSLASH + DASHMASTER + OBSCURESKIPS | SPICYCOMBATSKIPS");
 
         var ls = RandoInterop.LS;
-        foreach (var e in DoorData.Data)
+        foreach (var e in DoorData.AllDoors())
         {
             var doorName = e.Key;
             var data = e.Value;
@@ -165,7 +165,7 @@ public static class LogicPatcher
                 // Modify transition logic for this door.
                 var keyTerm = lmb.GetOrAddTerm(data.KeyTermName);
                 HandleDoorLogic(lmb, data, ls.ModifiedLogicNames, ls.LogicSubstitutions);
-                lmb.AddItem(new CappedItem(data.Key.ItemName, new TermValue[] { new(keyTerm, 1) }, new(keyTerm, 1)));
+                lmb.AddItem(new CappedItem(data.Key!.ItemName, [new(keyTerm, 1)], new(keyTerm, 1)));
 
                 // Modify the infection wall.
                 if (doorName == DoorNames.FALSE)
@@ -178,7 +178,7 @@ public static class LogicPatcher
             }
 
             // Add vanilla key logic defs.
-            if (ls.IncludeKeyLocation(doorName)) lmb.AddLogicDef(new(data.Key.Location.name, data.Key.Logic));
+            if (ls.IncludeKeyLocation(doorName)) lmb.AddLogicDef(new(data.Key!.Location!.name, data.Key!.Logic));
         }
     }
 

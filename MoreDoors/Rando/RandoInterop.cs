@@ -11,7 +11,7 @@ namespace MoreDoors.Rando;
 
 public static class RandoInterop
 {
-    public static LocalSettings LS { get; set; }
+    public static LocalSettings LS { get; set; } = new();
 
     private static void EarlyCreateSettings(RandoController rc)
     {
@@ -30,7 +30,7 @@ public static class RandoInterop
         LogicPatcher.Setup();
         RequestModifier.Setup();
         CondensedSpoilerLogger.AddCategory("MoreDoors Keys", _ => IsEnabled,
-            new(DoorData.Data.Select(e => e.Value.Key.ItemName)));
+            new(DoorData.AllDoors().Select(e => e.Value.Key!.ItemName)));
 
         RandoController.OnBeginRun += EarlyCreateSettings;
         RandoController.OnExportCompleted += OnExportCompleted;
@@ -43,10 +43,7 @@ public static class RandoInterop
         if (!IsEnabled) return;
 
         var mod = ItemChangerMod.Modules.GetOrAdd<MoreDoorsModule>();
-        foreach (var doorName in LS.EnabledDoorNames)
-        {
-            mod.DoorStates[doorName] = new(DoorData.GetFromJson(doorName));
-        }
+        foreach (var doorName in LS.EnabledDoorNames) mod.DoorStates[doorName] = new();
     }
 
     private static void LogSettings(RandomizerMod.Logging.LogArguments args, TextWriter tw)

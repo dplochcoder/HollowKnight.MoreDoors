@@ -9,7 +9,7 @@ namespace MoreDoors.IC;
 
 public class KeyItem : AbstractItem
 {
-    public string DoorName;
+    public string DoorName = "";
 
     private static InteropTag AddInterop(TaggableObject o)
     {
@@ -32,11 +32,11 @@ public class KeyItem : AbstractItem
 
     }
 
-    public KeyItem(string doorName, DoorData data) : this(doorName, data.Key.ItemName, new MsgUIDef()
+    public KeyItem(string doorName, DoorData data) : this(doorName, data.Key!.ItemName, new MsgUIDef()
     {
         name = new BoxedString(data.Key.UIItemName),
         shopDesc = new BoxedString(data.Key.ShopDesc),
-        sprite = data.Key.Sprite,
+        sprite = data.Key.Sprite!,
     })
     { }
 
@@ -44,7 +44,7 @@ public class KeyItem : AbstractItem
     {
         if (HasTag<InteropTag>()) return;
 
-        var loc = data.Key.Location;
+        var loc = data.Key!.Location!;
         // TODO: This seems like a bug in ItemChanger that we have to do this.
         // DualPlacement concatenates tags from both delegate locations, but it ignores any tags set on the DualLocation itself.
         if (loc is DualLocation dl) loc = dl.falseLocation;
@@ -54,7 +54,7 @@ public class KeyItem : AbstractItem
 
     public override AbstractItem Clone() => new KeyItem(DoorName, name, UIDef?.Clone());
 
-    public override void GiveImmediate(GiveInfo info) => PlayerData.instance.SetBool(DoorData.GetFromModule(DoorName).PDKeyName, true);
+    public override void GiveImmediate(GiveInfo info) => PlayerData.instance.SetBool(DoorData.GetDoor(DoorName)!.PDKeyName, true);
 
-    public override bool Redundant() => PlayerData.instance.GetBool(DoorData.GetFromModule(DoorName).PDKeyName);
+    public override bool Redundant() => PlayerData.instance.GetBool(DoorData.GetDoor(DoorName)!.PDKeyName);
 }

@@ -11,12 +11,12 @@ namespace MoreDoors.IC;
 
 public class DoorNameMarker : MonoBehaviour
 {
-    public string DoorName;
+    public string DoorName = "";
 }
 
 internal class SplitDoorSyncer : MonoBehaviour
 {
-    private string DoorName;
+    private string DoorName = "";
 
     private void Awake()
     {
@@ -37,10 +37,10 @@ internal class SplitDoorSyncer : MonoBehaviour
 
 internal class DoorSecretMask : MonoBehaviour
 {
-    public string DoorName;
+    public string DoorName = "";
     public bool Left;
 
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer? spriteRenderer;
 
     private void Awake()
     {
@@ -75,7 +75,7 @@ internal class DoorSecretMask : MonoBehaviour
             return;
         }
 
-        var c = spriteRenderer.color;
+        var c = spriteRenderer!.color;
         spriteRenderer.color = new(c.r, c.g, c.b, 1.0f - (fade / FADE_TIME));
     }
 
@@ -142,16 +142,16 @@ public static class DoorSpawner
         fsm.FsmVariables.FindFsmBool("Hero Always Right").Value = left;
     }
 
-    private static EmbeddedSprite SECRET_SPRITE = new("SecretMask");
+    private static readonly EmbeddedSprite SECRET_SPRITE = new("SecretMask");
 
     private static void MaybeSpawnSecretMasks(Vector3 basePos, string doorName, DoorData data, bool left, DoorData.DoorInfo.Location loc)
     {
-        bool showMasks = data.Door.Mode == DoorData.DoorInfo.SplitMode.Normal;
+        bool showMasks = data.Door!.Mode == DoorData.DoorInfo.SplitMode.Normal;
         if (!showMasks)
         {
             bool nextToGate = left != (data.Door.Mode == DoorData.DoorInfo.SplitMode.LeftTwin);
 
-            var mod = ItemChangerMod.Modules.Get<MoreDoorsModule>();
+            var mod = ItemChangerMod.Modules.Get<MoreDoorsModule>()!;
             bool cameFromGate = mod.LastSceneName == loc.SceneName && mod.LastGateName == loc.GateName;
 
             showMasks = nextToGate == cameFromGate;
@@ -159,7 +159,7 @@ public static class DoorSpawner
 
         if (!showMasks) return;
 
-        foreach (var mask in loc.Masks)
+        foreach (var mask in loc.Masks ?? [])
         {
             var obj = new GameObject($"{doorName}_SecretMask");
             obj.SetActive(false);
@@ -182,16 +182,16 @@ public static class DoorSpawner
 
     public static void SpawnDoor(MoreDoorsModule mod, SceneManager sm, string doorName, bool left)
     {
-        var data = DoorData.GetFromModule(doorName);
+        var data = DoorData.GetDoor(doorName)!;
         var gameObj = Object.Instantiate(Preloader.Instance.Door);
         var convCtrl = gameObj.LocateMyFSM("Conversation Control");
         SetupConversationControl(convCtrl, data, left);
 
-        var loc = left ? data.Door.LeftLocation : data.Door.RightLocation;
+        var loc = left ? data.Door!.LeftLocation! : data.Door!.RightLocation!;
         gameObj.transform.position = new(loc.X, loc.Y, gameObj.transform.position.z);
 
         var renderer = gameObj.GetComponent<SpriteRenderer>();
-        renderer.sprite = data.Door.Sprite.Value;
+        renderer.sprite = data.Door.Sprite!.Value;
         var open = mod.IsDoorOpened(doorName, left);
         if (!open && loc.Masks != null) MaybeSpawnSecretMasks(gameObj.transform.position, doorName, data, left, loc);
         
@@ -201,12 +201,12 @@ public static class DoorSpawner
         gameObj.AddComponent<DoorNameMarker>().DoorName = doorName;
         if (!open && data.Door.Mode != DoorData.DoorInfo.SplitMode.Normal) gameObj.AddComponent<SplitDoorSyncer>();
 
-        var promptMarker = gameObj.FindChild("Prompt Marker");
+        var promptMarker = gameObj.FindChild("Prompt Marker")!;
         promptMarker.transform.localPosition = new(0.7f, 0.77f, 0.206f);
         promptMarker.AddComponent<DeactivateInDarknessWithoutLantern>().enabled = true;
 
         // Fix the phys box.
-        var physBox = gameObj.FindChild("Phys Box").GetComponent<BoxCollider2D>();
+        var physBox = gameObj.FindChild("Phys Box")!.GetComponent<BoxCollider2D>();
         physBox.offset += new Vector2(0.5f * (left ? -1 : 1), -0.35f);
         physBox.size += new Vector2(1f, -0.7f);
 

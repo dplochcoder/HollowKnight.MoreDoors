@@ -15,7 +15,7 @@ namespace MoreDoors.Rando;
 
 internal class ConnectionMenu
 {
-    public static ConnectionMenu Instance { get; private set; }
+    public static ConnectionMenu? Instance { get; private set; }
 
     public static void Setup()
     {
@@ -34,7 +34,7 @@ internal class ConnectionMenu
 
     public static bool TryGetMenuButton(MenuPage page, out SmallButton button)
     {
-        button = Instance.entryButton;
+        button = Instance!.entryButton;
         return true;
     }
 
@@ -82,10 +82,10 @@ internal class ConnectionMenu
 
     }
 
-    private SmallButton entryButton;
-    private MenuItem<DoorsLevel> doorsLevel;
-    private MenuItem<AddKeyLocations> addKeyLocations;
-    private MenuItem<bool> transitions;
+    private readonly SmallButton entryButton;
+    private readonly MenuItem<DoorsLevel> doorsLevel;
+    private readonly MenuItem<AddKeyLocations> addKeyLocations;
+    private readonly MenuItem<bool> transitions;
 
     // Event for any change in settings
     private delegate void CustomDoorsChanged();
@@ -139,12 +139,12 @@ internal class ConnectionMenu
         SmallButton b = new(page, text);
         OnCustomDoorsChanged += () =>
         {
-            if (DoorData.Data.Keys.All(d => Settings.IsDoorEnabled(d) == enabled)) b.Lock();
+            if (DoorData.AllDoors().Keys.All(d => Settings.IsDoorEnabled(d) == enabled)) b.Lock();
             else b.Unlock();
         };
         b.OnClick += () =>
         {
-            DoorData.Data.Keys.ForEach(d => Settings.SetDoorEnabled(d, enabled));
+            DoorData.AllDoors().Keys.ForEach(d => Settings.SetDoorEnabled(d, enabled));
             OnCustomDoorsChanged();
         };
         return b;
@@ -152,8 +152,8 @@ internal class ConnectionMenu
 
     private void FillCustomDoorsPage(MenuPage page)
     {
-        List<IMenuElement> doorButtons = new();
-        foreach (var e in DoorData.Data)
+        List<IMenuElement> doorButtons = [];
+        foreach (var e in DoorData.AllDoors())
         {
             var doorName = e.Key;
             var data = e.Value;

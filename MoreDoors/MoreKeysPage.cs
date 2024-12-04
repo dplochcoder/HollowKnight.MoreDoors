@@ -19,13 +19,21 @@ public class MoreKeysPage
 
     private class KeySlot
     {
-        public GameObject obj;
-        public GameObject img;
-        public GameObject check;
-        public SpriteRenderer spriteRenderer;
+        public readonly GameObject obj;
+        public readonly GameObject img;
+        public readonly GameObject check;
+        public readonly SpriteRenderer spriteRenderer;
+
+        public KeySlot(GameObject obj, GameObject img, GameObject check, SpriteRenderer spriteRenderer)
+        {
+            this.obj = obj;
+            this.img = img;
+            this.check = check;
+            this.spriteRenderer = spriteRenderer;
+        }
     }
-    private readonly List<KeySlot> keySlots = new();
-    private readonly List<string> inventoryKeys = new();
+    private readonly List<KeySlot> keySlots = [];
+    private readonly List<string> inventoryKeys = [];
 
     private static readonly Color KEY_OBTAINED_COLOR = new(1, 1, 1);
     private static readonly Color KEY_USED_COLOR = new(0.25f, 0.25f, 0.25f);
@@ -45,7 +53,7 @@ public class MoreKeysPage
         }
     }
 
-    private bool GetMod(out MoreDoorsModule mod)
+    private bool GetMod(out MoreDoorsModule? mod)
     {
         try
         {
@@ -64,21 +72,21 @@ public class MoreKeysPage
         if (!GetMod(out var mod)) return;
         inventoryKeys.Clear();
 
-        foreach (var e in mod.DoorStates)
+        foreach (var e in mod!.DoorStates)
         {
             var door = e.Key;
             var dState = e.Value;
             if (dState.KeyObtained) inventoryKeys.Add(door);
         }
 
-        for (int i = 0; i < DoorData.Count; i++)
+        for (int i = 0; i < DoorData.AllDoors().Count; i++)
         {
             var ks = keySlots[i];
             string? door = i < inventoryKeys.Count ? inventoryKeys[i] : null;
             if (door != null)
             {
                 var ds = mod.DoorStates[door];
-                ks.spriteRenderer.sprite = DoorData.GetFromModule(door).Key.Sprite.Value;
+                ks.spriteRenderer.sprite = DoorData.GetDoor(door)!.Key!.Sprite!.Value;
                 ks.spriteRenderer.color = ds.DoorOpened ? KEY_USED_COLOR : KEY_OBTAINED_COLOR;
                 ks.img.transform.localScale = ds.DoorOpened ? KEY_USED_SCALE : KEY_OBTAINED_SCALE;
                 ks.check.SetActive(ds.KeyObtained && ds.DoorOpened);
@@ -91,10 +99,10 @@ public class MoreKeysPage
         }
     }
 
-    private ISprite checkSprite = new EmbeddedSprite("Checkmark");
-    private ISprite emptySprite = new EmbeddedSprite("UnplacedKey");
-    private GameObject keyTitle;
-    private GameObject keyDesc;
+    private readonly ISprite checkSprite = new EmbeddedSprite("Checkmark");
+    private readonly ISprite emptySprite = new EmbeddedSprite("UnplacedKey");
+    private GameObject? keyTitle;
+    private GameObject? keyDesc;
 
     private const int leftArrowIndex = -2;
     private const int rightArrowIndex = -3;
@@ -144,7 +152,7 @@ public class MoreKeysPage
         mesh.alignment = TextAlignmentOptions.Top;
         keyDesc.GetComponent<TextContainer>().rect = new(0, 0, 22, 10);
 
-        for (int i = 0; i < DoorData.Count; i++)
+        for (int i = 0; i < DoorData.AllDoors().Count; i++)
         {
             GameObject obj = new($"MoreDoors Menu Parent {i}");
             obj.transform.SetParent(moreKeysPage.transform);
@@ -175,12 +183,7 @@ public class MoreKeysPage
             sr2.sortingLayerName = "HUD";
             check.SetActive(false);
 
-            keySlots.Add(new() {
-                obj = obj,
-                img = img,
-                check = check,
-                spriteRenderer = sr
-            });
+            keySlots.Add(new(obj, img, check, sr));
         }
 
         // Removing the jump from arrow button to arrow button.
@@ -200,35 +203,35 @@ public class MoreKeysPage
         fsm.AddState(new FsmState(fsm.Fsm)
         {
             Name = "Up Press",
-            Actions = new FsmStateAction[] { new Lambda(() => HandleUpPress(fsm)) }
+            Actions = [new Lambda(() => HandleUpPress(fsm))]
         });
         fsm.AddState(new FsmState(fsm.Fsm)
         {
             Name = "Down Press",
-            Actions = new FsmStateAction[] { new Lambda(() => HandleDownPress(fsm)) }
+            Actions = [new Lambda(() => HandleDownPress(fsm))]
         });
         fsm.AddState(new FsmState(fsm.Fsm)
         {
             Name = "Left Press",
-            Actions = new FsmStateAction[] { new Lambda(() => HandleLeftPress(fsm)) }
+            Actions = [new Lambda(() => HandleLeftPress(fsm))]
         });
         fsm.AddState(new FsmState(fsm.Fsm)
         {
             Name = "Right Press",
-            Actions = new FsmStateAction[] { new Lambda(() => HandleRightPress(fsm)) }
+            Actions = [new Lambda(() => HandleRightPress(fsm))]
         });
 
         // Add states for each slot on the board.
         var rArrow = fsm.GetState("R Arrow");
         var uCursor = fsm.gameObject.LocateMyFSM("Update Cursor");
-        for (int i = 0; i < DoorData.Count; i++)
+        for (int i = 0; i < DoorData.AllDoors().Count; i++)
         {
             int index = i;
             fsm.AddState(new FsmState(fsm.Fsm)
             {
                 Name = $"Key {index}",
-                Actions = new FsmStateAction[]
-                {
+                Actions =
+                [
                     new Lambda(() => uCursor.FsmVariables.FindFsmGameObject("Item").Value = keySlots[index].obj),
                     new SetSpriteRendererOrder()
                     {
@@ -238,7 +241,7 @@ public class MoreKeysPage
                     },
                     new Lambda(() => uCursor.SendEvent("UPDATE CURSOR")),
                     new Lambda(() => SetSelectedKeyIndex(index)),
-                }
+                ]
             });
             rArrow.AddTransition($"KEY_{index}", $"Key {index}");
         }
@@ -249,7 +252,7 @@ public class MoreKeysPage
         {
             var dirState = fsm.GetState($"{dir} Press");
 
-            for (int i = 0; i < DoorData.Count; i++)
+            for (int i = 0; i < DoorData.AllDoors().Count; i++)
             {
                 dirState.AddTransition($"KEY_{i}", $"Key {i}");
                 var keyState = fsm.GetState($"Key {i}");
@@ -274,22 +277,22 @@ public class MoreKeysPage
         selectedIndex = index;
         if (index == rightArrowIndex || index == leftArrowIndex)
         {
-            keyTitle.GetComponent<TextMeshPro>().text = "";
-            keyDesc.GetComponent<TextMeshPro>().text = "";
+            keyTitle!.GetComponent<TextMeshPro>().text = "";
+            keyDesc!.GetComponent<TextMeshPro>().text = "";
         }
         else if (inventoryKeys.Count == 0)
         {
-            keyTitle.GetComponent<TextMeshPro>().text = "???";
-            keyDesc.GetComponent<TextMeshPro>().text = "Hallownest remains a sealed vault, for now.";
+            keyTitle!.GetComponent<TextMeshPro>().text = "???";
+            keyDesc!.GetComponent<TextMeshPro>().text = "Hallownest remains a sealed vault, for now.";
         }
         else
         {
             string door = inventoryKeys[index];
-            var dState = ItemChangerMod.Modules.Get<MoreDoorsModule>().DoorStates[door];
-            var data = dState.Data;
+            var dState = ItemChangerMod.Modules.Get<MoreDoorsModule>()!.DoorStates[door];
+            var data = DoorData.GetDoor(door)!;
 
-            keyTitle.GetComponent<TextMeshPro>().text = data.Key.UIItemName;
-            keyDesc.GetComponent<TextMeshPro>().text = dState.DoorOpened ? data.Key.UsedInvDesc : data.Key.InvDesc;
+            keyTitle!.GetComponent<TextMeshPro>().text = data.Key!.UIItemName;
+            keyDesc!.GetComponent<TextMeshPro>().text = dState.DoorOpened ? data.Key.UsedInvDesc : data.Key.InvDesc;
         }
     }
 

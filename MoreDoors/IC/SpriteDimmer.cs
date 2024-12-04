@@ -7,8 +7,8 @@ namespace MoreDoors.IC;
 
 internal record SpriteDimmer : IDeployer
 {
-    public string SceneName;
-    public string TargetGameObject;
+    public string SceneName = "";
+    public string TargetGameObject = "";
     public float AlphaMultiplier;
 
     string IDeployer.SceneName => SceneName;

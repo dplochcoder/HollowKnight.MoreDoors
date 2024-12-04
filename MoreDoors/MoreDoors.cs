@@ -15,18 +15,18 @@ namespace MoreDoors;
 
 public class MoreDoors : Mod, IGlobalSettings<GlobalSettings>, ICustomMenuMod
 {
-    public static MoreDoors Instance { get; private set; }
+    public static MoreDoors? Instance { get; private set; }
     public static GlobalSettings GS { get; private set; } = new();
 
     public bool ToggleButtonInsideMenu => false;
 
-    public static new void LogDebug(string msg) { ((Loggable)Instance).LogDebug(msg); }
+    public static new void LogDebug(string msg) { ((Loggable)Instance!).LogDebug(msg); }
 
-    public static new void Log(string msg) { ((Loggable)Instance).Log(msg); }
+    public static new void Log(string msg) { ((Loggable)Instance!).Log(msg); }
 
-    public static new void LogWarn(string msg) { ((Loggable)Instance).LogWarn(msg); }
+    public static new void LogWarn(string msg) { ((Loggable)Instance!).LogWarn(msg); }
 
-    public static new void LogError(string msg) { ((Loggable)Instance).LogError(msg); }
+    public static new void LogError(string msg) { ((Loggable)Instance!).LogError(msg); }
 
     public MoreDoors() : base("MoreDoors")
     {
@@ -76,7 +76,7 @@ public class MoreDoors : Mod, IGlobalSettings<GlobalSettings>, ICustomMenuMod
         {
             Name = Localize("Enable in Vanilla"),
             Description = "If yes, MoreDoors will be added to vanilla save files.",
-            Values = new string[] { "No", "Yes" },
+            Values = ["No", "Yes"],
             Saver = i => GS.EnableInVanilla = i == 1,
             Loader = () => GS.EnableInVanilla ? 1 : 0
         });
@@ -84,7 +84,7 @@ public class MoreDoors : Mod, IGlobalSettings<GlobalSettings>, ICustomMenuMod
         {
             Name = Localize("Show Key Shinies"),
             Description = "If yes, enemies holding keys will be marked with a shiny as a hint.",
-            Values = new string[] { "No", "Yes" },
+            Values = ["No", "Yes"],
             Saver = i => GS.ShowKeyShinies = i == 1,
             Loader = () => GS.ShowKeyShinies ? 1 : 0
         });

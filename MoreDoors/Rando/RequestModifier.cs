@@ -23,13 +23,13 @@ public class RequestModifier
     {
         if (!RandoInterop.IsEnabled) return;
 
-        foreach (var e in DoorData.Data)
+        foreach (var e in DoorData.AllDoors())
         {
             var doorName = e.Key;
             var data = e.Value;
             if (RandoInterop.LS.IncludeDoor(doorName))
             {
-                rb.EditItemRequest(data.Key.ItemName, info =>
+                rb.EditItemRequest(data.Key!.ItemName, info =>
                 {
                     info.getItemDef = () => new()
                     {
@@ -43,12 +43,12 @@ public class RequestModifier
 
             if (RandoInterop.LS.IncludeKeyLocation(doorName))
             {
-                rb.EditLocationRequest(data.Key.Location.name, info =>
+                rb.EditLocationRequest(data.Key!.Location!.name, info =>
                 {
                     info.getLocationDef = () => new()
                     {
                         Name = data.Key.Location.name,
-                        SceneName = data.Key.Location.sceneName
+                        SceneName = data.Key.Location.sceneName ?? ""
                     };
                 });
             }
@@ -57,13 +57,13 @@ public class RequestModifier
 
     private const string TRANSITION_STAGE_NAME = "More Doors Transition Stage";
 
-    private static IEnumerable<string> SplitLeftTransitions() => RandoInterop.LS.EnabledDoorNames.Select(d => DoorData.GetFromJson(d).Door)
+    private static IEnumerable<string> SplitLeftTransitions() => RandoInterop.LS.EnabledDoorNames.Select(d => DoorData.GetDoor(d)!.Door!)
         .Where(d => d.Mode == DoorData.DoorInfo.SplitMode.Normal)
-        .Select(d => d.LeftLocation.TransitionName);
+        .Select(d => d.LeftLocation!.TransitionName);
 
-    private static IEnumerable<string> SplitRightTransitions() => RandoInterop.LS.EnabledDoorNames.Select(d => DoorData.GetFromJson(d).Door)
+    private static IEnumerable<string> SplitRightTransitions() => RandoInterop.LS.EnabledDoorNames.Select(d => DoorData.GetDoor(d)!.Door!)
         .Where(d => d.Mode == DoorData.DoorInfo.SplitMode.Normal)
-        .Select(d => d.RightLocation.TransitionName);
+        .Select(d => d.RightLocation!.TransitionName);
 
     private static void ApplyTransitionRando(RequestBuilder rb)
     {
@@ -75,10 +75,10 @@ public class RequestModifier
 
         foreach (var door in RandoInterop.LS.EnabledDoorNames)
         {
-            var data = DoorData.GetFromJson(door);
-            if (data.Door.Mode != DoorData.DoorInfo.SplitMode.Normal) continue;
+            var data = DoorData.GetDoor(door)!;
+            if (data.Door!.Mode != DoorData.DoorInfo.SplitMode.Normal) continue;
 
-            VanillaDef left = new(data.Door.LeftLocation.TransitionName, data.Door.RightLocation.TransitionName);
+            VanillaDef left = new(data.Door.LeftLocation!.TransitionName, data.Door.RightLocation!.TransitionName);
             VanillaDef right = new(data.Door.RightLocation.TransitionName, data.Door.LeftLocation.TransitionName);
             rb.RemoveFromVanilla(left);
             rb.RemoveFromVanilla(right);
@@ -87,7 +87,7 @@ public class RequestModifier
         // Insert stage at the start because it's a lot more restricted than the item placements
         StageBuilder sb = rb.InsertStage(0, TRANSITION_STAGE_NAME);
 
-        GroupBuilder builder = null;
+        GroupBuilder? builder = null;
 
         if (ts.TransitionMatching == TransitionSettings.TransitionMatchingSetting.NonmatchingDirections)
         {
@@ -118,7 +118,7 @@ public class RequestModifier
         builder.strategy = rb.gs.ProgressionDepthSettings.GetTransitionPlacementStrategy();
         sb.Add(builder);
 
-        HashSet<string> doorTransitions = new();
+        HashSet<string> doorTransitions = [];
         SplitLeftTransitions().ToList().ForEach(t => doorTransitions.Add(t));
         SplitRightTransitions().ToList().ForEach(t => doorTransitions.Add(t));
 
@@ -139,7 +139,7 @@ public class RequestModifier
             throw new ArgumentException($"Nowhere to place MoreDoors Keys; Either randomize Keys or enable 'Add Key Locations'");
         }
 
-        foreach (var e in DoorData.Data)
+        foreach (var e in DoorData.AllDoors())
         {
             var doorName = e.Key;
             var data = e.Value;
@@ -147,26 +147,13 @@ public class RequestModifier
             {
                 if (rb.gs.PoolSettings.Keys)
                 {
-                    rb.AddItemByName(data.Key.ItemName);
-                    if (rb.gs.DuplicateItemSettings.DuplicateUniqueKeys)
-                    {
-                        rb.AddItemByName($"{PlaceholderItem.Prefix}{data.Key.ItemName}");
-                    }
-
-                    if (RandoInterop.LS.IncludeKeyLocation(doorName))
-                    {
-                        rb.AddLocationByName(data.Key.Location.name);
-                    }
+                    rb.AddItemByName(data.Key!.ItemName);
+                    if (rb.gs.DuplicateItemSettings.DuplicateUniqueKeys) rb.AddItemByName($"{PlaceholderItem.Prefix}{data.Key.ItemName}");
+                    if (RandoInterop.LS.IncludeKeyLocation(doorName)) rb.AddLocationByName(data.Key.Location!.name);
                 }
-                else if (RandoInterop.LS.IncludeKeyLocation(doorName))
-                {
-                    rb.AddToVanilla(new(data.Key.ItemName, data.Key.Location.name));
-                }
+                else if (RandoInterop.LS.IncludeKeyLocation(doorName)) rb.AddToVanilla(new(data.Key!.ItemName, data.Key.Location!.name));
             }
-            else if (RandoInterop.LS.IncludeKeyLocation(doorName))
-            {
-                rb.AddLocationByName(data.Key.Location.name);
-            }
+            else if (RandoInterop.LS.IncludeKeyLocation(doorName)) rb.AddLocationByName(data.Key!.Location!.name);
         }
     }
 
@@ -174,23 +161,19 @@ public class RequestModifier
     {
         if (!RandoInterop.IsEnabled || !rb.gs.PoolSettings.Keys || !rb.gs.CursedSettings.Deranged) return;
 
-        Dictionary<string, string> keyLoc = new();
-        foreach (var door in DoorData.Data.Keys)
-        {
-            var data = DoorData.GetFromJson(door);
-            keyLoc[data.Key.ItemName] = data.Key.Location.name;
-        }
+        Dictionary<string, string> keyLoc = [];
+        foreach (var e in DoorData.AllDoors()) keyLoc[e.Value.Key!.ItemName] = e.Value.Key.Location!.name;
 
         foreach (var gb in rb.EnumerateItemGroups())
         {
             if (gb.strategy is DefaultGroupPlacementStrategy dgps)
             {
-                dgps.Constraints += (item, loc) =>
+                dgps.ConstraintList.Add(new((item, loc) =>
                 {
                     string name = item.Name;
                     if (item.Name.StartsWith(PlaceholderItem.Prefix)) name = item.Name.Substring(PlaceholderItem.Prefix.Length);
                     return !keyLoc.TryGetValue(item.Name, out string vLoc) || loc.Name != vLoc;
-                };
+                }));
             }
         }
     }

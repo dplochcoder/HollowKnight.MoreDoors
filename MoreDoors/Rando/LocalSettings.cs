@@ -8,12 +8,12 @@ namespace MoreDoors.Rando;
 public class LocalSettings
 {
     public RandomizationSettings Settings = MoreDoors.GS.RandoSettings;
-    public HashSet<string> EnabledDoorNames = new();
+    public HashSet<string> EnabledDoorNames = [];
 
     [JsonIgnore]
-    public HashSet<string> ModifiedLogicNames = new();
+    public HashSet<string> ModifiedLogicNames = [];
     [JsonIgnore]
-    public Dictionary<string, SimpleToken> LogicSubstitutions = new();
+    public Dictionary<string, SimpleToken> LogicSubstitutions = [];
 
     public bool IncludeDoor(string doorName) => EnabledDoorNames.Contains(doorName);
 

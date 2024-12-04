@@ -20,12 +20,6 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
 
     public class DoorState
     {
-        public DoorData Data;
-        public DoorState(DoorData data)
-        {
-            this.Data = data;
-        }
-
         public bool KeyObtained = false;
         public bool DoorOpened = false;
 
@@ -33,25 +27,22 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         public bool RightDoorForceOpened = false;
     }
 
-    // Hack for hk7y plando.
-    public bool ImportNewJson = false;
-
     // Indexed by door name.
-    public SortedDictionary<string, DoorState> DoorStates = new();
+    public SortedDictionary<string, DoorState> DoorStates = [];
 
-    private readonly Dictionary<string, string> DoorNamesByKey = new();
-    private readonly Dictionary<string, string> DoorNamesByDoor = new();
-    private readonly Dictionary<string, string> DoorNamesByLeftForce = new();
-    private readonly Dictionary<string, string> DoorNamesByRightForce = new();
-    private readonly Dictionary<string, HashSet<string>> DoorNamesByScene = new();
-    private readonly Dictionary<string, string> DoorNamesByTransition = new();
-    private readonly Dictionary<string, string> PromptStrings = new();
-    private readonly Dictionary<string, List<IDeployer>> DeployersByScene = new();
+    private readonly Dictionary<string, string> DoorNamesByKey = [];
+    private readonly Dictionary<string, string> DoorNamesByDoor = [];
+    private readonly Dictionary<string, string> DoorNamesByLeftForce = [];
+    private readonly Dictionary<string, string> DoorNamesByRightForce = [];
+    private readonly Dictionary<string, HashSet<string>> DoorNamesByScene = [];
+    private readonly Dictionary<string, string> DoorNamesByTransition = [];
+    private readonly Dictionary<string, string> PromptStrings = [];
+    private readonly Dictionary<string, List<IDeployer>> DeployersByScene = [];
 
     [JsonIgnore]
-    public string LastSceneName { get; private set; }
+    public string LastSceneName { get; private set; } = "";
     [JsonIgnore]
-    public string LastGateName { get; private set; }
+    public string LastGateName { get; private set; } = "";
 
     // After DarknessRandomizer
     private const float BeforeSceneManagerStartPriority = 110f;
@@ -61,10 +52,10 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         DoorNamesByKey[data.PDKeyName] = doorName;
         DoorNamesByDoor[data.PDDoorOpenedName] = doorName;
 
-        DoorNamesByScene.GetOrAddNew(data.Door.LeftSceneName).Add(doorName);
-        DoorNamesByScene.GetOrAddNew(data.Door.RightSceneName).Add(doorName);
-        DoorNamesByTransition[data.Door.LeftLocation.TransitionName] = doorName;
-        DoorNamesByTransition[data.Door.RightLocation.TransitionName] = doorName;
+        DoorNamesByScene.GetOrAddNew(data.Door!.LeftSceneName).Add(doorName);
+        DoorNamesByScene.GetOrAddNew(data.Door!.RightSceneName).Add(doorName);
+        DoorNamesByTransition[data.Door!.LeftLocation!.TransitionName] = doorName;
+        DoorNamesByTransition[data.Door!.RightLocation!.TransitionName] = doorName;
         DoorNamesByLeftForce[data.PDDoorLeftForceOpenedName] = doorName;
         DoorNamesByRightForce[data.PDDoorRightForceOpenedName] = doorName;
 
@@ -78,18 +69,7 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
 
     public override void Initialize()
     {
-        foreach (var e in DoorStates)
-        {
-            var doorName = e.Key;
-            var data = e.Value.Data;
-            if (ImportNewJson || data == null)
-            {
-                data = DoorData.GetFromJson(doorName);
-                e.Value.Data = data;
-            }
-
-            IndexDoor(doorName, data);
-        }
+        foreach (var e in DoorStates) IndexDoor(e.Key, DoorData.GetDoor(e.Key)!);
         PromptStrings[MenuConvKey] = "More Keys";
 
         ModHooks.GetPlayerBoolHook += OverrideGetBool;
@@ -101,28 +81,6 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         Events.OnSceneChange += RunDeployers;
 
         MoreKeysPage.Instance.Update();
-    }
-
-    internal void DebugResetData(IDictionary<string, DoorData> data)
-    {
-        DoorNamesByKey.Clear();
-        DoorNamesByDoor.Clear();
-        DoorNamesByScene.Clear();
-        DoorNamesByTransition.Clear();
-        DoorNamesByLeftForce.Clear();
-        DoorNamesByRightForce.Clear();
-        PromptStrings.Clear();
-        DeployersByScene.Clear();
-
-        foreach (var e in data)
-        {
-            var doorName = e.Key;
-            var doorData = e.Value;
-
-            DoorStates[doorName].Data = doorData;
-            IndexDoor(doorName, doorData);
-        }
-        PromptStrings[MenuConvKey] = "More Keys";
     }
 
     public override void Unload()
@@ -169,11 +127,11 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
 
     public delegate void DoorOpened(string doorName, bool left);
 
-    public static event DoorOpened OnDoorOpened;
+    public static event DoorOpened? OnDoorOpened;
 
     public delegate void KeyObtained(string uiName);
 
-    public static event KeyObtained OnKeyObtained;
+    public static event KeyObtained? OnKeyObtained;
 
     private bool OverrideSetBool(string name, bool newValue)
     {
@@ -181,8 +139,9 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         {
             var state = DoorStates[doorName];
             state.KeyObtained = newValue;
+            var data = DoorData.GetDoor(name)!;
 
-            if (newValue) OnKeyObtained?.Invoke(state.Data.Key.UIItemName);
+            if (newValue) OnKeyObtained?.Invoke(data.Key!.UIItemName);
             MoreKeysPage.Instance.Update();
         }
         else if (DoorNamesByDoor.TryGetValue(name, out doorName))
@@ -204,17 +163,19 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
 
     private string OverrideLanguageGet(string key, string sheetTitle, string orig) => PromptStrings.TryGetValue(key, out string value) ? value : orig;
 
-    private static readonly HashSet<string> emptySet = new();
+    private static readonly HashSet<string> emptySet = [];
 
     private void OnSceneManagerStart(SceneManager sm)
     {
         var sceneName = sm.gameObject.scene.name;
-        foreach (var doorName in DoorNamesByScene.GetOrDefault(sceneName, emptySet))
+#pragma warning disable CS8620 // Argument cannot be used for parameter due to differences in the nullability of reference types.
+        foreach (var doorName in DoorNamesByScene.GetOrDefault(sceneName, emptySet)!)
         {
-            var data = DoorStates[doorName].Data;
-            if (sceneName == data.Door.LeftSceneName) DoorSpawner.SpawnDoor(this, sm, doorName, true);
-            if (sceneName == data.Door.RightSceneName) DoorSpawner.SpawnDoor(this, sm, doorName, false);
+            var data = DoorData.GetDoor(doorName)!;
+            if (sceneName == data.Door!.LeftSceneName) DoorSpawner.SpawnDoor(this, sm, doorName, true);
+            if (sceneName == data.Door!.RightSceneName) DoorSpawner.SpawnDoor(this, sm, doorName, false);
         }
+#pragma warning restore CS8620 // Argument cannot be used for parameter due to differences in the nullability of reference types.
     }
 
     private void OnUseTransition(Transition t) => OnUseITransition(t);
@@ -234,15 +195,15 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         var tname = $"{t.SceneName}[{t.GateName}]";
         if (DoorNamesByTransition.TryGetValue(tname, out string doorName) && !DoorStates[doorName].DoorOpened)
         {
-            var door = DoorStates[doorName].Data.Door;
+            var door = DoorData.GetDoor(doorName)!.Door!;
             if (door.Mode != DoorData.DoorInfo.SplitMode.Normal) return;
 
-            if (door.LeftLocation.TransitionName == tname)
+            if (door.LeftLocation!.TransitionName == tname)
             {
                 DoorStates[doorName].LeftDoorForceOpened = true;
                 OnDoorOpened?.Invoke(doorName, true);
             }
-            else if (door.RightLocation.TransitionName == tname)
+            else if (door.RightLocation!.TransitionName == tname)
             {
                 DoorStates[doorName].RightDoorForceOpened = true;
                 OnDoorOpened?.Invoke(doorName, false);

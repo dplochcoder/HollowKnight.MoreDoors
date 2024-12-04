@@ -2,7 +2,6 @@
 using ItemChanger.Locations;
 using MoreDoors.IC;
 using Newtonsoft.Json;
-using RandoSettingsManager.SettingsManagement.Versioning;
 using System;
 using System.Collections.Generic;
 
@@ -12,34 +11,46 @@ namespace MoreDoors.Data;
 
 public record DoorData
 {
-    public static readonly SortedDictionary<string, DoorData> Data = JsonUtil.DeserializeEmbedded<SortedDictionary<string, DoorData>>("MoreDoors.Resources.Data.doors.json");
+    private static readonly SortedDictionary<string, DoorData> BaseData = JsonUtil.DeserializeEmbedded<SortedDictionary<string, DoorData>>("MoreDoors.Resources.Data.doors.json");
+    private static readonly SortedDictionary<string, DoorData> ExtensionData = [];
+    private static readonly SortedDictionary<string, DoorData> AllData = [];
 
-    public static DoorData GetFromJson(string doorName) => Data[doorName];
+    internal static IReadOnlyDictionary<string, DoorData> EmbeddedDoors() => BaseData;
 
-    public static DoorData GetFromModule(string doorName) => ItemChangerMod.Modules.Get<MoreDoorsModule>().DoorStates[doorName].Data;
+    internal static IReadOnlyDictionary<string, DoorData> AllDoors() => AllData;
 
-    public static int Count => Data.Count;
+    private static void AddDoor(string name, DoorData data)
+    {
+        KeyItem key = new(name, data);
+        key.AddLocationInteropTags(data);
+
+        Finder.DefineCustomItem(key);
+        Finder.DefineCustomLocation(data.Key!.Location!);
+    }
+
+    public static DoorData? GetDoor(string name)
+    {
+        if (BaseData.TryGetValue(name, out var data)) return data;
+        else if (ExtensionData.TryGetValue(name, out data)) return data;
+        else return null;
+    }
 
     public static void Load()
     {
-        foreach (var e in Data)
-        {
-            var doorName = e.Key;
-            var data = e.Value;
-
-            KeyItem key = new(doorName, data);
-            key.AddLocationInteropTags(data);
-
-            Finder.DefineCustomItem(key);
-            Finder.DefineCustomLocation(data.Key.Location);
-        }
-
+        foreach (var e in BaseData) AddDoor(e.Key, e.Value);
         MoreDoors.Log("Loaded Doors");
     }
 
-    public string CamelCaseName;
-    public string UpperCaseName;
-    public string UIName;
+    // Extensions can call this to add their own doors for custom plandos.
+    public static void AddExtensionDoor(string name, DoorData data)
+    {
+        ExtensionData.Add(name, data);
+        AddDoor(name, data);
+    }
+
+    public string CamelCaseName = "";
+    public string UpperCaseName = "";
+    public string UIName = "";
 
     public record DoorInfo
     {
@@ -65,10 +76,10 @@ public record DoorData
                 public float OffsetY;
             }
 
-            public string SceneName;
-            public string GateName;
-            public string NoKeyDesc;
-            public string KeyDesc;
+            public string SceneName = "";
+            public string GateName = "";
+            public string NoKeyDesc = "";
+            public string KeyDesc = "";
             public List<SecretMask>? Masks;
             public bool RequiresLantern;
             public float X;
@@ -88,19 +99,20 @@ public record DoorData
             }
         }
 
-        public ISprite Sprite;
+        public ISprite? Sprite;
         // Location where the player looks left to the door.
-        public Location LeftLocation;
+        public Location? LeftLocation;
         // Location where the player looks right to the door.
-        public Location RightLocation;
+        public Location? RightLocation;
         public SplitMode Mode;
         public List<IDeployer>? Deployers;
 
         private Location SplitLocation(Side side) => Mode switch
         {
-            SplitMode.Normal => side == Side.Left ? LeftLocation : RightLocation,
-            SplitMode.LeftTwin => LeftLocation,
-            SplitMode.RightTwin => RightLocation,
+            SplitMode.Normal => side == Side.Left ? LeftLocation! : RightLocation!,
+            SplitMode.LeftTwin => LeftLocation!,
+            SplitMode.RightTwin => RightLocation!,
+            _ => throw new System.ArgumentException($"Unknown Side: {side}")
         };
 
         [JsonIgnore]
@@ -110,8 +122,8 @@ public record DoorData
 
         public bool ValidateAndUpdate(out string err)
         {
-            if (!LeftLocation.ValidateAndUpdate(out err)) return false;
-            if (!RightLocation.ValidateAndUpdate(out err)) return false;
+            if (!LeftLocation!.ValidateAndUpdate(out err)) return false;
+            if (!RightLocation!.ValidateAndUpdate(out err)) return false;
 
             bool split = Mode == SplitMode.Normal;
             bool matching = LeftLocation.TransitionName == RightLocation.TransitionName;
@@ -125,22 +137,22 @@ public record DoorData
             return true;
         }
     }
-    public DoorInfo Door;
+    public DoorInfo? Door;
 
     public record KeyInfo
     {
-        public string ItemName;
-        public string UIItemName;
-        public string ShopDesc;
-        public string InvDesc;
-        public string UsedInvDesc;
-        public ISprite Sprite;
-        public AbstractLocation Location;
-        public string Logic;
+        public string ItemName = "";
+        public string UIItemName = "";
+        public string ShopDesc = "";
+        public string InvDesc = "";
+        public string UsedInvDesc = "";
+        public ISprite? Sprite;
+        public AbstractLocation? Location;
+        public string Logic = "FALSE";
 
         public record WorldMapLocation
         {
-            public string? SceneName;
+            public string SceneName = "";
             public float X;
             public float Y;
 
@@ -152,19 +164,19 @@ public record DoorData
 
         public List<WorldMapLocation> GetWorldMapLocations()
         {
-            List<WorldMapLocation> locations = new();
+            List<WorldMapLocation> locations = [];
 
             if (WorldMapLocationOverride != null)
             {
                 WorldMapLocation first = WorldMapLocationOverride;
-                first.SceneName ??= Location.sceneName;
+                first.SceneName ??= Location!.sceneName ?? "";
                 locations.Add(first);
             }
             else if (Location is DualLocation dl && dl.trueLocation is CoordinateLocation cl)
             {
                 locations.Add(new()
                 {
-                    SceneName = Location.sceneName,
+                    SceneName = Location!.sceneName ?? "",
                     X = cl.x,
                     Y = cl.y
                 });
@@ -178,7 +190,7 @@ public record DoorData
             return locations;
         }
     }
-    public KeyInfo Key;
+    public KeyInfo? Key;
 
     [JsonIgnore]
     public string PDKeyName => $"moreDoors{CamelCaseName}Key";
@@ -206,9 +218,9 @@ public record DoorData
 
     public bool ValidateAndUpdate(out string err)
     {
-        if (!Door.ValidateAndUpdate(out err)) return false;
+        if (!Door!.ValidateAndUpdate(out err)) return false;
 
-        string s = Key.Location.sceneName;
+        string s = Key!.Location!.sceneName ?? "";
         if (Key.Location is DualLocation dl)
         {
             if (dl.falseLocation.sceneName != s)
