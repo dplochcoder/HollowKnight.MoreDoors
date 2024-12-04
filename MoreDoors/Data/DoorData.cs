@@ -11,16 +11,19 @@ namespace MoreDoors.Data;
 
 public record DoorData
 {
-    private static readonly SortedDictionary<string, DoorData> BaseData = JsonUtil.DeserializeEmbedded<SortedDictionary<string, DoorData>>("MoreDoors.Resources.Data.doors.json");
+    private static readonly SortedDictionary<string, DoorData> EmbeddedData = JsonUtil.DeserializeEmbedded<SortedDictionary<string, DoorData>>("MoreDoors.Resources.Data.doors.json");
     private static readonly SortedDictionary<string, DoorData> ExtensionData = [];
     private static readonly SortedDictionary<string, DoorData> AllData = [];
 
-    internal static IReadOnlyDictionary<string, DoorData> EmbeddedDoors() => BaseData;
+    internal static IReadOnlyDictionary<string, DoorData> EmbeddedDoors() => EmbeddedData;
 
     internal static IReadOnlyDictionary<string, DoorData> AllDoors() => AllData;
 
     private static void AddDoor(string name, DoorData data)
     {
+        if (AllData.ContainsKey(name)) return;
+        AllData.Add(name, data);
+
         KeyItem key = new(name, data);
         key.AddLocationInteropTags(data);
 
@@ -30,14 +33,14 @@ public record DoorData
 
     public static DoorData? GetDoor(string name)
     {
-        if (BaseData.TryGetValue(name, out var data)) return data;
+        if (EmbeddedData.TryGetValue(name, out var data)) return data;
         else if (ExtensionData.TryGetValue(name, out data)) return data;
         else return null;
     }
 
     public static void Load()
     {
-        foreach (var e in BaseData) AddDoor(e.Key, e.Value);
+        foreach (var e in EmbeddedData) AddDoor(e.Key, e.Value);
         MoreDoors.Log("Loaded Doors");
     }
 
