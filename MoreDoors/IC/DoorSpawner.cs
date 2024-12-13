@@ -128,7 +128,7 @@ public static class DoorSpawner
         GetState(fsm, "Open").AddFirstAction(new Lambda(() => ReparentDoor(fsm.gameObject, origPosition, left)));
 
         var setters = GetState(fsm, "Yes").GetActionsOfType<SetPlayerDataBool>();
-        setters[0].boolName = MoreDoorsModule.EmptyBoolName;
+        setters[0].boolName = MoreDoorsModule.EMPTY_BOOL;
         setters[1].boolName = data.PDDoorOpenedName;
     }
 

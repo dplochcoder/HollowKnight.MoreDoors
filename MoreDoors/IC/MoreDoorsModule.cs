@@ -14,9 +14,9 @@ namespace MoreDoors.IC;
 public class MoreDoorsModule : ItemChanger.Modules.Module
 {
     // Fake bool with no value, used only in setters.
-    public const string EmptyBoolName = "moreDoorsNothing";
-    public const string MoreDoorsEnabledName = "moreDoorsEnabled";
-    public const string MenuConvKey = "MORE_DOORS_MENU";
+    public const string EMPTY_BOOL = "moreDoorsEmptyBool";
+    public const string MORE_DOORS_ENABLED = "moreDoorsEnabled";
+    public const string MENU_KEY = "MORE_DOORS_MENU";
 
     public class DoorState
     {
@@ -70,7 +70,7 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
     public override void Initialize()
     {
         foreach (var e in DoorStates) IndexDoor(e.Key, DoorData.GetDoor(e.Key)!);
-        PromptStrings[MenuConvKey] = "More Keys";
+        PromptStrings[MENU_KEY] = "More Keys";
 
         ModHooks.GetPlayerBoolHook += OverrideGetBool;
         ModHooks.SetPlayerBoolHook += OverrideSetBool;
@@ -112,7 +112,7 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         {
             return DoorStates[doorName].RightDoorForceOpened;
         }
-        else if (name == MoreDoorsEnabledName)
+        else if (name == MORE_DOORS_ENABLED)
         {
             return DoorStates.Count > 0;
         }
