@@ -23,7 +23,7 @@ public class RequestModifier
     {
         if (!RandoInterop.IsEnabled) return;
 
-        foreach (var e in DoorData.AllDoors())
+        foreach (var e in DoorData.All())
         {
             var doorName = e.Key;
             var data = e.Value;
@@ -139,7 +139,7 @@ public class RequestModifier
             throw new ArgumentException($"Nowhere to place MoreDoors Keys; Either randomize Keys or enable 'Add Key Locations'");
         }
 
-        foreach (var e in DoorData.AllDoors())
+        foreach (var e in DoorData.All())
         {
             var doorName = e.Key;
             var data = e.Value;
@@ -162,7 +162,7 @@ public class RequestModifier
         if (!RandoInterop.IsEnabled || !rb.gs.PoolSettings.Keys || !rb.gs.CursedSettings.Deranged) return;
 
         Dictionary<string, string> keyLoc = [];
-        foreach (var e in DoorData.AllDoors()) keyLoc[e.Value.Key!.ItemName] = e.Value.Key.Location!.name;
+        foreach (var e in DoorData.All()) keyLoc[e.Value.Key!.ItemName] = e.Value.Key.Location!.name;
 
         foreach (var gb in rb.EnumerateItemGroups())
         {

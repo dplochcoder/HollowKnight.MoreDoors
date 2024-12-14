@@ -30,7 +30,7 @@ public static class RandoInterop
         LogicPatcher.Setup();
         RequestModifier.Setup();
         CondensedSpoilerLogger.AddCategory("MoreDoors Keys", _ => IsEnabled,
-            new(DoorData.AllDoors().Select(e => e.Value.Key!.ItemName)));
+            new(DoorData.All().Select(e => e.Value.Key!.ItemName)));
 
         RandoController.OnBeginRun += EarlyCreateSettings;
         RandoController.OnExportCompleted += OnExportCompleted;

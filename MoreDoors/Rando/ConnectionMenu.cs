@@ -139,12 +139,12 @@ internal class ConnectionMenu
         SmallButton b = new(page, text);
         OnCustomDoorsChanged += () =>
         {
-            if (DoorData.AllDoors().Keys.All(d => Settings.IsDoorEnabled(d) == enabled)) b.Lock();
+            if (DoorData.All().Keys.All(d => Settings.IsDoorEnabled(d) == enabled)) b.Lock();
             else b.Unlock();
         };
         b.OnClick += () =>
         {
-            DoorData.AllDoors().Keys.ForEach(d => Settings.SetDoorEnabled(d, enabled));
+            DoorData.All().Keys.ForEach(d => Settings.SetDoorEnabled(d, enabled));
             OnCustomDoorsChanged();
         };
         return b;
@@ -153,7 +153,7 @@ internal class ConnectionMenu
     private void FillCustomDoorsPage(MenuPage page)
     {
         List<IMenuElement> doorButtons = [];
-        foreach (var e in DoorData.AllDoors())
+        foreach (var e in DoorData.All())
         {
             var doorName = e.Key;
             var data = e.Value;

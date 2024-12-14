@@ -139,7 +139,7 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         {
             var state = DoorStates[doorName];
             state.KeyObtained = newValue;
-            var data = DoorData.GetDoor(name)!;
+            var data = DoorData.GetDoor(doorName)!;
 
             if (newValue) OnKeyObtained?.Invoke(data.Key!.UIItemName);
             MoreKeysPage.Instance.Update();

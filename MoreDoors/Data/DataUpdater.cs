@@ -14,7 +14,7 @@ public static class DataUpdater
         string namesPath = $"{root}/MoreDoors/Data/DoorNames.cs";
 
         bool anyErr = false;
-        foreach (var e in DoorData.EmbeddedDoors())
+        foreach (var e in DoorData.All())
         {
             if (!e.Value.ValidateAndUpdate(out string err))
             {
@@ -24,7 +24,7 @@ public static class DataUpdater
         }
         if (anyErr) throw new ArgumentException("Errors encountered");
 
-        JsonUtil.RewriteJsonFile(DoorData.EmbeddedDoors(), doorsJsonPath);
+        JsonUtil.RewriteJsonFile(DoorData.All(), doorsJsonPath);
 
         RewriteDoorNamesFile(namesPath);
     }
@@ -39,7 +39,7 @@ public static class DataUpdater
             "internal class DoorNames",
             "{"
         ];
-        foreach (var door in DoorData.EmbeddedDoors().Keys) content.Add($"    public const string {ConstName(door)} = \"{door}\";");
+        foreach (var door in DoorData.All().Keys) content.Add($"    public const string {ConstName(door)} = \"{door}\";");
         content.Add("}");
         content.Add("");
 

@@ -1,12 +1,10 @@
 ﻿using MoreDoors.Data;
 using PurenailCore.RandoUtil;
 using PurenailCore.SystemUtil;
-using RandomizerCore;
 using RandomizerCore.Logic;
 using RandomizerCore.LogicItems;
 using RandomizerCore.StringLogic;
 using RandomizerMod.Menu;
-using RandomizerMod.RandomizerData;
 using RandomizerMod.RC;
 using RandomizerMod.Settings;
 using System.Collections.Generic;
@@ -84,7 +82,7 @@ public static class LogicPatcher
     {
         // Forbid starting in a room with a door in it, to be safe.
         Dictionary<string, List<string>> sceneToDoors = [];
-        foreach (var data in DoorData.AllDoors())
+        foreach (var data in DoorData.All())
         {
             var door = data.Value.Door!;
             sceneToDoors.GetOrAddNew(door.LeftSceneName).Add(data.Key);
@@ -155,7 +153,7 @@ public static class LogicPatcher
             "SIDESLASH | UPSLASH | CYCLONE | GREATSLASH | FULLDASHSLASH | ANYDASHSLASH + DASHMASTER + OBSCURESKIPS | SPICYCOMBATSKIPS");
 
         var ls = RandoInterop.LS;
-        foreach (var e in DoorData.AllDoors())
+        foreach (var e in DoorData.All())
         {
             var doorName = e.Key;
             var data = e.Value;

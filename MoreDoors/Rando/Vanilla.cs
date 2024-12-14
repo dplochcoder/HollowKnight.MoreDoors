@@ -28,7 +28,7 @@ public static class Vanilla
 
         bool rando = ModHooks.GetMod("Randomizer 4") is Mod && IsRandoSave();
         bool includeVanilla = MoreDoors.GS.EnableInVanilla;
-        List<string> doorNames = rando ? GetRandoVanillaKeys() : (includeVanilla ? new(DoorData.AllDoors().Keys) : new());
+        List<string> doorNames = rando ? GetRandoVanillaKeys() : (includeVanilla ? new(DoorData.All().Keys) : new());
         foreach (var door in doorNames)
         {
             var data = DoorData.GetDoor(door)!;

@@ -79,7 +79,7 @@ public class MoreKeysPage
             if (dState.KeyObtained) inventoryKeys.Add(door);
         }
 
-        for (int i = 0; i < DoorData.AllDoors().Count; i++)
+        for (int i = 0; i < DoorData.All().Count; i++)
         {
             var ks = keySlots[i];
             string? door = i < inventoryKeys.Count ? inventoryKeys[i] : null;
@@ -152,7 +152,7 @@ public class MoreKeysPage
         mesh.alignment = TextAlignmentOptions.Top;
         keyDesc.GetComponent<TextContainer>().rect = new(0, 0, 22, 10);
 
-        for (int i = 0; i < DoorData.AllDoors().Count; i++)
+        for (int i = 0; i < DoorData.All().Count; i++)
         {
             GameObject obj = new($"MoreDoors Menu Parent {i}");
             obj.transform.SetParent(moreKeysPage.transform);
@@ -224,7 +224,7 @@ public class MoreKeysPage
         // Add states for each slot on the board.
         var rArrow = fsm.GetState("R Arrow");
         var uCursor = fsm.gameObject.LocateMyFSM("Update Cursor");
-        for (int i = 0; i < DoorData.AllDoors().Count; i++)
+        for (int i = 0; i < DoorData.All().Count; i++)
         {
             int index = i;
             fsm.AddState(new FsmState(fsm.Fsm)
@@ -252,7 +252,7 @@ public class MoreKeysPage
         {
             var dirState = fsm.GetState($"{dir} Press");
 
-            for (int i = 0; i < DoorData.AllDoors().Count; i++)
+            for (int i = 0; i < DoorData.All().Count; i++)
             {
                 dirState.AddTransition($"KEY_{i}", $"Key {i}");
                 var keyState = fsm.GetState($"Key {i}");

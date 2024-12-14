@@ -12,43 +12,30 @@ namespace MoreDoors.Data;
 public record DoorData
 {
     private static readonly SortedDictionary<string, DoorData> EmbeddedData = JsonUtil.DeserializeEmbedded<SortedDictionary<string, DoorData>>("MoreDoors.Resources.Data.doors.json");
-    private static readonly SortedDictionary<string, DoorData> ExtensionData = [];
-    private static readonly SortedDictionary<string, DoorData> AllData = [];
 
-    internal static IReadOnlyDictionary<string, DoorData> EmbeddedDoors() => EmbeddedData;
-
-    internal static IReadOnlyDictionary<string, DoorData> AllDoors() => AllData;
-
-    private static void AddDoor(string name, DoorData data)
-    {
-        if (AllData.ContainsKey(name)) return;
-        AllData.Add(name, data);
-
-        KeyItem key = new(name, data);
-        key.AddLocationInteropTags(data);
-
-        Finder.DefineCustomItem(key);
-        Finder.DefineCustomLocation(data.Key!.Location!);
-    }
+    internal static IReadOnlyDictionary<string, DoorData> All() => EmbeddedData;
 
     public static DoorData? GetDoor(string name)
     {
         if (EmbeddedData.TryGetValue(name, out var data)) return data;
-        else if (ExtensionData.TryGetValue(name, out data)) return data;
         else return null;
     }
 
     public static void Load()
     {
-        foreach (var e in EmbeddedData) AddDoor(e.Key, e.Value);
-        MoreDoors.Log("Loaded Doors");
-    }
+        foreach (var e in EmbeddedData)
+        {
+            var name = e.Key;
+            var data = e.Value;
 
-    // Extensions can call this to add their own doors for custom plandos.
-    public static void AddExtensionDoor(string name, DoorData data)
-    {
-        ExtensionData.Add(name, data);
-        AddDoor(name, data);
+            KeyItem key = new(name, data);
+            key.AddLocationInteropTags(data);
+
+            Finder.DefineCustomItem(key);
+            Finder.DefineCustomLocation(data.Key!.Location!);
+        }
+
+        MoreDoors.Log("Loaded Doors");
     }
 
     public string CamelCaseName = "";
