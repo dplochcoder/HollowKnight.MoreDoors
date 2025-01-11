@@ -13,10 +13,10 @@ public class KeyItem : AbstractItem
 
     private static InteropTag AddInterop(TaggableObject o)
     {
-        var tag = o.AddTag<InteropTag>();
+        var tag = o.GetOrAddTag<InteropTag>();
         tag.Message = "RandoSupplementalMetadata";
-        tag.Properties["PoolGroup"] = "Keys";
         tag.Properties["ModSource"] = nameof(MoreDoors);
+        tag.Properties["PoolGroup"] = "Keys";
         return tag;
     }
 
@@ -29,7 +29,6 @@ public class KeyItem : AbstractItem
         this.DoorName = doorName;
         this.UIDef = uiDef;
         AddInterop(this);
-
     }
 
     public KeyItem(string doorName, DoorData data) : this(doorName, data.Key!.ItemName, new MsgUIDef()
@@ -42,14 +41,10 @@ public class KeyItem : AbstractItem
 
     public void AddLocationInteropTags(DoorData data)
     {
-        if (HasTag<InteropTag>()) return;
+        var interop = AddInterop(data.Key!.Location!);
 
-        var loc = data.Key!.Location!;
-        // TODO: This seems like a bug in ItemChanger that we have to do this.
-        // DualPlacement concatenates tags from both delegate locations, but it ignores any tags set on the DualLocation itself.
-        if (loc is DualLocation dl) loc = dl.falseLocation;
-
-        AddInterop(loc).Properties["WorldMapLocations"] = data.Key.GetWorldMapLocations().Select(l => l.AsTuple).ToArray();
+        interop.Properties["WorldMapLocations"] = data.Key.GetWorldMapLocations().Select(l => l.AsTuple).ToArray();
+        interop.Properties["PinSpriteKey"] = "Keys";
     }
 
     public override AbstractItem Clone() => new KeyItem(DoorName, name, UIDef?.Clone());
