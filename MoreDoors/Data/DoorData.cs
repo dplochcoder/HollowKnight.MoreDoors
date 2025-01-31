@@ -13,7 +13,7 @@ public record DoorData
 {
     private static readonly SortedDictionary<string, DoorData> EmbeddedData = JsonUtil.DeserializeEmbedded<SortedDictionary<string, DoorData>>("MoreDoors.Resources.Data.doors.json");
 
-    internal static IReadOnlyDictionary<string, DoorData> All() => EmbeddedData;
+    public static IReadOnlyDictionary<string, DoorData> All() => EmbeddedData;
 
     public static DoorData? GetDoor(string name)
     {
