@@ -11,31 +11,41 @@ namespace MoreDoors.Data;
 
 public record DoorData
 {
-    private static readonly SortedDictionary<string, DoorData> EmbeddedData = JsonUtil.DeserializeEmbedded<SortedDictionary<string, DoorData>>("MoreDoors.Resources.Data.doors.json");
+    private static readonly SortedDictionary<string, DoorData> AllData = JsonUtil.DeserializeEmbedded<SortedDictionary<string, DoorData>>("MoreDoors.Resources.Data.doors.json");
 
-    public static IReadOnlyDictionary<string, DoorData> All() => EmbeddedData;
+    public static void AddExtensionDoor(string name, DoorData data)
+    {
+        if (AllData.ContainsKey(name)) throw new ArgumentException($"Door '{name}' is already defined.");
+
+        AllData[name] = data;
+        if (loaded) LoadDoor(name, data);
+    }
+
+    public static IReadOnlyDictionary<string, DoorData> All() => AllData;
 
     public static DoorData? GetDoor(string name)
     {
-        if (EmbeddedData.TryGetValue(name, out var data)) return data;
+        if (AllData.TryGetValue(name, out var data)) return data;
         else return null;
+    }
+
+    private static bool loaded = false;
+
+    private static void LoadDoor(string name, DoorData data)
+    {
+        KeyItem key = new(name, data);
+        key.AddLocationInteropTags(data);
+
+        Finder.DefineCustomItem(key);
+        Finder.DefineCustomLocation(data.Key!.Location!);
     }
 
     public static void Load()
     {
-        foreach (var e in EmbeddedData)
-        {
-            var name = e.Key;
-            var data = e.Value;
-
-            KeyItem key = new(name, data);
-            key.AddLocationInteropTags(data);
-
-            Finder.DefineCustomItem(key);
-            Finder.DefineCustomLocation(data.Key!.Location!);
-        }
+        foreach (var e in AllData) LoadDoor(e.Key, e.Value);
 
         MoreDoors.Log("Loaded Doors");
+        loaded = true;
     }
 
     public string CamelCaseName = "";

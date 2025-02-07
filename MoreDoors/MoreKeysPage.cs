@@ -13,6 +13,64 @@ using EmbeddedSprite = MoreDoors.IC.EmbeddedSprite;
 
 namespace MoreDoors;
 
+internal record InventorySpacingParams
+{
+    public float xLeft;
+    public float xSpace;
+    public float yTop;
+    public float ySpace;
+    public int rowSize;
+    public float keyScale;
+
+    public static InventorySpacingParams Create(int doors)
+    {
+        if (doors <= 30)
+        {
+            return new()
+            {
+                xLeft = -10.98f,
+                xSpace = 2.44f,
+                yTop = 0,
+                ySpace = 2.44f,
+                rowSize = 10,
+                keyScale = 1.65f,
+            };
+        }
+        else if (doors <= 52)
+        {
+            return new()
+            {
+                xLeft = -9.72f,
+                xSpace = 1.62f,
+                yTop = 0,
+                ySpace = 1.62f,
+                rowSize = 13,
+                keyScale = 1.09f,
+            };
+        }
+        else if (doors <= 95)
+        {
+            return new()
+            {
+                xLeft = -10.98f,
+                xSpace = 1.22f,
+                yTop = 0,
+                ySpace = 1.22f,
+                rowSize = 19,
+                keyScale = 0.82f,
+            };
+        }
+        else throw new ArgumentException("Too many doors");
+    }
+
+    public float X(int i) => xLeft + xSpace * (i % rowSize);
+    public float Y(int i) => yTop - ySpace * (i / rowSize);
+
+    public Vector3 KeyObtainedScale() => new(keyScale, keyScale, keyScale);
+
+    public Vector3 KeyUsedScale() => new(keyScale * 0.72f, keyScale * 0.72f, keyScale * 0.72f);
+}
+
 public class MoreKeysPage
 {
     public static readonly MoreKeysPage Instance = new();
@@ -37,9 +95,6 @@ public class MoreKeysPage
 
     private static readonly Color KEY_OBTAINED_COLOR = new(1, 1, 1);
     private static readonly Color KEY_USED_COLOR = new(0.25f, 0.25f, 0.25f);
-
-    private static readonly Vector3 KEY_OBTAINED_SCALE = new(1.65f, 1.65f, 1.65f);
-    private static readonly Vector3 KEY_USED_SCALE = new(1.2f, 1.2f, 1.2f);
 
     public void Update()
     {
@@ -79,6 +134,7 @@ public class MoreKeysPage
             if (dState.KeyObtained) inventoryKeys.Add(door);
         }
 
+        var spacing = InventorySpacingParams.Create(DoorData.All().Count);
         for (int i = 0; i < DoorData.All().Count; i++)
         {
             var ks = keySlots[i];
@@ -88,7 +144,7 @@ public class MoreKeysPage
                 var ds = mod.DoorStates[door];
                 ks.spriteRenderer.sprite = DoorData.GetDoor(door)!.Key!.Sprite!.Value;
                 ks.spriteRenderer.color = ds.DoorOpened ? KEY_USED_COLOR : KEY_OBTAINED_COLOR;
-                ks.img.transform.localScale = ds.DoorOpened ? KEY_USED_SCALE : KEY_OBTAINED_SCALE;
+                ks.img.transform.localScale = ds.DoorOpened ? spacing.KeyUsedScale() : spacing.KeyObtainedScale();
                 ks.check.SetActive(ds.KeyObtained && ds.DoorOpened);
             }
             else
@@ -107,16 +163,6 @@ public class MoreKeysPage
     private const int leftArrowIndex = -2;
     private const int rightArrowIndex = -3;
     private int selectedIndex = -1;
-
-    private const float X_LEFT = -11;
-    private const float X_SPACE = 2.44f;
-    private const float Y_TOP = 0;
-    private const float Y_SPACE = 2.44f;
-
-    private const int ROW_SIZE = 10;
-
-    private static float X(int i) => X_LEFT + X_SPACE * (i % ROW_SIZE);
-    private static float Y(int i) => Y_TOP - Y_SPACE * (i / ROW_SIZE);
 
     public void GeneratePage(GameObject moreKeysPage)
     {
@@ -152,12 +198,13 @@ public class MoreKeysPage
         mesh.alignment = TextAlignmentOptions.Top;
         keyDesc.GetComponent<TextContainer>().rect = new(0, 0, 22, 10);
 
+        var spacing = InventorySpacingParams.Create(DoorData.All().Count);
         for (int i = 0; i < DoorData.All().Count; i++)
         {
             GameObject obj = new($"MoreDoors Menu Parent {i}");
             obj.transform.SetParent(moreKeysPage.transform);
             obj.layer = moreKeysPage.layer;
-            obj.transform.position = new(X(i), Y(i), -3f);
+            obj.transform.position = new(spacing.X(i), spacing.Y(i), -3f);
             var bc2d = obj.AddComponent<BoxCollider2D>();
             bc2d.offset = new(0, 0);
             bc2d.size = new(1.5f, 1.5f);
@@ -165,7 +212,7 @@ public class MoreKeysPage
             GameObject img = new($"MoreDoors Key Image {i}");
             img.transform.SetParent(obj.transform);
             img.transform.localPosition = new(0, 0, 0);
-            img.transform.localScale = new(1.65f, 1.65f, 1.65f);
+            img.transform.localScale = spacing.KeyObtainedScale();
             img.layer = moreKeysPage.layer;
             var sr = img.AddComponent<SpriteRenderer>();
             sr.sprite = emptySprite.Value;
@@ -298,13 +345,14 @@ public class MoreKeysPage
 
     private void HandleUpPress(PlayMakerFSM fsm)
     {
-        if (selectedIndex > 0 && selectedIndex < ROW_SIZE)
+        var spacing = InventorySpacingParams.Create(DoorData.All().Count);
+        if (selectedIndex > 0 && selectedIndex < spacing.rowSize)
         {
             fsm.SendEvent("KEY_0");
         }
-        else if (selectedIndex >= ROW_SIZE)
+        else if (selectedIndex >= spacing.rowSize)
         {
-            fsm.SendEvent($"KEY_{selectedIndex - ROW_SIZE}");
+            fsm.SendEvent($"KEY_{selectedIndex - spacing.rowSize}");
         }
         else
         {
@@ -314,28 +362,30 @@ public class MoreKeysPage
 
     private void HandleDownPress(PlayMakerFSM fsm)
     {
-        bool onBottom = (selectedIndex - (selectedIndex % ROW_SIZE)) + ROW_SIZE > inventoryKeys.Count;
+        var spacing = InventorySpacingParams.Create(DoorData.All().Count);
+        bool onBottom = (selectedIndex - (selectedIndex % spacing.rowSize)) + spacing.rowSize > inventoryKeys.Count;
         if (onBottom)
         {
             fsm.SendEvent("OUT RIGHT");
         }
-        else if (selectedIndex + ROW_SIZE > inventoryKeys.Count - 1)
+        else if (selectedIndex + spacing.rowSize > inventoryKeys.Count - 1)
         {
             fsm.SendEvent($"KEY_{inventoryKeys.Count - 1}");
         }
         else
         {
-            fsm.SendEvent($"KEY_{selectedIndex + ROW_SIZE}");
+            fsm.SendEvent($"KEY_{selectedIndex + spacing.rowSize}");
         }
     }
 
     private void HandleLeftPress(PlayMakerFSM fsm)
     {
+        var spacing = InventorySpacingParams.Create(DoorData.All().Count);
         if (selectedIndex == rightArrowIndex)
         {
-            if (inventoryKeys.Count > ROW_SIZE - 1)
+            if (inventoryKeys.Count > spacing.rowSize - 1)
             {
-                fsm.SendEvent($"KEY_{ROW_SIZE - 1}");
+                fsm.SendEvent($"KEY_{spacing.rowSize - 1}");
             }
             else if (inventoryKeys.Count > 0)
             {
@@ -348,7 +398,7 @@ public class MoreKeysPage
             return;
         }
 
-        if (selectedIndex % ROW_SIZE == 0)
+        if (selectedIndex % spacing.rowSize == 0)
         {
             fsm.SendEvent("OUT LEFT");
         }
@@ -360,7 +410,8 @@ public class MoreKeysPage
 
     private void HandleRightPress(PlayMakerFSM fsm)
     {
-        if (selectedIndex % ROW_SIZE == ROW_SIZE - 1)
+        var spacing = InventorySpacingParams.Create(DoorData.All().Count);
+        if (selectedIndex % spacing.rowSize == spacing.rowSize - 1)
         {
             fsm.SendEvent("OUT RIGHT");
         }

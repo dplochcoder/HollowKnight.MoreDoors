@@ -31,8 +31,13 @@ public class MoreDoors : Mod, IGlobalSettings<GlobalSettings>, ICustomMenuMod
     public MoreDoors() : base("MoreDoors")
     {
         Instance = this;
-        InventoryHelper.AddInventoryPage(InventoryPageType.Empty, "More Keys", MoreDoorsModule.MENU_KEY, "MoreKeys",
-            MoreDoorsModule.MORE_DOORS_ENABLED, MoreKeysPage.Instance.GeneratePage);
+        InventoryHelper.AddInventoryPage(
+            InventoryPageType.Empty,
+            "More Keys",
+            MoreDoorsModule.MENU_KEY,
+            "MoreKeys",
+            MoreDoorsModule.MORE_DOORS_ENABLED,
+            MoreKeysPage.Instance.GeneratePage);
     }
 
     public override void Initialize(Dictionary<string, Dictionary<string, GameObject>> preloadedObjects)
