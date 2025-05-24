@@ -81,6 +81,7 @@ public record DoorData
             public string NoKeyDesc = "";
             public string KeyDesc = "";
             public List<SecretMask>? Masks;
+            public bool FadeOutOnOpen;
             public bool RequiresLantern;
             public float X;
             public float Y;

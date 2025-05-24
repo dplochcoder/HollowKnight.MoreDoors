@@ -5,6 +5,7 @@ using ItemChanger.Extensions;
 using ItemChanger.FsmStateActions;
 using MoreDoors.Data;
 using SFCore.Utils;
+using System.Collections;
 using UnityEngine;
 
 namespace MoreDoors.IC;
@@ -117,7 +118,10 @@ public static class DoorSpawner
 
     private static FsmState GetState(PlayMakerFSM fsm, string name) => FsmUtil.GetState(fsm, name);
 
-    private static void SetupConversationControl(PlayMakerFSM fsm, DoorData data, bool left)
+    private const float FADE_DELAY = 2.5f;
+    private const float FADE_TIME = 3.5f;
+
+    private static void SetupConversationControl(PlayMakerFSM fsm, DoorData data, bool left, DoorData.DoorInfo.Location loc)
     {
         GetState(fsm, "Init").GetFirstActionOfType<PlayerDataBoolTest>().boolName = left ? data.PDDoorLeftForceOpenedName : data.PDDoorRightForceOpenedName;
         GetState(fsm, "Check Key").GetFirstActionOfType<PlayerDataBoolTest>().boolName = data.PDKeyName;
@@ -126,6 +130,31 @@ public static class DoorSpawner
 
         var origPosition = fsm.gameObject.transform.position;
         GetState(fsm, "Open").AddFirstAction(new Lambda(() => ReparentDoor(fsm.gameObject, origPosition, left)));
+
+        var yes = GetState(fsm, "Yes");
+        if (loc.FadeOutOnOpen) yes.AddFirstAction(new Lambda(() =>
+        {
+            IEnumerator Fade()
+            {
+                yield return new WaitForSeconds(FADE_DELAY);
+
+                var spriteRenderer = fsm.gameObject.GetComponent<SpriteRenderer>();
+                float alpha = 1;
+                while (alpha > 0)
+                {
+                    yield return null;
+                    alpha -= Time.deltaTime / FADE_TIME;
+                    if (alpha <= 0) alpha = 0;
+
+                    var c = spriteRenderer.color;
+                    spriteRenderer.color = new(c.r, c.g, c.b, alpha);
+                }
+
+                Object.Destroy(fsm.gameObject);
+            }
+
+            fsm.StartCoroutine(Fade());
+        }));
 
         var setters = GetState(fsm, "Yes").GetActionsOfType<SetPlayerDataBool>();
         setters[0].boolName = MoreDoorsModule.EMPTY_BOOL;
@@ -183,16 +212,18 @@ public static class DoorSpawner
     public static void SpawnDoor(MoreDoorsModule mod, SceneManager sm, string doorName, bool left)
     {
         var data = DoorData.GetDoor(doorName)!;
+        var loc = left ? data.Door!.LeftLocation! : data.Door!.RightLocation!;
+        var open = mod.IsDoorOpened(doorName, left);
+        if (open && loc.FadeOutOnOpen) return;
+
         var gameObj = Object.Instantiate(Preloader.Instance.Door);
         var convCtrl = gameObj.LocateMyFSM("Conversation Control");
-        SetupConversationControl(convCtrl, data, left);
+        SetupConversationControl(convCtrl, data, left, loc);
 
-        var loc = left ? data.Door!.LeftLocation! : data.Door!.RightLocation!;
         gameObj.transform.position = new(loc.X, loc.Y, gameObj.transform.position.z);
 
         var renderer = gameObj.GetComponent<SpriteRenderer>();
         renderer.sprite = data.Door.Sprite!.Value;
-        var open = mod.IsDoorOpened(doorName, left);
         if (!open && loc.Masks != null) MaybeSpawnSecretMasks(gameObj.transform.position, doorName, data, left, loc);
         
         if (!left) gameObj.transform.rotation = new(0, 180, 0, 0);

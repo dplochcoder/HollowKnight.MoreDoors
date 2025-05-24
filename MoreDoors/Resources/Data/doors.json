@@ -21,6 +21,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 3.6,
         "Y": 11.6,
@@ -39,6 +40,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 71.9,
         "Y": 10.6,
@@ -153,6 +155,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": true,
         "RequiresLantern": false,
         "X": 4.6,
         "Y": 95.6,
@@ -171,6 +174,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 82.9,
         "Y": 66.6,
@@ -261,6 +265,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 6.1,
         "Y": 19.6,
@@ -279,6 +284,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 150.1,
         "Y": 33.6,
@@ -369,6 +375,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 6.6,
         "Y": 6.6,
@@ -387,6 +394,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 346.9,
         "Y": 17.6,
@@ -482,6 +490,7 @@
         "NoKeyDesc": "A door of repose and study. It's a little slimy.",
         "KeyDesc": "The merchant awaits in her crooked corner.<br>Insert the Canyon Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 1.6,
         "Y": 43.5,
@@ -500,6 +509,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 24.2,
         "Y": 5.5,
@@ -576,6 +586,7 @@
         "NoKeyDesc": "A spongy door overgrown with rich fungus.",
         "KeyDesc": "The depths of the wastes cry WAH.<br>Insert the Core Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 35.6,
@@ -594,6 +605,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 87.4,
         "Y": 33.6,
@@ -678,6 +690,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 3.1,
         "Y": 14.2,
@@ -689,6 +702,7 @@
         "NoKeyDesc": "A crystalline door shining with a forgotten light.",
         "KeyDesc": "The forgotten one screams from afar, beckoning higher.<br>Insert the Crown Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 73.2,
         "Y": 197.2,
@@ -788,6 +802,7 @@
         "NoKeyDesc": "A cobblestone door armored in silk.",
         "KeyDesc": "The skittering never stops.<br>Insert the Dark Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": true,
         "X": 1.1,
         "Y": 17.6,
@@ -799,6 +814,7 @@
         "NoKeyDesc": "A cobblestone door armored in silk.",
         "KeyDesc": "The skittering never stops.<br>Insert the Dark Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": true,
         "X": 208.9,
         "Y": 9.6,
@@ -875,6 +891,7 @@
         "NoKeyDesc": "It looks like it's a locked door but you're not so sure.",
         "KeyDesc": "The hardest challenge in the game awaits you.<br>Insert the False Key?",
         "Masks": null,
+        "FadeOutOnOpen": true,
         "RequiresLantern": false,
         "X": 2.6,
         "Y": 33.6,
@@ -886,6 +903,7 @@
         "NoKeyDesc": "A rather superfluous door which seems to guard nothing.",
         "KeyDesc": "Give him time to retrain, he'll be ready.<br>Insert the False Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 97.9,
         "Y": 16.6,
@@ -982,6 +1000,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 6.1,
         "Y": 8.6,
@@ -993,6 +1012,7 @@
         "NoKeyDesc": "A cold stone door, endlessly dripping.",
         "KeyDesc": "You can feel the power of buoyancy calling out to you.<br>Insert the Flooded Stag Key?",
         "Masks": null,
+        "FadeOutOnOpen": true,
         "RequiresLantern": false,
         "X": 53.9,
         "Y": 7.6,
@@ -1073,6 +1093,7 @@
         "NoKeyDesc": "An ornate door, bespeckled with a collector's wealth.",
         "KeyDesc": "Finally, something to do with all those relics.<br>Insert the Fountain Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 7.6,
@@ -1084,6 +1105,7 @@
         "NoKeyDesc": "An ornate door, bespeckled with a collector's wealth.",
         "KeyDesc": "Rain flows intricately between the carvings.<br>Insert the Fountain Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 63.9,
         "Y": 8.6,
@@ -1146,6 +1168,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 5.9,
         "Y": 9.5,
@@ -1164,6 +1187,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": true,
         "RequiresLantern": false,
         "X": 31.6,
         "Y": 60.5,
@@ -1247,6 +1271,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 2.4,
         "Y": 15.5,
@@ -1265,6 +1290,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 32.2,
         "Y": 11.5,
@@ -1354,6 +1380,7 @@
             "OffsetY": 12.0
           }
         ],
+        "FadeOutOnOpen": true,
         "RequiresLantern": false,
         "X": 8.1,
         "Y": 13.6,
@@ -1365,6 +1392,7 @@
         "NoKeyDesc": "A thickly grown door, wrapped in chains.",
         "KeyDesc": "Hopefully you brought acid armor.<br>Insert the Garden Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 38.9,
         "Y": 58.5,
@@ -1426,6 +1454,7 @@
         "NoKeyDesc": "A crystalline door, ravaged with chips and scratch marks.",
         "KeyDesc": "What was kept inside is long gone, surely the mountain is safe now.<br>Insert the Heart Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 1.2,
         "Y": 21.2,
@@ -1444,6 +1473,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 70.5,
         "Y": 65.2,
@@ -1538,6 +1568,7 @@
             "OffsetY": -0.5
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 105.1,
         "Y": 52.6,
@@ -1556,6 +1587,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 110.9,
         "Y": 52.6,
@@ -1636,6 +1668,7 @@
         "NoKeyDesc": "A bright green door, bubbling with life. Don't touch it, though.",
         "KeyDesc": "It sizzles with a forgotten life.<br>Insert Isma's Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 22.6,
@@ -1647,6 +1680,7 @@
         "NoKeyDesc": "A bright green door, sizzling and rippling.",
         "KeyDesc": "The flow weakens, aging and drying.<br>Insert Isma's Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 29.5,
         "Y": 52.6,
@@ -1730,6 +1764,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": true,
         "X": 8.6,
         "Y": 45.6,
@@ -1748,6 +1783,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 131.6,
         "Y": 93.6,
@@ -1831,6 +1867,7 @@
         "NoKeyDesc": "A creaking door, rusting and rotting. It smells of infestation.",
         "KeyDesc": "A great shadow looms beyond.<br>Insert the Junk Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 2.6,
         "Y": 56.6,
@@ -1842,6 +1879,7 @@
         "NoKeyDesc": "A creaking door, rusting and rotting. It smells of infestation.",
         "KeyDesc": "An unconscionable chanting grows in the distance.<br>Insert the Junk Key?",
         "Masks": null,
+        "FadeOutOnOpen": true,
         "RequiresLantern": false,
         "X": 147.9,
         "Y": 6.6,
@@ -1925,6 +1963,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 5.3,
         "Y": 46.6,
@@ -1943,6 +1982,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 155.9,
         "Y": 26.6,
@@ -2039,6 +2079,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 11.52,
         "Y": 60.35,
@@ -2057,6 +2098,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 147.3,
         "Y": 11.35,
@@ -2139,6 +2181,7 @@
         "NoKeyDesc": "A crystallized door echoing of light and song.",
         "KeyDesc": "The purgatorial chaos of transition rando beckons.<br>Insert the Miner's Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 1.8,
         "Y": 10.3,
@@ -2150,6 +2193,7 @@
         "NoKeyDesc": "A crystallized door echoing of light and song.",
         "KeyDesc": "The call of the mines reigns out.<br>Insert the Miner's Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 31.2,
         "Y": 8.3,
@@ -2226,6 +2270,7 @@
         "NoKeyDesc": "A lush door, smothered in moss. It's almost hidden.",
         "KeyDesc": "The power of leftslash compels you.<br>Insert the Moss Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 1.8,
         "Y": 34.6,
@@ -2244,6 +2289,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 79.9,
         "Y": 16.6,
@@ -2326,6 +2372,7 @@
         "NoKeyDesc": "It looks like you can't get any closer, ghost.",
         "KeyDesc": "It looks like you found a way to get closer.<br>Insert the Mothwing Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 15.6,
@@ -2344,6 +2391,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 88.9,
         "Y": 34.6,
@@ -2420,6 +2468,7 @@
         "NoKeyDesc": "A crunchy door laced with spider webs.",
         "KeyDesc": "You can feel your skin crawling.<br>Insert the Nest Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 7.6,
@@ -2431,6 +2480,7 @@
         "NoKeyDesc": "A silken door, trapping in the darkness.",
         "KeyDesc": "The luscious babble of repose calls from the other side.<br>Insert the Nest Key?",
         "Masks": null,
+        "FadeOutOnOpen": true,
         "RequiresLantern": false,
         "X": 58.9,
         "Y": 5.6,
@@ -2516,6 +2566,7 @@
         "NoKeyDesc": "A buried door, overgrown with the lush of the canyon.",
         "KeyDesc": "It's okay, you have an excuse this time.<br>Insert the Overgrown Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 1.1,
         "Y": 39.6,
@@ -2527,6 +2578,7 @@
         "NoKeyDesc": "A buried door, overgrown with the lush of the canyon.",
         "KeyDesc": "The pilgrim's way awaits your return.<br>Insert the Overgrown Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 98.9,
         "Y": 14.6,
@@ -2589,6 +2641,7 @@
             "OffsetY": 3.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 291.5,
         "Y": 14.5,
@@ -2615,13 +2668,14 @@
             "OffsetY": 3.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 277.0,
         "Y": 14.5,
         "Decorators": [
           {
             "$type": "MoreDoors.IC.SpikeAttacher, MoreDoors",
-            "OffsetX": 0.3,
+            "OffsetX": -0.5,
             "OffsetY": -3.9,
             "Width": 2.15,
             "Height": 0.6
@@ -2738,6 +2792,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 5.8,
         "Y": 18.6,
@@ -2756,6 +2811,7 @@
             "OffsetY": 2.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 56.4,
         "Y": 153.6,
@@ -2839,6 +2895,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 3.1,
         "Y": 7.6,
@@ -2857,6 +2914,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 95.9,
         "Y": 5.6,
@@ -2940,6 +2998,7 @@
             "OffsetY": 0.0
           }
         ],
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 4.9,
         "Y": 85.6,
@@ -2951,6 +3010,7 @@
         "NoKeyDesc": "The door of a rival, a betrayor, guarding her keep.",
         "KeyDesc": "Perhaps betrayal was never the way.<br>Insert the Traitor's Key?",
         "Masks": null,
+        "FadeOutOnOpen": true,
         "RequiresLantern": false,
         "X": 73.4,
         "Y": 8.5,
@@ -3051,6 +3111,7 @@
         "NoKeyDesc": "A solid door reinforced with silk weaves. The beast watches you.",
         "KeyDesc": "Even the King's influence does not reach here.<br>Insert the Village Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": true,
         "X": 1.1,
         "Y": 91.6,
@@ -3062,6 +3123,7 @@
         "NoKeyDesc": "A solid door reinforced with silk weaves.",
         "KeyDesc": "Are you sure this is the right way?<br>Insert the Village Key?",
         "Masks": null,
+        "FadeOutOnOpen": false,
         "RequiresLantern": false,
         "X": 73.9,
         "Y": 89.6,
