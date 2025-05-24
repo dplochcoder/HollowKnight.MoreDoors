@@ -24,6 +24,7 @@ internal class DoorNames
     public const string JUNK = "Junk";
     public const string LAKE = "Lake";
     public const string MANTIS = "Mantis";
+    public const string MINER = "Miner";
     public const string MOSS = "Moss";
     public const string MOTHWING = "Mothwing";
     public const string NEST = "Nest";

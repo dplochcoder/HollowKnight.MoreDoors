@@ -2124,6 +2124,93 @@
       "ExtraWorldMapLocations": null
     }
   },
+  "Miner": {
+    "CamelCaseName": "Miner",
+    "UpperCaseName": "MINER",
+    "UIName": "Miner",
+    "Door": {
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Doors.Crystal"
+      },
+      "LeftLocation": {
+        "SceneName": "Crossroads_45",
+        "GateName": "left1",
+        "NoKeyDesc": "A crystallized door echoing of light and song.",
+        "KeyDesc": "The purgatorial chaos of transition rando beckons.<br>Insert the Miner's Key?",
+        "Masks": null,
+        "RequiresLantern": false,
+        "X": 1.8,
+        "Y": 10.3,
+        "Decorators": null
+      },
+      "RightLocation": {
+        "SceneName": "Crossroads_14",
+        "GateName": "right2",
+        "NoKeyDesc": "A crystallized door echoing of light and song.",
+        "KeyDesc": "The call of the mines reigns out.<br>Insert the Miner's Key?",
+        "Masks": null,
+        "RequiresLantern": false,
+        "X": 31.2,
+        "Y": 8.3,
+        "Decorators": null
+      },
+      "Mode": "Normal",
+      "Deployers": null
+    },
+    "Key": {
+      "ItemName": "MoreDoors-Miner's_Key",
+      "UIItemName": "Miner's Key'",
+      "ShopDesc": "A precious little soul. Such a shame...",
+      "InvDesc": "A delicate key filled with spirit. It gleams with a twinkle of orange light.",
+      "UsedInvDesc": "Damned are those who prey on innocence.",
+      "Sprite": {
+        "$type": "MoreDoors.IC.EmbeddedSprite, MoreDoors",
+        "key": "Keys.Miner"
+      },
+      "Location": {
+        "$type": "ItemChanger.Locations.DualLocation, ItemChanger",
+        "Test": {
+          "$type": "ItemChanger.SDBool, ItemChanger",
+          "id": "Mushroom Roller",
+          "sceneName": "Fungus2_23",
+          "semiPersistent": true
+        },
+        "falseLocation": {
+          "$type": "MoreDoors.IC.ShinyEnemyLocation, MoreDoors",
+          "HintShinyScale": 1.5,
+          "HintShinyX": 0.0,
+          "HintShinyY": 0.0,
+          "objectName": "Mushroom Roller",
+          "removeGeo": false,
+          "forceShiny": false,
+          "name": "MoreDoors-Miner's_Key-Mushroom_Roller-Bretta",
+          "sceneName": "Fungus2_23",
+          "flingType": "Everywhere",
+          "tags": null
+        },
+        "trueLocation": {
+          "$type": "ItemChanger.Locations.CoordinateLocation, ItemChanger",
+          "x": 25.0,
+          "y": 6.0,
+          "elevation": 0.0,
+          "managed": false,
+          "forceShiny": false,
+          "name": "MoreDoors-Miner's_Key-Mushroom_Roller-Bretta",
+          "sceneName": "Fungus2_23",
+          "flingType": "Everywhere",
+          "tags": null
+        },
+        "name": "MoreDoors-Miner's_Key-Mushroom_Roller-Bretta",
+        "sceneName": "Fungus2_23",
+        "flingType": "Everywhere",
+        "tags": null
+      },
+      "Logic": "Fungus2_23[right1]",
+      "WorldMapLocationOverride": null,
+      "ExtraWorldMapLocations": null
+    }
+  },
   "Moss": {
     "CamelCaseName": "Moss",
     "UpperCaseName": "MOSS",
