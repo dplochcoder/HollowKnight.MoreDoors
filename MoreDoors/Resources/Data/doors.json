@@ -104,7 +104,7 @@
           "objectName": "Jellyfish (5)",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Archive_Key-Ooma-Canyon_Charm_Notch",
+          "name": "MoreDoors-Ooma-Canyon_Charm_Notch",
           "sceneName": "Fungus3_28",
           "flingType": "Everywhere",
           "tags": null
@@ -116,12 +116,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Archive_Key-Ooma-Canyon_Charm_Notch",
+          "name": "MoreDoors-Ooma-Canyon_Charm_Notch",
           "sceneName": "Fungus3_28",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Archive_Key-Ooma-Canyon_Charm_Notch",
+        "name": "MoreDoors-Ooma-Canyon_Charm_Notch",
         "sceneName": "Fungus3_28",
         "flingType": "Everywhere",
         "tags": null
@@ -212,7 +212,7 @@
           "objectName": "Giant Hopper (2)",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Bardoon's_Key-Great_Hopper-Left_of_Nailmaster_Oro",
+          "name": "MoreDoors-Great_Hopper-Left_of_Nailmaster_Oro",
           "sceneName": "Deepnest_East_06",
           "flingType": "Everywhere",
           "tags": null
@@ -224,12 +224,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Bardoon's_Key-Great_Hopper-Left_of_Nailmaster_Oro",
+          "name": "MoreDoors-Great_Hopper-Left_of_Nailmaster_Oro",
           "sceneName": "Deepnest_East_06",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Bardoon's_Key-Great_Hopper-Left_of_Nailmaster_Oro",
+        "name": "MoreDoors-Great_Hopper-Left_of_Nailmaster_Oro",
         "sceneName": "Deepnest_East_06",
         "flingType": "Everywhere",
         "tags": null
@@ -320,7 +320,7 @@
           "objectName": "Lesser Mawlek (2)",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Broken_Key-Lesser_Mawlek-Basin_Cloth_by_Tram_Door",
+          "name": "MoreDoors-Lesser_Mawlek-Basin_Cloth_by_Tram_Door",
           "sceneName": "Abyss_17",
           "flingType": "Everywhere",
           "tags": null
@@ -332,12 +332,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Broken_Key-Lesser_Mawlek-Basin_Cloth_by_Tram_Door",
+          "name": "MoreDoors-Lesser_Mawlek-Basin_Cloth_by_Tram_Door",
           "sceneName": "Abyss_17",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Broken_Key-Lesser_Mawlek-Basin_Cloth_by_Tram_Door",
+        "name": "MoreDoors-Lesser_Mawlek-Basin_Cloth_by_Tram_Door",
         "sceneName": "Abyss_17",
         "flingType": "Everywhere",
         "tags": null
@@ -440,7 +440,7 @@
           "objectName": "Super Spitter (4)",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Buried_Geo_Key-Primal_Aspid-Edge_Whispering_Root-Top_Left",
+          "name": "MoreDoors-Primal_Aspid-Edge_Whispering_Root-Top_Left",
           "sceneName": "Deepnest_East_07",
           "flingType": "DirectDeposit",
           "tags": null
@@ -452,12 +452,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Buried_Geo_Key-Primal_Aspid-Edge_Whispering_Root-Top_Left",
+          "name": "MoreDoors-Primal_Aspid-Edge_Whispering_Root-Top_Left",
           "sceneName": "Deepnest_East_07",
           "flingType": "StraightUp",
           "tags": null
         },
-        "name": "MoreDoors-Buried_Geo_Key-Primal_Aspid-Edge_Whispering_Root-Top_Left",
+        "name": "MoreDoors-Primal_Aspid-Edge_Whispering_Root-Top_Left",
         "sceneName": "Deepnest_East_07",
         "flingType": "Everywhere",
         "tags": null
@@ -534,7 +534,7 @@
           "objectName": "Zombie Fungus A",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Canyon_Key-Fungified_Husk-Fungal_Below_Cornifer",
+          "name": "MoreDoors-Fungified_Husk-Fungal_Below_Cornifer",
           "sceneName": "Fungus2_18",
           "flingType": "Everywhere",
           "tags": null
@@ -546,12 +546,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Canyon_Key-Fungified_Husk-Fungal_Below_Cornifer",
+          "name": "MoreDoors-Fungified_Husk-Fungal_Below_Cornifer",
           "sceneName": "Fungus2_18",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Canyon_Key-Fungified_Husk-Fungal_Below_Cornifer",
+        "name": "MoreDoors-Fungified_Husk-Fungal_Below_Cornifer",
         "sceneName": "Fungus2_18",
         "flingType": "Everywhere",
         "tags": null
@@ -629,7 +629,7 @@
           "enemyObj": null,
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Core_Key-Mantis_Vault_Guardian",
+          "name": "MoreDoors-Mantis_Vault_Guardian",
           "sceneName": "Fungus2_31",
           "flingType": "Everywhere",
           "tags": null
@@ -641,12 +641,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Core_Key-Mantis_Vault_Guardian",
+          "name": "MoreDoors-Mantis_Vault_Guardian",
           "sceneName": "Fungus2_31",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Core_Key-Mantis_Vault_Guardian",
+        "name": "MoreDoors-Mantis_Vault_Guardian",
         "sceneName": "Fungus2_31",
         "flingType": "Everywhere",
         "tags": null
@@ -736,7 +736,7 @@
           "objectName": "Crystal Flyer (2)",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Crown_Key-Crystal_Hunter-Crystallized_Mound",
+          "name": "MoreDoors-Crystal_Hunter-Crystallized_Mound",
           "sceneName": "Mines_35",
           "flingType": "DirectDeposit",
           "tags": [
@@ -754,12 +754,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Crown_Key-Crystal_Hunter-Crystallized_Mound",
+          "name": "MoreDoors-Crystal_Hunter-Crystallized_Mound",
           "sceneName": "Mines_35",
           "flingType": "StraightUp",
           "tags": null
         },
-        "name": "MoreDoors-Crown_Key-Crystal_Hunter-Crystallized_Mound",
+        "name": "MoreDoors-Crystal_Hunter-Crystallized_Mound",
         "sceneName": "Mines_35",
         "flingType": "Everywhere",
         "tags": null
@@ -833,7 +833,7 @@
           "objectName": "Centipede Hatcher (7)",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Dark_Nest_Key-Carver_Hatcher-Next_to_Tram_Pass",
+          "name": "MoreDoors-Carver_Hatcher-Next_to_Tram_Pass",
           "sceneName": "Deepnest_26b",
           "flingType": "Everywhere",
           "tags": null
@@ -845,12 +845,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Dark_Nest_Key-Carver_Hatcher-Next_to_Tram_Pass",
+          "name": "MoreDoors-Carver_Hatcher-Next_to_Tram_Pass",
           "sceneName": "Deepnest_26b",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Dark_Nest_Key-Carver_Hatcher-Next_to_Tram_Pass",
+        "name": "MoreDoors-Carver_Hatcher-Next_to_Tram_Pass",
         "sceneName": "Deepnest_26b",
         "flingType": "Everywhere",
         "tags": null
@@ -933,7 +933,7 @@
           "objectName": "Zombie Guard",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-False_Key-Husk_Guard-Crossroads_Guarded_Grub",
+          "name": "MoreDoors-Husk_Guard-Crossroads_Guarded_Grub",
           "sceneName": "Crossroads_48",
           "flingType": "Everywhere",
           "tags": null
@@ -945,12 +945,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-False_Key-Husk_Guard-Crossroads_Guarded_Grub",
+          "name": "MoreDoors-Husk_Guard-Crossroads_Guarded_Grub",
           "sceneName": "Crossroads_48",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-False_Key-Husk_Guard-Crossroads_Guarded_Grub",
+        "name": "MoreDoors-Husk_Guard-Crossroads_Guarded_Grub",
         "sceneName": "Crossroads_48",
         "flingType": "Everywhere",
         "tags": null
@@ -1027,7 +1027,7 @@
           "objectName": "Great Shield Zombie",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Flooded_Stag_Key-Greater_Husk_Sentry-City_Guarded_Grub",
+          "name": "MoreDoors-Greater_Husk_Sentry-City_Guarded_Grub",
           "sceneName": "Ruins_House_01",
           "flingType": "Everywhere",
           "tags": null
@@ -1039,12 +1039,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Flooded_Stag_Key-Greater_Husk_Sentry-City_Guarded_Grub",
+          "name": "MoreDoors-Greater_Husk_Sentry-City_Guarded_Grub",
           "sceneName": "Ruins_House_01",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Flooded_Stag_Key-Greater_Husk_Sentry-City_Guarded_Grub",
+        "name": "MoreDoors-Greater_Husk_Sentry-City_Guarded_Grub",
         "sceneName": "Ruins_House_01",
         "flingType": "Everywhere",
         "tags": null
@@ -1110,7 +1110,7 @@
         "objectName": "Mage Blob 2 (3)",
         "removeGeo": false,
         "forceShiny": false,
-        "name": "MoreDoors-Fountain_Key-Mistake-Soul_Master_Return",
+        "name": "MoreDoors-Mistake-Soul_Master_Return",
         "sceneName": "Ruins1_30",
         "flingType": "Everywhere",
         "tags": null
@@ -1198,7 +1198,7 @@
           "objectName": "Mushroom Brawler 1",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Fragile_Key-Shrumal_Ogre_1-Fungal_Charm_Notch",
+          "name": "MoreDoors-Shrumal_Ogre_1-Fungal_Charm_Notch",
           "sceneName": "Fungus2_05",
           "flingType": "Everywhere",
           "tags": null
@@ -1210,12 +1210,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Fragile_Key-Shrumal_Ogre_1-Fungal_Charm_Notch",
+          "name": "MoreDoors-Shrumal_Ogre_1-Fungal_Charm_Notch",
           "sceneName": "Fungus2_05",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Fragile_Key-Shrumal_Ogre_1-Fungal_Charm_Notch",
+        "name": "MoreDoors-Shrumal_Ogre_1-Fungal_Charm_Notch",
         "sceneName": "Fungus2_05",
         "flingType": "Everywhere",
         "tags": null
@@ -1299,7 +1299,7 @@
           "objectName": "Mushroom Brawler 2",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Fungal_Key-Shrumal_Ogre_2-Fungal_Charm_Notch",
+          "name": "MoreDoors-Shrumal_Ogre_2-Fungal_Charm_Notch",
           "sceneName": "Fungus2_05",
           "flingType": "Everywhere",
           "tags": null
@@ -1311,12 +1311,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Fungal_Key-Shrumal_Ogre_2-Fungal_Charm_Notch",
+          "name": "MoreDoors-Shrumal_Ogre_2-Fungal_Charm_Notch",
           "sceneName": "Fungus2_05",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Fungal_Key-Shrumal_Ogre_2-Fungal_Charm_Notch",
+        "name": "MoreDoors-Shrumal_Ogre_2-Fungal_Charm_Notch",
         "sceneName": "Fungus2_05",
         "flingType": "Everywhere",
         "tags": null
@@ -1391,7 +1391,7 @@
         "objectName": "Moss Flyer (4)",
         "removeGeo": false,
         "forceShiny": false,
-        "name": "MoreDoors-Garden_Key-Mossfly-Outside_Overgrown_Mound",
+        "name": "MoreDoors-Mossfly-Outside_Overgrown_Mound",
         "sceneName": "Fungus3_44",
         "flingType": "Everywhere",
         "tags": [
@@ -1489,7 +1489,7 @@
           "objectName": "Zombie Miner 1",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Heart_Key-Husk_Miner-Deep_Focus_Breakable_Wall",
+          "name": "MoreDoors-Husk_Miner-Deep_Focus_Breakable_Wall",
           "sceneName": "Mines_05",
           "flingType": "Everywhere",
           "tags": null
@@ -1501,12 +1501,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Heart_Key-Husk_Miner-Deep_Focus_Breakable_Wall",
+          "name": "MoreDoors-Husk_Miner-Deep_Focus_Breakable_Wall",
           "sceneName": "Mines_05",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Heart_Key-Husk_Miner-Deep_Focus_Breakable_Wall",
+        "name": "MoreDoors-Husk_Miner-Deep_Focus_Breakable_Wall",
         "sceneName": "Mines_05",
         "flingType": "Everywhere",
         "tags": null
@@ -1607,7 +1607,7 @@
         "objectName": "Bee Hatchling Ambient (29)",
         "removeGeo": false,
         "forceShiny": false,
-        "name": "MoreDoors-Hive_Key-Hiveling-Hive_Outside_Grub",
+        "name": "MoreDoors-Hiveling-Hive_Outside_Grub",
         "sceneName": "Hive_03",
         "flingType": "Everywhere",
         "tags": null
@@ -1681,7 +1681,7 @@
           "objectName": "Flip Hopper",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Isma's_Key-Pilflip-By_Isma's_Spike_Tunnel",
+          "name": "MoreDoors-Pilflip-By_Isma's_Spike_Tunnel",
           "sceneName": "Waterways_06",
           "flingType": "Everywhere",
           "tags": null
@@ -1693,12 +1693,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Isma's_Key-Pilflip-By_Isma's_Spike_Tunnel",
+          "name": "MoreDoors-Pilflip-By_Isma's_Spike_Tunnel",
           "sceneName": "Waterways_06",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Isma's_Key-Pilflip-By_Isma's_Spike_Tunnel",
+        "name": "MoreDoors-Pilflip-By_Isma's_Spike_Tunnel",
         "sceneName": "Waterways_06",
         "flingType": "Everywhere",
         "tags": null
@@ -1789,7 +1789,7 @@
           "objectName": "Blocker 1",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Joni's_Key-Left_Elder_Baldur-Baldur_Shell",
+          "name": "MoreDoors-Left_Elder_Baldur-Baldur_Shell",
           "sceneName": "Fungus1_28",
           "flingType": "Everywhere",
           "tags": null
@@ -1801,12 +1801,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Joni's_Key-Left_Elder_Baldur-Baldur_Shell",
+          "name": "MoreDoors-Left_Elder_Baldur-Baldur_Shell",
           "sceneName": "Fungus1_28",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Joni's_Key-Left_Elder_Baldur-Baldur_Shell",
+        "name": "MoreDoors-Left_Elder_Baldur-Baldur_Shell",
         "sceneName": "Fungus1_28",
         "flingType": "Everywhere",
         "tags": null
@@ -1876,7 +1876,7 @@
           "objectName": "Ceiling Dropper (3)",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Junk_Key-Belfly-Above_Flukemarm_Totem",
+          "name": "MoreDoors-Belfly-Above_Flukemarm_Totem",
           "sceneName": "Waterways_08",
           "flingType": "Everywhere",
           "tags": null
@@ -1888,12 +1888,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Junk_Key-Belfly-Above_Flukemarm_Totem",
+          "name": "MoreDoors-Belfly-Above_Flukemarm_Totem",
           "sceneName": "Waterways_08",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Junk_Key-Belfly-Above_Flukemarm_Totem",
+        "name": "MoreDoors-Belfly-Above_Flukemarm_Totem",
         "sceneName": "Waterways_08",
         "flingType": "Everywhere",
         "tags": null
@@ -1990,7 +1990,7 @@
           "objectName": "Angry Buzzer",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Lake_Key-Infected_Vengefly-Crossroads_Well",
+          "name": "MoreDoors-Infected_Vengefly-Crossroads_Well",
           "sceneName": "Crossroads_01",
           "flingType": "Everywhere",
           "tags": null
@@ -2002,12 +2002,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Lake_Key-Infected_Vengefly-Crossroads_Well",
+          "name": "MoreDoors-Infected_Vengefly-Crossroads_Well",
           "sceneName": "Crossroads_01",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Lake_Key-Infected_Vengefly-Crossroads_Well",
+        "name": "MoreDoors-Infected_Vengefly-Crossroads_Well",
         "sceneName": "Crossroads_01",
         "flingType": "Everywhere",
         "tags": null
@@ -2091,7 +2091,7 @@
           "objectName": "Mantis (3)",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Mantis_Key-Mantis_Warrior-Above_Bretta_Bench",
+          "name": "MoreDoors-Mantis_Warrior-Above_Bretta_Bench",
           "sceneName": "Fungus2_13",
           "flingType": "StraightUp",
           "tags": [
@@ -2109,12 +2109,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Mantis_Key-Mantis_Warrior-Above_Bretta_Bench",
+          "name": "MoreDoors-Mantis_Warrior-Above_Bretta_Bench",
           "sceneName": "Fungus2_13",
           "flingType": "StraightUp",
           "tags": null
         },
-        "name": "MoreDoors-Mantis_Key-Mantis_Warrior-Above_Bretta_Bench",
+        "name": "MoreDoors-Mantis_Warrior-Above_Bretta_Bench",
         "sceneName": "Fungus2_13",
         "flingType": "Everywhere",
         "tags": null
@@ -2184,7 +2184,7 @@
           "objectName": "Mushroom Roller",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Miner's_Key-Mushroom_Roller-Bretta",
+          "name": "MoreDoors-Mushroom_Roller-Bretta",
           "sceneName": "Fungus2_23",
           "flingType": "Everywhere",
           "tags": null
@@ -2196,12 +2196,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Miner's_Key-Mushroom_Roller-Bretta",
+          "name": "MoreDoors-Mushroom_Roller-Bretta",
           "sceneName": "Fungus2_23",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Miner's_Key-Mushroom_Roller-Bretta",
+        "name": "MoreDoors-Mushroom_Roller-Bretta",
         "sceneName": "Fungus2_23",
         "flingType": "Everywhere",
         "tags": null
@@ -2278,7 +2278,7 @@
           "objectName": "Moss Knight",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Moss_Key-Moss_Knight-Lake_of_Unn",
+          "name": "MoreDoors-Moss_Knight-Lake_of_Unn",
           "sceneName": "Fungus1_26",
           "flingType": "Everywhere",
           "tags": [
@@ -2296,12 +2296,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Moss_Key-Moss_Knight-Lake_of_Unn",
+          "name": "MoreDoors-Moss_Knight-Lake_of_Unn",
           "sceneName": "Fungus1_26",
           "flingType": "StraightUp",
           "tags": null
         },
-        "name": "MoreDoors-Moss_Key-Moss_Knight-Lake_of_Unn",
+        "name": "MoreDoors-Moss_Knight-Lake_of_Unn",
         "sceneName": "Fungus1_26",
         "flingType": "Everywhere",
         "tags": null
@@ -2378,7 +2378,7 @@
           "objectName": "Moss Knight B",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Mothwing_Key-Moss_Knight-Greenpath_Life_Blood",
+          "name": "MoreDoors-Moss_Knight-Greenpath_Life_Blood",
           "sceneName": "Fungus1_32",
           "flingType": "Everywhere",
           "tags": null
@@ -2390,12 +2390,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Mothwing_Key-Moss_Knight-Greenpath_Life_Blood",
+          "name": "MoreDoors-Moss_Knight-Greenpath_Life_Blood",
           "sceneName": "Fungus1_32",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Mothwing_Key-Moss_Knight-Greenpath_Life_Blood",
+        "name": "MoreDoors-Moss_Knight-Greenpath_Life_Blood",
         "sceneName": "Fungus1_32",
         "flingType": "Everywhere",
         "tags": null
@@ -2474,7 +2474,7 @@
           "objectName": "Moss Knight Fat (2)",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Nest_Key-Mossy_Vagabond-Fungal_Prophet",
+          "name": "MoreDoors-Mossy_Vagabond-Fungal_Prophet",
           "sceneName": "Fungus3_39",
           "flingType": "Everywhere",
           "tags": null
@@ -2486,12 +2486,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Nest_Key-Mossy_Vagabond-Fungal_Prophet",
+          "name": "MoreDoors-Mossy_Vagabond-Fungal_Prophet",
           "sceneName": "Fungus3_39",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Nest_Key-Mossy_Vagabond-Fungal_Prophet",
+        "name": "MoreDoors-Mossy_Vagabond-Fungal_Prophet",
         "sceneName": "Fungus3_39",
         "flingType": "Everywhere",
         "tags": null
@@ -2553,7 +2553,7 @@
         "objectName": "Plant Turret (3)",
         "removeGeo": false,
         "forceShiny": false,
-        "name": "MoreDoors-Overgrown_Key-Gulka-MMC_Corridor",
+        "name": "MoreDoors-Gulka-MMC_Corridor",
         "sceneName": "Fungus1_12",
         "flingType": "Everywhere",
         "tags": null
@@ -2683,7 +2683,7 @@
           "enemyObj": null,
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Pain_Key-Kingsmould-Palace_Entrance_Lever",
+          "name": "MoreDoors-Kingsmould-Palace_Entrance_Lever",
           "sceneName": "White_Palace_02",
           "flingType": "Everywhere",
           "tags": null
@@ -2695,12 +2695,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Pain_Key-Kingsmould-Palace_Entrance_Lever",
+          "name": "MoreDoors-Kingsmould-Palace_Entrance_Lever",
           "sceneName": "White_Palace_02",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Pain_Key-Kingsmould-Palace_Entrance_Lever",
+        "name": "MoreDoors-Kingsmould-Palace_Entrance_Lever",
         "sceneName": "White_Palace_02",
         "flingType": "Everywhere",
         "tags": null
@@ -2790,7 +2790,7 @@
           "objectName": "Ruins Sentry Fat",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Sanctum_Key-Heavy_Sentry-Above_Lemm",
+          "name": "MoreDoors-Heavy_Sentry-Above_Lemm",
           "sceneName": "Ruins1_05c",
           "flingType": "Everywhere",
           "tags": null
@@ -2802,12 +2802,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Sanctum_Key-Heavy_Sentry-Above_Lemm",
+          "name": "MoreDoors-Heavy_Sentry-Above_Lemm",
           "sceneName": "Ruins1_05c",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Sanctum_Key-Heavy_Sentry-Above_Lemm",
+        "name": "MoreDoors-Heavy_Sentry-Above_Lemm",
         "sceneName": "Ruins1_05c",
         "flingType": "Everywhere",
         "tags": null
@@ -2891,7 +2891,7 @@
           "objectName": "Mawlek Turret (3)",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Shade_Key-Mawlurk-Broken_Vessel_Ascent",
+          "name": "MoreDoors-Mawlurk-Broken_Vessel_Ascent",
           "sceneName": "Abyss_20",
           "flingType": "Everywhere",
           "tags": null
@@ -2903,12 +2903,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Shade_Key-Mawlurk-Broken_Vessel_Ascent",
+          "name": "MoreDoors-Mawlurk-Broken_Vessel_Ascent",
           "sceneName": "Abyss_20",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Shade_Key-Mawlurk-Broken_Vessel_Ascent",
+        "name": "MoreDoors-Mawlurk-Broken_Vessel_Ascent",
         "sceneName": "Abyss_20",
         "flingType": "Everywhere",
         "tags": null
@@ -3009,7 +3009,7 @@
           "objectName": "Mantis Heavy",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Traitor's_Key-Mantis_Traitor-Love_Key",
+          "name": "MoreDoors-Mantis_Traitor-Love_Key",
           "sceneName": "Fungus3_39",
           "flingType": "Everywhere",
           "tags": null
@@ -3021,12 +3021,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Traitor's_Key-Mantis_Traitor-Love_Key",
+          "name": "MoreDoors-Mantis_Traitor-Love_Key",
           "sceneName": "Fungus3_39",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Traitor's_Key-Mantis_Traitor-Love_Key",
+        "name": "MoreDoors-Mantis_Traitor-Love_Key",
         "sceneName": "Fungus3_39",
         "flingType": "Everywhere",
         "tags": null
@@ -3096,7 +3096,7 @@
           "objectName": "Slash Spider",
           "removeGeo": false,
           "forceShiny": false,
-          "name": "MoreDoors-Village_Key-Stalking_Devout-Dark_Deepnest_Rancid_Egg",
+          "name": "MoreDoors-Stalking_Devout-Dark_Deepnest_Rancid_Egg",
           "sceneName": "Deepnest_39",
           "flingType": "Everywhere",
           "tags": null
@@ -3108,12 +3108,12 @@
           "elevation": 0.0,
           "managed": false,
           "forceShiny": false,
-          "name": "MoreDoors-Village_Key-Stalking_Devout-Dark_Deepnest_Rancid_Egg",
+          "name": "MoreDoors-Stalking_Devout-Dark_Deepnest_Rancid_Egg",
           "sceneName": "Deepnest_39",
           "flingType": "Everywhere",
           "tags": null
         },
-        "name": "MoreDoors-Village_Key-Stalking_Devout-Dark_Deepnest_Rancid_Egg",
+        "name": "MoreDoors-Stalking_Devout-Dark_Deepnest_Rancid_Egg",
         "sceneName": "Deepnest_39",
         "flingType": "Everywhere",
         "tags": null
