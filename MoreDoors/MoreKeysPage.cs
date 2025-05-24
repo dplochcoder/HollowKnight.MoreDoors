@@ -24,16 +24,16 @@ internal record InventorySpacingParams
 
     public static InventorySpacingParams Create(int doors)
     {
-        if (doors <= 30)
+        if (doors <= 33)
         {
             return new()
             {
                 xLeft = -10.98f,
-                xSpace = 2.44f,
-                yTop = 0,
-                ySpace = 2.44f,
-                rowSize = 10,
-                keyScale = 1.65f,
+                xSpace = 2.196f,
+                yTop = 0.2f,
+                ySpace = 2.196f,
+                rowSize = 11,
+                keyScale = 1.52f,
             };
         }
         else if (doors <= 52)
