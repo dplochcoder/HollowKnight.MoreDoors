@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "MoreDoors\\MoreDoors.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "DataUpdater\\DataUpdater.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
