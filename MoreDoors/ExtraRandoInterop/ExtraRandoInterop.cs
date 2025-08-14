@@ -1,6 +1,5 @@
 ﻿using ExtraRando.Data;
 using ExtraRando.ModInterop.ItemChangerInterop.Modules;
-using ItemChanger;
 using MoreDoors.IC;
 using MoreDoors.Rando;
 using RandomizerCore.Logic;
@@ -34,6 +33,6 @@ internal class MoreKeysVictory : IVictoryCondition
     private void UpdateKeysCount(string uiName)
     {
         ++CurrentAmount;
-        ItemChangerMod.Modules.Get<VictoryModule>()?.CheckForFinish();
+        this.CheckForEnding();
     }
 }
