@@ -91,8 +91,10 @@ public static class DoorSpawner
 {
     private static FsmVar NewStringVar(string text)
     {
-        FsmVar ret = new(typeof(string));
-        ret.stringValue = text;
+        FsmVar ret = new(typeof(string))
+        {
+            stringValue = text
+        };
         return ret;
     }
 
@@ -100,8 +102,10 @@ public static class DoorSpawner
     {
         Vector3 dst = obj.transform.position;
 
-        GameObject parent = new();
-        parent.name = $"{obj.name} Animation Parent";
+        GameObject parent = new()
+        {
+            name = $"{obj.name} Animation Parent"
+        };
         var delta = dst - src;
         if (!left)
         {

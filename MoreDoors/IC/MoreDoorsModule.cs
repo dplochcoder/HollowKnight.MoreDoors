@@ -138,10 +138,11 @@ public class MoreDoorsModule : ItemChanger.Modules.Module
         if (DoorNamesByKey.TryGetValue(name, out string doorName))
         {
             var state = DoorStates[doorName];
+            var prev = state.KeyObtained;
             state.KeyObtained = newValue;
             var data = DoorData.GetDoor(doorName)!;
 
-            if (newValue) OnKeyObtained?.Invoke(data.Key!.UIItemName);
+            if (!prev && newValue) OnKeyObtained?.Invoke(data.Key!.UIItemName);
             MoreKeysPage.Instance.Update();
         }
         else if (DoorNamesByDoor.TryGetValue(name, out doorName))

@@ -1,5 +1,4 @@
 ﻿using ItemChanger;
-using ItemChanger.Locations;
 using ItemChanger.Tags;
 using ItemChanger.UIDefs;
 using MoreDoors.Data;

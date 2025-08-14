@@ -6,7 +6,7 @@ using MoreDoors.IC;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MoreDoors.FStats;
+namespace MoreDoors.FStatsInterop;
 
 internal class MoreKeysStats : StatController
 {
@@ -21,7 +21,7 @@ internal class MoreKeysStats : StatController
 
     public override IEnumerable<DisplayInfo> GetDisplayInfos()
     {
-        List<string> rows = KeyCollections.OrderBy(kc => kc.time).Select(kc => $"{kc.keyName}: {kc.time.PlaytimeHHMMSS()}").ToList();
+        List<string> rows = [.. KeyCollections.OrderBy(kc => kc.time).Select(kc => $"{kc.keyName}: {kc.time.PlaytimeHHMMSS()}")];
         if (rows.Count == 0) yield break;
         
         yield return new()

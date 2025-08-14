@@ -756,8 +756,7 @@
           "tags": [
             {
               "$type": "ItemChanger.Tags.ShinyFlingTag, ItemChanger",
-              "fling": "Down",
-              "Loaded": false
+              "fling": "Down"
             }
           ]
         },
@@ -1425,8 +1424,7 @@
         "tags": [
           {
             "$type": "ItemChanger.Tags.ShinyFlingTag, ItemChanger",
-            "fling": "Right",
-            "Loaded": false
+            "fling": "Right"
           }
         ]
       },
@@ -2139,8 +2137,7 @@
           "tags": [
             {
               "$type": "ItemChanger.Tags.ShinyFlingTag, ItemChanger",
-              "fling": "Down",
-              "Loaded": false
+              "fling": "Down"
             }
           ]
         },
@@ -2330,8 +2327,7 @@
           "tags": [
             {
               "$type": "ItemChanger.Tags.ShinyFlingTag, ItemChanger",
-              "fling": "Right",
-              "Loaded": false
+              "fling": "Right"
             }
           ]
         },

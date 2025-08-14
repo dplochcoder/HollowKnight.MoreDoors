@@ -48,7 +48,7 @@ public static class RandomizationSettingsExtensions
 {
     public static HashSet<string> ComputeActiveDoors(this RandomizationSettings settings, GenerationSettings gs, Random r)
     {
-        List<string> potentialDoors = DoorData.All().Keys.Where(d => !settings.DisabledDoors.Contains(d)).ToList();
+        List<string> potentialDoors = [.. DoorData.All().Keys.Where(d => !settings.DisabledDoors.Contains(d))];
         if (gs.LongLocationSettings.WhitePalaceRando != LongLocationSettings.WPSetting.Allowed) potentialDoors.Remove("Pain");
 
         HashSet<string> doors = [];

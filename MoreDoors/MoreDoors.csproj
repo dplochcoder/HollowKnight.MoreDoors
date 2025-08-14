@@ -64,6 +64,9 @@
     <Reference Include="DebugMod">
       <HintPath>$(HollowKnightRefs)/Mods/DebugMod/DebugMod.dll</HintPath>
     </Reference>
+    <Reference Include="ExtraRando">
+      <HintPath>$(HollowKnightRefs)/Mods/Extra Rando/ExtraRando.dll</HintPath>
+    </Reference>
     <Reference Include="FStats">
       <HintPath>$(HollowKnightRefs)/Mods/FStats/FStats.dll</HintPath>
     </Reference>

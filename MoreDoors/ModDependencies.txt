@@ -9,3 +9,4 @@ RandomizerCore
 RandomizerCore.Json
 RandoSettingsManager
 SFCore
+Extra Rando

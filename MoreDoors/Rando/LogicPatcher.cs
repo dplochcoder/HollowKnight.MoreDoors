@@ -2,7 +2,7 @@
 using PurenailCore.RandoUtil;
 using PurenailCore.SystemUtil;
 using RandomizerCore.Logic;
-using RandomizerCore.LogicItems;
+using RandomizerCore.StringItems;
 using RandomizerCore.StringLogic;
 using RandomizerMod.Menu;
 using RandomizerMod.RC;
@@ -15,6 +15,8 @@ namespace MoreDoors.Rando;
 
 public static class LogicPatcher
 {
+    internal const string MORE_KEYS_TERM = "MORE_DOORS_KEYS";
+
     public static void Setup()
     {
         RandomizerMenuAPI.OnGenerateStartLocationDict += PatchStartLocations;
@@ -89,12 +91,12 @@ public static class LogicPatcher
             sceneToDoors.GetOrAddNew(door.RightSceneName).Add(data.Key);
         }
 
-        List<string> keys = new(startDefs.Keys);
+        List<string> keys = [.. startDefs.Keys];
         foreach (var startName in keys)
         {
             var start = startDefs[startName];
 
-            if (sceneToDoors.TryGetValue(start.SceneName, out var doors)) startDefs[startName] = Forbid(doors.ToArray())(startDefs[startName]);
+            if (sceneToDoors.TryGetValue(start.SceneName, out var doors)) startDefs[startName] = Forbid([.. doors])(startDefs[startName]);
             if (StartModifiers.TryGetValue(startName, out var modifier)) startDefs[startName] = modifier(startDefs[startName]);
         }
     }
@@ -161,9 +163,10 @@ public static class LogicPatcher
             if (ls.IncludeDoor(doorName))
             {
                 // Modify transition logic for this door.
-                var keyTerm = lmb.GetOrAddTerm(data.KeyTermName);
+                lmb.GetOrAddTerm(MORE_KEYS_TERM);
+                lmb.GetOrAddTerm(data.KeyTermName);
                 HandleDoorLogic(lmb, data, ls.ModifiedLogicNames, ls.LogicSubstitutions);
-                lmb.AddItem(new CappedItem(data.Key!.ItemName, [new(keyTerm, 1)], new(keyTerm, 1)));
+                lmb.AddItem(new StringItemTemplate(data.Key!.ItemName, $"`{data.KeyTermName}<1` => {MORE_KEYS_TERM}++ >> {data.KeyTermName}++"));
 
                 // Modify the infection wall.
                 if (doorName == DoorNames.FALSE)
@@ -190,9 +193,11 @@ public static class LogicPatcher
         // assumes that the listed transition implies access to the others. This is not true when said transitions are blocked off by
         // MoreDoors placements, so we introduce a separate proxy waypoint to mean 'access-to-the-door' as opposed to
         // 'access-to-the-transition'.
-        LogicReplacer replacer = new();
-        replacer.IgnoredNames = new(RandoInterop.LS.ModifiedLogicNames);
-        replacer.SimpleTokenReplacements = new(RandoInterop.LS.LogicSubstitutions);
+        LogicReplacer replacer = new()
+        {
+            IgnoredNames = [.. RandoInterop.LS.ModifiedLogicNames],
+            SimpleTokenReplacements = new(RandoInterop.LS.LogicSubstitutions)
+        };
         replacer.Apply(lmb);
 
         // We don't need this data any more, get rid of it.

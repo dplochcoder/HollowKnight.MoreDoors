@@ -44,7 +44,7 @@ public static class DataUpdater
         content.Add("");
 
         File.Delete(path);
-        File.WriteAllText(path, string.Join("\n", content.ToArray()));
+        File.WriteAllText(path, string.Join("\n", [.. content]));
     }
 
     private static string ConstName(string name) => name.ToUpper().Replace(" ", "_").Replace("'", "");

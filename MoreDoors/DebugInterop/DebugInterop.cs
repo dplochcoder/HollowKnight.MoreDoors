@@ -1,7 +1,7 @@
 ﻿using DebugMod;
 using MoreDoors.IC;
 
-namespace MoreDoors.Debug;
+namespace MoreDoors.DebugInterop;
 
 public static class DebugInterop
 {

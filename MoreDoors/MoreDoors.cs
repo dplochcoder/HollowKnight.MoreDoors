@@ -1,7 +1,6 @@
 ﻿using ItemChanger.Internal.Menu;
 using Modding;
 using MoreDoors.Data;
-using MoreDoors.Debug;
 using MoreDoors.IC;
 using MoreDoors.Rando;
 using static RandomizerMod.Localization;
@@ -9,7 +8,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using PurenailCore.ModUtil;
 using SFCore;
-using MoreDoors.FStats;
 
 namespace MoreDoors;
 
@@ -46,21 +44,13 @@ public class MoreDoors : Mod, IGlobalSettings<GlobalSettings>, ICustomMenuMod
         DoorData.Load();
 
         Vanilla.Setup();
-        if (ModHooks.GetMod("Randomizer 4") is Mod)
-        {
-            RandoInterop.Setup();
-        }
-        if (ModHooks.GetMod("DebugMod") is Mod)
-        {
-            DebugInterop.Setup();
-        }
-        if (ModHooks.GetMod("FStatsMod") is Mod)
-        {
-            FStatsInterop.Setup();
-        }
+        if (ModHooks.GetMod("DebugMod") is Mod) DebugInterop.DebugInterop.Setup();
+        if (ModHooks.GetMod("ExtraRando") is Mod) ExtraRandoInterop.ExtraRandoInterop.Setup();
+        if (ModHooks.GetMod("FStatsMod") is Mod) FStatsInterop.FStatsInterop.Setup();
+        if (ModHooks.GetMod("Randomizer 4") is Mod) RandoInterop.Setup();
     }
 
-    public override List<(string, string)> GetPreloadNames() => new(IC.Preloader.Instance.GetPreloadNames());
+    public override List<(string, string)> GetPreloadNames() => [.. IC.Preloader.Instance.GetPreloadNames()];
 
     public void OnLoadGlobal(GlobalSettings s)
     {
