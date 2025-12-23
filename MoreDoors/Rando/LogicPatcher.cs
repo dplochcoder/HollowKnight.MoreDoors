@@ -4,6 +4,7 @@ using PurenailCore.SystemUtil;
 using RandomizerCore.Logic;
 using RandomizerCore.StringItems;
 using RandomizerCore.StringLogic;
+using RandomizerCore.StringParsing;
 using RandomizerMod.Menu;
 using RandomizerMod.RC;
 using RandomizerMod.Settings;
@@ -100,7 +101,7 @@ public static class LogicPatcher
             if (StartModifiers.TryGetValue(startName, out var modifier)) startDefs[startName] = modifier(startDefs[startName]);
         }
     }
-    private static void HandleDoorLogic(LogicManagerBuilder lmb, DoorData data, HashSet<string> fixedTerms, Dictionary<string, SimpleToken> replacementMap)
+    private static void HandleDoorLogic(LogicManagerBuilder lmb, DoorData data, HashSet<string> fixedTerms, Dictionary<string, Token> replacementMap)
     {
         switch (data.Door!.Mode)
         {
@@ -123,12 +124,12 @@ public static class LogicPatcher
         }
     }
 
-    private static void HandleTransition(LogicManagerBuilder lmb, DoorData data, DoorData.DoorInfo.Location doorLoc, HashSet<string> fixedTerms, Dictionary<string, SimpleToken> replacementMap)
+    private static void HandleTransition(LogicManagerBuilder lmb, DoorData data, DoorData.DoorInfo.Location doorLoc, HashSet<string> fixedTerms, Dictionary<string, Token> replacementMap)
     {
         fixedTerms.Add(doorLoc.TransitionName);
         fixedTerms.Add(doorLoc.TransitionProxyName);
-        replacementMap[doorLoc.TransitionName] = new(doorLoc.TransitionProxyName);
-        replacementMap[$"{doorLoc.TransitionName}/"] = new($"{doorLoc.TransitionProxyName}/");
+        replacementMap[doorLoc.TransitionName] = new NameToken(doorLoc.TransitionProxyName);
+        replacementMap[$"{doorLoc.TransitionName}/"] = new NameToken($"{doorLoc.TransitionProxyName}/");
 
         lmb.GetOrAddTerm(doorLoc.TransitionName, TermType.State);
         lmb.AddWaypoint(new(doorLoc.TransitionProxyName, lmb.LogicLookup[doorLoc.TransitionName].ToInfix()));
@@ -150,9 +151,7 @@ public static class LogicPatcher
         if (!RandoInterop.IsEnabled) return;
 
         // TODO: Define this upstream.
-        lmb.LP.SetMacro(
-            "COMBAT[Shrumal_Ogre]",
-            "SIDESLASH | UPSLASH | CYCLONE | GREATSLASH | FULLDASHSLASH | ANYDASHSLASH + DASHMASTER + OBSCURESKIPS | SPICYCOMBATSKIPS");
+        lmb.AddMacro(new("COMBAT[Shrumal_Ogre]", "SIDESLASH | UPSLASH | CYCLONE | GREATSLASH | FULLDASHSLASH | ANYDASHSLASH + DASHMASTER + OBSCURESKIPS | SPICYCOMBATSKIPS"));
 
         var ls = RandoInterop.LS;
         foreach (var e in DoorData.All())
@@ -196,7 +195,7 @@ public static class LogicPatcher
         LogicReplacer replacer = new()
         {
             IgnoredNames = [.. RandoInterop.LS.ModifiedLogicNames],
-            SimpleTokenReplacements = new(RandoInterop.LS.LogicSubstitutions)
+            TokenReplacements = new(RandoInterop.LS.LogicSubstitutions)
         };
         replacer.Apply(lmb);
 
