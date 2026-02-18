@@ -2201,7 +2201,7 @@
     },
     "Key": {
       "ItemName": "MoreDoors-Miner's_Key",
-      "UIItemName": "Miner's Key'",
+      "UIItemName": "Miner's Key",
       "ShopDesc": "A precious little soul. Such a shame...",
       "InvDesc": "A delicate key filled with spirit. It gleams with a twinkle of orange light.",
       "UsedInvDesc": "Damned are those who prey on innocence.",
@@ -3181,4 +3181,5 @@
       "ExtraWorldMapLocations": null
     }
   }
+
 }
